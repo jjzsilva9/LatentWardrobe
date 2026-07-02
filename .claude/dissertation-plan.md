@@ -67,7 +67,9 @@ This resolves the earlier open question of whether the three original methods ar
 
 The dissertation's baseline and current jumping-off point: the user's crowd-level prompt is passed verbatim to Paint3D for every member; each member gets a randomly selected garment mesh and a fresh random SD seed. Whatever diversity emerges comes purely from seed stochasticity and mesh variation — every proposed method must beat this to justify its existence.
 
-Implemented in `scripts/generate_crowd_baseline.py` (per-member config generation with explicit seeds — necessary because Paint3D's stock configs hardcode a fixed seed, and its `seed: -1` fallback is `int(time.time())` with 1-second resolution which can collide across members; manifest.json for exact reproducibility; `--resume` for crash recovery). **Blocked on:** garment template meshes — none in the repo yet; only Paint3D's demo meshes (monkey, teapot) are available. Not smoke-tested until meshes are chosen.
+Implemented in `scripts/generate_crowd_baseline.py` (per-member config generation with explicit seeds — necessary because Paint3D's stock configs hardcode a fixed seed, and its `seed: -1` fallback is `int(time.time())` with 1-second resolution which can collide across members; manifest.json for exact reproducibility; `--resume` for crash recovery).
+
+**Meshes (DECIDED 2026-07-02):** MakeHuman community asset packs (CC0), organized by outfit slot in `assets/meshes/` (tops / bottoms / outerwear / fullbody — see its README for export conventions). **Outfit-level texturing (DECIDED):** each member samples 1 top + 1 bottom (or 1 fullbody), the garments are merged into ONE mesh with a shared repacked UV atlas (each garment's existing UV islands transformed into its own atlas region — reversible, so per-garment textures can be cropped back out for engine use), and textured in a single Paint3D run for outfit coherence. Driver update + UV-combine utility + mesh validator pending mesh arrival; not yet smoke-tested.
 
 ### Stage 1 methods (PARKED 2026-07-02 pending baseline results and methods rethink)
 
