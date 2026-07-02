@@ -64,7 +64,13 @@ pip install kaolin==0.13.0 -f https://nvidia-kaolin.s3.us-east-2.amazonaws.com/t
 pip install fvcore iopath
 pip install --no-cache-dir pytorch3d -f https://dl.fbaipublicfiles.com/pytorch3d/packaging/wheels/py38_cu113_pyt1121/download.html
 
-# 8. Verify
+# 8. huggingface_hub/diffusers version skew: environment.yaml pins
+#    diffusers==0.25.0 but not huggingface_hub, so pip installs whatever is
+#    newest -- which has since dropped `cached_download`, a name diffusers
+#    0.25.0 still imports. Pin to a version from the same era.
+pip install 'huggingface_hub==0.20.3'
+
+# 9. Verify
 python -c "
 import torch, kaolin, pytorch3d
 print('torch', torch.__version__, 'cuda available:', torch.cuda.is_available())
@@ -74,3 +80,6 @@ print('pytorch3d', pytorch3d.__version__)
 
 echo ""
 echo "Done. Activate with: conda activate paint3d"
+echo "Before running any pipeline_paint3d_*.py script, also export:"
+echo "  export LD_LIBRARY_PATH=/usr/lib/wsl/lib:\$LD_LIBRARY_PATH"
+echo "(see README.md for why -- cuDNN dlopens the unversioned libcuda.so, which WSL's ldconfig cache doesn't index)"
