@@ -1,0 +1,35 @@
+{
+  "crowd_prompt": "superhero costume",
+  "master_seed": 0,
+  "fullbody_prob": 0.25,
+  "stage1_prompt_template": "turn around, {prompt}",
+  "stage2_prompt_templates": {
+    "inpaint": "UV map, {prompt}",
+    "img2img": "UV map, {prompt}, high quality, best quality"
+  },
+  "members": [
+    {
+      "member": "member_00",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/tops/offshoulder_top.obj",
+        "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/bottoms/f_trousers_01.obj"
+      ],
+      "sd_seed": 764079951,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/c/Users/silvajo/LatentWardrobe/outputs/debug_run/superhero_costume/member_00/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 122.2,
+        "final_texture": "/mnt/c/Users/silvajo/LatentWardrobe/outputs/debug_run/superhero_costume/member_00/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1318.1,
+        "final_texture": "/mnt/c/Users/silvajo/LatentWardrobe/outputs/debug_run/superhero_costume/member_00/stage2/tile_res_0/albedo.png"
+      }
+    }
+  ]
+}

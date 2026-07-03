@@ -71,6 +71,21 @@ Implemented in `scripts/generate_crowd_baseline.py` (per-member config generatio
 
 **Meshes (DECIDED 2026-07-02):** MakeHuman community asset packs (CC0), organized by outfit slot in `assets/meshes/` (tops / bottoms / outerwear / fullbody — see its README for export conventions). **Outfit-level texturing (DECIDED):** each member samples 1 top + 1 bottom (or 1 fullbody), the garments are merged into ONE mesh with a shared repacked UV atlas (each garment's existing UV islands transformed into its own atlas region — reversible, so per-garment textures can be cropped back out for engine use), and textured in a single Paint3D run for outfit coherence. Driver update + UV-combine utility + mesh validator pending mesh arrival; not yet smoke-tested.
 
+### Method 1a: Theme-aware mesh sampling — **DECIDED 2026-07-03, first method to build on top of the baseline**
+
+User's idea (2026-07-03): the baseline samples garment meshes *uniformly*, which hurts theme-coherence — e.g. a tutu dress can be dealt to "business casual office workers". Replace uniform mesh selection with a theme-conditioned distribution: score each garment against the crowd prompt, convert scores to sampling weights. Better-matched mesh distributions should raise coherence, and a *deliberately spread* but still-appropriate distribution can raise diversity at the same time.
+
+Proposed mechanism (design not final):
+- Per-garment CLIP embedding, compared to the theme prompt's CLIP embedding → similarity score per garment.
+- Sampling weights via softmax over scores with **temperature τ** — this makes τ the coherence↔mesh-diversity knob: τ→∞ recovers the uniform baseline, small τ approaches always-picking-the-best-matching garments. τ sweep = a natural Pareto-frontier experiment (coherence vs. diversity), exactly the results-chapter shape the Evaluation section wants.
+- **OPEN QUESTION — garment embedding source:** (a) one-line hand-written text description per garment (143 garments, one-time; drafts can be auto-generated from the mostly-descriptive filenames then reviewed) — most reliable, recommended; (b) CLIP image embeddings of untextured garment renders — automated and geometry-grounded, but CLIP may struggle with gray unclothed-mannequin renders; (c) raw filenames — noisy, free. Worth comparing (a) vs (b) as a mini-ablation.
+
+Why this method earns its place: every diversity lever in the lit review (`.claude/lit-review-diffusion-diversity.md`) acts on the *generative sampler* (noise, guidance, condition); this one acts on **geometry selection upstream**, which is native to the crowd-wardrobe domain and has no counterpart in that literature — it's a contribution the dissertation can own outright. It also composes freely with any sampler-side method later. Extension idea (parked): outfit-internal compatibility — sample the bottom conditioned on the chosen top, not just on the theme.
+
+### Overnight batch design (DECIDED 2026-07-03, runs tonight)
+
+N=30 members per theme (doubles as Stage-2 selection pool: select k=10 from N=30 later), fixed theme test set reused for every future method. Proposed test set (6 themes spanning specificity/era/exoticism — **confirm with user before launch**): the 4 shakedown themes (superhero costume / aliens on the moon / medieval villagers / business casual office workers) + 2 more to be chosen, e.g. a non-Western contemporary theme and a highly specific one ("victorian factory workers in winter"). 6×30 = 180 members ≈ fits overnight-into-morning with `--resume`.
+
 ### Stage 1 methods (PARKED 2026-07-02 pending baseline results and methods rethink)
 
 The lit review (`.claude/lit-review-diffusion-diversity.md`) reframed this space; the methods below predate it. QMC was **removed** entirely (no published precedent for diffusion batch diversity, not the dissertation's focus); the diversity-methods literature (repulsive noise coupling, particle guidance, CADS, guidance-interval — see lit review §3) is kept in the back pocket to draw on once the baseline is measured.

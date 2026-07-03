@@ -1,0 +1,87 @@
+mesh library: 43 tops, 41 bottoms, 59 fullbody
+plan: 4 prompt(s) x 3 members
+
+=== [superhero costume] member_00: offshoulder_top+f_trousers_01 seed=764079951 ===
+Depth-based 3D Texturing
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  14%|█▍        | 1/7 [00:00<00:00,  6.91it/s]Loading pipeline components...:  29%|██▊       | 2/7 [00:01<00:04,  1.21it/s]Loading pipeline components...:  43%|████▎     | 3/7 [00:03<00:05,  1.29s/it]Loading pipeline components...:  71%|███████▏  | 5/7 [00:13<00:06,  3.48s/it]`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+Loading pipeline components...:  86%|████████▌ | 6/7 [00:17<00:03,  3.67s/it]Loading pipeline components...: 100%|██████████| 7/7 [00:17<00:00,  2.54s/it]
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  29%|██▊       | 2/7 [00:00<00:00, 13.86it/s]Loading pipeline components...:  57%|█████▋    | 4/7 [00:01<00:01,  2.20it/s]Loading pipeline components...:  71%|███████▏  | 5/7 [00:13<00:07,  3.79s/it]`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+Loading pipeline components...:  86%|████████▌ | 6/7 [00:18<00:04,  4.13s/it]Loading pipeline components...: 100%|██████████| 7/7 [00:18<00:00,  2.61s/it]
+Project init view [0, 23]...
+Generating init view...
+  0%|          | 0/20 [00:00<?, ?it/s]  5%|▌         | 1/20 [00:03<01:07,  3.57s/it] 10%|█         | 2/20 [00:03<00:30,  1.67s/it] 15%|█▌        | 3/20 [00:04<00:18,  1.07s/it] 20%|██        | 4/20 [00:04<00:12,  1.28it/s] 25%|██▌       | 5/20 [00:04<00:09,  1.60it/s] 30%|███       | 6/20 [00:05<00:07,  1.89it/s] 35%|███▌      | 7/20 [00:05<00:06,  2.14it/s] 40%|████      | 8/20 [00:05<00:05,  2.33it/s] 45%|████▌     | 9/20 [00:06<00:04,  2.48it/s] 50%|█████     | 10/20 [00:06<00:03,  2.59it/s] 55%|█████▌    | 11/20 [00:07<00:03,  2.67it/s] 60%|██████    | 12/20 [00:07<00:02,  2.73it/s] 65%|██████▌   | 13/20 [00:07<00:02,  2.78it/s] 70%|███████   | 14/20 [00:08<00:02,  2.81it/s] 75%|███████▌  | 15/20 [00:08<00:01,  2.83it/s] 80%|████████  | 16/20 [00:08<00:01,  2.85it/s] 85%|████████▌ | 17/20 [00:09<00:01,  2.86it/s] 90%|█████████ | 18/20 [00:09<00:00,  2.87it/s] 95%|█████████▌| 19/20 [00:09<00:00,  2.87it/s]100%|██████████| 20/20 [00:10<00:00,  2.88it/s]100%|██████████| 20/20 [00:10<00:00,  1.97it/s]
+init view generation time: 14.603446960449219
+0it [00:00, ?it/s]26it [00:00, 2604.16it/s]
+2026-07-03 12:01:58.443 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /mnt/c/Users/silvajo/LatentWardrobe/outputs/shakedown_20260703/superhero_costume/member_00/stage1/res-0/mesh.obj with: vertices:(4199, 3) uv:(4847, 2) faces:(7888, 3)
+init DR time: 0.8485574722290039
+View inpainting ...
+Project inpaint view [(5, 6)]...
+0it [00:00, ?it/s]1it [00:01,  1.35s/it]1it [00:01,  1.35s/it]
+0it [00:00, ?it/s]
+  0%|          | 0/20 [00:00<?, ?it/s][A
+  5%|▌         | 1/20 [00:01<00:25,  1.34s/it][A
+ 10%|█         | 2/20 [00:01<00:14,  1.23it/s][A
+ 15%|█▌        | 3/20 [00:02<00:10,  1.55it/s][A
+ 20%|██        | 4/20 [00:02<00:09,  1.76it/s][A
+ 25%|██▌       | 5/20 [00:03<00:07,  1.92it/s][A
+ 30%|███       | 6/20 [00:03<00:06,  2.02it/s][A
+ 35%|███▌      | 7/20 [00:04<00:06,  2.08it/s][A
+ 40%|████      | 8/20 [00:04<00:05,  2.13it/s][A
+ 45%|████▌     | 9/20 [00:04<00:05,  2.16it/s][A
+ 50%|█████     | 10/20 [00:05<00:04,  2.19it/s][A
+ 55%|█████▌    | 11/20 [00:05<00:04,  2.20it/s][A
+ 60%|██████    | 12/20 [00:06<00:03,  2.21it/s][A
+ 65%|██████▌   | 13/20 [00:06<00:03,  2.22it/s][A
+ 70%|███████   | 14/20 [00:07<00:02,  2.23it/s][A
+ 75%|███████▌  | 15/20 [00:07<00:02,  2.23it/s][A
+ 80%|████████  | 16/20 [00:08<00:01,  2.23it/s][A
+ 85%|████████▌ | 17/20 [00:08<00:01,  2.23it/s][A
+ 90%|█████████ | 18/20 [00:08<00:00,  2.23it/s][A
+ 95%|█████████▌| 19/20 [00:09<00:00,  2.23it/s][A
+100%|██████████| 20/20 [00:09<00:00,  2.24it/s][A100%|██████████| 20/20 [00:09<00:00,  2.04it/s]
+1it [00:12, 12.15s/it]1it [00:12, 12.15s/it]
+inpaint view generation time: 13.512755393981934
+0it [00:00, ?it/s]26it [00:00, 3829.07it/s]
+2026-07-03 12:02:12.825 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /mnt/c/Users/silvajo/LatentWardrobe/outputs/shakedown_20260703/superhero_costume/member_00/stage1/res-0/mesh.obj with: vertices:(4199, 3) uv:(4847, 2) faces:(7888, 3)
+inpaint DR time: 0.868577241897583
+View inpainting ...
+Project inpaint view [(24, 25)]...
+0it [00:00, ?it/s]1it [00:01,  1.20s/it]1it [00:01,  1.20s/it]
+0it [00:00, ?it/s]
+  0%|          | 0/20 [00:00<?, ?it/s][A
+  5%|▌         | 1/20 [00:01<00:25,  1.36s/it][A
+ 10%|█         | 2/20 [00:01<00:14,  1.22it/s][A
+ 15%|█▌        | 3/20 [00:02<00:11,  1.53it/s][A
+ 20%|██        | 4/20 [00:02<00:09,  1.75it/s][A
+ 25%|██▌       | 5/20 [00:03<00:07,  1.90it/s][A
+ 30%|███       | 6/20 [00:03<00:06,  2.00it/s][A
+ 35%|███▌      | 7/20 [00:04<00:06,  2.07it/s][A
+ 40%|████      | 8/20 [00:04<00:05,  2.12it/s][A
+ 45%|████▌     | 9/20 [00:04<00:05,  2.15it/s][A
+ 50%|█████     | 10/20 [00:05<00:04,  2.17it/s][A
+ 55%|█████▌    | 11/20 [00:05<00:04,  2.19it/s][A
+ 60%|██████    | 12/20 [00:06<00:03,  2.20it/s][A
+ 65%|██████▌   | 13/20 [00:06<00:03,  2.21it/s][A
+ 70%|███████   | 14/20 [00:07<00:02,  2.21it/s][A
+ 75%|███████▌  | 15/20 [00:07<00:02,  2.21it/s][A
+ 80%|████████  | 16/20 [00:08<00:01,  2.22it/s][A
+ 85%|████████▌ | 17/20 [00:08<00:01,  2.22it/s][A
+ 90%|█████████ | 18/20 [00:08<00:00,  2.22it/s][A
+ 95%|█████████▌| 19/20 [00:09<00:00,  2.22it/s][A
+100%|██████████| 20/20 [00:09<00:00,  2.22it/s][A100%|██████████| 20/20 [00:09<00:00,  2.02it/s]
+1it [00:12, 12.08s/it]1it [00:12, 12.08s/it]
+inpaint view generation time: 13.283637285232544
+0it [00:00, ?it/s]26it [00:00, 3698.68it/s]
+2026-07-03 12:02:26.988 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /mnt/c/Users/silvajo/LatentWardrobe/outputs/shakedown_20260703/superhero_costume/member_00/stage1/res-0/mesh.obj with: vertices:(4199, 3) uv:(4847, 2) faces:(7888, 3)
+inpaint DR time: 0.8847160339355469
+total processed time:44.0031476020813
+Evalating textured mesh~: 0it [00:00, ?it/s]Evalating textured mesh~: 2it [00:00, 14.46it/s]Evalating textured mesh~: 4it [00:00, 15.32it/s]Evalating textured mesh~: 6it [00:00, 15.90it/s]Evalating textured mesh~: 8it [00:00, 15.68it/s]Evalating textured mesh~: 10it [00:00, 16.06it/s]Evalating textured mesh~: 12it [00:00, 16.22it/s]Evalating textured mesh~: 14it [00:00, 16.23it/s]Evalating textured mesh~: 16it [00:00, 16.27it/s]Evalating textured mesh~: 18it [00:01, 15.99it/s]Evalating textured mesh~: 20it [00:01, 15.52it/s]Evalating textured mesh~: 22it [00:01, 15.73it/s]Evalating textured mesh~: 24it [00:01, 15.77it/s]Evalating textured mesh~: 26it [00:01, 15.86it/s]Evalating textured mesh~: 28it [00:01, 15.91it/s]Evalating textured mesh~: 30it [00:01, 15.95it/s]Evalating textured mesh~: 32it [00:02, 16.01it/s]Evalating textured mesh~: 34it [00:02, 16.07it/s]Evalating textured mesh~: 36it [00:02, 16.08it/s]Evalating textured mesh~: 38it [00:02, 15.97it/s]Evalating textured mesh~: 40it [00:02, 16.06it/s]Evalating textured mesh~: 42it [00:02, 15.75it/s]Evalating textured mesh~: 44it [00:02, 15.90it/s]Evalating textured mesh~: 46it [00:02, 15.93it/s]Evalating textured mesh~: 48it [00:03, 15.96it/s]Evalating textured mesh~: 50it [00:03, 15.92it/s]Evalating textured mesh~: 52it [00:03, 15.93it/s]Evalating textured mesh~: 54it [00:03, 15.91it/s]Evalating textured mesh~: 56it [00:03, 15.96it/s]Evalating textured mesh~: 58it [00:03, 15.99it/s]Evalating textured mesh~: 60it [00:03, 15.89it/s]Evalating textured mesh~: 62it [00:03, 15.87it/s]Evalating textured mesh~: 64it [00:04, 15.75it/s]Evalating textured mesh~: 66it [00:04, 15.57it/s]Evalating textured mesh~: 68it [00:04, 15.54it/s]Evalating textured mesh~: 70it [00:04, 15.53it/s]Evalating textured mesh~: 72it [00:04, 15.53it/s]Evalating textured mesh~: 74it [00:04, 15.02it/s]Evalating textured mesh~: 76it [00:04, 14.93it/s]Evalating textured mesh~: 78it [00:05, 13.59it/s]Evalating textured mesh~: 80it [00:05, 13.88it/s]Evalating textured mesh~: 82it [00:05, 13.69it/s]Evalating textured mesh~: 84it [00:05, 14.03it/s]Evalating textured mesh~: 86it [00:05, 12.91it/s]Evalating textured mesh~: 88it [00:05, 13.30it/s]Evalating textured mesh~: 90it [00:05, 13.07it/s]Evalating textured mesh~: 92it [00:06, 13.30it/s]Evalating textured mesh~: 94it [00:06, 13.41it/s]Evalating textured mesh~: 96it [00:06, 13.45it/s]Evalating textured mesh~: 98it [00:06, 13.56it/s]Evalating textured mesh~: 100it [00:06, 12.44it/s]Evalating textured mesh~: 100it [00:06, 14.97it/s]
+Texture diffusion
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  14%|█▍        | 1/7 [00:01<00:09,  1.57s/it]Loading pipeline components...:  29%|██▊       | 2/7 [00:03<00:08,  1.73s/it]Loading pipeline components...:  71%|███████▏  | 5/7 [00:03<00:01,  1.93it/s]`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+Loading pipeline components...: 100%|██████████| 7/7 [00:18<00:00,  3.33s/it]Loading pipeline components...: 100%|██████████| 7/7 [00:18<00:00,  2.63s/it]
+vae/diffusion_pytorch_model.safetensors not found
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  14%|█▍        | 1/7 [00:00<00:02,  2.93it/s]Loading pipeline components...:  29%|██▊       | 2/7 [00:01<00:02,  1.85it/s]/root/miniconda3/envs/paint3d/lib/python3.8/site-packages/transformers/models/clip/feature_extraction_clip.py:28: FutureWarning: The class CLIPFeatureExtractor is deprecated and will be removed in version 5 of Transformers. Please use CLIPImageProcessor instead.
+  warnings.warn(
+Loading pipeline components...:  86%|████████▌ | 6/7 [00:02<00:00,  2.09it/s]Loading pipeline components...: 100%|██████████| 7/7 [00:05<00:00,  1.02s/it]Loading pipeline components...: 100%|██████████| 7/7 [00:05<00:00,  1.19it/s]
+rendering texture and position map
+  0%|          | 0/20 [00:00<?, ?it/s]  5%|▌         | 1/20 [00:46<14:49, 46.80s/it] 10%|█         | 2/20 [01:19<11:31, 38.42s/it] 15%|█▌        | 3/20 [01:51<10:05, 35.64s/it] 20%|██        | 4/20 [02:24<09:09, 34.36s/it] 25%|██▌       | 5/20 [02:56<08:27, 33.80s/it] 30%|███       | 6/20 [03:30<07:51, 33.69s/it] 35%|███▌      | 7/20 [04:03<07:17, 33.64s/it] 40%|████      | 8/20 [04:36<06:41, 33.43s/it] 45%|████▌     | 9/20 [05:12<06:15, 34.16s/it] 50%|█████     | 10/20 [05:45<05:37, 33.79s/it]

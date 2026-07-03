@@ -200,8 +200,21 @@ def slugify(text):
     return re.sub(r"[^a-z0-9]+", "_", text.lower()).strip("_")[:60]
 
 
+def preflight():
+    """Fail loudly at startup on anything that guarantees downstream failure."""
+    for p in (PAINT3D_DIR, STAGE1_TEMPLATE, STAGE2_TEMPLATE):
+        if not p.exists():
+            sys.exit(f"PREFLIGHT FAILED: {p} does not exist")
+
+
 def main():
     args = parse_args()
+    # Paint3D stages run as subprocesses with cwd=PAINT3D_DIR, so every path
+    # handed to them (configs, meshes, outdirs) must be absolute — relative
+    # paths would resolve inside external/paint3d and fail or misplace output.
+    args.outdir = args.outdir.resolve()
+    args.mesh_dir = args.mesh_dir.resolve()
+    preflight()
     lib = load_library(args.mesh_dir)
     print(f"mesh library: {len(lib['tops'])} tops, {len(lib['bottoms'])} bottoms, "
           f"{len(lib['fullbody'])} fullbody")
@@ -209,6 +222,10 @@ def main():
           + (" [DRY RUN]" if args.dry_run else ""))
 
     total_failures = 0
+    completed_any = False  # circuit breaker: if the very first member fails, the
+    # problem is almost certainly systemic (env/config/code), not one bad garment
+    # — abort the whole batch immediately instead of burning hours on 100
+    # identical failures that nobody is watching.
     for prompt in args.prompts:
         pdir = args.outdir / slugify(prompt)
         pdir.mkdir(parents=True, exist_ok=True)
@@ -241,6 +258,9 @@ def main():
                 m["outfit"] = {"status": f"MERGE FAILED: {e}"}
                 total_failures += 1
                 manifest_path.write_text(json.dumps(manifest, indent=2))
+                if not completed_any:
+                    sys.exit("ABORTING BATCH: the very first member failed (outfit merge) "
+                             "— treating as systemic. Fix and rerun with --resume.")
                 continue
             m["outfit"] = {"status": "ok", "path": str(outfit_path)}
 
@@ -261,6 +281,9 @@ def main():
                 if rc != 0:
                     total_failures += 1
                     manifest_path.write_text(json.dumps(manifest, indent=2))
+                    if not completed_any:
+                        sys.exit("ABORTING BATCH: the very first member failed at stage 1 "
+                                 "— treating as systemic. Fix and rerun with --resume.")
                     continue
             m["stage1"]["final_texture"] = str(s1_final)
 
@@ -276,9 +299,14 @@ def main():
                 m["stage2"] = {"status": "ok" if rc == 0 else f"FAILED rc={rc}", "seconds": secs}
                 if rc != 0:
                     total_failures += 1
-                else:
-                    m["stage2"]["final_texture"] = str(s2_final)
+                    manifest_path.write_text(json.dumps(manifest, indent=2))
+                    if not completed_any:
+                        sys.exit("ABORTING BATCH: the very first member failed at stage 2 "
+                                 "— treating as systemic. Fix and rerun with --resume.")
+                    continue
+                m["stage2"]["final_texture"] = str(s2_final)
 
+            completed_any = True
             manifest_path.write_text(json.dumps(manifest, indent=2))
 
     print(f"\ndone. failures: {total_failures}")

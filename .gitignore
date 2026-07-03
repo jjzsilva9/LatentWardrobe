@@ -1,0 +1,18 @@
+# Bulk generated outputs are NOT committed: ~26MB/member (a 180-member batch
+# is ~4.7GB) and everything is regenerable bit-for-bit from the committed
+# manifests (seeds + garments + prompts) + code + mesh library.
+# Only the small experimental record is kept in git; back up full outputs/
+# to OneDrive if a batch is worth preserving without regeneration.
+outputs/**
+!outputs/**/
+!outputs/**/manifest.json
+!outputs/**/metrics.json
+!outputs/**/run.log
+!outputs/**/README.md
+
+# MakeHuman source packs: only the staged .obj files in assets/meshes are
+# needed (see assets/meshes/README.md); raw packs can be re-downloaded.
+assets/makehuman_src/
+
+__pycache__/
+*.pyc

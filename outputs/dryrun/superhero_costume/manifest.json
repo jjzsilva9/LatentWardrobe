@@ -1,0 +1,87 @@
+{
+  "crowd_prompt": "superhero costume",
+  "master_seed": 0,
+  "fullbody_prob": 0.25,
+  "stage1_prompt_template": "turn around, {prompt}",
+  "stage2_prompt_templates": {
+    "inpaint": "UV map, {prompt}",
+    "img2img": "UV map, {prompt}, high quality, best quality"
+  },
+  "members": [
+    {
+      "member": "member_00",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/tops/offshoulder_top.obj",
+        "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/bottoms/f_trousers_01.obj"
+      ],
+      "sd_seed": 764079951,
+      "outfit": {
+        "status": "ok",
+        "path": "outputs/dryrun/superhero_costume/member_00/outfit.obj"
+      }
+    },
+    {
+      "member": "member_01",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/tops/m_wifebeater_elv1.obj",
+        "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/bottoms/mens_trouser_short_elv1crf.obj"
+      ],
+      "sd_seed": 742027591,
+      "outfit": {
+        "status": "ok",
+        "path": "outputs/dryrun/superhero_costume/member_01/outfit.obj"
+      }
+    },
+    {
+      "member": "member_02",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/fullbody/elvs_lady_apron1.obj"
+      ],
+      "sd_seed": 2132807969,
+      "outfit": {
+        "status": "ok",
+        "path": "outputs/dryrun/superhero_costume/member_02/outfit.obj"
+      }
+    },
+    {
+      "member": "member_03",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/tops/vintagetop.obj",
+        "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/bottoms/low_mini_skirt.obj"
+      ],
+      "sd_seed": 1116573218,
+      "outfit": {
+        "status": "ok",
+        "path": "outputs/dryrun/superhero_costume/member_03/outfit.obj"
+      }
+    },
+    {
+      "member": "member_04",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/fullbody/medievaldress.obj"
+      ],
+      "sd_seed": 1881135321,
+      "outfit": {
+        "status": "ok",
+        "path": "outputs/dryrun/superhero_costume/member_04/outfit.obj"
+      }
+    },
+    {
+      "member": "member_05",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/fullbody/f_dress_04.obj"
+      ],
+      "sd_seed": 1897282695,
+      "outfit": {
+        "status": "ok",
+        "path": "outputs/dryrun/superhero_costume/member_05/outfit.obj"
+      }
+    }
+  ]
+}
