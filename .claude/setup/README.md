@@ -1,6 +1,15 @@
 # Paint3D environment setup (WSL2)
 
-Reproducible notes for recreating the Paint3D dev environment on this lab machine after a wipe. See [[project-lab-environment]] context (in Claude's memory) for why this exists — this machine has already lost setup state once.
+Reproducible notes for recreating the Paint3D dev environment on this lab machine after a wipe. See [[project-lab-environment]] context (in Claude's memory) for why this exists — this machine has already lost setup state once. **It happened again 2026-07-03** (WSL distro + conda env + model caches all lost; host NVIDIA driver and WSL platform survived). The repo now lives on the U: network share (`\\tholospg.itserv.scss.tcd.ie\pgrad\silvajo`, i.e. `U:\My Documents\LatentWardrobe`), which survives wipes — recovery is: reinstall a distro, rerun the install script, re-download model weights on first run.
+
+## Repo on U: — two extra gotchas (post-wipe 2026-07-03)
+
+1. **WSL does not automount network drives.** Every WSL entry point must mount U: first:
+   ```bash
+   mkdir -p /mnt/u; mountpoint -q /mnt/u || mount -t drvfs U: /mnt/u
+   ```
+   The repo is then at `/mnt/u/My Documents/LatentWardrobe` (space in the path — always quote it in shell). The run scripts' launch one-liners include this mount guard.
+2. **CRLF line endings.** Windows git here has `core.autocrlf=true`, so a fresh checkout gave every `.sh` CRLF endings — bash in WSL fails with `set: pipefail: invalid option name`. Fixed permanently via `.gitattributes` (`*.sh text eol=lf`); if a script ever fails like that again, `sed -i 's/\r$//' <file>`.
 
 ## Why WSL2
 
@@ -16,19 +25,13 @@ Paint3D's own stack (`external/paint3d/environment.yaml`) is old and Linux-orien
   ```
   Should print the GPU. If this fails, the issue is host driver / WSL kernel, not this repo's setup — fix that first.
 
-As of the last full setup (2026-07-02), this machine's WSL Ubuntu distro's default user is `root`, and the GPU is an NVIDIA RTX A4000 (host driver 581.15, CUDA 13.0 capable). The conda env only needs CUDA 11.3 at the toolkit level — the newer host driver is backward compatible.
+As of the 2026-07-03 rebuild: distro is **Ubuntu 26.04 LTS** installed via plain `wsl --install Ubuntu`, default user `root`; GPU is an NVIDIA RTX A4000 (host driver 581.15, CUDA 13.0 capable). The conda env only needs CUDA 11.3 at the toolkit level — the newer host driver is backward compatible. Note `nvidia-smi` inside WSL lives at `/usr/lib/wsl/lib/nvidia-smi` (not necessarily on PATH with `wsl -e`).
 
 ## Running the setup
 
-From inside WSL:
-```bash
-cd /mnt/c/Users/silvajo/LatentWardrobe   # or wherever the repo lives
-bash .claude/setup/install_paint3d_env.sh
-```
-
-Or from Windows PowerShell:
+From Windows PowerShell (mounts U: first, runs as root):
 ```powershell
-wsl -e bash -c "cd /mnt/c/Users/silvajo/LatentWardrobe && bash .claude/setup/install_paint3d_env.sh"
+wsl -u root bash -c 'mkdir -p /mnt/u; mountpoint -q /mnt/u || mount -t drvfs U: /mnt/u; cd "/mnt/u/My Documents/LatentWardrobe" && bash .claude/setup/install_paint3d_env.sh'
 ```
 
 Takes a while — it's downloading ~2GB+ of PyTorch/CUDA packages plus kaolin/pytorch3d wheels.

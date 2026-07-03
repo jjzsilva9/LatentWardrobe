@@ -1,0 +1,40 @@
+{
+  "crowd_prompt": "medieval villagers",
+  "master_seed": 0,
+  "fullbody_prob": 0.25,
+  "mesh_sampling": "uniform",
+  "tau": null,
+  "stage1_prompt_template": "turn around, {prompt}",
+  "stage2_prompt_templates": {
+    "inpaint": "UV map, {prompt}",
+    "img2img": "UV map, {prompt}, high quality, best quality"
+  },
+  "members": [
+    {
+      "member": "member_00",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/mens_shirt_untuck_elvbhp1f.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/elvs_disco_pant1.obj"
+      ],
+      "sd_seed": 1343260028,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/dryrun_postwipe/medieval_villagers/member_00/outfit.obj"
+      }
+    },
+    {
+      "member": "member_01",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/deathnote.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/low_mini_skirt.obj"
+      ],
+      "sd_seed": 681064887,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/dryrun_postwipe/medieval_villagers/member_01/outfit.obj"
+      }
+    }
+  ]
+}

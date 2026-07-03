@@ -43,8 +43,11 @@ conda activate paint3d
 # 4. System packages missing from this minimal WSL Ubuntu image.
 #    libgomp1: OpenMP runtime torch's compiled libs link against.
 #    patchelf: used below to work around the execstack issue.
+#    libgl1 + libglib2.0-0: runtime libs opencv-python (cv2) dlopens; a fresh
+#    WSL Ubuntu image may not ship them (import fails with
+#    "libGL.so.1: cannot open shared object file" otherwise).
 $SUDO apt-get update -qq
-$SUDO apt-get install -y -qq libgomp1 patchelf
+$SUDO apt-get install -y -qq libgomp1 patchelf libgl1 libglib2.0-0
 
 # 5. Some WSL Ubuntu builds have hardened glibc/kernel that refuse to load
 #    old (2022-era) shared libs requesting an executable stack. PyTorch
@@ -70,7 +73,25 @@ pip install --no-cache-dir pytorch3d -f https://dl.fbaipublicfiles.com/pytorch3d
 #    0.25.0 still imports. Pin to a version from the same era.
 pip install 'huggingface_hub==0.20.3'
 
-# 9. Verify
+# 8b. lpips: needed by scripts/evaluate_crowd.py (NOT part of Paint3D's own
+#     environment.yaml -- was installed by hand pre-wipe and lost; keep it
+#     here so the eval harness survives rebuilds).
+pip install 'lpips==0.1.4'
+
+# 9. WSL git: identity + Windows credential passthrough. The run scripts'
+#    auto-publish loop (commit/push of results/ to GitHub while a batch runs)
+#    uses WSL git. Use git-credential-wincred.exe (tiny C helper reading the
+#    Windows credential vault directly) -- NOT git-credential-manager.exe,
+#    whose .NET PATH-probing crashes under WSL interop with
+#    "System.ArgumentException: Illegal characters in path" (hit 2026-07-03).
+#    The vault credential itself is created by any normal interactive
+#    Windows-git push; after a wipe, one manual push from PowerShell restores
+#    it and the automation works again.
+git config --global user.name jjzsilva9
+git config --global user.email jjzsilva9@gmail.com
+git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-wincred.exe"
+
+# 10. Verify
 python -c "
 import torch, kaolin, pytorch3d
 print('torch', torch.__version__, 'cuda available:', torch.cuda.is_available())

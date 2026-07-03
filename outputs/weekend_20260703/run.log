@@ -1,0 +1,12 @@
+mesh library: 43 tops, 41 bottoms, 59 fullbody
+plan: 1 prompt(s) x 30 members
+
+=== [medieval villagers] member_00: mens_shirt_untuck_elvbhp1f+elvs_disco_pant1 seed=1343260028 ===
+Depth-based 3D Texturing
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  29%|██▊       | 2/7 [00:00<00:00,  7.29it/s]Loading pipeline components...:  43%|████▎     | 3/7 [00:02<00:03,  1.13it/s]Loading pipeline components...:  71%|███████▏  | 5/7 [00:03<00:01,  1.37it/s]Loading pipeline components...:  86%|████████▌ | 6/7 [00:03<00:00,  1.78it/s]`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+Loading pipeline components...: 100%|██████████| 7/7 [00:12<00:00,  2.95s/it]Loading pipeline components...: 100%|██████████| 7/7 [00:12<00:00,  1.78s/it]
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  29%|██▊       | 2/7 [00:02<00:06,  1.26s/it]Loading pipeline components...:  43%|████▎     | 3/7 [00:19<00:31,  7.79s/it]Loading pipeline components...:  71%|███████▏  | 5/7 [00:21<00:08,  4.07s/it]Loading pipeline components...:  86%|████████▌ | 6/7 [00:21<00:02,  2.97s/it]`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+Loading pipeline components...: 100%|██████████| 7/7 [00:24<00:00,  3.07s/it]Loading pipeline components...: 100%|██████████| 7/7 [00:24<00:00,  3.54s/it]
+Project init view [0, 23]...
+Generating init view...
+  0%|          | 0/20 [00:00<?, ?it/s]  5%|▌         | 1/20 [00:09<02:59,  9.45s/it] 10%|█         | 2/20 [00:09<01:13,  4.10s/it] 15%|█▌        | 3/20 [00:10<00:40,  2.39s/it] 20%|██        | 4/20 [00:10<00:25,  1.59s/it] 25%|██▌       | 5/20 [00:10<00:17,  1.14s/it] 30%|███       | 6/20 [00:11<00:12,  1.15it/s] 35%|███▌      | 7/20 [00:11<00:09,  1.43it/s] 40%|████      | 8/20 [00:11<00:07,  1.69it/s] 45%|████▌     | 9/20 [00:12<00:06,  1.81it/s] 50%|█████     | 10/20 [00:12<00:05,  1.83it/s] 55%|█████▌    | 11/20 [00:13<00:05,  1.80it/s] 60%|██████    | 12/20 [00:14<00:04,  1.79it/s] 65%|██████▌   | 13/20 [00:14<00:03,  1.76it/s]

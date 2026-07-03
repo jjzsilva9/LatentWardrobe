@@ -1,0 +1,276 @@
+{
+  "crowd_prompt": "medieval villagers",
+  "master_seed": 0,
+  "fullbody_prob": 0.25,
+  "mesh_sampling": "uniform",
+  "tau": null,
+  "stage1_prompt_template": "turn around, {prompt}",
+  "stage2_prompt_templates": {
+    "inpaint": "UV map, {prompt}",
+    "img2img": "UV map, {prompt}, high quality, best quality"
+  },
+  "members": [
+    {
+      "member": "member_00",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/mens_shirt_untuck_elvbhp1f.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/elvs_disco_pant1.obj"
+      ],
+      "sd_seed": 1343260028
+    },
+    {
+      "member": "member_01",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/deathnote.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/low_mini_skirt.obj"
+      ],
+      "sd_seed": 681064887
+    },
+    {
+      "member": "member_02",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/deathnote.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/elvs_gored_elephantpant1.obj"
+      ],
+      "sd_seed": 944131111
+    },
+    {
+      "member": "member_03",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/sleevelesscroptop.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/retro_girlyshort1.obj"
+      ],
+      "sd_seed": 286986189
+    },
+    {
+      "member": "member_04",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/figure_skating_dress.obj"
+      ],
+      "sd_seed": 1731852346
+    },
+    {
+      "member": "member_05",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/elvs_goddess_dress2.obj"
+      ],
+      "sd_seed": 1021840900
+    },
+    {
+      "member": "member_06",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/mens_shirt_tie_tuck_elv1f.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/skirt_full_lace_ruffle.obj"
+      ],
+      "sd_seed": 2012382780
+    },
+    {
+      "member": "member_07",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/elvs_mini_halterdress.obj"
+      ],
+      "sd_seed": 1150065459
+    },
+    {
+      "member": "member_08",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/mens_shirt_tie_tuck_elv1f.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/shortjeans.obj"
+      ],
+      "sd_seed": 944444196
+    },
+    {
+      "member": "member_09",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/highneckcroptop.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/pleated_miniskirt.obj"
+      ],
+      "sd_seed": 1530507128
+    },
+    {
+      "member": "member_10",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/camisole_top.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/mens_elv_jeans2slf.obj"
+      ],
+      "sd_seed": 1121393106
+    },
+    {
+      "member": "member_11",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/tubetop.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/tier_skirt.obj"
+      ],
+      "sd_seed": 101450184
+    },
+    {
+      "member": "member_12",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/rescueteam_jacket_male.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/harem_pants.obj"
+      ],
+      "sd_seed": 64151105
+    },
+    {
+      "member": "member_13",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/qipao.obj"
+      ],
+      "sd_seed": 207541633
+    },
+    {
+      "member": "member_14",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/elvs_goddess_dress5.obj"
+      ],
+      "sd_seed": 1882895458
+    },
+    {
+      "member": "member_15",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/sweater_fisherman.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/harvey_pskirt01.obj"
+      ],
+      "sd_seed": 1866415869
+    },
+    {
+      "member": "member_16",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/sleeveless.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/harvey_pskirt01.obj"
+      ],
+      "sd_seed": 2014919516
+    },
+    {
+      "member": "member_17",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/elvs_goddessdress8.obj"
+      ],
+      "sd_seed": 1322388848
+    },
+    {
+      "member": "member_18",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/tieredhalterdress1.obj"
+      ],
+      "sd_seed": 601750262
+    },
+    {
+      "member": "member_19",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/babydoll_elvruff1a.obj"
+      ],
+      "sd_seed": 1873088924
+    },
+    {
+      "member": "member_20",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/striped_shirt.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/namfashionskirt.obj"
+      ],
+      "sd_seed": 2000578843
+    },
+    {
+      "member": "member_21",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/turtleneck_halter.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/male-classic-jeans.obj"
+      ],
+      "sd_seed": 43343111
+    },
+    {
+      "member": "member_22",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/mens_teeshirt1j.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/polkadotskirt.obj"
+      ],
+      "sd_seed": 205635053
+    },
+    {
+      "member": "member_23",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/striped_shirt.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/asym_skirt3.obj"
+      ],
+      "sd_seed": 146339354
+    },
+    {
+      "member": "member_24",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/ladieshoodiedown1.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/harem_pants.obj"
+      ],
+      "sd_seed": 1398487221
+    },
+    {
+      "member": "member_25",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/deathnote.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/retro_girlyshort1.obj"
+      ],
+      "sd_seed": 1490620720
+    },
+    {
+      "member": "member_26",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/mens_tanks_elv1f.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/elvs_disco_mini1.obj"
+      ],
+      "sd_seed": 1825683723
+    },
+    {
+      "member": "member_27",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/mens_tanks_elvmuscle1f.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/m_trousers_01.obj"
+      ],
+      "sd_seed": 1955468890
+    },
+    {
+      "member": "member_28",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/knitted_sweater_02.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/mens_trouser_f_elv1.obj"
+      ],
+      "sd_seed": 551827975
+    },
+    {
+      "member": "member_29",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/vintagetop.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/blackminiskirt.obj"
+      ],
+      "sd_seed": 304812803
+    }
+  ]
+}

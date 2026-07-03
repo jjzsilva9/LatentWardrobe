@@ -1,22 +1,26 @@
 #!/bin/bash
-# Overnight batch 2026-07-03: baseline vs Method 1a (CLIP mesh sampling).
-# 3 themes x 2 arms x N=30 = 180 members, interleaved theme-by-theme so a
-# partial night still yields complete baseline-vs-clip pairs per theme.
-# Expected ~20-24h at ~7-8 min/member: --resume makes spillover into the next
-# day safe (relaunch the same command; finished members are skipped).
+# Over-WEEKEND batch (launched Fri 2026-07-03 evening): the dissertation's
+# first real method comparison. Method 1 (baseline, uniform mesh sampling) vs
+# Method 2 (CLIP mesh sampling, tau=0.02), 3 themes x N=30 x 2 arms = 180
+# members at ~24 min/member on the A4000 => ~72h, i.e. Fri evening -> Mon.
+# Interleaved theme-by-theme so a partial weekend still yields complete
+# baseline-vs-clip pairs per theme; --resume makes stopping/relaunching safe
+# at any point (finished members are skipped).
 #
-# Launch from Windows PowerShell with a VISIBLE console window (full live log,
-# also tee'd to run.log):
-#   Start-Process wsl.exe -ArgumentList '-u','root','-e','bash','/mnt/c/Users/silvajo/LatentWardrobe/scripts/run_overnight.sh'
+# Launch from Windows PowerShell with a VISIBLE console window (closing the
+# window kills the run; do NOT use `nohup ... &` -- WSL2 tears down the VM
+# when the launching wsl.exe exits, see outputs/overnight_20260702/README.md):
 #
-# Closing that window kills the run. Do NOT launch via `wsl -e bash -c
-# "nohup ... &"` -- WSL2 kills the VM when the launching wsl.exe exits.
+#   Start-Process wsl.exe -ArgumentList '-u root bash -c "mkdir -p /mnt/u; mountpoint -q /mnt/u || mount -t drvfs U: /mnt/u; bash \"/mnt/u/My Documents/LatentWardrobe/scripts/run_overnight.sh\""'
+#
+# NOTE: no `set -u` here -- conda's activate scripts reference unset vars and
+# would kill the shell before anything is logged (learned 2026-07-03).
 source /root/miniconda3/etc/profile.d/conda.sh
 conda activate paint3d
 export LD_LIBRARY_PATH=/usr/lib/wsl/lib:$LD_LIBRARY_PATH
-cd /mnt/c/Users/silvajo/LatentWardrobe
+cd "/mnt/u/My Documents/LatentWardrobe"
 
-OUT=outputs/overnight_20260703
+OUT=outputs/weekend_20260703
 mkdir -p "$OUT"
 N=30
 TAU=0.02
@@ -33,4 +37,4 @@ for prompt in 'medieval villagers' 'business casual office workers' 'aliens on t
   run clip_tau002  "$prompt" --mesh-sampling clip --tau "$TAU"
 done
 
-echo "OVERNIGHT BATCH COMPLETE" | tee -a "$OUT/run.log"
+echo "WEEKEND BATCH COMPLETE" | tee -a "$OUT/run.log"

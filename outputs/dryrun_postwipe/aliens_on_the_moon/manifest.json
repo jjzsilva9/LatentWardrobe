@@ -1,0 +1,39 @@
+{
+  "crowd_prompt": "aliens on the moon",
+  "master_seed": 0,
+  "fullbody_prob": 0.25,
+  "mesh_sampling": "uniform",
+  "tau": null,
+  "stage1_prompt_template": "turn around, {prompt}",
+  "stage2_prompt_templates": {
+    "inpaint": "UV map, {prompt}",
+    "img2img": "UV map, {prompt}, high quality, best quality"
+  },
+  "members": [
+    {
+      "member": "member_00",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/suit_double_breasted.obj"
+      ],
+      "sd_seed": 742658550,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/dryrun_postwipe/aliens_on_the_moon/member_00/outfit.obj"
+      }
+    },
+    {
+      "member": "member_01",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/highneckcroptop.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/m_trousers_02.obj"
+      ],
+      "sd_seed": 1754303393,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/dryrun_postwipe/aliens_on_the_moon/member_01/outfit.obj"
+      }
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+# Shell scripts run inside WSL — they must stay LF even when the repo is
+# checked out by Windows git with core.autocrlf=true (bash chokes on CRLF:
+# "set: pipefail: invalid option name"). Learned post-wipe 2026-07-03.
+*.sh text eol=lf
