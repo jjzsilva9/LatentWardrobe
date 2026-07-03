@@ -1,0 +1,3079 @@
+mesh library: 43 tops, 41 bottoms, 59 fullbody
+plan: 2 prompt(s) x 2 members
+
+=== [medieval villagers] member_00: mens_shirt_untuck_elvbhp1f+elvs_disco_pant1 seed=1343260028 ===
+The cache for model files in Transformers v4.22.0 has been updated. Migrating your old cache. This is a one-time only operation. You can interrupt this and resume the migration later on by calling `transformers.utils.move_cache()`.
+0it [00:00, ?it/s]0it [00:00, ?it/s]
+Depth-based 3D Texturing
+config.json:   0%|          | 0.00/945 [00:00<?, ?B/s]config.json: 100%|██████████| 945/945 [00:00<00:00, 857kB/s]
+diffusion_pytorch_model.safetensors:   0%|          | 0.00/1.45G [00:00<?, ?B/s]diffusion_pytorch_model.safetensors:   1%|          | 10.5M/1.45G [00:00<01:59, 12.1MB/s]diffusion_pytorch_model.safetensors:   1%|▏         | 21.0M/1.45G [00:01<01:04, 22.2MB/s]diffusion_pytorch_model.safetensors:   2%|▏         | 31.5M/1.45G [00:01<00:55, 25.4MB/s]diffusion_pytorch_model.safetensors:   3%|▎         | 41.9M/1.45G [00:01<00:49, 28.5MB/s]diffusion_pytorch_model.safetensors:   4%|▎         | 52.4M/1.45G [00:02<00:46, 29.7MB/s]diffusion_pytorch_model.safetensors:   4%|▍         | 62.9M/1.45G [00:02<00:44, 30.8MB/s]diffusion_pytorch_model.safetensors:   5%|▌         | 73.4M/1.45G [00:02<00:50, 27.1MB/s]diffusion_pytorch_model.safetensors:   6%|▌         | 83.9M/1.45G [00:03<00:47, 28.5MB/s]diffusion_pytorch_model.safetensors:   7%|▋         | 94.4M/1.45G [00:03<00:48, 27.9MB/s]diffusion_pytorch_model.safetensors:   7%|▋         | 105M/1.45G [00:03<00:47, 28.3MB/s] diffusion_pytorch_model.safetensors:   8%|▊         | 115M/1.45G [00:04<00:45, 29.0MB/s]diffusion_pytorch_model.safetensors:   9%|▊         | 126M/1.45G [00:04<00:44, 29.8MB/s]diffusion_pytorch_model.safetensors:   9%|▉         | 136M/1.45G [00:05<00:47, 27.8MB/s]diffusion_pytorch_model.safetensors:  10%|█         | 147M/1.45G [00:05<00:44, 28.9MB/s]diffusion_pytorch_model.safetensors:  11%|█         | 157M/1.45G [00:05<00:43, 29.4MB/s]diffusion_pytorch_model.safetensors:  12%|█▏        | 168M/1.45G [00:05<00:41, 31.1MB/s]diffusion_pytorch_model.safetensors:  12%|█▏        | 178M/1.45G [00:06<00:38, 33.2MB/s]diffusion_pytorch_model.safetensors:  13%|█▎        | 189M/1.45G [00:06<00:38, 32.6MB/s]diffusion_pytorch_model.safetensors:  14%|█▍        | 199M/1.45G [00:06<00:41, 30.0MB/s]diffusion_pytorch_model.safetensors:  15%|█▍        | 210M/1.45G [00:07<00:42, 28.9MB/s]diffusion_pytorch_model.safetensors:  15%|█▌        | 220M/1.45G [00:07<00:40, 30.2MB/s]diffusion_pytorch_model.safetensors:  16%|█▌        | 231M/1.45G [00:07<00:38, 31.8MB/s]diffusion_pytorch_model.safetensors:  17%|█▋        | 241M/1.45G [00:08<00:36, 32.6MB/s]diffusion_pytorch_model.safetensors:  17%|█▋        | 252M/1.45G [00:08<00:34, 34.4MB/s]diffusion_pytorch_model.safetensors:  18%|█▊        | 262M/1.45G [00:08<00:38, 30.8MB/s]diffusion_pytorch_model.safetensors:  19%|█▉        | 273M/1.45G [00:09<00:40, 28.8MB/s]diffusion_pytorch_model.safetensors:  20%|█▉        | 283M/1.45G [00:09<00:39, 29.7MB/s]diffusion_pytorch_model.safetensors:  20%|██        | 294M/1.45G [00:10<00:38, 29.9MB/s]diffusion_pytorch_model.safetensors:  21%|██        | 304M/1.45G [00:10<00:34, 33.2MB/s]diffusion_pytorch_model.safetensors:  22%|██▏       | 315M/1.45G [00:10<00:34, 32.8MB/s]diffusion_pytorch_model.safetensors:  22%|██▏       | 325M/1.45G [00:11<00:39, 28.5MB/s]diffusion_pytorch_model.safetensors:  23%|██▎       | 336M/1.45G [00:11<00:38, 28.5MB/s]diffusion_pytorch_model.safetensors:  24%|██▍       | 346M/1.45G [00:11<00:37, 29.6MB/s]diffusion_pytorch_model.safetensors:  25%|██▍       | 357M/1.45G [00:12<00:35, 30.7MB/s]diffusion_pytorch_model.safetensors:  25%|██▌       | 367M/1.45G [00:12<00:33, 31.9MB/s]diffusion_pytorch_model.safetensors:  26%|██▌       | 377M/1.45G [00:12<00:32, 32.7MB/s]diffusion_pytorch_model.safetensors:  27%|██▋       | 388M/1.45G [00:12<00:30, 34.3MB/s]diffusion_pytorch_model.safetensors:  28%|██▊       | 398M/1.45G [00:13<00:29, 35.0MB/s]diffusion_pytorch_model.safetensors:  28%|██▊       | 409M/1.45G [00:13<00:32, 32.0MB/s]diffusion_pytorch_model.safetensors:  29%|██▉       | 419M/1.45G [00:13<00:30, 33.4MB/s]diffusion_pytorch_model.safetensors:  30%|██▉       | 430M/1.45G [00:14<00:29, 34.9MB/s]diffusion_pytorch_model.safetensors:  30%|███       | 440M/1.45G [00:14<00:28, 35.8MB/s]diffusion_pytorch_model.safetensors:  31%|███       | 451M/1.45G [00:14<00:27, 36.8MB/s]diffusion_pytorch_model.safetensors:  32%|███▏      | 461M/1.45G [00:14<00:24, 40.0MB/s]diffusion_pytorch_model.safetensors:  33%|███▎      | 472M/1.45G [00:15<00:26, 36.6MB/s]diffusion_pytorch_model.safetensors:  33%|███▎      | 482M/1.45G [00:15<00:25, 37.8MB/s]diffusion_pytorch_model.safetensors:  34%|███▍      | 493M/1.45G [00:15<00:23, 41.2MB/s]diffusion_pytorch_model.safetensors:  35%|███▍      | 503M/1.45G [00:16<00:23, 39.8MB/s]diffusion_pytorch_model.safetensors:  36%|███▌      | 514M/1.45G [00:16<00:23, 39.2MB/s]diffusion_pytorch_model.safetensors:  36%|███▋      | 524M/1.45G [00:16<00:22, 40.3MB/s]diffusion_pytorch_model.safetensors:  37%|███▋      | 535M/1.45G [00:16<00:23, 39.4MB/s]diffusion_pytorch_model.safetensors:  38%|███▊      | 545M/1.45G [00:17<00:26, 34.1MB/s]diffusion_pytorch_model.safetensors:  38%|███▊      | 556M/1.45G [00:17<00:26, 33.9MB/s]diffusion_pytorch_model.safetensors:  39%|███▉      | 566M/1.45G [00:17<00:24, 36.5MB/s]diffusion_pytorch_model.safetensors:  40%|███▉      | 577M/1.45G [00:18<00:22, 39.4MB/s]diffusion_pytorch_model.safetensors:  41%|████      | 587M/1.45G [00:18<00:20, 42.7MB/s]diffusion_pytorch_model.safetensors:  41%|████▏     | 598M/1.45G [00:18<00:21, 39.7MB/s]diffusion_pytorch_model.safetensors:  42%|████▏     | 608M/1.45G [00:18<00:25, 33.0MB/s]diffusion_pytorch_model.safetensors:  43%|████▎     | 619M/1.45G [00:19<00:24, 34.1MB/s]diffusion_pytorch_model.safetensors:  44%|████▎     | 629M/1.45G [00:19<00:23, 34.7MB/s]diffusion_pytorch_model.safetensors:  44%|████▍     | 640M/1.45G [00:19<00:23, 35.0MB/s]diffusion_pytorch_model.safetensors:  45%|████▍     | 650M/1.45G [00:20<00:21, 36.7MB/s]diffusion_pytorch_model.safetensors:  46%|████▌     | 661M/1.45G [00:20<00:22, 34.7MB/s]diffusion_pytorch_model.safetensors:  46%|████▋     | 671M/1.45G [00:20<00:26, 29.6MB/s]diffusion_pytorch_model.safetensors:  47%|████▋     | 682M/1.45G [00:21<00:29, 25.6MB/s]diffusion_pytorch_model.safetensors:  48%|████▊     | 692M/1.45G [00:21<00:27, 27.3MB/s]diffusion_pytorch_model.safetensors:  49%|████▊     | 703M/1.45G [00:22<00:29, 25.6MB/s]diffusion_pytorch_model.safetensors:  49%|████▉     | 713M/1.45G [00:22<00:28, 26.1MB/s]diffusion_pytorch_model.safetensors:  50%|█████     | 724M/1.45G [00:23<00:29, 24.1MB/s]diffusion_pytorch_model.safetensors:  51%|█████     | 734M/1.45G [00:23<00:32, 21.6MB/s]diffusion_pytorch_model.safetensors:  52%|█████▏    | 744M/1.45G [00:24<00:34, 20.3MB/s]diffusion_pytorch_model.safetensors:  52%|█████▏    | 755M/1.45G [00:24<00:32, 21.4MB/s]diffusion_pytorch_model.safetensors:  53%|█████▎    | 765M/1.45G [00:25<00:29, 23.4MB/s]diffusion_pytorch_model.safetensors:  54%|█████▎    | 776M/1.45G [00:25<00:28, 23.8MB/s]diffusion_pytorch_model.safetensors:  54%|█████▍    | 786M/1.45G [00:25<00:24, 26.5MB/s]diffusion_pytorch_model.safetensors:  55%|█████▌    | 797M/1.45G [00:25<00:19, 33.5MB/s]diffusion_pytorch_model.safetensors:  56%|█████▌    | 807M/1.45G [00:27<00:34, 18.3MB/s]diffusion_pytorch_model.safetensors:  57%|█████▋    | 818M/1.45G [00:27<00:27, 23.1MB/s]diffusion_pytorch_model.safetensors:  57%|█████▋    | 828M/1.45G [00:27<00:22, 27.3MB/s]diffusion_pytorch_model.safetensors:  58%|█████▊    | 839M/1.45G [00:27<00:21, 28.9MB/s]diffusion_pytorch_model.safetensors:  59%|█████▉    | 849M/1.45G [00:28<00:18, 31.4MB/s]diffusion_pytorch_model.safetensors:  59%|█████▉    | 860M/1.45G [00:28<00:18, 31.8MB/s]diffusion_pytorch_model.safetensors:  60%|██████    | 870M/1.45G [00:28<00:19, 29.5MB/s]diffusion_pytorch_model.safetensors:  61%|██████    | 881M/1.45G [00:29<00:20, 28.1MB/s]diffusion_pytorch_model.safetensors:  62%|██████▏   | 891M/1.45G [00:29<00:18, 29.6MB/s]diffusion_pytorch_model.safetensors:  62%|██████▏   | 902M/1.45G [00:29<00:17, 30.7MB/s]diffusion_pytorch_model.safetensors:  63%|██████▎   | 912M/1.45G [00:30<00:17, 31.2MB/s]diffusion_pytorch_model.safetensors:  64%|██████▍   | 923M/1.45G [00:30<00:15, 32.9MB/s]diffusion_pytorch_model.safetensors:  65%|██████▍   | 933M/1.45G [00:30<00:16, 31.8MB/s]diffusion_pytorch_model.safetensors:  65%|██████▌   | 944M/1.45G [00:31<00:18, 27.2MB/s]diffusion_pytorch_model.safetensors:  66%|██████▌   | 954M/1.45G [00:31<00:18, 26.7MB/s]diffusion_pytorch_model.safetensors:  67%|██████▋   | 965M/1.45G [00:31<00:15, 30.9MB/s]diffusion_pytorch_model.safetensors:  67%|██████▋   | 975M/1.45G [00:32<00:14, 32.3MB/s]diffusion_pytorch_model.safetensors:  68%|██████▊   | 986M/1.45G [00:32<00:14, 31.8MB/s]diffusion_pytorch_model.safetensors:  69%|██████▉   | 996M/1.45G [00:32<00:13, 33.9MB/s]diffusion_pytorch_model.safetensors:  70%|██████▉   | 1.01G/1.45G [00:33<00:14, 31.0MB/s]diffusion_pytorch_model.safetensors:  70%|███████   | 1.02G/1.45G [00:33<00:13, 31.4MB/s]diffusion_pytorch_model.safetensors:  71%|███████   | 1.03G/1.45G [00:33<00:14, 29.6MB/s]diffusion_pytorch_model.safetensors:  72%|███████▏  | 1.04G/1.45G [00:34<00:14, 28.7MB/s]diffusion_pytorch_model.safetensors:  73%|███████▎  | 1.05G/1.45G [00:34<00:14, 28.2MB/s]diffusion_pytorch_model.safetensors:  73%|███████▎  | 1.06G/1.45G [00:35<00:13, 29.5MB/s]diffusion_pytorch_model.safetensors:  74%|███████▍  | 1.07G/1.45G [00:35<00:13, 28.8MB/s]diffusion_pytorch_model.safetensors:  75%|███████▍  | 1.08G/1.45G [00:35<00:13, 27.0MB/s]diffusion_pytorch_model.safetensors:  75%|███████▌  | 1.09G/1.45G [00:36<00:11, 29.8MB/s]diffusion_pytorch_model.safetensors:  76%|███████▌  | 1.10G/1.45G [00:36<00:10, 31.5MB/s]diffusion_pytorch_model.safetensors:  77%|███████▋  | 1.11G/1.45G [00:36<00:10, 30.9MB/s]diffusion_pytorch_model.safetensors:  78%|███████▊  | 1.12G/1.45G [00:37<00:11, 28.7MB/s]diffusion_pytorch_model.safetensors:  78%|███████▊  | 1.13G/1.45G [00:37<00:10, 30.8MB/s]diffusion_pytorch_model.safetensors:  79%|███████▉  | 1.14G/1.45G [00:38<00:11, 26.2MB/s]diffusion_pytorch_model.safetensors:  80%|███████▉  | 1.15G/1.45G [00:38<00:09, 30.0MB/s]diffusion_pytorch_model.safetensors:  81%|████████  | 1.16G/1.45G [00:38<00:08, 31.8MB/s]diffusion_pytorch_model.safetensors:  81%|████████▏ | 1.17G/1.45G [00:38<00:08, 32.1MB/s]diffusion_pytorch_model.safetensors:  82%|████████▏ | 1.18G/1.45G [00:39<00:08, 32.3MB/s]diffusion_pytorch_model.safetensors:  83%|████████▎ | 1.20G/1.45G [00:39<00:07, 31.5MB/s]diffusion_pytorch_model.safetensors:  83%|████████▎ | 1.21G/1.45G [00:39<00:06, 35.2MB/s]diffusion_pytorch_model.safetensors:  84%|████████▍ | 1.22G/1.45G [00:40<00:07, 30.6MB/s]diffusion_pytorch_model.safetensors:  85%|████████▍ | 1.23G/1.45G [00:40<00:06, 34.3MB/s]diffusion_pytorch_model.safetensors:  86%|████████▌ | 1.24G/1.45G [00:40<00:05, 35.4MB/s]diffusion_pytorch_model.safetensors:  86%|████████▋ | 1.25G/1.45G [00:41<00:05, 36.2MB/s]diffusion_pytorch_model.safetensors:  87%|████████▋ | 1.26G/1.45G [00:41<00:05, 34.5MB/s]diffusion_pytorch_model.safetensors:  88%|████████▊ | 1.27G/1.45G [00:41<00:05, 34.8MB/s]diffusion_pytorch_model.safetensors:  89%|████████▊ | 1.28G/1.45G [00:42<00:05, 31.7MB/s]diffusion_pytorch_model.safetensors:  89%|████████▉ | 1.29G/1.45G [00:42<00:04, 35.0MB/s]diffusion_pytorch_model.safetensors:  90%|████████▉ | 1.30G/1.45G [00:42<00:03, 36.5MB/s]diffusion_pytorch_model.safetensors:  91%|█████████ | 1.31G/1.45G [00:42<00:03, 35.2MB/s]diffusion_pytorch_model.safetensors:  91%|█████████▏| 1.32G/1.45G [00:43<00:03, 35.1MB/s]diffusion_pytorch_model.safetensors:  92%|█████████▏| 1.33G/1.45G [00:43<00:03, 35.8MB/s]diffusion_pytorch_model.safetensors:  93%|█████████▎| 1.34G/1.45G [00:43<00:03, 32.2MB/s]diffusion_pytorch_model.safetensors:  94%|█████████▎| 1.35G/1.45G [00:44<00:02, 33.6MB/s]diffusion_pytorch_model.safetensors:  94%|█████████▍| 1.36G/1.45G [00:44<00:02, 39.6MB/s]diffusion_pytorch_model.safetensors:  95%|█████████▌| 1.37G/1.45G [00:44<00:01, 42.0MB/s]diffusion_pytorch_model.safetensors:  96%|█████████▌| 1.38G/1.45G [00:44<00:01, 44.8MB/s]diffusion_pytorch_model.safetensors:  97%|█████████▋| 1.39G/1.45G [00:44<00:01, 40.9MB/s]diffusion_pytorch_model.safetensors:  97%|█████████▋| 1.41G/1.45G [00:45<00:00, 41.1MB/s]diffusion_pytorch_model.safetensors:  98%|█████████▊| 1.42G/1.45G [00:45<00:00, 38.1MB/s]diffusion_pytorch_model.safetensors:  99%|█████████▊| 1.43G/1.45G [00:45<00:00, 43.3MB/s]diffusion_pytorch_model.safetensors:  99%|█████████▉| 1.44G/1.45G [00:45<00:00, 44.0MB/s]diffusion_pytorch_model.safetensors: 100%|██████████| 1.45G/1.45G [00:46<00:00, 41.7MB/s]diffusion_pytorch_model.safetensors: 100%|██████████| 1.45G/1.45G [00:46<00:00, 31.3MB/s]
+model_index.json:   0%|          | 0.00/541 [00:00<?, ?B/s]model_index.json: 100%|██████████| 541/541 [00:00<00:00, 97.6kB/s]
+Fetching 15 files:   0%|          | 0/15 [00:00<?, ?it/s]
+merges.txt: 0.00B [00:00, ?B/s][A
+
+preprocessor_config.json:   0%|          | 0.00/342 [00:00<?, ?B/s][A[A
+
+
+special_tokens_map.json:   0%|          | 0.00/472 [00:00<?, ?B/s][A[A[Apreprocessor_config.json: 100%|██████████| 342/342 [00:00<00:00, 27.0kB/s]
+
+
+scheduler_config.json:   0%|          | 0.00/308 [00:00<?, ?B/s][A[Aspecial_tokens_map.json: 100%|██████████| 472/472 [00:00<00:00, 36.7kB/s]
+scheduler_config.json: 100%|██████████| 308/308 [00:00<00:00, 48.8kB/s]
+merges.txt: 525kB [00:00, 21.2MB/s]
+
+config.json: 0.00B [00:00, ?B/s][AFetching 15 files:   7%|▋         | 1/15 [00:00<00:03,  4.42it/s]config.json: 4.72kB [00:00, 5.49MB/s]
+
+config.json:   0%|          | 0.00/617 [00:00<?, ?B/s][Aconfig.json: 100%|██████████| 617/617 [00:00<00:00, 108kB/s]
+
+config.json:   0%|          | 0.00/547 [00:00<?, ?B/s][A
+
+vocab.json: 0.00B [00:00, ?B/s][A[Aconfig.json: 100%|██████████| 547/547 [00:00<00:00, 83.9kB/s]
+
+config.json:   0%|          | 0.00/743 [00:00<?, ?B/s][Aconfig.json: 100%|██████████| 743/743 [00:00<00:00, 489kB/s]
+vocab.json: 1.06MB [00:00, 113MB/s]
+
+tokenizer_config.json:   0%|          | 0.00/806 [00:00<?, ?B/s][Atokenizer_config.json: 100%|██████████| 806/806 [00:00<00:00, 596kB/s]
+
+model.safetensors:   0%|          | 0.00/1.22G [00:00<?, ?B/s][A
+
+model.safetensors:   0%|          | 0.00/492M [00:00<?, ?B/s][A[A
+
+
+diffusion_pytorch_model.safetensors:   0%|          | 0.00/3.44G [00:00<?, ?B/s][A[A[A
+
+
+
+diffusion_pytorch_model.safetensors:   0%|          | 0.00/335M [00:00<?, ?B/s][A[A[A[A
+
+model.safetensors:   2%|▏         | 10.5M/492M [00:00<00:15, 30.1MB/s][A[A
+
+model.safetensors:   4%|▍         | 21.0M/492M [00:00<00:09, 47.7MB/s][A[A
+model.safetensors:   1%|          | 10.5M/1.22G [00:00<01:27, 13.8MB/s][A
+
+
+
+diffusion_pytorch_model.safetensors:   3%|▎         | 10.5M/335M [00:00<00:18, 17.5MB/s][A[A[A[A
+
+
+diffusion_pytorch_model.safetensors:   0%|          | 10.5M/3.44G [00:00<03:38, 15.7MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:   1%|          | 21.0M/3.44G [00:00<01:53, 30.1MB/s][A[A[A
+
+
+
+diffusion_pytorch_model.safetensors:   6%|▋         | 21.0M/335M [00:00<00:12, 24.6MB/s][A[A[A[A
+
+
+diffusion_pytorch_model.safetensors:   1%|          | 31.5M/3.44G [00:00<01:30, 37.5MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:   1%|          | 41.9M/3.44G [00:01<01:10, 48.0MB/s][A[A[A
+model.safetensors:   2%|▏         | 21.0M/1.22G [00:01<01:19, 15.1MB/s][A
+
+
+diffusion_pytorch_model.safetensors:   2%|▏         | 52.4M/3.44G [00:01<01:07, 50.2MB/s][A[A[A
+
+
+
+diffusion_pytorch_model.safetensors:   9%|▉         | 31.5M/335M [00:01<00:11, 25.3MB/s][A[A[A[A
+
+
+diffusion_pytorch_model.safetensors:   2%|▏         | 62.9M/3.44G [00:01<01:13, 45.7MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:   2%|▏         | 73.4M/3.44G [00:01<01:03, 53.2MB/s][A[A[A
+model.safetensors:   3%|▎         | 31.5M/1.22G [00:02<01:30, 13.0MB/s][A
+
+
+diffusion_pytorch_model.safetensors:   2%|▏         | 83.9M/3.44G [00:02<01:47, 31.3MB/s][A[A[A
+
+
+
+diffusion_pytorch_model.safetensors:  13%|█▎        | 41.9M/335M [00:02<00:17, 16.3MB/s][A[A[A[A
+model.safetensors:   3%|▎         | 41.9M/1.22G [00:02<01:06, 17.7MB/s][A
+
+
+diffusion_pytorch_model.safetensors:   3%|▎         | 94.4M/3.44G [00:02<01:35, 34.9MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:   3%|▎         | 105M/3.44G [00:02<01:19, 42.1MB/s] [A[A[A
+
+
+diffusion_pytorch_model.safetensors:   3%|▎         | 115M/3.44G [00:02<01:06, 50.3MB/s][A[A[A
+model.safetensors:   4%|▍         | 52.4M/1.22G [00:03<01:03, 18.2MB/s][A
+
+
+diffusion_pytorch_model.safetensors:   4%|▎         | 126M/3.44G [00:02<00:57, 57.2MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:   4%|▍         | 136M/3.44G [00:03<00:52, 62.6MB/s][A[A[A
+
+
+
+diffusion_pytorch_model.safetensors:  16%|█▌        | 52.4M/335M [00:03<00:18, 14.9MB/s][A[A[A[A
+
+
+diffusion_pytorch_model.safetensors:   4%|▍         | 147M/3.44G [00:03<00:52, 62.7MB/s][A[A[A
+model.safetensors:   5%|▌         | 62.9M/1.22G [00:03<00:56, 20.3MB/s][A
+
+
+diffusion_pytorch_model.safetensors:   5%|▍         | 157M/3.44G [00:03<00:54, 60.3MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:   5%|▍         | 168M/3.44G [00:03<00:54, 59.8MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:   5%|▌         | 178M/3.44G [00:03<00:56, 57.7MB/s][A[A[A
+model.safetensors:   6%|▌         | 73.4M/1.22G [00:04<00:56, 20.1MB/s][A
+
+
+diffusion_pytorch_model.safetensors:   5%|▌         | 189M/3.44G [00:03<00:57, 56.2MB/s][A[A[A
+
+
+
+diffusion_pytorch_model.safetensors:  19%|█▉        | 62.9M/335M [00:04<00:20, 13.5MB/s][A[A[A[A
+
+
+diffusion_pytorch_model.safetensors:   6%|▌         | 199M/3.44G [00:04<01:00, 54.0MB/s][A[A[A
+model.safetensors:   7%|▋         | 83.9M/1.22G [00:04<00:50, 22.3MB/s][A
+
+
+
+diffusion_pytorch_model.safetensors:  22%|██▏       | 73.4M/335M [00:04<00:15, 16.9MB/s][A[A[A[A
+
+
+diffusion_pytorch_model.safetensors:   6%|▌         | 210M/3.44G [00:04<01:01, 52.7MB/s][A[A[A
+model.safetensors:   8%|▊         | 94.4M/1.22G [00:04<00:46, 24.1MB/s][A
+
+
+diffusion_pytorch_model.safetensors:   6%|▋         | 220M/3.44G [00:04<01:01, 52.4MB/s][A[A[A
+
+
+
+diffusion_pytorch_model.safetensors:  25%|██▌       | 83.9M/335M [00:04<00:12, 20.1MB/s][A[A[A[A
+
+
+diffusion_pytorch_model.safetensors:   7%|▋         | 231M/3.44G [00:04<01:02, 51.3MB/s][A[A[A
+model.safetensors:   9%|▊         | 105M/1.22G [00:05<00:40, 27.2MB/s] [A
+
+
+diffusion_pytorch_model.safetensors:   7%|▋         | 241M/3.44G [00:05<01:02, 51.0MB/s][A[A[A
+model.safetensors:   9%|▉         | 115M/1.22G [00:05<00:36, 30.0MB/s][A
+
+
+
+diffusion_pytorch_model.safetensors:  28%|██▊       | 94.4M/335M [00:05<00:11, 21.1MB/s][A[A[A[A
+
+
+diffusion_pytorch_model.safetensors:   7%|▋         | 252M/3.44G [00:05<01:02, 51.2MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:   8%|▊         | 262M/3.44G [00:05<00:58, 54.6MB/s][A[A[A
+model.safetensors:  10%|█         | 126M/1.22G [00:05<00:34, 31.5MB/s][A
+
+
+diffusion_pytorch_model.safetensors:   8%|▊         | 273M/3.44G [00:05<00:52, 60.2MB/s][A[A[A
+
+
+
+diffusion_pytorch_model.safetensors:  31%|███▏      | 105M/335M [00:05<00:10, 21.1MB/s] [A[A[A[A
+
+
+diffusion_pytorch_model.safetensors:   8%|▊         | 283M/3.44G [00:05<00:55, 57.1MB/s][A[A[A
+
+
+
+diffusion_pytorch_model.safetensors:  34%|███▍      | 115M/335M [00:05<00:08, 24.9MB/s][A[A[A[A
+
+
+diffusion_pytorch_model.safetensors:   9%|▊         | 294M/3.44G [00:05<00:52, 60.2MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:   9%|▉         | 304M/3.44G [00:06<00:48, 64.7MB/s][A[A[A
+model.safetensors:  11%|█         | 136M/1.22G [00:06<00:44, 24.2MB/s][A
+
+
+diffusion_pytorch_model.safetensors:   9%|▉         | 315M/3.44G [00:06<00:46, 67.2MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:   9%|▉         | 325M/3.44G [00:06<00:51, 60.0MB/s][A[A[A
+model.safetensors:  12%|█▏        | 147M/1.22G [00:06<00:41, 25.7MB/s][A
+
+
+
+diffusion_pytorch_model.safetensors:  38%|███▊      | 126M/335M [00:06<00:09, 22.6MB/s][A[A[A[A
+
+
+diffusion_pytorch_model.safetensors:  10%|▉         | 336M/3.44G [00:06<00:55, 56.2MB/s][A[A[A
+
+
+
+diffusion_pytorch_model.safetensors:  41%|████      | 136M/335M [00:06<00:07, 24.8MB/s][A[A[A[A
+model.safetensors:  13%|█▎        | 157M/1.22G [00:07<00:40, 26.1MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  10%|█         | 346M/3.44G [00:06<00:59, 52.3MB/s][A[A[A
+
+
+
+diffusion_pytorch_model.safetensors:  44%|████▍     | 147M/335M [00:06<00:06, 28.3MB/s][A[A[A[A
+model.safetensors:  14%|█▍        | 168M/1.22G [00:07<00:36, 29.0MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  10%|█         | 357M/3.44G [00:07<01:03, 48.5MB/s][A[A[A
+
+
+
+diffusion_pytorch_model.safetensors:  47%|████▋     | 157M/335M [00:07<00:05, 32.4MB/s][A[A[A[A
+
+
+diffusion_pytorch_model.safetensors:  11%|█         | 367M/3.44G [00:07<01:06, 45.8MB/s][A[A[A
+
+
+
+diffusion_pytorch_model.safetensors:  50%|█████     | 168M/335M [00:07<00:04, 34.6MB/s][A[A[A[A
+model.safetensors:  15%|█▍        | 178M/1.22G [00:07<00:37, 27.5MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  11%|█         | 377M/3.44G [00:07<01:11, 42.7MB/s][A[A[A
+
+
+
+diffusion_pytorch_model.safetensors:  53%|█████▎    | 178M/335M [00:07<00:04, 37.5MB/s][A[A[A[A
+model.safetensors:  16%|█▌        | 189M/1.22G [00:08<00:34, 29.5MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  11%|█▏        | 388M/3.44G [00:07<01:11, 42.8MB/s][A[A[A
+
+
+
+diffusion_pytorch_model.safetensors:  56%|█████▋    | 189M/335M [00:08<00:04, 32.8MB/s][A[A[A[A
+
+
+diffusion_pytorch_model.safetensors:  12%|█▏        | 398M/3.44G [00:08<01:12, 42.2MB/s][A[A[A
+model.safetensors:  16%|█▋        | 199M/1.22G [00:08<00:38, 26.6MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  12%|█▏        | 409M/3.44G [00:08<01:08, 44.2MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  12%|█▏        | 419M/3.44G [00:08<01:01, 49.2MB/s][A[A[A
+model.safetensors:  17%|█▋        | 210M/1.22G [00:08<00:34, 29.0MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  13%|█▎        | 430M/3.44G [00:08<00:58, 51.5MB/s][A[A[A
+model.safetensors:  18%|█▊        | 220M/1.22G [00:09<00:31, 32.0MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  13%|█▎        | 440M/3.44G [00:08<00:53, 55.6MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  13%|█▎        | 451M/3.44G [00:09<00:53, 56.2MB/s][A[A[A
+model.safetensors:  19%|█▉        | 231M/1.22G [00:09<00:27, 35.4MB/s][A
+
+model.safetensors:   6%|▋         | 31.5M/492M [00:09<03:04, 2.50MB/s][A[A
+
+
+diffusion_pytorch_model.safetensors:  13%|█▎        | 461M/3.44G [00:09<00:52, 57.2MB/s][A[A[A
+model.safetensors:  20%|█▉        | 241M/1.22G [00:09<00:25, 38.2MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  14%|█▎        | 472M/3.44G [00:09<00:49, 60.0MB/s][A[A[A
+model.safetensors:  21%|██        | 252M/1.22G [00:09<00:23, 41.8MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  14%|█▍        | 482M/3.44G [00:09<00:49, 59.4MB/s][A[A[A
+model.safetensors:  22%|██▏       | 262M/1.22G [00:09<00:21, 43.9MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  14%|█▍        | 493M/3.44G [00:09<00:49, 59.3MB/s][A[A[A
+model.safetensors:  22%|██▏       | 273M/1.22G [00:10<00:20, 47.0MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  15%|█▍        | 503M/3.44G [00:09<00:48, 60.5MB/s][A[A[A
+
+
+
+diffusion_pytorch_model.safetensors:  60%|█████▉    | 199M/335M [00:09<00:09, 13.7MB/s][A[A[A[A
+
+
+diffusion_pytorch_model.safetensors:  15%|█▍        | 514M/3.44G [00:10<00:47, 62.0MB/s][A[A[A
+model.safetensors:  23%|██▎       | 283M/1.22G [00:10<00:20, 45.1MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  15%|█▌        | 524M/3.44G [00:10<00:44, 65.6MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  16%|█▌        | 535M/3.44G [00:10<00:42, 68.9MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  16%|█▌        | 545M/3.44G [00:10<00:59, 48.6MB/s][A[A[A
+model.safetensors:  24%|██▍       | 294M/1.22G [00:10<00:30, 30.0MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  16%|█▌        | 556M/3.44G [00:10<00:52, 55.2MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  16%|█▋        | 566M/3.44G [00:10<00:50, 56.7MB/s][A[A[A
+model.safetensors:  25%|██▌       | 304M/1.22G [00:11<00:29, 31.3MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  17%|█▋        | 577M/3.44G [00:11<00:47, 59.7MB/s][A[A[A
+model.safetensors:  26%|██▌       | 315M/1.22G [00:11<00:25, 35.3MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  17%|█▋        | 587M/3.44G [00:11<00:48, 59.2MB/s][A[A[A
+model.safetensors:  27%|██▋       | 325M/1.22G [00:11<00:22, 39.4MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  17%|█▋        | 598M/3.44G [00:11<00:45, 62.1MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  18%|█▊        | 608M/3.44G [00:11<00:44, 63.1MB/s][A[A[A
+model.safetensors:  28%|██▊       | 336M/1.22G [00:11<00:21, 40.1MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  18%|█▊        | 619M/3.44G [00:11<00:42, 67.1MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  18%|█▊        | 629M/3.44G [00:11<00:38, 72.1MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  19%|█▊        | 640M/3.44G [00:12<00:37, 74.3MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  19%|█▉        | 650M/3.44G [00:12<00:37, 73.7MB/s][A[A[A
+model.safetensors:  28%|██▊       | 346M/1.22G [00:12<00:26, 32.6MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  19%|█▉        | 661M/3.44G [00:12<00:37, 74.7MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  20%|█▉        | 671M/3.44G [00:12<00:34, 80.8MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  20%|█▉        | 682M/3.44G [00:12<00:33, 82.6MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  20%|██        | 692M/3.44G [00:12<00:32, 85.7MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  20%|██        | 703M/3.44G [00:12<00:32, 83.9MB/s][A[A[A
+model.safetensors:  29%|██▉       | 357M/1.22G [00:13<00:33, 25.7MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  21%|██        | 713M/3.44G [00:12<00:36, 74.4MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  21%|██        | 724M/3.44G [00:13<00:35, 75.9MB/s][A[A[A
+model.safetensors:  30%|███       | 367M/1.22G [00:13<00:31, 27.1MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  21%|██▏       | 734M/3.44G [00:13<00:35, 75.3MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  22%|██▏       | 744M/3.44G [00:13<00:38, 70.8MB/s][A[A[A
+model.safetensors:  31%|███       | 377M/1.22G [00:13<00:28, 29.8MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  22%|██▏       | 755M/3.44G [00:13<00:38, 70.2MB/s][A[A[A
+model.safetensors:  32%|███▏      | 388M/1.22G [00:13<00:24, 33.6MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  22%|██▏       | 765M/3.44G [00:13<00:38, 68.6MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  23%|██▎       | 776M/3.44G [00:13<00:37, 71.5MB/s][A[A[A
+
+
+
+diffusion_pytorch_model.safetensors:  63%|██████▎   | 210M/335M [00:13<00:20, 6.13MB/s][A[A[A[A
+model.safetensors:  33%|███▎      | 398M/1.22G [00:14<00:25, 32.3MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  23%|██▎       | 786M/3.44G [00:13<00:38, 69.7MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  23%|██▎       | 797M/3.44G [00:14<00:35, 75.1MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  23%|██▎       | 807M/3.44G [00:14<00:32, 80.1MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  24%|██▍       | 818M/3.44G [00:14<00:31, 82.6MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  24%|██▍       | 828M/3.44G [00:14<00:30, 85.0MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  24%|██▍       | 839M/3.44G [00:14<00:31, 81.5MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  25%|██▍       | 849M/3.44G [00:14<00:31, 82.9MB/s][A[A[A
+model.safetensors:  34%|███▎      | 409M/1.22G [00:14<00:34, 23.1MB/s][A
+
+
+
+diffusion_pytorch_model.safetensors:  66%|██████▌   | 220M/335M [00:14<00:16, 7.01MB/s][A[A[A[A
+
+
+diffusion_pytorch_model.safetensors:  25%|██▌       | 860M/3.44G [00:14<00:33, 77.4MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  25%|██▌       | 870M/3.44G [00:14<00:30, 84.0MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  26%|██▌       | 881M/3.44G [00:15<00:31, 81.3MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  26%|██▌       | 891M/3.44G [00:15<00:30, 84.3MB/s][A[A[A
+model.safetensors:  34%|███▍      | 419M/1.22G [00:15<00:38, 20.6MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  26%|██▌       | 902M/3.44G [00:15<00:32, 78.0MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  27%|██▋       | 912M/3.44G [00:15<00:33, 75.4MB/s][A[A[A
+model.safetensors:  35%|███▌      | 430M/1.22G [00:15<00:33, 23.3MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  27%|██▋       | 923M/3.44G [00:15<00:35, 71.8MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  27%|██▋       | 933M/3.44G [00:15<00:35, 69.8MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  27%|██▋       | 944M/3.44G [00:16<00:37, 67.4MB/s][A[A[A
+model.safetensors:  36%|███▌      | 440M/1.22G [00:16<00:32, 23.9MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  28%|██▊       | 954M/3.44G [00:16<00:40, 61.6MB/s][A[A[A
+
+
+
+diffusion_pytorch_model.safetensors:  69%|██████▉   | 231M/335M [00:16<00:14, 7.17MB/s][A[A[A[A
+
+
+diffusion_pytorch_model.safetensors:  28%|██▊       | 965M/3.44G [00:16<00:38, 64.3MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  28%|██▊       | 975M/3.44G [00:16<00:37, 65.1MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  29%|██▊       | 986M/3.44G [00:16<00:33, 73.1MB/s][A[A[A
+model.safetensors:  37%|███▋      | 451M/1.22G [00:16<00:36, 21.0MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  29%|██▉       | 1.01G/3.44G [00:16<00:28, 85.6MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  30%|██▉       | 1.02G/3.44G [00:16<00:29, 82.8MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  30%|██▉       | 1.03G/3.44G [00:17<00:28, 83.4MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  30%|███       | 1.04G/3.44G [00:17<00:32, 72.8MB/s][A[A[A
+
+
+
+diffusion_pytorch_model.safetensors:  72%|███████▏  | 241M/335M [00:17<00:11, 7.84MB/s][A[A[A[A
+model.safetensors:  38%|███▊      | 461M/1.22G [00:17<00:38, 19.4MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  30%|███       | 1.05G/3.44G [00:17<00:35, 66.8MB/s][A[A[A
+
+
+
+diffusion_pytorch_model.safetensors:  75%|███████▌  | 252M/335M [00:17<00:08, 10.3MB/s][A[A[A[A
+
+
+diffusion_pytorch_model.safetensors:  31%|███       | 1.06G/3.44G [00:17<00:36, 65.7MB/s][A[A[A
+model.safetensors:  39%|███▉      | 472M/1.22G [00:17<00:35, 21.2MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  31%|███       | 1.07G/3.44G [00:17<00:41, 57.6MB/s][A[A[A
+
+
+
+diffusion_pytorch_model.safetensors:  78%|███████▊  | 262M/335M [00:17<00:05, 12.5MB/s][A[A[A[A
+model.safetensors:  40%|███▉      | 482M/1.22G [00:18<00:30, 24.1MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  31%|███▏      | 1.08G/3.44G [00:18<00:40, 57.7MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  32%|███▏      | 1.09G/3.44G [00:18<00:40, 58.2MB/s][A[A[A
+model.safetensors:  41%|████      | 493M/1.22G [00:18<00:28, 25.7MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  32%|███▏      | 1.10G/3.44G [00:18<00:42, 55.0MB/s][A[A[A
+
+
+
+diffusion_pytorch_model.safetensors:  81%|████████▏ | 273M/335M [00:18<00:04, 13.8MB/s][A[A[A[A
+
+
+diffusion_pytorch_model.safetensors:  32%|███▏      | 1.11G/3.44G [00:18<00:41, 56.1MB/s][A[A[A
+model.safetensors:  41%|████▏     | 503M/1.22G [00:18<00:25, 28.0MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  33%|███▎      | 1.12G/3.44G [00:18<00:38, 60.9MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  33%|███▎      | 1.13G/3.44G [00:18<00:36, 64.0MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  33%|███▎      | 1.14G/3.44G [00:19<00:35, 65.4MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  34%|███▎      | 1.15G/3.44G [00:19<00:34, 66.1MB/s][A[A[A
+
+
+
+diffusion_pytorch_model.safetensors:  85%|████████▍ | 283M/335M [00:19<00:03, 14.3MB/s][A[A[A[A
+model.safetensors:  42%|████▏     | 514M/1.22G [00:19<00:28, 24.6MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  34%|███▍      | 1.16G/3.44G [00:19<00:31, 71.6MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  34%|███▍      | 1.18G/3.44G [00:19<00:26, 85.2MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  35%|███▍      | 1.20G/3.44G [00:19<00:26, 84.5MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  35%|███▌      | 1.21G/3.44G [00:19<00:30, 72.3MB/s][A[A[A
+model.safetensors:  43%|████▎     | 524M/1.22G [00:20<00:32, 21.5MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  35%|███▌      | 1.22G/3.44G [00:19<00:31, 70.9MB/s][A[A[A
+model.safetensors:  44%|████▍     | 535M/1.22G [00:20<00:27, 24.4MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  36%|███▌      | 1.23G/3.44G [00:20<00:34, 64.6MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  36%|███▌      | 1.24G/3.44G [00:20<00:33, 65.3MB/s][A[A[A
+
+
+
+diffusion_pytorch_model.safetensors:  88%|████████▊ | 294M/335M [00:20<00:03, 11.7MB/s][A[A[A[A
+
+
+diffusion_pytorch_model.safetensors:  36%|███▋      | 1.25G/3.44G [00:20<00:34, 63.4MB/s][A[A[A
+
+model.safetensors:   9%|▊         | 41.9M/492M [00:20<05:04, 1.48MB/s][A[A
+
+
+diffusion_pytorch_model.safetensors:  37%|███▋      | 1.26G/3.44G [00:20<00:49, 44.4MB/s][A[A[A
+model.safetensors:  45%|████▍     | 545M/1.22G [00:21<00:35, 18.7MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  37%|███▋      | 1.27G/3.44G [00:21<00:45, 47.9MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  37%|███▋      | 1.28G/3.44G [00:21<00:40, 53.3MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  38%|███▊      | 1.29G/3.44G [00:21<00:35, 60.3MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  38%|███▊      | 1.30G/3.44G [00:21<00:32, 66.0MB/s][A[A[A
+model.safetensors:  46%|████▌     | 556M/1.22G [00:21<00:35, 18.7MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  38%|███▊      | 1.31G/3.44G [00:21<00:32, 66.0MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  38%|███▊      | 1.32G/3.44G [00:21<00:30, 69.3MB/s][A[A[A
+model.safetensors:  47%|████▋     | 566M/1.22G [00:22<00:30, 21.2MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  39%|███▊      | 1.33G/3.44G [00:21<00:29, 71.5MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  39%|███▉      | 1.34G/3.44G [00:22<00:28, 74.0MB/s][A[A[A
+model.safetensors:  47%|████▋     | 577M/1.22G [00:22<00:26, 24.2MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  39%|███▉      | 1.35G/3.44G [00:22<00:29, 71.0MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  40%|███▉      | 1.36G/3.44G [00:22<00:28, 71.8MB/s][A[A[A
+model.safetensors:  48%|████▊     | 587M/1.22G [00:22<00:22, 28.4MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  40%|███▉      | 1.37G/3.44G [00:22<00:30, 66.9MB/s][A[A[A
+model.safetensors:  49%|████▉     | 598M/1.22G [00:22<00:19, 32.4MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  40%|████      | 1.38G/3.44G [00:22<00:30, 68.3MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  41%|████      | 1.39G/3.44G [00:22<00:29, 70.1MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  41%|████      | 1.41G/3.44G [00:22<00:27, 73.4MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  41%|████      | 1.42G/3.44G [00:23<00:26, 77.2MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  41%|████▏     | 1.43G/3.44G [00:23<00:24, 83.1MB/s][A[A[A
+model.safetensors:  50%|█████     | 608M/1.22G [00:23<00:22, 26.9MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  42%|████▏     | 1.44G/3.44G [00:23<00:24, 82.9MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  42%|████▏     | 1.45G/3.44G [00:23<00:24, 82.3MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  42%|████▏     | 1.46G/3.44G [00:23<00:22, 86.7MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  43%|████▎     | 1.47G/3.44G [00:23<00:22, 89.4MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  43%|████▎     | 1.48G/3.44G [00:23<00:25, 75.6MB/s][A[A[A
+model.safetensors:  51%|█████     | 619M/1.22G [00:24<00:26, 22.2MB/s][A
+
+
+
+diffusion_pytorch_model.safetensors:  91%|█████████ | 304M/335M [00:23<00:04, 6.36MB/s][A[A[A[A
+
+
+diffusion_pytorch_model.safetensors:  43%|████▎     | 1.49G/3.44G [00:24<00:29, 67.2MB/s][A[A[A
+
+
+
+diffusion_pytorch_model.safetensors:  94%|█████████▍| 315M/335M [00:24<00:02, 8.46MB/s][A[A[A[A
+
+
+diffusion_pytorch_model.safetensors:  44%|████▎     | 1.50G/3.44G [00:24<00:31, 61.9MB/s][A[A[A
+model.safetensors:  52%|█████▏    | 629M/1.22G [00:24<00:25, 23.2MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  44%|████▍     | 1.51G/3.44G [00:24<00:32, 58.5MB/s][A[A[A
+
+
+
+diffusion_pytorch_model.safetensors:  97%|█████████▋| 325M/335M [00:24<00:00, 11.0MB/s][A[A[A[A
+model.safetensors:  53%|█████▎    | 640M/1.22G [00:24<00:23, 24.7MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  44%|████▍     | 1.52G/3.44G [00:24<00:34, 55.4MB/s][A[A[A
+
+
+
+diffusion_pytorch_model.safetensors: 100%|██████████| 335M/335M [00:24<00:00, 13.8MB/s][A[A[A[Adiffusion_pytorch_model.safetensors: 100%|██████████| 335M/335M [00:24<00:00, 13.6MB/s]
+
+
+
+diffusion_pytorch_model.safetensors:  45%|████▍     | 1.53G/3.44G [00:24<00:33, 56.8MB/s][A[A[A
+model.safetensors:  53%|█████▎    | 650M/1.22G [00:25<00:21, 26.1MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  45%|████▍     | 1.54G/3.44G [00:25<00:33, 57.3MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  45%|████▌     | 1.55G/3.44G [00:25<00:30, 61.2MB/s][A[A[A
+model.safetensors:  54%|█████▍    | 661M/1.22G [00:25<00:20, 27.2MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  45%|████▌     | 1.56G/3.44G [00:25<00:30, 61.3MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  46%|████▌     | 1.57G/3.44G [00:25<00:27, 66.7MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  46%|████▌     | 1.58G/3.44G [00:25<00:28, 66.1MB/s][A[A[A
+model.safetensors:  55%|█████▌    | 671M/1.22G [00:25<00:19, 28.3MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  46%|████▋     | 1.59G/3.44G [00:25<00:26, 68.8MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  47%|████▋     | 1.61G/3.44G [00:25<00:23, 78.7MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  47%|████▋     | 1.63G/3.44G [00:26<00:23, 78.5MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  48%|████▊     | 1.64G/3.44G [00:26<00:22, 79.2MB/s][A[A[A
+model.safetensors:  56%|█████▌    | 682M/1.22G [00:26<00:22, 23.3MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  48%|████▊     | 1.66G/3.44G [00:26<00:20, 86.9MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  48%|████▊     | 1.67G/3.44G [00:26<00:20, 84.9MB/s][A[A[A
+
+model.safetensors:  11%|█         | 52.4M/492M [00:26<04:39, 1.58MB/s][A[A
+
+
+diffusion_pytorch_model.safetensors:  49%|████▉     | 1.68G/3.44G [00:26<00:20, 86.1MB/s][A[A[A
+model.safetensors:  57%|█████▋    | 692M/1.22G [00:27<00:23, 22.1MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  49%|████▉     | 1.69G/3.44G [00:26<00:21, 82.3MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  49%|████▉     | 1.70G/3.44G [00:26<00:20, 86.2MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  50%|████▉     | 1.71G/3.44G [00:27<00:21, 81.8MB/s][A[A[A
+model.safetensors:  58%|█████▊    | 703M/1.22G [00:27<00:21, 23.7MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  50%|█████     | 1.72G/3.44G [00:27<00:22, 77.1MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  50%|█████     | 1.73G/3.44G [00:27<00:21, 78.4MB/s][A[A[A
+model.safetensors:  59%|█████▊    | 713M/1.22G [00:27<00:18, 26.8MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  51%|█████     | 1.74G/3.44G [00:27<00:21, 77.5MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  51%|█████     | 1.75G/3.44G [00:27<00:21, 77.2MB/s][A[A[A
+model.safetensors:  60%|█████▉    | 724M/1.22G [00:27<00:17, 28.6MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  51%|█████     | 1.76G/3.44G [00:27<00:21, 78.8MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  52%|█████▏    | 1.77G/3.44G [00:27<00:21, 78.7MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  52%|█████▏    | 1.78G/3.44G [00:28<00:21, 75.5MB/s][A[A[A
+model.safetensors:  60%|██████    | 734M/1.22G [00:28<00:16, 29.8MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  52%|█████▏    | 1.79G/3.44G [00:28<00:21, 75.0MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  52%|█████▏    | 1.80G/3.44G [00:28<00:22, 71.9MB/s][A[A[A
+model.safetensors:  61%|██████    | 744M/1.22G [00:28<00:14, 31.6MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  53%|█████▎    | 1.81G/3.44G [00:28<00:22, 72.0MB/s][A[A[A
+model.safetensors:  62%|██████▏   | 755M/1.22G [00:28<00:13, 34.6MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  53%|█████▎    | 1.82G/3.44G [00:28<00:22, 72.2MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  53%|█████▎    | 1.84G/3.44G [00:28<00:23, 69.1MB/s][A[A[A
+model.safetensors:  63%|██████▎   | 765M/1.22G [00:29<00:11, 37.6MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  54%|█████▎    | 1.85G/3.44G [00:28<00:22, 70.1MB/s][A[A[A
+model.safetensors:  64%|██████▍   | 776M/1.22G [00:29<00:11, 39.6MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  54%|█████▍    | 1.86G/3.44G [00:29<00:23, 67.9MB/s][A[A[A
+model.safetensors:  65%|██████▍   | 786M/1.22G [00:29<00:09, 43.2MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  54%|█████▍    | 1.87G/3.44G [00:29<00:24, 63.1MB/s][A[A[A
+model.safetensors:  66%|██████▌   | 797M/1.22G [00:29<00:09, 44.6MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  55%|█████▍    | 1.88G/3.44G [00:29<00:24, 64.1MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  55%|█████▍    | 1.89G/3.44G [00:29<00:23, 65.3MB/s][A[A[A
+model.safetensors:  66%|██████▋   | 807M/1.22G [00:29<00:09, 44.3MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  55%|█████▌    | 1.90G/3.44G [00:29<00:22, 68.1MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  56%|█████▌    | 1.91G/3.44G [00:29<00:20, 73.5MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  56%|█████▌    | 1.92G/3.44G [00:30<00:20, 75.6MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  56%|█████▌    | 1.93G/3.44G [00:30<00:19, 77.6MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  57%|█████▋    | 1.95G/3.44G [00:30<00:17, 86.4MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  57%|█████▋    | 1.96G/3.44G [00:30<00:16, 87.8MB/s][A[A[A
+model.safetensors:  67%|██████▋   | 818M/1.22G [00:30<00:16, 23.7MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  57%|█████▋    | 1.97G/3.44G [00:30<00:18, 78.6MB/s][A[A[A
+
+model.safetensors:  13%|█▎        | 62.9M/492M [00:30<03:56, 1.82MB/s][A[A
+
+
+diffusion_pytorch_model.safetensors:  58%|█████▊    | 1.98G/3.44G [00:30<00:17, 83.3MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  58%|█████▊    | 1.99G/3.44G [00:30<00:16, 86.1MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  58%|█████▊    | 2.00G/3.44G [00:30<00:15, 89.9MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  59%|█████▊    | 2.01G/3.44G [00:31<00:15, 90.2MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  59%|█████▉    | 2.02G/3.44G [00:31<00:24, 57.8MB/s][A[A[A
+model.safetensors:  68%|██████▊   | 828M/1.22G [00:31<00:20, 18.7MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  59%|█████▉    | 2.03G/3.44G [00:31<00:22, 62.4MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  59%|█████▉    | 2.04G/3.44G [00:31<00:20, 67.2MB/s][A[A[A
+model.safetensors:  69%|██████▉   | 839M/1.22G [00:32<00:17, 21.2MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  60%|█████▉    | 2.06G/3.44G [00:31<00:19, 69.4MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  60%|██████    | 2.07G/3.44G [00:31<00:19, 69.6MB/s][A[A[A
+model.safetensors:  70%|██████▉   | 849M/1.22G [00:32<00:14, 24.5MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  60%|██████    | 2.08G/3.44G [00:32<00:19, 68.4MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  61%|██████    | 2.09G/3.44G [00:32<00:20, 65.5MB/s][A[A[A
+model.safetensors:  71%|███████   | 860M/1.22G [00:32<00:12, 28.4MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  61%|██████    | 2.10G/3.44G [00:32<00:21, 63.7MB/s][A[A[A
+model.safetensors:  72%|███████▏  | 870M/1.22G [00:32<00:10, 33.5MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  61%|██████▏   | 2.11G/3.44G [00:32<00:19, 68.9MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  62%|██████▏   | 2.12G/3.44G [00:32<00:18, 71.2MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  62%|██████▏   | 2.13G/3.44G [00:32<00:18, 71.9MB/s][A[A[A
+model.safetensors:  72%|███████▏  | 881M/1.22G [00:33<00:10, 30.6MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  62%|██████▏   | 2.14G/3.44G [00:33<00:17, 73.3MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  63%|██████▎   | 2.15G/3.44G [00:33<00:16, 79.7MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  63%|██████▎   | 2.16G/3.44G [00:33<00:16, 79.2MB/s][A[A[A
+model.safetensors:  73%|███████▎  | 891M/1.22G [00:33<00:11, 27.8MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  63%|██████▎   | 2.17G/3.44G [00:33<00:16, 78.7MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  63%|██████▎   | 2.18G/3.44G [00:33<00:15, 80.1MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  64%|██████▎   | 2.19G/3.44G [00:33<00:17, 73.0MB/s][A[A[A
+model.safetensors:  74%|███████▍  | 902M/1.22G [00:33<00:11, 27.5MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  64%|██████▍   | 2.20G/3.44G [00:33<00:16, 76.6MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  64%|██████▍   | 2.21G/3.44G [00:33<00:16, 72.2MB/s][A[A[A
+model.safetensors:  75%|███████▌  | 912M/1.22G [00:34<00:10, 28.9MB/s][A
+
+model.safetensors:  15%|█▍        | 73.4M/492M [00:34<03:20, 2.09MB/s][A[A
+
+
+diffusion_pytorch_model.safetensors:  65%|██████▍   | 2.22G/3.44G [00:34<00:17, 70.1MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  65%|██████▍   | 2.23G/3.44G [00:34<00:17, 70.6MB/s][A[A[A
+model.safetensors:  76%|███████▌  | 923M/1.22G [00:34<00:09, 30.0MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  65%|██████▌   | 2.24G/3.44G [00:34<00:16, 73.2MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  66%|██████▌   | 2.25G/3.44G [00:34<00:16, 73.9MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  66%|██████▌   | 2.26G/3.44G [00:34<00:15, 77.2MB/s][A[A[A
+model.safetensors:  77%|███████▋  | 933M/1.22G [00:35<00:09, 28.5MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  66%|██████▌   | 2.28G/3.44G [00:34<00:14, 77.6MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  66%|██████▋   | 2.29G/3.44G [00:34<00:16, 71.3MB/s][A[A[A
+
+model.safetensors:  17%|█▋        | 83.9M/492M [00:35<02:25, 2.81MB/s][A[A
+
+
+diffusion_pytorch_model.safetensors:  67%|██████▋   | 2.30G/3.44G [00:35<00:18, 61.2MB/s][A[A[A
+model.safetensors:  78%|███████▊  | 944M/1.22G [00:35<00:09, 27.4MB/s][A
+
+model.safetensors:  19%|█▉        | 94.4M/492M [00:35<01:39, 3.98MB/s][A[A
+
+
+diffusion_pytorch_model.safetensors:  67%|██████▋   | 2.31G/3.44G [00:35<00:21, 52.7MB/s][A[A[A
+
+model.safetensors:  21%|██▏       | 105M/492M [00:35<01:10, 5.53MB/s] [A[A
+model.safetensors:  78%|███████▊  | 954M/1.22G [00:35<00:09, 27.9MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  67%|██████▋   | 2.32G/3.44G [00:35<00:22, 49.9MB/s][A[A[A
+model.safetensors:  79%|███████▉  | 965M/1.22G [00:36<00:08, 29.4MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  68%|██████▊   | 2.33G/3.44G [00:36<00:25, 43.8MB/s][A[A[A
+
+model.safetensors:  23%|██▎       | 115M/492M [00:36<00:53, 7.09MB/s][A[A
+model.safetensors:  80%|████████  | 975M/1.22G [00:36<00:07, 33.3MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  68%|██████▊   | 2.34G/3.44G [00:36<00:25, 43.6MB/s][A[A[A
+
+model.safetensors:  26%|██▌       | 126M/492M [00:36<00:38, 9.62MB/s][A[A
+model.safetensors:  81%|████████  | 986M/1.22G [00:36<00:07, 31.5MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  68%|██████▊   | 2.35G/3.44G [00:36<00:25, 43.3MB/s][A[A[A
+
+model.safetensors:  28%|██▊       | 136M/492M [00:36<00:28, 12.5MB/s][A[A
+
+
+diffusion_pytorch_model.safetensors:  69%|██████▊   | 2.36G/3.44G [00:36<00:26, 40.3MB/s][A[A[A
+model.safetensors:  82%|████████▏ | 996M/1.22G [00:37<00:07, 31.3MB/s][A
+
+model.safetensors:  30%|██▉       | 147M/492M [00:37<00:22, 15.6MB/s][A[A
+
+
+diffusion_pytorch_model.safetensors:  69%|██████▉   | 2.37G/3.44G [00:37<00:25, 42.2MB/s][A[A[A
+model.safetensors:  83%|████████▎ | 1.01G/1.22G [00:37<00:06, 33.4MB/s][A
+
+model.safetensors:  32%|███▏      | 157M/492M [00:37<00:17, 19.0MB/s][A[A
+
+
+diffusion_pytorch_model.safetensors:  69%|██████▉   | 2.38G/3.44G [00:37<00:25, 41.7MB/s][A[A[A
+model.safetensors:  84%|████████▎ | 1.02G/1.22G [00:37<00:05, 35.2MB/s][A
+
+model.safetensors:  34%|███▍      | 168M/492M [00:37<00:14, 22.2MB/s][A[A
+
+
+diffusion_pytorch_model.safetensors:  70%|██████▉   | 2.39G/3.44G [00:37<00:25, 40.8MB/s][A[A[A
+model.safetensors:  85%|████████▍ | 1.03G/1.22G [00:37<00:05, 36.9MB/s][A
+
+model.safetensors:  36%|███▌      | 178M/492M [00:37<00:12, 25.4MB/s][A[A
+
+
+diffusion_pytorch_model.safetensors:  70%|██████▉   | 2.40G/3.44G [00:37<00:26, 39.7MB/s][A[A[A
+model.safetensors:  85%|████████▌ | 1.04G/1.22G [00:38<00:04, 38.5MB/s][A
+
+model.safetensors:  38%|███▊      | 189M/492M [00:38<00:10, 27.7MB/s][A[A
+model.safetensors:  86%|████████▌ | 1.05G/1.22G [00:38<00:04, 39.9MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  70%|███████   | 2.41G/3.44G [00:38<00:25, 39.7MB/s][A[A[A
+
+model.safetensors:  40%|████      | 199M/492M [00:38<00:09, 29.9MB/s][A[A
+model.safetensors:  87%|████████▋ | 1.06G/1.22G [00:38<00:04, 39.2MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  70%|███████   | 2.42G/3.44G [00:38<00:25, 39.5MB/s][A[A[A
+
+model.safetensors:  43%|████▎     | 210M/492M [00:38<00:09, 31.4MB/s][A[A
+model.safetensors:  88%|████████▊ | 1.07G/1.22G [00:38<00:03, 40.2MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  71%|███████   | 2.43G/3.44G [00:38<00:24, 40.4MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  71%|███████   | 2.44G/3.44G [00:38<00:23, 41.5MB/s][A[A[A
+
+model.safetensors:  45%|████▍     | 220M/492M [00:39<00:08, 32.1MB/s][A[A
+model.safetensors:  89%|████████▉ | 1.08G/1.22G [00:39<00:03, 40.3MB/s][A
+model.safetensors:  90%|████████▉ | 1.09G/1.22G [00:39<00:03, 40.8MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  71%|███████▏  | 2.45G/3.44G [00:39<00:24, 40.6MB/s][A[A[A
+
+model.safetensors:  47%|████▋     | 231M/492M [00:39<00:08, 32.6MB/s][A[A
+model.safetensors:  91%|█████████ | 1.10G/1.22G [00:39<00:02, 41.5MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  72%|███████▏  | 2.46G/3.44G [00:39<00:24, 40.3MB/s][A[A[A
+
+model.safetensors:  49%|████▉     | 241M/492M [00:39<00:07, 33.5MB/s][A[A
+model.safetensors:  91%|█████████▏| 1.11G/1.22G [00:39<00:02, 41.7MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  72%|███████▏  | 2.47G/3.44G [00:39<00:24, 39.5MB/s][A[A[A
+
+model.safetensors:  51%|█████     | 252M/492M [00:39<00:06, 34.8MB/s][A[A
+model.safetensors:  92%|█████████▏| 1.12G/1.22G [00:40<00:02, 41.1MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  72%|███████▏  | 2.49G/3.44G [00:39<00:24, 38.7MB/s][A[A[A
+
+model.safetensors:  53%|█████▎    | 262M/492M [00:40<00:06, 36.6MB/s][A[A
+model.safetensors:  93%|█████████▎| 1.13G/1.22G [00:40<00:02, 39.0MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  73%|███████▎  | 2.50G/3.44G [00:40<00:23, 39.9MB/s][A[A[A
+
+model.safetensors:  55%|█████▌    | 273M/492M [00:40<00:05, 37.7MB/s][A[A
+
+
+diffusion_pytorch_model.safetensors:  73%|███████▎  | 2.51G/3.44G [00:40<00:23, 39.9MB/s][A[A[A
+model.safetensors:  94%|█████████▍| 1.14G/1.22G [00:40<00:01, 38.0MB/s][A
+
+model.safetensors:  58%|█████▊    | 283M/492M [00:40<00:05, 37.5MB/s][A[A
+
+
+diffusion_pytorch_model.safetensors:  73%|███████▎  | 2.52G/3.44G [00:40<00:22, 40.4MB/s][A[A[A
+model.safetensors:  95%|█████████▍| 1.15G/1.22G [00:40<00:01, 37.5MB/s][A
+
+model.safetensors:  60%|█████▉    | 294M/492M [00:40<00:05, 38.8MB/s][A[A
+
+
+diffusion_pytorch_model.safetensors:  74%|███████▎  | 2.53G/3.44G [00:40<00:22, 39.9MB/s][A[A[A
+model.safetensors:  96%|█████████▌| 1.16G/1.22G [00:41<00:01, 37.6MB/s][A
+
+model.safetensors:  62%|██████▏   | 304M/492M [00:41<00:04, 39.0MB/s][A[A
+
+
+diffusion_pytorch_model.safetensors:  74%|███████▍  | 2.54G/3.44G [00:41<00:22, 40.7MB/s][A[A[A
+
+model.safetensors:  64%|██████▍   | 315M/492M [00:41<00:04, 39.4MB/s][A[A
+model.safetensors:  97%|█████████▋| 1.17G/1.22G [00:41<00:01, 37.0MB/s][A
+
+
+diffusion_pytorch_model.safetensors:  74%|███████▍  | 2.55G/3.44G [00:41<00:21, 40.5MB/s][A[A[A
+
+model.safetensors:  66%|██████▌   | 325M/492M [00:41<00:04, 39.3MB/s][A[A
+model.safetensors:  97%|█████████▋| 1.18G/1.22G [00:41<00:00, 34.9MB/s][A
+
+model.safetensors:  68%|██████▊   | 336M/492M [00:41<00:03, 42.8MB/s][A[A
+
+model.safetensors:  70%|███████   | 346M/492M [00:42<00:03, 43.5MB/s][A[A
+
+
+diffusion_pytorch_model.safetensors:  74%|███████▍  | 2.56G/3.44G [00:42<00:29, 30.2MB/s][A[A[A
+model.safetensors:  98%|█████████▊| 1.20G/1.22G [00:42<00:00, 30.8MB/s][A
+
+model.safetensors:  72%|███████▏  | 357M/492M [00:42<00:03, 44.1MB/s][A[A
+
+
+diffusion_pytorch_model.safetensors:  75%|███████▍  | 2.57G/3.44G [00:42<00:26, 33.3MB/s][A[A[A
+model.safetensors:  99%|█████████▉| 1.21G/1.22G [00:42<00:00, 30.8MB/s][A
+
+model.safetensors:  75%|███████▍  | 367M/492M [00:42<00:02, 43.1MB/s][A[A
+
+
+diffusion_pytorch_model.safetensors:  75%|███████▌  | 2.58G/3.44G [00:42<00:23, 36.0MB/s][A[A[A
+
+model.safetensors:  77%|███████▋  | 377M/492M [00:42<00:02, 42.9MB/s][A[A
+
+
+diffusion_pytorch_model.safetensors:  75%|███████▌  | 2.59G/3.44G [00:42<00:22, 38.1MB/s][A[A[A
+model.safetensors: 100%|██████████| 1.22G/1.22G [00:42<00:00, 30.9MB/s][Amodel.safetensors: 100%|██████████| 1.22G/1.22G [00:43<00:00, 28.3MB/s]
+Fetching 15 files:  27%|██▋       | 4/15 [00:43<02:09, 11.76s/it]
+
+
+diffusion_pytorch_model.safetensors:  76%|███████▌  | 2.60G/3.44G [00:42<00:18, 44.8MB/s][A[A[A
+
+model.safetensors:  79%|███████▉  | 388M/492M [00:43<00:02, 44.4MB/s][A[A
+
+
+diffusion_pytorch_model.safetensors:  76%|███████▌  | 2.61G/3.44G [00:43<00:16, 49.1MB/s][A[A[A
+
+model.safetensors:  81%|████████  | 398M/492M [00:43<00:02, 43.7MB/s][A[A
+
+
+diffusion_pytorch_model.safetensors:  76%|███████▌  | 2.62G/3.44G [00:43<00:15, 54.4MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  77%|███████▋  | 2.63G/3.44G [00:43<00:14, 56.3MB/s][A[A[A
+
+model.safetensors:  83%|████████▎ | 409M/492M [00:43<00:01, 45.4MB/s][A[A
+
+
+diffusion_pytorch_model.safetensors:  77%|███████▋  | 2.64G/3.44G [00:43<00:13, 57.5MB/s][A[A[A
+
+model.safetensors:  85%|████████▌ | 419M/492M [00:43<00:01, 48.4MB/s][A[A
+
+
+diffusion_pytorch_model.safetensors:  77%|███████▋  | 2.65G/3.44G [00:43<00:13, 58.5MB/s][A[A[A
+
+model.safetensors:  87%|████████▋ | 430M/492M [00:44<00:01, 48.8MB/s][A[A
+
+
+diffusion_pytorch_model.safetensors:  77%|███████▋  | 2.66G/3.44G [00:43<00:12, 61.4MB/s][A[A[A
+
+model.safetensors:  89%|████████▉ | 440M/492M [00:44<00:01, 50.7MB/s][A[A
+
+
+diffusion_pytorch_model.safetensors:  78%|███████▊  | 2.67G/3.44G [00:44<00:12, 59.7MB/s][A[A[A
+
+model.safetensors:  92%|█████████▏| 451M/492M [00:44<00:00, 51.7MB/s][A[A
+
+
+diffusion_pytorch_model.safetensors:  78%|███████▊  | 2.68G/3.44G [00:44<00:12, 60.6MB/s][A[A[A
+
+model.safetensors:  94%|█████████▎| 461M/492M [00:44<00:00, 52.6MB/s][A[A
+
+
+diffusion_pytorch_model.safetensors:  78%|███████▊  | 2.69G/3.44G [00:44<00:12, 61.2MB/s][A[A[A
+
+model.safetensors:  96%|█████████▌| 472M/492M [00:44<00:00, 53.4MB/s][A[A
+
+
+diffusion_pytorch_model.safetensors:  79%|███████▊  | 2.71G/3.44G [00:44<00:12, 60.5MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  79%|███████▉  | 2.72G/3.44G [00:44<00:11, 61.0MB/s][A[A[A
+
+model.safetensors:  98%|█████████▊| 482M/492M [00:44<00:00, 53.7MB/s][A[A
+
+
+diffusion_pytorch_model.safetensors:  79%|███████▉  | 2.73G/3.44G [00:44<00:11, 61.2MB/s][A[A[A
+
+model.safetensors: 100%|██████████| 492M/492M [00:45<00:00, 55.7MB/s][A[Amodel.safetensors: 100%|██████████| 492M/492M [00:45<00:00, 10.9MB/s]
+Fetching 15 files:  47%|████▋     | 7/15 [00:45<00:46,  5.83s/it]
+
+
+diffusion_pytorch_model.safetensors:  80%|███████▉  | 2.74G/3.44G [00:45<00:10, 64.6MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  80%|███████▉  | 2.75G/3.44G [00:45<00:09, 69.6MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  80%|████████  | 2.76G/3.44G [00:45<00:08, 76.0MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  81%|████████  | 2.78G/3.44G [00:45<00:07, 85.5MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  81%|████████▏ | 2.80G/3.44G [00:45<00:06, 95.4MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  82%|████████▏ | 2.82G/3.44G [00:45<00:06, 99.4MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  83%|████████▎ | 2.84G/3.44G [00:46<00:05, 102MB/s] [A[A[A
+
+
+diffusion_pytorch_model.safetensors:  83%|████████▎ | 2.86G/3.44G [00:46<00:05, 102MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  84%|████████▍ | 2.88G/3.44G [00:46<00:05, 106MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  84%|████████▍ | 2.90G/3.44G [00:46<00:04, 107MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  85%|████████▌ | 2.93G/3.44G [00:46<00:04, 107MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  86%|████████▌ | 2.95G/3.44G [00:47<00:04, 108MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  86%|████████▋ | 2.97G/3.44G [00:47<00:04, 106MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  87%|████████▋ | 2.99G/3.44G [00:47<00:04, 102MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  87%|████████▋ | 3.00G/3.44G [00:47<00:04, 102MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  88%|████████▊ | 3.02G/3.44G [00:47<00:03, 105MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  88%|████████▊ | 3.04G/3.44G [00:47<00:03, 105MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  89%|████████▉ | 3.06G/3.44G [00:48<00:03, 107MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  90%|████████▉ | 3.08G/3.44G [00:48<00:03, 108MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  90%|█████████ | 3.10G/3.44G [00:48<00:03, 108MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  91%|█████████ | 3.12G/3.44G [00:48<00:02, 106MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  91%|█████████▏| 3.15G/3.44G [00:48<00:02, 110MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  92%|█████████▏| 3.17G/3.44G [00:49<00:02, 110MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  93%|█████████▎| 3.19G/3.44G [00:49<00:02, 110MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  93%|█████████▎| 3.21G/3.44G [00:49<00:02, 109MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  94%|█████████▍| 3.23G/3.44G [00:49<00:01, 106MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  95%|█████████▍| 3.25G/3.44G [00:49<00:01, 110MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  95%|█████████▌| 3.27G/3.44G [00:50<00:01, 110MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  96%|█████████▌| 3.29G/3.44G [00:50<00:01, 108MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  96%|█████████▋| 3.31G/3.44G [00:50<00:01, 109MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  97%|█████████▋| 3.33G/3.44G [00:50<00:00, 109MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  98%|█████████▊| 3.36G/3.44G [00:50<00:00, 108MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  98%|█████████▊| 3.38G/3.44G [00:51<00:00, 106MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  99%|█████████▉| 3.40G/3.44G [00:51<00:00, 108MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors:  99%|█████████▉| 3.42G/3.44G [00:51<00:00, 109MB/s][A[A[A
+
+
+diffusion_pytorch_model.safetensors: 100%|██████████| 3.44G/3.44G [00:51<00:00, 107MB/s][A[A[Adiffusion_pytorch_model.safetensors: 100%|██████████| 3.44G/3.44G [00:51<00:00, 66.6MB/s]
+Fetching 15 files:  87%|████████▋ | 13/15 [00:52<00:05,  2.98s/it]Fetching 15 files: 100%|██████████| 15/15 [00:52<00:00,  3.49s/it]
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  14%|█▍        | 1/7 [00:00<00:00,  7.67it/s]Loading pipeline components...:  29%|██▊       | 2/7 [00:00<00:00,  5.83it/s]`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+Loading pipeline components...:  57%|█████▋    | 4/7 [00:00<00:00,  5.71it/s]Loading pipeline components...:  86%|████████▌ | 6/7 [00:01<00:00,  4.42it/s]Loading pipeline components...: 100%|██████████| 7/7 [00:01<00:00,  5.44it/s]
+config.json:   0%|          | 0.00/998 [00:00<?, ?B/s]config.json: 100%|██████████| 998/998 [00:00<00:00, 593kB/s]
+diffusion_pytorch_model.safetensors:   0%|          | 0.00/1.45G [00:00<?, ?B/s]diffusion_pytorch_model.safetensors:   1%|          | 10.5M/1.45G [00:01<02:48, 8.52MB/s]diffusion_pytorch_model.safetensors:   1%|▏         | 21.0M/1.45G [00:01<01:31, 15.5MB/s]diffusion_pytorch_model.safetensors:   2%|▏         | 31.5M/1.45G [00:01<01:14, 19.0MB/s]diffusion_pytorch_model.safetensors:   3%|▎         | 41.9M/1.45G [00:02<01:09, 20.1MB/s]diffusion_pytorch_model.safetensors:   4%|▎         | 52.4M/1.45G [00:02<01:07, 20.5MB/s]diffusion_pytorch_model.safetensors:   4%|▍         | 62.9M/1.45G [00:03<01:02, 22.2MB/s]diffusion_pytorch_model.safetensors:   5%|▌         | 73.4M/1.45G [00:03<01:07, 20.3MB/s]diffusion_pytorch_model.safetensors:   6%|▌         | 83.9M/1.45G [00:04<00:57, 23.5MB/s]diffusion_pytorch_model.safetensors:   7%|▋         | 94.4M/1.45G [00:04<00:51, 26.4MB/s]diffusion_pytorch_model.safetensors:   7%|▋         | 105M/1.45G [00:04<00:49, 27.1MB/s] diffusion_pytorch_model.safetensors:   8%|▊         | 115M/1.45G [00:05<00:47, 28.3MB/s]diffusion_pytorch_model.safetensors:   9%|▊         | 126M/1.45G [00:05<00:49, 26.4MB/s]diffusion_pytorch_model.safetensors:   9%|▉         | 136M/1.45G [00:05<00:47, 27.7MB/s]diffusion_pytorch_model.safetensors:  10%|█         | 147M/1.45G [00:06<00:49, 26.4MB/s]diffusion_pytorch_model.safetensors:  11%|█         | 157M/1.45G [00:06<00:50, 25.6MB/s]diffusion_pytorch_model.safetensors:  12%|█▏        | 168M/1.45G [00:07<00:49, 25.8MB/s]diffusion_pytorch_model.safetensors:  12%|█▏        | 178M/1.45G [00:07<00:46, 27.1MB/s]diffusion_pytorch_model.safetensors:  13%|█▎        | 189M/1.45G [00:07<00:44, 28.4MB/s]diffusion_pytorch_model.safetensors:  14%|█▍        | 199M/1.45G [00:08<00:42, 29.6MB/s]diffusion_pytorch_model.safetensors:  15%|█▍        | 210M/1.45G [00:08<00:40, 30.8MB/s]diffusion_pytorch_model.safetensors:  15%|█▌        | 220M/1.45G [00:08<00:42, 28.7MB/s]diffusion_pytorch_model.safetensors:  16%|█▌        | 231M/1.45G [00:09<00:40, 29.7MB/s]diffusion_pytorch_model.safetensors:  17%|█▋        | 241M/1.45G [00:09<00:40, 29.7MB/s]diffusion_pytorch_model.safetensors:  17%|█▋        | 252M/1.45G [00:09<00:37, 32.1MB/s]diffusion_pytorch_model.safetensors:  18%|█▊        | 262M/1.45G [00:10<00:40, 28.9MB/s]diffusion_pytorch_model.safetensors:  19%|█▉        | 273M/1.45G [00:10<00:45, 26.0MB/s]diffusion_pytorch_model.safetensors:  20%|█▉        | 283M/1.45G [00:11<00:42, 27.5MB/s]diffusion_pytorch_model.safetensors:  20%|██        | 294M/1.45G [00:11<00:45, 25.6MB/s]diffusion_pytorch_model.safetensors:  21%|██        | 304M/1.45G [00:11<00:40, 27.8MB/s]diffusion_pytorch_model.safetensors:  22%|██▏       | 315M/1.45G [00:12<00:40, 28.1MB/s]diffusion_pytorch_model.safetensors:  22%|██▏       | 325M/1.45G [00:12<00:38, 29.1MB/s]diffusion_pytorch_model.safetensors:  23%|██▎       | 336M/1.45G [00:12<00:36, 30.5MB/s]diffusion_pytorch_model.safetensors:  24%|██▍       | 346M/1.45G [00:13<00:45, 24.0MB/s]diffusion_pytorch_model.safetensors:  25%|██▍       | 357M/1.45G [00:14<00:48, 22.4MB/s]diffusion_pytorch_model.safetensors:  25%|██▌       | 367M/1.45G [00:14<00:49, 21.7MB/s]diffusion_pytorch_model.safetensors:  26%|██▌       | 377M/1.45G [00:15<00:44, 23.9MB/s]diffusion_pytorch_model.safetensors:  27%|██▋       | 388M/1.45G [00:15<00:43, 24.3MB/s]diffusion_pytorch_model.safetensors:  28%|██▊       | 398M/1.45G [00:15<00:39, 26.5MB/s]diffusion_pytorch_model.safetensors:  28%|██▊       | 409M/1.45G [00:16<00:42, 24.5MB/s]diffusion_pytorch_model.safetensors:  29%|██▉       | 419M/1.45G [00:16<00:43, 23.8MB/s]diffusion_pytorch_model.safetensors:  30%|██▉       | 430M/1.45G [00:17<00:42, 23.7MB/s]diffusion_pytorch_model.safetensors:  30%|███       | 440M/1.45G [00:17<00:41, 24.1MB/s]diffusion_pytorch_model.safetensors:  31%|███       | 451M/1.45G [00:17<00:39, 25.2MB/s]diffusion_pytorch_model.safetensors:  32%|███▏      | 461M/1.45G [00:18<00:35, 27.9MB/s]diffusion_pytorch_model.safetensors:  33%|███▎      | 472M/1.45G [00:18<00:38, 25.4MB/s]diffusion_pytorch_model.safetensors:  33%|███▎      | 482M/1.45G [00:19<00:36, 26.1MB/s]diffusion_pytorch_model.safetensors:  34%|███▍      | 493M/1.45G [00:19<00:30, 31.3MB/s]diffusion_pytorch_model.safetensors:  35%|███▍      | 503M/1.45G [00:19<00:27, 34.4MB/s]diffusion_pytorch_model.safetensors:  36%|███▌      | 514M/1.45G [00:19<00:28, 32.8MB/s]diffusion_pytorch_model.safetensors:  36%|███▋      | 524M/1.45G [00:20<00:29, 31.7MB/s]diffusion_pytorch_model.safetensors:  37%|███▋      | 535M/1.45G [00:20<00:31, 29.2MB/s]diffusion_pytorch_model.safetensors:  38%|███▊      | 545M/1.45G [00:21<00:32, 27.3MB/s]diffusion_pytorch_model.safetensors:  38%|███▊      | 556M/1.45G [00:21<00:34, 25.5MB/s]diffusion_pytorch_model.safetensors:  39%|███▉      | 566M/1.45G [00:21<00:33, 25.9MB/s]diffusion_pytorch_model.safetensors:  40%|███▉      | 577M/1.45G [00:22<00:29, 29.4MB/s]diffusion_pytorch_model.safetensors:  41%|████      | 587M/1.45G [00:22<00:28, 29.9MB/s]diffusion_pytorch_model.safetensors:  41%|████▏     | 598M/1.45G [00:22<00:28, 30.1MB/s]diffusion_pytorch_model.safetensors:  42%|████▏     | 608M/1.45G [00:23<00:27, 30.4MB/s]diffusion_pytorch_model.safetensors:  43%|████▎     | 619M/1.45G [00:23<00:27, 30.4MB/s]diffusion_pytorch_model.safetensors:  44%|████▎     | 629M/1.45G [00:23<00:24, 33.4MB/s]diffusion_pytorch_model.safetensors:  44%|████▍     | 640M/1.45G [00:24<00:22, 35.1MB/s]diffusion_pytorch_model.safetensors:  45%|████▍     | 650M/1.45G [00:24<00:23, 34.0MB/s]diffusion_pytorch_model.safetensors:  46%|████▌     | 661M/1.45G [00:24<00:21, 35.7MB/s]diffusion_pytorch_model.safetensors:  46%|████▋     | 671M/1.45G [00:25<00:27, 28.1MB/s]diffusion_pytorch_model.safetensors:  47%|████▋     | 682M/1.45G [00:25<00:29, 25.9MB/s]diffusion_pytorch_model.safetensors:  48%|████▊     | 692M/1.45G [00:26<00:28, 26.8MB/s]diffusion_pytorch_model.safetensors:  49%|████▊     | 703M/1.45G [00:26<00:24, 30.2MB/s]diffusion_pytorch_model.safetensors:  49%|████▉     | 713M/1.45G [00:26<00:26, 27.9MB/s]diffusion_pytorch_model.safetensors:  50%|█████     | 724M/1.45G [00:27<00:26, 27.6MB/s]diffusion_pytorch_model.safetensors:  51%|█████     | 734M/1.45G [00:27<00:26, 26.6MB/s]diffusion_pytorch_model.safetensors:  52%|█████▏    | 744M/1.45G [00:27<00:26, 26.7MB/s]diffusion_pytorch_model.safetensors:  52%|█████▏    | 755M/1.45G [00:28<00:24, 27.9MB/s]diffusion_pytorch_model.safetensors:  53%|█████▎    | 765M/1.45G [00:28<00:23, 28.9MB/s]diffusion_pytorch_model.safetensors:  54%|█████▎    | 776M/1.45G [00:29<00:25, 26.7MB/s]diffusion_pytorch_model.safetensors:  54%|█████▍    | 786M/1.45G [00:29<00:22, 29.0MB/s]diffusion_pytorch_model.safetensors:  55%|█████▌    | 797M/1.45G [00:29<00:21, 30.0MB/s]diffusion_pytorch_model.safetensors:  56%|█████▌    | 807M/1.45G [00:30<00:21, 29.6MB/s]diffusion_pytorch_model.safetensors:  57%|█████▋    | 818M/1.45G [00:30<00:20, 30.2MB/s]diffusion_pytorch_model.safetensors:  57%|█████▋    | 828M/1.45G [00:30<00:18, 33.2MB/s]diffusion_pytorch_model.safetensors:  58%|█████▊    | 839M/1.45G [00:30<00:17, 34.6MB/s]diffusion_pytorch_model.safetensors:  59%|█████▉    | 849M/1.45G [00:31<00:18, 32.5MB/s]diffusion_pytorch_model.safetensors:  59%|█████▉    | 860M/1.45G [00:31<00:17, 32.9MB/s]diffusion_pytorch_model.safetensors:  60%|██████    | 870M/1.45G [00:31<00:15, 36.6MB/s]diffusion_pytorch_model.safetensors:  61%|██████    | 881M/1.45G [00:32<00:18, 30.8MB/s]diffusion_pytorch_model.safetensors:  62%|██████▏   | 891M/1.45G [00:32<00:15, 35.2MB/s]diffusion_pytorch_model.safetensors:  62%|██████▏   | 902M/1.45G [00:32<00:17, 31.8MB/s]diffusion_pytorch_model.safetensors:  63%|██████▎   | 912M/1.45G [00:33<00:17, 30.9MB/s]diffusion_pytorch_model.safetensors:  64%|██████▍   | 923M/1.45G [00:33<00:14, 35.8MB/s]diffusion_pytorch_model.safetensors:  65%|██████▍   | 933M/1.45G [00:33<00:13, 37.7MB/s]diffusion_pytorch_model.safetensors:  65%|██████▌   | 944M/1.45G [00:34<00:16, 30.9MB/s]diffusion_pytorch_model.safetensors:  66%|██████▌   | 954M/1.45G [00:34<00:15, 31.6MB/s]diffusion_pytorch_model.safetensors:  67%|██████▋   | 965M/1.45G [00:34<00:13, 35.7MB/s]diffusion_pytorch_model.safetensors:  67%|██████▋   | 975M/1.45G [00:34<00:12, 37.7MB/s]diffusion_pytorch_model.safetensors:  68%|██████▊   | 986M/1.45G [00:35<00:13, 34.8MB/s]diffusion_pytorch_model.safetensors:  69%|██████▉   | 996M/1.45G [00:35<00:13, 33.4MB/s]diffusion_pytorch_model.safetensors:  70%|██████▉   | 1.01G/1.45G [00:35<00:14, 31.2MB/s]diffusion_pytorch_model.safetensors:  70%|███████   | 1.02G/1.45G [00:36<00:12, 33.7MB/s]diffusion_pytorch_model.safetensors:  71%|███████   | 1.03G/1.45G [00:36<00:13, 32.0MB/s]diffusion_pytorch_model.safetensors:  72%|███████▏  | 1.04G/1.45G [00:36<00:12, 33.2MB/s]diffusion_pytorch_model.safetensors:  73%|███████▎  | 1.05G/1.45G [00:37<00:11, 34.5MB/s]diffusion_pytorch_model.safetensors:  73%|███████▎  | 1.06G/1.45G [00:37<00:09, 39.3MB/s]diffusion_pytorch_model.safetensors:  74%|███████▍  | 1.07G/1.45G [00:37<00:10, 34.2MB/s]diffusion_pytorch_model.safetensors:  75%|███████▍  | 1.08G/1.45G [00:38<00:11, 30.6MB/s]diffusion_pytorch_model.safetensors:  75%|███████▌  | 1.09G/1.45G [00:38<00:10, 33.8MB/s]diffusion_pytorch_model.safetensors:  76%|███████▌  | 1.10G/1.45G [00:38<00:09, 35.4MB/s]diffusion_pytorch_model.safetensors:  77%|███████▋  | 1.11G/1.45G [00:38<00:09, 35.5MB/s]diffusion_pytorch_model.safetensors:  78%|███████▊  | 1.12G/1.45G [00:39<00:09, 32.7MB/s]diffusion_pytorch_model.safetensors:  78%|███████▊  | 1.13G/1.45G [00:39<00:09, 33.0MB/s]diffusion_pytorch_model.safetensors:  79%|███████▉  | 1.14G/1.45G [00:40<00:10, 27.6MB/s]diffusion_pytorch_model.safetensors:  80%|███████▉  | 1.15G/1.45G [00:40<00:10, 27.6MB/s]diffusion_pytorch_model.safetensors:  81%|████████  | 1.16G/1.45G [00:40<00:08, 31.3MB/s]diffusion_pytorch_model.safetensors:  81%|████████▏ | 1.17G/1.45G [00:40<00:07, 35.9MB/s]diffusion_pytorch_model.safetensors:  82%|████████▏ | 1.18G/1.45G [00:41<00:07, 35.3MB/s]diffusion_pytorch_model.safetensors:  83%|████████▎ | 1.20G/1.45G [00:41<00:07, 35.3MB/s]diffusion_pytorch_model.safetensors:  83%|████████▎ | 1.21G/1.45G [00:41<00:07, 34.1MB/s]diffusion_pytorch_model.safetensors:  84%|████████▍ | 1.22G/1.45G [00:42<00:06, 33.0MB/s]diffusion_pytorch_model.safetensors:  85%|████████▍ | 1.23G/1.45G [00:42<00:06, 32.0MB/s]diffusion_pytorch_model.safetensors:  86%|████████▌ | 1.24G/1.45G [00:42<00:06, 33.9MB/s]diffusion_pytorch_model.safetensors:  86%|████████▋ | 1.25G/1.45G [00:43<00:06, 31.1MB/s]diffusion_pytorch_model.safetensors:  87%|████████▋ | 1.26G/1.45G [00:43<00:06, 29.5MB/s]diffusion_pytorch_model.safetensors:  88%|████████▊ | 1.27G/1.45G [00:44<00:06, 29.1MB/s]diffusion_pytorch_model.safetensors:  89%|████████▊ | 1.28G/1.45G [00:44<00:06, 26.7MB/s]diffusion_pytorch_model.safetensors:  89%|████████▉ | 1.29G/1.45G [00:44<00:05, 28.4MB/s]diffusion_pytorch_model.safetensors:  90%|████████▉ | 1.30G/1.45G [00:45<00:04, 30.4MB/s]diffusion_pytorch_model.safetensors:  91%|█████████ | 1.31G/1.45G [00:45<00:04, 30.6MB/s]diffusion_pytorch_model.safetensors:  91%|█████████▏| 1.32G/1.45G [00:45<00:03, 33.2MB/s]diffusion_pytorch_model.safetensors:  92%|█████████▏| 1.33G/1.45G [00:45<00:03, 36.8MB/s]diffusion_pytorch_model.safetensors:  93%|█████████▎| 1.34G/1.45G [00:46<00:03, 33.5MB/s]diffusion_pytorch_model.safetensors:  94%|█████████▎| 1.35G/1.45G [00:46<00:02, 32.5MB/s]diffusion_pytorch_model.safetensors:  94%|█████████▍| 1.36G/1.45G [00:47<00:02, 30.8MB/s]diffusion_pytorch_model.safetensors:  95%|█████████▌| 1.37G/1.45G [00:47<00:02, 29.5MB/s]diffusion_pytorch_model.safetensors:  96%|█████████▌| 1.38G/1.45G [00:47<00:01, 30.7MB/s]diffusion_pytorch_model.safetensors:  97%|█████████▋| 1.39G/1.45G [00:48<00:01, 25.6MB/s]diffusion_pytorch_model.safetensors:  97%|█████████▋| 1.41G/1.45G [00:48<00:01, 28.8MB/s]diffusion_pytorch_model.safetensors:  98%|█████████▊| 1.42G/1.45G [00:48<00:01, 27.3MB/s]diffusion_pytorch_model.safetensors:  99%|█████████▊| 1.43G/1.45G [00:49<00:00, 26.7MB/s]diffusion_pytorch_model.safetensors:  99%|█████████▉| 1.44G/1.45G [00:49<00:00, 29.3MB/s]diffusion_pytorch_model.safetensors: 100%|██████████| 1.45G/1.45G [00:49<00:00, 34.8MB/s]diffusion_pytorch_model.safetensors: 100%|██████████| 1.45G/1.45G [00:49<00:00, 29.0MB/s]
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  29%|██▊       | 2/7 [00:00<00:00,  7.30it/s]Loading pipeline components...:  43%|████▎     | 3/7 [00:00<00:01,  3.79it/s]`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+Loading pipeline components...:  57%|█████▋    | 4/7 [00:01<00:01,  1.96it/s]Loading pipeline components...:  86%|████████▌ | 6/7 [00:08<00:02,  2.13s/it]Loading pipeline components...: 100%|██████████| 7/7 [00:08<00:00,  1.28s/it]
+Project init view [0, 23]...
+Generating init view...
+  0%|          | 0/20 [00:00<?, ?it/s]  5%|▌         | 1/20 [00:04<01:17,  4.09s/it] 10%|█         | 2/20 [00:04<00:34,  1.89s/it] 15%|█▌        | 3/20 [00:04<00:20,  1.19s/it] 20%|██        | 4/20 [00:05<00:13,  1.17it/s] 25%|██▌       | 5/20 [00:05<00:10,  1.48it/s] 30%|███       | 6/20 [00:05<00:07,  1.78it/s] 35%|███▌      | 7/20 [00:06<00:06,  2.03it/s] 40%|████      | 8/20 [00:06<00:05,  2.24it/s] 45%|████▌     | 9/20 [00:06<00:04,  2.40it/s] 50%|█████     | 10/20 [00:07<00:03,  2.53it/s] 55%|█████▌    | 11/20 [00:07<00:03,  2.62it/s] 60%|██████    | 12/20 [00:07<00:02,  2.69it/s] 65%|██████▌   | 13/20 [00:08<00:02,  2.74it/s] 70%|███████   | 14/20 [00:08<00:02,  2.78it/s] 75%|███████▌  | 15/20 [00:08<00:01,  2.81it/s] 80%|████████  | 16/20 [00:09<00:01,  2.82it/s] 85%|████████▌ | 17/20 [00:09<00:01,  2.82it/s] 90%|█████████ | 18/20 [00:10<00:00,  2.84it/s] 95%|█████████▌| 19/20 [00:10<00:00,  2.84it/s]100%|██████████| 20/20 [00:10<00:00,  2.85it/s]100%|██████████| 20/20 [00:10<00:00,  1.86it/s]
+init view generation time: 15.798272848129272
+0it [00:00, ?it/s]26it [00:00, 4180.80it/s]
+2026-07-03 16:50:14.051 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /mnt/u/My Documents/LatentWardrobe/outputs/shakedown2_20260703/medieval_villagers/member_00/stage1/res-0/mesh.obj with: vertices:(7952, 3) uv:(11630, 2) faces:(14516, 3)
+init DR time: 1.3706800937652588
+View inpainting ...
+Project inpaint view [(5, 6)]...
+0it [00:00, ?it/s]1it [00:01,  1.80s/it]1it [00:01,  1.80s/it]
+0it [00:00, ?it/s]
+  0%|          | 0/20 [00:00<?, ?it/s][A
+  5%|▌         | 1/20 [00:01<00:25,  1.34s/it][A
+ 10%|█         | 2/20 [00:01<00:14,  1.22it/s][A
+ 15%|█▌        | 3/20 [00:02<00:11,  1.54it/s][A
+ 20%|██        | 4/20 [00:02<00:09,  1.76it/s][A
+ 25%|██▌       | 5/20 [00:03<00:07,  1.92it/s][A
+ 30%|███       | 6/20 [00:03<00:06,  2.02it/s][A
+ 35%|███▌      | 7/20 [00:04<00:06,  2.09it/s][A
+ 40%|████      | 8/20 [00:04<00:05,  2.14it/s][A
+ 45%|████▌     | 9/20 [00:04<00:05,  2.17it/s][A
+ 50%|█████     | 10/20 [00:05<00:04,  2.20it/s][A
+ 55%|█████▌    | 11/20 [00:05<00:04,  2.21it/s][A
+ 60%|██████    | 12/20 [00:06<00:03,  2.23it/s][A
+ 65%|██████▌   | 13/20 [00:06<00:03,  2.23it/s][A
+ 70%|███████   | 14/20 [00:07<00:02,  2.24it/s][A
+ 75%|███████▌  | 15/20 [00:07<00:02,  2.24it/s][A
+ 80%|████████  | 16/20 [00:08<00:01,  2.24it/s][A
+ 85%|████████▌ | 17/20 [00:08<00:01,  2.24it/s][A
+ 90%|█████████ | 18/20 [00:08<00:00,  2.24it/s][A
+ 95%|█████████▌| 19/20 [00:09<00:00,  2.24it/s][A
+100%|██████████| 20/20 [00:09<00:00,  2.25it/s][A100%|██████████| 20/20 [00:09<00:00,  2.04it/s]
+1it [00:12, 12.82s/it]1it [00:12, 12.82s/it]
+inpaint view generation time: 14.650817632675171
+0it [00:00, ?it/s]26it [00:00, 5994.17it/s]
+2026-07-03 16:50:30.177 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /mnt/u/My Documents/LatentWardrobe/outputs/shakedown2_20260703/medieval_villagers/member_00/stage1/res-0/mesh.obj with: vertices:(7952, 3) uv:(11630, 2) faces:(14516, 3)
+inpaint DR time: 1.4998164176940918
+View inpainting ...
+Project inpaint view [(24, 25)]...
+0it [00:00, ?it/s]1it [00:01,  1.65s/it]1it [00:01,  1.65s/it]
+0it [00:00, ?it/s]
+  0%|          | 0/20 [00:00<?, ?it/s][A
+  5%|▌         | 1/20 [00:01<00:24,  1.29s/it][A
+ 10%|█         | 2/20 [00:01<00:14,  1.26it/s][A
+ 15%|█▌        | 3/20 [00:02<00:10,  1.57it/s][A
+ 20%|██        | 4/20 [00:02<00:08,  1.78it/s][A
+ 25%|██▌       | 5/20 [00:03<00:07,  1.92it/s][A
+ 30%|███       | 6/20 [00:03<00:06,  2.02it/s][A
+ 35%|███▌      | 7/20 [00:03<00:06,  2.09it/s][A
+ 40%|████      | 8/20 [00:04<00:05,  2.13it/s][A
+ 45%|████▌     | 9/20 [00:04<00:05,  2.16it/s][A
+ 50%|█████     | 10/20 [00:05<00:04,  2.18it/s][A
+ 55%|█████▌    | 11/20 [00:05<00:04,  2.20it/s][A
+ 60%|██████    | 12/20 [00:06<00:03,  2.21it/s][A
+ 65%|██████▌   | 13/20 [00:06<00:03,  2.22it/s][A
+ 70%|███████   | 14/20 [00:07<00:02,  2.22it/s][A
+ 75%|███████▌  | 15/20 [00:07<00:02,  2.22it/s][A
+ 80%|████████  | 16/20 [00:07<00:01,  2.23it/s][A
+ 85%|████████▌ | 17/20 [00:08<00:01,  2.22it/s][A
+ 90%|█████████ | 18/20 [00:08<00:00,  2.23it/s][A
+ 95%|█████████▌| 19/20 [00:09<00:00,  2.23it/s][A
+100%|██████████| 20/20 [00:09<00:00,  2.23it/s][A100%|██████████| 20/20 [00:09<00:00,  2.04it/s]
+1it [00:12, 12.89s/it]1it [00:12, 12.89s/it]
+inpaint view generation time: 14.575236082077026
+0it [00:00, ?it/s]26it [00:00, 3685.31it/s]
+2026-07-03 16:50:46.272 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /mnt/u/My Documents/LatentWardrobe/outputs/shakedown2_20260703/medieval_villagers/member_00/stage1/res-0/mesh.obj with: vertices:(7952, 3) uv:(11630, 2) faces:(14516, 3)
+inpaint DR time: 1.511566162109375
+total processed time:49.41914677619934
+Evalating textured mesh~: 0it [00:00, ?it/s]Evalating textured mesh~: 2it [00:00, 11.22it/s]Evalating textured mesh~: 4it [00:00, 12.06it/s]Evalating textured mesh~: 6it [00:00, 12.30it/s]Evalating textured mesh~: 8it [00:00, 12.57it/s]Evalating textured mesh~: 10it [00:00, 12.72it/s]Evalating textured mesh~: 12it [00:00, 12.63it/s]Evalating textured mesh~: 14it [00:01, 12.83it/s]Evalating textured mesh~: 16it [00:01, 12.88it/s]Evalating textured mesh~: 18it [00:01, 12.94it/s]Evalating textured mesh~: 20it [00:01, 12.93it/s]Evalating textured mesh~: 22it [00:01, 12.99it/s]Evalating textured mesh~: 24it [00:01, 13.01it/s]Evalating textured mesh~: 26it [00:02, 12.98it/s]Evalating textured mesh~: 28it [00:02, 12.89it/s]Evalating textured mesh~: 30it [00:02, 12.79it/s]Evalating textured mesh~: 32it [00:02, 12.81it/s]Evalating textured mesh~: 34it [00:02, 12.92it/s]Evalating textured mesh~: 36it [00:02, 12.94it/s]Evalating textured mesh~: 38it [00:02, 12.98it/s]Evalating textured mesh~: 40it [00:03, 13.04it/s]Evalating textured mesh~: 42it [00:03, 13.01it/s]Evalating textured mesh~: 44it [00:03, 12.86it/s]Evalating textured mesh~: 46it [00:03, 12.77it/s]Evalating textured mesh~: 48it [00:03, 12.71it/s]Evalating textured mesh~: 50it [00:03, 12.14it/s]Evalating textured mesh~: 52it [00:04, 12.00it/s]Evalating textured mesh~: 54it [00:04, 12.00it/s]Evalating textured mesh~: 56it [00:04, 12.02it/s]Evalating textured mesh~: 58it [00:04, 12.09it/s]Evalating textured mesh~: 60it [00:04, 12.11it/s]Evalating textured mesh~: 62it [00:04, 12.13it/s]Evalating textured mesh~: 64it [00:05, 12.02it/s]Evalating textured mesh~: 66it [00:05, 12.10it/s]Evalating textured mesh~: 68it [00:05, 11.76it/s]Evalating textured mesh~: 70it [00:05, 11.18it/s]Evalating textured mesh~: 72it [00:05, 11.52it/s]Evalating textured mesh~: 74it [00:05, 11.55it/s]Evalating textured mesh~: 76it [00:06, 10.49it/s]Evalating textured mesh~: 78it [00:06, 10.86it/s]Evalating textured mesh~: 80it [00:06, 10.29it/s]Evalating textured mesh~: 82it [00:06, 10.63it/s]Evalating textured mesh~: 84it [00:06, 10.33it/s]Evalating textured mesh~: 86it [00:07, 10.04it/s]Evalating textured mesh~: 88it [00:07, 10.60it/s]Evalating textured mesh~: 90it [00:07, 10.18it/s]Evalating textured mesh~: 92it [00:07, 10.38it/s]Evalating textured mesh~: 94it [00:07,  9.85it/s]Evalating textured mesh~: 96it [00:08,  9.63it/s]Evalating textured mesh~: 98it [00:08, 10.19it/s]Evalating textured mesh~: 100it [00:08, 10.03it/s]Evalating textured mesh~: 100it [00:08, 11.67it/s]
+Texture diffusion
+config.json: 0.00B [00:00, ?B/s]config.json: 1.26kB [00:00, 698kB/s]
+diffusion_pytorch_model.bin:   0%|          | 0.00/1.45G [00:00<?, ?B/s]diffusion_pytorch_model.bin:   1%|          | 10.5M/1.45G [00:00<02:10, 11.0MB/s]diffusion_pytorch_model.bin:   1%|▏         | 21.0M/1.45G [00:01<01:11, 19.9MB/s]diffusion_pytorch_model.bin:   2%|▏         | 31.5M/1.45G [00:01<00:52, 27.0MB/s]diffusion_pytorch_model.bin:   3%|▎         | 41.9M/1.45G [00:01<00:44, 31.6MB/s]diffusion_pytorch_model.bin:   4%|▎         | 52.4M/1.45G [00:01<00:38, 35.7MB/s]diffusion_pytorch_model.bin:   4%|▍         | 62.9M/1.45G [00:02<00:35, 39.2MB/s]diffusion_pytorch_model.bin:   5%|▌         | 73.4M/1.45G [00:02<00:38, 35.2MB/s]diffusion_pytorch_model.bin:   6%|▌         | 83.9M/1.45G [00:02<00:35, 38.1MB/s]diffusion_pytorch_model.bin:   7%|▋         | 94.4M/1.45G [00:02<00:35, 37.9MB/s]diffusion_pytorch_model.bin:   7%|▋         | 105M/1.45G [00:03<00:32, 40.7MB/s] diffusion_pytorch_model.bin:   8%|▊         | 115M/1.45G [00:03<00:32, 41.3MB/s]diffusion_pytorch_model.bin:   9%|▊         | 126M/1.45G [00:03<00:30, 43.7MB/s]diffusion_pytorch_model.bin:   9%|▉         | 136M/1.45G [00:03<00:32, 40.6MB/s]diffusion_pytorch_model.bin:  10%|█         | 147M/1.45G [00:04<00:30, 42.0MB/s]diffusion_pytorch_model.bin:  11%|█         | 157M/1.45G [00:04<00:28, 45.6MB/s]diffusion_pytorch_model.bin:  12%|█▏        | 168M/1.45G [00:04<00:26, 48.3MB/s]diffusion_pytorch_model.bin:  12%|█▏        | 178M/1.45G [00:04<00:26, 48.0MB/s]diffusion_pytorch_model.bin:  13%|█▎        | 189M/1.45G [00:04<00:26, 48.2MB/s]diffusion_pytorch_model.bin:  14%|█▍        | 199M/1.45G [00:05<00:24, 50.5MB/s]diffusion_pytorch_model.bin:  15%|█▍        | 210M/1.45G [00:05<00:27, 44.4MB/s]diffusion_pytorch_model.bin:  15%|█▌        | 220M/1.45G [00:05<00:28, 43.4MB/s]diffusion_pytorch_model.bin:  16%|█▌        | 231M/1.45G [00:05<00:28, 42.0MB/s]diffusion_pytorch_model.bin:  17%|█▋        | 241M/1.45G [00:06<00:27, 43.2MB/s]diffusion_pytorch_model.bin:  17%|█▋        | 252M/1.45G [00:06<00:28, 41.4MB/s]diffusion_pytorch_model.bin:  18%|█▊        | 262M/1.45G [00:06<00:28, 42.0MB/s]diffusion_pytorch_model.bin:  19%|█▉        | 273M/1.45G [00:07<00:33, 34.9MB/s]diffusion_pytorch_model.bin:  20%|█▉        | 283M/1.45G [00:07<00:33, 34.8MB/s]diffusion_pytorch_model.bin:  20%|██        | 294M/1.45G [00:07<00:31, 36.6MB/s]diffusion_pytorch_model.bin:  21%|██        | 304M/1.45G [00:07<00:29, 39.0MB/s]diffusion_pytorch_model.bin:  22%|██▏       | 315M/1.45G [00:08<00:27, 41.1MB/s]diffusion_pytorch_model.bin:  22%|██▏       | 325M/1.45G [00:08<00:26, 41.8MB/s]diffusion_pytorch_model.bin:  23%|██▎       | 336M/1.45G [00:08<00:28, 38.9MB/s]diffusion_pytorch_model.bin:  24%|██▍       | 346M/1.45G [00:08<00:27, 39.7MB/s]diffusion_pytorch_model.bin:  25%|██▍       | 357M/1.45G [00:09<00:27, 40.0MB/s]diffusion_pytorch_model.bin:  25%|██▌       | 367M/1.45G [00:09<00:25, 42.9MB/s]diffusion_pytorch_model.bin:  26%|██▌       | 377M/1.45G [00:09<00:25, 41.3MB/s]diffusion_pytorch_model.bin:  27%|██▋       | 388M/1.45G [00:09<00:25, 41.1MB/s]diffusion_pytorch_model.bin:  28%|██▊       | 398M/1.45G [00:10<00:24, 43.4MB/s]diffusion_pytorch_model.bin:  28%|██▊       | 409M/1.45G [00:10<00:25, 40.8MB/s]diffusion_pytorch_model.bin:  29%|██▉       | 419M/1.45G [00:10<00:22, 45.8MB/s]diffusion_pytorch_model.bin:  30%|██▉       | 430M/1.45G [00:10<00:20, 50.0MB/s]diffusion_pytorch_model.bin:  30%|███       | 440M/1.45G [00:11<00:26, 37.4MB/s]diffusion_pytorch_model.bin:  31%|███       | 451M/1.45G [00:11<00:21, 45.6MB/s]diffusion_pytorch_model.bin:  33%|███▎      | 472M/1.45G [00:11<00:19, 49.4MB/s]diffusion_pytorch_model.bin:  33%|███▎      | 482M/1.45G [00:11<00:19, 50.2MB/s]diffusion_pytorch_model.bin:  34%|███▍      | 493M/1.45G [00:12<00:17, 53.2MB/s]diffusion_pytorch_model.bin:  35%|███▍      | 503M/1.45G [00:12<00:16, 56.7MB/s]diffusion_pytorch_model.bin:  36%|███▌      | 514M/1.45G [00:12<00:16, 57.2MB/s]diffusion_pytorch_model.bin:  36%|███▋      | 524M/1.45G [00:12<00:16, 56.9MB/s]diffusion_pytorch_model.bin:  37%|███▋      | 535M/1.45G [00:12<00:15, 57.0MB/s]diffusion_pytorch_model.bin:  38%|███▊      | 545M/1.45G [00:13<00:18, 48.5MB/s]diffusion_pytorch_model.bin:  38%|███▊      | 556M/1.45G [00:13<00:18, 48.2MB/s]diffusion_pytorch_model.bin:  39%|███▉      | 566M/1.45G [00:13<00:17, 49.1MB/s]diffusion_pytorch_model.bin:  40%|███▉      | 577M/1.45G [00:13<00:17, 49.6MB/s]diffusion_pytorch_model.bin:  41%|████      | 587M/1.45G [00:13<00:15, 55.8MB/s]diffusion_pytorch_model.bin:  41%|████▏     | 598M/1.45G [00:14<00:14, 56.6MB/s]diffusion_pytorch_model.bin:  42%|████▏     | 608M/1.45G [00:14<00:17, 49.2MB/s]diffusion_pytorch_model.bin:  43%|████▎     | 619M/1.45G [00:14<00:16, 49.2MB/s]diffusion_pytorch_model.bin:  44%|████▎     | 629M/1.45G [00:14<00:15, 53.1MB/s]diffusion_pytorch_model.bin:  44%|████▍     | 640M/1.45G [00:14<00:14, 56.4MB/s]diffusion_pytorch_model.bin:  45%|████▍     | 650M/1.45G [00:14<00:13, 61.1MB/s]diffusion_pytorch_model.bin:  46%|████▌     | 661M/1.45G [00:15<00:13, 56.9MB/s]diffusion_pytorch_model.bin:  46%|████▋     | 671M/1.45G [00:15<00:15, 48.9MB/s]diffusion_pytorch_model.bin:  47%|████▋     | 682M/1.45G [00:15<00:15, 50.4MB/s]diffusion_pytorch_model.bin:  48%|████▊     | 692M/1.45G [00:15<00:13, 55.2MB/s]diffusion_pytorch_model.bin:  49%|████▊     | 703M/1.45G [00:15<00:12, 59.6MB/s]diffusion_pytorch_model.bin:  49%|████▉     | 713M/1.45G [00:16<00:12, 60.5MB/s]diffusion_pytorch_model.bin:  50%|█████     | 724M/1.45G [00:16<00:12, 57.8MB/s]diffusion_pytorch_model.bin:  51%|█████     | 734M/1.45G [00:16<00:12, 59.2MB/s]diffusion_pytorch_model.bin:  52%|█████▏    | 744M/1.45G [00:16<00:13, 50.1MB/s]diffusion_pytorch_model.bin:  52%|█████▏    | 755M/1.45G [00:17<00:15, 45.1MB/s]diffusion_pytorch_model.bin:  53%|█████▎    | 765M/1.45G [00:17<00:14, 45.6MB/s]diffusion_pytorch_model.bin:  54%|█████▎    | 776M/1.45G [00:17<00:15, 43.1MB/s]diffusion_pytorch_model.bin:  54%|█████▍    | 786M/1.45G [00:17<00:14, 46.0MB/s]diffusion_pytorch_model.bin:  55%|█████▌    | 797M/1.45G [00:18<00:14, 44.6MB/s]diffusion_pytorch_model.bin:  56%|█████▌    | 807M/1.45G [00:18<00:15, 40.0MB/s]diffusion_pytorch_model.bin:  57%|█████▋    | 818M/1.45G [00:18<00:15, 41.4MB/s]diffusion_pytorch_model.bin:  57%|█████▋    | 828M/1.45G [00:18<00:14, 43.2MB/s]diffusion_pytorch_model.bin:  58%|█████▊    | 839M/1.45G [00:18<00:13, 44.8MB/s]diffusion_pytorch_model.bin:  59%|█████▉    | 849M/1.45G [00:19<00:13, 44.1MB/s]diffusion_pytorch_model.bin:  59%|█████▉    | 860M/1.45G [00:19<00:13, 44.0MB/s]diffusion_pytorch_model.bin:  60%|██████    | 870M/1.45G [00:19<00:12, 45.7MB/s]diffusion_pytorch_model.bin:  61%|██████    | 881M/1.45G [00:19<00:12, 46.6MB/s]diffusion_pytorch_model.bin:  62%|██████▏   | 891M/1.45G [00:20<00:11, 49.0MB/s]diffusion_pytorch_model.bin:  62%|██████▏   | 902M/1.45G [00:20<00:10, 53.5MB/s]diffusion_pytorch_model.bin:  63%|██████▎   | 912M/1.45G [00:20<00:09, 56.2MB/s]diffusion_pytorch_model.bin:  64%|██████▍   | 923M/1.45G [00:20<00:08, 58.3MB/s]diffusion_pytorch_model.bin:  65%|██████▍   | 933M/1.45G [00:20<00:08, 58.7MB/s]diffusion_pytorch_model.bin:  65%|██████▌   | 944M/1.45G [00:21<00:09, 51.2MB/s]diffusion_pytorch_model.bin:  66%|██████▌   | 954M/1.45G [00:21<00:12, 38.1MB/s]diffusion_pytorch_model.bin:  67%|██████▋   | 965M/1.45G [00:21<00:10, 46.8MB/s]diffusion_pytorch_model.bin:  68%|██████▊   | 986M/1.45G [00:21<00:08, 55.4MB/s]diffusion_pytorch_model.bin:  69%|██████▉   | 996M/1.45G [00:22<00:07, 58.3MB/s]diffusion_pytorch_model.bin:  70%|██████▉   | 1.01G/1.45G [00:22<00:08, 49.4MB/s]diffusion_pytorch_model.bin:  70%|███████   | 1.02G/1.45G [00:22<00:08, 52.0MB/s]diffusion_pytorch_model.bin:  71%|███████   | 1.03G/1.45G [00:22<00:07, 54.2MB/s]diffusion_pytorch_model.bin:  72%|███████▏  | 1.04G/1.45G [00:22<00:07, 52.9MB/s]diffusion_pytorch_model.bin:  73%|███████▎  | 1.05G/1.45G [00:23<00:07, 54.3MB/s]diffusion_pytorch_model.bin:  73%|███████▎  | 1.06G/1.45G [00:23<00:06, 58.3MB/s]diffusion_pytorch_model.bin:  74%|███████▍  | 1.07G/1.45G [00:23<00:06, 60.1MB/s]diffusion_pytorch_model.bin:  75%|███████▍  | 1.08G/1.45G [00:23<00:07, 49.4MB/s]diffusion_pytorch_model.bin:  75%|███████▌  | 1.09G/1.45G [00:23<00:07, 45.0MB/s]diffusion_pytorch_model.bin:  76%|███████▌  | 1.10G/1.45G [00:24<00:08, 42.3MB/s]diffusion_pytorch_model.bin:  77%|███████▋  | 1.11G/1.45G [00:24<00:08, 39.1MB/s]diffusion_pytorch_model.bin:  78%|███████▊  | 1.12G/1.45G [00:24<00:08, 37.7MB/s]diffusion_pytorch_model.bin:  78%|███████▊  | 1.13G/1.45G [00:25<00:08, 37.3MB/s]diffusion_pytorch_model.bin:  79%|███████▉  | 1.14G/1.45G [00:25<00:09, 32.5MB/s]diffusion_pytorch_model.bin:  80%|███████▉  | 1.15G/1.45G [00:25<00:08, 34.6MB/s]diffusion_pytorch_model.bin:  81%|████████  | 1.16G/1.45G [00:26<00:07, 37.5MB/s]diffusion_pytorch_model.bin:  81%|████████▏ | 1.17G/1.45G [00:26<00:06, 39.8MB/s]diffusion_pytorch_model.bin:  82%|████████▏ | 1.18G/1.45G [00:26<00:06, 38.7MB/s]diffusion_pytorch_model.bin:  83%|████████▎ | 1.20G/1.45G [00:26<00:06, 37.1MB/s]diffusion_pytorch_model.bin:  83%|████████▎ | 1.21G/1.45G [00:27<00:05, 40.3MB/s]diffusion_pytorch_model.bin:  84%|████████▍ | 1.22G/1.45G [00:27<00:06, 36.2MB/s]diffusion_pytorch_model.bin:  85%|████████▍ | 1.23G/1.45G [00:27<00:05, 36.8MB/s]diffusion_pytorch_model.bin:  86%|████████▌ | 1.24G/1.45G [00:27<00:05, 40.0MB/s]diffusion_pytorch_model.bin:  86%|████████▋ | 1.25G/1.45G [00:28<00:04, 39.9MB/s]diffusion_pytorch_model.bin:  87%|████████▋ | 1.26G/1.45G [00:28<00:04, 41.0MB/s]diffusion_pytorch_model.bin:  88%|████████▊ | 1.27G/1.45G [00:28<00:04, 40.4MB/s]diffusion_pytorch_model.bin:  89%|████████▊ | 1.28G/1.45G [00:29<00:04, 37.0MB/s]diffusion_pytorch_model.bin:  89%|████████▉ | 1.29G/1.45G [00:29<00:04, 38.5MB/s]diffusion_pytorch_model.bin:  90%|████████▉ | 1.30G/1.45G [00:29<00:03, 37.2MB/s]diffusion_pytorch_model.bin:  91%|█████████ | 1.31G/1.45G [00:29<00:03, 37.3MB/s]diffusion_pytorch_model.bin:  91%|█████████▏| 1.32G/1.45G [00:30<00:03, 37.9MB/s]diffusion_pytorch_model.bin:  92%|█████████▏| 1.33G/1.45G [00:30<00:03, 36.1MB/s]diffusion_pytorch_model.bin:  93%|█████████▎| 1.34G/1.45G [00:30<00:02, 34.5MB/s]diffusion_pytorch_model.bin:  94%|█████████▎| 1.35G/1.45G [00:31<00:02, 34.0MB/s]diffusion_pytorch_model.bin:  94%|█████████▍| 1.36G/1.45G [00:31<00:02, 36.5MB/s]diffusion_pytorch_model.bin:  95%|█████████▌| 1.37G/1.45G [00:31<00:02, 31.3MB/s]diffusion_pytorch_model.bin:  96%|█████████▋| 1.39G/1.45G [00:32<00:01, 40.3MB/s]diffusion_pytorch_model.bin:  97%|█████████▋| 1.41G/1.45G [00:32<00:01, 39.2MB/s]diffusion_pytorch_model.bin:  98%|█████████▊| 1.42G/1.45G [00:32<00:00, 35.2MB/s]diffusion_pytorch_model.bin:  99%|█████████▊| 1.43G/1.45G [00:33<00:00, 35.4MB/s]diffusion_pytorch_model.bin:  99%|█████████▉| 1.44G/1.45G [00:33<00:00, 34.5MB/s]diffusion_pytorch_model.bin: 100%|██████████| 1.45G/1.45G [00:33<00:00, 35.5MB/s]diffusion_pytorch_model.bin: 100%|██████████| 1.45G/1.45G [00:33<00:00, 43.0MB/s]
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+Loading pipeline components...:  14%|█▍        | 1/7 [00:05<00:31,  5.17s/it]Loading pipeline components...:  29%|██▊       | 2/7 [00:06<00:15,  3.00s/it]Loading pipeline components...:  71%|███████▏  | 5/7 [00:17<00:07,  3.56s/it]Loading pipeline components...:  86%|████████▌ | 6/7 [00:20<00:03,  3.24s/it]Loading pipeline components...: 100%|██████████| 7/7 [00:20<00:00,  2.92s/it]
+config.json:   0%|          | 0.00/955 [00:00<?, ?B/s]config.json: 100%|██████████| 955/955 [00:00<00:00, 573kB/s]
+diffusion_pytorch_model.bin:   0%|          | 0.00/1.45G [00:00<?, ?B/s]diffusion_pytorch_model.bin:   1%|          | 10.5M/1.45G [00:01<02:19, 10.3MB/s]diffusion_pytorch_model.bin:   1%|▏         | 21.0M/1.45G [00:01<01:25, 16.6MB/s]diffusion_pytorch_model.bin:   2%|▏         | 31.5M/1.45G [00:01<01:08, 20.7MB/s]diffusion_pytorch_model.bin:   3%|▎         | 41.9M/1.45G [00:02<01:02, 22.4MB/s]diffusion_pytorch_model.bin:   4%|▎         | 52.4M/1.45G [00:02<00:54, 25.4MB/s]diffusion_pytorch_model.bin:   4%|▍         | 62.9M/1.45G [00:02<00:53, 25.9MB/s]diffusion_pytorch_model.bin:   5%|▌         | 73.4M/1.45G [00:03<00:48, 28.1MB/s]diffusion_pytorch_model.bin:   6%|▌         | 83.9M/1.45G [00:03<00:49, 27.4MB/s]diffusion_pytorch_model.bin:   7%|▋         | 94.4M/1.45G [00:03<00:46, 28.9MB/s]diffusion_pytorch_model.bin:   7%|▋         | 105M/1.45G [00:04<00:44, 29.9MB/s] diffusion_pytorch_model.bin:   8%|▊         | 115M/1.45G [00:04<00:45, 29.0MB/s]diffusion_pytorch_model.bin:   9%|▊         | 126M/1.45G [00:05<00:48, 27.4MB/s]diffusion_pytorch_model.bin:   9%|▉         | 136M/1.45G [00:05<00:47, 27.8MB/s]diffusion_pytorch_model.bin:  10%|█         | 147M/1.45G [00:05<00:37, 34.9MB/s]diffusion_pytorch_model.bin:  12%|█▏        | 168M/1.45G [00:05<00:25, 50.4MB/s]diffusion_pytorch_model.bin:  12%|█▏        | 178M/1.45G [00:05<00:22, 56.6MB/s]diffusion_pytorch_model.bin:  13%|█▎        | 189M/1.45G [00:05<00:19, 62.9MB/s]diffusion_pytorch_model.bin:  14%|█▍        | 199M/1.45G [00:06<00:18, 69.1MB/s]diffusion_pytorch_model.bin:  15%|█▍        | 210M/1.45G [00:06<00:16, 72.8MB/s]diffusion_pytorch_model.bin:  15%|█▌        | 220M/1.45G [00:06<00:15, 79.6MB/s]diffusion_pytorch_model.bin:  16%|█▌        | 231M/1.45G [00:06<00:14, 83.7MB/s]diffusion_pytorch_model.bin:  17%|█▋        | 241M/1.45G [00:06<00:14, 84.7MB/s]diffusion_pytorch_model.bin:  17%|█▋        | 252M/1.45G [00:06<00:14, 82.1MB/s]diffusion_pytorch_model.bin:  18%|█▊        | 262M/1.45G [00:06<00:13, 87.7MB/s]diffusion_pytorch_model.bin:  19%|█▉        | 273M/1.45G [00:06<00:12, 90.6MB/s]diffusion_pytorch_model.bin:  20%|█▉        | 283M/1.45G [00:06<00:12, 92.2MB/s]diffusion_pytorch_model.bin:  20%|██        | 294M/1.45G [00:07<00:12, 91.8MB/s]diffusion_pytorch_model.bin:  21%|██        | 304M/1.45G [00:07<00:12, 91.4MB/s]diffusion_pytorch_model.bin:  22%|██▏       | 315M/1.45G [00:07<00:12, 94.1MB/s]diffusion_pytorch_model.bin:  22%|██▏       | 325M/1.45G [00:07<00:11, 93.9MB/s]diffusion_pytorch_model.bin:  23%|██▎       | 336M/1.45G [00:07<00:14, 76.6MB/s]diffusion_pytorch_model.bin:  24%|██▍       | 346M/1.45G [00:07<00:20, 54.1MB/s]diffusion_pytorch_model.bin:  25%|██▍       | 357M/1.45G [00:08<00:23, 46.8MB/s]diffusion_pytorch_model.bin:  25%|██▌       | 367M/1.45G [00:08<00:28, 38.5MB/s]diffusion_pytorch_model.bin:  26%|██▌       | 377M/1.45G [00:08<00:29, 36.0MB/s]diffusion_pytorch_model.bin:  27%|██▋       | 388M/1.45G [00:09<00:30, 34.5MB/s]diffusion_pytorch_model.bin:  28%|██▊       | 398M/1.45G [00:09<00:27, 38.3MB/s]diffusion_pytorch_model.bin:  28%|██▊       | 409M/1.45G [00:09<00:24, 42.4MB/s]diffusion_pytorch_model.bin:  29%|██▉       | 419M/1.45G [00:09<00:20, 51.1MB/s]diffusion_pytorch_model.bin:  30%|██▉       | 430M/1.45G [00:09<00:17, 58.2MB/s]diffusion_pytorch_model.bin:  30%|███       | 440M/1.45G [00:10<00:15, 66.9MB/s]diffusion_pytorch_model.bin:  31%|███       | 451M/1.45G [00:10<00:13, 71.8MB/s]diffusion_pytorch_model.bin:  32%|███▏      | 461M/1.45G [00:10<00:12, 76.2MB/s]diffusion_pytorch_model.bin:  33%|███▎      | 472M/1.45G [00:10<00:17, 54.2MB/s]diffusion_pytorch_model.bin:  33%|███▎      | 482M/1.45G [00:10<00:23, 40.9MB/s]diffusion_pytorch_model.bin:  34%|███▍      | 493M/1.45G [00:11<00:26, 36.1MB/s]diffusion_pytorch_model.bin:  35%|███▍      | 503M/1.45G [00:11<00:26, 35.7MB/s]diffusion_pytorch_model.bin:  36%|███▌      | 514M/1.45G [00:12<00:28, 33.0MB/s]diffusion_pytorch_model.bin:  36%|███▋      | 524M/1.45G [00:12<00:30, 30.2MB/s]diffusion_pytorch_model.bin:  37%|███▋      | 535M/1.45G [00:12<00:31, 28.6MB/s]diffusion_pytorch_model.bin:  38%|███▊      | 545M/1.45G [00:13<00:34, 25.7MB/s]diffusion_pytorch_model.bin:  38%|███▊      | 556M/1.45G [00:13<00:38, 23.3MB/s]diffusion_pytorch_model.bin:  39%|███▉      | 566M/1.45G [00:14<00:30, 28.6MB/s]diffusion_pytorch_model.bin:  40%|███▉      | 577M/1.45G [00:14<00:29, 29.5MB/s]diffusion_pytorch_model.bin:  41%|████      | 587M/1.45G [00:14<00:28, 30.6MB/s]diffusion_pytorch_model.bin:  41%|████▏     | 598M/1.45G [00:15<00:27, 31.1MB/s]diffusion_pytorch_model.bin:  42%|████▏     | 608M/1.45G [00:15<00:30, 27.8MB/s]diffusion_pytorch_model.bin:  43%|████▎     | 619M/1.45G [00:15<00:29, 28.4MB/s]diffusion_pytorch_model.bin:  44%|████▎     | 629M/1.45G [00:16<00:25, 32.2MB/s]diffusion_pytorch_model.bin:  44%|████▍     | 640M/1.45G [00:16<00:24, 33.0MB/s]diffusion_pytorch_model.bin:  45%|████▍     | 650M/1.45G [00:16<00:22, 35.0MB/s]diffusion_pytorch_model.bin:  46%|████▌     | 661M/1.45G [00:16<00:22, 35.5MB/s]diffusion_pytorch_model.bin:  46%|████▋     | 671M/1.45G [00:17<00:22, 34.0MB/s]diffusion_pytorch_model.bin:  47%|████▋     | 682M/1.45G [00:17<00:18, 41.7MB/s]diffusion_pytorch_model.bin:  48%|████▊     | 692M/1.45G [00:17<00:14, 50.5MB/s]diffusion_pytorch_model.bin:  49%|████▊     | 703M/1.45G [00:17<00:12, 58.4MB/s]diffusion_pytorch_model.bin:  50%|█████     | 724M/1.45G [00:17<00:09, 74.2MB/s]diffusion_pytorch_model.bin:  51%|█████     | 734M/1.45G [00:17<00:09, 78.7MB/s]diffusion_pytorch_model.bin:  52%|█████▏    | 744M/1.45G [00:18<00:09, 77.2MB/s]diffusion_pytorch_model.bin:  53%|█████▎    | 765M/1.45G [00:18<00:07, 90.0MB/s]diffusion_pytorch_model.bin:  54%|█████▍    | 786M/1.45G [00:18<00:07, 92.6MB/s]diffusion_pytorch_model.bin:  55%|█████▌    | 797M/1.45G [00:18<00:06, 93.2MB/s]diffusion_pytorch_model.bin:  56%|█████▌    | 807M/1.45G [00:18<00:06, 93.9MB/s]diffusion_pytorch_model.bin:  57%|█████▋    | 818M/1.45G [00:18<00:06, 92.0MB/s]diffusion_pytorch_model.bin:  57%|█████▋    | 828M/1.45G [00:18<00:06, 91.6MB/s]diffusion_pytorch_model.bin:  59%|█████▉    | 849M/1.45G [00:19<00:06, 98.3MB/s]diffusion_pytorch_model.bin:  60%|██████    | 870M/1.45G [00:19<00:05, 101MB/s] diffusion_pytorch_model.bin:  61%|██████    | 881M/1.45G [00:19<00:10, 53.3MB/s]diffusion_pytorch_model.bin:  62%|██████▏   | 891M/1.45G [00:20<00:12, 46.0MB/s]diffusion_pytorch_model.bin:  62%|██████▏   | 902M/1.45G [00:20<00:13, 41.6MB/s]diffusion_pytorch_model.bin:  63%|██████▎   | 912M/1.45G [00:20<00:14, 36.2MB/s]diffusion_pytorch_model.bin:  64%|██████▍   | 923M/1.45G [00:21<00:16, 31.5MB/s]diffusion_pytorch_model.bin:  65%|██████▍   | 933M/1.45G [00:21<00:17, 29.7MB/s]diffusion_pytorch_model.bin:  65%|██████▌   | 944M/1.45G [00:22<00:18, 26.9MB/s]diffusion_pytorch_model.bin:  66%|██████▌   | 954M/1.45G [00:22<00:18, 27.2MB/s]diffusion_pytorch_model.bin:  67%|██████▋   | 965M/1.45G [00:22<00:16, 28.8MB/s]diffusion_pytorch_model.bin:  67%|██████▋   | 975M/1.45G [00:23<00:15, 30.8MB/s]diffusion_pytorch_model.bin:  68%|██████▊   | 986M/1.45G [00:23<00:15, 30.4MB/s]diffusion_pytorch_model.bin:  69%|██████▉   | 996M/1.45G [00:23<00:14, 30.6MB/s]diffusion_pytorch_model.bin:  70%|██████▉   | 1.01G/1.45G [00:24<00:15, 28.6MB/s]diffusion_pytorch_model.bin:  70%|███████   | 1.02G/1.45G [00:24<00:11, 36.0MB/s]diffusion_pytorch_model.bin:  71%|███████   | 1.03G/1.45G [00:24<00:09, 44.4MB/s]diffusion_pytorch_model.bin:  72%|███████▏  | 1.04G/1.45G [00:24<00:07, 52.6MB/s]diffusion_pytorch_model.bin:  73%|███████▎  | 1.05G/1.45G [00:24<00:06, 60.2MB/s]diffusion_pytorch_model.bin:  73%|███████▎  | 1.06G/1.45G [00:24<00:05, 67.3MB/s]diffusion_pytorch_model.bin:  74%|███████▍  | 1.07G/1.45G [00:24<00:05, 74.2MB/s]diffusion_pytorch_model.bin:  75%|███████▍  | 1.08G/1.45G [00:25<00:07, 46.1MB/s]diffusion_pytorch_model.bin:  75%|███████▌  | 1.09G/1.45G [00:25<00:08, 39.8MB/s]diffusion_pytorch_model.bin:  76%|███████▌  | 1.10G/1.45G [00:26<00:09, 34.6MB/s]diffusion_pytorch_model.bin:  77%|███████▋  | 1.11G/1.45G [00:26<00:10, 31.7MB/s]diffusion_pytorch_model.bin:  78%|███████▊  | 1.12G/1.45G [00:26<00:10, 30.2MB/s]diffusion_pytorch_model.bin:  78%|███████▊  | 1.13G/1.45G [00:27<00:11, 27.7MB/s]diffusion_pytorch_model.bin:  79%|███████▉  | 1.14G/1.45G [00:27<00:11, 25.6MB/s]diffusion_pytorch_model.bin:  80%|███████▉  | 1.15G/1.45G [00:28<00:10, 26.9MB/s]diffusion_pytorch_model.bin:  81%|████████  | 1.16G/1.45G [00:28<00:10, 26.1MB/s]diffusion_pytorch_model.bin:  81%|████████▏ | 1.17G/1.45G [00:29<00:10, 25.3MB/s]diffusion_pytorch_model.bin:  82%|████████▏ | 1.18G/1.45G [00:29<00:10, 25.9MB/s]diffusion_pytorch_model.bin:  83%|████████▎ | 1.20G/1.45G [00:29<00:09, 25.5MB/s]diffusion_pytorch_model.bin:  83%|████████▎ | 1.21G/1.45G [00:30<00:09, 25.9MB/s]diffusion_pytorch_model.bin:  84%|████████▍ | 1.22G/1.45G [00:30<00:08, 26.4MB/s]diffusion_pytorch_model.bin:  85%|████████▍ | 1.23G/1.45G [00:30<00:07, 28.0MB/s]diffusion_pytorch_model.bin:  86%|████████▌ | 1.24G/1.45G [00:31<00:07, 27.8MB/s]diffusion_pytorch_model.bin:  86%|████████▋ | 1.25G/1.45G [00:31<00:07, 28.2MB/s]diffusion_pytorch_model.bin:  87%|████████▋ | 1.26G/1.45G [00:32<00:06, 30.0MB/s]diffusion_pytorch_model.bin:  88%|████████▊ | 1.27G/1.45G [00:32<00:05, 29.5MB/s]diffusion_pytorch_model.bin:  89%|████████▊ | 1.28G/1.45G [00:32<00:06, 27.0MB/s]diffusion_pytorch_model.bin:  89%|████████▉ | 1.29G/1.45G [00:33<00:05, 27.6MB/s]diffusion_pytorch_model.bin:  90%|████████▉ | 1.30G/1.45G [00:33<00:05, 26.4MB/s]diffusion_pytorch_model.bin:  91%|█████████ | 1.31G/1.45G [00:34<00:05, 26.6MB/s]diffusion_pytorch_model.bin:  91%|█████████▏| 1.32G/1.45G [00:34<00:04, 25.9MB/s]diffusion_pytorch_model.bin:  92%|█████████▏| 1.33G/1.45G [00:34<00:04, 26.9MB/s]diffusion_pytorch_model.bin:  93%|█████████▎| 1.34G/1.45G [00:35<00:04, 23.3MB/s]diffusion_pytorch_model.bin:  94%|█████████▎| 1.35G/1.45G [00:35<00:03, 24.5MB/s]diffusion_pytorch_model.bin:  94%|█████████▍| 1.36G/1.45G [00:36<00:03, 24.9MB/s]diffusion_pytorch_model.bin:  95%|█████████▌| 1.37G/1.45G [00:36<00:02, 24.1MB/s]diffusion_pytorch_model.bin:  96%|█████████▌| 1.38G/1.45G [00:37<00:02, 22.6MB/s]diffusion_pytorch_model.bin:  96%|█████████▋| 1.39G/1.45G [00:37<00:02, 24.0MB/s]diffusion_pytorch_model.bin:  97%|█████████▋| 1.41G/1.45G [00:38<00:01, 22.6MB/s]diffusion_pytorch_model.bin:  98%|█████████▊| 1.42G/1.45G [00:38<00:01, 22.6MB/s]diffusion_pytorch_model.bin:  99%|█████████▊| 1.43G/1.45G [00:38<00:00, 24.1MB/s]diffusion_pytorch_model.bin:  99%|█████████▉| 1.44G/1.45G [00:39<00:00, 26.1MB/s]diffusion_pytorch_model.bin: 100%|██████████| 1.45G/1.45G [00:39<00:00, 28.1MB/s]diffusion_pytorch_model.bin: 100%|██████████| 1.45G/1.45G [00:39<00:00, 36.6MB/s]
+model_index.json:   0%|          | 0.00/579 [00:00<?, ?B/s]model_index.json: 100%|██████████| 579/579 [00:00<00:00, 195kB/s]
+safety_checker/model.safetensors not found
+Fetching 15 files:   0%|          | 0/15 [00:00<?, ?it/s]
+preprocessor_config.json:   0%|          | 0.00/520 [00:00<?, ?B/s][Apreprocessor_config.json: 100%|██████████| 520/520 [00:00<00:00, 82.2kB/s]
+
+
+
+
+merges.txt: 0.00B [00:00, ?B/s][A[A[A[A
+
+config.json: 0.00B [00:00, ?B/s][A[A
+
+
+special_tokens_map.json:   0%|          | 0.00/472 [00:00<?, ?B/s][A[A[A
+scheduler_config.json:   0%|          | 0.00/374 [00:00<?, ?B/s][Ascheduler_config.json: 100%|██████████| 374/374 [00:00<00:00, 84.0kB/s]
+config.json: 4.58kB [00:00, 410kB/s]
+special_tokens_map.json: 100%|██████████| 472/472 [00:00<00:00, 42.7kB/s]
+Fetching 15 files:   7%|▋         | 1/15 [00:00<00:02,  6.98it/s]
+config.json:   0%|          | 0.00/560 [00:00<?, ?B/s][Aconfig.json: 100%|██████████| 560/560 [00:00<00:00, 147kB/s]
+merges.txt: 525kB [00:00, 24.1MB/s]
+
+tokenizer_config.json:   0%|          | 0.00/755 [00:00<?, ?B/s][Atokenizer_config.json: 100%|██████████| 755/755 [00:00<00:00, 426kB/s]
+
+config.json: 0.00B [00:00, ?B/s][Aconfig.json: 1.71kB [00:00, 1.29MB/s]
+
+config.json:   0%|          | 0.00/601 [00:00<?, ?B/s][Aconfig.json: 100%|██████████| 601/601 [00:00<00:00, 398kB/s]
+
+vocab.json: 0.00B [00:00, ?B/s][Avocab.json: 1.06MB [00:00, 95.0MB/s]
+
+pytorch_model.bin:   0%|          | 0.00/492M [00:00<?, ?B/s][A
+
+pytorch_model.bin:   0%|          | 0.00/1.22G [00:00<?, ?B/s][A[A
+
+
+diffusion_pytorch_model.bin:   0%|          | 0.00/335M [00:00<?, ?B/s][A[A[A
+
+
+
+diffusion_pytorch_model.bin:   0%|          | 0.00/3.44G [00:00<?, ?B/s][A[A[A[A
+pytorch_model.bin:   2%|▏         | 10.5M/492M [00:01<00:46, 10.4MB/s][A
+pytorch_model.bin:   4%|▍         | 21.0M/492M [00:01<00:25, 18.5MB/s][A
+
+pytorch_model.bin:   1%|          | 10.5M/1.22G [00:01<02:29, 8.08MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:   0%|          | 10.5M/3.44G [00:01<07:28, 7.64MB/s][A[A[A[A
+
+pytorch_model.bin:   2%|▏         | 21.0M/1.22G [00:01<01:13, 16.3MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:   1%|          | 21.0M/3.44G [00:01<04:16, 13.3MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:   1%|          | 31.5M/3.44G [00:02<03:17, 17.3MB/s][A[A[A[A
+
+pytorch_model.bin:   3%|▎         | 31.5M/1.22G [00:02<01:24, 14.0MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:   1%|          | 41.9M/3.44G [00:02<02:47, 20.2MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:   2%|▏         | 52.4M/3.44G [00:02<02:24, 23.4MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:   2%|▏         | 62.9M/3.44G [00:03<02:11, 25.8MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:   2%|▏         | 73.4M/3.44G [00:03<02:22, 23.6MB/s][A[A[A[A
+
+pytorch_model.bin:   3%|▎         | 41.9M/1.22G [00:04<02:07, 9.19MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:   2%|▏         | 83.9M/3.44G [00:04<02:32, 22.0MB/s][A[A[A[A
+
+
+diffusion_pytorch_model.bin:   3%|▎         | 10.5M/335M [00:04<02:14, 2.41MB/s][A[A[A
+
+
+diffusion_pytorch_model.bin:   6%|▋         | 21.0M/335M [00:04<00:59, 5.31MB/s][A[A[A
+
+pytorch_model.bin:   4%|▍         | 52.4M/1.22G [00:04<01:50, 10.5MB/s][A[A
+
+
+diffusion_pytorch_model.bin:   9%|▉         | 31.5M/335M [00:04<00:34, 8.90MB/s][A[A[A
+
+
+diffusion_pytorch_model.bin:  13%|█▎        | 41.9M/335M [00:05<00:23, 12.3MB/s][A[A[A
+
+pytorch_model.bin:   5%|▌         | 62.9M/1.22G [00:05<01:31, 12.6MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:   3%|▎         | 94.4M/3.44G [00:05<04:02, 13.8MB/s][A[A[A[A
+
+pytorch_model.bin:   6%|▌         | 73.4M/1.22G [00:05<01:19, 14.4MB/s][A[A
+
+
+diffusion_pytorch_model.bin:  16%|█▌        | 52.4M/335M [00:05<00:20, 13.5MB/s][A[A[A
+
+pytorch_model.bin:   7%|▋         | 83.9M/1.22G [00:06<01:04, 17.5MB/s][A[A
+
+
+diffusion_pytorch_model.bin:  19%|█▉        | 62.9M/335M [00:06<00:19, 14.0MB/s][A[A[A
+
+pytorch_model.bin:   8%|▊         | 94.4M/1.22G [00:06<01:08, 16.3MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:   3%|▎         | 105M/3.44G [00:07<05:32, 10.0MB/s] [A[A[A[A
+
+pytorch_model.bin:   9%|▊         | 105M/1.22G [00:07<01:10, 15.7MB/s] [A[A
+
+
+
+diffusion_pytorch_model.bin:   3%|▎         | 115M/3.44G [00:07<04:31, 12.2MB/s][A[A[A[A
+
+
+diffusion_pytorch_model.bin:  22%|██▏       | 73.4M/335M [00:08<00:24, 10.8MB/s][A[A[A
+
+pytorch_model.bin:   9%|▉         | 115M/1.22G [00:08<01:10, 15.6MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:   4%|▎         | 126M/3.44G [00:08<04:29, 12.3MB/s][A[A[A[A
+
+
+diffusion_pytorch_model.bin:  25%|██▌       | 83.9M/335M [00:08<00:20, 12.4MB/s][A[A[A
+
+pytorch_model.bin:  10%|█         | 126M/1.22G [00:08<00:59, 18.5MB/s][A[A
+pytorch_model.bin:   6%|▋         | 31.5M/492M [00:08<02:45, 2.79MB/s][A
+
+
+diffusion_pytorch_model.bin:  28%|██▊       | 94.4M/335M [00:08<00:14, 16.1MB/s][A[A[A
+
+
+diffusion_pytorch_model.bin:  31%|███▏      | 105M/335M [00:09<00:11, 20.1MB/s] [A[A[A
+
+pytorch_model.bin:  11%|█         | 136M/1.22G [00:09<01:01, 17.5MB/s][A[A
+
+
+diffusion_pytorch_model.bin:  34%|███▍      | 115M/335M [00:09<00:09, 22.7MB/s][A[A[A
+
+
+
+diffusion_pytorch_model.bin:   4%|▍         | 136M/3.44G [00:09<04:51, 11.3MB/s][A[A[A[A
+
+
+diffusion_pytorch_model.bin:  38%|███▊      | 126M/335M [00:09<00:08, 24.3MB/s][A[A[A
+
+pytorch_model.bin:  12%|█▏        | 147M/1.22G [00:09<00:58, 18.3MB/s][A[A
+
+
+diffusion_pytorch_model.bin:  41%|████      | 136M/335M [00:10<00:09, 21.6MB/s][A[A[A
+
+
+
+diffusion_pytorch_model.bin:   4%|▍         | 147M/3.44G [00:10<04:46, 11.5MB/s][A[A[A[A
+
+pytorch_model.bin:  13%|█▎        | 157M/1.22G [00:10<01:06, 16.0MB/s][A[A
+
+
+diffusion_pytorch_model.bin:  44%|████▍     | 147M/335M [00:10<00:08, 22.2MB/s][A[A[A
+
+pytorch_model.bin:  14%|█▍        | 168M/1.22G [00:11<01:05, 16.1MB/s][A[A
+
+pytorch_model.bin:  15%|█▍        | 178M/1.22G [00:11<00:52, 19.9MB/s][A[A
+
+
+diffusion_pytorch_model.bin:  47%|████▋     | 157M/335M [00:11<00:11, 15.5MB/s][A[A[A
+
+pytorch_model.bin:  16%|█▌        | 189M/1.22G [00:12<00:49, 20.6MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:   5%|▍         | 157M/3.44G [00:12<05:58, 9.15MB/s][A[A[A[A
+
+
+diffusion_pytorch_model.bin:  50%|█████     | 168M/335M [00:12<00:09, 18.3MB/s][A[A[A
+
+
+diffusion_pytorch_model.bin:  53%|█████▎    | 178M/335M [00:12<00:07, 22.0MB/s][A[A[A
+
+pytorch_model.bin:  16%|█▋        | 199M/1.22G [00:12<00:48, 21.0MB/s][A[A
+
+
+diffusion_pytorch_model.bin:  56%|█████▋    | 189M/335M [00:12<00:05, 24.8MB/s][A[A[A
+
+
+diffusion_pytorch_model.bin:  60%|█████▉    | 199M/335M [00:13<00:05, 23.9MB/s][A[A[A
+
+pytorch_model.bin:  17%|█▋        | 210M/1.22G [00:13<00:59, 16.8MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:   5%|▍         | 168M/3.44G [00:13<06:20, 8.58MB/s][A[A[A[A
+
+
+diffusion_pytorch_model.bin:  63%|██████▎   | 210M/335M [00:13<00:05, 21.9MB/s][A[A[A
+
+pytorch_model.bin:  18%|█▊        | 220M/1.22G [00:14<01:08, 14.6MB/s][A[A
+
+pytorch_model.bin:  19%|█▉        | 231M/1.22G [00:14<00:54, 18.0MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:   5%|▌         | 178M/3.44G [00:15<06:35, 8.23MB/s][A[A[A[A
+
+pytorch_model.bin:  20%|█▉        | 241M/1.22G [00:15<00:52, 18.6MB/s][A[A
+
+pytorch_model.bin:  21%|██        | 252M/1.22G [00:15<00:43, 22.1MB/s][A[A
+
+pytorch_model.bin:  22%|██▏       | 262M/1.22G [00:16<01:01, 15.6MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:   5%|▌         | 189M/3.44G [00:16<06:59, 7.75MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:   6%|▌         | 199M/3.44G [00:16<05:28, 9.86MB/s][A[A[A[A
+
+
+diffusion_pytorch_model.bin:  66%|██████▌   | 220M/335M [00:17<00:14, 8.10MB/s][A[A[A
+
+
+
+diffusion_pytorch_model.bin:   6%|▌         | 210M/3.44G [00:17<04:29, 12.0MB/s][A[A[A[A
+
+pytorch_model.bin:  22%|██▏       | 273M/1.22G [00:17<01:10, 13.4MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:   6%|▋         | 220M/3.44G [00:17<03:41, 14.5MB/s][A[A[A[A
+
+pytorch_model.bin:  23%|██▎       | 283M/1.22G [00:17<00:54, 17.2MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:   7%|▋         | 231M/3.44G [00:18<03:10, 16.9MB/s][A[A[A[A
+
+pytorch_model.bin:  24%|██▍       | 294M/1.22G [00:18<00:52, 17.7MB/s][A[A
+
+pytorch_model.bin:  25%|██▌       | 304M/1.22G [00:18<00:50, 18.1MB/s][A[A
+pytorch_model.bin:   6%|▋         | 31.5M/492M [00:19<02:45, 2.79MB/s][A
+
+
+
+diffusion_pytorch_model.bin:   7%|▋         | 241M/3.44G [00:19<03:46, 14.1MB/s][A[A[A[A
+
+
+diffusion_pytorch_model.bin:  69%|██████▉   | 231M/335M [00:19<00:15, 6.53MB/s][A[A[A
+
+
+
+diffusion_pytorch_model.bin:   7%|▋         | 252M/3.44G [00:19<03:24, 15.6MB/s][A[A[A[A
+
+pytorch_model.bin:  26%|██▌       | 315M/1.22G [00:19<00:56, 16.0MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:   8%|▊         | 262M/3.44G [00:20<03:09, 16.7MB/s][A[A[A[A
+
+pytorch_model.bin:  27%|██▋       | 325M/1.22G [00:20<00:58, 15.2MB/s][A[A
+
+pytorch_model.bin:  28%|██▊       | 336M/1.22G [00:20<00:50, 17.4MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:   8%|▊         | 273M/3.44G [00:21<03:44, 14.1MB/s][A[A[A[A
+
+pytorch_model.bin:  28%|██▊       | 346M/1.22G [00:21<00:52, 16.7MB/s][A[A
+
+pytorch_model.bin:  29%|██▉       | 357M/1.22G [00:21<00:40, 21.1MB/s][A[A
+
+pytorch_model.bin:  30%|███       | 367M/1.22G [00:22<00:33, 25.4MB/s][A[A
+
+pytorch_model.bin:  31%|███       | 377M/1.22G [00:22<00:44, 18.6MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:   8%|▊         | 283M/3.44G [00:23<05:29, 9.57MB/s][A[A[A[A
+
+pytorch_model.bin:  32%|███▏      | 388M/1.22G [00:23<00:52, 15.7MB/s][A[A
+
+pytorch_model.bin:  33%|███▎      | 398M/1.22G [00:24<00:43, 19.0MB/s][A[A
+
+pytorch_model.bin:  34%|███▎      | 409M/1.22G [00:24<00:45, 17.6MB/s][A[A
+
+pytorch_model.bin:  34%|███▍      | 419M/1.22G [00:25<00:37, 21.2MB/s][A[A
+pytorch_model.bin:   9%|▊         | 41.9M/492M [00:25<06:15, 1.20MB/s][A
+
+
+
+diffusion_pytorch_model.bin:   9%|▊         | 294M/3.44G [00:25<07:21, 7.12MB/s][A[A[A[A
+
+pytorch_model.bin:  35%|███▌      | 430M/1.22G [00:25<00:45, 17.3MB/s][A[A
+
+pytorch_model.bin:  36%|███▌      | 440M/1.22G [00:26<00:38, 20.1MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:   9%|▉         | 304M/3.44G [00:26<06:48, 7.68MB/s][A[A[A[A
+
+pytorch_model.bin:  37%|███▋      | 451M/1.22G [00:27<00:49, 15.6MB/s][A[A
+
+pytorch_model.bin:  38%|███▊      | 461M/1.22G [00:27<00:47, 15.8MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:   9%|▉         | 315M/3.44G [00:28<07:39, 6.80MB/s][A[A[A[A
+
+pytorch_model.bin:  39%|███▉      | 472M/1.22G [00:28<00:48, 15.4MB/s][A[A
+
+
+diffusion_pytorch_model.bin:  72%|███████▏  | 241M/335M [00:28<00:35, 2.64MB/s][A[A[A
+
+pytorch_model.bin:  40%|███▉      | 482M/1.22G [00:28<00:39, 18.6MB/s][A[A
+
+pytorch_model.bin:  41%|████      | 493M/1.22G [00:29<00:46, 15.7MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:   9%|▉         | 325M/3.44G [00:30<07:42, 6.74MB/s][A[A[A[A
+
+pytorch_model.bin:  41%|████▏     | 503M/1.22G [00:30<00:50, 14.1MB/s][A[A
+
+pytorch_model.bin:  42%|████▏     | 514M/1.22G [00:31<00:48, 14.6MB/s][A[A
+
+pytorch_model.bin:  43%|████▎     | 524M/1.22G [00:32<00:49, 14.1MB/s][A[A
+
+pytorch_model.bin:  44%|████▍     | 535M/1.22G [00:32<00:37, 18.2MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:  10%|▉         | 336M/3.44G [00:32<08:45, 5.90MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  10%|█         | 346M/3.44G [00:32<06:53, 7.48MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  10%|█         | 357M/3.44G [00:33<05:36, 9.15MB/s][A[A[A[A
+
+pytorch_model.bin:  45%|████▍     | 545M/1.22G [00:33<00:47, 14.1MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:  11%|█         | 367M/3.44G [00:33<04:26, 11.5MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  11%|█         | 377M/3.44G [00:34<03:36, 14.1MB/s][A[A[A[A
+pytorch_model.bin:  11%|█         | 52.4M/492M [00:34<06:14, 1.18MB/s][A
+
+pytorch_model.bin:  46%|████▌     | 556M/1.22G [00:34<00:56, 11.7MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:  11%|█▏        | 388M/3.44G [00:35<03:43, 13.7MB/s][A[A[A[A
+
+pytorch_model.bin:  47%|████▋     | 566M/1.22G [00:35<00:48, 13.5MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:  12%|█▏        | 398M/3.44G [00:35<03:13, 15.7MB/s][A[A[A[A
+
+pytorch_model.bin:  47%|████▋     | 577M/1.22G [00:35<00:44, 14.5MB/s][A[A
+
+pytorch_model.bin:  48%|████▊     | 587M/1.22G [00:36<00:34, 18.0MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:  12%|█▏        | 409M/3.44G [00:36<03:33, 14.2MB/s][A[A[A[A
+pytorch_model.bin:  13%|█▎        | 62.9M/492M [00:36<04:32, 1.58MB/s][A
+
+
+diffusion_pytorch_model.bin:  75%|███████▌  | 252M/335M [00:36<00:40, 2.03MB/s][A[A[A
+
+pytorch_model.bin:  49%|████▉     | 598M/1.22G [00:37<00:40, 15.3MB/s][A[A
+pytorch_model.bin:  15%|█▍        | 73.4M/492M [00:37<03:12, 2.18MB/s][A
+
+pytorch_model.bin:  50%|█████     | 608M/1.22G [00:37<00:42, 14.4MB/s][A[A
+pytorch_model.bin:  17%|█▋        | 83.9M/492M [00:38<02:11, 3.10MB/s][A
+
+
+
+diffusion_pytorch_model.bin:  12%|█▏        | 419M/3.44G [00:38<04:52, 10.3MB/s][A[A[A[A
+pytorch_model.bin:  19%|█▉        | 94.4M/492M [00:38<01:30, 4.38MB/s][A
+pytorch_model.bin:  21%|██▏       | 105M/492M [00:38<01:03, 6.14MB/s] [A
+
+
+
+diffusion_pytorch_model.bin:  13%|█▎        | 430M/3.44G [00:38<03:59, 12.5MB/s][A[A[A[A
+
+pytorch_model.bin:  51%|█████     | 619M/1.22G [00:38<00:40, 14.9MB/s][A[A
+pytorch_model.bin:  23%|██▎       | 115M/492M [00:38<00:44, 8.44MB/s][A
+pytorch_model.bin:  26%|██▌       | 126M/492M [00:38<00:31, 11.5MB/s][A
+pytorch_model.bin:  28%|██▊       | 136M/492M [00:38<00:22, 15.6MB/s][A
+pytorch_model.bin:  30%|██▉       | 147M/492M [00:39<00:17, 20.2MB/s][A
+
+
+
+diffusion_pytorch_model.bin:  13%|█▎        | 440M/3.44G [00:39<03:38, 13.7MB/s][A[A[A[A
+
+pytorch_model.bin:  52%|█████▏    | 629M/1.22G [00:39<00:37, 15.7MB/s][A[A
+
+pytorch_model.bin:  53%|█████▎    | 640M/1.22G [00:39<00:29, 19.4MB/s][A[A
+pytorch_model.bin:  32%|███▏      | 157M/492M [00:39<00:18, 18.5MB/s][A
+
+
+
+diffusion_pytorch_model.bin:  13%|█▎        | 451M/3.44G [00:40<03:51, 12.9MB/s][A[A[A[A
+pytorch_model.bin:  34%|███▍      | 168M/492M [00:40<00:15, 21.0MB/s][A
+
+pytorch_model.bin:  53%|█████▎    | 650M/1.22G [00:40<00:37, 15.0MB/s][A[A
+pytorch_model.bin:  36%|███▌      | 178M/492M [00:40<00:16, 19.4MB/s][A
+
+
+
+diffusion_pytorch_model.bin:  13%|█▎        | 461M/3.44G [00:40<04:02, 12.3MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  14%|█▎        | 472M/3.44G [00:41<03:24, 14.5MB/s][A[A[A[A
+
+pytorch_model.bin:  54%|█████▍    | 661M/1.22G [00:41<00:45, 12.3MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:  14%|█▍        | 482M/3.44G [00:41<02:53, 17.0MB/s][A[A[A[A
+pytorch_model.bin:  38%|███▊      | 189M/492M [00:41<00:21, 14.3MB/s][A
+
+
+
+diffusion_pytorch_model.bin:  14%|█▍        | 493M/3.44G [00:42<02:27, 20.0MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  15%|█▍        | 503M/3.44G [00:42<01:56, 25.1MB/s][A[A[A[A
+
+pytorch_model.bin:  55%|█████▌    | 671M/1.22G [00:42<00:40, 13.3MB/s][A[A
+pytorch_model.bin:  40%|████      | 199M/492M [00:42<00:18, 16.0MB/s][A
+pytorch_model.bin:  43%|████▎     | 210M/492M [00:42<00:14, 19.6MB/s][A
+
+pytorch_model.bin:  56%|█████▌    | 682M/1.22G [00:42<00:38, 14.1MB/s][A[A
+pytorch_model.bin:  45%|████▍     | 220M/492M [00:43<00:14, 19.1MB/s][A
+
+pytorch_model.bin:  57%|█████▋    | 692M/1.22G [00:43<00:31, 16.9MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:  15%|█▍        | 514M/3.44G [00:43<02:56, 16.6MB/s][A[A[A[A
+pytorch_model.bin:  47%|████▋     | 231M/492M [00:44<00:16, 16.1MB/s][A
+
+pytorch_model.bin:  58%|█████▊    | 703M/1.22G [00:44<00:39, 13.0MB/s][A[A
+pytorch_model.bin:  49%|████▉     | 241M/492M [00:44<00:15, 16.6MB/s][A
+
+
+
+diffusion_pytorch_model.bin:  15%|█▌        | 524M/3.44G [00:44<04:16, 11.4MB/s][A[A[A[A
+pytorch_model.bin:  51%|█████     | 252M/492M [00:45<00:14, 16.2MB/s][A
+
+
+
+diffusion_pytorch_model.bin:  16%|█▌        | 535M/3.44G [00:45<03:42, 13.0MB/s][A[A[A[A
+
+pytorch_model.bin:  59%|█████▊    | 713M/1.22G [00:45<00:45, 11.1MB/s][A[A
+
+
+diffusion_pytorch_model.bin:  78%|███████▊  | 262M/335M [00:45<00:43, 1.66MB/s][A[A[A
+
+
+
+diffusion_pytorch_model.bin:  16%|█▌        | 545M/3.44G [00:45<03:06, 15.6MB/s][A[A[A[A
+pytorch_model.bin:  53%|█████▎    | 262M/492M [00:45<00:13, 16.8MB/s][A
+
+
+
+diffusion_pytorch_model.bin:  16%|█▌        | 556M/3.44G [00:46<02:53, 16.6MB/s][A[A[A[A
+pytorch_model.bin:  55%|█████▌    | 273M/492M [00:46<00:12, 17.1MB/s][A
+
+
+
+diffusion_pytorch_model.bin:  16%|█▋        | 566M/3.44G [00:46<02:38, 18.1MB/s][A[A[A[A
+pytorch_model.bin:  58%|█████▊    | 283M/492M [00:46<00:10, 19.2MB/s][A
+
+pytorch_model.bin:  59%|█████▉    | 724M/1.22G [00:47<00:49, 10.0MB/s][A[A
+
+pytorch_model.bin:  60%|██████    | 734M/1.22G [00:47<00:38, 12.6MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:  17%|█▋        | 577M/3.44G [00:47<03:00, 15.9MB/s][A[A[A[A
+pytorch_model.bin:  60%|█████▉    | 294M/492M [00:47<00:12, 15.5MB/s][A
+pytorch_model.bin:  62%|██████▏   | 304M/492M [00:48<00:10, 18.1MB/s][A
+
+pytorch_model.bin:  61%|██████    | 744M/1.22G [00:48<00:38, 12.3MB/s][A[A
+pytorch_model.bin:  64%|██████▍   | 315M/492M [00:48<00:09, 18.6MB/s][A
+
+
+
+diffusion_pytorch_model.bin:  17%|█▋        | 587M/3.44G [00:48<03:46, 12.6MB/s][A[A[A[A
+
+pytorch_model.bin:  62%|██████▏   | 755M/1.22G [00:48<00:34, 13.3MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:  17%|█▋        | 598M/3.44G [00:49<02:56, 16.1MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  18%|█▊        | 608M/3.44G [00:49<02:13, 21.1MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  18%|█▊        | 619M/3.44G [00:49<01:48, 25.9MB/s][A[A[A[A
+pytorch_model.bin:  66%|██████▌   | 325M/492M [00:49<00:10, 15.5MB/s][A
+
+
+
+diffusion_pytorch_model.bin:  18%|█▊        | 629M/3.44G [00:49<01:43, 27.2MB/s][A[A[A[A
+
+pytorch_model.bin:  63%|██████▎   | 765M/1.22G [00:50<00:41, 10.8MB/s][A[A
+pytorch_model.bin:  68%|██████▊   | 336M/492M [00:50<00:10, 15.1MB/s][A
+
+
+
+diffusion_pytorch_model.bin:  19%|█▊        | 640M/3.44G [00:50<02:28, 18.9MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  19%|█▉        | 650M/3.44G [00:51<02:20, 19.8MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  19%|█▉        | 661M/3.44G [00:51<02:01, 22.9MB/s][A[A[A[A
+
+pytorch_model.bin:  64%|██████▍   | 776M/1.22G [00:51<00:43, 10.1MB/s][A[A
+
+pytorch_model.bin:  65%|██████▍   | 786M/1.22G [00:51<00:32, 13.4MB/s][A[A
+pytorch_model.bin:  70%|███████   | 346M/492M [00:51<00:12, 11.8MB/s][A
+
+
+
+diffusion_pytorch_model.bin:  20%|█▉        | 671M/3.44G [00:51<01:47, 25.6MB/s][A[A[A[A
+
+
+diffusion_pytorch_model.bin:  81%|████████▏ | 273M/335M [00:51<00:36, 1.68MB/s][A[A[A
+
+
+
+diffusion_pytorch_model.bin:  20%|█▉        | 682M/3.44G [00:52<01:33, 29.4MB/s][A[A[A[A
+pytorch_model.bin:  72%|███████▏  | 357M/492M [00:52<00:10, 13.1MB/s][A
+
+pytorch_model.bin:  66%|██████▌   | 797M/1.22G [00:52<00:30, 13.9MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:  20%|██        | 692M/3.44G [00:52<01:37, 28.2MB/s][A[A[A[A
+pytorch_model.bin:  75%|███████▍  | 367M/492M [00:53<00:09, 13.2MB/s][A
+
+pytorch_model.bin:  66%|██████▋   | 807M/1.22G [00:53<00:29, 13.9MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:  20%|██        | 703M/3.44G [00:53<02:31, 18.0MB/s][A[A[A[A
+
+
+diffusion_pytorch_model.bin:  85%|████████▍ | 283M/335M [00:53<00:24, 2.14MB/s][A[A[A
+
+
+
+diffusion_pytorch_model.bin:  21%|██        | 713M/3.44G [00:53<02:18, 19.6MB/s][A[A[A[A
+
+pytorch_model.bin:  67%|██████▋   | 818M/1.22G [00:54<00:31, 12.6MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:  21%|██        | 724M/3.44G [00:54<02:08, 21.2MB/s][A[A[A[A
+pytorch_model.bin:  77%|███████▋  | 377M/492M [00:54<00:10, 11.1MB/s][A
+
+
+
+diffusion_pytorch_model.bin:  21%|██▏       | 734M/3.44G [00:54<01:57, 23.0MB/s][A[A[A[A
+pytorch_model.bin:  79%|███████▉  | 388M/492M [00:55<00:08, 12.3MB/s][A
+
+
+
+diffusion_pytorch_model.bin:  22%|██▏       | 744M/3.44G [00:55<01:54, 23.5MB/s][A[A[A[A
+
+pytorch_model.bin:  68%|██████▊   | 828M/1.22G [00:55<00:33, 11.7MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:  22%|██▏       | 755M/3.44G [00:55<01:47, 24.9MB/s][A[A[A[A
+
+pytorch_model.bin:  69%|██████▉   | 839M/1.22G [00:55<00:26, 14.4MB/s][A[A
+pytorch_model.bin:  81%|████████  | 398M/492M [00:55<00:07, 12.1MB/s][A
+
+pytorch_model.bin:  70%|██████▉   | 849M/1.22G [00:56<00:23, 15.6MB/s][A[A
+
+pytorch_model.bin:  71%|███████   | 860M/1.22G [00:56<00:23, 15.1MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:  22%|██▏       | 765M/3.44G [00:56<03:03, 14.6MB/s][A[A[A[A
+pytorch_model.bin:  83%|████████▎ | 409M/492M [00:57<00:08, 10.4MB/s][A
+
+
+
+diffusion_pytorch_model.bin:  23%|██▎       | 776M/3.44G [00:57<02:42, 16.4MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  23%|██▎       | 786M/3.44G [00:57<02:32, 17.4MB/s][A[A[A[A
+
+pytorch_model.bin:  72%|███████▏  | 870M/1.22G [00:58<00:29, 11.8MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:  23%|██▎       | 797M/3.44G [00:58<02:13, 19.7MB/s][A[A[A[A
+pytorch_model.bin:  85%|████████▌ | 419M/492M [00:58<00:07, 9.95MB/s][A
+
+
+
+diffusion_pytorch_model.bin:  23%|██▎       | 807M/3.44G [00:58<01:56, 22.6MB/s][A[A[A[A
+pytorch_model.bin:  87%|████████▋ | 430M/492M [00:58<00:04, 13.2MB/s][A
+
+
+
+diffusion_pytorch_model.bin:  24%|██▍       | 818M/3.44G [00:58<01:43, 25.4MB/s][A[A[A[A
+
+pytorch_model.bin:  72%|███████▏  | 881M/1.22G [00:59<00:27, 12.0MB/s][A[A
+
+pytorch_model.bin:  73%|███████▎  | 891M/1.22G [00:59<00:25, 12.9MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:  24%|██▍       | 828M/3.44G [00:59<02:21, 18.4MB/s][A[A[A[A
+
+pytorch_model.bin:  74%|███████▍  | 902M/1.22G [00:59<00:19, 16.1MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:  24%|██▍       | 839M/3.44G [01:00<02:04, 20.9MB/s][A[A[A[A
+pytorch_model.bin:  89%|████████▉ | 440M/492M [01:00<00:05, 10.4MB/s][A
+
+
+
+diffusion_pytorch_model.bin:  25%|██▍       | 849M/3.44G [01:00<01:51, 23.1MB/s][A[A[A[A
+
+pytorch_model.bin:  75%|███████▌  | 912M/1.22G [01:00<00:19, 15.5MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:  25%|██▌       | 860M/3.44G [01:00<01:41, 25.3MB/s][A[A[A[A
+
+pytorch_model.bin:  76%|███████▌  | 923M/1.22G [01:00<00:14, 19.6MB/s][A[A
+pytorch_model.bin:  92%|█████████▏| 451M/492M [01:01<00:03, 11.1MB/s][A
+
+
+
+diffusion_pytorch_model.bin:  25%|██▌       | 870M/3.44G [01:01<01:32, 27.8MB/s][A[A[A[A
+pytorch_model.bin:  94%|█████████▎| 461M/492M [01:01<00:02, 14.3MB/s][A
+
+
+
+diffusion_pytorch_model.bin:  26%|██▌       | 881M/3.44G [01:01<01:26, 29.7MB/s][A[A[A[A
+
+
+diffusion_pytorch_model.bin:  88%|████████▊ | 294M/335M [01:01<00:22, 1.79MB/s][A[A[A
+pytorch_model.bin:  96%|█████████▌| 472M/492M [01:02<00:01, 12.9MB/s][A
+
+pytorch_model.bin:  77%|███████▋  | 933M/1.22G [01:02<00:23, 12.2MB/s][A[A
+pytorch_model.bin:  98%|█████████▊| 482M/492M [01:02<00:00, 15.3MB/s][A
+
+
+
+diffusion_pytorch_model.bin:  26%|██▌       | 891M/3.44G [01:02<02:41, 15.7MB/s][A[A[A[A
+pytorch_model.bin: 100%|██████████| 492M/492M [01:03<00:00, 16.3MB/s][Apytorch_model.bin: 100%|██████████| 492M/492M [01:03<00:00, 7.80MB/s]
+
+
+
+
+diffusion_pytorch_model.bin:  26%|██▌       | 902M/3.44G [01:03<02:26, 17.3MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  27%|██▋       | 912M/3.44G [01:03<02:04, 20.2MB/s][A[A[A[A
+
+pytorch_model.bin:  78%|███████▊  | 944M/1.22G [01:03<00:26, 10.3MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:  27%|██▋       | 923M/3.44G [01:04<02:04, 20.3MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  27%|██▋       | 933M/3.44G [01:04<01:38, 25.4MB/s][A[A[A[A
+
+pytorch_model.bin:  78%|███████▊  | 954M/1.22G [01:04<00:20, 12.9MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:  27%|██▋       | 944M/3.44G [01:04<01:26, 28.8MB/s][A[A[A[A
+
+pytorch_model.bin:  79%|███████▉  | 965M/1.22G [01:04<00:18, 13.8MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:  28%|██▊       | 954M/3.44G [01:05<02:08, 19.4MB/s][A[A[A[A
+
+pytorch_model.bin:  80%|████████  | 975M/1.22G [01:05<00:17, 14.1MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:  28%|██▊       | 965M/3.44G [01:05<01:50, 22.5MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  28%|██▊       | 975M/3.44G [01:06<01:40, 24.4MB/s][A[A[A[A
+
+pytorch_model.bin:  81%|████████  | 986M/1.22G [01:06<00:15, 15.3MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:  29%|██▊       | 986M/3.44G [01:06<01:33, 26.2MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  29%|██▉       | 996M/3.44G [01:06<01:25, 28.5MB/s][A[A[A[A
+
+pytorch_model.bin:  82%|████████▏ | 996M/1.22G [01:06<00:13, 15.7MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:  29%|██▉       | 1.01G/3.44G [01:07<01:27, 27.9MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  30%|██▉       | 1.02G/3.44G [01:07<01:32, 26.0MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  30%|██▉       | 1.03G/3.44G [01:07<01:24, 28.7MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  30%|███       | 1.04G/3.44G [01:08<01:09, 34.5MB/s][A[A[A[A
+
+pytorch_model.bin:  83%|████████▎ | 1.01G/1.22G [01:08<00:18, 11.5MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:  30%|███       | 1.05G/3.44G [01:08<01:09, 34.6MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  31%|███       | 1.06G/3.44G [01:08<01:16, 31.0MB/s][A[A[A[A
+
+pytorch_model.bin:  84%|████████▎ | 1.02G/1.22G [01:08<00:15, 12.5MB/s][A[A
+
+pytorch_model.bin:  85%|████████▍ | 1.03G/1.22G [01:09<00:14, 13.2MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:  31%|███       | 1.07G/3.44G [01:09<01:53, 21.0MB/s][A[A[A[A
+
+pytorch_model.bin:  85%|████████▌ | 1.04G/1.22G [01:09<00:10, 16.5MB/s][A[A
+
+pytorch_model.bin:  86%|████████▌ | 1.05G/1.22G [01:10<00:12, 13.9MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:  31%|███▏      | 1.08G/3.44G [01:10<02:49, 13.9MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  32%|███▏      | 1.09G/3.44G [01:11<02:32, 15.4MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  32%|███▏      | 1.10G/3.44G [01:11<02:04, 18.8MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  32%|███▏      | 1.11G/3.44G [01:12<01:47, 21.6MB/s][A[A[A[A
+
+pytorch_model.bin:  87%|████████▋ | 1.06G/1.22G [01:12<00:13, 11.3MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:  33%|███▎      | 1.12G/3.44G [01:12<01:32, 25.0MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  33%|███▎      | 1.13G/3.44G [01:12<01:25, 27.0MB/s][A[A[A[A
+
+pytorch_model.bin:  88%|████████▊ | 1.07G/1.22G [01:12<00:11, 12.6MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:  33%|███▎      | 1.14G/3.44G [01:13<01:56, 19.7MB/s][A[A[A[A
+
+pytorch_model.bin:  89%|████████▉ | 1.08G/1.22G [01:13<00:10, 12.9MB/s][A[A
+
+pytorch_model.bin:  90%|████████▉ | 1.09G/1.22G [01:13<00:07, 16.4MB/s][A[A
+
+
+diffusion_pytorch_model.bin:  91%|█████████ | 304M/335M [01:14<00:23, 1.33MB/s][A[A[A
+
+
+
+diffusion_pytorch_model.bin:  34%|███▎      | 1.15G/3.44G [01:14<02:26, 15.6MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  34%|███▍      | 1.16G/3.44G [01:14<01:51, 20.4MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  34%|███▍      | 1.17G/3.44G [01:14<01:33, 24.2MB/s][A[A[A[A
+
+pytorch_model.bin:  91%|█████████ | 1.10G/1.22G [01:15<00:08, 13.0MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:  34%|███▍      | 1.18G/3.44G [01:15<01:18, 28.8MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  35%|███▍      | 1.20G/3.44G [01:15<01:07, 33.2MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  35%|███▌      | 1.21G/3.44G [01:15<01:03, 35.3MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  35%|███▌      | 1.22G/3.44G [01:16<01:12, 30.6MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  36%|███▌      | 1.23G/3.44G [01:16<01:18, 28.3MB/s][A[A[A[A
+
+pytorch_model.bin:  91%|█████████▏| 1.11G/1.22G [01:16<00:10, 10.3MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:  36%|███▌      | 1.24G/3.44G [01:16<01:14, 29.6MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  36%|███▋      | 1.25G/3.44G [01:17<01:17, 28.2MB/s][A[A[A[A
+
+pytorch_model.bin:  92%|█████████▏| 1.12G/1.22G [01:17<00:08, 11.7MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:  37%|███▋      | 1.26G/3.44G [01:17<01:10, 30.8MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  37%|███▋      | 1.27G/3.44G [01:18<01:32, 23.5MB/s][A[A[A[A
+
+pytorch_model.bin:  93%|█████████▎| 1.13G/1.22G [01:18<00:07, 10.9MB/s][A[A
+
+pytorch_model.bin:  94%|█████████▍| 1.14G/1.22G [01:18<00:05, 13.6MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:  37%|███▋      | 1.28G/3.44G [01:19<02:11, 16.4MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  38%|███▊      | 1.29G/3.44G [01:19<01:59, 18.0MB/s][A[A[A[A
+
+pytorch_model.bin:  95%|█████████▍| 1.15G/1.22G [01:19<00:05, 12.2MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:  38%|███▊      | 1.30G/3.44G [01:19<01:40, 21.2MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  38%|███▊      | 1.31G/3.44G [01:20<01:25, 25.0MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  38%|███▊      | 1.32G/3.44G [01:20<01:14, 28.5MB/s][A[A[A[A
+
+pytorch_model.bin:  96%|█████████▌| 1.16G/1.22G [01:20<00:04, 10.8MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:  39%|███▊      | 1.33G/3.44G [01:21<01:39, 21.2MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  39%|███▉      | 1.34G/3.44G [01:21<01:27, 23.9MB/s][A[A[A[A
+
+pytorch_model.bin:  97%|█████████▋| 1.17G/1.22G [01:21<00:03, 11.5MB/s][A[A
+
+pytorch_model.bin:  97%|█████████▋| 1.18G/1.22G [01:22<00:02, 12.1MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:  39%|███▉      | 1.35G/3.44G [01:22<01:58, 17.6MB/s][A[A[A[A
+
+pytorch_model.bin:  98%|█████████▊| 1.20G/1.22G [01:22<00:01, 15.8MB/s][A[A
+
+
+diffusion_pytorch_model.bin:  94%|█████████▍| 315M/335M [01:22<00:15, 1.31MB/s][A[A[A
+
+
+
+diffusion_pytorch_model.bin:  40%|███▉      | 1.36G/3.44G [01:22<01:44, 19.8MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  40%|███▉      | 1.37G/3.44G [01:23<01:31, 22.6MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  40%|████      | 1.38G/3.44G [01:23<01:19, 25.9MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  41%|████      | 1.39G/3.44G [01:23<01:11, 28.5MB/s][A[A[A[A
+
+pytorch_model.bin:  99%|█████████▉| 1.21G/1.22G [01:23<00:00, 12.9MB/s][A[A
+
+
+
+diffusion_pytorch_model.bin:  41%|████      | 1.41G/3.44G [01:24<01:08, 29.8MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  41%|████      | 1.42G/3.44G [01:24<01:14, 27.2MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  41%|████▏     | 1.43G/3.44G [01:24<01:11, 28.0MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  42%|████▏     | 1.44G/3.44G [01:25<00:58, 34.4MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  42%|████▏     | 1.45G/3.44G [01:25<00:55, 35.6MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  42%|████▏     | 1.46G/3.44G [01:25<00:56, 34.9MB/s][A[A[A[A
+
+pytorch_model.bin: 100%|██████████| 1.22G/1.22G [01:25<00:00, 9.25MB/s][A[Apytorch_model.bin: 100%|██████████| 1.22G/1.22G [01:25<00:00, 14.2MB/s]
+Fetching 15 files:  27%|██▋       | 4/15 [01:27<04:20, 23.72s/it]
+
+
+
+diffusion_pytorch_model.bin:  43%|████▎     | 1.47G/3.44G [01:27<02:01, 16.2MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  43%|████▎     | 1.48G/3.44G [01:27<02:16, 14.3MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  43%|████▎     | 1.49G/3.44G [01:28<01:51, 17.4MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  44%|████▎     | 1.50G/3.44G [01:28<01:42, 18.9MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  44%|████▍     | 1.51G/3.44G [01:29<01:26, 22.3MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  44%|████▍     | 1.52G/3.44G [01:29<01:14, 25.9MB/s][A[A[A[A
+
+
+diffusion_pytorch_model.bin:  97%|█████████▋| 325M/335M [01:29<00:07, 1.35MB/s][A[A[A
+
+
+
+diffusion_pytorch_model.bin:  45%|████▍     | 1.53G/3.44G [01:29<01:30, 21.0MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  45%|████▍     | 1.54G/3.44G [01:30<01:17, 24.5MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  45%|████▌     | 1.55G/3.44G [01:31<01:38, 19.2MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  45%|████▌     | 1.56G/3.44G [01:31<01:30, 20.8MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  46%|████▌     | 1.57G/3.44G [01:31<01:14, 25.0MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  46%|████▌     | 1.58G/3.44G [01:31<01:05, 28.3MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  46%|████▋     | 1.59G/3.44G [01:32<01:01, 30.0MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  47%|████▋     | 1.60G/3.44G [01:33<01:22, 22.1MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  47%|████▋     | 1.61G/3.44G [01:34<02:12, 13.7MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  47%|████▋     | 1.63G/3.44G [01:35<02:14, 13.5MB/s][A[A[A[A
+
+
+diffusion_pytorch_model.bin: 100%|██████████| 335M/335M [01:35<00:00, 1.41MB/s][A[A[Adiffusion_pytorch_model.bin: 100%|██████████| 335M/335M [01:35<00:00, 3.49MB/s]
+
+
+
+
+diffusion_pytorch_model.bin:  48%|████▊     | 1.64G/3.44G [01:37<03:13, 9.32MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  48%|████▊     | 1.65G/3.44G [01:38<03:23, 8.81MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  48%|████▊     | 1.66G/3.44G [01:39<03:33, 8.35MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  48%|████▊     | 1.67G/3.44G [01:40<02:42, 10.9MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  49%|████▉     | 1.68G/3.44G [01:40<02:04, 14.1MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  49%|████▉     | 1.69G/3.44G [01:40<01:40, 17.5MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  49%|████▉     | 1.70G/3.44G [01:41<01:28, 19.6MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  50%|████▉     | 1.71G/3.44G [01:41<01:42, 16.9MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  50%|█████     | 1.72G/3.44G [01:42<01:24, 20.5MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  50%|█████     | 1.73G/3.44G [01:42<01:11, 24.0MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  51%|█████     | 1.74G/3.44G [01:43<01:46, 15.9MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  51%|█████     | 1.75G/3.44G [01:44<02:02, 13.8MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  51%|█████     | 1.76G/3.44G [01:45<02:30, 11.1MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  52%|█████▏    | 1.77G/3.44G [01:46<02:22, 11.7MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  52%|█████▏    | 1.78G/3.44G [01:48<02:38, 10.5MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  52%|█████▏    | 1.79G/3.44G [01:49<02:58, 9.20MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  52%|█████▏    | 1.80G/3.44G [01:50<02:50, 9.59MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  53%|█████▎    | 1.81G/3.44G [01:51<02:24, 11.2MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  53%|█████▎    | 1.82G/3.44G [01:51<01:58, 13.7MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  53%|█████▎    | 1.84G/3.44G [01:51<01:35, 16.8MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  54%|█████▎    | 1.85G/3.44G [01:51<01:16, 20.8MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  54%|█████▍    | 1.86G/3.44G [01:53<02:08, 12.3MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  54%|█████▍    | 1.87G/3.44G [01:53<01:38, 15.9MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  55%|█████▍    | 1.88G/3.44G [01:55<02:16, 11.4MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  55%|█████▍    | 1.89G/3.44G [01:56<02:45, 9.39MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  55%|█████▌    | 1.90G/3.44G [01:57<02:36, 9.86MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  56%|█████▌    | 1.91G/3.44G [01:59<03:00, 8.49MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  56%|█████▌    | 1.92G/3.44G [02:00<02:52, 8.83MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  56%|█████▌    | 1.93G/3.44G [02:02<03:31, 7.14MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  56%|█████▋    | 1.94G/3.44G [02:03<03:13, 7.73MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  57%|█████▋    | 1.95G/3.44G [02:03<02:24, 10.3MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  57%|█████▋    | 1.96G/3.44G [02:04<01:54, 13.0MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  57%|█████▋    | 1.97G/3.44G [02:04<01:29, 16.3MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  58%|█████▊    | 1.98G/3.44G [02:05<01:20, 18.1MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  58%|█████▊    | 1.99G/3.44G [02:05<01:31, 15.7MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  58%|█████▊    | 2.00G/3.44G [02:06<01:16, 18.7MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  59%|█████▊    | 2.01G/3.44G [02:07<01:37, 14.6MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  59%|█████▉    | 2.02G/3.44G [02:08<01:45, 13.4MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  59%|█████▉    | 2.03G/3.44G [02:08<01:23, 16.9MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  59%|█████▉    | 2.04G/3.44G [02:08<01:16, 18.2MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  60%|█████▉    | 2.06G/3.44G [02:09<01:06, 20.7MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  60%|██████    | 2.07G/3.44G [02:09<00:58, 23.3MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  60%|██████    | 2.08G/3.44G [02:09<00:54, 24.8MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  61%|██████    | 2.09G/3.44G [02:10<00:49, 27.3MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  61%|██████    | 2.10G/3.44G [02:10<00:49, 27.1MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  61%|██████▏   | 2.11G/3.44G [02:11<00:52, 25.5MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  62%|██████▏   | 2.12G/3.44G [02:11<00:43, 30.3MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  62%|██████▏   | 2.13G/3.44G [02:11<00:48, 27.0MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  62%|██████▏   | 2.14G/3.44G [02:12<01:11, 18.2MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  63%|██████▎   | 2.15G/3.44G [02:13<01:33, 13.7MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  63%|██████▎   | 2.16G/3.44G [02:14<01:18, 16.3MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  63%|██████▎   | 2.17G/3.44G [02:14<01:06, 19.1MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  63%|██████▎   | 2.18G/3.44G [02:15<01:06, 18.9MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  64%|██████▎   | 2.19G/3.44G [02:15<01:00, 20.7MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  64%|██████▍   | 2.20G/3.44G [02:15<00:50, 24.7MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  64%|██████▍   | 2.21G/3.44G [02:16<01:07, 18.3MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  65%|██████▍   | 2.22G/3.44G [02:18<01:50, 11.0MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  65%|██████▍   | 2.23G/3.44G [02:19<01:32, 13.0MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  65%|██████▌   | 2.24G/3.44G [02:19<01:17, 15.4MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  66%|██████▌   | 2.25G/3.44G [02:19<01:03, 18.7MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  66%|██████▌   | 2.26G/3.44G [02:20<00:54, 21.3MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  66%|██████▌   | 2.28G/3.44G [02:20<00:49, 23.3MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  66%|██████▋   | 2.29G/3.44G [02:20<00:50, 22.8MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  67%|██████▋   | 2.30G/3.44G [02:21<00:47, 24.0MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  67%|██████▋   | 2.31G/3.44G [02:21<00:45, 24.7MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  67%|██████▋   | 2.32G/3.44G [02:22<00:43, 26.0MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  68%|██████▊   | 2.33G/3.44G [02:22<00:39, 28.1MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  68%|██████▊   | 2.34G/3.44G [02:23<00:55, 19.9MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  68%|██████▊   | 2.35G/3.44G [02:24<01:07, 16.2MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  69%|██████▊   | 2.36G/3.44G [02:24<00:57, 18.8MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  69%|██████▉   | 2.37G/3.44G [02:24<00:49, 21.7MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  69%|██████▉   | 2.38G/3.44G [02:25<00:46, 23.0MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  70%|██████▉   | 2.39G/3.44G [02:25<00:43, 23.9MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  70%|██████▉   | 2.40G/3.44G [02:27<01:21, 12.7MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  70%|███████   | 2.41G/3.44G [02:27<01:03, 16.1MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  70%|███████   | 2.42G/3.44G [02:28<01:19, 12.7MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  71%|███████   | 2.43G/3.44G [02:29<01:02, 16.0MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  71%|███████   | 2.44G/3.44G [02:29<00:55, 17.8MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  71%|███████▏  | 2.45G/3.44G [02:29<00:47, 20.9MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  72%|███████▏  | 2.46G/3.44G [02:30<00:37, 25.9MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  72%|███████▏  | 2.47G/3.44G [02:30<00:34, 28.0MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  72%|███████▏  | 2.49G/3.44G [02:30<00:35, 26.8MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  73%|███████▎  | 2.50G/3.44G [02:30<00:29, 32.0MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  73%|███████▎  | 2.51G/3.44G [02:31<00:48, 19.2MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  73%|███████▎  | 2.52G/3.44G [02:34<01:31, 10.1MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  73%|███████▎  | 2.53G/3.44G [02:34<01:12, 12.5MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  74%|███████▍  | 2.54G/3.44G [02:34<00:59, 15.2MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  74%|███████▍  | 2.55G/3.44G [02:35<00:47, 18.6MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  74%|███████▍  | 2.56G/3.44G [02:35<00:42, 20.7MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  75%|███████▍  | 2.57G/3.44G [02:35<00:36, 24.0MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  75%|███████▌  | 2.58G/3.44G [02:36<00:46, 18.4MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  75%|███████▌  | 2.59G/3.44G [02:37<00:56, 15.0MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  76%|███████▌  | 2.60G/3.44G [02:37<00:45, 18.4MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  76%|███████▌  | 2.61G/3.44G [02:38<00:38, 21.4MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  76%|███████▌  | 2.62G/3.44G [02:38<00:39, 20.7MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  77%|███████▋  | 2.63G/3.44G [02:39<00:38, 21.0MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  77%|███████▋  | 2.64G/3.44G [02:39<00:29, 26.8MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  77%|███████▋  | 2.65G/3.44G [02:45<02:31, 5.17MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  77%|███████▋  | 2.66G/3.44G [02:48<02:56, 4.39MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  78%|███████▊  | 2.67G/3.44G [02:49<02:26, 5.22MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  78%|███████▊  | 2.68G/3.44G [02:52<02:50, 4.43MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  78%|███████▊  | 2.69G/3.44G [02:57<03:39, 3.39MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  79%|███████▊  | 2.71G/3.44G [02:59<03:05, 3.95MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  79%|███████▉  | 2.72G/3.44G [03:00<02:42, 4.44MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  79%|███████▉  | 2.73G/3.44G [03:05<03:28, 3.42MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  80%|███████▉  | 2.74G/3.44G [03:11<04:12, 2.78MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  80%|███████▉  | 2.75G/3.44G [03:11<02:58, 3.88MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  80%|████████  | 2.76G/3.44G [03:14<03:06, 3.65MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  81%|████████  | 2.77G/3.44G [03:15<02:18, 4.84MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  81%|████████  | 2.78G/3.44G [03:15<01:45, 6.26MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  81%|████████  | 2.79G/3.44G [03:15<01:17, 8.41MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  81%|████████▏ | 2.80G/3.44G [03:16<01:00, 10.5MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  82%|████████▏ | 2.81G/3.44G [03:18<01:30, 6.92MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  82%|████████▏ | 2.82G/3.44G [03:19<01:08, 9.04MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  82%|████████▏ | 2.83G/3.44G [03:20<01:02, 9.74MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  83%|████████▎ | 2.84G/3.44G [03:20<00:48, 12.3MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  83%|████████▎ | 2.85G/3.44G [03:20<00:38, 15.2MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  83%|████████▎ | 2.86G/3.44G [03:22<00:56, 10.2MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  84%|████████▎ | 2.87G/3.44G [03:23<00:56, 10.0MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  84%|████████▍ | 2.88G/3.44G [03:24<00:57, 9.67MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  84%|████████▍ | 2.89G/3.44G [03:25<00:47, 11.5MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  84%|████████▍ | 2.90G/3.44G [03:27<01:02, 8.58MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  85%|████████▍ | 2.92G/3.44G [03:28<00:59, 8.75MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  85%|████████▌ | 2.93G/3.44G [03:31<01:18, 6.57MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  85%|████████▌ | 2.94G/3.44G [03:33<01:27, 5.71MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  86%|████████▌ | 2.95G/3.44G [03:42<03:10, 2.58MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  86%|████████▌ | 2.96G/3.44G [03:54<04:48, 1.67MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  86%|████████▋ | 2.97G/3.44G [04:07<06:20, 1.24MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  87%|████████▋ | 2.98G/3.44G [04:09<04:49, 1.59MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  87%|████████▋ | 2.99G/3.44G [04:13<04:02, 1.86MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  87%|████████▋ | 3.00G/3.44G [04:16<03:26, 2.12MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  88%|████████▊ | 3.01G/3.44G [04:19<02:59, 2.39MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  88%|████████▊ | 3.02G/3.44G [04:23<02:50, 2.46MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  88%|████████▊ | 3.03G/3.44G [04:25<02:11, 3.11MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  88%|████████▊ | 3.04G/3.44G [04:27<01:52, 3.53MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  89%|████████▊ | 3.05G/3.44G [04:28<01:37, 3.95MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  89%|████████▉ | 3.06G/3.44G [04:31<01:32, 4.05MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  89%|████████▉ | 3.07G/3.44G [04:33<01:24, 4.34MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  90%|████████▉ | 3.08G/3.44G [04:33<00:59, 5.93MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  90%|████████▉ | 3.09G/3.44G [04:34<00:45, 7.59MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  90%|█████████ | 3.10G/3.44G [04:34<00:32, 10.2MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  91%|█████████ | 3.11G/3.44G [04:34<00:25, 12.8MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  91%|█████████ | 3.12G/3.44G [04:35<00:27, 11.5MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  91%|█████████ | 3.14G/3.44G [04:36<00:20, 14.8MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  91%|█████████▏| 3.15G/3.44G [04:36<00:16, 17.9MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  92%|█████████▏| 3.16G/3.44G [04:38<00:32, 8.73MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  92%|█████████▏| 3.17G/3.44G [04:40<00:32, 8.46MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  92%|█████████▏| 3.18G/3.44G [04:40<00:23, 11.1MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  93%|█████████▎| 3.19G/3.44G [04:40<00:18, 13.6MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  93%|█████████▎| 3.20G/3.44G [04:41<00:14, 16.2MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  93%|█████████▎| 3.21G/3.44G [04:41<00:11, 19.6MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  94%|█████████▎| 3.22G/3.44G [04:42<00:10, 20.2MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  94%|█████████▍| 3.23G/3.44G [04:45<00:25, 8.08MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  94%|█████████▍| 3.24G/3.44G [04:45<00:19, 10.3MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  95%|█████████▍| 3.25G/3.44G [04:45<00:14, 13.1MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  95%|█████████▍| 3.26G/3.44G [04:46<00:11, 16.1MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  95%|█████████▌| 3.27G/3.44G [04:46<00:08, 18.8MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  95%|█████████▌| 3.28G/3.44G [04:46<00:06, 22.9MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  96%|█████████▌| 3.29G/3.44G [04:48<00:10, 13.6MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  96%|█████████▌| 3.30G/3.44G [04:48<00:07, 17.2MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  96%|█████████▋| 3.31G/3.44G [04:48<00:06, 20.5MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  97%|█████████▋| 3.32G/3.44G [04:49<00:05, 22.4MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  97%|█████████▋| 3.33G/3.44G [04:49<00:04, 25.3MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  97%|█████████▋| 3.34G/3.44G [04:50<00:06, 15.0MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  98%|█████████▊| 3.36G/3.44G [04:52<00:07, 10.8MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  98%|█████████▊| 3.37G/3.44G [04:52<00:05, 13.0MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  98%|█████████▊| 3.38G/3.44G [04:53<00:03, 15.9MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  99%|█████████▊| 3.39G/3.44G [04:53<00:02, 18.4MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  99%|█████████▉| 3.40G/3.44G [04:53<00:01, 21.2MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  99%|█████████▉| 3.41G/3.44G [04:54<00:01, 23.1MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin:  99%|█████████▉| 3.42G/3.44G [04:58<00:03, 6.65MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin: 100%|█████████▉| 3.43G/3.44G [05:05<00:02, 3.34MB/s][A[A[A[A
+
+
+
+diffusion_pytorch_model.bin: 100%|██████████| 3.44G/3.44G [05:12<00:00, 2.39MB/s][A[A[A[Adiffusion_pytorch_model.bin: 100%|██████████| 3.44G/3.44G [05:12<00:00, 11.0MB/s]
+Fetching 15 files:  87%|████████▋ | 13/15 [05:14<00:49, 24.83s/it]Fetching 15 files: 100%|██████████| 15/15 [05:14<00:00, 20.94s/it]
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  14%|█▍        | 1/7 [00:01<00:11,  1.94s/it]Loading pipeline components...:  29%|██▊       | 2/7 [00:02<00:04,  1.02it/s]/root/miniconda3/envs/paint3d/lib/python3.8/site-packages/transformers/models/clip/feature_extraction_clip.py:28: FutureWarning: The class CLIPFeatureExtractor is deprecated and will be removed in version 5 of Transformers. Please use CLIPImageProcessor instead.
+  warnings.warn(
+Loading pipeline components...:  71%|███████▏  | 5/7 [00:06<00:02,  1.19s/it]Loading pipeline components...:  86%|████████▌ | 6/7 [00:06<00:01,  1.08s/it]Loading pipeline components...: 100%|██████████| 7/7 [00:06<00:00,  1.02it/s]
+rendering texture and position map
+  0%|          | 0/20 [00:00<?, ?it/s]  5%|▌         | 1/20 [00:42<13:33, 42.82s/it] 10%|█         | 2/20 [01:13<10:46, 35.93s/it]
