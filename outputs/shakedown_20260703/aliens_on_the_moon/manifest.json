@@ -1,0 +1,66 @@
+{
+  "crowd_prompt": "aliens on the moon",
+  "master_seed": 0,
+  "fullbody_prob": 0.25,
+  "stage1_prompt_template": "turn around, {prompt}",
+  "stage2_prompt_templates": {
+    "inpaint": "UV map, {prompt}",
+    "img2img": "UV map, {prompt}, high quality, best quality"
+  },
+  "members": [
+    {
+      "member": "member_00",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/fullbody/suit_double_breasted.obj"
+      ],
+      "sd_seed": 742658550,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/c/Users/silvajo/LatentWardrobe/outputs/shakedown_20260703/aliens_on_the_moon/member_00/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 143.0,
+        "final_texture": "/mnt/c/Users/silvajo/LatentWardrobe/outputs/shakedown_20260703/aliens_on_the_moon/member_00/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1243.5,
+        "final_texture": "/mnt/c/Users/silvajo/LatentWardrobe/outputs/shakedown_20260703/aliens_on_the_moon/member_00/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_01",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/tops/highneckcroptop.obj",
+        "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/bottoms/m_trousers_02.obj"
+      ],
+      "sd_seed": 1754303393,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/c/Users/silvajo/LatentWardrobe/outputs/shakedown_20260703/aliens_on_the_moon/member_01/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 129.5,
+        "final_texture": "/mnt/c/Users/silvajo/LatentWardrobe/outputs/shakedown_20260703/aliens_on_the_moon/member_01/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1242.7,
+        "final_texture": "/mnt/c/Users/silvajo/LatentWardrobe/outputs/shakedown_20260703/aliens_on_the_moon/member_01/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_02",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/tops/bodice_style_top.obj",
+        "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/bottoms/pleated_miniskirt.obj"
+      ],
+      "sd_seed": 1838133636
+    }
+  ]
+}

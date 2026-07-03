@@ -25,6 +25,15 @@ The former Stage 1 methods are **parked** pending baseline results and a methods
 
 Evaluation axes: diversity + quality/plausibility + theme-coherence; pairwise LPIPS + CLIP distance decided, rest open — see plan doc.
 
+## Working notes moved out of the dissertation plan (2026-07-03 rewrite)
+
+The plan doc was cut down to a concise dissertation-facing document at the user's request (confirmed methods, one-line future methods, lean evaluation section). Details that used to live there:
+
+- **Naming change:** the plan now calls the baseline "Method 1" and CLIP mesh sampling "Method 2" (formerly "Baseline 0" and "Method 1a"). QMC is fully deleted, not just parked.
+- **Method 2 embedding-source history:** text descriptions were drafted (from filenames) then **rejected and deleted** (2026-07-03) — user's rationale: filenames describe original textures, which we strip; renders-only is final. A text/hybrid variant could theoretically return as an ablation but the user was emphatic — do not re-propose it.
+- **Parked observations for the write-up:** (1) *Don't Settle at the Mode* (ECCV 2026) claims during-sampling repulsion beats overgenerate-then-select — must be engaged if k-DPP/farthest-point methods are pursued; (2) CFG guidance scale is a large diversity confound (Paint3D defaults 7/3) — fix or sweep it in comparisons; guidance-interval restriction (Kynkäänniemi et al., NeurIPS 2024) composes with everything; (3) Method 2 extension idea: sample bottom conditioned on chosen top (outfit-internal compatibility); (4) theme test set should eventually span 6-8 themes of varying specificity, not just the current 3; (5) shape-only matching example for the write-up: the "medievaldress" mesh ranks as just "a long dress" (qipao outranked it for the medieval theme) — correct behavior, good explanatory figure; tutu → 0.2% for office/medieval themes is the motivating example validated.
+- **Operational details:** overnight 2026-07-03 batch = `scripts/run_overnight.sh` (3 themes × {baseline, clip τ=0.02} × N=30, interleaved theme-by-theme so partial nights yield complete pairs; ~20-24h, `--resume` spillover safe; launch via visible-window Start-Process only). Evaluation harness pre-downloaded LPIPS+CLIP weights; open_clip 2.0.2 has no `get_tokenizer` (use module-level `tokenize`). Garment CLIP embeddings cached at `assets/meshes/garment_clip_cache.pt`, invalidated by render mtimes; renders cached in `assets/meshes/renders/`.
+
 ## Lab environment
 
 Works from a shared TCD lab computer (Windows, PowerShell) that has previously been restarted/wiped, losing session state that wasn't committed to this repo. GPU: NVIDIA RTX A4000 (as of 2026-07-02, host driver 581.15, CUDA 13.0 capable, confirmed working through WSL2 passthrough).

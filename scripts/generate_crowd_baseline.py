@@ -72,6 +72,12 @@ def parse_args():
                    help="master seed; member assignments derive from (seed, prompt)")
     p.add_argument("--fullbody-prob", type=float, default=0.25,
                    help="probability a member wears a fullbody garment instead of top+bottom")
+    p.add_argument("--mesh-sampling", choices=("uniform", "clip"), default="uniform",
+                   help="garment selection: uniform (baseline) or clip (Method 1a: "
+                        "theme-weighted via CLIP render embeddings)")
+    p.add_argument("--tau", type=float, default=0.02,
+                   help="softmax temperature for --mesh-sampling clip "
+                        "(large tau -> uniform; small tau -> most theme-apt garments)")
     p.add_argument("--skip-stage2", action="store_true", help="run stage 1 only")
     p.add_argument("--dry-run", action="store_true",
                    help="sample outfits + write merged meshes + manifest, skip Paint3D")
@@ -141,15 +147,23 @@ def load_library(mesh_dir):
     return lib
 
 
-def sample_members(prompt, num, master_seed, lib, fullbody_prob):
+def sample_members(prompt, num, master_seed, lib, fullbody_prob, slot_weights=None):
+    """slot_weights: optional {slot: (paths, weights)} from mesh_sampling.theme_weights
+    (Method 1a); None -> uniform baseline sampling."""
     rng = random.Random(f"{master_seed}:{prompt}")
+
+    def pick(slot):
+        if slot_weights is not None and slot in slot_weights:
+            paths, w = slot_weights[slot]
+            return str(rng.choices(paths, weights=list(w), k=1)[0])
+        return str(rng.choice(lib[slot]))
+
     members = []
     for i in range(num):
         can_tb = bool(lib["tops"] and lib["bottoms"])
         can_fb = bool(lib["fullbody"])
         use_fb = can_fb and (not can_tb or rng.random() < fullbody_prob)
-        garments = ([str(rng.choice(lib["fullbody"]))] if use_fb
-                    else [str(rng.choice(lib["tops"])), str(rng.choice(lib["bottoms"]))])
+        garments = [pick("fullbody")] if use_fb else [pick("tops"), pick("bottoms")]
         members.append({
             "member": f"member_{i:02d}",
             "outfit_type": "fullbody" if use_fb else "top_bottom",
@@ -229,11 +243,18 @@ def main():
     for prompt in args.prompts:
         pdir = args.outdir / slugify(prompt)
         pdir.mkdir(parents=True, exist_ok=True)
-        members = sample_members(prompt, args.num_members, args.seed, lib, args.fullbody_prob)
+        slot_weights = None
+        if args.mesh_sampling == "clip":
+            import mesh_sampling  # lazy: pulls in torch/open_clip; CPU is fine and fast
+            slot_weights = mesh_sampling.theme_weights(prompt, args.tau, device="cpu")
+        members = sample_members(prompt, args.num_members, args.seed, lib, args.fullbody_prob,
+                                 slot_weights=slot_weights)
         manifest = {
             "crowd_prompt": prompt,
             "master_seed": args.seed,
             "fullbody_prob": args.fullbody_prob,
+            "mesh_sampling": args.mesh_sampling,
+            "tau": args.tau if args.mesh_sampling == "clip" else None,
             "stage1_prompt_template": "turn around, {prompt}",
             "stage2_prompt_templates": {
                 "inpaint": "UV map, {prompt}",

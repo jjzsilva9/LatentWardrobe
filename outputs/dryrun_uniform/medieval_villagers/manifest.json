@@ -1,0 +1,115 @@
+{
+  "crowd_prompt": "medieval villagers",
+  "master_seed": 0,
+  "fullbody_prob": 0.25,
+  "mesh_sampling": "uniform",
+  "tau": null,
+  "stage1_prompt_template": "turn around, {prompt}",
+  "stage2_prompt_templates": {
+    "inpaint": "UV map, {prompt}",
+    "img2img": "UV map, {prompt}, high quality, best quality"
+  },
+  "members": [
+    {
+      "member": "member_00",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/tops/mens_shirt_untuck_elvbhp1f.obj",
+        "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/bottoms/elvs_disco_pant1.obj"
+      ],
+      "sd_seed": 1343260028,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/c/Users/silvajo/LatentWardrobe/outputs/dryrun_uniform/medieval_villagers/member_00/outfit.obj"
+      }
+    },
+    {
+      "member": "member_01",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/tops/deathnote.obj",
+        "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/bottoms/low_mini_skirt.obj"
+      ],
+      "sd_seed": 681064887,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/c/Users/silvajo/LatentWardrobe/outputs/dryrun_uniform/medieval_villagers/member_01/outfit.obj"
+      }
+    },
+    {
+      "member": "member_02",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/tops/deathnote.obj",
+        "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/bottoms/elvs_gored_elephantpant1.obj"
+      ],
+      "sd_seed": 944131111,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/c/Users/silvajo/LatentWardrobe/outputs/dryrun_uniform/medieval_villagers/member_02/outfit.obj"
+      }
+    },
+    {
+      "member": "member_03",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/tops/sleevelesscroptop.obj",
+        "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/bottoms/retro_girlyshort1.obj"
+      ],
+      "sd_seed": 286986189,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/c/Users/silvajo/LatentWardrobe/outputs/dryrun_uniform/medieval_villagers/member_03/outfit.obj"
+      }
+    },
+    {
+      "member": "member_04",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/fullbody/figure_skating_dress.obj"
+      ],
+      "sd_seed": 1731852346,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/c/Users/silvajo/LatentWardrobe/outputs/dryrun_uniform/medieval_villagers/member_04/outfit.obj"
+      }
+    },
+    {
+      "member": "member_05",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/fullbody/elvs_goddess_dress2.obj"
+      ],
+      "sd_seed": 1021840900,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/c/Users/silvajo/LatentWardrobe/outputs/dryrun_uniform/medieval_villagers/member_05/outfit.obj"
+      }
+    },
+    {
+      "member": "member_06",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/tops/mens_shirt_tie_tuck_elv1f.obj",
+        "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/bottoms/skirt_full_lace_ruffle.obj"
+      ],
+      "sd_seed": 2012382780,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/c/Users/silvajo/LatentWardrobe/outputs/dryrun_uniform/medieval_villagers/member_06/outfit.obj"
+      }
+    },
+    {
+      "member": "member_07",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/fullbody/elvs_mini_halterdress.obj"
+      ],
+      "sd_seed": 1150065459,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/c/Users/silvajo/LatentWardrobe/outputs/dryrun_uniform/medieval_villagers/member_07/outfit.obj"
+      }
+    }
+  ]
+}

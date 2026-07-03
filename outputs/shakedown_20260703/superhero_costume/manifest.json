@@ -15,7 +15,21 @@
         "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/tops/offshoulder_top.obj",
         "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/bottoms/f_trousers_01.obj"
       ],
-      "sd_seed": 764079951
+      "sd_seed": 764079951,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/c/Users/silvajo/LatentWardrobe/outputs/shakedown_20260703/superhero_costume/member_00/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 122.4,
+        "final_texture": "/mnt/c/Users/silvajo/LatentWardrobe/outputs/shakedown_20260703/superhero_costume/member_00/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1307.8,
+        "final_texture": "/mnt/c/Users/silvajo/LatentWardrobe/outputs/shakedown_20260703/superhero_costume/member_00/stage2/tile_res_0/albedo.png"
+      }
     },
     {
       "member": "member_01",
@@ -24,7 +38,21 @@
         "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/tops/m_wifebeater_elv1.obj",
         "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/bottoms/mens_trouser_short_elv1crf.obj"
       ],
-      "sd_seed": 742027591
+      "sd_seed": 742027591,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/c/Users/silvajo/LatentWardrobe/outputs/shakedown_20260703/superhero_costume/member_01/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 177.4,
+        "final_texture": "/mnt/c/Users/silvajo/LatentWardrobe/outputs/shakedown_20260703/superhero_costume/member_01/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1260.3,
+        "final_texture": "/mnt/c/Users/silvajo/LatentWardrobe/outputs/shakedown_20260703/superhero_costume/member_01/stage2/tile_res_0/albedo.png"
+      }
     },
     {
       "member": "member_02",
@@ -32,7 +60,21 @@
       "garments": [
         "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/fullbody/elvs_lady_apron1.obj"
       ],
-      "sd_seed": 2132807969
+      "sd_seed": 2132807969,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/c/Users/silvajo/LatentWardrobe/outputs/shakedown_20260703/superhero_costume/member_02/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 149.5,
+        "final_texture": "/mnt/c/Users/silvajo/LatentWardrobe/outputs/shakedown_20260703/superhero_costume/member_02/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1264.8,
+        "final_texture": "/mnt/c/Users/silvajo/LatentWardrobe/outputs/shakedown_20260703/superhero_costume/member_02/stage2/tile_res_0/albedo.png"
+      }
     }
   ]
 }

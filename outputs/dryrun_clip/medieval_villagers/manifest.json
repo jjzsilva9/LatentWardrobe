@@ -1,0 +1,117 @@
+{
+  "crowd_prompt": "medieval villagers",
+  "master_seed": 0,
+  "fullbody_prob": 0.25,
+  "mesh_sampling": "clip",
+  "tau": 0.02,
+  "stage1_prompt_template": "turn around, {prompt}",
+  "stage2_prompt_templates": {
+    "inpaint": "UV map, {prompt}",
+    "img2img": "UV map, {prompt}, high quality, best quality"
+  },
+  "members": [
+    {
+      "member": "member_00",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/tops/ruffle_sleeve_peasantblouse.obj",
+        "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/bottoms/jean_shorts.obj"
+      ],
+      "sd_seed": 1343260028,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/c/Users/silvajo/LatentWardrobe/outputs/dryrun_clip/medieval_villagers/member_00/outfit.obj"
+      }
+    },
+    {
+      "member": "member_01",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/tops/deathnote.obj",
+        "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/bottoms/harvey_pskirt01.obj"
+      ],
+      "sd_seed": 1880898387,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/c/Users/silvajo/LatentWardrobe/outputs/dryrun_clip/medieval_villagers/member_01/outfit.obj"
+      }
+    },
+    {
+      "member": "member_02",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/fullbody/f_dress_05.obj"
+      ],
+      "sd_seed": 796693119,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/c/Users/silvajo/LatentWardrobe/outputs/dryrun_clip/medieval_villagers/member_02/outfit.obj"
+      }
+    },
+    {
+      "member": "member_03",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/tops/ruffle_sleeve_peasantblouse.obj",
+        "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/bottoms/mens_elv_jeans2slf.obj"
+      ],
+      "sd_seed": 178938686,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/c/Users/silvajo/LatentWardrobe/outputs/dryrun_clip/medieval_villagers/member_03/outfit.obj"
+      }
+    },
+    {
+      "member": "member_04",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/tops/ruffle_sleeve_peasantblouse.obj",
+        "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/bottoms/polkadotskirt.obj"
+      ],
+      "sd_seed": 1021840900,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/c/Users/silvajo/LatentWardrobe/outputs/dryrun_clip/medieval_villagers/member_04/outfit.obj"
+      }
+    },
+    {
+      "member": "member_05",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/tops/ruffle_sleeve_peasantblouse.obj",
+        "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/bottoms/pleated_skirtelv1.obj"
+      ],
+      "sd_seed": 1486768577,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/c/Users/silvajo/LatentWardrobe/outputs/dryrun_clip/medieval_villagers/member_05/outfit.obj"
+      }
+    },
+    {
+      "member": "member_06",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/tops/f_lusekofta.obj",
+        "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/bottoms/jean_shorts.obj"
+      ],
+      "sd_seed": 1957847243,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/c/Users/silvajo/LatentWardrobe/outputs/dryrun_clip/medieval_villagers/member_06/outfit.obj"
+      }
+    },
+    {
+      "member": "member_07",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/tops/mens_boho_top1elv.obj",
+        "/mnt/c/Users/silvajo/LatentWardrobe/assets/meshes/bottoms/mens_trouser_short_nc_elvcrf.obj"
+      ],
+      "sd_seed": 413298348,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/c/Users/silvajo/LatentWardrobe/outputs/dryrun_clip/medieval_villagers/member_07/outfit.obj"
+      }
+    }
+  ]
+}
