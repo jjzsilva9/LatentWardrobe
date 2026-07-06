@@ -41,6 +41,7 @@ Notes:
 
 import argparse
 import json
+import os
 import random
 import re
 import subprocess
@@ -88,6 +89,13 @@ def parse_args():
     p.add_argument("--color-prompt", action="store_true",
                    help="Method 3: give each member a random colour word, inserted into "
                         "the garment description in the Paint3D prompt")
+    p.add_argument("--pink-noise", action="store_true",
+                   help="Method 4: replace Paint3D's initial latent noise with pink noise "
+                        "(FFT 1/(1+f)^alpha reweighting -- see scripts/pink_noise.py). "
+                        "Orthogonal to every mesh-/prompt-sampling method above.")
+    p.add_argument("--pink-alpha", type=float, default=0.2,
+                   help="pink-noise exponent (--pink-noise only); paper's chosen operating "
+                        "point is 0.2, quality visibly degrades above ~0.3")
     p.add_argument("--skip-stage2", action="store_true", help="run stage 1 only")
     p.add_argument("--dry-run", action="store_true",
                    help="sample outfits + write merged meshes + manifest, skip Paint3D")
@@ -269,6 +277,13 @@ def main():
     args.outdir = args.outdir.resolve()
     args.mesh_dir = args.mesh_dir.resolve()
     preflight()
+    if args.pink_noise:
+        # Read by the opt-in hook in external/paint3d/pipeline_paint3d_stage{1,2}.py
+        # -- Paint3D's stages run as separate subprocesses (see run_stage()), so
+        # the pink-noise patch can't be installed from this process; it has to be
+        # applied inside each child instead, which is what these env vars trigger.
+        os.environ["PINK_NOISE_ALPHA"] = str(args.pink_alpha)
+        os.environ["LATENTWARDROBE_SCRIPTS_DIR"] = str(Path(__file__).resolve().parent)
     lib = load_library(args.mesh_dir)
     print(f"mesh library: {len(lib['tops'])} tops, {len(lib['bottoms'])} bottoms, "
           f"{len(lib['fullbody'])} fullbody")
@@ -300,6 +315,8 @@ def main():
             "mesh_sampling": args.mesh_sampling,
             "tau": args.tau if args.mesh_sampling == "clip" else None,
             "color_prompt": args.color_prompt,
+            "pink_noise": args.pink_noise,
+            "pink_alpha": args.pink_alpha if args.pink_noise else None,
             "stage1_prompt_template": "turn around, {prompt}, {category_phrase}",
             "stage2_prompt_templates": {
                 "inpaint": "UV map, {prompt}, {category_phrase}",
