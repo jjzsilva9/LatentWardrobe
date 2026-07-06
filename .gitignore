@@ -14,5 +14,9 @@ outputs/**
 # needed (see assets/meshes/README.md); raw packs can be re-downloaded.
 assets/makehuman_src/
 
+# scripts/evaluate_crowd.py's DreamSim/DINOv2/DINO/CLIP weight cache
+# (auto-downloaded on first run, ~3.4GB -- see MODEL_CACHE_DIR there).
+models/
+
 __pycache__/
 *.pyc
