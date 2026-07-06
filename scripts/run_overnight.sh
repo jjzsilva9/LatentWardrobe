@@ -30,6 +30,9 @@ run () {  # run <arm-outdir> <prompt> [extra driver args...]
   python -u scripts/generate_crowd_baseline.py \
     --prompt "$prompt" --num-members "$N" \
     --outdir "$OUT/$arm" --resume "$@" 2>&1 | tee -a "$OUT/run.log"
+  local rc=${PIPESTATUS[0]}
+  echo "[run_overnight] arm=$arm prompt='$prompt' python_exit=$rc" | tee -a "$OUT/run.log"
+  return "$rc"
 }
 
 for prompt in 'medieval villagers' 'business casual office workers' 'aliens on the moon'; do

@@ -37,6 +37,20 @@ CACHE_PATH = MESH_DIR / "garment_clip_cache.pt"
 # semantics; anchor the text side to clothing.
 THEME_TEMPLATE = "clothing worn by {prompt}"
 
+# Zero-shot garment category labels, assigned from the render CLIP embedding
+# already computed for mesh sampling (Method 1a) — reused, at no extra render
+# cost, to give Paint3D's prompt a structural hint ("shirt" vs "trousers")
+# independent of the theme it's being repainted for. Chosen to cover the
+# mesh library's shapes (see assets/meshes/README.md) without leaking
+# original-texture words (no "disco", "medieval", ...).
+CATEGORY_LABELS = [
+    "t-shirt", "tank top", "button-up shirt", "blouse", "sweater", "hoodie",
+    "jacket", "tunic", "crop top", "halter top",
+    "trousers", "jeans", "shorts", "skirt", "mini skirt", "leggings",
+    "dress", "gown", "jumpsuit", "suit", "robe", "uniform", "wetsuit", "apron",
+]
+CATEGORY_TEMPLATE = "a photo of a {label}"
+
 
 def _clip(device):
     import open_clip  # env pins open_clip 2.0.2: module-level tokenize(), no get_tokenizer()
@@ -65,9 +79,21 @@ def _render_fingerprint(keys):
     return {k: max(p.stat().st_mtime for p in _render_paths(k)) for k in keys}
 
 
+def _classify_categories(emb, model, tokenize, device="cpu"):
+    """Zero-shot argmax category per garment, from its (already-computed)
+    render embedding against CATEGORY_LABELS."""
+    with torch.no_grad():
+        tokens = tokenize([CATEGORY_TEMPLATE.format(label=l) for l in CATEGORY_LABELS]).to(device)
+        text_emb = model.encode_text(tokens).float()
+        text_emb /= text_emb.norm(dim=-1, keepdim=True)
+    sims = emb.to(device) @ text_emb.T.to(device)
+    idx = sims.argmax(dim=1).cpu().tolist()
+    return [CATEGORY_LABELS[i] for i in idx]
+
+
 def garment_embeddings(device="cpu"):
-    """CLIP image embeddings for all rendered garments; disk-cached, refreshed
-    per-garment when its renders change."""
+    """CLIP image embeddings + zero-shot category per rendered garment;
+    disk-cached, refreshed per-garment when its renders change."""
     keys, missing = garment_keys()
     if missing:
         raise FileNotFoundError(
@@ -75,11 +101,11 @@ def garment_embeddings(device="cpu"):
     fp = _render_fingerprint(keys)
     if CACHE_PATH.exists():
         cache = torch.load(CACHE_PATH, map_location="cpu")
-        if cache.get("fingerprint") == fp and cache.get("keys") == keys:
-            return keys, cache["embeddings"]
+        if cache.get("fingerprint") == fp and cache.get("keys") == keys and "categories" in cache:
+            return keys, cache["embeddings"], cache["categories"]
 
     from PIL import Image
-    model, _, preprocess = _clip(device)
+    model, tokenize, preprocess = _clip(device)
     embs = []
     with torch.no_grad():
         for k in keys:
@@ -90,8 +116,9 @@ def garment_embeddings(device="cpu"):
             e = e.mean(dim=0)
             embs.append(e / e.norm())
     emb = torch.stack(embs).cpu()
-    torch.save({"fingerprint": fp, "keys": keys, "embeddings": emb}, CACHE_PATH)
-    return keys, emb
+    categories = _classify_categories(emb, model, tokenize, device)
+    torch.save({"fingerprint": fp, "keys": keys, "embeddings": emb, "categories": categories}, CACHE_PATH)
+    return keys, emb, categories
 
 
 def theme_weights(prompt, tau, device="cpu"):
@@ -99,7 +126,7 @@ def theme_weights(prompt, tau, device="cpu"):
 
     Returns {slot: (obj_paths, weights)} with weights summing to 1 per slot.
     """
-    keys, emb = garment_embeddings(device)
+    keys, emb, _categories = garment_embeddings(device)
     model, tokenize, _ = _clip(device)
     with torch.no_grad():
         t = model.encode_text(tokenize([THEME_TEMPLATE.format(prompt=prompt)]).to(device)).float()
@@ -119,13 +146,29 @@ def theme_weights(prompt, tau, device="cpu"):
     return out
 
 
+def garment_categories(device="cpu"):
+    """{key: zero-shot category label} for every rendered garment."""
+    keys, _emb, categories = garment_embeddings(device)
+    return dict(zip(keys, categories))
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument("--prompt", required=True)
+    p.add_argument("--prompt", required=False)
     p.add_argument("--tau", type=float, default=0.02)
     p.add_argument("--top", type=int, default=8, help="show top N and bottom 3 per slot")
     p.add_argument("--device", default="cpu")
+    p.add_argument("--show-categories", action="store_true",
+                   help="print the zero-shot category assigned to every garment, and exit")
     args = p.parse_args()
+
+    if args.show_categories:
+        for key, cat in sorted(garment_categories(args.device).items()):
+            print(f"{cat:20s} {key}")
+        return
+
+    if not args.prompt:
+        p.error("--prompt is required unless --show-categories is given")
 
     for slot, (paths, w) in theme_weights(args.prompt, args.tau, args.device).items():
         order = np.argsort(-w)

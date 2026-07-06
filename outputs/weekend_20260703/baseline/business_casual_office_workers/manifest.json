@@ -1,0 +1,695 @@
+{
+  "crowd_prompt": "business casual office workers",
+  "master_seed": 0,
+  "fullbody_prob": 0.25,
+  "mesh_sampling": "uniform",
+  "tau": null,
+  "stage1_prompt_template": "turn around, {prompt}",
+  "stage2_prompt_templates": {
+    "inpaint": "UV map, {prompt}",
+    "img2img": "UV map, {prompt}, high quality, best quality"
+  },
+  "members": [
+    {
+      "member": "member_00",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/elvs_goddessdress7.obj"
+      ],
+      "sd_seed": 875171757,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_00/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 128.8,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_00/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1054.5,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_00/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_01",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/striped_shirt.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/rescueteam_pants_male.obj"
+      ],
+      "sd_seed": 1533023003,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_01/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 129.9,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_01/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1063.1,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_01/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_02",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/f_lusekofta.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/rescueteam_pants_female.obj"
+      ],
+      "sd_seed": 1433081734,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_02/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 127.4,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_02/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1068.4,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_02/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_03",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/mens_boho_top1elv.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/mini_skirt_01.obj"
+      ],
+      "sd_seed": 577642388,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_03/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 128.0,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_03/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1052.7,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_03/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_04",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/mens_shirt_tie_tuck_elv1f.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/m_trousers_02.obj"
+      ],
+      "sd_seed": 232209824,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_04/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 137.8,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_04/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1065.8,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_04/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_05",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/jacket_tie_pants.obj"
+      ],
+      "sd_seed": 1269008593,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_05/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 133.5,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_05/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1051.4,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_05/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_06",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/mens_teeshirt1j.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/mens_trouser_short_nc_elvcrf.obj"
+      ],
+      "sd_seed": 538700628,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_06/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 138.9,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_06/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1074.4,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_06/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_07",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/sweater_fisherman.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/m_trousers_01.obj"
+      ],
+      "sd_seed": 1243655189,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_07/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 128.3,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_07/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1080.9,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_07/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_08",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/elvs_goddess_dress3.obj"
+      ],
+      "sd_seed": 488344334,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_08/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 151.8,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_08/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1095.3,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_08/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_09",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/spaghetti_top.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/pleated_skirtelv1.obj"
+      ],
+      "sd_seed": 661305549,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_09/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 138.7,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_09/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1066.5,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_09/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_10",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/f_dress_10.obj"
+      ],
+      "sd_seed": 1754551344,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_10/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 126.4,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_10/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1074.9,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_10/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_11",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/f_dress_06.obj"
+      ],
+      "sd_seed": 321766081,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_11/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 128.9,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_11/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1065.6,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_11/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_12",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/elvs_mini_halterdress.obj"
+      ],
+      "sd_seed": 495880223,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_12/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 129.4,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_12/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1074.2,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_12/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_13",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/ladieshoodiedown1.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/mariaskirt.obj"
+      ],
+      "sd_seed": 144410300,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_13/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 132.8,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_13/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1058.0,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_13/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_14",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/asymmetric_tunic_and_sash.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/asym_skirt3.obj"
+      ],
+      "sd_seed": 838871692,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_14/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 127.9,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_14/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1079.3,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_14/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_15",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/elvs_lara_top1.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/namfashionskirt.obj"
+      ],
+      "sd_seed": 1492134936,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_15/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 132.1,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_15/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1114.3,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_15/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_16",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/triathlon_suit.obj"
+      ],
+      "sd_seed": 431215524,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_16/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 136.4,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_16/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1066.6,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_16/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_17",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/vnecktop.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/m_trousers_02.obj"
+      ],
+      "sd_seed": 1975668800,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_17/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 132.4,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_17/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1047.7,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_17/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_18",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/elvs_goddess_dress5.obj"
+      ],
+      "sd_seed": 627393217,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_18/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 137.5,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_18/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1052.7,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_18/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_19",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/crude_male_shirt.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/pleated_miniskirt.obj"
+      ],
+      "sd_seed": 585983347,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_19/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 128.7,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_19/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1068.8,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_19/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_20",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/vnecktop.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/male-classic-jeans.obj"
+      ],
+      "sd_seed": 2130726857,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_20/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 130.0,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_20/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1051.1,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_20/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_21",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/t_shirt_basic_tucked.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/mens_trouser_f_elv_chr.obj"
+      ],
+      "sd_seed": 727899158,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_21/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 132.4,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_21/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1046.7,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_21/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_22",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/suit3.obj"
+      ],
+      "sd_seed": 948438237,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_22/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 132.0,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_22/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1081.8,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_22/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_23",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/highneckcroptop.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/mariaskirt.obj"
+      ],
+      "sd_seed": 1033354841,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_23/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 133.7,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_23/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1085.9,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_23/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_24",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/ladieshoodiedown1.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/wool_pants.obj"
+      ],
+      "sd_seed": 1414898410,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_24/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 134.6,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_24/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1044.8,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_24/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_25",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/m_wifebeater_elv1.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/mens_trouser_f_elv_chr.obj"
+      ],
+      "sd_seed": 760645841,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_25/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 176.2,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_25/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1124.1,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_25/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_26",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/vnecktop.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/m_trousers_02.obj"
+      ],
+      "sd_seed": 1361766367,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_26/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 134.4,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_26/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1073.1,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_26/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_27",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/turtleneck_halter.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/polkadotskirt.obj"
+      ],
+      "sd_seed": 109623984,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_27/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 129.8,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_27/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1060.1,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_27/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_28",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/spaghetti_top.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/m_trousers_01.obj"
+      ],
+      "sd_seed": 2083332641,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_28/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 135.3,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_28/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1068.5,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_28/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_29",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/crudefemaletshirt.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/elvs_disco_pant1.obj"
+      ],
+      "sd_seed": 690248471,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_29/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 133.7,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_29/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1067.9,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/business_casual_office_workers/member_29/stage2/tile_res_0/albedo.png"
+      }
+    }
+  ]
+}

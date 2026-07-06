@@ -205,7 +205,14 @@ def run_stage(script, sd_config, mesh_path, outdir, texture_path=None):
         cmd += ["--texture_path", str(texture_path)]
     t0 = time.time()
     proc = subprocess.run(cmd, cwd=PAINT3D_DIR)
-    return proc.returncode, round(time.time() - t0, 1)
+    secs = round(time.time() - t0, 1)
+    if proc.returncode < 0:
+        print(f"subprocess {Path(script).name} terminated by signal {-proc.returncode} after {secs}s",
+              flush=True)
+    else:
+        print(f"subprocess {Path(script).name} exited rc={proc.returncode} after {secs}s",
+              flush=True)
+    return proc.returncode, secs
 
 
 # ---------------------------------------------------------------- main

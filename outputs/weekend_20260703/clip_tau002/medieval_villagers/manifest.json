@@ -1,0 +1,699 @@
+{
+  "crowd_prompt": "medieval villagers",
+  "master_seed": 0,
+  "fullbody_prob": 0.25,
+  "mesh_sampling": "clip",
+  "tau": 0.02,
+  "stage1_prompt_template": "turn around, {prompt}",
+  "stage2_prompt_templates": {
+    "inpaint": "UV map, {prompt}",
+    "img2img": "UV map, {prompt}, high quality, best quality"
+  },
+  "members": [
+    {
+      "member": "member_00",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/ruffle_sleeve_peasantblouse.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/jean_shorts.obj"
+      ],
+      "sd_seed": 1343260028,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_00/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 134.0,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_00/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1008.2,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_00/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_01",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/deathnote.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/harvey_pskirt01.obj"
+      ],
+      "sd_seed": 1880898387,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_01/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 138.7,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_01/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1010.0,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_01/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_02",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/f_dress_05.obj"
+      ],
+      "sd_seed": 796693119,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_02/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 131.5,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_02/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 999.5,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_02/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_03",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/ruffle_sleeve_peasantblouse.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/mens_elv_jeans2slf.obj"
+      ],
+      "sd_seed": 178938686,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_03/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 127.2,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_03/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1004.0,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_03/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_04",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/ruffle_sleeve_peasantblouse.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/polkadotskirt.obj"
+      ],
+      "sd_seed": 1021840900,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_04/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 129.3,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_04/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1016.2,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_04/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_05",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/ruffle_sleeve_peasantblouse.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/pleated_skirtelv1.obj"
+      ],
+      "sd_seed": 1486768577,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_05/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 137.4,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_05/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1036.8,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_05/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_06",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/f_lusekofta.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/jean_shorts.obj"
+      ],
+      "sd_seed": 1957847243,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_06/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 128.5,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_06/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1041.6,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_06/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_07",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/mens_boho_top1elv.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/mens_trouser_short_nc_elvcrf.obj"
+      ],
+      "sd_seed": 413298348,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_07/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 129.7,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_07/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1046.5,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_07/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_08",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/ladieshoodiedown1.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/skirt_full_long.obj"
+      ],
+      "sd_seed": 1847251735,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_08/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 141.0,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_08/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1030.8,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_08/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_09",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/elvs_hippydress1.obj"
+      ],
+      "sd_seed": 1126248272,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_09/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 130.8,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_09/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1043.1,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_09/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_10",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/mens_shirt_untuck_elvbhp1f.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/asym_skirt3.obj"
+      ],
+      "sd_seed": 416493640,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_10/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 128.9,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_10/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1024.5,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_10/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_11",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/elvs_butterflydiscotop1.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/elvs_gored_elephantpant1.obj"
+      ],
+      "sd_seed": 1613445064,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_11/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 131.9,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_11/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1038.0,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_11/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_12",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/f_dress_10.obj"
+      ],
+      "sd_seed": 1882895458,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_12/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 131.2,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_12/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1038.6,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_12/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_13",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/mens_boho_top1elv.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/skirt_full_lace_ruffle.obj"
+      ],
+      "sd_seed": 1058100539,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_13/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 128.6,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_13/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1037.7,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_13/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_14",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/sweater_fisherman.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/tier_skirt.obj"
+      ],
+      "sd_seed": 1013835600,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_14/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 131.6,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_14/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1057.2,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_14/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_15",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/coat.obj"
+      ],
+      "sd_seed": 1818938010,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_15/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 133.0,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_15/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1043.6,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_15/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_16",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/ruffle_sleeve_peasantblouse.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/skirt_full_lace_ruffle.obj"
+      ],
+      "sd_seed": 270639143,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_16/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 132.9,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_16/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1057.5,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_16/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_17",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/short_tail_camo_tee.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/male-classic-jeans.obj"
+      ],
+      "sd_seed": 1334439775,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_17/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 128.7,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_17/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1066.4,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_17/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_18",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/f_lusekofta.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/harem_pants.obj"
+      ],
+      "sd_seed": 835255071,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_18/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 130.0,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_18/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1060.1,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_18/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_19",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/knitted_sweater_01.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/mens_trouser_f_elv1.obj"
+      ],
+      "sd_seed": 29467901,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_19/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 128.3,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_19/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1060.3,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_19/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_20",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/elvs_goddess_dress6.obj"
+      ],
+      "sd_seed": 305095049,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_20/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 145.2,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_20/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1139.6,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_20/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_21",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/crude_male_shirt.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/namfashionskirt.obj"
+      ],
+      "sd_seed": 1490620720,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_21/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 150.3,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_21/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1141.1,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_21/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_22",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/tube_top.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/namfashionskirt.obj"
+      ],
+      "sd_seed": 1825683723,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_22/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 129.5,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_22/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1076.1,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_22/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_23",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/lace_up_blouse.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/skirt_mini.obj"
+      ],
+      "sd_seed": 189985568,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_23/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 132.8,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_23/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1072.0,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_23/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_24",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/striped_shirt.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/skirt_full_lace_ruffle.obj"
+      ],
+      "sd_seed": 691635487,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_24/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 133.5,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_24/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1060.9,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_24/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_25",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/ladieshoodiedown1.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/namfashionskirt.obj"
+      ],
+      "sd_seed": 304812803,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_25/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 135.5,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_25/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1056.9,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_25/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_26",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/ladiestank1elv.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/wool_pants.obj"
+      ],
+      "sd_seed": 1038717907,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_26/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 156.3,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_26/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1084.7,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_26/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_27",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/elvs_discotop2.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/harem_pants.obj"
+      ],
+      "sd_seed": 1489433053,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_27/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 133.5,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_27/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1065.2,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_27/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_28",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/crude_male_shirt.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/rescueteam_pants_female.obj"
+      ],
+      "sd_seed": 1913068733,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_28/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 129.7,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_28/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1067.1,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_28/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_29",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/camisole_top.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/mens_trouser_short_nc_elvcrf.obj"
+      ],
+      "sd_seed": 1900140049,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_29/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 138.9,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_29/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1068.3,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/clip_tau002/medieval_villagers/member_29/stage2/tile_res_0/albedo.png"
+      }
+    }
+  ]
+}

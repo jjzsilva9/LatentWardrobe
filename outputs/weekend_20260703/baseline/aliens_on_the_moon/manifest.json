@@ -1,0 +1,694 @@
+{
+  "crowd_prompt": "aliens on the moon",
+  "master_seed": 0,
+  "fullbody_prob": 0.25,
+  "mesh_sampling": "uniform",
+  "tau": null,
+  "stage1_prompt_template": "turn around, {prompt}",
+  "stage2_prompt_templates": {
+    "inpaint": "UV map, {prompt}",
+    "img2img": "UV map, {prompt}, high quality, best quality"
+  },
+  "members": [
+    {
+      "member": "member_00",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/suit_double_breasted.obj"
+      ],
+      "sd_seed": 742658550,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_00/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 146.2,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_00/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1044.4,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_00/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_01",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/highneckcroptop.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/m_trousers_02.obj"
+      ],
+      "sd_seed": 1754303393,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_01/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 131.5,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_01/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1022.0,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_01/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_02",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/bodice_style_top.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/pleated_miniskirt.obj"
+      ],
+      "sd_seed": 1838133636,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_02/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 130.5,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_02/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1036.3,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_02/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_03",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/tank_keyhole_neck.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/mens_trouser_short_nc_elvcrf.obj"
+      ],
+      "sd_seed": 982142265,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_03/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 133.0,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_03/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1037.4,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_03/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_04",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/mens_tanks_elv1f.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/elvs_disco_pant1.obj"
+      ],
+      "sd_seed": 863512314,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_04/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 130.2,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_04/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1037.5,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_04/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_05",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/doublechiefhalterdress1.obj"
+      ],
+      "sd_seed": 1864365843,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_05/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 137.2,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_05/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1046.0,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_05/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_06",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/vnecktop.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/rescueteam_pants_female.obj"
+      ],
+      "sd_seed": 1831955548,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_06/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 131.4,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_06/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1043.1,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_06/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_07",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/asymmetric_tunic_and_sash.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/m_trousers_01.obj"
+      ],
+      "sd_seed": 944943295,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_07/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 132.7,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_07/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1103.0,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_07/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_08",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/tieredhalterdress1.obj"
+      ],
+      "sd_seed": 781606523,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_08/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 134.9,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_08/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1064.5,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_08/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_09",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/vnecktop.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/elvs_disco_mini1.obj"
+      ],
+      "sd_seed": 659771112,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_09/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 128.0,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_09/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1034.8,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_09/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_10",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/highneckcroptop.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/tier_skirt.obj"
+      ],
+      "sd_seed": 1904351040,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_10/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 133.8,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_10/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1048.8,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_10/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_11",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/fem_suit2.obj"
+      ],
+      "sd_seed": 1755343395,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_11/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 133.4,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_11/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1063.9,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_11/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_12",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/tank_keyhole_neck.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/rescueteam_pants_female.obj"
+      ],
+      "sd_seed": 1477189201,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_12/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 135.3,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_12/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1069.2,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_12/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_13",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/crude_male_shirt.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/mens_trouser_f_elv_chr.obj"
+      ],
+      "sd_seed": 1039745009,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_13/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 132.1,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_13/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1065.4,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_13/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_14",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/tank_keyhole_neck.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/elvs_disco_mini1.obj"
+      ],
+      "sd_seed": 1329591733,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_14/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 136.9,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_14/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1060.2,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_14/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_15",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/elvs_goddess_dress2.obj"
+      ],
+      "sd_seed": 1478062755,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_15/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 130.9,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_15/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1060.4,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_15/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_16",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/turtleneck_halter.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/skirt_mini.obj"
+      ],
+      "sd_seed": 536029416,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_16/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 128.5,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_16/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1065.9,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_16/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_17",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/elvs_race_suit_male1.obj"
+      ],
+      "sd_seed": 69330186,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_17/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 138.1,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_17/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1089.4,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_17/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_18",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/asymmetric_tunic_and_sash.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/elvs_disco_pencilskirt1.obj"
+      ],
+      "sd_seed": 395101874,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_18/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 130.2,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_18/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1047.2,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_18/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_19",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/elvs_goddess_dress4.obj"
+      ],
+      "sd_seed": 1906575974,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_19/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 140.7,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_19/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1096.5,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_19/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_20",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/tank_top_01.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/m_trousers_01.obj"
+      ],
+      "sd_seed": 2124655044,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_20/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 128.5,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_20/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1083.4,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_20/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_21",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/elvs_lara_top1.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/skirt_mini.obj"
+      ],
+      "sd_seed": 1072521877,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_21/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 134.9,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_21/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1060.5,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_21/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_22",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/frill_partydress1.obj"
+      ],
+      "sd_seed": 346701126,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_22/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 136.2,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_22/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1078.7,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_22/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_23",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/rescueteam_jacket_male.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/pleated_miniskirt.obj"
+      ],
+      "sd_seed": 973529863,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_23/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 142.2,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_23/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1064.8,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_23/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_24",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/mens_teeshirt1j.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/mini_skirt_01.obj"
+      ],
+      "sd_seed": 1690226304,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_24/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 133.9,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_24/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1053.7,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_24/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_25",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/wetsuit.obj"
+      ],
+      "sd_seed": 1805996235,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_25/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 130.9,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_25/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1055.7,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_25/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_26",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/elvs_discotop2.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/elvs_gored_elephantpant1.obj"
+      ],
+      "sd_seed": 1070621927,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_26/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 133.9,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_26/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1078.4,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_26/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_27",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/ruffle_sleeve_peasantblouse.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/blackminiskirt.obj"
+      ],
+      "sd_seed": 964496311,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_27/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 130.7,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_27/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1041.0,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_27/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_28",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/bodice_style_top.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/mariaskirt.obj"
+      ],
+      "sd_seed": 1331573163,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_28/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 127.4,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_28/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1043.8,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_28/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_29",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/jacket_bowtie_pants.obj"
+      ],
+      "sd_seed": 255563063,
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_29/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 141.0,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_29/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1038.9,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/weekend_20260703/baseline/aliens_on_the_moon/member_29/stage2/tile_res_0/albedo.png"
+      }
+    }
+  ]
+}
