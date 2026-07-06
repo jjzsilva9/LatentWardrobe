@@ -96,6 +96,22 @@ def parse_args():
     p.add_argument("--pink-alpha", type=float, default=0.2,
                    help="pink-noise exponent (--pink-noise only); paper's chosen operating "
                         "point is 0.2, quality visibly degrades above ~0.3")
+    p.add_argument("--llm-emitters", action="store_true",
+                   help="Method 5: the whole crowd's wearer+clothing descriptions are evolved by "
+                        "a local LLM (Ollama) as a WANDER-inspired population (arXiv 2511.00686; "
+                        "see scripts/llm_prompt_mutation.py for the documented divergences from "
+                        "the paper) over fixed emitter axes (age/build/posture/role/mood + "
+                        "colour/formality/material/pattern/condition/accessories). Pool size = "
+                        "--num-members; each generation mutates or crosses over a random pool "
+                        "member and keeps it only if it beats the pool's current least-novel "
+                        "member (CLIP-text k-NN novelty). Final descriptions become the per-member "
+                        "Paint3D prompt AND (if --mesh-sampling clip) the per-member CLIP anchor "
+                        "for garment selection. Supersedes --color-prompt (colour is one of its "
+                        "emitter axes) -- mutually exclusive with it.")
+    p.add_argument("--llm-generations", type=int, default=None,
+                   help="evolution generations (--llm-emitters only); default 3x --num-members")
+    p.add_argument("--llm-k-neighbors", type=int, default=3,
+                   help="k for the k-NN novelty score within the pool (--llm-emitters only)")
     p.add_argument("--skip-stage2", action="store_true", help="run stage 1 only")
     p.add_argument("--dry-run", action="store_true",
                    help="sample outfits + write merged meshes + manifest, skip Paint3D")
@@ -192,6 +208,53 @@ def sample_members(prompt, num, master_seed, lib, fullbody_prob, slot_weights=No
     return members
 
 
+def sample_members_with_llm(prompt, num, master_seed, lib, fullbody_prob, mesh_sampling_mode, tau,
+                            generations, k_neighbors):
+    """Method 5: evolve the whole crowd's wearer+clothing descriptions as one
+    WANDER-inspired population (see llm_prompt_mutation.evolve_crowd), then
+    sample garments per member from its own evolved clothing_desc as the
+    CLIP anchor (Method 2 composition) instead of the crowd-wide theme."""
+    import llm_prompt_mutation as lpm
+    import mesh_sampling
+
+    pool, full_descs, clothing_descs, theme_relevance, history = lpm.evolve_crowd(
+        prompt, num, master_seed, generations, k_neighbors)
+
+    rng = random.Random(f"{master_seed}:{prompt}:garments")
+    members = []
+    for i in range(num):
+        if mesh_sampling_mode == "clip":
+            slot_weights = mesh_sampling.theme_weights(clothing_descs[i], tau)
+        else:
+            slot_weights = None
+
+        def pick(slot):
+            if slot_weights is not None and slot in slot_weights:
+                paths, w = slot_weights[slot]
+                return str(rng.choices(paths, weights=list(w), k=1)[0])
+            return str(rng.choice(lib[slot]))
+
+        can_tb = bool(lib["tops"] and lib["bottoms"])
+        can_fb = bool(lib["fullbody"])
+        use_fb = can_fb and (not can_tb or rng.random() < fullbody_prob)
+        garments = [pick("fullbody")] if use_fb else [pick("tops"), pick("bottoms")]
+
+        members.append({
+            "member": f"member_{i:02d}",
+            "outfit_type": "fullbody" if use_fb else "top_bottom",
+            "garments": garments,
+            "sd_seed": rng.randrange(1, 2**31 - 1),
+            "color": None,  # Method 5's colour emitter supersedes --color-prompt
+            "llm": {
+                "winner": pool[i],
+                "full_desc": full_descs[i],
+                "clothing_desc": clothing_descs[i],
+                "theme_relevance": theme_relevance[i],  # reported, not enforced -- see module docstring
+            },
+        })
+    return members, history
+
+
 def garment_key(path):
     """slot/stem key matching mesh_sampling's cache keys, e.g. 'tops/tube_top'."""
     p = Path(path)
@@ -216,22 +279,24 @@ def category_phrase(member, categories):
 
 # ---------------------------------------------------------------- paint3d
 
-def build_stage1_cfg(prompt, category_phrase, seed, dst):
+def build_stage1_cfg(prompt, category_phrase, seed, dst, full_desc=None):
     cfg = OmegaConf.load(STAGE1_TEMPLATE)
-    cfg.txt2img.prompt = f"turn around, {prompt}, {category_phrase}"
+    desc = f", {full_desc}" if full_desc else ""
+    cfg.txt2img.prompt = f"turn around, {prompt}{desc}, {category_phrase}"
     cfg.txt2img.seed = seed
     # stage 1 itself copies prompt/negative_prompt/seed into its inpaint step;
     # negative prompt stays Paint3D's anti-lighting boilerplate on purpose.
     OmegaConf.save(cfg, dst)
 
 
-def build_stage2_cfg(prompt, category_phrase, seed, dst):
+def build_stage2_cfg(prompt, category_phrase, seed, dst, full_desc=None):
     cfg = OmegaConf.load(STAGE2_TEMPLATE)
-    cfg.inpaint.prompt = f"UV map, {prompt}, {category_phrase}"
+    desc = f", {full_desc}" if full_desc else ""
+    cfg.inpaint.prompt = f"UV map, {prompt}{desc}, {category_phrase}"
     cfg.inpaint.seed = seed
     # the img2img (tile refine) prompt is not reachable via stage 2's --prompt
     # flag and defaults to a "Sci-Fi digital painting" style — rewrite it.
-    cfg.img2img.prompt = f"UV map, {prompt}, {category_phrase}, high quality, best quality"
+    cfg.img2img.prompt = f"UV map, {prompt}{desc}, {category_phrase}, high quality, best quality"
     cfg.img2img.seed = seed
     OmegaConf.save(cfg, dst)
 
@@ -276,6 +341,9 @@ def main():
     # paths would resolve inside external/paint3d and fail or misplace output.
     args.outdir = args.outdir.resolve()
     args.mesh_dir = args.mesh_dir.resolve()
+    if args.llm_emitters and args.color_prompt:
+        sys.exit("--llm-emitters and --color-prompt are mutually exclusive: "
+                  "colour is one of --llm-emitters' own emitter axes")
     preflight()
     if args.pink_noise:
         # Read by the opt-in hook in external/paint3d/pipeline_paint3d_stage{1,2}.py
@@ -292,6 +360,8 @@ def main():
 
     import mesh_sampling  # pulls in torch/open_clip; cheap if the garment cache already exists
     categories = mesh_sampling.garment_categories(device="cpu")
+    if args.llm_emitters:
+        import llm_prompt_mutation
 
     total_failures = 0
     completed_any = False  # circuit breaker: if the very first member fails, the
@@ -301,11 +371,18 @@ def main():
     for prompt in args.prompts:
         pdir = args.outdir / slugify(prompt)
         pdir.mkdir(parents=True, exist_ok=True)
-        slot_weights = None
-        if args.mesh_sampling == "clip":
-            slot_weights = mesh_sampling.theme_weights(prompt, args.tau, device="cpu")
-        members = sample_members(prompt, args.num_members, args.seed, lib, args.fullbody_prob,
-                                 slot_weights=slot_weights, color_prompt=args.color_prompt)
+        if args.llm_emitters:
+            generations = args.llm_generations if args.llm_generations is not None else 3 * args.num_members
+            members, llm_history = sample_members_with_llm(
+                prompt, args.num_members, args.seed, lib, args.fullbody_prob,
+                args.mesh_sampling, args.tau, generations, args.llm_k_neighbors)
+        else:
+            llm_history = None
+            slot_weights = None
+            if args.mesh_sampling == "clip":
+                slot_weights = mesh_sampling.theme_weights(prompt, args.tau, device="cpu")
+            members = sample_members(prompt, args.num_members, args.seed, lib, args.fullbody_prob,
+                                     slot_weights=slot_weights, color_prompt=args.color_prompt)
         for m in members:
             m["category_phrase"] = category_phrase(m, categories)
         manifest = {
@@ -317,10 +394,15 @@ def main():
             "color_prompt": args.color_prompt,
             "pink_noise": args.pink_noise,
             "pink_alpha": args.pink_alpha if args.pink_noise else None,
-            "stage1_prompt_template": "turn around, {prompt}, {category_phrase}",
+            "llm_emitters": args.llm_emitters,
+            "llm_generations": generations if args.llm_emitters else None,
+            "llm_k_neighbors": args.llm_k_neighbors if args.llm_emitters else None,
+            "llm_model": llm_prompt_mutation.OLLAMA_MODEL if args.llm_emitters else None,
+            "llm_evolution_history": llm_history,
+            "stage1_prompt_template": "turn around, {prompt}, {full_desc}, {category_phrase}",
             "stage2_prompt_templates": {
-                "inpaint": "UV map, {prompt}, {category_phrase}",
-                "img2img": "UV map, {prompt}, {category_phrase}, high quality, best quality",
+                "inpaint": "UV map, {prompt}, {full_desc}, {category_phrase}",
+                "img2img": "UV map, {prompt}, {full_desc}, {category_phrase}, high quality, best quality",
             },
             "members": members,
         }
@@ -358,7 +440,8 @@ def main():
                 m["stage1"] = {"status": "skipped (resume)"}
             else:
                 cfg = mdir / "stage1_cfg.yaml"
-                build_stage1_cfg(prompt, m["category_phrase"], m["sd_seed"], cfg)
+                build_stage1_cfg(prompt, m["category_phrase"], m["sd_seed"], cfg,
+                                  full_desc=m.get("llm", {}).get("full_desc"))
                 rc, secs = run_stage("pipeline_paint3d_stage1.py", cfg, outfit_path, s1_out)
                 m["stage1"] = {"status": "ok" if rc == 0 else f"FAILED rc={rc}", "seconds": secs}
                 if rc != 0:
@@ -376,7 +459,8 @@ def main():
                 m["stage2"] = {"status": "skipped (resume)", "final_texture": str(s2_final)}
             else:
                 cfg = mdir / "stage2_cfg.yaml"
-                build_stage2_cfg(prompt, m["category_phrase"], m["sd_seed"], cfg)
+                build_stage2_cfg(prompt, m["category_phrase"], m["sd_seed"], cfg,
+                                  full_desc=m.get("llm", {}).get("full_desc"))
                 rc, secs = run_stage("pipeline_paint3d_stage2.py", cfg, outfit_path, s2_out,
                                      texture_path=s1_final)
                 m["stage2"] = {"status": "ok" if rc == 0 else f"FAILED rc={rc}", "seconds": secs}

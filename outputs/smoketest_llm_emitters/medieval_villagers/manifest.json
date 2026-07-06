@@ -1,0 +1,85 @@
+{
+  "crowd_prompt": "medieval villagers",
+  "master_seed": 0,
+  "fullbody_prob": 0.25,
+  "mesh_sampling": "clip",
+  "tau": 0.02,
+  "color_prompt": false,
+  "pink_noise": false,
+  "pink_alpha": null,
+  "llm_emitters": true,
+  "llm_generations": 4,
+  "llm_k_neighbors": 3,
+  "llm_model": "llama3.1:8b",
+  "llm_evolution_history": [
+    {
+      "type": "mutation",
+      "parent": 0,
+      "axis": "color",
+      "accepted": false,
+      "child_novelty": 0.031978607177734375,
+      "replaced_novelty": 0.031978607177734375
+    },
+    {
+      "type": "mutation",
+      "parent": 0,
+      "axis": "formality",
+      "accepted": false,
+      "child_novelty": 0.02567601203918457,
+      "replaced_novelty": 0.025676071643829346
+    },
+    {
+      "type": "mutation",
+      "parent": 0,
+      "axis": "age_bracket",
+      "accepted": true,
+      "child_novelty": 0.09563380479812622,
+      "replaced_novelty": 0.09563374519348145
+    },
+    {
+      "type": "mutation",
+      "parent": 0,
+      "axis": "formality",
+      "accepted": false,
+      "child_novelty": 0.016414284706115723,
+      "replaced_novelty": 0.016414284706115723
+    }
+  ],
+  "stage1_prompt_template": "turn around, {prompt}, {full_desc}, {category_phrase}",
+  "stage2_prompt_templates": {
+    "inpaint": "UV map, {prompt}, {full_desc}, {category_phrase}",
+    "img2img": "UV map, {prompt}, {full_desc}, {category_phrase}, high quality, best quality"
+  },
+  "members": [
+    {
+      "member": "member_00",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/tank_keyhole_neck.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/elvs_gored_midiskirt1.obj"
+      ],
+      "sd_seed": 1183151484,
+      "color": null,
+      "llm": {
+        "winner": {
+          "role": "Village Baker",
+          "age_bracket": "middle aged",
+          "build": "average build",
+          "posture": "stooped",
+          "mood": "weary",
+          "distinguishing_feature": "none",
+          "color": "brown",
+          "formality": "practical work",
+          "material": "wool",
+          "pattern": "patched",
+          "condition": "worn",
+          "accessories": "apron"
+        },
+        "full_desc": "middle aged, average build, Village Baker, looking weary, standing stooped, wearing worn practical work brown wool patched clothing and apron",
+        "clothing_desc": "worn practical work brown wool patched clothing and apron",
+        "theme_relevance": 0.7066375017166138
+      },
+      "category_phrase": "wearing a tank top and skirt"
+    }
+  ]
+}

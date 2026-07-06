@@ -58,10 +58,18 @@ SLOT_CATEGORY_LABELS = {
 CATEGORY_TEMPLATE = "a photo of a {label}"
 
 
+_CLIP_CACHE = {}
+
+
 def _clip(device):
-    import open_clip  # env pins open_clip 2.0.2: module-level tokenize(), no get_tokenizer()
-    model, _, preprocess = open_clip.create_model_and_transforms("ViT-B-32", pretrained="openai")
-    return model.to(device).eval(), open_clip.tokenize, preprocess
+    """Cached: Method 5 (llm_prompt_mutation) calls this once per crowd
+    member rather than once per crowd, so reloading the checkpoint each
+    time would dominate runtime at N=30."""
+    if device not in _CLIP_CACHE:
+        import open_clip  # env pins open_clip 2.0.2: module-level tokenize(), no get_tokenizer()
+        model, _, preprocess = open_clip.create_model_and_transforms("ViT-B-32", pretrained="openai")
+        _CLIP_CACHE[device] = (model.to(device).eval(), open_clip.tokenize, preprocess)
+    return _CLIP_CACHE[device]
 
 
 def _render_paths(key):
