@@ -1,0 +1,129 @@
+{
+  "crowd_prompt": "medieval villagers",
+  "master_seed": 0,
+  "fullbody_prob": 0.25,
+  "mesh_sampling": "uniform",
+  "tau": null,
+  "color_prompt": false,
+  "pink_noise": false,
+  "pink_alpha": null,
+  "llm_emitters": false,
+  "llm_generations": null,
+  "llm_k_neighbors": null,
+  "llm_model": null,
+  "llm_evolution_history": null,
+  "stage1_prompt_template": "turn around, {prompt}, {full_desc}, {category_phrase}",
+  "stage2_prompt_templates": {
+    "inpaint": "UV map, {prompt}, {full_desc}, {category_phrase}",
+    "img2img": "UV map, {prompt}, {full_desc}, {category_phrase}, high quality, best quality"
+  },
+  "members": [
+    {
+      "member": "member_00",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/mens_shirt_untuck_elvbhp1f.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/elvs_disco_pant1.obj"
+      ],
+      "sd_seed": 1343260028,
+      "color": null,
+      "category_phrase": "wearing a blouse and leggings"
+    },
+    {
+      "member": "member_01",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/deathnote.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/low_mini_skirt.obj"
+      ],
+      "sd_seed": 681064887,
+      "color": null,
+      "category_phrase": "wearing a t-shirt and skirt"
+    },
+    {
+      "member": "member_02",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/deathnote.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/elvs_gored_elephantpant1.obj"
+      ],
+      "sd_seed": 944131111,
+      "color": null,
+      "category_phrase": "wearing a t-shirt and trousers"
+    },
+    {
+      "member": "member_03",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/sleevelesscroptop.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/retro_girlyshort1.obj"
+      ],
+      "sd_seed": 286986189,
+      "color": null,
+      "category_phrase": "wearing a tank top and shorts"
+    },
+    {
+      "member": "member_04",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/figure_skating_dress.obj"
+      ],
+      "sd_seed": 1731852346,
+      "color": null,
+      "category_phrase": "wearing a apron"
+    },
+    {
+      "member": "member_05",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/elvs_goddess_dress2.obj"
+      ],
+      "sd_seed": 1021840900,
+      "color": null,
+      "category_phrase": "wearing a dress"
+    },
+    {
+      "member": "member_06",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/mens_shirt_tie_tuck_elv1f.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/skirt_full_lace_ruffle.obj"
+      ],
+      "sd_seed": 2012382780,
+      "color": null,
+      "category_phrase": "wearing a jacket and skirt"
+    },
+    {
+      "member": "member_07",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/elvs_mini_halterdress.obj"
+      ],
+      "sd_seed": 1150065459,
+      "color": null,
+      "category_phrase": "wearing a dress"
+    },
+    {
+      "member": "member_08",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/mens_shirt_tie_tuck_elv1f.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/shortjeans.obj"
+      ],
+      "sd_seed": 944444196,
+      "color": null,
+      "category_phrase": "wearing a jacket and shorts"
+    },
+    {
+      "member": "member_09",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/highneckcroptop.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/pleated_miniskirt.obj"
+      ],
+      "sd_seed": 1530507128,
+      "color": null,
+      "category_phrase": "wearing a tank top and skirt"
+    }
+  ]
+}

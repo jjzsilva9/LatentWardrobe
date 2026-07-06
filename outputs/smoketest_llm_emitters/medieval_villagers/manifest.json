@@ -79,7 +79,21 @@
         "clothing_desc": "worn practical work brown wool patched clothing and apron",
         "theme_relevance": 0.7066375017166138
       },
-      "category_phrase": "wearing a tank top and skirt"
+      "category_phrase": "wearing a tank top and skirt",
+      "outfit": {
+        "status": "ok",
+        "path": "/mnt/u/My Documents/LatentWardrobe/outputs/smoketest_llm_emitters/medieval_villagers/member_00/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 152.9,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/smoketest_llm_emitters/medieval_villagers/member_00/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1247.0,
+        "final_texture": "/mnt/u/My Documents/LatentWardrobe/outputs/smoketest_llm_emitters/medieval_villagers/member_00/stage2/tile_res_0/albedo.png"
+      }
     }
   ]
 }

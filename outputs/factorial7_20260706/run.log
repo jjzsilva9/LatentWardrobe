@@ -1,0 +1,9 @@
+mesh library: 43 tops, 41 bottoms, 59 fullbody
+plan: 1 prompt(s) x 10 members
+
+=== [medieval villagers] member_00: mens_shirt_untuck_elvbhp1f+elvs_disco_pant1 seed=1343260028 ===
+Depth-based 3D Texturing
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  14%|█▍        | 1/7 [00:11<01:10, 11.81s/it]Loading pipeline components...:  29%|██▊       | 2/7 [00:13<00:30,  6.03s/it]Loading pipeline components...:  57%|█████▋    | 4/7 [00:15<00:07,  2.64s/it]`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+Loading pipeline components...:  86%|████████▌ | 6/7 [00:20<00:02,  2.57s/it]Loading pipeline components...: 100%|██████████| 7/7 [00:20<00:00,  2.87s/it]
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  14%|█▍        | 1/7 [00:09<00:58,  9.77s/it]Loading pipeline components...:  29%|██▊       | 2/7 [00:11<00:25,  5.10s/it]Loading pipeline components...:  57%|█████▋    | 4/7 [00:13<00:07,  2.36s/it]`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+Loading pipeline components...:  86%|████████▌ | 6/7 [00:15<00:01,  1.91s/it]Loading pipeline components...: 100%|██████████| 7/7 [00:15<00:00,  2.27s/it]
