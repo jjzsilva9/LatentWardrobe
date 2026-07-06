@@ -59,6 +59,13 @@ RENDER_CONFIG = "paint3d/config/train_config_paint3d.py"  # relative to PAINT3D_
 STAGE1_FINAL = "res-0/albedo.png"
 STAGE2_FINAL = "tile_res_0/albedo.png"
 
+# Method 3 (--color-prompt): one random colour word per member, folded into
+# the garment description alongside its zero-shot category.
+COLORS = [
+    "red", "orange", "yellow", "green", "blue", "purple", "pink", "brown",
+    "black", "white", "grey", "teal", "maroon", "navy", "gold", "silver",
+]
+
 
 def parse_args():
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -78,6 +85,9 @@ def parse_args():
     p.add_argument("--tau", type=float, default=0.02,
                    help="softmax temperature for --mesh-sampling clip "
                         "(large tau -> uniform; small tau -> most theme-apt garments)")
+    p.add_argument("--color-prompt", action="store_true",
+                   help="Method 3: give each member a random colour word, inserted into "
+                        "the garment description in the Paint3D prompt")
     p.add_argument("--skip-stage2", action="store_true", help="run stage 1 only")
     p.add_argument("--dry-run", action="store_true",
                    help="sample outfits + write merged meshes + manifest, skip Paint3D")
@@ -147,7 +157,7 @@ def load_library(mesh_dir):
     return lib
 
 
-def sample_members(prompt, num, master_seed, lib, fullbody_prob, slot_weights=None):
+def sample_members(prompt, num, master_seed, lib, fullbody_prob, slot_weights=None, color_prompt=False):
     """slot_weights: optional {slot: (paths, weights)} from mesh_sampling.theme_weights
     (Method 1a); None -> uniform baseline sampling."""
     rng = random.Random(f"{master_seed}:{prompt}")
@@ -169,28 +179,51 @@ def sample_members(prompt, num, master_seed, lib, fullbody_prob, slot_weights=No
             "outfit_type": "fullbody" if use_fb else "top_bottom",
             "garments": garments,
             "sd_seed": rng.randrange(1, 2**31 - 1),
+            "color": rng.choice(COLORS) if color_prompt else None,
         })
     return members
 
 
+def garment_key(path):
+    """slot/stem key matching mesh_sampling's cache keys, e.g. 'tops/tube_top'."""
+    p = Path(path)
+    return f"{p.parent.name}/{p.stem}"
+
+
+def category_phrase(member, categories):
+    """Garment description clause for the Paint3D prompt: category (always,
+    from zero-shot CLIP classification — see mesh_sampling.py) plus a random
+    colour word when Method 3 (--color-prompt) assigned one."""
+    color = member.get("color")
+    prefix = f"{color} " if color else ""
+
+    def cat(path):
+        return categories.get(garment_key(path), "clothing")
+
+    if member["outfit_type"] == "fullbody":
+        return f"wearing a {prefix}{cat(member['garments'][0])}"
+    top, bottom = (cat(g) for g in member["garments"])
+    return f"wearing a {prefix}{top} and {prefix}{bottom}"
+
+
 # ---------------------------------------------------------------- paint3d
 
-def build_stage1_cfg(prompt, seed, dst):
+def build_stage1_cfg(prompt, category_phrase, seed, dst):
     cfg = OmegaConf.load(STAGE1_TEMPLATE)
-    cfg.txt2img.prompt = f"turn around, {prompt}"
+    cfg.txt2img.prompt = f"turn around, {prompt}, {category_phrase}"
     cfg.txt2img.seed = seed
     # stage 1 itself copies prompt/negative_prompt/seed into its inpaint step;
     # negative prompt stays Paint3D's anti-lighting boilerplate on purpose.
     OmegaConf.save(cfg, dst)
 
 
-def build_stage2_cfg(prompt, seed, dst):
+def build_stage2_cfg(prompt, category_phrase, seed, dst):
     cfg = OmegaConf.load(STAGE2_TEMPLATE)
-    cfg.inpaint.prompt = f"UV map, {prompt}"
+    cfg.inpaint.prompt = f"UV map, {prompt}, {category_phrase}"
     cfg.inpaint.seed = seed
     # the img2img (tile refine) prompt is not reachable via stage 2's --prompt
     # flag and defaults to a "Sci-Fi digital painting" style — rewrite it.
-    cfg.img2img.prompt = f"UV map, {prompt}, high quality, best quality"
+    cfg.img2img.prompt = f"UV map, {prompt}, {category_phrase}, high quality, best quality"
     cfg.img2img.seed = seed
     OmegaConf.save(cfg, dst)
 
@@ -242,6 +275,9 @@ def main():
     print(f"plan: {len(args.prompts)} prompt(s) x {args.num_members} members"
           + (" [DRY RUN]" if args.dry_run else ""))
 
+    import mesh_sampling  # pulls in torch/open_clip; cheap if the garment cache already exists
+    categories = mesh_sampling.garment_categories(device="cpu")
+
     total_failures = 0
     completed_any = False  # circuit breaker: if the very first member fails, the
     # problem is almost certainly systemic (env/config/code), not one bad garment
@@ -252,20 +288,22 @@ def main():
         pdir.mkdir(parents=True, exist_ok=True)
         slot_weights = None
         if args.mesh_sampling == "clip":
-            import mesh_sampling  # lazy: pulls in torch/open_clip; CPU is fine and fast
             slot_weights = mesh_sampling.theme_weights(prompt, args.tau, device="cpu")
         members = sample_members(prompt, args.num_members, args.seed, lib, args.fullbody_prob,
-                                 slot_weights=slot_weights)
+                                 slot_weights=slot_weights, color_prompt=args.color_prompt)
+        for m in members:
+            m["category_phrase"] = category_phrase(m, categories)
         manifest = {
             "crowd_prompt": prompt,
             "master_seed": args.seed,
             "fullbody_prob": args.fullbody_prob,
             "mesh_sampling": args.mesh_sampling,
             "tau": args.tau if args.mesh_sampling == "clip" else None,
-            "stage1_prompt_template": "turn around, {prompt}",
+            "color_prompt": args.color_prompt,
+            "stage1_prompt_template": "turn around, {prompt}, {category_phrase}",
             "stage2_prompt_templates": {
-                "inpaint": "UV map, {prompt}",
-                "img2img": "UV map, {prompt}, high quality, best quality",
+                "inpaint": "UV map, {prompt}, {category_phrase}",
+                "img2img": "UV map, {prompt}, {category_phrase}, high quality, best quality",
             },
             "members": members,
         }
@@ -303,7 +341,7 @@ def main():
                 m["stage1"] = {"status": "skipped (resume)"}
             else:
                 cfg = mdir / "stage1_cfg.yaml"
-                build_stage1_cfg(prompt, m["sd_seed"], cfg)
+                build_stage1_cfg(prompt, m["category_phrase"], m["sd_seed"], cfg)
                 rc, secs = run_stage("pipeline_paint3d_stage1.py", cfg, outfit_path, s1_out)
                 m["stage1"] = {"status": "ok" if rc == 0 else f"FAILED rc={rc}", "seconds": secs}
                 if rc != 0:
@@ -321,7 +359,7 @@ def main():
                 m["stage2"] = {"status": "skipped (resume)", "final_texture": str(s2_final)}
             else:
                 cfg = mdir / "stage2_cfg.yaml"
-                build_stage2_cfg(prompt, m["sd_seed"], cfg)
+                build_stage2_cfg(prompt, m["category_phrase"], m["sd_seed"], cfg)
                 rc, secs = run_stage("pipeline_paint3d_stage2.py", cfg, outfit_path, s2_out,
                                      texture_path=s1_final)
                 m["stage2"] = {"status": "ok" if rc == 0 else f"FAILED rc={rc}", "seconds": secs}

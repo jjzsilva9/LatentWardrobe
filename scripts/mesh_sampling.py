@@ -43,12 +43,18 @@ THEME_TEMPLATE = "clothing worn by {prompt}"
 # independent of the theme it's being repainted for. Chosen to cover the
 # mesh library's shapes (see assets/meshes/README.md) without leaking
 # original-texture words (no "disco", "medieval", ...).
-CATEGORY_LABELS = [
-    "t-shirt", "tank top", "button-up shirt", "blouse", "sweater", "hoodie",
-    "jacket", "tunic", "crop top", "halter top",
-    "trousers", "jeans", "shorts", "skirt", "mini skirt", "leggings",
-    "dress", "gown", "jumpsuit", "suit", "robe", "uniform", "wetsuit", "apron",
-]
+#
+# Scoped per slot (tops/bottoms/fullbody) rather than one shared list: the
+# slot is already known ground truth from the asset folder, so there's no
+# reason to let e.g. a bottoms-slot garment compete against top-only labels
+# — that cross-slot competition was producing wrong answers (a mini skirt
+# classified as "tank top") for no benefit.
+SLOT_CATEGORY_LABELS = {
+    "tops": ["t-shirt", "tank top", "button-up shirt", "blouse", "sweater",
+             "hoodie", "jacket", "tunic", "crop top", "halter top"],
+    "bottoms": ["trousers", "jeans", "shorts", "skirt", "mini skirt", "leggings"],
+    "fullbody": ["dress", "gown", "jumpsuit", "suit", "robe", "uniform", "wetsuit", "apron"],
+}
 CATEGORY_TEMPLATE = "a photo of a {label}"
 
 
@@ -79,16 +85,23 @@ def _render_fingerprint(keys):
     return {k: max(p.stat().st_mtime for p in _render_paths(k)) for k in keys}
 
 
-def _classify_categories(emb, model, tokenize, device="cpu"):
+def _classify_categories(keys, emb, model, tokenize, device="cpu"):
     """Zero-shot argmax category per garment, from its (already-computed)
-    render embedding against CATEGORY_LABELS."""
+    render embedding against its slot's SLOT_CATEGORY_LABELS subset."""
     with torch.no_grad():
-        tokens = tokenize([CATEGORY_TEMPLATE.format(label=l) for l in CATEGORY_LABELS]).to(device)
-        text_emb = model.encode_text(tokens).float()
-        text_emb /= text_emb.norm(dim=-1, keepdim=True)
-    sims = emb.to(device) @ text_emb.T.to(device)
-    idx = sims.argmax(dim=1).cpu().tolist()
-    return [CATEGORY_LABELS[i] for i in idx]
+        slot_text_emb = {}
+        for slot, labels in SLOT_CATEGORY_LABELS.items():
+            tokens = tokenize([CATEGORY_TEMPLATE.format(label=l) for l in labels]).to(device)
+            t = model.encode_text(tokens).float()
+            t /= t.norm(dim=-1, keepdim=True)
+            slot_text_emb[slot] = t
+
+    categories = []
+    for key, e in zip(keys, emb):
+        slot = key.split("/", 1)[0]
+        sims = e.to(device) @ slot_text_emb[slot].T.to(device)
+        categories.append(SLOT_CATEGORY_LABELS[slot][sims.argmax().item()])
+    return categories
 
 
 def garment_embeddings(device="cpu"):
@@ -116,7 +129,7 @@ def garment_embeddings(device="cpu"):
             e = e.mean(dim=0)
             embs.append(e / e.norm())
     emb = torch.stack(embs).cpu()
-    categories = _classify_categories(emb, model, tokenize, device)
+    categories = _classify_categories(keys, emb, model, tokenize, device)
     torch.save({"fingerprint": fp, "keys": keys, "embeddings": emb, "categories": categories}, CACHE_PATH)
     return keys, emb, categories
 
