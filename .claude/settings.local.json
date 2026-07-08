@@ -4,7 +4,10 @@
       "WebSearch",
       "WebFetch(domain:arxiv.org)",
       "Skill(dataviz)",
-      "Skill(dataviz:*)"
+      "Skill(dataviz:*)",
+      "Bash(ls -la \"C:/Users/silvajo/.claude/projects/\" 2>&1 | head -30)",
+      "Read(//c/Users/silvajo/.claude/projects/**)",
+      "Bash(find \"C:/Users/silvajo/.claude/projects/\" -maxdepth 2 -iname \"*.jsonl\" 2>&1 | head -50)"
     ]
   }
 }

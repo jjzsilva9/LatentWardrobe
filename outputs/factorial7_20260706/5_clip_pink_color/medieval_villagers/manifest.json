@@ -1,0 +1,130 @@
+{
+  "crowd_prompt": "medieval villagers",
+  "master_seed": 0,
+  "fullbody_prob": 0.25,
+  "mesh_sampling": "clip",
+  "tau": 0.02,
+  "color_prompt": true,
+  "pink_noise": true,
+  "pink_alpha": 0.2,
+  "llm_emitters": false,
+  "llm_generations": null,
+  "llm_k_neighbors": null,
+  "llm_model": null,
+  "llm_evolution_history": null,
+  "stage1_prompt_template": "turn around, {prompt}, {full_desc}, {category_phrase}",
+  "stage2_prompt_templates": {
+    "inpaint": "UV map, {prompt}, {full_desc}, {category_phrase}",
+    "img2img": "UV map, {prompt}, {full_desc}, {category_phrase}, high quality, best quality"
+  },
+  "members": [
+    {
+      "member": "member_00",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/ruffle_sleeve_peasantblouse.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/jean_shorts.obj"
+      ],
+      "sd_seed": 1343260028,
+      "color": "green",
+      "category_phrase": "wearing a green tunic and green mini skirt"
+    },
+    {
+      "member": "member_01",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/fem_suit2.obj"
+      ],
+      "sd_seed": 262125522,
+      "color": "green",
+      "category_phrase": "wearing a green jumpsuit"
+    },
+    {
+      "member": "member_02",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/lace_up_blouse.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/mini_skirt_02.obj"
+      ],
+      "sd_seed": 2032278251,
+      "color": "blue",
+      "category_phrase": "wearing a blue blouse and blue skirt"
+    },
+    {
+      "member": "member_03",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/fem_suit.obj"
+      ],
+      "sd_seed": 321690044,
+      "color": "blue",
+      "category_phrase": "wearing a blue apron"
+    },
+    {
+      "member": "member_04",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/sweater_fisherman.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/jean_shorts.obj"
+      ],
+      "sd_seed": 1598445786,
+      "color": "brown",
+      "category_phrase": "wearing a brown blouse and brown mini skirt"
+    },
+    {
+      "member": "member_05",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/mens_boho_top1elv.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/rescueteam_pants_male.obj"
+      ],
+      "sd_seed": 1135119011,
+      "color": "gold",
+      "category_phrase": "wearing a gold hoodie and gold trousers"
+    },
+    {
+      "member": "member_06",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/elvs_discotop2.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/skirt_full_lace_ruffle.obj"
+      ],
+      "sd_seed": 1530507128,
+      "color": "grey",
+      "category_phrase": "wearing a grey blouse and grey skirt"
+    },
+    {
+      "member": "member_07",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/ruffle_sleeve_peasantblouse.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/mens_trouser_f_elv1.obj"
+      ],
+      "sd_seed": 1983278328,
+      "color": "orange",
+      "category_phrase": "wearing a orange tunic and orange trousers"
+    },
+    {
+      "member": "member_08",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/ladieshoodiedown1.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/elvs_disco_pant1.obj"
+      ],
+      "sd_seed": 515968820,
+      "color": "yellow",
+      "category_phrase": "wearing a yellow hoodie and yellow leggings"
+    },
+    {
+      "member": "member_09",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/camisole_top.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/elvs_disco_pencilskirt1.obj"
+      ],
+      "sd_seed": 1827978058,
+      "color": "black",
+      "category_phrase": "wearing a black tank top and black skirt"
+    }
+  ]
+}

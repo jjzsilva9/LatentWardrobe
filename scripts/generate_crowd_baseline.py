@@ -44,6 +44,7 @@ import json
 import os
 import random
 import re
+import shlex
 import subprocess
 import sys
 import time
@@ -76,6 +77,12 @@ def parse_args():
     p.add_argument("--mesh-dir", type=Path, default=REPO_ROOT / "assets/meshes",
                    help="mesh library root containing tops/ bottoms/ fullbody/ subdirs")
     p.add_argument("--outdir", type=Path, required=True)
+    p.add_argument("--sync-to", type=Path, default=None,
+                   help="mirror --outdir's prompt directories here after every member "
+                        "(e.g. a network share), so a crash loses at most one in-flight "
+                        "member instead of a whole --outdir's worth. Runs as a backgrounded, "
+                        "timeout-bounded rsync -- see sync_pdir() -- so a stalled mount "
+                        "(known WSL2 drvfs/9P issue) can never block generation itself.")
     p.add_argument("--seed", type=int, default=0,
                    help="master seed; member assignments derive from (seed, prompt)")
     p.add_argument("--fullbody-prob", type=float, default=0.25,
@@ -321,6 +328,79 @@ def run_stage(script, sd_config, mesh_path, outdir, texture_path=None):
     return proc.returncode, secs
 
 
+# ---------------------------------------------------------------- sync
+#
+# --sync-to mirrors each prompt directory to a second location (a network
+# share) after every member, not just at the end of a batch. Two known
+# WSL2 failure modes drove this design (see .claude/memory.md 2026-07-08):
+#   1. Writing Paint3D's own hot generation I/O (hundreds of small files
+#      over ~20 min/member) directly to a drvfs network mount has caused
+#      multi-hour SILENT freezes (drvfs/9P stalls in uninterruptible sleep,
+#      a documented unresolved WSL2 bug) -- so generation always writes to
+#      --outdir on local disk, never directly to the sync target.
+#   2. This lab machine wipes WSL's local disk on any crash/reboot, so
+#      anything not yet synced to the network share is lost. Syncing once
+#      per multi-hour cell (the pre-2026-07-08 design) meant a crash could
+#      lose an entire cell; syncing once per member bounds that loss to
+#      ~one member (~20-25 min at Paint3D's measured per-member cost).
+#
+# The rsync itself runs backgrounded (fire-and-forget, `timeout`-wrapped)
+# so that if the network mount IS stalled, generation of the next member
+# still proceeds on local disk uninterrupted -- the alternative (a blocking
+# sync) would just relocate the same freeze risk from "every write" to
+# "every member", not eliminate it.
+_sync_proc = None  # subprocess.Popen | None -- at most one background sync in flight
+
+
+def sync_pdir(pdir, args):
+    """Best-effort mirror of pdir (an --outdir/<prompt_slug> dir) to
+    args.sync_to/<prompt_slug>. No-op if --sync-to wasn't given. Skips
+    (rather than queues) if a previous sync is still running, since rsync
+    is incremental -- the next call will pick up everything that changed
+    since the last successful sync."""
+    global _sync_proc
+    if args.sync_to is None:
+        return
+    if _sync_proc is not None and _sync_proc.poll() is None:
+        print(f"[sync] previous sync still running, skipping this round "
+              f"(will catch up next member)", flush=True)
+        return
+    remote_pdir = args.sync_to.resolve() / pdir.relative_to(args.outdir)
+    sync_log = args.outdir / "sync.log"
+    cmd = (
+        f"mkdir -p {shlex.quote(str(remote_pdir))} && "
+        f"timeout 170 rsync -a {shlex.quote(str(pdir) + '/')} {shlex.quote(str(remote_pdir) + '/')}"
+    )
+    with open(sync_log, "a") as log:
+        log.write(f"\n[sync] {time.strftime('%Y-%m-%d %H:%M:%S')} starting: {pdir} -> {remote_pdir}\n")
+        log.flush()
+        _sync_proc = subprocess.Popen(
+            ["bash", "-c", cmd], stdout=log, stderr=subprocess.STDOUT, start_new_session=True)
+
+
+def final_sync(args, pdirs):
+    """Blocking wrap-up: wait for any in-flight background sync, then do
+    one more synchronous pass per prompt dir so the process doesn't exit
+    leaving the last member unsynced. Failures are logged, not fatal --
+    the outer run script's own end-of-cell rsync is the last-resort net."""
+    global _sync_proc
+    if args.sync_to is None:
+        return
+    if _sync_proc is not None:
+        try:
+            _sync_proc.wait(timeout=180)
+        except subprocess.TimeoutExpired:
+            print("[sync] final wait timed out; background sync may still be stuck", flush=True)
+    for pdir in pdirs:
+        remote_pdir = args.sync_to.resolve() / pdir.relative_to(args.outdir)
+        cmd = (
+            f"mkdir -p {shlex.quote(str(remote_pdir))} && "
+            f"timeout 240 rsync -a {shlex.quote(str(pdir) + '/')} {shlex.quote(str(remote_pdir) + '/')}"
+        )
+        rc = subprocess.run(["bash", "-c", cmd]).returncode
+        print(f"[sync] final sync {pdir} -> {remote_pdir} rc={rc}", flush=True)
+
+
 # ---------------------------------------------------------------- main
 
 def slugify(text):
@@ -368,14 +448,41 @@ def main():
     # problem is almost certainly systemic (env/config/code), not one bad garment
     # — abort the whole batch immediately instead of burning hours on 100
     # identical failures that nobody is watching.
+    all_pdirs = []  # for final_sync() after the loop
     for prompt in args.prompts:
         pdir = args.outdir / slugify(prompt)
         pdir.mkdir(parents=True, exist_ok=True)
         if args.llm_emitters:
             generations = args.llm_generations if args.llm_generations is not None else 3 * args.num_members
-            members, llm_history = sample_members_with_llm(
-                prompt, args.num_members, args.seed, lib, args.fullbody_prob,
-                args.mesh_sampling, args.tau, generations, args.llm_k_neighbors)
+            # Unlike every other sampling path here (seeded RNG, reproducible),
+            # LLM evolution is NOT reproducible across runs: ollama sampling
+            # differs every call. Under --resume, re-evolving would silently
+            # assign a *different* population's prompts to the not-yet-done
+            # members — mixing two populations in one crowd and losing the
+            # record of what generated the finished ones. So the first run
+            # persists its evolved members beside the manifest, and later runs
+            # (crash recovery, supervisor restarts) reload instead of re-evolving.
+            llm_members_path = pdir / "llm_members.json"
+            members = llm_history = None
+            if llm_members_path.exists():
+                try:
+                    saved = json.loads(llm_members_path.read_text())
+                    if len(saved["members"]) == args.num_members:
+                        members, llm_history = saved["members"], saved["llm_evolution_history"]
+                        print(f"[llm] reusing {len(members)} previously-evolved members from "
+                              f"{llm_members_path} (evolution is not reproducible; never re-run it mid-crowd)",
+                              flush=True)
+                    else:
+                        print(f"[llm] {llm_members_path} holds {len(saved['members'])} members but "
+                              f"--num-members={args.num_members}; discarding it and re-evolving", flush=True)
+                except (json.JSONDecodeError, KeyError) as e:
+                    print(f"[llm] {llm_members_path} unreadable ({e}); re-evolving", flush=True)
+            if members is None:
+                members, llm_history = sample_members_with_llm(
+                    prompt, args.num_members, args.seed, lib, args.fullbody_prob,
+                    args.mesh_sampling, args.tau, generations, args.llm_k_neighbors)
+                llm_members_path.write_text(json.dumps(
+                    {"members": members, "llm_evolution_history": llm_history}, indent=2))
         else:
             llm_history = None
             slot_weights = None
@@ -409,73 +516,82 @@ def main():
         manifest_path = pdir / "manifest.json"
         manifest_path.write_text(json.dumps(manifest, indent=2))
 
+        all_pdirs.append(pdir)
         for m in members:
-            mdir = pdir / m["member"]
-            mdir.mkdir(exist_ok=True)
-            print(f"\n=== [{prompt}] {m['member']}: "
-                  f"{'+'.join(Path(g).stem for g in m['garments'])} seed={m['sd_seed']} ===",
-                  flush=True)
-
-            outfit_path = mdir / "outfit.obj"
+            # try/finally so --sync-to fires after every member on every exit
+            # path (success, any of the "continue"s below, or the circuit
+            # breaker's sys.exit) -- see sync_pdir()'s module comment for why
+            # per-member (not per-cell) sync is what actually bounds crash loss.
             try:
-                write_outfit_obj(m["garments"], outfit_path)
-            except ValueError as e:
-                m["outfit"] = {"status": f"MERGE FAILED: {e}"}
-                total_failures += 1
-                manifest_path.write_text(json.dumps(manifest, indent=2))
-                if not completed_any:
-                    sys.exit("ABORTING BATCH: the very first member failed (outfit merge) "
-                             "— treating as systemic. Fix and rerun with --resume.")
-                continue
-            m["outfit"] = {"status": "ok", "path": str(outfit_path)}
+                mdir = pdir / m["member"]
+                mdir.mkdir(exist_ok=True)
+                print(f"\n=== [{prompt}] {m['member']}: "
+                      f"{'+'.join(Path(g).stem for g in m['garments'])} seed={m['sd_seed']} ===",
+                      flush=True)
 
-            if args.dry_run:
-                manifest_path.write_text(json.dumps(manifest, indent=2))
-                continue
-
-            s1_out, s2_out = mdir / "stage1", mdir / "stage2"
-            s1_final, s2_final = s1_out / STAGE1_FINAL, s2_out / STAGE2_FINAL
-
-            if args.resume and s1_final.exists():
-                m["stage1"] = {"status": "skipped (resume)"}
-            else:
-                cfg = mdir / "stage1_cfg.yaml"
-                build_stage1_cfg(prompt, m["category_phrase"], m["sd_seed"], cfg,
-                                  full_desc=m.get("llm", {}).get("full_desc"))
-                rc, secs = run_stage("pipeline_paint3d_stage1.py", cfg, outfit_path, s1_out)
-                m["stage1"] = {"status": "ok" if rc == 0 else f"FAILED rc={rc}", "seconds": secs}
-                if rc != 0:
+                outfit_path = mdir / "outfit.obj"
+                try:
+                    write_outfit_obj(m["garments"], outfit_path)
+                except ValueError as e:
+                    m["outfit"] = {"status": f"MERGE FAILED: {e}"}
                     total_failures += 1
                     manifest_path.write_text(json.dumps(manifest, indent=2))
                     if not completed_any:
-                        sys.exit("ABORTING BATCH: the very first member failed at stage 1 "
+                        sys.exit("ABORTING BATCH: the very first member failed (outfit merge) "
                                  "— treating as systemic. Fix and rerun with --resume.")
                     continue
-            m["stage1"]["final_texture"] = str(s1_final)
+                m["outfit"] = {"status": "ok", "path": str(outfit_path)}
 
-            if args.skip_stage2:
-                m["stage2"] = {"status": "skipped (--skip-stage2)"}
-            elif args.resume and s2_final.exists():
-                m["stage2"] = {"status": "skipped (resume)", "final_texture": str(s2_final)}
-            else:
-                cfg = mdir / "stage2_cfg.yaml"
-                build_stage2_cfg(prompt, m["category_phrase"], m["sd_seed"], cfg,
-                                  full_desc=m.get("llm", {}).get("full_desc"))
-                rc, secs = run_stage("pipeline_paint3d_stage2.py", cfg, outfit_path, s2_out,
-                                     texture_path=s1_final)
-                m["stage2"] = {"status": "ok" if rc == 0 else f"FAILED rc={rc}", "seconds": secs}
-                if rc != 0:
-                    total_failures += 1
+                if args.dry_run:
                     manifest_path.write_text(json.dumps(manifest, indent=2))
-                    if not completed_any:
-                        sys.exit("ABORTING BATCH: the very first member failed at stage 2 "
-                                 "— treating as systemic. Fix and rerun with --resume.")
                     continue
-                m["stage2"]["final_texture"] = str(s2_final)
 
-            completed_any = True
-            manifest_path.write_text(json.dumps(manifest, indent=2))
+                s1_out, s2_out = mdir / "stage1", mdir / "stage2"
+                s1_final, s2_final = s1_out / STAGE1_FINAL, s2_out / STAGE2_FINAL
 
+                if args.resume and s1_final.exists():
+                    m["stage1"] = {"status": "skipped (resume)"}
+                else:
+                    cfg = mdir / "stage1_cfg.yaml"
+                    build_stage1_cfg(prompt, m["category_phrase"], m["sd_seed"], cfg,
+                                      full_desc=m.get("llm", {}).get("full_desc"))
+                    rc, secs = run_stage("pipeline_paint3d_stage1.py", cfg, outfit_path, s1_out)
+                    m["stage1"] = {"status": "ok" if rc == 0 else f"FAILED rc={rc}", "seconds": secs}
+                    if rc != 0:
+                        total_failures += 1
+                        manifest_path.write_text(json.dumps(manifest, indent=2))
+                        if not completed_any:
+                            sys.exit("ABORTING BATCH: the very first member failed at stage 1 "
+                                     "— treating as systemic. Fix and rerun with --resume.")
+                        continue
+                m["stage1"]["final_texture"] = str(s1_final)
+
+                if args.skip_stage2:
+                    m["stage2"] = {"status": "skipped (--skip-stage2)"}
+                elif args.resume and s2_final.exists():
+                    m["stage2"] = {"status": "skipped (resume)", "final_texture": str(s2_final)}
+                else:
+                    cfg = mdir / "stage2_cfg.yaml"
+                    build_stage2_cfg(prompt, m["category_phrase"], m["sd_seed"], cfg,
+                                      full_desc=m.get("llm", {}).get("full_desc"))
+                    rc, secs = run_stage("pipeline_paint3d_stage2.py", cfg, outfit_path, s2_out,
+                                         texture_path=s1_final)
+                    m["stage2"] = {"status": "ok" if rc == 0 else f"FAILED rc={rc}", "seconds": secs}
+                    if rc != 0:
+                        total_failures += 1
+                        manifest_path.write_text(json.dumps(manifest, indent=2))
+                        if not completed_any:
+                            sys.exit("ABORTING BATCH: the very first member failed at stage 2 "
+                                     "— treating as systemic. Fix and rerun with --resume.")
+                        continue
+                    m["stage2"]["final_texture"] = str(s2_final)
+
+                completed_any = True
+                manifest_path.write_text(json.dumps(manifest, indent=2))
+            finally:
+                sync_pdir(pdir, args)
+
+    final_sync(args, all_pdirs)
     print(f"\ndone. failures: {total_failures}")
     if total_failures:
         sys.exit(1)
