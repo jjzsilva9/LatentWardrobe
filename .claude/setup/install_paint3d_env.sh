@@ -14,6 +14,14 @@ REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 PAINT3D_DIR="$REPO_ROOT/external/paint3d"
 CONDA_DIR="$HOME/miniconda3"
 
+# 0. Pink-noise (Method 4) opt-in hook: the submodule is vanilla upstream
+#    Paint3D and doesn't track this, so a fresh clone/checkout needs it
+#    reapplied. Idempotent -- skip if already applied (e.g. re-running this
+#    script after a submodule update that didn't touch these two files).
+if ! grep -q PINK_NOISE_ALPHA "$PAINT3D_DIR/pipeline_paint3d_stage1.py"; then
+  git -C "$PAINT3D_DIR" apply "$REPO_ROOT/.claude/setup/patches/paint3d_pink_noise.patch"
+fi
+
 SUDO=""
 if [ "$(id -u)" -ne 0 ]; then
   SUDO="sudo"

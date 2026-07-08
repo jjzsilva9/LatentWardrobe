@@ -1,0 +1,44 @@
+diff --git a/pipeline_paint3d_stage1.py b/pipeline_paint3d_stage1.py
+index 59da6e2..a94a21b 100644
+--- a/pipeline_paint3d_stage1.py
++++ b/pipeline_paint3d_stage1.py
+@@ -18,6 +18,17 @@ from paint3d.models.textured_mesh import TexturedMeshModel
+ from paint3d.dataset import init_dataloaders
+ from paint3d.trainer import dr_eval, forward_texturing
+ 
++# --- Method 4 (pink-noise initialization) opt-in hook, set by
++# scripts/generate_crowd_baseline.py's --pink-noise flag. Applied here
++# (rather than in that driver's own process) because this script always
++# runs as a separate subprocess -- see scripts/pink_noise.py for the patch
++# itself and why it targets these pipeline modules specifically.
++_pink_alpha = os.environ.get("PINK_NOISE_ALPHA")
++if _pink_alpha:
++    sys.path.insert(0, os.environ["LATENTWARDROBE_SCRIPTS_DIR"])
++    from pink_noise import install_pink_noise
++    install_pink_noise(float(_pink_alpha))
++
+ 
+ def inpaint_viewpoint(sd_cfg, cnet, save_result_dir, mesh_model, dataloaders, inpaint_view_ids=[(5, 6)]):
+     # projection
+diff --git a/pipeline_paint3d_stage2.py b/pipeline_paint3d_stage2.py
+index 3082942..5a9888c 100644
+--- a/pipeline_paint3d_stage2.py
++++ b/pipeline_paint3d_stage2.py
+@@ -19,6 +19,17 @@ from paint3d import utils
+ from paint3d.models.textured_mesh import TexturedMeshModel
+ from paint3d.trainer import dr_eval, forward_texturing
+ 
++# --- Method 4 (pink-noise initialization) opt-in hook, set by
++# scripts/generate_crowd_baseline.py's --pink-noise flag. Applied here
++# (rather than in that driver's own process) because this script always
++# runs as a separate subprocess -- see scripts/pink_noise.py for the patch
++# itself and why it targets these pipeline modules specifically.
++_pink_alpha = os.environ.get("PINK_NOISE_ALPHA")
++if _pink_alpha:
++    sys.path.insert(0, os.environ["LATENTWARDROBE_SCRIPTS_DIR"])
++    from pink_noise import install_pink_noise
++    install_pink_noise(float(_pink_alpha))
++
+ 
+ def UV_inpaint(sd_cfg, cnet, mesh_model, outdir,):
+     print(f"rendering texture and position map")
