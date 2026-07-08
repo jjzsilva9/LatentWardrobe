@@ -19,15 +19,38 @@
 #
 # NOTE: no `set -u` here -- conda's activate scripts reference unset vars and
 # would kill the shell before anything is logged (learned 2026-07-03).
+#
+# 2026-07-07: generation-only now (evaluate_crowd.py split out to
+# run_factorial7_eval.sh) -- see that file's header for why.
+#
+# 2026-07-08: generation now writes to LOCAL WSL disk (/root/factorial7_local,
+# ext4, ~900GB free), not directly to the U: network share, and each cell is
+# rsync'd to the network share only once, right after that cell finishes.
+# Cause: the run went silent for hours with no crash/error, twice, each time
+# right after a cell had just finished cleanly (python_exit=0) -- identical
+# signature to the very first 2026-07-06 failure, which was `tee` hanging
+# mid-write to run.log on the U: drvfs mount. Multi-hour continuous writes
+# (run.log via tee, and every stage1/stage2 output file) to a network share
+# over an unattended run is just fragile on this machine; generating locally
+# and syncing at clean per-cell checkpoints removes the network mount from
+# the hot path entirely, so a share hiccup can at worst fail one short rsync
+# (retryable) instead of silently freezing GPU generation for hours.
 source /root/miniconda3/etc/profile.d/conda.sh
 conda activate paint3d
 export LD_LIBRARY_PATH=/usr/lib/wsl/lib:$LD_LIBRARY_PATH
-cd "/mnt/u/My Documents/LatentWardrobe"
+REPO="/mnt/u/My Documents/LatentWardrobe"
+cd "$REPO"
 
-OUT=outputs/factorial7_20260706
-mkdir -p "$OUT"
+REMOTE_OUT="$REPO/outputs/factorial7_20260706"
+LOCAL_OUT=/root/factorial7_local
+mkdir -p "$LOCAL_OUT" "$REMOTE_OUT"
+
+# pull down anything already on the network share (e.g. cells generated
+# before this local/sync split existed) so --resume recognizes it and
+# doesn't regenerate already-completed members.
+rsync -a "$REMOTE_OUT/" "$LOCAL_OUT/"
+
 PROMPT='medieval villagers'
-PROMPT_SLUG=medieval_villagers  # must match generate_crowd_baseline.py's slugify(PROMPT)
 N=10
 TAU=0.02
 
@@ -35,11 +58,13 @@ run () {  # run <cell-outdir> [extra driver args...]
   local cell="$1"; shift
   python -u scripts/generate_crowd_baseline.py \
     --prompt "$PROMPT" --num-members "$N" \
-    --outdir "$OUT/$cell" --resume "$@" 2>&1 | tee -a "$OUT/run.log"
+    --outdir "$LOCAL_OUT/$cell" --resume "$@" 2>&1 | tee -a "$LOCAL_OUT/run.log"
   local rc=${PIPESTATUS[0]}
-  echo "[run_factorial7] cell=$cell python_exit=$rc" | tee -a "$OUT/run.log"
-  python -u scripts/evaluate_crowd.py --crowd-dir "$OUT/$cell/$PROMPT_SLUG" \
-    2>&1 | tee -a "$OUT/run.log"
+  echo "[run_factorial7] cell=$cell python_exit=$rc" | tee -a "$LOCAL_OUT/run.log"
+  # sync this cell + the log back to the network share now, at a clean
+  # checkpoint -- short and retryable, unlike writing continuously for hours.
+  rsync -a "$LOCAL_OUT/$cell/" "$REMOTE_OUT/$cell/"
+  cp "$LOCAL_OUT/run.log" "$REMOTE_OUT/run.log"
   return "$rc"
 }
 
@@ -64,4 +89,5 @@ run 6_clip_white_llm --mesh-sampling clip --tau "$TAU" --llm-emitters
 # 7) sampled mesh, pink noise, WANDER-inspired prompt
 run 7_clip_pink_llm --mesh-sampling clip --tau "$TAU" --pink-noise --llm-emitters
 
-echo "FACTORIAL7 BATCH COMPLETE" | tee -a "$OUT/run.log"
+echo "FACTORIAL7 GENERATION COMPLETE -- run scripts/run_factorial7_eval.sh next" | tee -a "$LOCAL_OUT/run.log"
+cp "$LOCAL_OUT/run.log" "$REMOTE_OUT/run.log"

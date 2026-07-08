@@ -10,30 +10,71 @@ Late: Noise Optimization for Collapse Recovery in Trained Diffusion Models"
               - DreamSim pairwise distance
               - pairwise LPIPS
               - pairwise low-res (32x32) pixel L2
-              - pairwise hue-histogram chi-square distance (color diversity,
-                background-masked)
+              - pairwise hue-histogram chi-square distance (color diversity)
               - Vendi score over a DINOv2 [CLS] cosine-similarity kernel
                 (effective number of distinct members)
-              - DPP score: determinant of that same DINOv2 [CLS] kernel
+              - DPP score: n-th-rooted determinant (geometric mean of
+                eigenvalues) of that same DINOv2 [CLS] kernel
   Coherence   - CLIPScore-style cosine similarity between the crowd prompt and
                 each member's rendered views (per member + crowd mean)
 
 Every pairwise statistic reports mean, min (nearest-neighbour / clone
 detection), and std across the contributing member pairs.
 
-All metrics are computed on a fixed set of frames from each member's stage-2
-turntable render (render_rgb.mp4) — NOT on raw UV maps (see plan doc: UV
-layouts are mostly background and would dilute every score). Frames at the
-same index correspond to the same camera angle across members, which is also
-what makes DINOv2 patch-level correspondence (Eq. 3) meaningful: patch p is
-the same grid cell, and roughly the same garment region, across members.
+All appearance metrics (LPIPS, DreamSim, pixel-L2, DINOv2 CLS/Vendi/DPP) are
+computed on a fixed set of frames from each member's stage-2 turntable render
+(render_rgb.mp4), cropped to that frame's foreground bounding box (see
+"Background handling" below) -- NOT on raw UV maps (see plan doc: UV layouts
+are mostly padding and, more importantly, aren't spatially comparable across
+different garment meshes). Frames at the same index correspond to the same
+camera angle across members, which is also what makes DINOv2 patch-level
+correspondence (Eq. 3) meaningful: patch p is the same grid cell, and roughly
+the same garment region, across members -- so patchwise distance is computed
+on the *uncropped* frame and instead filtered to only patches both members
+actually have garment coverage in (see below).
+
+Background handling (added 2026-07-07, replacing an HSV "near-white" pixel
+heuristic that risked misclassifying light/cream garments as background):
+Paint3D's renderer (external/paint3d/paint3d/models/render.py) rasterizes a
+true per-pixel foreground mask every frame (`face_idx > -1`) and bakes it
+into the z-normals panel of render_all.mp4 by forcing background pixels to
+exactly white before that panel is written -- see trainer.py's dr_eval(). We
+re-derive a binary foreground mask from that panel (thresholding near-white)
+for every frame already on disk, no re-rendering required:
+  - pixel-L2 / DreamSim / LPIPS / DINOv2-CLS (Vendi, DPP): each view is
+    cropped to the mask's bounding box (small margin, padded to a centered
+    square with white fill so we don't introduce a new aspect-ratio
+    confound) before the metric's existing preprocessing. This removes a
+    real confound where a member's incidental on-screen silhouette size
+    (long dress vs. cropped top) changed how much of the frame was shared
+    identical-white background, diluting/distorting these whole-image
+    metrics independent of actual appearance diversity.
+  - DINOv2 patchwise (Eq. 3): NOT cropped (would break the fixed-camera
+    patch correspondence the metric depends on). Instead the 1024x1024 mask
+    is pooled down to the 16x16 patch grid as a per-patch coverage fraction,
+    and a pair's per-view patch distance is averaged only over patches where
+    both members clear PATCH_COVERAGE_TAU coverage.
+  - Color diversity: switched from a per-frame render-based hue histogram to
+    the member's stage-2 UV albedo texture (stage2/albedo.png), masked by
+    stage2/mask.png -- the *exact* boolean "which texels got painted" mask
+    Paint3D itself uses to drive inpainting (not a heuristic), giving a
+    correct mask with zero light-garment blind spot and coverage of the
+    whole texture rather than 4 sampled camera angles. Note: must use the
+    coarse-stage stage2/mask.png + stage2/albedo.png pair, NOT
+    stage2/tile_res_0/albedo.png -- verified empirically that the tiling
+    refinement pass overwrites the unpainted-texel placeholder color, so the
+    coarse mask no longer lines up with the tile-refined albedo.
+  - Theme coherence (CLIPScore): deliberately left uncropped/unmasked --
+    it's measuring whole-scene prompt alignment, not fine-grained
+    appearance, and there's no silhouette-size confound to fix since it
+    isn't a diversity metric.
 
 Usage (inside WSL, "eval" conda env -- see .claude/setup/install_eval_env.sh,
 kept separate from the "paint3d" env so upgrading eval deps can't break
 generation):
     conda activate eval
     python scripts/evaluate_crowd.py --crowd-dir outputs/<batch>/<prompt_slug> \
-        [--frames 0 15 30 45] [--device cuda]
+        [--frames 0 15 30 45] [--device cuda] [--patch-coverage-tau 0.5]
 
 Writes <crowd-dir>/metrics.json and prints a summary table.
 """
@@ -49,8 +90,15 @@ import numpy as np
 import torch
 
 RENDER_REL = "stage2/tile_res_0/render_rgb.mp4"
+RENDER_ALL_REL = "stage2/tile_res_0/render_all.mp4"  # rgb|depth|z_normals panels, same frame index as RENDER_REL
+UV_ALBEDO_REL = "stage2/albedo.png"  # coarse stage -- see module docstring, don't swap for tile_res_0's copy
+UV_MASK_REL = "stage2/mask.png"      # matches UV_ALBEDO_REL only; 0=painted, 255=unpainted (magic-pink) placeholder
 VIEWS_CACHE = "eval_views"
+MASK_CACHE = "eval_masks"
 DINOV2_INPUT_SIZE = 224  # 16x16 = 256 patches at patch size 14
+PATCH_GRID = 16
+BG_GRAY_THRESH = 250     # z-normals panel: background is forced to exactly 255 pre-compression; small margin for mp4 lossiness
+BBOX_MARGIN_FRAC = 0.02  # extra margin around the tight foreground bbox, as a fraction of bbox size, before the square pad
 
 # DreamSim defaults its weight cache to "./models" (relative to cwd) and, as
 # a side effect, calls torch.hub.set_dir() globally -- so torch.hub.load()
@@ -66,6 +114,9 @@ def parse_args():
     p.add_argument("--frames", type=int, nargs="+", default=[0, 15, 30, 45],
                    help="frame indices to sample from each turntable render (same angle across members)")
     p.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
+    p.add_argument("--patch-coverage-tau", type=float, default=0.5,
+                   help="min fraction of a DINOv2 patch that must be foreground (in both members) to count "
+                        "toward the patchwise diversity distance")
     p.add_argument("--out", type=Path, default=None, help="default: <crowd-dir>/metrics.json")
     return p.parse_args()
 
@@ -93,27 +144,103 @@ def extract_views(member_dir, frame_ids):
     return paths
 
 
+def extract_mask_views(member_dir, frame_ids):
+    """Grab the z-normals panel (rightmost third) of the matching render_all.mp4
+    frames, threshold to a binary foreground mask, cache as PNGs. Returns None
+    if render_all.mp4 is missing (older data) -- callers fall back to
+    unmasked behaviour in that case."""
+    video = member_dir / RENDER_ALL_REL
+    if not video.exists():
+        return None
+    cache = member_dir / MASK_CACHE
+    cache.mkdir(exist_ok=True)
+    paths = [cache / f"mask_{i:03d}.png" for i in frame_ids]
+    if all(p.exists() for p in paths):
+        return paths
+    cap = cv2.VideoCapture(str(video))
+    total = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+    for i, out in zip(frame_ids, paths):
+        cap.set(cv2.CAP_PROP_POS_FRAMES, min(i, max(total - 1, 0)))
+        ok, frame = cap.read()
+        if not ok:
+            cap.release()
+            return None
+        h, w, _ = frame.shape
+        third = w // 3
+        normals = frame[:, 2 * third:]
+        gray = normals.mean(axis=2)
+        fg = np.where(gray < BG_GRAY_THRESH, 255, 0).astype(np.uint8)
+        cv2.imwrite(str(out), fg)
+    cap.release()
+    return paths
+
+
 def load_rgb(path):
     img = cv2.cvtColor(cv2.imread(str(path)), cv2.COLOR_BGR2RGB)
     return img
 
 
-def foreground_mask(rgb):
-    """Renders sit on a near-white background — mask it out so background
-    pixels don't dominate color histograms. Approximation: foreground =
-    not-near-white."""
-    hsv = cv2.cvtColor(rgb, cv2.COLOR_RGB2HSV)
-    near_white = (hsv[..., 1] < 25) & (hsv[..., 2] > 230)
-    return ~near_white
+def load_mask(path):
+    """Boolean (H, W) foreground mask, True = garment."""
+    return cv2.imread(str(path), cv2.IMREAD_GRAYSCALE) > 127
 
 
-def hue_histogram(rgb):
-    hsv = cv2.cvtColor(rgb, cv2.COLOR_RGB2HSV)
-    mask = foreground_mask(rgb).astype(np.uint8)
-    if mask.sum() < 100:  # nearly empty render — degenerate
+def bbox_from_mask(mask, margin_frac=BBOX_MARGIN_FRAC):
+    """Tight foreground bounding box with a small margin. None if degenerate
+    (near-empty mask -- e.g. a view where the garment barely enters frame)."""
+    if mask.sum() < 100:
         return None
+    ys, xs = np.where(mask)
+    y0, y1, x0, x1 = ys.min(), ys.max() + 1, xs.min(), xs.max() + 1
+    h, w = mask.shape
+    my = int((y1 - y0) * margin_frac)
+    mx = int((x1 - x0) * margin_frac)
+    return max(0, y0 - my), min(h, y1 + my), max(0, x0 - mx), min(w, x1 + mx)
+
+
+def crop_pad_square(rgb, bbox):
+    """Crop to bbox, then pad the shorter side with white to make it square
+    (centered) -- avoids stretching while still normalizing away incidental
+    on-screen silhouette size across members."""
+    if bbox is None:
+        return rgb
+    y0, y1, x0, x1 = bbox
+    crop = rgb[y0:y1, x0:x1]
+    h, w = crop.shape[:2]
+    side = max(h, w)
+    square = np.full((side, side, 3), 255, dtype=rgb.dtype)
+    oy, ox = (side - h) // 2, (side - w) // 2
+    square[oy:oy + h, ox:ox + w] = crop
+    return square
+
+
+def patch_coverage_grid(mask, grid=PATCH_GRID, size=DINOV2_INPUT_SIZE):
+    """Downsample a full-resolution boolean mask to a (grid, grid) foreground
+    coverage fraction per DINOv2 patch, matching dinov2_transform's resize."""
+    resized = cv2.resize(mask.astype(np.float32), (size, size), interpolation=cv2.INTER_AREA)
+    patch = size // grid
+    return resized.reshape(grid, patch, grid, patch).mean(axis=(1, 3))
+
+
+def hue_histogram(rgb, fg_mask):
+    mask = fg_mask.astype(np.uint8)
+    if mask.sum() < 100:  # nearly empty — degenerate
+        return None
+    hsv = cv2.cvtColor(rgb, cv2.COLOR_RGB2HSV)
     hist = cv2.calcHist([hsv], [0], mask, [36], [0, 180])
     return (hist / max(hist.sum(), 1e-8)).flatten()
+
+
+def uv_hue_histogram(member_dir):
+    """Color diversity straight from the painted UV texture, masked by
+    Paint3D's own unpainted-texel mask (see module docstring)."""
+    albedo_path, mask_path = member_dir / UV_ALBEDO_REL, member_dir / UV_MASK_REL
+    if not albedo_path.exists() or not mask_path.exists():
+        return None
+    albedo = cv2.cvtColor(cv2.imread(str(albedo_path)), cv2.COLOR_BGR2RGB)
+    uv_mask = cv2.imread(str(mask_path), cv2.IMREAD_GRAYSCALE)
+    fg = uv_mask == 0  # 0 = painted texel, 255 = unpainted magic-pink placeholder
+    return hue_histogram(albedo, fg)
 
 
 def chi_square(h1, h2):
@@ -146,11 +273,20 @@ def vendi_score(sim_matrix):
 
 def dpp_score(sim_matrix):
     """DPP diversity statistic: determinant of the similarity kernel (Kulesza
-    & Taskar 2011 via [31] in the collapse-recovery paper). Same DINOv2 [CLS]
-    kernel as the Vendi score above -- det ~ 0 means near-duplicate members,
-    det -> 1 means a maximally spread-out set."""
+    & Taskar 2011 via [31] in the collapse-recovery paper), n-th-rooted (n =
+    number of members) to report the geometric mean of the kernel's
+    eigenvalues rather than their raw product. Same DINOv2 [CLS] kernel as
+    the Vendi score above -- near 0 means near-duplicate members, near 1
+    means a maximally spread-out set. The un-rooted determinant is a product
+    of n eigenvalues that sum to n (unit diagonal), so it collapses toward 0
+    almost regardless of actual diversity as n grows -- e.g. an n=10 crowd
+    with Vendi ~4.7 (moderately diverse) has a raw determinant ~0.0008, which
+    reads as "all clones" despite the n-th root of that same number being
+    ~0.49, in line with Vendi. Rooting makes the score comparable across
+    crowds of different size, matching how Vendi is already normalized."""
+    n = sim_matrix.shape[0]
     sign, logdet = np.linalg.slogdet(sim_matrix)
-    return float(sign * np.exp(logdet)) if sign > 0 else 0.0
+    return float(sign * np.exp(logdet / n)) if sign > 0 else 0.0
 
 
 def load_dinov2(device):
@@ -177,25 +313,47 @@ def main():
     manifest = json.loads((args.crowd_dir / "manifest.json").read_text())
     prompt = manifest["crowd_prompt"]
 
-    # --- collect views per completed member
-    members, views, skipped = [], {}, []
+    # --- collect views + masks per completed member
+    members, views, masks, skipped = [], {}, {}, []
+    mask_fallback = 0
     for m in manifest["members"]:
         mdir = args.crowd_dir / m["member"]
         paths = extract_views(mdir, args.frames)
         if paths is None:
             skipped.append(m["member"])
             continue
+        mask_paths = extract_mask_views(mdir, args.frames)
+        if mask_paths is None:
+            mask_fallback += 1
         members.append(m["member"])
         views[m["member"]] = paths
+        masks[m["member"]] = mask_paths
     if len(members) < 2:
         sys.exit(f"only {len(members)} member(s) with renders — need >= 2 for pairwise metrics "
                  f"(skipped: {skipped})")
     print(f"crowd '{prompt}': {len(members)} members evaluated, {len(skipped)} skipped {skipped}")
+    if mask_fallback:
+        print(f"warning: {mask_fallback} member(s) missing render_all.mp4 (older data) — "
+              f"background masking disabled for them (full-frame fallback)")
 
     device = torch.device(args.device)
     rgbs = {m: [load_rgb(p) for p in views[m]] for m in members}
 
-    # --- LPIPS (view-matched pairwise, averaged over views)
+    # per-view boolean foreground masks (1024-res) and derived bbox/patch-coverage.
+    # falls back to "everything is foreground" when render_all.mp4 wasn't available.
+    fg_masks = {}
+    for m in members:
+        if masks[m] is None:
+            fg_masks[m] = [np.ones(rgb.shape[:2], dtype=bool) for rgb in rgbs[m]]
+        else:
+            fg_masks[m] = [load_mask(p) for p in masks[m]]
+
+    bboxes = {m: [bbox_from_mask(fg) for fg in fg_masks[m]] for m in members}
+    cropped_rgbs = {m: [crop_pad_square(rgb, bbox) for rgb, bbox in zip(rgbs[m], bboxes[m])]
+                    for m in members}
+    patch_cov = {m: [patch_coverage_grid(fg) for fg in fg_masks[m]] for m in members}
+
+    # --- LPIPS (view-matched pairwise, averaged over views) -- bbox-cropped
     import lpips as lpips_lib
     lpips_net = lpips_lib.LPIPS(net="alex", verbose=False).to(device)
 
@@ -204,7 +362,7 @@ def main():
         t = torch.from_numpy(img).permute(2, 0, 1).unsqueeze(0)
         return torch.nn.functional.interpolate(t, size=(256, 256), mode="bilinear").to(device)
 
-    lpips_imgs = {m: [to_lpips_tensor(r) for r in rgbs[m]] for m in members}
+    lpips_imgs = {m: [to_lpips_tensor(r) for r in cropped_rgbs[m]] for m in members}
     lpips_pairs = []
     with torch.no_grad():
         for a, b in itertools.combinations(members, 2):
@@ -213,12 +371,12 @@ def main():
     del lpips_imgs, lpips_net
     torch.cuda.empty_cache()
 
-    # --- DreamSim (view-matched pairwise, averaged over views)
+    # --- DreamSim (view-matched pairwise, averaged over views) -- bbox-cropped
     from dreamsim import dreamsim
     dreamsim_model, dreamsim_preprocess = dreamsim(pretrained=True, device=str(device), cache_dir=MODEL_CACHE_DIR)
     from PIL import Image
 
-    dreamsim_imgs = {m: [dreamsim_preprocess(Image.fromarray(r)).to(device) for r in rgbs[m]] for m in members}
+    dreamsim_imgs = {m: [dreamsim_preprocess(Image.fromarray(r)).to(device) for r in cropped_rgbs[m]] for m in members}
     dreamsim_pairs = []
     with torch.no_grad():
         for a, b in itertools.combinations(members, 2):
@@ -227,7 +385,8 @@ def main():
     del dreamsim_imgs, dreamsim_model
     torch.cuda.empty_cache()
 
-    # --- CLIP embeddings (open_clip, ViT-B-32) for coherence only
+    # --- CLIP embeddings (open_clip, ViT-B-32) for coherence only -- intentionally
+    # uncropped/unmasked, see module docstring.
     import open_clip
     clip_model, _, clip_preprocess = open_clip.create_model_and_transforms("ViT-B-32", pretrained="openai")
     clip_model = clip_model.to(device).eval()
@@ -246,52 +405,65 @@ def main():
     del clip_model, clip_view_embs
     torch.cuda.empty_cache()
 
-    # --- DINOv2: patchwise diversity (Eq. 3), Vendi + DPP over the [CLS] kernel
+    # --- DINOv2: patchwise diversity (Eq. 3) on UNCROPPED frames (needs the
+    # fixed-camera patch correspondence), Vendi + DPP over a [CLS] kernel
+    # built from the bbox-CROPPED frames (see module docstring).
     dinov2_model = load_dinov2(device)
-    dinov2_cls = {}    # member -> (num_views, D) CLS embeddings
-    dinov2_patch = {}  # member -> (num_views, P, D) patch-token embeddings
+    dinov2_patch = {}       # member -> (num_views, P, D) patch-token embeddings, uncropped
+    dinov2_cls_cropped = {}  # member -> (num_views, D) CLS embeddings, bbox-cropped
     with torch.no_grad():
         for m in members:
-            batch = torch.stack([dinov2_transform(r) for r in rgbs[m]]).to(device)
-            feats = dinov2_model.forward_features(batch)
-            cls = feats["x_norm_clstoken"]
-            cls = cls / cls.norm(dim=-1, keepdim=True)
-            patches = feats["x_norm_patchtokens"]
+            batch_full = torch.stack([dinov2_transform(r) for r in rgbs[m]]).to(device)
+            feats_full = dinov2_model.forward_features(batch_full)
+            patches = feats_full["x_norm_patchtokens"]
             patches = patches / patches.norm(dim=-1, keepdim=True)
-            dinov2_cls[m] = cls
             dinov2_patch[m] = patches
+
+            batch_crop = torch.stack([dinov2_transform(r) for r in cropped_rgbs[m]]).to(device)
+            feats_crop = dinov2_model.forward_features(batch_crop)
+            cls = feats_crop["x_norm_clstoken"]
+            cls = cls / cls.norm(dim=-1, keepdim=True)
+            dinov2_cls_cropped[m] = cls
     del dinov2_model
     torch.cuda.empty_cache()
 
-    # patchwise distance (Eq. 3): per pair, per view, mean cosine distance
-    # over P corresponding patches; averaged over views then over pairs.
+    # patchwise distance (Eq. 3): per pair, per view, mean cosine distance over
+    # the P corresponding patches where BOTH members clear --patch-coverage-tau
+    # foreground coverage (falls back to all patches if none qualify).
+    tau = args.patch_coverage_tau
     patchwise_pairs = []
+    view_fallbacks = 0
     for a, b in itertools.combinations(members, 2):
         per_view = []
-        for pa, pb in zip(dinov2_patch[a], dinov2_patch[b]):  # each (P, D)
-            d = 1.0 - (pa * pb).sum(dim=-1)  # (P,) cosine distance per patch
-            per_view.append(float(d.mean()))
+        for v, (pa, pb) in enumerate(zip(dinov2_patch[a], dinov2_patch[b])):  # each (P, D)
+            d_all = 1.0 - (pa * pb).sum(dim=-1)  # (P,) cosine distance per patch
+            valid = ((patch_cov[a][v] >= tau) & (patch_cov[b][v] >= tau)).reshape(-1)
+            valid_t = torch.from_numpy(valid).to(d_all.device)
+            if valid_t.any():
+                per_view.append(float(d_all[valid_t].mean()))
+            else:
+                view_fallbacks += 1
+                per_view.append(float(d_all.mean()))
         patchwise_pairs.append(float(np.mean(per_view)))
+    if view_fallbacks:
+        print(f"note: {view_fallbacks} member-pair views had zero patches clearing "
+              f"--patch-coverage-tau={tau} in both members — used all patches for those views")
 
-    # member-level [CLS] embedding (mean over views, re-normalized) for the
-    # Vendi / DPP kernel, matching how the old CLIP diversity kernel was built.
-    member_cls = torch.stack([dinov2_cls[m].mean(dim=0) for m in members])
+    # member-level [CLS] embedding (mean over cropped views, re-normalized) for
+    # the Vendi / DPP kernel.
+    member_cls = torch.stack([dinov2_cls_cropped[m].mean(dim=0) for m in members])
     member_cls = member_cls / member_cls.norm(dim=-1, keepdim=True)
     dinov2_sim = (member_cls @ member_cls.T).cpu().numpy()
 
-    # --- color diversity (hue histograms, background-masked, view-matched)
-    hists = {}
-    for m in members:
-        hs = [hue_histogram(r) for r in rgbs[m]]
-        hists[m] = [h for h in hs if h is not None]
+    # --- color diversity: UV albedo texture, masked by Paint3D's own unpainted-texel mask
+    hists = {m: uv_hue_histogram(args.crowd_dir / m) for m in members}
     color_pairs = []
     for a, b in itertools.combinations(members, 2):
-        ds = [chi_square(x, y) for x, y in zip(hists[a], hists[b])]
-        if ds:
-            color_pairs.append(float(np.mean(ds)))
+        if hists[a] is not None and hists[b] is not None:
+            color_pairs.append(chi_square(hists[a], hists[b]))
 
-    # --- low-res (32x32) pixel L2 (view-matched pairwise, averaged over views)
-    lowres = {m: [low_res_l2(r) for r in rgbs[m]] for m in members}
+    # --- low-res (32x32) pixel L2 (view-matched pairwise, averaged over views) -- bbox-cropped
+    lowres = {m: [low_res_l2(r) for r in cropped_rgbs[m]] for m in members}
     lowres_pairs = []
     for a, b in itertools.combinations(members, 2):
         ds = [float(np.linalg.norm(x - y)) for x, y in zip(lowres[a], lowres[b])]
@@ -302,6 +474,7 @@ def main():
         "num_members_evaluated": len(members),
         "skipped_members": skipped,
         "frames": args.frames,
+        "patch_coverage_tau": tau,
         "diversity": {
             "dinov2_patchwise_pairwise": pairwise_stats(patchwise_pairs),
             "dreamsim_pairwise": pairwise_stats(dreamsim_pairs),

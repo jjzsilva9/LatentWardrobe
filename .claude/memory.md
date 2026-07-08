@@ -41,7 +41,22 @@ Final design in `scripts/llm_prompt_mutation.py` (full rewrite, see its module d
 
 One real bug caught during dry-run verification and fixed same session: the LLM sometimes free-styles "none" for axes that don't offer it as a suggested value (e.g. pattern), which leaked into the rendered prompt text ("brown leather and iron **none** clothing"). Fixed by filtering "none"/"n/a"/empty generically across every clothing axis in `candidate_to_description()`, not just the two axes that expect it.
 
-Verified working end-to-end: dry-run (3 members, manifest inspected, evolution history + per-member descriptions look correct) and a real 1-member Paint3D run through both stages was kicked off (background; check `outputs/smoketest_llm_emitters/` for the result next session if not already confirmed). Composes with Method 2 (clip mesh-sampling anchor = per-member `clothing_desc`) and Method 4 (pink noise) — not yet run together in this session.
+Verified working end-to-end: dry-run (3 members, manifest inspected, evolution history + per-member descriptions look correct) and a real 1-member Paint3D run through both stages (`outputs/smoketest_llm_emitters/`, completed 18:29-18:52 2026-07-06 — both stages ok).
+
+**2026-07-06 (session 2, continued): overnight 7-cell factorial batch launched.** User laid out the full method space in plain terms (2 mesh-selection x 2 noise x 3 prompt-mutation = 12 combos), then reduced it to **7 cells** to fit a time budget: random-mesh is only tested once (cell 1, the baseline), since the mesh-selection x mutation interaction only matters once mesh selection is CLIP-anchored. Got the timing wrong twice before launching — first guessed 7-8 min/member from a misremembered note, then found the REAL number from `outputs/weekend_20260703/run.log`: stage1 ~130-165s + stage2 ~1130-1175s ⇒ **~23 min/member actual measured cost**, not 7-8. This changes future capacity planning materially — use 23 min/member as the reference number going forward, not the earlier wrong guess. At that rate 7 cells x N=10 = 70 members ≈ 27h; user explicitly accepted this runs past their original ~11am checkpoint rather than cut scope further.
+
+7 cells (`scripts/run_factorial7.sh`, `outputs/factorial7_20260706/`, theme "medieval villagers", N=10, tau=0.02):
+1. random mesh, white noise, plain prompt (baseline)
+2. clip mesh, white noise, plain prompt (Method 2)
+3. clip mesh, pink noise, plain prompt (Method 2+4)
+4. clip mesh, white noise, colour prompt (Method 2+3)
+5. clip mesh, pink noise, colour prompt (Method 2+3+4)
+6. clip mesh, white noise, WANDER prompt (Method 2+5)
+7. clip mesh, pink noise, WANDER prompt (Method 2+4+5)
+
+Each cell runs generation then `evaluate_crowd.py` immediately after, appending to one shared `run.log`. Launched via the established `Start-Process wsl.exe -ArgumentList '-u root bash -c "...mount...; bash run_factorial7.sh"'` pattern (visible window — nohup/detached WSL launches die when the launching process exits, per the 2026-07-02 post-mortem).
+
+**Near-miss worth remembering:** built a "dry-run" sanity test by `sed`-injecting `--dry-run` into a copy of the real script; the substitution silently failed to take effect and the "test" launched real Paint3D generation (caught within ~1 minute by noticing actual diffusion-step progress bars in the log, not dry-run's near-instant output — killed via TaskStop, verified no orphaned GPU process via `nvidia-smi --query-compute-apps`). Lesson: don't sed-patch a copy of a script you're about to run for real — write the test variant as its own explicit file and read it back before executing, especially right before committing to a many-hour unattended batch.
 
 ## Working notes moved out of the dissertation plan (2026-07-03 rewrite)
 

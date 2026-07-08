@@ -120,6 +120,14 @@ Orthogonal to every method in §3.1-§3.5: leave the sampler/noise/guidance/cond
 
 - Confirmed **not** LLM-based prompt rewriting (checked and ruled out, useful only as related-work contrast): PromptMoG (arXiv:2511.20251, prompt-*embedding* MoG sampling, no LLM text rewriting), PAG/"Learning to Sample Effective and Diverse Prompts" (arXiv:2502.11477, GFlowNet-based), Minority-Focused T2I via Prompt Optimization (arXiv:2410.07838, CVPR 2025 Oral, continuous token optimization), TPSO (arXiv:2511.19811, token-embedding-space optimization), RainbowPlus (arXiv:2504.15047, LLM-driven evolutionary mutation but for adversarial *text* jailbreaks against LLMs, not image diversity — surface-similar to WANDER's evolutionary framing but different modality/objective entirely).
 
+### 3.7 3D-native precedent for our LPIPS-diversity evaluation (checked 2026-07-07, one relevant hit)
+
+User asked whether there's a 3D-generation-native (rather than 2D-image-diffusion) literature on diversity methods/metrics, given our whole metric suite (DINOv2, DreamSim, LPIPS, Vendi, DPP) is ported from 2D. Broad search via subagent (WebSearch/WebFetch) came back thin overall — SDS/NeRF-based diversity papers (DiverseDream arXiv:2312.02192, Dive3D arXiv:2506.13594) target a different failure mode (mode-seeking SDS loss) than Paint3D's single-pass depth-conditioned UV diffusion, and no paper addresses diversity for that specific mechanism. One directly useful hit kept:
+
+- **Point-UV Diffusion: Texture Generation on 3D Meshes with Point-UV Diffusion** — Yu et al. ICCV 2023, arXiv:2308.10490. **[V]** Same problem setting as us: diverse texture generation on a *fixed* mesh (not shape generation). Evaluates diversity via **pairwise LPIPS across 5 samples per mesh**, explicitly justifying rejection of FID/KID because their training data is color-biased — same reasoning we've applied to our own metric choice. Independent precedent for LPIPS-based diversity evaluation in exactly this setting (diffusion-textured fixed 3D mesh templates); worth citing to justify the LPIPS half of our metric suite as domain-appropriate, not just imported wholesale from 2D image diversity work.
+
+Rest of that research pass (3D-native metrics like COV/MMD/1-NNA/JSD from point-cloud literature, McDonnell's *Eye-catching Crowds* SIGGRAPH 2009) judged not worth folding in — either not applicable to a mesh-fixed/texture-only setting, or not adding enough beyond what's already covered.
+
 ## 6. Reference list (with verification status)
 
 | # | Paper | Venue | arXiv | Status |
@@ -154,5 +162,6 @@ Orthogonal to every method in §3.1-§3.5: leave the sampler/noise/guidance/cond
 | 28 | Mantri & Sasikumar — Interactive Fashion Content Generation | CVPR 2023 workshop | [2306.05182](https://arxiv.org/abs/2306.05182) | S |
 | 29 | Hirakawa & Shimizu — Masked Language Prompting for Fashion Style Recognition | arXiv 2025 | [2504.19455](https://arxiv.org/abs/2504.19455) | S |
 | 30 | Forouzandehmehr et al. — Character-based Outfit Generation via LLMs | IEEE BigData 2023 workshop | [2402.05941](https://arxiv.org/abs/2402.05941) | S |
+| 31 | Yu et al. — Point-UV Diffusion | ICCV 2023 | [2308.10490](https://arxiv.org/abs/2308.10490) | V |
 
 **Known limitations of this review:** compiled via web search + abstract-page reads, not full-paper reads; author lists for [V] entries come from arXiv abstract pages as summarized by an automated fetch and should be spot-checked when writing the dissertation's bibliography; 2025–2026 entries (2, 4, 5, 7, 8, 9, 11, 13) are recent and not yet widely replicated — treat single-paper claims as provisional. Searches were English-only, arXiv-centric.

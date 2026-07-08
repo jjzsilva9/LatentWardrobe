@@ -17,14 +17,30 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
 
-# Fixed method -> color mapping (categorical, colorblind-safe pair, consistent order).
+# Fixed method -> color mapping (categorical, colorblind-safe, consistent order).
+# weekend_20260703 (2-method) pair kept as-is; factorial7_20260706 (7-cell,
+# 2026-07-08) added on the Okabe-Ito colorblind-safe qualitative palette.
 METHOD_COLORS = {
     "baseline": "#4C72B0",
     "clip_tau002": "#DD8452",
+    "1_random_white_plain": "#000000",
+    "2_clip_white_plain": "#E69F00",
+    "3_clip_pink_plain": "#56B4E9",
+    "4_clip_white_color": "#009E73",
+    "5_clip_pink_color": "#F0E442",
+    "6_clip_white_llm": "#0072B2",
+    "7_clip_pink_llm": "#D55E00",
 }
 METHOD_LABELS = {
     "baseline": "Baseline",
     "clip_tau002": "CLIP τ=0.02",
+    "1_random_white_plain": "1: random mesh, white noise",
+    "2_clip_white_plain": "2: CLIP mesh, white noise",
+    "3_clip_pink_plain": "3: CLIP mesh, pink noise",
+    "4_clip_white_color": "4: CLIP mesh, white noise, colour prompt",
+    "5_clip_pink_color": "5: CLIP mesh, pink noise, colour prompt",
+    "6_clip_white_llm": "6: CLIP mesh, white noise, WANDER prompt",
+    "7_clip_pink_llm": "7: CLIP mesh, pink noise, WANDER prompt",
 }
 
 METRICS = [
