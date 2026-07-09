@@ -88,6 +88,18 @@ EMITTERS = {
 _REQUIRED_KEYS = ("role", "age_bracket", "build", "posture", "mood", "distinguishing_feature",
                   "color", "formality", "material", "pattern", "condition", "accessories")
 
+# Method 5b (axes="clothing", added 2026-07-09): candidates carry ONLY the six
+# clothing axes. Rationale, from re-reading WANDER Table 4 after factorial7
+# cells 6/7 converged to an all-brown wardrobe: all ten of WANDER's emitters
+# force a substantive VISUAL change ("Completely change the style/lighting/
+# color scheme/..."), whereas six of our twelve axes (age/build/posture/mood/
+# role/feature) describe the wearer -- something Paint3D cannot paint onto a
+# garment texture -- so half the mutation budget changed nothing of visual
+# importance. The paper's only emitter ablation is structural (multiple
+# emitters beat one emitter beat none, Vendi 3.60/2.95/2.61), which six
+# visually-substantive axes still satisfies.
+CLOTHING_KEYS = ("color", "formality", "material", "pattern", "condition", "accessories")
+
 _DRAFT_TEMPLATE = """You are drafting ONE member of a crowd for the scene: "{theme}".
 
 Describe this one person and their clothing. For EACH line below, pick a
@@ -123,17 +135,62 @@ Reply with ONLY a JSON object with exactly these keys: role, age_bracket,
 build, posture, mood, distinguishing_feature, color, formality, material,
 pattern, condition, accessories. No prose, no markdown fences."""
 
+_DRAFT_TEMPLATE_CLOTHING = """You are drafting ONE member of a crowd for the scene: "{theme}".
 
-def _format_draft_prompt(theme):
+Describe this one person's CLOTHING only. For EACH line below, pick a value
+that fits an outfit you'd plausibly find in that scene. You may pick from
+the suggestions or write your own short alternative if it fits the scene
+better.
+
+clothing color ({color}): ?
+clothing formality ({formality}): ?
+clothing material ({material}): ?
+clothing pattern ({pattern}): ?
+clothing condition ({condition}): ?
+clothing accessories ({accessories}), or "none": ?
+
+Reply with ONLY a JSON object with exactly these keys: color, formality,
+material, pattern, condition, accessories. No prose, no markdown fences."""
+
+# Magnitude language ("COMPLETELY CHANGE ... notably different") deliberately
+# mirrors WANDER's emitters, nine of which open with "Completely change" --
+# the legacy 12-axis template's "something different" permitted near-synonym
+# steps (e.g. worn -> weathered) that mutate without moving.
+_MUTATE_TEMPLATE_CLOTHING = """You are refining ONE member of a crowd for the scene: "{theme}".
+
+Here is their current clothing description (JSON): {current_json}
+
+COMPLETELY CHANGE the "{axis}" value: pick something notably different from
+the current value that still fits the scene. Keep every other field EXACTLY
+as given, unchanged.
+
+Reply with ONLY a JSON object with exactly these keys: color, formality,
+material, pattern, condition, accessories. No prose, no markdown fences."""
+
+
+def _keys_for(axes):
+    if axes == "all":
+        return _REQUIRED_KEYS
+    if axes == "clothing":
+        return CLOTHING_KEYS
+    raise ValueError(f"axes must be 'all' or 'clothing', got {axes!r}")
+
+
+def _format_draft_prompt(theme, axes="all"):
     w, c = EMITTERS["wearer"], EMITTERS["clothing"]
+    clothing_lists = dict(
+        color=", ".join(c["color"]), formality=", ".join(c["formality"]),
+        material=", ".join(c["material"]), pattern=", ".join(c["pattern"]),
+        condition=", ".join(c["condition"]), accessories=", ".join(c["accessories"]),
+    )
+    if axes == "clothing":
+        return _DRAFT_TEMPLATE_CLOTHING.format(theme=theme, **clothing_lists)
     return _DRAFT_TEMPLATE.format(
         theme=theme,
         age=", ".join(w["age bracket"]), build=", ".join(w["build"]),
         posture=", ".join(w["posture"]), mood=", ".join(w["mood"]),
         feature=", ".join(w["distinguishing feature"]),
-        color=", ".join(c["color"]), formality=", ".join(c["formality"]),
-        material=", ".join(c["material"]), pattern=", ".join(c["pattern"]),
-        condition=", ".join(c["condition"]), accessories=", ".join(c["accessories"]),
+        **clothing_lists,
     )
 
 
@@ -156,47 +213,50 @@ def _call_ollama(prompt, seed, model=OLLAMA_MODEL, timeout=120):
         ) from e
 
 
-def _parse_candidate(raw_json):
+def _parse_candidate(raw_json, keys=_REQUIRED_KEYS):
     d = json.loads(raw_json)
-    missing = [k for k in _REQUIRED_KEYS if k not in d]
+    missing = [k for k in keys if k not in d]
     if missing:
         raise ValueError(f"LLM response missing keys {missing}: {raw_json[:300]}")
-    return {k: str(d[k]).strip() for k in _REQUIRED_KEYS}
+    return {k: str(d[k]).strip() for k in keys}
 
 
-def _draft_one(theme, seed, retries=2):
+def _draft_one(theme, seed, retries=2, axes="all"):
     """One from-scratch candidate (used to seed the initial pool)."""
-    prompt = _format_draft_prompt(theme)
+    prompt = _format_draft_prompt(theme, axes)
+    keys = _keys_for(axes)
     for attempt in range(retries + 1):
         try:
-            return _parse_candidate(_call_ollama(prompt, seed=seed + attempt))
+            return _parse_candidate(_call_ollama(prompt, seed=seed + attempt), keys)
         except (json.JSONDecodeError, ValueError):
             if attempt == retries:
                 raise
             continue
 
 
-def mutate(theme, parent, axis, seed, retries=2):
+def mutate(theme, parent, axis, seed, retries=2, axes="all"):
     """One LLM mutation: regenerate a single emitter axis, holding every
     other field fixed. WANDER's per-generation LLM call, adapted to our
     structured (axis, value) emitters instead of free-text prompt edits."""
-    prompt = _MUTATE_TEMPLATE.format(theme=theme, current_json=json.dumps(parent), axis=axis)
+    template = _MUTATE_TEMPLATE_CLOTHING if axes == "clothing" else _MUTATE_TEMPLATE
+    prompt = template.format(theme=theme, current_json=json.dumps(parent), axis=axis)
+    keys = _keys_for(axes)
     for attempt in range(retries + 1):
         try:
-            return _parse_candidate(_call_ollama(prompt, seed=seed + attempt))
+            return _parse_candidate(_call_ollama(prompt, seed=seed + attempt), keys)
         except (json.JSONDecodeError, ValueError):
             if attempt == retries:
                 raise
             continue
 
 
-def crossover(parent_a, parent_b, seed):
+def crossover(parent_a, parent_b, seed, keys=_REQUIRED_KEYS):
     """Structured recombination: each axis independently inherited from one
     parent or the other. Done without an LLM call -- unlike WANDER's raw
     natural-language prompts, our emitters are already discrete key/value
     fields, so a coherent recombination doesn't need free-text merging."""
     rng = random.Random(seed)
-    return {k: (parent_a[k] if rng.random() < 0.5 else parent_b[k]) for k in _REQUIRED_KEYS}
+    return {k: (parent_a[k] if rng.random() < 0.5 else parent_b[k]) for k in keys}
 
 
 def candidate_to_description(cand):
@@ -213,18 +273,21 @@ def candidate_to_description(cand):
     def present(value):
         return value.strip().lower() not in ("none", "n/a", "")
 
-    wearer_bits = [cand["age_bracket"], cand["build"], cand["role"], f"looking {cand['mood']}",
-                   f"standing {cand['posture']}"]
-    if present(cand["distinguishing_feature"]):
-        wearer_bits.append(f"with {cand['distinguishing_feature']}")
     clothing_bits = [cand["condition"], cand["formality"], cand["color"]]
     clothing_bits += [v for v in (cand["material"], cand["pattern"]) if present(v)]
     clothing_bits.append("clothing")
     if present(cand["accessories"]):
         clothing_bits.append(f"and {cand['accessories']}")
-
-    wearer_desc = ", ".join(wearer_bits)
     clothing_desc = " ".join(clothing_bits)
+
+    if "role" not in cand:  # clothing-only candidate (axes="clothing", Method 5b)
+        return clothing_desc, clothing_desc
+
+    wearer_bits = [cand["age_bracket"], cand["build"], cand["role"], f"looking {cand['mood']}",
+                   f"standing {cand['posture']}"]
+    if present(cand["distinguishing_feature"]):
+        wearer_bits.append(f"with {cand['distinguishing_feature']}")
+    wearer_desc = ", ".join(wearer_bits)
     full_desc = f"{wearer_desc}, wearing {clothing_desc}"
     return full_desc, clothing_desc
 
@@ -251,7 +314,8 @@ def _knn_novelty(embeddings, k):
     return knn_dist.mean(dim=1)
 
 
-def evolve_crowd(theme, n, master_seed, generations, k_neighbors=3, device="cpu"):
+def evolve_crowd(theme, n, master_seed, generations, k_neighbors=3, device="cpu",
+                 novelty_on="full", axes="all"):
     """The evolving-pool loop. Pool size is fixed at n (= crowd size, see
     module docstring for why). Returns (pool, full_descs, clothing_descs,
     theme_relevance, history):
@@ -262,28 +326,51 @@ def evolve_crowd(theme, n, master_seed, generations, k_neighbors=3, device="cpu"
                          (reported, not enforced -- see module docstring)
       history         -- list of `generations` dicts logging every
                          mutation/crossover attempt, accepted or not
+
+    novelty_on selects which rendered text the k-NN novelty is scored on:
+      "full"     -- the whole wearer+clothing description (factorial7 cells
+                    6/7). Weakness observed in that batch: wearer-axis edits
+                    (age/mood/posture) move CLIP text embeddings but barely
+                    change the rendered garment, so they soak up the selection
+                    pressure and the pool converged to an all-brown wardrobe.
+      "clothing" -- the clothing clause only, so selection pressure lands on
+                    the axes Paint3D can actually render (Method 5b, cell 8).
+    axes selects the emitter set (see CLOTHING_KEYS): "all" = the legacy
+    12-axis wearer+clothing candidates (factorial7 cells 6/7), "clothing" =
+    Method 5b's clothing-only candidates, whose mutations also use WANDER's
+    "completely change" magnitude language (_MUTATE_TEMPLATE_CLOTHING).
+
+    The RNG stream is deliberately NOT keyed on novelty_on/axes: with the same
+    master seed, variants draw the same initial-pool seeds and the same
+    mutation/crossover choices, isolating the design change (the ollama
+    calls themselves are still not bit-reproducible -- see module docstring).
     """
+    if novelty_on not in ("full", "clothing"):
+        raise ValueError(f"novelty_on must be 'full' or 'clothing', got {novelty_on!r}")
+    desc_idx = 0 if novelty_on == "full" else 1
+    keys = _keys_for(axes)
     rng = random.Random(f"{master_seed}:{theme}:evolve")
 
-    pool = [_draft_one(theme, seed=rng.randrange(1, 2**31 - 1)) for _ in range(n)]
+    pool = [_draft_one(theme, seed=rng.randrange(1, 2**31 - 1), axes=axes) for _ in range(n)]
     full_descs = [candidate_to_description(c)[0] for c in pool]
-    embeddings = _clip_embed_texts(full_descs, device)
+    embeddings = _clip_embed_texts([candidate_to_description(c)[desc_idx] for c in pool], device)
 
     history = []
     for _ in range(generations):
-        axis = rng.choice(_REQUIRED_KEYS)
+        axis = rng.choice(keys)
         use_crossover = n >= 2 and rng.random() < 0.5
         if use_crossover:
             ia, ib = rng.sample(range(n), 2)
-            child = crossover(pool[ia], pool[ib], seed=rng.randrange(1, 2**31 - 1))
+            child = crossover(pool[ia], pool[ib], seed=rng.randrange(1, 2**31 - 1), keys=keys)
             op = {"type": "crossover", "parents": [ia, ib]}
         else:
             ip = rng.randrange(n)
-            child = mutate(theme, pool[ip], axis, seed=rng.randrange(1, 2**31 - 1))
+            child = mutate(theme, pool[ip], axis, seed=rng.randrange(1, 2**31 - 1), axes=axes)
             op = {"type": "mutation", "parent": ip, "axis": axis}
 
-        child_full_desc, _ = candidate_to_description(child)
-        child_emb = _clip_embed_texts([child_full_desc], device)
+        child_texts = candidate_to_description(child)
+        child_full_desc = child_texts[0]
+        child_emb = _clip_embed_texts([child_texts[desc_idx]], device)
 
         pool_with_child = torch.cat([embeddings, child_emb], dim=0)
         novelties = _knn_novelty(pool_with_child, k_neighbors)
@@ -302,6 +389,11 @@ def evolve_crowd(theme, n, master_seed, generations, k_neighbors=3, device="cpu"
 
     clothing_descs = [candidate_to_description(c)[1] for c in pool]
     theme_emb = _clip_embed_texts([theme], device)
-    theme_relevance = (embeddings @ theme_emb.T).squeeze(1).tolist()
+    # theme relevance is always full-description-vs-theme regardless of what
+    # novelty was scored on, so it stays comparable across novelty_on variants
+    # (re-embedded rather than reusing `embeddings`, which may hold clothing-
+    # only vectors).
+    full_embs = _clip_embed_texts(full_descs, device)
+    theme_relevance = (full_embs @ theme_emb.T).squeeze(1).tolist()
 
     return pool, full_descs, clothing_descs, theme_relevance, history

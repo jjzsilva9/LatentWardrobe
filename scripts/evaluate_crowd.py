@@ -91,6 +91,14 @@ import torch
 
 RENDER_REL = "stage2/tile_res_0/render_rgb.mp4"
 RENDER_ALL_REL = "stage2/tile_res_0/render_all.mp4"  # rgb|depth|z_normals panels, same frame index as RENDER_REL
+# Coarse-stage fallbacks (added 2026-07-09): the 2026-07-08 crash left 3
+# factorial7 members with a finished tile_res_0/albedo.png but no tile_res_0
+# renders -- the coarse stage2/ renders exist and use the same camera path, so
+# fall back to them (scored slightly pre-refinement) rather than dropping the
+# member from every pairwise metric. Cached separately (eval_views_coarse) so
+# a later re-render of tile_res_0 can't collide with stale coarse frames.
+RENDER_REL_COARSE = "stage2/render_rgb.mp4"
+RENDER_ALL_REL_COARSE = "stage2/render_all.mp4"
 UV_ALBEDO_REL = "stage2/albedo.png"  # coarse stage -- see module docstring, don't swap for tile_res_0's copy
 UV_MASK_REL = "stage2/mask.png"      # matches UV_ALBEDO_REL only; 0=painted, 255=unpainted (magic-pink) placeholder
 VIEWS_CACHE = "eval_views"
@@ -122,11 +130,15 @@ def parse_args():
 
 
 def extract_views(member_dir, frame_ids):
-    """Grab fixed frames from the member's turntable video; cache as PNGs."""
-    video = member_dir / RENDER_REL
+    """Grab fixed frames from the member's turntable video; cache as PNGs.
+    Falls back to the coarse-stage render (see RENDER_REL_COARSE) when the
+    tile_res_0 render is missing."""
+    video, cache_name = member_dir / RENDER_REL, VIEWS_CACHE
+    if not video.exists():
+        video, cache_name = member_dir / RENDER_REL_COARSE, VIEWS_CACHE + "_coarse"
     if not video.exists():
         return None
-    cache = member_dir / VIEWS_CACHE
+    cache = member_dir / cache_name
     cache.mkdir(exist_ok=True)
     paths = [cache / f"frame_{i:03d}.png" for i in frame_ids]
     if all(p.exists() for p in paths):
@@ -149,10 +161,12 @@ def extract_mask_views(member_dir, frame_ids):
     frames, threshold to a binary foreground mask, cache as PNGs. Returns None
     if render_all.mp4 is missing (older data) -- callers fall back to
     unmasked behaviour in that case."""
-    video = member_dir / RENDER_ALL_REL
+    video, cache_name = member_dir / RENDER_ALL_REL, MASK_CACHE
+    if not video.exists():
+        video, cache_name = member_dir / RENDER_ALL_REL_COARSE, MASK_CACHE + "_coarse"
     if not video.exists():
         return None
-    cache = member_dir / MASK_CACHE
+    cache = member_dir / cache_name
     cache.mkdir(exist_ok=True)
     paths = [cache / f"mask_{i:03d}.png" for i in frame_ids]
     if all(p.exists() for p in paths):
@@ -314,7 +328,7 @@ def main():
     prompt = manifest["crowd_prompt"]
 
     # --- collect views + masks per completed member
-    members, views, masks, skipped = [], {}, {}, []
+    members, views, masks, skipped, coarse_members = [], {}, {}, [], []
     mask_fallback = 0
     for m in manifest["members"]:
         mdir = args.crowd_dir / m["member"]
@@ -322,6 +336,8 @@ def main():
         if paths is None:
             skipped.append(m["member"])
             continue
+        if not (mdir / RENDER_REL).exists():
+            coarse_members.append(m["member"])
         mask_paths = extract_mask_views(mdir, args.frames)
         if mask_paths is None:
             mask_fallback += 1
@@ -332,6 +348,9 @@ def main():
         sys.exit(f"only {len(members)} member(s) with renders — need >= 2 for pairwise metrics "
                  f"(skipped: {skipped})")
     print(f"crowd '{prompt}': {len(members)} members evaluated, {len(skipped)} skipped {skipped}")
+    if coarse_members:
+        print(f"note: {len(coarse_members)} member(s) scored on the coarse-stage render "
+              f"(tile_res_0 render missing): {coarse_members}")
     if mask_fallback:
         print(f"warning: {mask_fallback} member(s) missing render_all.mp4 (older data) — "
               f"background masking disabled for them (full-frame fallback)")
@@ -473,6 +492,7 @@ def main():
         "crowd_prompt": prompt,
         "num_members_evaluated": len(members),
         "skipped_members": skipped,
+        "coarse_render_members": coarse_members,
         "frames": args.frames,
         "patch_coverage_tau": tau,
         "diversity": {

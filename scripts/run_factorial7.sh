@@ -136,5 +136,18 @@ run 6_clip_white_llm --mesh-sampling clip --tau "$TAU" --llm-emitters || exit 1
 # 7) sampled mesh, pink noise, WANDER-inspired prompt
 run 7_clip_pink_llm --mesh-sampling clip --tau "$TAU" --pink-noise --llm-emitters || exit 1
 
+# 8/9) Method 5b (added 2026-07-09): WANDER-inspired prompt evolution fixed
+#    after cells 6/7 converged to an all-brown wardrobe (color chi2 below even
+#    the plain baseline). Three changes vs cells 6/7, applied together as one
+#    method: (a) emitters trimmed to the six clothing-only axes -- all ten of
+#    WANDER's own emitters force substantive VISUAL changes, whereas wearer
+#    axes (age/mood/posture/...) can't alter the rendered garment texture and
+#    soaked up half the mutation budget; (b) mutation prompt adopts WANDER's
+#    "completely change" magnitude language; (c) k-NN novelty scored on the
+#    clothing description (with clothing-only candidates, the whole
+#    description). Direct comparison partners: cell 8 vs 6, cell 9 vs 7.
+run 8_clip_white_llm6 --mesh-sampling clip --tau "$TAU" --llm-emitters --llm-axes clothing --llm-novelty clothing || exit 1
+run 9_clip_pink_llm6 --mesh-sampling clip --tau "$TAU" --pink-noise --llm-emitters --llm-axes clothing --llm-novelty clothing || exit 1
+
 echo "FACTORIAL7 GENERATION COMPLETE -- run scripts/run_factorial7_eval.sh next" | tee -a "$LOCAL_OUT/run.log"
 cp "$LOCAL_OUT/run.log" "$REMOTE_OUT/run.log" 2>/dev/null || true

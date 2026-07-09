@@ -119,6 +119,20 @@ def parse_args():
                    help="evolution generations (--llm-emitters only); default 3x --num-members")
     p.add_argument("--llm-k-neighbors", type=int, default=3,
                    help="k for the k-NN novelty score within the pool (--llm-emitters only)")
+    p.add_argument("--llm-novelty", choices=["full", "clothing"], default="full",
+                   help="which rendered text the k-NN novelty is scored on (--llm-emitters only): "
+                        "'full' = whole wearer+clothing description (factorial7 cells 6/7); "
+                        "'clothing' = clothing clause only, so selection pressure lands on the "
+                        "axes that actually change the rendered texture (Method 5b -- added "
+                        "2026-07-09 after cells 6/7 converged to an all-brown wardrobe: "
+                        "wearer-axis edits dominated the full-text novelty signal)")
+    p.add_argument("--llm-axes", choices=["all", "clothing"], default="all",
+                   help="emitter axis set (--llm-emitters only): 'all' = the legacy 12 "
+                        "wearer+clothing axes (factorial7 cells 6/7); 'clothing' = Method 5b's "
+                        "six clothing-only axes with WANDER's 'completely change' mutation "
+                        "magnitude -- every one of WANDER's own ten emitters forces a "
+                        "substantive visual change, whereas the six wearer axes can't alter "
+                        "the rendered garment texture at all (see llm_prompt_mutation.py)")
     p.add_argument("--skip-stage2", action="store_true", help="run stage 1 only")
     p.add_argument("--dry-run", action="store_true",
                    help="sample outfits + write merged meshes + manifest, skip Paint3D")
@@ -216,7 +230,7 @@ def sample_members(prompt, num, master_seed, lib, fullbody_prob, slot_weights=No
 
 
 def sample_members_with_llm(prompt, num, master_seed, lib, fullbody_prob, mesh_sampling_mode, tau,
-                            generations, k_neighbors):
+                            generations, k_neighbors, novelty_on="full", axes="all"):
     """Method 5: evolve the whole crowd's wearer+clothing descriptions as one
     WANDER-inspired population (see llm_prompt_mutation.evolve_crowd), then
     sample garments per member from its own evolved clothing_desc as the
@@ -225,7 +239,7 @@ def sample_members_with_llm(prompt, num, master_seed, lib, fullbody_prob, mesh_s
     import mesh_sampling
 
     pool, full_descs, clothing_descs, theme_relevance, history = lpm.evolve_crowd(
-        prompt, num, master_seed, generations, k_neighbors)
+        prompt, num, master_seed, generations, k_neighbors, novelty_on=novelty_on, axes=axes)
 
     rng = random.Random(f"{master_seed}:{prompt}:garments")
     members = []
@@ -467,22 +481,31 @@ def main():
             if llm_members_path.exists():
                 try:
                     saved = json.loads(llm_members_path.read_text())
-                    if len(saved["members"]) == args.num_members:
+                    # pre-Method-5b files predate both keys; they were all full/all
+                    saved_novelty = saved.get("llm_novelty", "full")
+                    saved_axes = saved.get("llm_axes", "all")
+                    if len(saved["members"]) != args.num_members:
+                        print(f"[llm] {llm_members_path} holds {len(saved['members'])} members but "
+                              f"--num-members={args.num_members}; discarding it and re-evolving", flush=True)
+                    elif (saved_novelty, saved_axes) != (args.llm_novelty, args.llm_axes):
+                        print(f"[llm] {llm_members_path} was evolved with --llm-novelty={saved_novelty} "
+                              f"--llm-axes={saved_axes} but this run asked for {args.llm_novelty}/"
+                              f"{args.llm_axes}; discarding it and re-evolving", flush=True)
+                    else:
                         members, llm_history = saved["members"], saved["llm_evolution_history"]
                         print(f"[llm] reusing {len(members)} previously-evolved members from "
                               f"{llm_members_path} (evolution is not reproducible; never re-run it mid-crowd)",
                               flush=True)
-                    else:
-                        print(f"[llm] {llm_members_path} holds {len(saved['members'])} members but "
-                              f"--num-members={args.num_members}; discarding it and re-evolving", flush=True)
                 except (json.JSONDecodeError, KeyError) as e:
                     print(f"[llm] {llm_members_path} unreadable ({e}); re-evolving", flush=True)
             if members is None:
                 members, llm_history = sample_members_with_llm(
                     prompt, args.num_members, args.seed, lib, args.fullbody_prob,
-                    args.mesh_sampling, args.tau, generations, args.llm_k_neighbors)
+                    args.mesh_sampling, args.tau, generations, args.llm_k_neighbors,
+                    novelty_on=args.llm_novelty, axes=args.llm_axes)
                 llm_members_path.write_text(json.dumps(
-                    {"members": members, "llm_evolution_history": llm_history}, indent=2))
+                    {"members": members, "llm_evolution_history": llm_history,
+                     "llm_novelty": args.llm_novelty, "llm_axes": args.llm_axes}, indent=2))
         else:
             llm_history = None
             slot_weights = None
@@ -504,6 +527,8 @@ def main():
             "llm_emitters": args.llm_emitters,
             "llm_generations": generations if args.llm_emitters else None,
             "llm_k_neighbors": args.llm_k_neighbors if args.llm_emitters else None,
+            "llm_novelty": args.llm_novelty if args.llm_emitters else None,
+            "llm_axes": args.llm_axes if args.llm_emitters else None,
             "llm_model": llm_prompt_mutation.OLLAMA_MODEL if args.llm_emitters else None,
             "llm_evolution_history": llm_history,
             "stage1_prompt_template": "turn around, {prompt}, {full_desc}, {category_phrase}",

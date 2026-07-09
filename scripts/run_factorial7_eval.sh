@@ -18,7 +18,7 @@ cd "/mnt/u/My Documents/LatentWardrobe"
 OUT=outputs/factorial7_20260706
 PROMPT_SLUG=medieval_villagers  # must match generate_crowd_baseline.py's slugify(PROMPT)
 CELLS=(1_random_white_plain 2_clip_white_plain 3_clip_pink_plain 4_clip_white_color \
-       5_clip_pink_color 6_clip_white_llm 7_clip_pink_llm)
+       5_clip_pink_color 6_clip_white_llm 7_clip_pink_llm 8_clip_white_llm6 9_clip_pink_llm6)
 
 for cell in "${CELLS[@]}"; do
   crowd_dir="$OUT/$cell/$PROMPT_SLUG"

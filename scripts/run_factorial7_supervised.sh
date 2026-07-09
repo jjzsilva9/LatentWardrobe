@@ -52,7 +52,8 @@ main() {
   local PY=/root/miniconda3/envs/paint3d/bin/python
   local SLOG="$LOCAL_OUT/supervisor.log"
   local CELLS=(1_random_white_plain 2_clip_white_plain 3_clip_pink_plain
-               4_clip_white_color 5_clip_pink_color 6_clip_white_llm 7_clip_pink_llm)
+               4_clip_white_color 5_clip_pink_color 6_clip_white_llm 7_clip_pink_llm
+               8_clip_white_llm6 9_clip_pink_llm6)
   local N=10
   local TARGET=$(( ${#CELLS[@]} * N ))
   local BATCH_WINDOW=7200   # max seconds per attempt before forced restart

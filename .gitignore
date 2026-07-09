@@ -4,6 +4,7 @@
 # Only the small experimental record is kept in git; back up full outputs/
 # to OneDrive if a batch is worth preserving without regeneration.
 outputs/**
+!outputs/factorial7_20260706/**
 !outputs/**/
 !outputs/**/manifest.json
 !outputs/**/metrics.json
