@@ -10,6 +10,8 @@
   "llm_emitters": false,
   "llm_generations": null,
   "llm_k_neighbors": null,
+  "llm_novelty": null,
+  "llm_axes": null,
   "llm_model": null,
   "llm_evolution_history": null,
   "stage1_prompt_template": "turn around, {prompt}, {full_desc}, {category_phrase}",
@@ -33,13 +35,11 @@
         "path": "/root/factorial7_local/4_clip_white_color/medieval_villagers/member_00/outfit.obj"
       },
       "stage1": {
-        "status": "ok",
-        "seconds": 282.9,
+        "status": "skipped (resume)",
         "final_texture": "/root/factorial7_local/4_clip_white_color/medieval_villagers/member_00/stage1/res-0/albedo.png"
       },
       "stage2": {
-        "status": "ok",
-        "seconds": 1561.9,
+        "status": "skipped (resume)",
         "final_texture": "/root/factorial7_local/4_clip_white_color/medieval_villagers/member_00/stage2/tile_res_0/albedo.png"
       }
     },
@@ -51,7 +51,19 @@
       ],
       "sd_seed": 262125522,
       "color": "green",
-      "category_phrase": "wearing a green jumpsuit"
+      "category_phrase": "wearing a green jumpsuit",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/factorial7_local/4_clip_white_color/medieval_villagers/member_01/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/factorial7_local/4_clip_white_color/medieval_villagers/member_01/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/factorial7_local/4_clip_white_color/medieval_villagers/member_01/stage2/tile_res_0/albedo.png"
+      }
     },
     {
       "member": "member_02",
@@ -62,7 +74,19 @@
       ],
       "sd_seed": 2032278251,
       "color": "blue",
-      "category_phrase": "wearing a blue blouse and blue skirt"
+      "category_phrase": "wearing a blue blouse and blue skirt",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/factorial7_local/4_clip_white_color/medieval_villagers/member_02/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/factorial7_local/4_clip_white_color/medieval_villagers/member_02/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/factorial7_local/4_clip_white_color/medieval_villagers/member_02/stage2/tile_res_0/albedo.png"
+      }
     },
     {
       "member": "member_03",
@@ -72,7 +96,19 @@
       ],
       "sd_seed": 321690044,
       "color": "blue",
-      "category_phrase": "wearing a blue apron"
+      "category_phrase": "wearing a blue apron",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/factorial7_local/4_clip_white_color/medieval_villagers/member_03/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/factorial7_local/4_clip_white_color/medieval_villagers/member_03/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/factorial7_local/4_clip_white_color/medieval_villagers/member_03/stage2/tile_res_0/albedo.png"
+      }
     },
     {
       "member": "member_04",
@@ -83,7 +119,19 @@
       ],
       "sd_seed": 1598445786,
       "color": "brown",
-      "category_phrase": "wearing a brown blouse and brown mini skirt"
+      "category_phrase": "wearing a brown blouse and brown mini skirt",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/factorial7_local/4_clip_white_color/medieval_villagers/member_04/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/factorial7_local/4_clip_white_color/medieval_villagers/member_04/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/factorial7_local/4_clip_white_color/medieval_villagers/member_04/stage2/tile_res_0/albedo.png"
+      }
     },
     {
       "member": "member_05",
@@ -94,7 +142,19 @@
       ],
       "sd_seed": 1135119011,
       "color": "gold",
-      "category_phrase": "wearing a gold hoodie and gold trousers"
+      "category_phrase": "wearing a gold hoodie and gold trousers",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/factorial7_local/4_clip_white_color/medieval_villagers/member_05/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/factorial7_local/4_clip_white_color/medieval_villagers/member_05/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/factorial7_local/4_clip_white_color/medieval_villagers/member_05/stage2/tile_res_0/albedo.png"
+      }
     },
     {
       "member": "member_06",
@@ -105,7 +165,19 @@
       ],
       "sd_seed": 1530507128,
       "color": "grey",
-      "category_phrase": "wearing a grey blouse and grey skirt"
+      "category_phrase": "wearing a grey blouse and grey skirt",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/factorial7_local/4_clip_white_color/medieval_villagers/member_06/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/factorial7_local/4_clip_white_color/medieval_villagers/member_06/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/factorial7_local/4_clip_white_color/medieval_villagers/member_06/stage2/tile_res_0/albedo.png"
+      }
     },
     {
       "member": "member_07",
@@ -116,7 +188,19 @@
       ],
       "sd_seed": 1983278328,
       "color": "orange",
-      "category_phrase": "wearing a orange tunic and orange trousers"
+      "category_phrase": "wearing a orange tunic and orange trousers",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/factorial7_local/4_clip_white_color/medieval_villagers/member_07/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/factorial7_local/4_clip_white_color/medieval_villagers/member_07/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/factorial7_local/4_clip_white_color/medieval_villagers/member_07/stage2/tile_res_0/albedo.png"
+      }
     },
     {
       "member": "member_08",
@@ -127,7 +211,19 @@
       ],
       "sd_seed": 515968820,
       "color": "yellow",
-      "category_phrase": "wearing a yellow hoodie and yellow leggings"
+      "category_phrase": "wearing a yellow hoodie and yellow leggings",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/factorial7_local/4_clip_white_color/medieval_villagers/member_08/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/factorial7_local/4_clip_white_color/medieval_villagers/member_08/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/factorial7_local/4_clip_white_color/medieval_villagers/member_08/stage2/tile_res_0/albedo.png"
+      }
     },
     {
       "member": "member_09",
@@ -138,7 +234,19 @@
       ],
       "sd_seed": 1827978058,
       "color": "black",
-      "category_phrase": "wearing a black tank top and black skirt"
+      "category_phrase": "wearing a black tank top and black skirt",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/factorial7_local/4_clip_white_color/medieval_villagers/member_09/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/factorial7_local/4_clip_white_color/medieval_villagers/member_09/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/factorial7_local/4_clip_white_color/medieval_villagers/member_09/stage2/tile_res_0/albedo.png"
+      }
     }
   ]
 }
