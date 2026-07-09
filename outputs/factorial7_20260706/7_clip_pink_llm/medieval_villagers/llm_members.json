@@ -1,0 +1,565 @@
+{
+  "members": [
+    {
+      "member": "member_00",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/tank_top_01.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/elvs_gored_midiskirt1.obj"
+      ],
+      "sd_seed": 1183151484,
+      "color": null,
+      "llm": {
+        "winner": {
+          "role": "Village Baker",
+          "age_bracket": "middle-aged",
+          "build": "sturdy",
+          "posture": "stooped",
+          "mood": "weary",
+          "distinguishing_feature": "none",
+          "color": "brown",
+          "formality": "rustic",
+          "material": "linen",
+          "pattern": "patched",
+          "condition": "weathered",
+          "accessories": "apron"
+        },
+        "full_desc": "middle-aged, sturdy, Village Baker, looking weary, standing stooped, wearing weathered rustic brown linen patched clothing and apron",
+        "clothing_desc": "weathered rustic brown linen patched clothing and apron",
+        "theme_relevance": 0.4820723831653595
+      }
+    },
+    {
+      "member": "member_01",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/offshoulder_top.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/m_trousers_01.obj"
+      ],
+      "sd_seed": 1960522624,
+      "color": null,
+      "llm": {
+        "winner": {
+          "role": "local apothecary",
+          "age_bracket": "elderly",
+          "build": "average build",
+          "posture": "stooped",
+          "mood": "weary",
+          "distinguishing_feature": "none",
+          "color": "brown",
+          "formality": "rustic simplicity",
+          "material": "wool",
+          "pattern": "plaids",
+          "condition": "worn",
+          "accessories": "tool-belt"
+        },
+        "full_desc": "elderly, average build, local apothecary, looking weary, standing stooped, wearing worn rustic simplicity brown wool plaids clothing and tool-belt",
+        "clothing_desc": "worn rustic simplicity brown wool plaids clothing and tool-belt",
+        "theme_relevance": 0.622698187828064
+      }
+    },
+    {
+      "member": "member_02",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/tube_top.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/m_trousers_01.obj"
+      ],
+      "sd_seed": 1125320629,
+      "color": null,
+      "llm": {
+        "winner": {
+          "role": "local blacksmith",
+          "age_bracket": "middle-aged",
+          "build": "stocky",
+          "posture": "stooped",
+          "mood": "weary",
+          "distinguishing_feature": "scar above left eyebrow",
+          "color": "brown",
+          "formality": "rustic",
+          "material": "leather and wool",
+          "pattern": "patched",
+          "condition": "worn",
+          "accessories": "tool-belt"
+        },
+        "full_desc": "middle-aged, stocky, local blacksmith, looking weary, standing stooped, with scar above left eyebrow, wearing worn rustic brown leather and wool patched clothing and tool-belt",
+        "clothing_desc": "worn rustic brown leather and wool patched clothing and tool-belt",
+        "theme_relevance": 0.45390334725379944
+      }
+    },
+    {
+      "member": "member_03",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/tube_top.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/mens_trouser_f_elv_chr.obj"
+      ],
+      "sd_seed": 1043778633,
+      "color": null,
+      "llm": {
+        "winner": {
+          "role": "Village Baker",
+          "age_bracket": "young adult",
+          "build": "average build",
+          "posture": "stooped",
+          "mood": "weary",
+          "distinguishing_feature": "none",
+          "color": "brown",
+          "formality": "practical work",
+          "material": "wool",
+          "pattern": "plaids",
+          "condition": "worn",
+          "accessories": "apron"
+        },
+        "full_desc": "young adult, average build, Village Baker, looking weary, standing stooped, wearing worn practical work brown wool plaids clothing and apron",
+        "clothing_desc": "worn practical work brown wool plaids clothing and apron",
+        "theme_relevance": 0.468688040971756
+      }
+    },
+    {
+      "member": "member_04",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/turtleneck_halter.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/skirt_mini.obj"
+      ],
+      "sd_seed": 1746304310,
+      "color": null,
+      "llm": {
+        "winner": {
+          "role": "Village Baker",
+          "age_bracket": "middle-aged",
+          "build": "stocky",
+          "posture": "stooped",
+          "mood": "resigned",
+          "distinguishing_feature": "none",
+          "color": "brown",
+          "formality": "practical work",
+          "material": "leather and wool",
+          "pattern": "plaids",
+          "condition": "worn",
+          "accessories": "apron"
+        },
+        "full_desc": "middle-aged, stocky, Village Baker, looking resigned, standing stooped, wearing worn practical work brown leather and wool plaids clothing and apron",
+        "clothing_desc": "worn practical work brown leather and wool plaids clothing and apron",
+        "theme_relevance": 0.39409559965133667
+      }
+    },
+    {
+      "member": "member_05",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/elvs_fringe_dress1.obj"
+      ],
+      "sd_seed": 422640194,
+      "color": null,
+      "llm": {
+        "winner": {
+          "role": "Blacksmith's apprentice",
+          "age_bracket": "young adult",
+          "build": "stocky",
+          "posture": "rigid",
+          "mood": "proud",
+          "distinguishing_feature": "none",
+          "color": "brown",
+          "formality": "practical work",
+          "material": "leather",
+          "pattern": "embroidered",
+          "condition": "worn",
+          "accessories": "an apron, a tool-belt"
+        },
+        "full_desc": "young adult, stocky, Blacksmith's apprentice, looking proud, standing rigid, wearing worn practical work brown leather embroidered clothing and an apron, a tool-belt",
+        "clothing_desc": "worn practical work brown leather embroidered clothing and an apron, a tool-belt",
+        "theme_relevance": 0.44133418798446655
+      }
+    },
+    {
+      "member": "member_06",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/offshoulder_top.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/elvs_gored_midiskirt1.obj"
+      ],
+      "sd_seed": 836209266,
+      "color": null,
+      "llm": {
+        "winner": {
+          "role": "Village Baker",
+          "age_bracket": "middle aged",
+          "build": "average build",
+          "posture": "stooped",
+          "mood": "weary",
+          "distinguishing_feature": "none",
+          "color": "brown",
+          "formality": "practical work",
+          "material": "wool",
+          "pattern": "patched",
+          "condition": "worn",
+          "accessories": "apron"
+        },
+        "full_desc": "middle aged, average build, Village Baker, looking weary, standing stooped, wearing worn practical work brown wool patched clothing and apron",
+        "clothing_desc": "worn practical work brown wool patched clothing and apron",
+        "theme_relevance": 0.7066375017166138
+      }
+    },
+    {
+      "member": "member_07",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/asymmetric_tunic_and_sash.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/shortjeans.obj"
+      ],
+      "sd_seed": 1565457962,
+      "color": null,
+      "llm": {
+        "winner": {
+          "role": "local blacksmith",
+          "age_bracket": "middle aged",
+          "build": "stocky",
+          "posture": "stooped",
+          "mood": "weary",
+          "distinguishing_feature": "none",
+          "color": "brown",
+          "formality": "rustic",
+          "material": "wool",
+          "pattern": "patched",
+          "condition": "tattered",
+          "accessories": "apron"
+        },
+        "full_desc": "middle aged, stocky, local blacksmith, looking weary, standing stooped, wearing tattered rustic brown wool patched clothing and apron",
+        "clothing_desc": "tattered rustic brown wool patched clothing and apron",
+        "theme_relevance": 0.5975366830825806
+      }
+    },
+    {
+      "member": "member_08",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/f_lusekofta.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/elvs_disco_pencilskirt1.obj"
+      ],
+      "sd_seed": 57745487,
+      "color": null,
+      "llm": {
+        "winner": {
+          "role": "Village Blacksmith",
+          "age_bracket": "middle-aged",
+          "build": "sturdy",
+          "posture": "stooped",
+          "mood": "weary",
+          "distinguishing_feature": "none",
+          "color": "brown",
+          "formality": "practical work",
+          "material": "linen",
+          "pattern": "patched",
+          "condition": "weathered",
+          "accessories": "an apron"
+        },
+        "full_desc": "middle-aged, sturdy, Village Blacksmith, looking weary, standing stooped, wearing weathered practical work brown linen patched clothing and an apron",
+        "clothing_desc": "weathered practical work brown linen patched clothing and an apron",
+        "theme_relevance": 0.4352376163005829
+      }
+    },
+    {
+      "member": "member_09",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/rescueteam_jacket_female.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/jeansskirt.obj"
+      ],
+      "sd_seed": 829734233,
+      "color": null,
+      "llm": {
+        "winner": {
+          "role": "local blacksmith",
+          "age_bracket": "middle-aged",
+          "build": "average build",
+          "posture": "stooped",
+          "mood": "weary",
+          "distinguishing_feature": "none",
+          "color": "brown",
+          "formality": "practical work",
+          "material": "wool",
+          "pattern": "plaids",
+          "condition": "worn",
+          "accessories": "tool-belt"
+        },
+        "full_desc": "middle-aged, average build, local blacksmith, looking weary, standing stooped, wearing worn practical work brown wool plaids clothing and tool-belt",
+        "clothing_desc": "worn practical work brown wool plaids clothing and tool-belt",
+        "theme_relevance": 0.5621393918991089
+      }
+    }
+  ],
+  "llm_evolution_history": [
+    {
+      "type": "mutation",
+      "parent": 7,
+      "axis": "build",
+      "accepted": true,
+      "child_novelty": 0.0465037040412426,
+      "replaced_novelty": 0.045196533203125
+    },
+    {
+      "type": "mutation",
+      "parent": 9,
+      "axis": "role",
+      "accepted": true,
+      "child_novelty": 0.07159838825464249,
+      "replaced_novelty": 0.05342544987797737
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        1,
+        9
+      ],
+      "accepted": true,
+      "child_novelty": 0.0663381814956665,
+      "replaced_novelty": 0.05375603958964348
+    },
+    {
+      "type": "mutation",
+      "parent": 0,
+      "axis": "pattern",
+      "accepted": true,
+      "child_novelty": 0.1393936723470688,
+      "replaced_novelty": 0.06425807625055313
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        9,
+        4
+      ],
+      "accepted": true,
+      "child_novelty": 0.04531530663371086,
+      "replaced_novelty": 0.045315224677324295
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        1,
+        8
+      ],
+      "accepted": false,
+      "child_novelty": 0.05452793836593628,
+      "replaced_novelty": 0.05860340595245361
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        6,
+        9
+      ],
+      "accepted": false,
+      "child_novelty": 0.04418649151921272,
+      "replaced_novelty": 0.04961760714650154
+    },
+    {
+      "type": "mutation",
+      "parent": 6,
+      "axis": "posture",
+      "accepted": false,
+      "child_novelty": 0.04254573583602905,
+      "replaced_novelty": 0.04759667441248894
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        4,
+        1
+      ],
+      "accepted": true,
+      "child_novelty": 0.055854421108961105,
+      "replaced_novelty": 0.047775447368621826
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        8,
+        5
+      ],
+      "accepted": true,
+      "child_novelty": 0.09334460645914078,
+      "replaced_novelty": 0.07198953628540039
+    },
+    {
+      "type": "mutation",
+      "parent": 0,
+      "axis": "age_bracket",
+      "accepted": true,
+      "child_novelty": 0.11849796772003174,
+      "replaced_novelty": 0.07451260089874268
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        7,
+        5
+      ],
+      "accepted": true,
+      "child_novelty": 0.07197463512420654,
+      "replaced_novelty": 0.06764304637908936
+    },
+    {
+      "type": "mutation",
+      "parent": 1,
+      "axis": "condition",
+      "accepted": true,
+      "child_novelty": 0.060849010944366455,
+      "replaced_novelty": 0.05626201629638672
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        4,
+        6
+      ],
+      "accepted": true,
+      "child_novelty": 0.08649281412363052,
+      "replaced_novelty": 0.08132942765951157
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        3,
+        2
+      ],
+      "accepted": true,
+      "child_novelty": 0.1719651073217392,
+      "replaced_novelty": 0.09045139700174332
+    },
+    {
+      "type": "mutation",
+      "parent": 9,
+      "axis": "age_bracket",
+      "accepted": true,
+      "child_novelty": 0.14199066162109375,
+      "replaced_novelty": 0.09778404235839844
+    },
+    {
+      "type": "mutation",
+      "parent": 2,
+      "axis": "formality",
+      "accepted": true,
+      "child_novelty": 0.1073375940322876,
+      "replaced_novelty": 0.1028723493218422
+    },
+    {
+      "type": "mutation",
+      "parent": 4,
+      "axis": "mood",
+      "accepted": false,
+      "child_novelty": 0.08623600006103516,
+      "replaced_novelty": 0.09253676980733871
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        5,
+        8
+      ],
+      "accepted": false,
+      "child_novelty": 0.08955959230661392,
+      "replaced_novelty": 0.09239546209573746
+    },
+    {
+      "type": "mutation",
+      "parent": 1,
+      "axis": "role",
+      "accepted": true,
+      "child_novelty": 0.11732681840658188,
+      "replaced_novelty": 0.09723538160324097
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        2,
+        6
+      ],
+      "accepted": true,
+      "child_novelty": 0.11529541015625,
+      "replaced_novelty": 0.10574904829263687
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        3,
+        9
+      ],
+      "accepted": false,
+      "child_novelty": 0.09635400772094727,
+      "replaced_novelty": 0.10479104518890381
+    },
+    {
+      "type": "mutation",
+      "parent": 5,
+      "axis": "age_bracket",
+      "accepted": false,
+      "child_novelty": 0.08730372041463852,
+      "replaced_novelty": 0.10384883731603622
+    },
+    {
+      "type": "mutation",
+      "parent": 7,
+      "axis": "condition",
+      "accepted": true,
+      "child_novelty": 0.08535990864038467,
+      "replaced_novelty": 0.07692983001470566
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        8,
+        6
+      ],
+      "accepted": true,
+      "child_novelty": 0.1175646185874939,
+      "replaced_novelty": 0.09856486320495605
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        7,
+        4
+      ],
+      "accepted": false,
+      "child_novelty": 0.08226629346609116,
+      "replaced_novelty": 0.08226629346609116
+    },
+    {
+      "type": "mutation",
+      "parent": 0,
+      "axis": "formality",
+      "accepted": true,
+      "child_novelty": 0.10206475108861923,
+      "replaced_novelty": 0.09697282314300537
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        3,
+        2
+      ],
+      "accepted": true,
+      "child_novelty": 0.13700346648693085,
+      "replaced_novelty": 0.12824761867523193
+    },
+    {
+      "type": "mutation",
+      "parent": 1,
+      "axis": "formality",
+      "accepted": true,
+      "child_novelty": 0.11391141265630722,
+      "replaced_novelty": 0.10256031900644302
+    },
+    {
+      "type": "mutation",
+      "parent": 4,
+      "axis": "mood",
+      "accepted": true,
+      "child_novelty": 0.10199884325265884,
+      "replaced_novelty": 0.09811822324991226
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+[supervisor] 2026-07-08 17:42:39 === supervisor start: target 70 members over 7 cells, 7200s watchdog ===
+[supervisor] 2026-07-08 17:42:39 progress: 31/70 members complete (attempts so far: 0, stalled attempts: 0)
+[supervisor] 2026-07-08 19:42:46 watchdog: attempt 1 exceeded 7200s -- force-restarting (a wedged drvfs/GPU call can hang unkillably; --resume makes the retry cheap)
+[supervisor] 2026-07-08 19:43:31 attempt 1 ended rc=143
+[supervisor] 2026-07-08 19:44:02 progress: 36/70 members complete (attempts so far: 1, stalled attempts: 0)
+[supervisor] 2026-07-08 21:44:10 watchdog: attempt 2 exceeded 7200s -- force-restarting (a wedged drvfs/GPU call can hang unkillably; --resume makes the retry cheap)
+[supervisor] 2026-07-08 21:44:55 attempt 2 ended rc=143
+[supervisor] 2026-07-08 21:45:25 progress: 42/70 members complete (attempts so far: 2, stalled attempts: 0)
+[supervisor] 2026-07-08 23:45:38 watchdog: attempt 3 exceeded 7200s -- force-restarting (a wedged drvfs/GPU call can hang unkillably; --resume makes the retry cheap)
+[supervisor] 2026-07-08 23:46:23 attempt 3 ended rc=143
+[supervisor] 2026-07-08 23:46:54 progress: 47/70 members complete (attempts so far: 3, stalled attempts: 0)
+[supervisor] 2026-07-09 01:47:02 watchdog: attempt 4 exceeded 7200s -- force-restarting (a wedged drvfs/GPU call can hang unkillably; --resume makes the retry cheap)
+[supervisor] 2026-07-09 01:47:47 attempt 4 ended rc=143
+[supervisor] 2026-07-09 01:48:17 progress: 53/70 members complete (attempts so far: 4, stalled attempts: 0)
+[supervisor] 2026-07-09 03:48:25 watchdog: attempt 5 exceeded 7200s -- force-restarting (a wedged drvfs/GPU call can hang unkillably; --resume makes the retry cheap)
+[supervisor] 2026-07-09 03:49:11 attempt 5 ended rc=143
+[supervisor] 2026-07-09 03:49:41 progress: 59/70 members complete (attempts so far: 5, stalled attempts: 0)
+[supervisor] 2026-07-09 05:49:50 watchdog: attempt 6 exceeded 7200s -- force-restarting (a wedged drvfs/GPU call can hang unkillably; --resume makes the retry cheap)
+[supervisor] 2026-07-09 05:50:35 attempt 6 ended rc=143
+[supervisor] 2026-07-09 05:51:05 progress: 64/70 members complete (attempts so far: 6, stalled attempts: 0)
+[supervisor] 2026-07-09 07:51:14 watchdog: attempt 7 exceeded 7200s -- force-restarting (a wedged drvfs/GPU call can hang unkillably; --resume makes the retry cheap)
+[supervisor] 2026-07-09 07:51:59 attempt 7 ended rc=143
+[supervisor] 2026-07-09 07:52:29 progress: 69/70 members complete (attempts so far: 7, stalled attempts: 0)
+[supervisor] 2026-07-09 08:17:34 attempt 8 ended rc=0
+[supervisor] 2026-07-09 08:18:05 progress: 70/70 members complete (attempts so far: 8, stalled attempts: 0)
+[supervisor] 2026-07-09 08:18:05 all 70 members complete -- running final verified sync to U:
+[supervisor] 2026-07-09 08:18:15 final sync 1_random_white_plain: ok
+[supervisor] 2026-07-09 08:18:26 final sync 2_clip_white_plain: ok
+[supervisor] 2026-07-09 08:18:37 final sync 3_clip_pink_plain: ok
+[supervisor] 2026-07-09 08:18:45 final sync 4_clip_white_color: ok
+[supervisor] 2026-07-09 08:18:54 final sync 5_clip_pink_color: ok
+[supervisor] 2026-07-09 08:19:03 final sync 6_clip_white_llm: ok
+[supervisor] 2026-07-09 08:19:12 final sync 7_clip_pink_llm: ok
+[supervisor] 2026-07-09 08:19:12 DONE -- next step: scripts/run_factorial7_eval.sh
+[supervisor] 2026-07-09 14:55:48 === supervisor start: target 90 members over 9 cells, 7200s watchdog ===
+[supervisor] 2026-07-09 14:55:48 progress: 70/90 members complete (attempts so far: 0, stalled attempts: 0)
