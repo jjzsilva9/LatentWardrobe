@@ -10,6 +10,8 @@
   "llm_emitters": false,
   "llm_generations": null,
   "llm_k_neighbors": null,
+  "llm_novelty": null,
+  "llm_axes": null,
   "llm_model": null,
   "llm_evolution_history": null,
   "stage1_prompt_template": "turn around, {prompt}, {full_desc}, {category_phrase}",
