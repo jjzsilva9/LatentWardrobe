@@ -11239,3 +11239,717 @@ plan: 1 prompt(s) x 10 members
 
 done. failures: 0
 [run_factorial7] cell=7_clip_pink_llm python_exit=0
+mesh library: 43 tops, 41 bottoms, 59 fullbody
+plan: 1 prompt(s) x 10 members
+
+=== [medieval villagers] member_00: tubetop+mariaskirt seed=1183151484 ===
+Depth-based 3D Texturing
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  14%|█▍        | 1/7 [00:12<01:16, 12.68s/it]Loading pipeline components...:  29%|██▊       | 2/7 [00:12<00:26,  5.32s/it]Loading pipeline components...:  43%|████▎     | 3/7 [00:14<00:15,  3.81s/it]`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+Loading pipeline components...:  57%|█████▋    | 4/7 [00:20<00:13,  4.53s/it]Loading pipeline components...:  86%|████████▌ | 6/7 [00:21<00:02,  2.50s/it]Loading pipeline components...: 100%|██████████| 7/7 [00:21<00:00,  3.13s/it]
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  14%|█▍        | 1/7 [00:12<01:15, 12.56s/it]Loading pipeline components...:  43%|████▎     | 3/7 [00:14<00:16,  4.06s/it]`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+Loading pipeline components...:  57%|█████▋    | 4/7 [00:20<00:13,  4.51s/it]Loading pipeline components...:  86%|████████▌ | 6/7 [00:21<00:02,  2.69s/it]Loading pipeline components...: 100%|██████████| 7/7 [00:21<00:00,  3.11s/it]
+Project init view [0, 23]...
+Generating init view...
+  0%|          | 0/20 [00:00<?, ?it/s]  5%|▌         | 1/20 [00:03<01:15,  3.96s/it] 10%|█         | 2/20 [00:04<00:32,  1.83s/it] 15%|█▌        | 3/20 [00:04<00:19,  1.15s/it] 20%|██        | 4/20 [00:04<00:13,  1.20it/s] 25%|██▌       | 5/20 [00:05<00:09,  1.52it/s] 30%|███       | 6/20 [00:05<00:07,  1.82it/s] 35%|███▌      | 7/20 [00:06<00:06,  2.07it/s] 40%|████      | 8/20 [00:06<00:05,  2.28it/s] 45%|████▌     | 9/20 [00:06<00:04,  2.45it/s] 50%|█████     | 10/20 [00:07<00:03,  2.57it/s] 55%|█████▌    | 11/20 [00:07<00:03,  2.67it/s] 60%|██████    | 12/20 [00:07<00:02,  2.74it/s] 65%|██████▌   | 13/20 [00:08<00:02,  2.78it/s] 70%|███████   | 14/20 [00:08<00:02,  2.82it/s] 75%|███████▌  | 15/20 [00:08<00:01,  2.85it/s] 80%|████████  | 16/20 [00:09<00:01,  2.86it/s] 85%|████████▌ | 17/20 [00:09<00:01,  2.87it/s] 90%|█████████ | 18/20 [00:09<00:00,  2.88it/s] 95%|█████████▌| 19/20 [00:10<00:00,  2.89it/s]100%|██████████| 20/20 [00:10<00:00,  2.89it/s]100%|██████████| 20/20 [00:10<00:00,  1.91it/s]
+init view generation time: 15.36867642402649
+0it [00:00, ?it/s]26it [00:00, 5424.12it/s]
+2026-07-09 15:05:52.841 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /root/factorial7_local/8_clip_white_llm6/medieval_villagers/member_00/stage1/res-0/mesh.obj with: vertices:(1894, 3) uv:(2109, 2) faces:(3604, 3)
+init DR time: 0.5703928470611572
+View inpainting ...
+Project inpaint view [(5, 6)]...
+0it [00:00, ?it/s]1it [00:01,  1.17s/it]1it [00:01,  1.17s/it]
+0it [00:00, ?it/s]
+  0%|          | 0/20 [00:00<?, ?it/s][A
+  5%|▌         | 1/20 [00:02<00:45,  2.38s/it][A
+ 10%|█         | 2/20 [00:02<00:22,  1.24s/it][A
+ 15%|█▌        | 3/20 [00:03<00:15,  1.13it/s][A
+ 20%|██        | 4/20 [00:03<00:11,  1.40it/s][A
+ 25%|██▌       | 5/20 [00:04<00:09,  1.62it/s][A
+ 30%|███       | 6/20 [00:04<00:07,  1.78it/s][A
+ 35%|███▌      | 7/20 [00:05<00:06,  1.90it/s][A
+ 40%|████      | 8/20 [00:05<00:06,  1.98it/s][A
+ 45%|████▌     | 9/20 [00:05<00:05,  2.05it/s][A
+ 50%|█████     | 10/20 [00:06<00:04,  2.10it/s][A
+ 55%|█████▌    | 11/20 [00:07<00:04,  1.99it/s][A
+ 60%|██████    | 12/20 [00:07<00:04,  1.86it/s][A
+ 65%|██████▌   | 13/20 [00:08<00:03,  1.86it/s][A
+ 70%|███████   | 14/20 [00:08<00:03,  1.96it/s][A
+ 75%|███████▌  | 15/20 [00:09<00:02,  2.04it/s][A
+ 80%|████████  | 16/20 [00:09<00:01,  2.10it/s][A
+ 85%|████████▌ | 17/20 [00:09<00:01,  2.14it/s][A
+ 90%|█████████ | 18/20 [00:10<00:00,  2.16it/s][A
+ 95%|█████████▌| 19/20 [00:10<00:00,  2.18it/s][A
+100%|██████████| 20/20 [00:11<00:00,  2.20it/s][A100%|██████████| 20/20 [00:11<00:00,  1.77it/s]
+1it [00:13, 13.55s/it]1it [00:13, 13.55s/it]
+inpaint view generation time: 14.73295783996582
+0it [00:00, ?it/s]26it [00:00, 3178.52it/s]
+2026-07-09 15:06:08.226 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /root/factorial7_local/8_clip_white_llm6/medieval_villagers/member_00/stage1/res-0/mesh.obj with: vertices:(1894, 3) uv:(2109, 2) faces:(3604, 3)
+inpaint DR time: 0.6521477699279785
+View inpainting ...
+Project inpaint view [(24, 25)]...
+0it [00:00, ?it/s]1it [00:01,  1.16s/it]1it [00:01,  1.16s/it]
+0it [00:00, ?it/s]
+  0%|          | 0/20 [00:00<?, ?it/s][A
+  5%|▌         | 1/20 [00:01<00:24,  1.29s/it][A
+ 10%|█         | 2/20 [00:01<00:14,  1.25it/s][A
+ 15%|█▌        | 3/20 [00:02<00:10,  1.56it/s][A
+ 20%|██        | 4/20 [00:02<00:09,  1.77it/s][A
+ 25%|██▌       | 5/20 [00:03<00:07,  1.91it/s][A
+ 30%|███       | 6/20 [00:03<00:06,  2.01it/s][A
+ 35%|███▌      | 7/20 [00:03<00:06,  2.07it/s][A
+ 40%|████      | 8/20 [00:04<00:05,  2.12it/s][A
+ 45%|████▌     | 9/20 [00:04<00:05,  2.15it/s][A
+ 50%|█████     | 10/20 [00:05<00:04,  2.17it/s][A
+ 55%|█████▌    | 11/20 [00:05<00:04,  2.18it/s][A
+ 60%|██████    | 12/20 [00:06<00:03,  2.19it/s][A
+ 65%|██████▌   | 13/20 [00:06<00:03,  2.20it/s][A
+ 70%|███████   | 14/20 [00:07<00:02,  2.21it/s][A
+ 75%|███████▌  | 15/20 [00:07<00:02,  2.21it/s][A
+ 80%|████████  | 16/20 [00:08<00:01,  2.21it/s][A
+ 85%|████████▌ | 17/20 [00:08<00:01,  2.22it/s][A
+ 90%|█████████ | 18/20 [00:08<00:00,  2.22it/s][A
+ 95%|█████████▌| 19/20 [00:09<00:00,  2.21it/s][A
+100%|██████████| 20/20 [00:09<00:00,  2.22it/s][A100%|██████████| 20/20 [00:09<00:00,  2.03it/s]
+1it [00:12, 12.14s/it]1it [00:12, 12.14s/it]
+inpaint view generation time: 13.304804801940918
+0it [00:00, ?it/s]26it [00:00, 3559.37it/s]
+2026-07-09 15:06:22.210 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /root/factorial7_local/8_clip_white_llm6/medieval_villagers/member_00/stage1/res-0/mesh.obj with: vertices:(1894, 3) uv:(2109, 2) faces:(3604, 3)
+inpaint DR time: 0.6792337894439697
+total processed time:45.309021949768066
+Evalating textured mesh~: 0it [00:00, ?it/s]Evalating textured mesh~: 2it [00:00, 17.05it/s]Evalating textured mesh~: 4it [00:00, 17.59it/s]Evalating textured mesh~: 6it [00:00, 17.51it/s]Evalating textured mesh~: 8it [00:00, 17.19it/s]Evalating textured mesh~: 10it [00:00, 17.09it/s]Evalating textured mesh~: 12it [00:00, 16.77it/s]Evalating textured mesh~: 14it [00:00, 16.69it/s]Evalating textured mesh~: 16it [00:00, 16.50it/s]Evalating textured mesh~: 18it [00:01, 16.49it/s]Evalating textured mesh~: 20it [00:01, 16.44it/s]Evalating textured mesh~: 22it [00:01, 16.40it/s]Evalating textured mesh~: 24it [00:01, 16.35it/s]Evalating textured mesh~: 26it [00:01, 16.30it/s]Evalating textured mesh~: 28it [00:01, 16.38it/s]Evalating textured mesh~: 30it [00:01, 16.62it/s]Evalating textured mesh~: 32it [00:01, 16.83it/s]Evalating textured mesh~: 34it [00:02, 16.95it/s]Evalating textured mesh~: 36it [00:02, 17.09it/s]Evalating textured mesh~: 38it [00:02, 17.24it/s]Evalating textured mesh~: 40it [00:02, 16.58it/s]Evalating textured mesh~: 42it [00:02, 16.85it/s]Evalating textured mesh~: 44it [00:02, 17.04it/s]Evalating textured mesh~: 46it [00:02, 17.04it/s]Evalating textured mesh~: 48it [00:02, 17.10it/s]Evalating textured mesh~: 50it [00:02, 17.18it/s]Evalating textured mesh~: 52it [00:03, 17.36it/s]Evalating textured mesh~: 54it [00:03, 17.51it/s]Evalating textured mesh~: 56it [00:03, 17.55it/s]Evalating textured mesh~: 58it [00:03, 17.39it/s]Evalating textured mesh~: 60it [00:03, 17.25it/s]Evalating textured mesh~: 62it [00:03, 17.14it/s]Evalating textured mesh~: 64it [00:03, 16.74it/s]Evalating textured mesh~: 66it [00:03, 16.72it/s]Evalating textured mesh~: 68it [00:04, 16.77it/s]Evalating textured mesh~: 70it [00:04, 16.78it/s]Evalating textured mesh~: 72it [00:04, 16.78it/s]Evalating textured mesh~: 74it [00:04, 16.73it/s]Evalating textured mesh~: 76it [00:04, 15.69it/s]Evalating textured mesh~: 78it [00:04, 16.03it/s]Evalating textured mesh~: 80it [00:04, 15.95it/s]Evalating textured mesh~: 82it [00:04, 16.00it/s]Evalating textured mesh~: 84it [00:05, 16.03it/s]Evalating textured mesh~: 86it [00:05, 15.93it/s]Evalating textured mesh~: 88it [00:05, 15.64it/s]Evalating textured mesh~: 90it [00:05, 15.19it/s]Evalating textured mesh~: 92it [00:05, 15.01it/s]Evalating textured mesh~: 94it [00:05, 14.61it/s]Evalating textured mesh~: 96it [00:05, 14.53it/s]Evalating textured mesh~: 98it [00:05, 14.53it/s]Evalating textured mesh~: 100it [00:06, 14.22it/s]Evalating textured mesh~: 100it [00:06, 16.31it/s]
+subprocess pipeline_paint3d_stage1.py exited rc=0 after 138.3s
+Texture diffusion
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  14%|█▍        | 1/7 [00:00<00:05,  1.14it/s]Loading pipeline components...:  29%|██▊       | 2/7 [00:12<00:35,  7.10s/it]`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+Loading pipeline components...:  57%|█████▋    | 4/7 [00:17<00:12,  4.17s/it]Loading pipeline components...:  86%|████████▌ | 6/7 [00:19<00:02,  2.67s/it]Loading pipeline components...: 100%|██████████| 7/7 [00:19<00:00,  2.02s/it]Loading pipeline components...: 100%|██████████| 7/7 [00:19<00:00,  2.76s/it]
+text_encoder/model.safetensors not found
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  14%|█▍        | 1/7 [00:00<00:02,  2.97it/s]Loading pipeline components...:  29%|██▊       | 2/7 [00:04<00:13,  2.61s/it]/root/miniconda3/envs/paint3d/lib/python3.8/site-packages/transformers/models/clip/feature_extraction_clip.py:28: FutureWarning: The class CLIPFeatureExtractor is deprecated and will be removed in version 5 of Transformers. Please use CLIPImageProcessor instead.
+  warnings.warn(
+Loading pipeline components...:  57%|█████▋    | 4/7 [00:07<00:05,  1.81s/it]Loading pipeline components...:  86%|████████▌ | 6/7 [00:07<00:01,  1.14s/it]Loading pipeline components...: 100%|██████████| 7/7 [00:08<00:00,  1.15s/it]
+rendering texture and position map
+  0%|          | 0/20 [00:00<?, ?it/s]  5%|▌         | 1/20 [00:58<18:32, 58.58s/it] 10%|█         | 2/20 [01:31<13:01, 43.40s/it] 15%|█▌        | 3/20 [02:04<10:57, 38.65s/it] 20%|██        | 4/20 [02:37<09:43, 36.45s/it] 25%|██▌       | 5/20 [03:09<08:44, 34.98s/it] 30%|███       | 6/20 [03:42<07:56, 34.04s/it] 35%|███▌      | 7/20 [04:14<07:15, 33.50s/it] 40%|████      | 8/20 [04:47<06:39, 33.26s/it] 45%|████▌     | 9/20 [05:20<06:04, 33.17s/it] 50%|█████     | 10/20 [05:52<05:30, 33.05s/it] 55%|█████▌    | 11/20 [06:25<04:56, 32.95s/it] 60%|██████    | 12/20 [06:58<04:23, 32.91s/it] 65%|██████▌   | 13/20 [07:31<03:51, 33.08s/it] 70%|███████   | 14/20 [08:06<03:20, 33.40s/it] 75%|███████▌  | 15/20 [08:43<02:53, 34.64s/it] 80%|████████  | 16/20 [09:24<02:25, 36.45s/it] 85%|████████▌ | 17/20 [10:07<01:55, 38.36s/it] 90%|█████████ | 18/20 [10:44<01:16, 38.11s/it] 95%|█████████▌| 19/20 [11:21<00:37, 37.70s/it]100%|██████████| 20/20 [11:54<00:00, 36.24s/it]100%|██████████| 20/20 [11:54<00:00, 35.71s/it]
+UV Inpainting time: 731.916445016861
+Evalating textured mesh~: 0it [00:00, ?it/s]Evalating textured mesh~: 1it [00:00,  1.57it/s]Evalating textured mesh~: 2it [00:00,  2.33it/s]Evalating textured mesh~: 3it [00:01,  3.02it/s]Evalating textured mesh~: 4it [00:01,  3.41it/s]Evalating textured mesh~: 5it [00:01,  3.86it/s]Evalating textured mesh~: 6it [00:01,  4.25it/s]Evalating textured mesh~: 7it [00:01,  4.75it/s]Evalating textured mesh~: 8it [00:02,  4.99it/s]Evalating textured mesh~: 9it [00:02,  5.13it/s]Evalating textured mesh~: 10it [00:02,  5.39it/s]Evalating textured mesh~: 11it [00:02,  5.30it/s]Evalating textured mesh~: 12it [00:02,  5.45it/s]Evalating textured mesh~: 13it [00:02,  5.73it/s]Evalating textured mesh~: 14it [00:03,  5.74it/s]Evalating textured mesh~: 15it [00:03,  5.69it/s]Evalating textured mesh~: 16it [00:03,  6.06it/s]Evalating textured mesh~: 17it [00:03,  5.89it/s]Evalating textured mesh~: 18it [00:03,  5.77it/s]Evalating textured mesh~: 19it [00:03,  6.17it/s]Evalating textured mesh~: 20it [00:04,  5.92it/s]Evalating textured mesh~: 21it [00:04,  5.70it/s]Evalating textured mesh~: 22it [00:04,  6.03it/s]Evalating textured mesh~: 23it [00:04,  5.91it/s]Evalating textured mesh~: 24it [00:04,  5.85it/s]Evalating textured mesh~: 25it [00:04,  6.09it/s]Evalating textured mesh~: 26it [00:05,  6.02it/s]Evalating textured mesh~: 27it [00:05,  5.94it/s]Evalating textured mesh~: 28it [00:05,  6.24it/s]Evalating textured mesh~: 29it [00:05,  5.57it/s]Evalating textured mesh~: 30it [00:05,  5.65it/s]Evalating textured mesh~: 31it [00:05,  6.08it/s]Evalating textured mesh~: 32it [00:06,  5.86it/s]Evalating textured mesh~: 33it [00:06,  6.24it/s]Evalating textured mesh~: 35it [00:06,  7.68it/s]Evalating textured mesh~: 36it [00:06,  7.94it/s]Evalating textured mesh~: 37it [00:06,  7.70it/s]Evalating textured mesh~: 38it [00:06,  7.77it/s]Evalating textured mesh~: 39it [00:07,  7.25it/s]Evalating textured mesh~: 40it [00:07,  7.01it/s]Evalating textured mesh~: 41it [00:07,  7.04it/s]Evalating textured mesh~: 42it [00:07,  6.89it/s]Evalating textured mesh~: 43it [00:07,  6.69it/s]Evalating textured mesh~: 44it [00:07,  6.38it/s]Evalating textured mesh~: 45it [00:07,  6.28it/s]Evalating textured mesh~: 46it [00:08,  6.04it/s]Evalating textured mesh~: 47it [00:08,  4.93it/s]Evalating textured mesh~: 48it [00:08,  5.04it/s]Evalating textured mesh~: 49it [00:08,  5.00it/s]Evalating textured mesh~: 50it [00:09,  4.94it/s]Evalating textured mesh~: 51it [00:09,  5.13it/s]Evalating textured mesh~: 52it [00:09,  5.37it/s]Evalating textured mesh~: 53it [00:09,  5.35it/s]Evalating textured mesh~: 54it [00:09,  5.59it/s]Evalating textured mesh~: 55it [00:09,  5.72it/s]Evalating textured mesh~: 56it [00:10,  5.95it/s]Evalating textured mesh~: 57it [00:10,  5.87it/s]Evalating textured mesh~: 58it [00:10,  6.02it/s]Evalating textured mesh~: 59it [00:10,  5.89it/s]Evalating textured mesh~: 60it [00:10,  5.96it/s]Evalating textured mesh~: 61it [00:10,  5.77it/s]Evalating textured mesh~: 62it [00:11,  5.84it/s]Evalating textured mesh~: 63it [00:11,  5.54it/s]Evalating textured mesh~: 64it [00:11,  5.85it/s]Evalating textured mesh~: 65it [00:11,  6.00it/s]Evalating textured mesh~: 66it [00:11,  5.81it/s]Evalating textured mesh~: 67it [00:11,  5.56it/s]Evalating textured mesh~: 68it [00:12,  5.95it/s]Evalating textured mesh~: 69it [00:12,  5.66it/s]Evalating textured mesh~: 70it [00:12,  5.19it/s]Evalating textured mesh~: 71it [00:12,  4.90it/s]Evalating textured mesh~: 72it [00:13,  4.67it/s]Evalating textured mesh~: 73it [00:13,  4.17it/s]Evalating textured mesh~: 74it [00:13,  3.99it/s]Evalating textured mesh~: 75it [00:13,  4.23it/s]Evalating textured mesh~: 76it [00:14,  4.24it/s]Evalating textured mesh~: 77it [00:14,  4.47it/s]Evalating textured mesh~: 78it [00:14,  4.70it/s]Evalating textured mesh~: 79it [00:14,  4.76it/s]Evalating textured mesh~: 80it [00:14,  4.63it/s]Evalating textured mesh~: 81it [00:15,  3.89it/s]Evalating textured mesh~: 82it [00:15,  4.22it/s]Evalating textured mesh~: 83it [00:15,  4.34it/s]Evalating textured mesh~: 84it [00:15,  4.44it/s]Evalating textured mesh~: 85it [00:16,  3.53it/s]Evalating textured mesh~: 86it [00:16,  3.70it/s]Evalating textured mesh~: 87it [00:16,  3.88it/s]Evalating textured mesh~: 88it [00:17,  3.22it/s]Evalating textured mesh~: 89it [00:17,  3.45it/s]Evalating textured mesh~: 90it [00:17,  3.72it/s]Evalating textured mesh~: 91it [00:17,  3.87it/s]Evalating textured mesh~: 92it [00:18,  3.91it/s]Evalating textured mesh~: 93it [00:18,  3.54it/s]Evalating textured mesh~: 94it [00:18,  4.19it/s]Evalating textured mesh~: 95it [00:18,  4.78it/s]Evalating textured mesh~: 96it [00:18,  5.12it/s]Evalating textured mesh~: 97it [00:19,  5.42it/s]Evalating textured mesh~: 98it [00:19,  4.51it/s]Evalating textured mesh~: 99it [00:19,  4.60it/s]Evalating textured mesh~: 100it [00:19,  4.14it/s]Evalating textured mesh~: 100it [00:19,  5.04it/s]
+rendering texture and position map
+  0%|          | 0/15 [00:00<?, ?it/s]  7%|▋         | 1/15 [01:02<14:30, 62.17s/it] 13%|█▎        | 2/15 [01:39<10:19, 47.64s/it] 20%|██        | 3/15 [02:14<08:19, 41.63s/it] 27%|██▋       | 4/15 [02:46<06:57, 37.93s/it] 33%|███▎      | 5/15 [03:19<06:03, 36.37s/it] 40%|████      | 6/15 [03:52<05:16, 35.13s/it] 47%|████▋     | 7/15 [04:24<04:33, 34.13s/it] 53%|█████▎    | 8/15 [04:56<03:54, 33.45s/it] 60%|██████    | 9/15 [05:28<03:18, 33.01s/it] 67%|██████▋   | 10/15 [06:00<02:43, 32.70s/it] 73%|███████▎  | 11/15 [06:32<02:10, 32.50s/it] 80%|████████  | 12/15 [07:04<01:37, 32.36s/it] 87%|████████▋ | 13/15 [07:36<01:04, 32.25s/it] 93%|█████████▎| 14/15 [08:08<00:32, 32.19s/it]100%|██████████| 15/15 [08:41<00:00, 32.27s/it]100%|██████████| 15/15 [08:41<00:00, 34.76s/it]
+UV tile time: 533.8971138000488
+total processed time:1304.0847182273865
+Evalating textured mesh~: 0it [00:00, ?it/s]Evalating textured mesh~: 1it [00:00,  8.06it/s]Evalating textured mesh~: 3it [00:00, 10.20it/s]Evalating textured mesh~: 5it [00:00, 10.42it/s]Evalating textured mesh~: 7it [00:00, 11.04it/s]Evalating textured mesh~: 9it [00:00, 11.23it/s]Evalating textured mesh~: 11it [00:01, 10.97it/s]Evalating textured mesh~: 13it [00:01, 11.26it/s]Evalating textured mesh~: 15it [00:01, 11.35it/s]Evalating textured mesh~: 17it [00:01, 11.29it/s]Evalating textured mesh~: 19it [00:01, 11.59it/s]Evalating textured mesh~: 21it [00:01, 11.79it/s]Evalating textured mesh~: 23it [00:02, 11.62it/s]Evalating textured mesh~: 25it [00:02, 11.66it/s]Evalating textured mesh~: 27it [00:02, 11.68it/s]Evalating textured mesh~: 29it [00:02, 11.41it/s]Evalating textured mesh~: 31it [00:02, 11.48it/s]Evalating textured mesh~: 33it [00:02, 11.55it/s]Evalating textured mesh~: 35it [00:03, 10.79it/s]Evalating textured mesh~: 37it [00:03, 10.11it/s]Evalating textured mesh~: 39it [00:03, 10.34it/s]Evalating textured mesh~: 41it [00:03, 10.84it/s]Evalating textured mesh~: 43it [00:03, 11.57it/s]Evalating textured mesh~: 45it [00:03, 12.05it/s]Evalating textured mesh~: 47it [00:04, 12.10it/s]Evalating textured mesh~: 49it [00:04, 12.55it/s]Evalating textured mesh~: 51it [00:04, 12.87it/s]Evalating textured mesh~: 53it [00:04, 12.94it/s]Evalating textured mesh~: 55it [00:04, 13.18it/s]Evalating textured mesh~: 57it [00:04, 13.32it/s]Evalating textured mesh~: 59it [00:05, 13.17it/s]Evalating textured mesh~: 61it [00:05, 13.56it/s]Evalating textured mesh~: 63it [00:05, 13.61it/s]Evalating textured mesh~: 65it [00:05, 13.06it/s]Evalating textured mesh~: 67it [00:05, 13.23it/s]Evalating textured mesh~: 69it [00:05, 13.09it/s]Evalating textured mesh~: 71it [00:05, 12.77it/s]Evalating textured mesh~: 73it [00:06, 12.74it/s]Evalating textured mesh~: 75it [00:06, 12.46it/s]Evalating textured mesh~: 77it [00:06, 12.92it/s]Evalating textured mesh~: 79it [00:06, 13.21it/s]Evalating textured mesh~: 81it [00:06, 13.57it/s]Evalating textured mesh~: 83it [00:06, 13.60it/s]Evalating textured mesh~: 85it [00:07, 13.66it/s]Evalating textured mesh~: 87it [00:07, 13.75it/s]Evalating textured mesh~: 89it [00:07, 13.80it/s]Evalating textured mesh~: 91it [00:07, 14.01it/s]Evalating textured mesh~: 93it [00:07, 14.21it/s]Evalating textured mesh~: 95it [00:07, 14.16it/s]Evalating textured mesh~: 97it [00:07, 14.38it/s]Evalating textured mesh~: 99it [00:07, 14.48it/s]Evalating textured mesh~: 100it [00:08, 12.41it/s]
+subprocess pipeline_paint3d_stage2.py exited rc=0 after 1390.7s
+
+=== [medieval villagers] member_01: offshoulder_top+elvs_gored_elephantpant1 seed=1960522624 ===
+Depth-based 3D Texturing
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  14%|█▍        | 1/7 [00:02<00:13,  2.28s/it]Loading pipeline components...:  29%|██▊       | 2/7 [00:03<00:09,  1.81s/it]Loading pipeline components...:  43%|████▎     | 3/7 [00:03<00:04,  1.04s/it]Loading pipeline components...:  57%|█████▋    | 4/7 [00:16<00:16,  5.56s/it]`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+Loading pipeline components...:  86%|████████▌ | 6/7 [00:22<00:04,  4.12s/it]Loading pipeline components...: 100%|██████████| 7/7 [00:22<00:00,  3.15s/it]
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  14%|█▍        | 1/7 [00:02<00:12,  2.05s/it]Loading pipeline components...:  29%|██▊       | 2/7 [00:03<00:08,  1.75s/it]Loading pipeline components...:  57%|█████▋    | 4/7 [00:16<00:14,  4.68s/it]`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+Loading pipeline components...:  86%|████████▌ | 6/7 [00:21<00:03,  3.65s/it]Loading pipeline components...: 100%|██████████| 7/7 [00:21<00:00,  3.07s/it]
+Project init view [0, 23]...
+Generating init view...
+  0%|          | 0/20 [00:00<?, ?it/s]  5%|▌         | 1/20 [00:04<01:23,  4.37s/it] 10%|█         | 2/20 [00:04<00:36,  2.01s/it] 15%|█▌        | 3/20 [00:05<00:21,  1.25s/it] 20%|██        | 4/20 [00:05<00:14,  1.11it/s] 25%|██▌       | 5/20 [00:05<00:10,  1.43it/s] 30%|███       | 6/20 [00:06<00:08,  1.72it/s] 35%|███▌      | 7/20 [00:06<00:06,  1.97it/s] 40%|████      | 8/20 [00:06<00:05,  2.18it/s] 45%|████▌     | 9/20 [00:07<00:04,  2.35it/s] 50%|█████     | 10/20 [00:07<00:04,  2.48it/s] 55%|█████▌    | 11/20 [00:07<00:03,  2.58it/s] 60%|██████    | 12/20 [00:08<00:03,  2.66it/s] 65%|██████▌   | 13/20 [00:08<00:02,  2.71it/s] 70%|███████   | 14/20 [00:08<00:02,  2.75it/s] 75%|███████▌  | 15/20 [00:09<00:01,  2.77it/s] 80%|████████  | 16/20 [00:09<00:01,  2.79it/s] 85%|████████▌ | 17/20 [00:10<00:01,  2.80it/s] 90%|█████████ | 18/20 [00:10<00:00,  2.82it/s] 95%|█████████▌| 19/20 [00:10<00:00,  2.82it/s]100%|██████████| 20/20 [00:11<00:00,  2.83it/s]100%|██████████| 20/20 [00:11<00:00,  1.81it/s]
+init view generation time: 17.212901830673218
+0it [00:00, ?it/s]26it [00:00, 3577.70it/s]
+2026-07-09 15:31:26.343 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /root/factorial7_local/8_clip_white_llm6/medieval_villagers/member_01/stage1/res-0/mesh.obj with: vertices:(9237, 3) uv:(16286, 2) faces:(18100, 3)
+init DR time: 1.1744365692138672
+View inpainting ...
+Project inpaint view [(5, 6)]...
+0it [00:00, ?it/s]1it [00:02,  2.12s/it]1it [00:02,  2.12s/it]
+0it [00:00, ?it/s]
+  0%|          | 0/20 [00:00<?, ?it/s][A
+  5%|▌         | 1/20 [00:02<00:54,  2.88s/it][A
+ 10%|█         | 2/20 [00:03<00:26,  1.45s/it][A
+ 15%|█▌        | 3/20 [00:03<00:17,  1.00s/it][A
+ 20%|██        | 4/20 [00:04<00:12,  1.27it/s][A
+ 25%|██▌       | 5/20 [00:04<00:09,  1.50it/s][A
+ 30%|███       | 6/20 [00:05<00:08,  1.68it/s][A
+ 35%|███▌      | 7/20 [00:05<00:07,  1.82it/s][A
+ 40%|████      | 8/20 [00:06<00:06,  1.92it/s][A
+ 45%|████▌     | 9/20 [00:06<00:05,  2.00it/s][A
+ 50%|█████     | 10/20 [00:06<00:04,  2.05it/s][A
+ 55%|█████▌    | 11/20 [00:07<00:04,  2.09it/s][A
+ 60%|██████    | 12/20 [00:07<00:03,  2.11it/s][A
+ 65%|██████▌   | 13/20 [00:08<00:03,  2.13it/s][A
+ 70%|███████   | 14/20 [00:08<00:02,  2.14it/s][A
+ 75%|███████▌  | 15/20 [00:09<00:02,  2.15it/s][A
+ 80%|████████  | 16/20 [00:09<00:01,  2.16it/s][A
+ 85%|████████▌ | 17/20 [00:10<00:01,  2.16it/s][A
+ 90%|█████████ | 18/20 [00:10<00:00,  2.17it/s][A
+ 95%|█████████▌| 19/20 [00:11<00:00,  2.17it/s][A
+100%|██████████| 20/20 [00:11<00:00,  2.18it/s][A100%|██████████| 20/20 [00:11<00:00,  1.73it/s]
+1it [00:15, 15.69s/it]1it [00:15, 15.69s/it]
+inpaint view generation time: 17.826049327850342
+0it [00:00, ?it/s]26it [00:00, 5112.61it/s]
+2026-07-09 15:31:45.227 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /root/factorial7_local/8_clip_white_llm6/medieval_villagers/member_01/stage1/res-0/mesh.obj with: vertices:(9237, 3) uv:(16286, 2) faces:(18100, 3)
+inpaint DR time: 1.0212979316711426
+View inpainting ...
+Project inpaint view [(24, 25)]...
+0it [00:00, ?it/s]1it [00:01,  1.62s/it]1it [00:01,  1.63s/it]
+0it [00:00, ?it/s]
+  0%|          | 0/20 [00:00<?, ?it/s][A
+  5%|▌         | 1/20 [00:01<00:26,  1.37s/it][A
+ 10%|█         | 2/20 [00:01<00:15,  1.20it/s][A
+ 15%|█▌        | 3/20 [00:02<00:11,  1.50it/s][A
+ 20%|██        | 4/20 [00:02<00:09,  1.71it/s][A
+ 25%|██▌       | 5/20 [00:03<00:08,  1.85it/s][A
+ 30%|███       | 6/20 [00:03<00:07,  1.95it/s][A
+ 35%|███▌      | 7/20 [00:04<00:06,  2.02it/s][A
+ 40%|████      | 8/20 [00:04<00:05,  2.06it/s][A
+ 45%|████▌     | 9/20 [00:05<00:05,  2.09it/s][A
+ 50%|█████     | 10/20 [00:05<00:04,  2.11it/s][A
+ 55%|█████▌    | 11/20 [00:05<00:04,  2.12it/s][A
+ 60%|██████    | 12/20 [00:06<00:03,  2.13it/s][A
+ 65%|██████▌   | 13/20 [00:06<00:03,  2.14it/s][A
+ 70%|███████   | 14/20 [00:07<00:02,  2.14it/s][A
+ 75%|███████▌  | 15/20 [00:07<00:02,  2.14it/s][A
+ 80%|████████  | 16/20 [00:08<00:01,  2.14it/s][A
+ 85%|████████▌ | 17/20 [00:08<00:01,  2.14it/s][A
+ 90%|█████████ | 18/20 [00:09<00:00,  2.14it/s][A
+ 95%|█████████▌| 19/20 [00:09<00:00,  2.14it/s][A
+100%|██████████| 20/20 [00:10<00:00,  2.14it/s][A100%|██████████| 20/20 [00:10<00:00,  1.96it/s]
+1it [00:12, 12.47s/it]1it [00:12, 12.47s/it]
+inpaint view generation time: 14.09870433807373
+0it [00:00, ?it/s]26it [00:00, 6145.15it/s]
+2026-07-09 15:32:00.366 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /root/factorial7_local/8_clip_white_llm6/medieval_villagers/member_01/stage1/res-0/mesh.obj with: vertices:(9237, 3) uv:(16286, 2) faces:(18100, 3)
+inpaint DR time: 1.0355699062347412
+total processed time:52.37029576301575
+Evalating textured mesh~: 0it [00:00, ?it/s]Evalating textured mesh~: 2it [00:00, 10.89it/s]Evalating textured mesh~: 4it [00:00, 11.20it/s]Evalating textured mesh~: 6it [00:00, 11.15it/s]Evalating textured mesh~: 8it [00:00, 11.33it/s]Evalating textured mesh~: 10it [00:00, 11.32it/s]Evalating textured mesh~: 12it [00:01, 11.39it/s]Evalating textured mesh~: 14it [00:01, 11.34it/s]Evalating textured mesh~: 16it [00:01, 11.37it/s]Evalating textured mesh~: 18it [00:01, 11.36it/s]Evalating textured mesh~: 20it [00:01, 11.45it/s]Evalating textured mesh~: 22it [00:01, 11.47it/s]Evalating textured mesh~: 24it [00:02, 11.43it/s]Evalating textured mesh~: 26it [00:02, 11.33it/s]Evalating textured mesh~: 28it [00:02, 11.30it/s]Evalating textured mesh~: 30it [00:02, 11.22it/s]Evalating textured mesh~: 32it [00:02, 11.24it/s]Evalating textured mesh~: 34it [00:03, 11.23it/s]Evalating textured mesh~: 36it [00:03, 11.17it/s]Evalating textured mesh~: 38it [00:03, 11.21it/s]Evalating textured mesh~: 40it [00:03, 11.33it/s]Evalating textured mesh~: 42it [00:03, 11.38it/s]Evalating textured mesh~: 44it [00:03, 11.43it/s]Evalating textured mesh~: 46it [00:04, 10.94it/s]Evalating textured mesh~: 48it [00:04, 11.02it/s]Evalating textured mesh~: 50it [00:04, 11.17it/s]Evalating textured mesh~: 52it [00:04, 11.27it/s]Evalating textured mesh~: 54it [00:04, 11.40it/s]Evalating textured mesh~: 56it [00:04, 11.48it/s]Evalating textured mesh~: 58it [00:05, 11.59it/s]Evalating textured mesh~: 60it [00:05, 11.45it/s]Evalating textured mesh~: 62it [00:05, 11.40it/s]Evalating textured mesh~: 64it [00:05, 11.31it/s]Evalating textured mesh~: 66it [00:05, 11.15it/s]Evalating textured mesh~: 68it [00:06, 11.13it/s]Evalating textured mesh~: 70it [00:06, 10.93it/s]Evalating textured mesh~: 72it [00:06, 10.78it/s]Evalating textured mesh~: 74it [00:06, 10.48it/s]Evalating textured mesh~: 76it [00:06,  9.75it/s]Evalating textured mesh~: 78it [00:07,  9.77it/s]Evalating textured mesh~: 79it [00:07,  9.46it/s]Evalating textured mesh~: 80it [00:07,  9.00it/s]Evalating textured mesh~: 82it [00:07,  9.01it/s]Evalating textured mesh~: 83it [00:07,  9.16it/s]Evalating textured mesh~: 84it [00:07,  9.29it/s]Evalating textured mesh~: 85it [00:07,  9.39it/s]Evalating textured mesh~: 87it [00:08,  9.21it/s]Evalating textured mesh~: 88it [00:08,  9.26it/s]Evalating textured mesh~: 89it [00:08,  9.08it/s]Evalating textured mesh~: 90it [00:08,  9.06it/s]Evalating textured mesh~: 91it [00:08,  8.88it/s]Evalating textured mesh~: 92it [00:08,  8.83it/s]Evalating textured mesh~: 93it [00:08,  9.12it/s]Evalating textured mesh~: 95it [00:08,  9.62it/s]Evalating textured mesh~: 97it [00:09, 10.05it/s]Evalating textured mesh~: 99it [00:09, 10.28it/s]Evalating textured mesh~: 100it [00:09, 10.64it/s]
+subprocess pipeline_paint3d_stage1.py exited rc=0 after 149.2s
+Texture diffusion
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+Loading pipeline components...:  14%|█▍        | 1/7 [00:01<00:11,  1.99s/it]Loading pipeline components...:  29%|██▊       | 2/7 [00:02<00:04,  1.12it/s]Loading pipeline components...:  43%|████▎     | 3/7 [00:04<00:05,  1.40s/it]Loading pipeline components...:  57%|█████▋    | 4/7 [00:16<00:17,  5.74s/it]Loading pipeline components...:  71%|███████▏  | 5/7 [00:18<00:08,  4.23s/it]Loading pipeline components...: 100%|██████████| 7/7 [00:18<00:00,  2.59s/it]
+safety_checker/model.safetensors not found
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  14%|█▍        | 1/7 [00:02<00:12,  2.05s/it]Loading pipeline components...:  43%|████▎     | 3/7 [00:02<00:03,  1.27it/s]Loading pipeline components...:  57%|█████▋    | 4/7 [00:06<00:04,  1.65s/it]Loading pipeline components...:  71%|███████▏  | 5/7 [00:06<00:02,  1.22s/it]/root/miniconda3/envs/paint3d/lib/python3.8/site-packages/transformers/models/clip/feature_extraction_clip.py:28: FutureWarning: The class CLIPFeatureExtractor is deprecated and will be removed in version 5 of Transformers. Please use CLIPImageProcessor instead.
+  warnings.warn(
+Loading pipeline components...: 100%|██████████| 7/7 [00:06<00:00,  1.10it/s]
+rendering texture and position map
+  0%|          | 0/20 [00:00<?, ?it/s]  5%|▌         | 1/20 [00:35<11:16, 35.62s/it] 10%|█         | 2/20 [01:07<10:01, 33.44s/it] 15%|█▌        | 3/20 [01:38<09:07, 32.22s/it] 20%|██        | 4/20 [02:09<08:26, 31.64s/it] 25%|██▌       | 5/20 [02:40<07:52, 31.48s/it] 30%|███       | 6/20 [03:14<07:32, 32.34s/it] 35%|███▌      | 7/20 [03:47<07:05, 32.74s/it] 40%|████      | 8/20 [04:19<06:29, 32.44s/it] 45%|████▌     | 9/20 [04:52<05:59, 32.68s/it] 50%|█████     | 10/20 [05:28<05:36, 33.63s/it] 55%|█████▌    | 11/20 [05:59<04:55, 32.86s/it] 60%|██████    | 12/20 [06:31<04:19, 32.49s/it] 65%|██████▌   | 13/20 [07:04<03:48, 32.70s/it] 70%|███████   | 14/20 [07:38<03:19, 33.21s/it] 75%|███████▌  | 15/20 [08:14<02:50, 34.03s/it] 80%|████████  | 16/20 [08:47<02:14, 33.57s/it] 85%|████████▌ | 17/20 [09:20<01:40, 33.40s/it] 90%|█████████ | 18/20 [09:53<01:06, 33.22s/it] 95%|█████████▌| 19/20 [10:25<00:32, 32.93s/it]100%|██████████| 20/20 [10:56<00:00, 32.34s/it]100%|██████████| 20/20 [10:56<00:00, 32.82s/it]
+UV Inpainting time: 679.7503550052643
+Evalating textured mesh~: 0it [00:00, ?it/s]Evalating textured mesh~: 1it [00:01,  1.54s/it]Evalating textured mesh~: 2it [00:01,  1.34it/s]Evalating textured mesh~: 3it [00:02,  1.82it/s]Evalating textured mesh~: 4it [00:02,  2.57it/s]Evalating textured mesh~: 5it [00:02,  3.30it/s]Evalating textured mesh~: 6it [00:02,  4.01it/s]Evalating textured mesh~: 7it [00:02,  4.92it/s]Evalating textured mesh~: 8it [00:02,  5.48it/s]Evalating textured mesh~: 9it [00:02,  5.95it/s]Evalating textured mesh~: 10it [00:02,  6.69it/s]Evalating textured mesh~: 11it [00:03,  6.85it/s]Evalating textured mesh~: 12it [00:03,  7.02it/s]Evalating textured mesh~: 13it [00:03,  7.54it/s]Evalating textured mesh~: 14it [00:03,  7.19it/s]Evalating textured mesh~: 15it [00:03,  7.14it/s]Evalating textured mesh~: 16it [00:03,  7.68it/s]Evalating textured mesh~: 17it [00:03,  7.44it/s]Evalating textured mesh~: 18it [00:04,  6.09it/s]Evalating textured mesh~: 19it [00:04,  6.14it/s]Evalating textured mesh~: 20it [00:04,  6.41it/s]Evalating textured mesh~: 21it [00:04,  6.64it/s]Evalating textured mesh~: 22it [00:04,  7.32it/s]Evalating textured mesh~: 24it [00:04,  8.53it/s]Evalating textured mesh~: 25it [00:04,  8.78it/s]Evalating textured mesh~: 26it [00:05,  8.40it/s]Evalating textured mesh~: 27it [00:05,  8.14it/s]Evalating textured mesh~: 29it [00:05,  8.41it/s]Evalating textured mesh~: 30it [00:05,  7.62it/s]Evalating textured mesh~: 31it [00:05,  8.05it/s]Evalating textured mesh~: 33it [00:06,  7.33it/s]Evalating textured mesh~: 34it [00:06,  5.67it/s]Evalating textured mesh~: 35it [00:06,  6.34it/s]Evalating textured mesh~: 36it [00:06,  5.69it/s]Evalating textured mesh~: 37it [00:06,  5.36it/s]Evalating textured mesh~: 38it [00:07,  4.69it/s]Evalating textured mesh~: 39it [00:07,  4.57it/s]Evalating textured mesh~: 40it [00:07,  4.76it/s]Evalating textured mesh~: 41it [00:07,  4.66it/s]Evalating textured mesh~: 42it [00:08,  3.43it/s]Evalating textured mesh~: 43it [00:08,  3.74it/s]Evalating textured mesh~: 44it [00:08,  4.10it/s]Evalating textured mesh~: 45it [00:08,  4.49it/s]Evalating textured mesh~: 46it [00:09,  4.59it/s]Evalating textured mesh~: 47it [00:09,  4.77it/s]Evalating textured mesh~: 48it [00:09,  4.15it/s]Evalating textured mesh~: 49it [00:09,  3.50it/s]Evalating textured mesh~: 50it [00:10,  3.57it/s]Evalating textured mesh~: 51it [00:10,  3.76it/s]Evalating textured mesh~: 52it [00:10,  4.20it/s]Evalating textured mesh~: 53it [00:10,  4.32it/s]Evalating textured mesh~: 54it [00:11,  3.48it/s]Evalating textured mesh~: 55it [00:11,  3.91it/s]Evalating textured mesh~: 56it [00:11,  4.42it/s]Evalating textured mesh~: 57it [00:11,  4.66it/s]Evalating textured mesh~: 58it [00:12,  4.00it/s]Evalating textured mesh~: 59it [00:12,  3.85it/s]Evalating textured mesh~: 60it [00:12,  4.23it/s]Evalating textured mesh~: 61it [00:12,  4.08it/s]Evalating textured mesh~: 62it [00:13,  4.53it/s]Evalating textured mesh~: 63it [00:13,  4.83it/s]Evalating textured mesh~: 64it [00:13,  4.33it/s]Evalating textured mesh~: 65it [00:13,  3.68it/s]Evalating textured mesh~: 66it [00:14,  3.80it/s]Evalating textured mesh~: 67it [00:14,  3.68it/s]Evalating textured mesh~: 68it [00:14,  3.98it/s]Evalating textured mesh~: 69it [00:14,  4.67it/s]Evalating textured mesh~: 70it [00:14,  4.69it/s]Evalating textured mesh~: 71it [00:15,  5.11it/s]Evalating textured mesh~: 72it [00:15,  5.31it/s]Evalating textured mesh~: 73it [00:15,  4.97it/s]Evalating textured mesh~: 74it [00:15,  5.44it/s]Evalating textured mesh~: 75it [00:15,  4.82it/s]Evalating textured mesh~: 76it [00:16,  5.08it/s]Evalating textured mesh~: 77it [00:16,  5.33it/s]Evalating textured mesh~: 78it [00:16,  4.76it/s]Evalating textured mesh~: 79it [00:16,  5.17it/s]Evalating textured mesh~: 80it [00:16,  5.38it/s]Evalating textured mesh~: 81it [00:17,  5.15it/s]Evalating textured mesh~: 82it [00:17,  4.89it/s]Evalating textured mesh~: 83it [00:17,  5.06it/s]Evalating textured mesh~: 84it [00:17,  4.86it/s]Evalating textured mesh~: 85it [00:17,  5.24it/s]Evalating textured mesh~: 86it [00:18,  5.09it/s]Evalating textured mesh~: 87it [00:18,  5.05it/s]Evalating textured mesh~: 88it [00:18,  4.98it/s]Evalating textured mesh~: 89it [00:18,  5.14it/s]Evalating textured mesh~: 90it [00:18,  4.63it/s]Evalating textured mesh~: 91it [00:19,  5.03it/s]Evalating textured mesh~: 92it [00:19,  4.96it/s]Evalating textured mesh~: 93it [00:19,  4.63it/s]Evalating textured mesh~: 94it [00:19,  4.97it/s]Evalating textured mesh~: 95it [00:19,  5.34it/s]Evalating textured mesh~: 96it [00:20,  4.65it/s]Evalating textured mesh~: 97it [00:20,  4.94it/s]Evalating textured mesh~: 98it [00:20,  5.22it/s]Evalating textured mesh~: 99it [00:20,  5.00it/s]Evalating textured mesh~: 100it [00:20,  5.14it/s]Evalating textured mesh~: 100it [00:20,  4.79it/s]
+rendering texture and position map
+  0%|          | 0/15 [00:00<?, ?it/s]  7%|▋         | 1/15 [00:52<12:17, 52.68s/it] 13%|█▎        | 2/15 [01:23<08:40, 40.04s/it] 20%|██        | 3/15 [01:54<07:09, 35.81s/it] 27%|██▋       | 4/15 [02:25<06:12, 33.83s/it] 33%|███▎      | 5/15 [02:56<05:27, 32.72s/it] 40%|████      | 6/15 [03:27<04:48, 32.07s/it] 47%|████▋     | 7/15 [03:57<04:13, 31.64s/it] 53%|█████▎    | 8/15 [04:28<03:39, 31.36s/it] 60%|██████    | 9/15 [04:59<03:07, 31.19s/it] 67%|██████▋   | 10/15 [05:30<02:35, 31.05s/it] 73%|███████▎  | 11/15 [06:00<02:03, 30.96s/it] 80%|████████  | 12/15 [06:31<01:32, 30.89s/it] 87%|████████▋ | 13/15 [07:02<01:01, 30.91s/it] 93%|█████████▎| 14/15 [07:33<00:30, 30.91s/it]100%|██████████| 15/15 [08:04<00:00, 30.92s/it]100%|██████████| 15/15 [08:04<00:00, 32.29s/it]
+UV tile time: 495.8295838832855
+total processed time:1215.3859746456146
+Evalating textured mesh~: 0it [00:00, ?it/s]Evalating textured mesh~: 1it [00:00,  4.30it/s]Evalating textured mesh~: 2it [00:00,  5.27it/s]Evalating textured mesh~: 3it [00:00,  5.73it/s]Evalating textured mesh~: 4it [00:00,  6.50it/s]Evalating textured mesh~: 6it [00:00,  7.85it/s]Evalating textured mesh~: 7it [00:00,  8.22it/s]Evalating textured mesh~: 9it [00:01,  8.71it/s]Evalating textured mesh~: 10it [00:01,  8.82it/s]Evalating textured mesh~: 12it [00:01,  9.10it/s]Evalating textured mesh~: 13it [00:01,  9.02it/s]Evalating textured mesh~: 15it [00:01,  9.19it/s]Evalating textured mesh~: 16it [00:01,  9.08it/s]Evalating textured mesh~: 18it [00:02,  9.20it/s]Evalating textured mesh~: 19it [00:02,  8.95it/s]Evalating textured mesh~: 21it [00:02,  9.11it/s]Evalating textured mesh~: 22it [00:02,  8.97it/s]Evalating textured mesh~: 23it [00:02,  9.17it/s]Evalating textured mesh~: 24it [00:02,  9.11it/s]Evalating textured mesh~: 25it [00:02,  9.05it/s]Evalating textured mesh~: 27it [00:03,  9.20it/s]Evalating textured mesh~: 28it [00:03,  9.07it/s]Evalating textured mesh~: 30it [00:03,  9.23it/s]Evalating textured mesh~: 31it [00:03,  9.15it/s]Evalating textured mesh~: 33it [00:03,  9.37it/s]Evalating textured mesh~: 34it [00:03,  9.24it/s]Evalating textured mesh~: 36it [00:04,  9.33it/s]Evalating textured mesh~: 37it [00:04,  9.19it/s]Evalating textured mesh~: 38it [00:04,  9.17it/s]Evalating textured mesh~: 39it [00:04,  9.08it/s]Evalating textured mesh~: 40it [00:04,  8.99it/s]Evalating textured mesh~: 42it [00:04,  9.21it/s]Evalating textured mesh~: 43it [00:04,  9.04it/s]Evalating textured mesh~: 45it [00:05,  9.23it/s]Evalating textured mesh~: 46it [00:05,  9.12it/s]Evalating textured mesh~: 48it [00:05,  9.20it/s]Evalating textured mesh~: 49it [00:05,  9.11it/s]Evalating textured mesh~: 51it [00:05,  9.22it/s]Evalating textured mesh~: 52it [00:05,  9.11it/s]Evalating textured mesh~: 54it [00:06,  9.33it/s]Evalating textured mesh~: 55it [00:06,  9.28it/s]Evalating textured mesh~: 57it [00:06,  9.14it/s]Evalating textured mesh~: 58it [00:06,  9.12it/s]Evalating textured mesh~: 60it [00:06,  9.32it/s]Evalating textured mesh~: 61it [00:06,  9.20it/s]Evalating textured mesh~: 62it [00:06,  9.35it/s]Evalating textured mesh~: 63it [00:07,  9.07it/s]Evalating textured mesh~: 64it [00:07,  8.93it/s]Evalating textured mesh~: 66it [00:07,  9.13it/s]Evalating textured mesh~: 67it [00:07,  8.97it/s]Evalating textured mesh~: 69it [00:07,  9.13it/s]Evalating textured mesh~: 70it [00:07,  9.05it/s]Evalating textured mesh~: 72it [00:08,  9.11it/s]Evalating textured mesh~: 73it [00:08,  9.04it/s]Evalating textured mesh~: 75it [00:08,  9.07it/s]Evalating textured mesh~: 76it [00:08,  8.86it/s]Evalating textured mesh~: 78it [00:08,  9.08it/s]Evalating textured mesh~: 79it [00:08,  9.00it/s]Evalating textured mesh~: 81it [00:09,  9.12it/s]Evalating textured mesh~: 82it [00:09,  9.02it/s]Evalating textured mesh~: 84it [00:09,  9.39it/s]Evalating textured mesh~: 86it [00:09,  9.73it/s]Evalating textured mesh~: 88it [00:09,  9.88it/s]Evalating textured mesh~: 90it [00:09, 10.04it/s]Evalating textured mesh~: 92it [00:10, 10.22it/s]Evalating textured mesh~: 94it [00:10, 10.22it/s]Evalating textured mesh~: 96it [00:10, 10.12it/s]Evalating textured mesh~: 98it [00:10, 10.18it/s]Evalating textured mesh~: 100it [00:10, 10.29it/s]Evalating textured mesh~: 100it [00:10,  9.15it/s]
+subprocess pipeline_paint3d_stage2.py exited rc=0 after 1296.3s
+
+=== [medieval villagers] member_02: tube_top+m_trousers_02 seed=1125320629 ===
+Depth-based 3D Texturing
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  14%|█▍        | 1/7 [00:02<00:12,  2.07s/it]Loading pipeline components...:  43%|████▎     | 3/7 [00:02<00:02,  1.71it/s]Loading pipeline components...:  57%|█████▋    | 4/7 [00:14<00:14,  4.81s/it]Loading pipeline components...:  71%|███████▏  | 5/7 [00:16<00:07,  3.63s/it]`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+Loading pipeline components...:  86%|████████▌ | 6/7 [00:21<00:04,  4.09s/it]Loading pipeline components...: 100%|██████████| 7/7 [00:21<00:00,  3.04s/it]
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  14%|█▍        | 1/7 [00:00<00:01,  3.29it/s]Loading pipeline components...:  29%|██▊       | 2/7 [00:00<00:00,  5.25it/s]Loading pipeline components...:  57%|█████▋    | 4/7 [00:09<00:08,  2.82s/it]Loading pipeline components...:  71%|███████▏  | 5/7 [00:10<00:04,  2.44s/it]`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+Loading pipeline components...:  86%|████████▌ | 6/7 [00:15<00:03,  3.08s/it]Loading pipeline components...: 100%|██████████| 7/7 [00:15<00:00,  2.19s/it]
+Project init view [0, 23]...
+Generating init view...
+  0%|          | 0/20 [00:00<?, ?it/s]  5%|▌         | 1/20 [00:11<03:44, 11.84s/it] 10%|█         | 2/20 [00:12<01:31,  5.08s/it] 15%|█▌        | 3/20 [00:12<00:49,  2.92s/it] 20%|██        | 4/20 [00:12<00:30,  1.90s/it] 25%|██▌       | 5/20 [00:13<00:20,  1.34s/it] 30%|███       | 6/20 [00:13<00:14,  1.00s/it] 35%|███▌      | 7/20 [00:13<00:10,  1.27it/s] 40%|████      | 8/20 [00:14<00:07,  1.54it/s] 45%|████▌     | 9/20 [00:14<00:06,  1.80it/s] 50%|█████     | 10/20 [00:14<00:04,  2.04it/s] 55%|█████▌    | 11/20 [00:15<00:04,  2.23it/s] 60%|██████    | 12/20 [00:15<00:03,  2.40it/s] 65%|██████▌   | 13/20 [00:16<00:02,  2.52it/s] 70%|███████   | 14/20 [00:16<00:02,  2.62it/s] 75%|███████▌  | 15/20 [00:16<00:01,  2.69it/s] 80%|████████  | 16/20 [00:17<00:01,  2.75it/s] 85%|████████▌ | 17/20 [00:17<00:01,  2.78it/s] 90%|█████████ | 18/20 [00:17<00:00,  2.81it/s] 95%|█████████▌| 19/20 [00:18<00:00,  2.83it/s]100%|██████████| 20/20 [00:18<00:00,  2.84it/s]100%|██████████| 20/20 [00:18<00:00,  1.08it/s]
+init view generation time: 26.189374446868896
+0it [00:00, ?it/s]26it [00:00, 2948.30it/s]
+2026-07-09 15:55:37.423 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /root/factorial7_local/8_clip_white_llm6/medieval_villagers/member_02/stage1/res-0/mesh.obj with: vertices:(8847, 3) uv:(9602, 2) faces:(17496, 3)
+init DR time: 1.0004734992980957
+View inpainting ...
+Project inpaint view [(5, 6)]...
+0it [00:00, ?it/s]1it [00:01,  1.76s/it]1it [00:01,  1.76s/it]
+0it [00:00, ?it/s]
+  0%|          | 0/20 [00:00<?, ?it/s][A
+  5%|▌         | 1/20 [00:01<00:26,  1.41s/it][A
+ 10%|█         | 2/20 [00:01<00:15,  1.18it/s][A
+ 15%|█▌        | 3/20 [00:02<00:11,  1.50it/s][A
+ 20%|██        | 4/20 [00:02<00:09,  1.72it/s][A
+ 25%|██▌       | 5/20 [00:03<00:08,  1.87it/s][A
+ 30%|███       | 6/20 [00:03<00:07,  1.97it/s][A
+ 35%|███▌      | 7/20 [00:04<00:06,  2.04it/s][A
+ 40%|████      | 8/20 [00:04<00:05,  2.09it/s][A
+ 45%|████▌     | 9/20 [00:05<00:05,  2.13it/s][A
+ 50%|█████     | 10/20 [00:05<00:04,  2.15it/s][A
+ 55%|█████▌    | 11/20 [00:05<00:04,  2.17it/s][A
+ 60%|██████    | 12/20 [00:06<00:03,  2.18it/s][A
+ 65%|██████▌   | 13/20 [00:06<00:03,  2.18it/s][A
+ 70%|███████   | 14/20 [00:07<00:02,  2.19it/s][A
+ 75%|███████▌  | 15/20 [00:07<00:02,  2.19it/s][A
+ 80%|████████  | 16/20 [00:08<00:01,  2.19it/s][A
+ 85%|████████▌ | 17/20 [00:08<00:01,  2.19it/s][A
+ 90%|█████████ | 18/20 [00:09<00:00,  2.20it/s][A
+ 95%|█████████▌| 19/20 [00:09<00:00,  2.20it/s][A
+100%|██████████| 20/20 [00:10<00:00,  2.20it/s][A100%|██████████| 20/20 [00:10<00:00,  2.00it/s]
+1it [00:13, 13.45s/it]1it [00:13, 13.45s/it]
+inpaint view generation time: 15.217052936553955
+0it [00:00, ?it/s]26it [00:00, 5584.96it/s]
+2026-07-09 15:55:53.577 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /root/factorial7_local/8_clip_white_llm6/medieval_villagers/member_02/stage1/res-0/mesh.obj with: vertices:(8847, 3) uv:(9602, 2) faces:(17496, 3)
+inpaint DR time: 0.9359946250915527
+View inpainting ...
+Project inpaint view [(24, 25)]...
+0it [00:00, ?it/s]1it [00:01,  1.47s/it]1it [00:01,  1.47s/it]
+0it [00:00, ?it/s]
+  0%|          | 0/20 [00:00<?, ?it/s][A
+  5%|▌         | 1/20 [00:01<00:26,  1.38s/it][A
+ 10%|█         | 2/20 [00:01<00:15,  1.20it/s][A
+ 15%|█▌        | 3/20 [00:02<00:11,  1.50it/s][A
+ 20%|██        | 4/20 [00:02<00:09,  1.72it/s][A
+ 25%|██▌       | 5/20 [00:03<00:08,  1.86it/s][A
+ 30%|███       | 6/20 [00:03<00:07,  1.96it/s][A
+ 35%|███▌      | 7/20 [00:04<00:06,  2.03it/s][A
+ 40%|████      | 8/20 [00:04<00:05,  2.08it/s][A
+ 45%|████▌     | 9/20 [00:05<00:05,  2.11it/s][A
+ 50%|█████     | 10/20 [00:05<00:04,  2.13it/s][A
+ 55%|█████▌    | 11/20 [00:05<00:04,  2.15it/s][A
+ 60%|██████    | 12/20 [00:06<00:03,  2.16it/s][A
+ 65%|██████▌   | 13/20 [00:06<00:03,  2.17it/s][A
+ 70%|███████   | 14/20 [00:07<00:02,  2.17it/s][A
+ 75%|███████▌  | 15/20 [00:07<00:02,  2.17it/s][A
+ 80%|████████  | 16/20 [00:08<00:01,  2.17it/s][A
+ 85%|████████▌ | 17/20 [00:08<00:01,  2.17it/s][A
+ 90%|█████████ | 18/20 [00:09<00:00,  2.18it/s][A
+ 95%|█████████▌| 19/20 [00:09<00:00,  2.18it/s][A
+100%|██████████| 20/20 [00:10<00:00,  2.18it/s][A100%|██████████| 20/20 [00:10<00:00,  1.98it/s]
+1it [00:12, 12.38s/it]1it [00:12, 12.39s/it]
+inpaint view generation time: 13.86331582069397
+0it [00:00, ?it/s]26it [00:00, 5382.89it/s]
+2026-07-09 15:56:08.405 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /root/factorial7_local/8_clip_white_llm6/medieval_villagers/member_02/stage1/res-0/mesh.obj with: vertices:(8847, 3) uv:(9602, 2) faces:(17496, 3)
+inpaint DR time: 0.9667479991912842
+total processed time:58.174052238464355
+Evalating textured mesh~: 0it [00:00, ?it/s]Evalating textured mesh~: 2it [00:00, 11.43it/s]Evalating textured mesh~: 4it [00:00, 11.76it/s]Evalating textured mesh~: 6it [00:00, 11.74it/s]Evalating textured mesh~: 8it [00:00, 11.83it/s]Evalating textured mesh~: 10it [00:00, 11.85it/s]Evalating textured mesh~: 12it [00:01, 11.83it/s]Evalating textured mesh~: 14it [00:01, 11.79it/s]Evalating textured mesh~: 16it [00:01, 11.84it/s]Evalating textured mesh~: 18it [00:01, 11.87it/s]Evalating textured mesh~: 20it [00:01, 11.88it/s]Evalating textured mesh~: 22it [00:01, 11.94it/s]Evalating textured mesh~: 24it [00:02, 11.96it/s]Evalating textured mesh~: 26it [00:02, 11.64it/s]Evalating textured mesh~: 28it [00:02, 11.71it/s]Evalating textured mesh~: 30it [00:02, 11.73it/s]Evalating textured mesh~: 32it [00:02, 11.72it/s]Evalating textured mesh~: 34it [00:02, 11.76it/s]Evalating textured mesh~: 36it [00:03, 11.78it/s]Evalating textured mesh~: 38it [00:03, 11.79it/s]Evalating textured mesh~: 40it [00:03, 11.74it/s]Evalating textured mesh~: 42it [00:03, 11.73it/s]Evalating textured mesh~: 44it [00:03, 11.77it/s]Evalating textured mesh~: 46it [00:03, 11.74it/s]Evalating textured mesh~: 48it [00:04, 11.78it/s]Evalating textured mesh~: 50it [00:04, 11.61it/s]Evalating textured mesh~: 52it [00:04, 11.64it/s]Evalating textured mesh~: 54it [00:04, 11.60it/s]Evalating textured mesh~: 56it [00:04, 11.59it/s]Evalating textured mesh~: 58it [00:04, 11.62it/s]Evalating textured mesh~: 60it [00:05, 11.71it/s]Evalating textured mesh~: 62it [00:05, 11.71it/s]Evalating textured mesh~: 64it [00:05, 11.65it/s]Evalating textured mesh~: 66it [00:05, 11.67it/s]Evalating textured mesh~: 68it [00:05, 11.63it/s]Evalating textured mesh~: 70it [00:05, 11.55it/s]Evalating textured mesh~: 72it [00:06, 11.58it/s]Evalating textured mesh~: 74it [00:06, 11.42it/s]Evalating textured mesh~: 76it [00:06, 11.43it/s]Evalating textured mesh~: 78it [00:06, 11.27it/s]Evalating textured mesh~: 80it [00:06, 11.03it/s]Evalating textured mesh~: 82it [00:07, 10.82it/s]Evalating textured mesh~: 84it [00:07, 10.67it/s]Evalating textured mesh~: 86it [00:07, 10.68it/s]Evalating textured mesh~: 88it [00:07, 10.57it/s]Evalating textured mesh~: 90it [00:07, 10.18it/s]Evalating textured mesh~: 92it [00:08, 10.31it/s]Evalating textured mesh~: 94it [00:08, 10.28it/s]Evalating textured mesh~: 96it [00:08,  9.62it/s]Evalating textured mesh~: 97it [00:08,  9.63it/s]Evalating textured mesh~: 98it [00:08,  9.65it/s]Evalating textured mesh~: 99it [00:08,  9.11it/s]Evalating textured mesh~: 100it [00:08,  9.13it/s]Evalating textured mesh~: 100it [00:08, 11.21it/s]
+subprocess pipeline_paint3d_stage1.py exited rc=0 after 147.8s
+Texture diffusion
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  29%|██▊       | 2/7 [00:01<00:03,  1.41it/s]Loading pipeline components...:  43%|████▎     | 3/7 [00:01<00:01,  2.17it/s]Loading pipeline components...:  71%|███████▏  | 5/7 [00:13<00:07,  3.54s/it]Loading pipeline components...:  86%|████████▌ | 6/7 [00:15<00:03,  3.17s/it]`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+Loading pipeline components...: 100%|██████████| 7/7 [00:17<00:00,  2.71s/it]Loading pipeline components...: 100%|██████████| 7/7 [00:17<00:00,  2.51s/it]
+unet/diffusion_pytorch_model.safetensors not found
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  29%|██▊       | 2/7 [00:00<00:00,  6.51it/s]/root/miniconda3/envs/paint3d/lib/python3.8/site-packages/transformers/models/clip/feature_extraction_clip.py:28: FutureWarning: The class CLIPFeatureExtractor is deprecated and will be removed in version 5 of Transformers. Please use CLIPImageProcessor instead.
+  warnings.warn(
+Loading pipeline components...:  71%|███████▏  | 5/7 [00:03<00:01,  1.26it/s]Loading pipeline components...:  86%|████████▌ | 6/7 [00:04<00:00,  1.31it/s]Loading pipeline components...: 100%|██████████| 7/7 [00:05<00:00,  1.05it/s]Loading pipeline components...: 100%|██████████| 7/7 [00:05<00:00,  1.22it/s]
+rendering texture and position map
+  0%|          | 0/20 [00:00<?, ?it/s]  5%|▌         | 1/20 [00:33<10:43, 33.86s/it] 10%|█         | 2/20 [01:04<09:30, 31.71s/it] 15%|█▌        | 3/20 [01:35<08:56, 31.53s/it] 20%|██        | 4/20 [02:05<08:16, 31.01s/it] 25%|██▌       | 5/20 [02:35<07:41, 30.74s/it] 30%|███       | 6/20 [03:06<07:07, 30.54s/it] 35%|███▌      | 7/20 [03:36<06:35, 30.42s/it] 40%|████      | 8/20 [04:06<06:04, 30.36s/it] 45%|████▌     | 9/20 [04:36<05:33, 30.32s/it] 50%|█████     | 10/20 [05:06<05:02, 30.28s/it] 55%|█████▌    | 11/20 [05:37<04:32, 30.25s/it] 60%|██████    | 12/20 [06:07<04:01, 30.24s/it] 65%|██████▌   | 13/20 [06:37<03:31, 30.23s/it] 70%|███████   | 14/20 [07:07<03:01, 30.21s/it] 75%|███████▌  | 15/20 [07:37<02:31, 30.21s/it] 80%|████████  | 16/20 [08:07<02:00, 30.20s/it] 85%|████████▌ | 17/20 [08:38<01:30, 30.20s/it] 90%|█████████ | 18/20 [09:08<01:00, 30.19s/it] 95%|█████████▌| 19/20 [09:38<00:30, 30.20s/it]100%|██████████| 20/20 [10:09<00:00, 30.35s/it]100%|██████████| 20/20 [10:09<00:00, 30.46s/it]
+UV Inpainting time: 626.1561419963837
+Evalating textured mesh~: 0it [00:00, ?it/s]Evalating textured mesh~: 1it [00:00,  2.06it/s]Evalating textured mesh~: 2it [00:00,  3.57it/s]Evalating textured mesh~: 3it [00:00,  4.74it/s]Evalating textured mesh~: 4it [00:00,  5.69it/s]Evalating textured mesh~: 5it [00:00,  6.56it/s]Evalating textured mesh~: 6it [00:01,  7.14it/s]Evalating textured mesh~: 7it [00:01,  7.57it/s]Evalating textured mesh~: 8it [00:01,  7.80it/s]Evalating textured mesh~: 9it [00:01,  8.10it/s]Evalating textured mesh~: 10it [00:01,  8.54it/s]Evalating textured mesh~: 11it [00:01,  8.59it/s]Evalating textured mesh~: 12it [00:01,  8.67it/s]Evalating textured mesh~: 14it [00:01,  9.14it/s]Evalating textured mesh~: 15it [00:02,  9.08it/s]Evalating textured mesh~: 17it [00:02,  9.30it/s]Evalating textured mesh~: 18it [00:02,  9.14it/s]Evalating textured mesh~: 20it [00:02,  9.35it/s]Evalating textured mesh~: 21it [00:02,  9.19it/s]Evalating textured mesh~: 23it [00:02,  9.38it/s]Evalating textured mesh~: 24it [00:03,  9.29it/s]Evalating textured mesh~: 26it [00:03,  9.49it/s]Evalating textured mesh~: 27it [00:03,  9.32it/s]Evalating textured mesh~: 29it [00:03,  9.61it/s]Evalating textured mesh~: 30it [00:03,  9.62it/s]Evalating textured mesh~: 32it [00:03, 10.02it/s]Evalating textured mesh~: 33it [00:03,  9.37it/s]Evalating textured mesh~: 34it [00:04,  8.76it/s]Evalating textured mesh~: 36it [00:04,  9.18it/s]Evalating textured mesh~: 37it [00:04,  8.91it/s]Evalating textured mesh~: 38it [00:04,  9.07it/s]Evalating textured mesh~: 39it [00:04,  7.86it/s]Evalating textured mesh~: 40it [00:04,  7.85it/s]Evalating textured mesh~: 41it [00:04,  8.08it/s]Evalating textured mesh~: 42it [00:05,  8.54it/s]Evalating textured mesh~: 43it [00:05,  8.78it/s]Evalating textured mesh~: 44it [00:05,  8.92it/s]Evalating textured mesh~: 45it [00:05,  8.63it/s]Evalating textured mesh~: 46it [00:05,  6.45it/s]Evalating textured mesh~: 47it [00:05,  6.29it/s]Evalating textured mesh~: 48it [00:05,  6.57it/s]Evalating textured mesh~: 49it [00:06,  6.55it/s]Evalating textured mesh~: 50it [00:06,  6.75it/s]Evalating textured mesh~: 51it [00:06,  6.26it/s]Evalating textured mesh~: 52it [00:06,  6.95it/s]Evalating textured mesh~: 53it [00:06,  7.47it/s]Evalating textured mesh~: 54it [00:06,  8.05it/s]Evalating textured mesh~: 55it [00:06,  8.21it/s]Evalating textured mesh~: 56it [00:07,  6.30it/s]Evalating textured mesh~: 57it [00:07,  6.94it/s]Evalating textured mesh~: 58it [00:07,  7.38it/s]Evalating textured mesh~: 59it [00:07,  7.56it/s]Evalating textured mesh~: 60it [00:07,  7.77it/s]Evalating textured mesh~: 61it [00:07,  7.90it/s]Evalating textured mesh~: 62it [00:07,  7.79it/s]Evalating textured mesh~: 63it [00:07,  7.99it/s]Evalating textured mesh~: 64it [00:08,  8.40it/s]Evalating textured mesh~: 65it [00:08,  8.15it/s]Evalating textured mesh~: 66it [00:08,  8.45it/s]Evalating textured mesh~: 67it [00:08,  7.85it/s]Evalating textured mesh~: 68it [00:08,  6.51it/s]Evalating textured mesh~: 69it [00:08,  6.73it/s]Evalating textured mesh~: 70it [00:08,  6.73it/s]Evalating textured mesh~: 71it [00:09,  7.43it/s]Evalating textured mesh~: 73it [00:09,  8.41it/s]Evalating textured mesh~: 74it [00:09,  8.07it/s]Evalating textured mesh~: 75it [00:09,  6.85it/s]Evalating textured mesh~: 76it [00:09,  7.47it/s]Evalating textured mesh~: 77it [00:09,  7.65it/s]Evalating textured mesh~: 78it [00:09,  7.70it/s]Evalating textured mesh~: 79it [00:10,  7.77it/s]Evalating textured mesh~: 80it [00:10,  5.98it/s]Evalating textured mesh~: 81it [00:10,  6.07it/s]Evalating textured mesh~: 82it [00:10,  6.48it/s]Evalating textured mesh~: 83it [00:10,  7.06it/s]Evalating textured mesh~: 84it [00:10,  7.17it/s]Evalating textured mesh~: 85it [00:11,  7.65it/s]Evalating textured mesh~: 86it [00:11,  7.83it/s]Evalating textured mesh~: 87it [00:11,  7.52it/s]Evalating textured mesh~: 88it [00:11,  6.30it/s]Evalating textured mesh~: 89it [00:11,  6.49it/s]Evalating textured mesh~: 90it [00:11,  6.98it/s]Evalating textured mesh~: 91it [00:11,  7.32it/s]Evalating textured mesh~: 92it [00:12,  6.95it/s]Evalating textured mesh~: 93it [00:12,  5.95it/s]Evalating textured mesh~: 94it [00:12,  6.31it/s]Evalating textured mesh~: 95it [00:12,  7.02it/s]Evalating textured mesh~: 96it [00:12,  7.55it/s]Evalating textured mesh~: 97it [00:12,  7.60it/s]Evalating textured mesh~: 98it [00:12,  5.96it/s]Evalating textured mesh~: 99it [00:13,  6.55it/s]Evalating textured mesh~: 100it [00:13,  6.54it/s]Evalating textured mesh~: 100it [00:13,  7.54it/s]
+rendering texture and position map
+  0%|          | 0/15 [00:00<?, ?it/s]  7%|▋         | 1/15 [00:32<07:34, 32.50s/it] 13%|█▎        | 2/15 [01:02<06:45, 31.16s/it] 20%|██        | 3/15 [01:32<06:08, 30.72s/it] 27%|██▋       | 4/15 [02:03<05:35, 30.53s/it] 33%|███▎      | 5/15 [02:33<05:04, 30.41s/it] 40%|████      | 6/15 [03:03<04:33, 30.34s/it] 47%|████▋     | 7/15 [03:33<04:02, 30.31s/it] 53%|█████▎    | 8/15 [04:04<03:32, 30.29s/it] 60%|██████    | 9/15 [04:34<03:01, 30.26s/it] 67%|██████▋   | 10/15 [05:04<02:31, 30.25s/it] 73%|███████▎  | 11/15 [05:34<02:01, 30.30s/it] 80%|████████  | 12/15 [06:05<01:31, 30.37s/it] 87%|████████▋ | 13/15 [06:35<01:00, 30.31s/it] 93%|█████████▎| 14/15 [07:06<00:30, 30.35s/it]100%|██████████| 15/15 [07:36<00:00, 30.49s/it]100%|██████████| 15/15 [07:36<00:00, 30.46s/it]
+UV tile time: 463.3734657764435
+total processed time:1112.5024893283844
+Evalating textured mesh~: 0it [00:00, ?it/s]Evalating textured mesh~: 1it [00:00,  8.82it/s]Evalating textured mesh~: 3it [00:00, 10.72it/s]Evalating textured mesh~: 5it [00:00, 11.04it/s]Evalating textured mesh~: 7it [00:00, 11.06it/s]Evalating textured mesh~: 9it [00:00, 11.30it/s]Evalating textured mesh~: 11it [00:00, 11.25it/s]Evalating textured mesh~: 13it [00:01, 11.34it/s]Evalating textured mesh~: 15it [00:01, 11.32it/s]Evalating textured mesh~: 17it [00:01, 11.25it/s]Evalating textured mesh~: 19it [00:01, 11.29it/s]Evalating textured mesh~: 21it [00:01, 11.38it/s]Evalating textured mesh~: 23it [00:02, 11.34it/s]Evalating textured mesh~: 25it [00:02, 11.39it/s]Evalating textured mesh~: 27it [00:02, 11.45it/s]Evalating textured mesh~: 29it [00:02, 10.73it/s]Evalating textured mesh~: 31it [00:02, 10.66it/s]Evalating textured mesh~: 33it [00:02, 10.52it/s]Evalating textured mesh~: 35it [00:03, 10.14it/s]Evalating textured mesh~: 37it [00:03, 10.40it/s]Evalating textured mesh~: 39it [00:03, 10.60it/s]Evalating textured mesh~: 41it [00:03, 10.80it/s]Evalating textured mesh~: 43it [00:03, 10.79it/s]Evalating textured mesh~: 45it [00:04, 10.75it/s]Evalating textured mesh~: 47it [00:04, 10.62it/s]Evalating textured mesh~: 49it [00:04, 10.85it/s]Evalating textured mesh~: 51it [00:04, 10.81it/s]Evalating textured mesh~: 53it [00:04, 10.99it/s]Evalating textured mesh~: 55it [00:05, 11.11it/s]Evalating textured mesh~: 57it [00:05, 11.15it/s]Evalating textured mesh~: 59it [00:05, 11.21it/s]Evalating textured mesh~: 61it [00:05, 11.26it/s]Evalating textured mesh~: 63it [00:05, 11.23it/s]Evalating textured mesh~: 65it [00:05, 11.35it/s]Evalating textured mesh~: 67it [00:06, 11.26it/s]Evalating textured mesh~: 69it [00:06, 11.00it/s]Evalating textured mesh~: 71it [00:06, 11.10it/s]Evalating textured mesh~: 73it [00:06, 11.09it/s]Evalating textured mesh~: 75it [00:06, 11.14it/s]Evalating textured mesh~: 77it [00:06, 11.18it/s]Evalating textured mesh~: 79it [00:07, 11.28it/s]Evalating textured mesh~: 81it [00:07, 11.24it/s]Evalating textured mesh~: 83it [00:07, 11.23it/s]Evalating textured mesh~: 85it [00:07, 11.30it/s]Evalating textured mesh~: 87it [00:07, 11.20it/s]Evalating textured mesh~: 89it [00:08, 11.12it/s]Evalating textured mesh~: 91it [00:08, 11.23it/s]Evalating textured mesh~: 93it [00:08, 10.93it/s]Evalating textured mesh~: 95it [00:08, 11.04it/s]Evalating textured mesh~: 97it [00:08, 11.08it/s]Evalating textured mesh~: 99it [00:08, 11.16it/s]Evalating textured mesh~: 100it [00:09, 11.05it/s]
+subprocess pipeline_paint3d_stage2.py exited rc=0 after 1185.7s
+
+=== [medieval villagers] member_03: tank_keyhole_neck+mens_elv_jeans2slf seed=1043778633 ===
+Depth-based 3D Texturing
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  14%|█▍        | 1/7 [00:02<00:12,  2.15s/it]Loading pipeline components...:  43%|████▎     | 3/7 [00:03<00:04,  1.11s/it]Loading pipeline components...:  71%|███████▏  | 5/7 [00:16<00:07,  3.73s/it]`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+Loading pipeline components...:  86%|████████▌ | 6/7 [00:20<00:04,  4.05s/it]Loading pipeline components...: 100%|██████████| 7/7 [00:21<00:00,  3.00s/it]
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  14%|█▍        | 1/7 [00:00<00:00,  6.53it/s]Loading pipeline components...:  43%|████▎     | 3/7 [00:00<00:00, 11.88it/s]Loading pipeline components...:  71%|███████▏  | 5/7 [00:11<00:05,  2.89s/it]`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+Loading pipeline components...:  86%|████████▌ | 6/7 [00:16<00:03,  3.56s/it]Loading pipeline components...: 100%|██████████| 7/7 [00:16<00:00,  2.39s/it]
+Project init view [0, 23]...
+Generating init view...
+  0%|          | 0/20 [00:00<?, ?it/s]  5%|▌         | 1/20 [00:03<01:03,  3.33s/it] 10%|█         | 2/20 [00:03<00:28,  1.58s/it] 15%|█▌        | 3/20 [00:04<00:17,  1.02s/it] 20%|██        | 4/20 [00:04<00:12,  1.33it/s] 25%|██▌       | 5/20 [00:04<00:09,  1.65it/s] 30%|███       | 6/20 [00:05<00:07,  1.93it/s] 35%|███▌      | 7/20 [00:05<00:06,  2.16it/s] 40%|████      | 8/20 [00:05<00:05,  2.35it/s] 45%|████▌     | 9/20 [00:06<00:04,  2.49it/s] 50%|█████     | 10/20 [00:06<00:03,  2.60it/s] 55%|█████▌    | 11/20 [00:06<00:03,  2.68it/s] 60%|██████    | 12/20 [00:07<00:02,  2.73it/s] 65%|██████▌   | 13/20 [00:07<00:02,  2.77it/s] 70%|███████   | 14/20 [00:07<00:02,  2.81it/s] 75%|███████▌  | 15/20 [00:08<00:01,  2.83it/s] 80%|████████  | 16/20 [00:08<00:01,  2.84it/s] 85%|████████▌ | 17/20 [00:08<00:01,  2.85it/s] 90%|█████████ | 18/20 [00:09<00:00,  2.86it/s] 95%|█████████▌| 19/20 [00:09<00:00,  2.86it/s]100%|██████████| 20/20 [00:09<00:00,  2.86it/s]100%|██████████| 20/20 [00:09<00:00,  2.01it/s]
+init view generation time: 14.202390432357788
+0it [00:00, ?it/s]26it [00:00, 4763.55it/s]
+2026-07-09 16:17:36.786 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /root/factorial7_local/8_clip_white_llm6/medieval_villagers/member_03/stage1/res-0/mesh.obj with: vertices:(3835, 3) uv:(4800, 2) faces:(7060, 3)
+init DR time: 0.7928476333618164
+View inpainting ...
+Project inpaint view [(5, 6)]...
+0it [00:00, ?it/s]1it [00:01,  1.28s/it]1it [00:01,  1.28s/it]
+0it [00:00, ?it/s]
+  0%|          | 0/20 [00:00<?, ?it/s][A
+  5%|▌         | 1/20 [00:01<00:24,  1.28s/it][A
+ 10%|█         | 2/20 [00:01<00:14,  1.27it/s][A
+ 15%|█▌        | 3/20 [00:02<00:10,  1.57it/s][A
+ 20%|██        | 4/20 [00:02<00:09,  1.77it/s][A
+ 25%|██▌       | 5/20 [00:03<00:07,  1.91it/s][A
+ 30%|███       | 6/20 [00:03<00:07,  2.00it/s][A
+ 35%|███▌      | 7/20 [00:03<00:06,  2.06it/s][A
+ 40%|████      | 8/20 [00:04<00:05,  2.10it/s][A
+ 45%|████▌     | 9/20 [00:04<00:05,  2.14it/s][A
+ 50%|█████     | 10/20 [00:05<00:04,  2.15it/s][A
+ 55%|█████▌    | 11/20 [00:05<00:04,  2.17it/s][A
+ 60%|██████    | 12/20 [00:06<00:03,  2.17it/s][A
+ 65%|██████▌   | 13/20 [00:06<00:03,  2.18it/s][A
+ 70%|███████   | 14/20 [00:07<00:02,  2.18it/s][A
+ 75%|███████▌  | 15/20 [00:07<00:02,  2.19it/s][A
+ 80%|████████  | 16/20 [00:08<00:01,  2.19it/s][A
+ 85%|████████▌ | 17/20 [00:08<00:01,  2.19it/s][A
+ 90%|█████████ | 18/20 [00:09<00:00,  2.19it/s][A
+ 95%|█████████▌| 19/20 [00:09<00:00,  2.19it/s][A
+100%|██████████| 20/20 [00:09<00:00,  2.20it/s][A100%|██████████| 20/20 [00:09<00:00,  2.02it/s]
+1it [00:12, 12.13s/it]1it [00:12, 12.13s/it]
+inpaint view generation time: 13.421559572219849
+0it [00:00, ?it/s]26it [00:00, 4918.01it/s]
+2026-07-09 16:17:51.053 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /root/factorial7_local/8_clip_white_llm6/medieval_villagers/member_03/stage1/res-0/mesh.obj with: vertices:(3835, 3) uv:(4800, 2) faces:(7060, 3)
+inpaint DR time: 0.844149112701416
+View inpainting ...
+Project inpaint view [(24, 25)]...
+0it [00:00, ?it/s]1it [00:01,  1.11s/it]1it [00:01,  1.11s/it]
+0it [00:00, ?it/s]
+  0%|          | 0/20 [00:00<?, ?it/s][A
+  5%|▌         | 1/20 [00:01<00:24,  1.28s/it][A
+ 10%|█         | 2/20 [00:01<00:14,  1.25it/s][A
+ 15%|█▌        | 3/20 [00:02<00:10,  1.55it/s][A
+ 20%|██        | 4/20 [00:02<00:09,  1.75it/s][A
+ 25%|██▌       | 5/20 [00:03<00:07,  1.89it/s][A
+ 30%|███       | 6/20 [00:03<00:07,  1.98it/s][A
+ 35%|███▌      | 7/20 [00:04<00:06,  2.04it/s][A
+ 40%|████      | 8/20 [00:04<00:05,  2.08it/s][A
+ 45%|████▌     | 9/20 [00:04<00:05,  2.11it/s][A
+ 50%|█████     | 10/20 [00:05<00:04,  2.13it/s][A
+ 55%|█████▌    | 11/20 [00:05<00:04,  2.14it/s][A
+ 60%|██████    | 12/20 [00:06<00:03,  2.15it/s][A
+ 65%|██████▌   | 13/20 [00:06<00:03,  2.17it/s][A
+ 70%|███████   | 14/20 [00:07<00:02,  2.17it/s][A
+ 75%|███████▌  | 15/20 [00:07<00:02,  2.17it/s][A
+ 80%|████████  | 16/20 [00:08<00:01,  2.17it/s][A
+ 85%|████████▌ | 17/20 [00:08<00:01,  2.17it/s][A
+ 90%|█████████ | 18/20 [00:09<00:00,  2.17it/s][A
+ 95%|█████████▌| 19/20 [00:09<00:00,  2.17it/s][A
+100%|██████████| 20/20 [00:10<00:00,  2.17it/s][A100%|██████████| 20/20 [00:10<00:00,  2.00it/s]
+1it [00:12, 12.20s/it]1it [00:12, 12.20s/it]
+inpaint view generation time: 13.313520908355713
+0it [00:00, ?it/s]26it [00:00, 3688.05it/s]
+2026-07-09 16:18:05.229 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /root/factorial7_local/8_clip_white_llm6/medieval_villagers/member_03/stage1/res-0/mesh.obj with: vertices:(3835, 3) uv:(4800, 2) faces:(7060, 3)
+inpaint DR time: 0.8626461029052734
+total processed time:43.438310861587524
+Evalating textured mesh~: 0it [00:00, ?it/s]Evalating textured mesh~: 2it [00:00, 15.41it/s]Evalating textured mesh~: 4it [00:00, 16.03it/s]Evalating textured mesh~: 6it [00:00, 16.16it/s]Evalating textured mesh~: 8it [00:00, 16.26it/s]Evalating textured mesh~: 10it [00:00, 16.32it/s]Evalating textured mesh~: 12it [00:00, 16.29it/s]Evalating textured mesh~: 14it [00:00, 16.23it/s]Evalating textured mesh~: 16it [00:00, 16.16it/s]Evalating textured mesh~: 18it [00:01, 16.19it/s]Evalating textured mesh~: 20it [00:01, 16.18it/s]Evalating textured mesh~: 22it [00:01, 16.18it/s]Evalating textured mesh~: 24it [00:01, 16.16it/s]Evalating textured mesh~: 26it [00:01, 16.26it/s]Evalating textured mesh~: 28it [00:01, 16.24it/s]Evalating textured mesh~: 30it [00:01, 16.21it/s]Evalating textured mesh~: 32it [00:01, 16.28it/s]Evalating textured mesh~: 34it [00:02, 16.27it/s]Evalating textured mesh~: 36it [00:02, 16.33it/s]Evalating textured mesh~: 38it [00:02, 16.44it/s]Evalating textured mesh~: 40it [00:02, 16.31it/s]Evalating textured mesh~: 42it [00:02, 16.32it/s]Evalating textured mesh~: 44it [00:02, 16.29it/s]Evalating textured mesh~: 46it [00:02, 16.30it/s]Evalating textured mesh~: 48it [00:02, 16.26it/s]Evalating textured mesh~: 50it [00:03, 15.85it/s]Evalating textured mesh~: 52it [00:03, 16.01it/s]Evalating textured mesh~: 54it [00:03, 15.94it/s]Evalating textured mesh~: 56it [00:03, 15.97it/s]Evalating textured mesh~: 58it [00:03, 15.95it/s]Evalating textured mesh~: 60it [00:03, 15.89it/s]Evalating textured mesh~: 62it [00:03, 15.97it/s]Evalating textured mesh~: 64it [00:03, 15.97it/s]Evalating textured mesh~: 66it [00:04, 15.96it/s]Evalating textured mesh~: 68it [00:04, 15.71it/s]Evalating textured mesh~: 70it [00:04, 15.79it/s]Evalating textured mesh~: 72it [00:04, 15.70it/s]Evalating textured mesh~: 74it [00:04, 15.36it/s]Evalating textured mesh~: 76it [00:04, 15.08it/s]Evalating textured mesh~: 78it [00:04, 14.97it/s]Evalating textured mesh~: 80it [00:05, 14.93it/s]Evalating textured mesh~: 82it [00:05, 13.58it/s]Evalating textured mesh~: 84it [00:05, 13.92it/s]Evalating textured mesh~: 86it [00:05, 13.75it/s]Evalating textured mesh~: 88it [00:05, 13.86it/s]Evalating textured mesh~: 90it [00:05, 13.64it/s]Evalating textured mesh~: 92it [00:05, 13.04it/s]Evalating textured mesh~: 94it [00:06, 13.23it/s]Evalating textured mesh~: 96it [00:06, 13.29it/s]Evalating textured mesh~: 98it [00:06, 12.27it/s]Evalating textured mesh~: 100it [00:06, 12.68it/s]Evalating textured mesh~: 100it [00:06, 15.20it/s]
+subprocess pipeline_paint3d_stage1.py exited rc=0 after 127.3s
+Texture diffusion
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  14%|█▍        | 1/7 [00:01<00:11,  1.98s/it]Loading pipeline components...:  43%|████▎     | 3/7 [00:02<00:02,  1.80it/s]`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+Loading pipeline components...:  71%|███████▏  | 5/7 [00:03<00:01,  1.72it/s]Loading pipeline components...:  86%|████████▌ | 6/7 [00:15<00:03,  3.76s/it]Loading pipeline components...: 100%|██████████| 7/7 [00:17<00:00,  3.11s/it]Loading pipeline components...: 100%|██████████| 7/7 [00:17<00:00,  2.45s/it]
+text_encoder/model.safetensors not found
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  14%|█▍        | 1/7 [00:00<00:04,  1.43it/s]Loading pipeline components...:  57%|█████▋    | 4/7 [00:03<00:02,  1.27it/s]/root/miniconda3/envs/paint3d/lib/python3.8/site-packages/transformers/models/clip/feature_extraction_clip.py:28: FutureWarning: The class CLIPFeatureExtractor is deprecated and will be removed in version 5 of Transformers. Please use CLIPImageProcessor instead.
+  warnings.warn(
+Loading pipeline components...:  86%|████████▌ | 6/7 [00:07<00:01,  1.30s/it]Loading pipeline components...: 100%|██████████| 7/7 [00:07<00:00,  1.07s/it]Loading pipeline components...: 100%|██████████| 7/7 [00:07<00:00,  1.06s/it]
+rendering texture and position map
+  0%|          | 0/20 [00:00<?, ?it/s]  5%|▌         | 1/20 [00:34<10:57, 34.62s/it] 10%|█         | 2/20 [01:04<09:35, 31.96s/it] 15%|█▌        | 3/20 [01:34<08:48, 31.09s/it] 20%|██        | 4/20 [02:04<08:11, 30.69s/it] 25%|██▌       | 5/20 [02:34<07:36, 30.44s/it] 30%|███       | 6/20 [03:05<07:06, 30.44s/it] 35%|███▌      | 7/20 [03:35<06:34, 30.32s/it] 40%|████      | 8/20 [04:05<06:03, 30.25s/it] 45%|████▌     | 9/20 [04:35<05:32, 30.19s/it] 50%|█████     | 10/20 [05:05<05:01, 30.14s/it] 55%|█████▌    | 11/20 [05:35<04:31, 30.11s/it] 60%|██████    | 12/20 [06:05<04:00, 30.11s/it] 65%|██████▌   | 13/20 [06:35<03:30, 30.09s/it] 70%|███████   | 14/20 [07:06<03:01, 30.22s/it] 75%|███████▌  | 15/20 [07:36<02:30, 30.17s/it] 80%|████████  | 16/20 [08:06<02:00, 30.15s/it] 85%|████████▌ | 17/20 [08:36<01:30, 30.12s/it] 90%|█████████ | 18/20 [09:06<01:00, 30.10s/it] 95%|█████████▌| 19/20 [09:36<00:30, 30.11s/it]100%|██████████| 20/20 [10:06<00:00, 30.12s/it]100%|██████████| 20/20 [10:06<00:00, 30.34s/it]
+UV Inpainting time: 622.8168969154358
+Evalating textured mesh~: 0it [00:00, ?it/s]Evalating textured mesh~: 1it [00:00,  5.53it/s]Evalating textured mesh~: 2it [00:00,  7.41it/s]Evalating textured mesh~: 4it [00:00,  8.94it/s]Evalating textured mesh~: 6it [00:00, 10.22it/s]Evalating textured mesh~: 8it [00:00, 10.82it/s]Evalating textured mesh~: 10it [00:00, 11.38it/s]Evalating textured mesh~: 12it [00:01, 11.90it/s]Evalating textured mesh~: 14it [00:01, 12.30it/s]Evalating textured mesh~: 16it [00:01, 12.58it/s]Evalating textured mesh~: 18it [00:01, 12.58it/s]Evalating textured mesh~: 20it [00:01, 12.80it/s]Evalating textured mesh~: 22it [00:01, 13.00it/s]Evalating textured mesh~: 24it [00:02, 12.93it/s]Evalating textured mesh~: 26it [00:02, 13.01it/s]Evalating textured mesh~: 28it [00:02, 13.13it/s]Evalating textured mesh~: 30it [00:02, 13.14it/s]Evalating textured mesh~: 32it [00:02, 13.00it/s]Evalating textured mesh~: 34it [00:02, 13.19it/s]Evalating textured mesh~: 36it [00:02, 13.36it/s]Evalating textured mesh~: 38it [00:03, 13.61it/s]Evalating textured mesh~: 40it [00:03, 12.38it/s]Evalating textured mesh~: 42it [00:03, 12.43it/s]Evalating textured mesh~: 44it [00:03, 12.38it/s]Evalating textured mesh~: 46it [00:03, 11.06it/s]Evalating textured mesh~: 48it [00:03, 11.37it/s]Evalating textured mesh~: 50it [00:04, 11.48it/s]Evalating textured mesh~: 52it [00:04, 10.39it/s]Evalating textured mesh~: 54it [00:04, 10.86it/s]Evalating textured mesh~: 56it [00:04, 10.04it/s]Evalating textured mesh~: 58it [00:04, 10.70it/s]Evalating textured mesh~: 60it [00:05, 11.21it/s]Evalating textured mesh~: 62it [00:05, 10.49it/s]Evalating textured mesh~: 64it [00:05, 10.98it/s]Evalating textured mesh~: 66it [00:05, 10.99it/s]Evalating textured mesh~: 68it [00:05, 10.67it/s]Evalating textured mesh~: 70it [00:06, 10.00it/s]Evalating textured mesh~: 72it [00:06,  9.89it/s]Evalating textured mesh~: 74it [00:06,  9.75it/s]Evalating textured mesh~: 76it [00:06,  9.82it/s]Evalating textured mesh~: 77it [00:06,  9.60it/s]Evalating textured mesh~: 79it [00:07,  9.98it/s]Evalating textured mesh~: 81it [00:07, 10.01it/s]Evalating textured mesh~: 83it [00:07, 10.28it/s]Evalating textured mesh~: 85it [00:07,  9.77it/s]Evalating textured mesh~: 86it [00:07,  9.64it/s]Evalating textured mesh~: 88it [00:07,  9.54it/s]Evalating textured mesh~: 90it [00:08, 10.06it/s]Evalating textured mesh~: 92it [00:08, 10.24it/s]Evalating textured mesh~: 94it [00:08,  9.40it/s]Evalating textured mesh~: 96it [00:08,  9.64it/s]Evalating textured mesh~: 97it [00:08,  9.20it/s]Evalating textured mesh~: 99it [00:09,  9.38it/s]Evalating textured mesh~: 100it [00:09,  9.06it/s]Evalating textured mesh~: 100it [00:09, 10.83it/s]
+rendering texture and position map
+  0%|          | 0/15 [00:00<?, ?it/s]  7%|▋         | 1/15 [00:32<07:34, 32.44s/it] 13%|█▎        | 2/15 [01:02<06:44, 31.10s/it] 20%|██        | 3/15 [01:32<06:08, 30.67s/it] 27%|██▋       | 4/15 [02:02<05:35, 30.47s/it] 33%|███▎      | 5/15 [02:33<05:03, 30.35s/it] 40%|████      | 6/15 [03:03<04:32, 30.29s/it] 47%|████▋     | 7/15 [03:33<04:01, 30.25s/it] 53%|█████▎    | 8/15 [04:03<03:31, 30.21s/it] 60%|██████    | 9/15 [04:33<03:01, 30.24s/it] 67%|██████▋   | 10/15 [05:04<02:31, 30.28s/it] 73%|███████▎  | 11/15 [05:34<02:01, 30.39s/it] 80%|████████  | 12/15 [06:05<01:31, 30.40s/it] 87%|████████▋ | 13/15 [06:35<01:00, 30.42s/it] 93%|█████████▎| 14/15 [07:06<00:30, 30.42s/it]100%|██████████| 15/15 [07:36<00:00, 30.43s/it]100%|██████████| 15/15 [07:36<00:00, 30.44s/it]
+UV tile time: 462.5421049594879
+total processed time:1102.1180834770203
+Evalating textured mesh~: 0it [00:00, ?it/s]Evalating textured mesh~: 2it [00:00, 14.39it/s]Evalating textured mesh~: 4it [00:00, 15.31it/s]Evalating textured mesh~: 6it [00:00, 15.59it/s]Evalating textured mesh~: 8it [00:00, 15.71it/s]Evalating textured mesh~: 10it [00:00, 15.89it/s]Evalating textured mesh~: 12it [00:00, 15.92it/s]Evalating textured mesh~: 14it [00:00, 15.95it/s]Evalating textured mesh~: 16it [00:01, 15.94it/s]Evalating textured mesh~: 18it [00:01, 15.77it/s]Evalating textured mesh~: 20it [00:01, 15.68it/s]Evalating textured mesh~: 22it [00:01, 15.88it/s]Evalating textured mesh~: 24it [00:01, 15.86it/s]Evalating textured mesh~: 26it [00:01, 15.96it/s]Evalating textured mesh~: 28it [00:01, 15.97it/s]Evalating textured mesh~: 30it [00:01, 15.93it/s]Evalating textured mesh~: 32it [00:02, 16.04it/s]Evalating textured mesh~: 34it [00:02, 15.51it/s]Evalating textured mesh~: 36it [00:02, 15.47it/s]Evalating textured mesh~: 38it [00:02, 15.67it/s]Evalating textured mesh~: 40it [00:02, 15.77it/s]Evalating textured mesh~: 42it [00:02, 15.89it/s]Evalating textured mesh~: 44it [00:02, 15.98it/s]Evalating textured mesh~: 46it [00:02, 15.93it/s]Evalating textured mesh~: 48it [00:03, 15.98it/s]Evalating textured mesh~: 50it [00:03, 16.05it/s]Evalating textured mesh~: 52it [00:03, 16.13it/s]Evalating textured mesh~: 54it [00:03, 15.89it/s]Evalating textured mesh~: 56it [00:03, 15.91it/s]Evalating textured mesh~: 58it [00:03, 16.00it/s]Evalating textured mesh~: 60it [00:03, 15.86it/s]Evalating textured mesh~: 62it [00:03, 15.73it/s]Evalating textured mesh~: 64it [00:04, 15.93it/s]Evalating textured mesh~: 66it [00:04, 15.80it/s]Evalating textured mesh~: 68it [00:04, 15.92it/s]Evalating textured mesh~: 70it [00:04, 15.97it/s]Evalating textured mesh~: 72it [00:04, 15.60it/s]Evalating textured mesh~: 74it [00:04, 15.77it/s]Evalating textured mesh~: 76it [00:04, 15.90it/s]Evalating textured mesh~: 78it [00:04, 15.94it/s]Evalating textured mesh~: 80it [00:05, 15.87it/s]Evalating textured mesh~: 82it [00:05, 15.68it/s]Evalating textured mesh~: 84it [00:05, 15.62it/s]Evalating textured mesh~: 86it [00:05, 15.66it/s]Evalating textured mesh~: 88it [00:05, 15.80it/s]Evalating textured mesh~: 90it [00:05, 15.74it/s]Evalating textured mesh~: 92it [00:05, 15.74it/s]Evalating textured mesh~: 94it [00:05, 15.67it/s]Evalating textured mesh~: 96it [00:06, 15.78it/s]Evalating textured mesh~: 98it [00:06, 15.56it/s]Evalating textured mesh~: 100it [00:06, 15.39it/s]Evalating textured mesh~: 100it [00:06, 15.78it/s]
+subprocess pipeline_paint3d_stage2.py exited rc=0 after 1179.4s
+
+=== [medieval villagers] member_04: vintagetop+skirt_mini seed=1746304310 ===
+Depth-based 3D Texturing
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+Loading pipeline components...:  14%|█▍        | 1/7 [00:04<00:29,  4.98s/it]Loading pipeline components...:  43%|████▎     | 3/7 [00:17<00:23,  5.95s/it]Loading pipeline components...:  57%|█████▋    | 4/7 [00:19<00:13,  4.41s/it]Loading pipeline components...:  86%|████████▌ | 6/7 [00:20<00:02,  2.69s/it]Loading pipeline components...: 100%|██████████| 7/7 [00:21<00:00,  3.01s/it]
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+Loading pipeline components...:  14%|█▍        | 1/7 [00:00<00:01,  3.31it/s]Loading pipeline components...:  43%|████▎     | 3/7 [00:11<00:16,  4.13s/it]Loading pipeline components...:  57%|█████▋    | 4/7 [00:12<00:09,  3.22s/it]Loading pipeline components...:  86%|████████▌ | 6/7 [00:14<00:02,  2.09s/it]Loading pipeline components...: 100%|██████████| 7/7 [00:14<00:00,  2.10s/it]
+Project init view [0, 23]...
+Generating init view...
+  0%|          | 0/20 [00:00<?, ?it/s]  5%|▌         | 1/20 [00:03<01:09,  3.66s/it] 10%|█         | 2/20 [00:04<00:30,  1.71s/it] 15%|█▌        | 3/20 [00:04<00:18,  1.09s/it] 20%|██        | 4/20 [00:04<00:12,  1.25it/s] 25%|██▌       | 5/20 [00:05<00:09,  1.57it/s] 30%|███       | 6/20 [00:05<00:07,  1.85it/s] 35%|███▌      | 7/20 [00:05<00:06,  2.09it/s] 40%|████      | 8/20 [00:06<00:05,  2.28it/s] 45%|████▌     | 9/20 [00:06<00:04,  2.43it/s] 50%|█████     | 10/20 [00:06<00:03,  2.54it/s] 55%|█████▌    | 11/20 [00:07<00:03,  2.64it/s] 60%|██████    | 12/20 [00:07<00:02,  2.69it/s] 65%|██████▌   | 13/20 [00:07<00:02,  2.74it/s] 70%|███████   | 14/20 [00:08<00:02,  2.78it/s] 75%|███████▌  | 15/20 [00:08<00:01,  2.79it/s] 80%|████████  | 16/20 [00:08<00:01,  2.81it/s] 85%|████████▌ | 17/20 [00:09<00:01,  2.81it/s] 90%|█████████ | 18/20 [00:09<00:00,  2.82it/s] 95%|█████████▌| 19/20 [00:09<00:00,  2.82it/s]100%|██████████| 20/20 [00:10<00:00,  2.82it/s]100%|██████████| 20/20 [00:10<00:00,  1.93it/s]
+init view generation time: 14.741678953170776
+0it [00:00, ?it/s]26it [00:00, 3393.45it/s]
+2026-07-09 16:39:24.691 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /root/factorial7_local/8_clip_white_llm6/medieval_villagers/member_04/stage1/res-0/mesh.obj with: vertices:(1911, 3) uv:(2064, 2) faces:(3572, 3)
+init DR time: 0.6303768157958984
+View inpainting ...
+Project inpaint view [(5, 6)]...
+0it [00:00, ?it/s]1it [00:01,  1.40s/it]1it [00:01,  1.40s/it]
+0it [00:00, ?it/s]
+  0%|          | 0/20 [00:00<?, ?it/s][A
+  5%|▌         | 1/20 [00:01<00:24,  1.28s/it][A
+ 10%|█         | 2/20 [00:01<00:14,  1.26it/s][A
+ 15%|█▌        | 3/20 [00:02<00:10,  1.56it/s][A
+ 20%|██        | 4/20 [00:02<00:09,  1.76it/s][A
+ 25%|██▌       | 5/20 [00:03<00:07,  1.89it/s][A
+ 30%|███       | 6/20 [00:03<00:07,  1.98it/s][A
+ 35%|███▌      | 7/20 [00:04<00:06,  2.04it/s][A
+ 40%|████      | 8/20 [00:04<00:05,  2.08it/s][A
+ 45%|████▌     | 9/20 [00:04<00:05,  2.11it/s][A
+ 50%|█████     | 10/20 [00:05<00:04,  2.13it/s][A
+ 55%|█████▌    | 11/20 [00:05<00:04,  2.14it/s][A
+ 60%|██████    | 12/20 [00:06<00:03,  2.14it/s][A
+ 65%|██████▌   | 13/20 [00:06<00:03,  2.15it/s][A
+ 70%|███████   | 14/20 [00:07<00:02,  2.16it/s][A
+ 75%|███████▌  | 15/20 [00:07<00:02,  2.16it/s][A
+ 80%|████████  | 16/20 [00:08<00:01,  2.16it/s][A
+ 85%|████████▌ | 17/20 [00:08<00:01,  2.16it/s][A
+ 90%|█████████ | 18/20 [00:09<00:00,  2.17it/s][A
+ 95%|█████████▌| 19/20 [00:09<00:00,  2.17it/s][A
+100%|██████████| 20/20 [00:10<00:00,  2.18it/s][A100%|██████████| 20/20 [00:10<00:00,  2.00it/s]
+1it [00:12, 12.36s/it]1it [00:12, 12.36s/it]
+inpaint view generation time: 13.763629913330078
+0it [00:00, ?it/s]26it [00:00, 5092.55it/s]
+2026-07-09 16:39:39.126 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /root/factorial7_local/8_clip_white_llm6/medieval_villagers/member_04/stage1/res-0/mesh.obj with: vertices:(1911, 3) uv:(2064, 2) faces:(3572, 3)
+inpaint DR time: 0.6707055568695068
+View inpainting ...
+Project inpaint view [(24, 25)]...
+0it [00:00, ?it/s]1it [00:01,  1.31s/it]1it [00:01,  1.31s/it]
+0it [00:00, ?it/s]
+  0%|          | 0/20 [00:00<?, ?it/s][A
+  5%|▌         | 1/20 [00:01<00:24,  1.30s/it][A
+ 10%|█         | 2/20 [00:01<00:14,  1.24it/s][A
+ 15%|█▌        | 3/20 [00:02<00:11,  1.54it/s][A
+ 20%|██        | 4/20 [00:02<00:09,  1.74it/s][A
+ 25%|██▌       | 5/20 [00:03<00:08,  1.87it/s][A
+ 30%|███       | 6/20 [00:03<00:07,  1.97it/s][A
+ 35%|███▌      | 7/20 [00:04<00:06,  2.01it/s][A
+ 40%|████      | 8/20 [00:04<00:05,  2.06it/s][A
+ 45%|████▌     | 9/20 [00:04<00:05,  2.09it/s][A
+ 50%|█████     | 10/20 [00:05<00:04,  2.12it/s][A
+ 55%|█████▌    | 11/20 [00:05<00:04,  2.14it/s][A
+ 60%|██████    | 12/20 [00:06<00:03,  2.16it/s][A
+ 65%|██████▌   | 13/20 [00:06<00:03,  2.17it/s][A
+ 70%|███████   | 14/20 [00:07<00:02,  2.17it/s][A
+ 75%|███████▌  | 15/20 [00:07<00:02,  2.17it/s][A
+ 80%|████████  | 16/20 [00:08<00:01,  2.18it/s][A
+ 85%|████████▌ | 17/20 [00:08<00:01,  2.18it/s][A
+ 90%|█████████ | 18/20 [00:09<00:00,  2.18it/s][A
+ 95%|█████████▌| 19/20 [00:09<00:00,  2.18it/s][A
+100%|██████████| 20/20 [00:10<00:00,  2.18it/s][A100%|██████████| 20/20 [00:10<00:00,  1.99it/s]
+1it [00:12, 12.35s/it]1it [00:12, 12.35s/it]
+inpaint view generation time: 13.670135498046875
+0it [00:00, ?it/s]26it [00:00, 3534.68it/s]
+2026-07-09 16:39:53.492 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /root/factorial7_local/8_clip_white_llm6/medieval_villagers/member_04/stage1/res-0/mesh.obj with: vertices:(1911, 3) uv:(2064, 2) faces:(3572, 3)
+inpaint DR time: 0.6953849792480469
+total processed time:44.173048973083496
+Evalating textured mesh~: 0it [00:00, ?it/s]Evalating textured mesh~: 2it [00:00, 16.81it/s]Evalating textured mesh~: 4it [00:00, 17.84it/s]Evalating textured mesh~: 6it [00:00, 16.98it/s]Evalating textured mesh~: 8it [00:00, 16.99it/s]Evalating textured mesh~: 10it [00:00, 17.37it/s]Evalating textured mesh~: 12it [00:00, 17.47it/s]Evalating textured mesh~: 14it [00:00, 17.60it/s]Evalating textured mesh~: 16it [00:00, 17.07it/s]Evalating textured mesh~: 18it [00:01, 17.22it/s]Evalating textured mesh~: 20it [00:01, 17.44it/s]Evalating textured mesh~: 22it [00:01, 17.60it/s]Evalating textured mesh~: 24it [00:01, 17.56it/s]Evalating textured mesh~: 26it [00:01, 17.46it/s]Evalating textured mesh~: 28it [00:01, 17.62it/s]Evalating textured mesh~: 30it [00:01, 17.58it/s]Evalating textured mesh~: 32it [00:01, 17.48it/s]Evalating textured mesh~: 34it [00:01, 17.51it/s]Evalating textured mesh~: 36it [00:02, 17.48it/s]Evalating textured mesh~: 38it [00:02, 17.61it/s]Evalating textured mesh~: 40it [00:02, 17.64it/s]Evalating textured mesh~: 42it [00:02, 17.61it/s]Evalating textured mesh~: 44it [00:02, 16.91it/s]Evalating textured mesh~: 46it [00:02, 17.12it/s]Evalating textured mesh~: 48it [00:02, 17.14it/s]Evalating textured mesh~: 50it [00:02, 17.18it/s]Evalating textured mesh~: 52it [00:02, 17.09it/s]Evalating textured mesh~: 54it [00:03, 16.92it/s]Evalating textured mesh~: 56it [00:03, 16.89it/s]Evalating textured mesh~: 58it [00:03, 16.89it/s]Evalating textured mesh~: 60it [00:03, 16.75it/s]Evalating textured mesh~: 62it [00:03, 16.72it/s]Evalating textured mesh~: 64it [00:03, 16.58it/s]Evalating textured mesh~: 66it [00:03, 16.46it/s]Evalating textured mesh~: 68it [00:03, 16.26it/s]Evalating textured mesh~: 70it [00:04, 16.26it/s]Evalating textured mesh~: 72it [00:04, 16.08it/s]Evalating textured mesh~: 74it [00:04, 15.78it/s]Evalating textured mesh~: 76it [00:04, 15.46it/s]Evalating textured mesh~: 78it [00:04, 15.22it/s]Evalating textured mesh~: 80it [00:04, 14.85it/s]Evalating textured mesh~: 82it [00:04, 13.79it/s]Evalating textured mesh~: 84it [00:05, 14.13it/s]Evalating textured mesh~: 86it [00:05, 13.28it/s]Evalating textured mesh~: 88it [00:05, 13.72it/s]Evalating textured mesh~: 90it [00:05, 13.10it/s]Evalating textured mesh~: 92it [00:05, 12.10it/s]Evalating textured mesh~: 94it [00:05, 12.75it/s]Evalating textured mesh~: 96it [00:06, 11.85it/s]Evalating textured mesh~: 98it [00:06, 12.39it/s]Evalating textured mesh~: 100it [00:06, 11.64it/s]Evalating textured mesh~: 100it [00:06, 15.59it/s]
+subprocess pipeline_paint3d_stage1.py exited rc=0 after 127.7s
+Texture diffusion
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  14%|█▍        | 1/7 [00:00<00:01,  3.67it/s]Loading pipeline components...:  29%|██▊       | 2/7 [00:00<00:01,  4.90it/s]Loading pipeline components...:  43%|████▎     | 3/7 [00:12<00:21,  5.40s/it]Loading pipeline components...:  57%|█████▋    | 4/7 [00:12<00:10,  3.36s/it]`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+Loading pipeline components...:  71%|███████▏  | 5/7 [00:17<00:08,  4.14s/it]Loading pipeline components...: 100%|██████████| 7/7 [00:17<00:00,  2.55s/it]
+safety_checker/model.safetensors not found
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  29%|██▊       | 2/7 [00:00<00:01,  4.51it/s]Loading pipeline components...:  43%|████▎     | 3/7 [00:03<00:06,  1.56s/it]Loading pipeline components...:  57%|█████▋    | 4/7 [00:04<00:03,  1.25s/it]Loading pipeline components...:  71%|███████▏  | 5/7 [00:06<00:02,  1.38s/it]/root/miniconda3/envs/paint3d/lib/python3.8/site-packages/transformers/models/clip/feature_extraction_clip.py:28: FutureWarning: The class CLIPFeatureExtractor is deprecated and will be removed in version 5 of Transformers. Please use CLIPImageProcessor instead.
+  warnings.warn(
+Loading pipeline components...: 100%|██████████| 7/7 [00:06<00:00,  1.12it/s]
+rendering texture and position map
+  0%|          | 0/20 [00:00<?, ?it/s]  5%|▌         | 1/20 [00:34<10:59, 34.71s/it] 10%|█         | 2/20 [01:05<09:43, 32.42s/it] 15%|█▌        | 3/20 [01:36<09:00, 31.78s/it] 20%|██        | 4/20 [02:07<08:24, 31.54s/it] 25%|██▌       | 5/20 [02:39<07:54, 31.62s/it] 30%|███       | 6/20 [03:12<07:30, 32.19s/it] 35%|███▌      | 7/20 [03:43<06:53, 31.82s/it] 40%|████      | 8/20 [04:14<06:17, 31.42s/it] 45%|████▌     | 9/20 [04:44<05:40, 30.97s/it] 50%|█████     | 10/20 [05:14<05:06, 30.65s/it] 55%|█████▌    | 11/20 [05:44<04:33, 30.44s/it] 60%|██████    | 12/20 [06:15<04:05, 30.67s/it] 65%|██████▌   | 13/20 [06:45<03:34, 30.58s/it] 70%|███████   | 14/20 [07:16<03:03, 30.55s/it] 75%|███████▌  | 15/20 [07:47<02:33, 30.60s/it] 80%|████████  | 16/20 [08:18<02:03, 30.88s/it] 85%|████████▌ | 17/20 [08:49<01:32, 30.79s/it] 90%|█████████ | 18/20 [09:20<01:01, 30.86s/it] 95%|█████████▌| 19/20 [09:51<00:31, 31.04s/it]100%|██████████| 20/20 [10:21<00:00, 30.78s/it]100%|██████████| 20/20 [10:21<00:00, 31.09s/it]
+UV Inpainting time: 637.3817336559296
+Evalating textured mesh~: 0it [00:00, ?it/s]Evalating textured mesh~: 1it [00:00,  1.94it/s]Evalating textured mesh~: 2it [00:00,  3.08it/s]Evalating textured mesh~: 3it [00:00,  3.45it/s]Evalating textured mesh~: 4it [00:01,  4.01it/s]Evalating textured mesh~: 6it [00:01,  6.14it/s]Evalating textured mesh~: 8it [00:01,  8.02it/s]Evalating textured mesh~: 10it [00:01,  9.46it/s]Evalating textured mesh~: 12it [00:01, 10.12it/s]Evalating textured mesh~: 14it [00:01, 11.04it/s]Evalating textured mesh~: 16it [00:02, 11.57it/s]Evalating textured mesh~: 18it [00:02, 12.70it/s]Evalating textured mesh~: 20it [00:02, 13.55it/s]Evalating textured mesh~: 22it [00:02, 14.41it/s]Evalating textured mesh~: 24it [00:02, 13.48it/s]Evalating textured mesh~: 26it [00:02, 12.70it/s]Evalating textured mesh~: 28it [00:03, 10.14it/s]Evalating textured mesh~: 30it [00:03,  8.08it/s]Evalating textured mesh~: 31it [00:03,  8.31it/s]Evalating textured mesh~: 32it [00:03,  8.49it/s]Evalating textured mesh~: 33it [00:03,  8.61it/s]Evalating textured mesh~: 34it [00:03,  7.95it/s]Evalating textured mesh~: 36it [00:04,  8.41it/s]Evalating textured mesh~: 37it [00:04,  8.60it/s]Evalating textured mesh~: 38it [00:04,  7.93it/s]Evalating textured mesh~: 39it [00:04,  8.05it/s]Evalating textured mesh~: 40it [00:04,  7.99it/s]Evalating textured mesh~: 41it [00:04,  7.84it/s]Evalating textured mesh~: 42it [00:04,  7.78it/s]Evalating textured mesh~: 43it [00:05,  8.09it/s]Evalating textured mesh~: 44it [00:05,  6.35it/s]Evalating textured mesh~: 45it [00:05,  6.41it/s]Evalating textured mesh~: 46it [00:05,  6.55it/s]Evalating textured mesh~: 47it [00:05,  7.06it/s]Evalating textured mesh~: 48it [00:05,  7.17it/s]Evalating textured mesh~: 49it [00:05,  7.70it/s]Evalating textured mesh~: 50it [00:06,  7.26it/s]Evalating textured mesh~: 51it [00:06,  7.72it/s]Evalating textured mesh~: 52it [00:06,  8.26it/s]Evalating textured mesh~: 53it [00:06,  8.27it/s]Evalating textured mesh~: 54it [00:06,  8.71it/s]Evalating textured mesh~: 56it [00:06,  9.16it/s]Evalating textured mesh~: 57it [00:07,  6.31it/s]Evalating textured mesh~: 58it [00:07,  6.10it/s]Evalating textured mesh~: 59it [00:07,  6.15it/s]Evalating textured mesh~: 60it [00:07,  5.90it/s]Evalating textured mesh~: 61it [00:07,  6.28it/s]Evalating textured mesh~: 62it [00:07,  6.60it/s]Evalating textured mesh~: 63it [00:07,  6.77it/s]Evalating textured mesh~: 64it [00:08,  6.38it/s]Evalating textured mesh~: 65it [00:08,  5.32it/s]Evalating textured mesh~: 66it [00:08,  5.79it/s]Evalating textured mesh~: 67it [00:08,  6.29it/s]Evalating textured mesh~: 68it [00:08,  6.63it/s]Evalating textured mesh~: 69it [00:08,  6.90it/s]Evalating textured mesh~: 70it [00:09,  7.54it/s]Evalating textured mesh~: 71it [00:09,  8.06it/s]Evalating textured mesh~: 72it [00:09,  8.54it/s]Evalating textured mesh~: 73it [00:09,  7.89it/s]Evalating textured mesh~: 74it [00:09,  6.28it/s]Evalating textured mesh~: 75it [00:09,  6.99it/s]Evalating textured mesh~: 76it [00:09,  7.08it/s]Evalating textured mesh~: 78it [00:10,  8.45it/s]Evalating textured mesh~: 80it [00:10,  8.95it/s]Evalating textured mesh~: 81it [00:10,  8.08it/s]Evalating textured mesh~: 82it [00:10,  6.81it/s]Evalating textured mesh~: 84it [00:10,  7.86it/s]Evalating textured mesh~: 85it [00:10,  8.06it/s]Evalating textured mesh~: 86it [00:11,  7.99it/s]Evalating textured mesh~: 87it [00:11,  7.25it/s]Evalating textured mesh~: 88it [00:11,  5.81it/s]Evalating textured mesh~: 89it [00:11,  5.90it/s]Evalating textured mesh~: 90it [00:11,  6.04it/s]Evalating textured mesh~: 91it [00:11,  6.53it/s]Evalating textured mesh~: 92it [00:12,  6.88it/s]Evalating textured mesh~: 93it [00:12,  7.07it/s]Evalating textured mesh~: 94it [00:12,  6.46it/s]Evalating textured mesh~: 95it [00:12,  4.96it/s]Evalating textured mesh~: 96it [00:12,  5.70it/s]Evalating textured mesh~: 97it [00:12,  6.48it/s]Evalating textured mesh~: 98it [00:13,  7.07it/s]Evalating textured mesh~: 99it [00:13,  6.38it/s]Evalating textured mesh~: 100it [00:13,  5.56it/s]Evalating textured mesh~: 100it [00:13,  7.42it/s]
+rendering texture and position map
+  0%|          | 0/15 [00:00<?, ?it/s]  7%|▋         | 1/15 [00:44<10:25, 44.66s/it] 13%|█▎        | 2/15 [01:16<08:00, 36.99s/it] 20%|██        | 3/15 [01:47<06:51, 34.33s/it] 27%|██▋       | 4/15 [02:18<06:01, 32.89s/it] 33%|███▎      | 5/15 [02:49<05:22, 32.23s/it] 40%|████      | 6/15 [03:20<04:46, 31.85s/it]mesh library: 43 tops, 41 bottoms, 59 fullbody
+plan: 1 prompt(s) x 10 members
+
+=== [medieval villagers] member_00: mens_shirt_untuck_elvbhp1f+elvs_disco_pant1 seed=1343260028 ===
+
+=== [medieval villagers] member_01: deathnote+low_mini_skirt seed=681064887 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_02: deathnote+elvs_gored_elephantpant1 seed=944131111 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_03: sleevelesscroptop+retro_girlyshort1 seed=286986189 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_04: figure_skating_dress seed=1731852346 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_05: elvs_goddess_dress2 seed=1021840900 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_06: mens_shirt_tie_tuck_elv1f+skirt_full_lace_ruffle seed=2012382780 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_07: elvs_mini_halterdress seed=1150065459 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_08: mens_shirt_tie_tuck_elv1f+shortjeans seed=944444196 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_09: highneckcroptop+pleated_miniskirt seed=1530507128 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+[sync] final sync /root/factorial7_local/1_random_white_plain/medieval_villagers -> /mnt/u/My Documents/LatentWardrobe/outputs/factorial7_20260706/1_random_white_plain/medieval_villagers rc=0
+
+done. failures: 0
+[run_factorial7] cell=1_random_white_plain python_exit=0
+mesh library: 43 tops, 41 bottoms, 59 fullbody
+plan: 1 prompt(s) x 10 members
+
+=== [medieval villagers] member_00: ruffle_sleeve_peasantblouse+jean_shorts seed=1343260028 ===
+
+=== [medieval villagers] member_01: deathnote+harvey_pskirt01 seed=1880898387 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_02: f_dress_05 seed=796693119 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_03: ruffle_sleeve_peasantblouse+mens_elv_jeans2slf seed=178938686 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_04: ruffle_sleeve_peasantblouse+polkadotskirt seed=1021840900 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_05: ruffle_sleeve_peasantblouse+pleated_skirtelv1 seed=1486768577 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_06: f_lusekofta+jean_shorts seed=1957847243 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_07: mens_boho_top1elv+mens_trouser_short_nc_elvcrf seed=413298348 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_08: ladieshoodiedown1+skirt_full_long seed=1847251735 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_09: elvs_hippydress1 seed=1126248272 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+[sync] final sync /root/factorial7_local/2_clip_white_plain/medieval_villagers -> /mnt/u/My Documents/LatentWardrobe/outputs/factorial7_20260706/2_clip_white_plain/medieval_villagers rc=0
+
+done. failures: 0
+[run_factorial7] cell=2_clip_white_plain python_exit=0
+mesh library: 43 tops, 41 bottoms, 59 fullbody
+plan: 1 prompt(s) x 10 members
+
+=== [medieval villagers] member_00: ruffle_sleeve_peasantblouse+jean_shorts seed=1343260028 ===
+
+=== [medieval villagers] member_01: deathnote+harvey_pskirt01 seed=1880898387 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_02: f_dress_05 seed=796693119 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_03: ruffle_sleeve_peasantblouse+mens_elv_jeans2slf seed=178938686 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_04: ruffle_sleeve_peasantblouse+polkadotskirt seed=1021840900 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_05: ruffle_sleeve_peasantblouse+pleated_skirtelv1 seed=1486768577 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_06: f_lusekofta+jean_shorts seed=1957847243 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_07: mens_boho_top1elv+mens_trouser_short_nc_elvcrf seed=413298348 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_08: ladieshoodiedown1+skirt_full_long seed=1847251735 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_09: elvs_hippydress1 seed=1126248272 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+[sync] final sync /root/factorial7_local/3_clip_pink_plain/medieval_villagers -> /mnt/u/My Documents/LatentWardrobe/outputs/factorial7_20260706/3_clip_pink_plain/medieval_villagers rc=0
+
+done. failures: 0
+[run_factorial7] cell=3_clip_pink_plain python_exit=0
+mesh library: 43 tops, 41 bottoms, 59 fullbody
+plan: 1 prompt(s) x 10 members
+
+=== [medieval villagers] member_00: ruffle_sleeve_peasantblouse+jean_shorts seed=1343260028 ===
+
+=== [medieval villagers] member_01: fem_suit2 seed=262125522 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_02: lace_up_blouse+mini_skirt_02 seed=2032278251 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_03: fem_suit seed=321690044 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_04: sweater_fisherman+jean_shorts seed=1598445786 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_05: mens_boho_top1elv+rescueteam_pants_male seed=1135119011 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_06: elvs_discotop2+skirt_full_lace_ruffle seed=1530507128 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_07: ruffle_sleeve_peasantblouse+mens_trouser_f_elv1 seed=1983278328 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_08: ladieshoodiedown1+elvs_disco_pant1 seed=515968820 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_09: camisole_top+elvs_disco_pencilskirt1 seed=1827978058 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+[sync] final sync /root/factorial7_local/4_clip_white_color/medieval_villagers -> /mnt/u/My Documents/LatentWardrobe/outputs/factorial7_20260706/4_clip_white_color/medieval_villagers rc=0
+
+done. failures: 0
+[run_factorial7] cell=4_clip_white_color python_exit=0
+mesh library: 43 tops, 41 bottoms, 59 fullbody
+plan: 1 prompt(s) x 10 members
+
+=== [medieval villagers] member_00: ruffle_sleeve_peasantblouse+jean_shorts seed=1343260028 ===
+
+=== [medieval villagers] member_01: fem_suit2 seed=262125522 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_02: lace_up_blouse+mini_skirt_02 seed=2032278251 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_03: fem_suit seed=321690044 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_04: sweater_fisherman+jean_shorts seed=1598445786 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_05: mens_boho_top1elv+rescueteam_pants_male seed=1135119011 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_06: elvs_discotop2+skirt_full_lace_ruffle seed=1530507128 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_07: ruffle_sleeve_peasantblouse+mens_trouser_f_elv1 seed=1983278328 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_08: ladieshoodiedown1+elvs_disco_pant1 seed=515968820 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_09: camisole_top+elvs_disco_pencilskirt1 seed=1827978058 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+[sync] final sync /root/factorial7_local/5_clip_pink_color/medieval_villagers -> /mnt/u/My Documents/LatentWardrobe/outputs/factorial7_20260706/5_clip_pink_color/medieval_villagers rc=0
+
+done. failures: 0
+[run_factorial7] cell=5_clip_pink_color python_exit=0
+mesh library: 43 tops, 41 bottoms, 59 fullbody
+plan: 1 prompt(s) x 10 members
+[llm] reusing 10 previously-evolved members from /root/factorial7_local/6_clip_white_llm/medieval_villagers/llm_members.json (evolution is not reproducible; never re-run it mid-crowd)
+
+=== [medieval villagers] member_00: tank_top_01+elvs_gored_midiskirt1 seed=1183151484 ===
+
+=== [medieval villagers] member_01: offshoulder_top+m_trousers_01 seed=1960522624 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_02: tube_top+m_trousers_01 seed=1125320629 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_03: tube_top+mens_trouser_f_elv_chr seed=1043778633 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_04: turtleneck_halter+skirt_mini seed=1746304310 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_05: elvs_fringe_dress1 seed=422640194 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_06: offshoulder_top+elvs_gored_midiskirt1 seed=836209266 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_07: asymmetric_tunic_and_sash+shortjeans seed=1565457962 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_08: f_lusekofta+elvs_disco_pencilskirt1 seed=57745487 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_09: rescueteam_jacket_female+jeansskirt seed=829734233 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+[sync] final sync /root/factorial7_local/6_clip_white_llm/medieval_villagers -> /mnt/u/My Documents/LatentWardrobe/outputs/factorial7_20260706/6_clip_white_llm/medieval_villagers rc=0
+
+done. failures: 0
+[run_factorial7] cell=6_clip_white_llm python_exit=0
+mesh library: 43 tops, 41 bottoms, 59 fullbody
+plan: 1 prompt(s) x 10 members
+[llm] reusing 10 previously-evolved members from /root/factorial7_local/7_clip_pink_llm/medieval_villagers/llm_members.json (evolution is not reproducible; never re-run it mid-crowd)
+
+=== [medieval villagers] member_00: tank_top_01+elvs_gored_midiskirt1 seed=1183151484 ===
+
+=== [medieval villagers] member_01: offshoulder_top+m_trousers_01 seed=1960522624 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_02: tube_top+m_trousers_01 seed=1125320629 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_03: tube_top+mens_trouser_f_elv_chr seed=1043778633 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_04: turtleneck_halter+skirt_mini seed=1746304310 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_05: elvs_fringe_dress1 seed=422640194 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_06: offshoulder_top+elvs_gored_midiskirt1 seed=836209266 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_07: asymmetric_tunic_and_sash+shortjeans seed=1565457962 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_08: f_lusekofta+elvs_disco_pencilskirt1 seed=57745487 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_09: rescueteam_jacket_female+jeansskirt seed=829734233 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+[sync] final sync /root/factorial7_local/7_clip_pink_llm/medieval_villagers -> /mnt/u/My Documents/LatentWardrobe/outputs/factorial7_20260706/7_clip_pink_llm/medieval_villagers rc=0
+
+done. failures: 0
+[run_factorial7] cell=7_clip_pink_llm python_exit=0

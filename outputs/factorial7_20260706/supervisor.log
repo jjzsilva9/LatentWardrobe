@@ -34,3 +34,6 @@
 [supervisor] 2026-07-09 08:19:12 DONE -- next step: scripts/run_factorial7_eval.sh
 [supervisor] 2026-07-09 14:55:48 === supervisor start: target 90 members over 9 cells, 7200s watchdog ===
 [supervisor] 2026-07-09 14:55:48 progress: 70/90 members complete (attempts so far: 0, stalled attempts: 0)
+[supervisor] 2026-07-09 16:55:56 watchdog: attempt 1 exceeded 7200s -- force-restarting (a wedged drvfs/GPU call can hang unkillably; --resume makes the retry cheap)
+[supervisor] 2026-07-09 16:56:41 attempt 1 ended rc=143
+[supervisor] 2026-07-09 16:57:12 progress: 75/90 members complete (attempts so far: 1, stalled attempts: 0)

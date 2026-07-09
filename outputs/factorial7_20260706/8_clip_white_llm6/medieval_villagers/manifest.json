@@ -1,0 +1,546 @@
+{
+  "crowd_prompt": "medieval villagers",
+  "master_seed": 0,
+  "fullbody_prob": 0.25,
+  "mesh_sampling": "clip",
+  "tau": 0.02,
+  "color_prompt": false,
+  "pink_noise": false,
+  "pink_alpha": null,
+  "llm_emitters": true,
+  "llm_generations": 30,
+  "llm_k_neighbors": 3,
+  "llm_novelty": "clothing",
+  "llm_axes": "clothing",
+  "llm_model": "llama3.1:8b",
+  "llm_evolution_history": [
+    {
+      "type": "mutation",
+      "parent": 7,
+      "axis": "formality",
+      "accepted": true,
+      "child_novelty": 0.13871727883815765,
+      "replaced_novelty": 0.0
+    },
+    {
+      "type": "mutation",
+      "parent": 9,
+      "axis": "color",
+      "accepted": true,
+      "child_novelty": 0.09724724292755127,
+      "replaced_novelty": 0.021979212760925293
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        1,
+        9
+      ],
+      "accepted": true,
+      "child_novelty": 0.02197929285466671,
+      "replaced_novelty": 0.021979233250021935
+    },
+    {
+      "type": "mutation",
+      "parent": 0,
+      "axis": "condition",
+      "accepted": true,
+      "child_novelty": 0.10569842904806137,
+      "replaced_novelty": 0.05102695897221565
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        9,
+        4
+      ],
+      "accepted": true,
+      "child_novelty": 0.11650017648935318,
+      "replaced_novelty": 0.0534987635910511
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        1,
+        8
+      ],
+      "accepted": true,
+      "child_novelty": 0.10766541957855225,
+      "replaced_novelty": 0.06264686584472656
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        6,
+        9
+      ],
+      "accepted": false,
+      "child_novelty": 0.06592965126037598,
+      "replaced_novelty": 0.06592965126037598
+    },
+    {
+      "type": "mutation",
+      "parent": 6,
+      "axis": "formality",
+      "accepted": true,
+      "child_novelty": 0.09742990881204605,
+      "replaced_novelty": 0.07259126752614975
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        4,
+        1
+      ],
+      "accepted": true,
+      "child_novelty": 0.058579880744218826,
+      "replaced_novelty": 0.058579862117767334
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        8,
+        5
+      ],
+      "accepted": false,
+      "child_novelty": 0.05895914509892464,
+      "replaced_novelty": 0.05895914509892464
+    },
+    {
+      "type": "mutation",
+      "parent": 0,
+      "axis": "color",
+      "accepted": true,
+      "child_novelty": 0.16263054311275482,
+      "replaced_novelty": 0.08757003396749496
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        7,
+        5
+      ],
+      "accepted": false,
+      "child_novelty": 0.06146353483200073,
+      "replaced_novelty": 0.06146353483200073
+    },
+    {
+      "type": "mutation",
+      "parent": 1,
+      "axis": "accessories",
+      "accepted": true,
+      "child_novelty": 0.1024448499083519,
+      "replaced_novelty": 0.08092037588357925
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        4,
+        6
+      ],
+      "accepted": true,
+      "child_novelty": 0.1118549332022667,
+      "replaced_novelty": 0.09404412657022476
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        3,
+        2
+      ],
+      "accepted": false,
+      "child_novelty": 0.07690445333719254,
+      "replaced_novelty": 0.09433016926050186
+    },
+    {
+      "type": "mutation",
+      "parent": 9,
+      "axis": "color",
+      "accepted": true,
+      "child_novelty": 0.1417173147201538,
+      "replaced_novelty": 0.11254964023828506
+    },
+    {
+      "type": "mutation",
+      "parent": 2,
+      "axis": "pattern",
+      "accepted": true,
+      "child_novelty": 0.16076378524303436,
+      "replaced_novelty": 0.10048598051071167
+    },
+    {
+      "type": "mutation",
+      "parent": 4,
+      "axis": "material",
+      "accepted": true,
+      "child_novelty": 0.10466494411230087,
+      "replaced_novelty": 0.09002288430929184
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        5,
+        8
+      ],
+      "accepted": false,
+      "child_novelty": 0.10973288863897324,
+      "replaced_novelty": 0.11401019245386124
+    },
+    {
+      "type": "mutation",
+      "parent": 1,
+      "axis": "color",
+      "accepted": true,
+      "child_novelty": 0.11743398755788803,
+      "replaced_novelty": 0.08841188997030258
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        2,
+        6
+      ],
+      "accepted": true,
+      "child_novelty": 0.1647980660200119,
+      "replaced_novelty": 0.11307883262634277
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        3,
+        9
+      ],
+      "accepted": false,
+      "child_novelty": 0.08114326000213623,
+      "replaced_novelty": 0.08114326000213623
+    },
+    {
+      "type": "mutation",
+      "parent": 5,
+      "axis": "color",
+      "accepted": false,
+      "child_novelty": 0.08939477056264877,
+      "replaced_novelty": 0.11248598247766495
+    },
+    {
+      "type": "mutation",
+      "parent": 7,
+      "axis": "accessories",
+      "accepted": false,
+      "child_novelty": 0.12230545282363892,
+      "replaced_novelty": 0.13008426129817963
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        8,
+        6
+      ],
+      "accepted": true,
+      "child_novelty": 0.15958456695079803,
+      "replaced_novelty": 0.13469469547271729
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        7,
+        4
+      ],
+      "accepted": true,
+      "child_novelty": 0.1257898062467575,
+      "replaced_novelty": 0.11425578594207764
+    },
+    {
+      "type": "mutation",
+      "parent": 0,
+      "axis": "pattern",
+      "accepted": true,
+      "child_novelty": 0.1928638219833374,
+      "replaced_novelty": 0.1383148580789566
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        3,
+        2
+      ],
+      "accepted": true,
+      "child_novelty": 0.20125313103199005,
+      "replaced_novelty": 0.17221052944660187
+    },
+    {
+      "type": "mutation",
+      "parent": 1,
+      "axis": "pattern",
+      "accepted": true,
+      "child_novelty": 0.12524902820587158,
+      "replaced_novelty": 0.11126532405614853
+    },
+    {
+      "type": "mutation",
+      "parent": 4,
+      "axis": "material",
+      "accepted": true,
+      "child_novelty": 0.13568444550037384,
+      "replaced_novelty": 0.1300979107618332
+    }
+  ],
+  "stage1_prompt_template": "turn around, {prompt}, {full_desc}, {category_phrase}",
+  "stage2_prompt_templates": {
+    "inpaint": "UV map, {prompt}, {full_desc}, {category_phrase}",
+    "img2img": "UV map, {prompt}, {full_desc}, {category_phrase}, high quality, best quality"
+  },
+  "members": [
+    {
+      "member": "member_00",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/tubetop.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/mariaskirt.obj"
+      ],
+      "sd_seed": 1183151484,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "brown",
+          "formality": "regal",
+          "material": "wool",
+          "pattern": "plaid",
+          "condition": "worn",
+          "accessories": "an apron"
+        },
+        "full_desc": "worn regal brown wool plaid clothing and an apron",
+        "clothing_desc": "worn regal brown wool plaid clothing and an apron",
+        "theme_relevance": 0.5678606033325195
+      },
+      "category_phrase": "wearing a crop top and skirt",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/factorial7_local/8_clip_white_llm6/medieval_villagers/member_00/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/factorial7_local/8_clip_white_llm6/medieval_villagers/member_00/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/factorial7_local/8_clip_white_llm6/medieval_villagers/member_00/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_01",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/offshoulder_top.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/elvs_gored_elephantpant1.obj"
+      ],
+      "sd_seed": 1960522624,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "scarlet",
+          "formality": "ritualistic regalia",
+          "material": "wool",
+          "pattern": "embroidered vines",
+          "condition": "worn",
+          "accessories": "a hat"
+        },
+        "full_desc": "worn ritualistic regalia scarlet wool embroidered vines clothing and a hat",
+        "clothing_desc": "worn ritualistic regalia scarlet wool embroidered vines clothing and a hat",
+        "theme_relevance": 0.7002968788146973
+      },
+      "category_phrase": "wearing a tunic and trousers"
+    },
+    {
+      "member": "member_02",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/tube_top.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/m_trousers_02.obj"
+      ],
+      "sd_seed": 1125320629,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "brown",
+          "formality": "practical work",
+          "material": "wool",
+          "pattern": "striped",
+          "condition": "worn",
+          "accessories": "a cloak"
+        },
+        "full_desc": "worn practical work brown wool striped clothing and a cloak",
+        "clothing_desc": "worn practical work brown wool striped clothing and a cloak",
+        "theme_relevance": 0.649270236492157
+      },
+      "category_phrase": "wearing a crop top and trousers"
+    },
+    {
+      "member": "member_03",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/tank_keyhole_neck.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/mens_elv_jeans2slf.obj"
+      ],
+      "sd_seed": 1043778633,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "bleached blue",
+          "formality": "practical work",
+          "material": "wool",
+          "pattern": "striped",
+          "condition": "worn",
+          "accessories": "none"
+        },
+        "full_desc": "worn practical work bleached blue wool striped clothing",
+        "clothing_desc": "worn practical work bleached blue wool striped clothing",
+        "theme_relevance": 0.6026293635368347
+      },
+      "category_phrase": "wearing a tank top and trousers"
+    },
+    {
+      "member": "member_04",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/vintagetop.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/skirt_mini.obj"
+      ],
+      "sd_seed": 1746304310,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "bleached linen",
+          "formality": "practical work",
+          "material": "woollen",
+          "pattern": "patched",
+          "condition": "worn",
+          "accessories": "a belt"
+        },
+        "full_desc": "worn practical work bleached linen woollen patched clothing and a belt",
+        "clothing_desc": "worn practical work bleached linen woollen patched clothing and a belt",
+        "theme_relevance": 0.666759729385376
+      },
+      "category_phrase": "wearing a halter top and skirt"
+    },
+    {
+      "member": "member_05",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/elvs_goddessdress1.obj"
+      ],
+      "sd_seed": 422640194,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "brown",
+          "formality": "ritualistic regalia",
+          "material": "wool",
+          "pattern": "patched",
+          "condition": "worn",
+          "accessories": "a large iron gauntlet"
+        },
+        "full_desc": "worn ritualistic regalia brown wool patched clothing and a large iron gauntlet",
+        "clothing_desc": "worn ritualistic regalia brown wool patched clothing and a large iron gauntlet",
+        "theme_relevance": 0.7151550054550171
+      },
+      "category_phrase": "wearing a gown"
+    },
+    {
+      "member": "member_06",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/rescueteam_jacket_female.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/elvs_gored_midiskirt1.obj"
+      ],
+      "sd_seed": 836209266,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "bleached blue",
+          "formality": "practical work",
+          "material": "wool",
+          "pattern": "patched",
+          "condition": "mended after recent repairs",
+          "accessories": "none"
+        },
+        "full_desc": "mended after recent repairs practical work bleached blue wool patched clothing",
+        "clothing_desc": "mended after recent repairs practical work bleached blue wool patched clothing",
+        "theme_relevance": 0.6528175473213196
+      },
+      "category_phrase": "wearing a jacket and skirt"
+    },
+    {
+      "member": "member_07",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/camisole_top.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/shortjeans.obj"
+      ],
+      "sd_seed": 1565457962,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "brown",
+          "formality": "practical work",
+          "material": "leather",
+          "pattern": "patched",
+          "condition": "worn",
+          "accessories": "a hat"
+        },
+        "full_desc": "worn practical work brown leather patched clothing and a hat",
+        "clothing_desc": "worn practical work brown leather patched clothing and a hat",
+        "theme_relevance": 0.6537615656852722
+      },
+      "category_phrase": "wearing a tank top and shorts"
+    },
+    {
+      "member": "member_08",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/f_lusekofta.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/elvs_disco_pencilskirt1.obj"
+      ],
+      "sd_seed": 57745487,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "forest green",
+          "formality": "regal",
+          "material": "wool",
+          "pattern": "patched",
+          "condition": "worn",
+          "accessories": "an apron"
+        },
+        "full_desc": "worn regal forest green wool patched clothing and an apron",
+        "clothing_desc": "worn regal forest green wool patched clothing and an apron",
+        "theme_relevance": 0.6066763997077942
+      },
+      "category_phrase": "wearing a blouse and skirt"
+    },
+    {
+      "member": "member_09",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/rescueteam_jacket_female.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/f_trousers_01.obj"
+      ],
+      "sd_seed": 829734233,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "brown",
+          "formality": "practical work",
+          "material": "wool",
+          "pattern": "striped",
+          "condition": "mended after recent repairs",
+          "accessories": "none"
+        },
+        "full_desc": "mended after recent repairs practical work brown wool striped clothing",
+        "clothing_desc": "mended after recent repairs practical work brown wool striped clothing",
+        "theme_relevance": 0.5991199612617493
+      },
+      "category_phrase": "wearing a jacket and leggings"
+    }
+  ]
+}
