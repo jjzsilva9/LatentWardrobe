@@ -164,3 +164,85 @@ Theme coherence     crowd mean 0.1943  std 0.0147
 written: outputs/factorial7_20260706/7_clip_pink_llm/medieval_villagers/metrics.json
 [run_factorial7_eval] cell=7_clip_pink_llm evaluate_exit=0
 FACTORIAL7 EVAL PASS COMPLETE
+[run_factorial7_eval] cell=1_random_white_plain metrics.json already exists, skipping (outputs/factorial7_20260706/1_random_white_plain/medieval_villagers/metrics.json)
+[run_factorial7_eval] cell=2_clip_white_plain metrics.json already exists, skipping (outputs/factorial7_20260706/2_clip_white_plain/medieval_villagers/metrics.json)
+[run_factorial7_eval] cell=3_clip_pink_plain metrics.json already exists, skipping (outputs/factorial7_20260706/3_clip_pink_plain/medieval_villagers/metrics.json)
+[run_factorial7_eval] cell=4_clip_white_color metrics.json already exists, skipping (outputs/factorial7_20260706/4_clip_white_color/medieval_villagers/metrics.json)
+[run_factorial7_eval] cell=5_clip_pink_color metrics.json already exists, skipping (outputs/factorial7_20260706/5_clip_pink_color/medieval_villagers/metrics.json)
+[run_factorial7_eval] cell=6_clip_white_llm metrics.json already exists, skipping (outputs/factorial7_20260706/6_clip_white_llm/medieval_villagers/metrics.json)
+[run_factorial7_eval] cell=7_clip_pink_llm metrics.json already exists, skipping (outputs/factorial7_20260706/7_clip_pink_llm/medieval_villagers/metrics.json)
+crowd 'medieval villagers': 10 members evaluated, 0 skipped []
+note: 1 member(s) scored on the coarse-stage render (tile_res_0 render missing): ['member_04']
+/root/miniconda3/envs/eval/lib/python3.10/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/root/miniconda3/envs/eval/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=AlexNet_Weights.IMAGENET1K_V1`. You can also use `weights=AlexNet_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/root/miniconda3/envs/eval/lib/python3.10/site-packages/lpips/lpips.py:107: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  self.load_state_dict(torch.load(model_path, map_location='cpu'), strict=False)
+Using cached ./models
+Using cache found in ./models/facebookresearch_dino_main
+/root/miniconda3/envs/eval/lib/python3.10/site-packages/torch/nn/utils/weight_norm.py:143: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+/root/miniconda3/envs/eval/lib/python3.10/site-packages/peft/tuners/tuners_utils.py:302: UserWarning: Already found a `peft_config` attribute in the model. This will lead to having multiple adapters in the model. Make sure to know what you are doing!
+  warnings.warn(
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/root/miniconda3/envs/eval/lib/python3.10/site-packages/open_clip/factory.py:450: UserWarning: QuickGELU mismatch between final model config (quick_gelu=False) and pretrained tag 'openai' (quick_gelu=True).
+  warnings.warn(
+Using cache found in ./models/facebookresearch_dinov2_main
+/mnt/u/My Documents/LatentWardrobe/./models/facebookresearch_dinov2_main/dinov2/layers/swiglu_ffn.py:51: UserWarning: xFormers is not available (SwiGLU)
+  warnings.warn("xFormers is not available (SwiGLU)")
+/mnt/u/My Documents/LatentWardrobe/./models/facebookresearch_dinov2_main/dinov2/layers/attention.py:33: UserWarning: xFormers is not available (Attention)
+  warnings.warn("xFormers is not available (Attention)")
+/mnt/u/My Documents/LatentWardrobe/./models/facebookresearch_dinov2_main/dinov2/layers/block.py:40: UserWarning: xFormers is not available (Block)
+  warnings.warn("xFormers is not available (Block)")
+
+=== medieval villagers (n=10) ===
+DINOv2 patchwise    mean 0.7163  min-NN 0.5380  std 0.0638
+DreamSim pairwise   mean 0.5246  min-NN 0.3116  std 0.0796
+LPIPS pairwise      mean 0.4631  min-NN 0.2838  std 0.0751
+Pixel-L2(32) pairwise mean 12.6470  min-NN 7.6705  std 1.9192
+Color chi2 pairwise mean 0.7147  std 0.2731
+Vendi score (DINOv2) 5.01 effective members
+DPP score (DINOv2)   0.5432
+Theme coherence     crowd mean 0.1955  std 0.0076
+
+written: outputs/factorial7_20260706/8_clip_white_llm6/medieval_villagers/metrics.json
+[run_factorial7_eval] cell=8_clip_white_llm6 evaluate_exit=0
+crowd 'medieval villagers': 10 members evaluated, 0 skipped []
+note: 1 member(s) scored on the coarse-stage render (tile_res_0 render missing): ['member_05']
+/root/miniconda3/envs/eval/lib/python3.10/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/root/miniconda3/envs/eval/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=AlexNet_Weights.IMAGENET1K_V1`. You can also use `weights=AlexNet_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+/root/miniconda3/envs/eval/lib/python3.10/site-packages/lpips/lpips.py:107: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  self.load_state_dict(torch.load(model_path, map_location='cpu'), strict=False)
+Using cached ./models
+Using cache found in ./models/facebookresearch_dino_main
+/root/miniconda3/envs/eval/lib/python3.10/site-packages/torch/nn/utils/weight_norm.py:143: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+/root/miniconda3/envs/eval/lib/python3.10/site-packages/peft/tuners/tuners_utils.py:302: UserWarning: Already found a `peft_config` attribute in the model. This will lead to having multiple adapters in the model. Make sure to know what you are doing!
+  warnings.warn(
+/root/miniconda3/envs/eval/lib/python3.10/site-packages/open_clip/factory.py:450: UserWarning: QuickGELU mismatch between final model config (quick_gelu=False) and pretrained tag 'openai' (quick_gelu=True).
+  warnings.warn(
+Using cache found in ./models/facebookresearch_dinov2_main
+/mnt/u/My Documents/LatentWardrobe/./models/facebookresearch_dinov2_main/dinov2/layers/swiglu_ffn.py:51: UserWarning: xFormers is not available (SwiGLU)
+  warnings.warn("xFormers is not available (SwiGLU)")
+/mnt/u/My Documents/LatentWardrobe/./models/facebookresearch_dinov2_main/dinov2/layers/attention.py:33: UserWarning: xFormers is not available (Attention)
+  warnings.warn("xFormers is not available (Attention)")
+/mnt/u/My Documents/LatentWardrobe/./models/facebookresearch_dinov2_main/dinov2/layers/block.py:40: UserWarning: xFormers is not available (Block)
+  warnings.warn("xFormers is not available (Block)")
+
+=== medieval villagers (n=10) ===
+DINOv2 patchwise    mean 0.7110  min-NN 0.4856  std 0.0686
+DreamSim pairwise   mean 0.5253  min-NN 0.3369  std 0.0631
+LPIPS pairwise      mean 0.4559  min-NN 0.2910  std 0.0679
+Pixel-L2(32) pairwise mean 12.9983  min-NN 9.2664  std 2.1435
+Color chi2 pairwise mean 0.7106  std 0.3090
+Vendi score (DINOv2) 4.67 effective members
+DPP score (DINOv2)   0.5082
+Theme coherence     crowd mean 0.1966  std 0.0081
+
+written: outputs/factorial7_20260706/9_clip_pink_llm6/medieval_villagers/metrics.json
+[run_factorial7_eval] cell=9_clip_pink_llm6 evaluate_exit=0
+FACTORIAL7 EVAL PASS COMPLETE
