@@ -10,67 +10,238 @@
 
 ---
 
-## Slide 3 — Background + Related Work
+## Slide 3 — Background: crowds in production                    [~0:40]
 
-Three research areas meet in this project; the slide is built as three columns
-with real citations, converging on the gap statement. Sources:
-`.claude/dissertation-plan.md` (Background reading) + `.claude/lit-review-diffusion-diversity.md`
-(31-paper verified review).
+ON THE SLIDE
+- One full-slide photo of a modern crowd scene: a UE5 City Sample street crowd
+  still (Epic's docs/press material — screenshot-fair in an academic talk,
+  credit "Epic Games, City Sample (2022)") or a comparable film crowd frame.
+- Over/under the photo, three short problem lines:
+  - crowds are everywhere: streets, stadiums, battles — thousands of members
+  - authoring a unique character per member does not scale (artist time, memory)
+  - so production recombines a FINITE template library: mix-and-match parts,
+    tint variation, impostors at distance
+  - state of the art today: MetaHuman's wardrobe system (UE 5.6+) — clothing
+    variation = Mutable-plugin mix-and-match of wardrobe assets + runtime
+    material colour parameters on a parametric body. Even the newest tooling
+    varies by recombining and re-tinting FIXED assets; the textures themselves
+    are never new.
+- Citations pinned small at the bottom (full refs below).
 
-ON THE SLIDE — three columns + a gap line
-1. **Generating 3D clothing**
-   - Full text-to-3D garments: WordRobe (Srivastava et al. 2024); GaussianDreamer
-     (Yi et al. 2023) / GarmentDreamer (3DGS garments)
-     *(!! WordRobe + GaussianDreamer are NOT in the verified lit review yet —
-     verify authors/venues before the slide goes in front of markers)*
-   - Texturing fixed meshes (our line): TEXTure (Richardson et al. 2023),
-     Text2Tex (Chen et al., ICCV 2023), Point-UV Diffusion (Yu et al., ICCV 2023),
-     **Paint3D (Zeng et al., CVPR 2024)** — highlighted, it's our substrate
-2. **Crowd perception — why diversity matters**
-   - **Clone Attack! (McDonnell et al., SIGGRAPH 2008)** — viewers detect
-     appearance clones in crowds; colour/texture variation is what masks them
-   - (optional second: Eye-catching Crowds, McDonnell et al., SIGGRAPH 2009)
-3. **Diversity in diffusion models**
-   - Why it collapses: CFG (Ho & Salimans 2022); newer models measurably less
-     diverse (Astolfi et al. 2024, Pareto fronts)
-   - Noise-space: pink-noise / collapse recovery (*It's Never Too Late*, CVPR 2026)
-   - Prompt-space: Prompt Expansion (Datta et al. 2023); WANDER novelty search
-     (arXiv 2511.00686)
-   - Selection: k-DPPs (Kulesza & Taskar, ICML 2011)
-- Bottom line, verbatim: *"No published work combines all three: crowd-scale
-  generation + garment texturing + diffusion diversity control."* (gap claim
-  verified in the lit review, 2026-07-06)
+REFERENCES (slide 3)
+- Epic Games. *City Sample Project — Unreal Engine 5 Demonstration.* Official
+  UE5 documentation, 2022. (crowds = MetaHuman library + "mix and match crowd
+  system" + impostor LoD)
+  https://dev.epicgames.com/documentation/unreal-engine/city-sample-project-unreal-engine-demonstration
+- El-Ali, M., Tong, J., et al. *Zootopia Crowd Pipeline.* ACM SIGGRAPH 2016
+  Talks. DOI: 10.1145/2897839.2927467.
+- Walt Disney Animation Studios. *Creating the Mudskipper Pile in Disney's
+  "Moana 2": A Slippery Problem Space.* ACM SIGGRAPH 2025 Talks.
+  DOI: 10.1145/3721239.3734086. (template-crowd pipelines are current practice)
+- Epic Games. *Tailoring Your Own Wardrobe Items.* MetaHuman documentation
+  (UE 5.6+ parametric body + Mutable-based outfit customization; variation =
+  wardrobe recombination + runtime material colour parameters).
+  https://dev.epicgames.com/documentation/en-us/metahuman/tailoring-your-own-wardrobe-items
 
-SAY (~215 words)
-> Three research areas meet in this project.
->
-> First, generating 3D clothing. One line of work generates whole garments from
-> text — WordRobe, GaussianDreamer. Impressive, but game crowds need predictable,
-> game-ready assets. So the practical line textures *fixed* meshes instead:
-> TEXTure, Text2Tex, and Paint3D, which paints a texture into a garment's UV map
-> with depth-conditioned Stable Diffusion. Paint3D is our substrate: mesh in,
-> prompt in, textured garment out.
->
-> Second, crowd perception — why diversity is the thing to optimize. Clone
-> Attack!, McDonnell and colleagues, SIGGRAPH 2008: viewers reliably spot
-> appearance clones in crowds, and varying clothing colour and texture is
-> precisely what masks them. That grounds this whole project perceptually —
-> appearance variation is what buys crowd realism, and it's also what our
-> quantitative metrics stand in for.
->
-> Third, diversity in diffusion models. Sampled repeatedly, diffusion models
-> under-deliver variety: classifier-free guidance explicitly trades diversity
-> for fidelity, and newer models are measurably worse than older ones. The
-> counter-measures are training-free interventions at different points: reshape
-> the initial noise — pink noise; rewrite the prompt with an LLM — WANDER's
-> novelty search; or over-generate and select with determinantal point processes.
->
-> Nobody has published the combination of all three areas. That's the gap this
-> project occupies.
+SAY (~110 words)
+> Crowds are everywhere in games and film — streets, stadiums, battlefields —
+> and every member needs a model, textures, animation. Authoring a unique
+> character per member simply doesn't scale. So this is how it's actually
+> done: Unreal's City Sample — the Matrix Awakens demo — builds its street
+> crowds by mixing and matching a finite library of MetaHuman characters,
+> with impostors past a certain distance. Disney's film pipelines do the same
+> at larger scale — Zootopia populated a city with millions of agents from
+> character-variant libraries, and they're still presenting crowd-pipeline
+> talks at SIGGRAPH this year. And the newest tooling hasn't changed the
+> structure: MetaHuman's current wardrobe system varies clothing by mixing and
+> matching wardrobe assets and swapping material colours at runtime — the
+> textures themselves are always fixed, pre-authored assets. Variety, in
+> production, means recombining and re-tinting a finite library.
 
 ---
 
-## Slide 4 — Design
+## Slide 4 — Background: perception of crowd variety             [~0:35]
+
+ON THE SLIDE
+- One figure from Clone Attack! — Figure 1 (the crowd with maximum clones) or
+  Figure 2b (the 9 HSV-recoloured outfits — perfect because it *shows* their
+  colour-modulation mechanism). Open PDF:
+  https://www.scss.tcd.ie/Rachel.McDonnell/papers/Siggraph08.pdf, credit
+  "McDonnell et al., SIGGRAPH 2008".
+- Finding lines — all experimentally measured, across the two papers:
+  - appearance clones detected far faster than motion clones (mean 5.7 s vs
+    18 s in baselines; 28 s in crowd scenes) → spend the variety budget on
+    appearance (Clone Attack!, 2008)
+  - colour modulation was TESTED, not assumed: recolouring the clone pair
+    roughly doubled detection time, 5.7 s → 12.3 s, p < 0.0001 (2008)
+  - WHAT A CHARACTER WEARS drives perceived identity: clone false positives
+    were "mainly due to clothing" — two suit-wearing models confused "even
+    though their faces and bodies were very different" (2008)
+  - clothing-texture variation is among the MOST effective variety channels:
+    "head accessories, top texture and face texture variation are all equally
+    effective at creating variety, whereas facial geometry alterations are
+    less so" (Eye-catching Crowds, 2009)
+- TAKEAWAY line (the slide's punchline, verbatim): *"What a character wears
+  dominates perceived individuality — so diversifying the garments
+  themselves, in both silhouette and texture, directly targets what viewers
+  actually judge."*
+- Footnote: the template assumption is still current — 2025 crowd research
+  builds from 14 avatar templates (CrowdSplat).
+- HONESTY NOTE (not on slide, for Q&A): the 2009 geometry finding concerns
+  *facial* geometry, not garment silhouette — the silhouette claim rests on
+  the 2008 clothing-confusion finding (same garment type → confusion despite
+  different bodies, which implies different garments → differentiation), an
+  inference, not a measured silhouette experiment. Say "targets", not
+  "is proven to maximize".
+
+REFERENCES (slide 4)
+- McDonnell, R., Larkin, M., Dobbyn, S., Collins, S., O'Sullivan, C.
+  *Clone Attack! Perception of Crowd Variety.* ACM Transactions on Graphics
+  27(3), SIGGRAPH 2008. DOI: 10.1145/1360612.1360625.
+- McDonnell, R., Larkin, M., Hernández, B., Rudomin, I., O'Sullivan, C.
+  *Eye-catching Crowds: Saliency based Selective Variation.* ACM Transactions
+  on Graphics 28(3), SIGGRAPH 2009.
+- Sun, X., Xu, Y., Dingliana, J., O'Sullivan, C. *CrowdSplat: Exploring
+  Gaussian Splatting for Crowd Rendering.* arXiv:2501.17792, 2025.
+
+SAY (~135 words)
+> So if template crowds are unavoidable, the question becomes perceptual: how
+> much variety does a viewer need, and where? McDonnell and colleagues
+> measured this across two papers. Appearance clones are detected far faster
+> than motion clones — seconds versus half a minute — so appearance is where
+> the variety budget belongs. Colour masking was tested, not assumed:
+> recolouring a cloned pair doubled detection time. And critically, *what a
+> character wears* is what viewers judge identity by: when participants
+> confused two different characters as clones, it was almost always the
+> clothing — two models in suits, mistaken for each other despite completely
+> different faces. The follow-up study confirmed it from the other side:
+> varying top texture was among the most effective ways to create variety,
+> more so than altering geometry of the face.
+>
+> That's the link that justifies our design: if clothing dominates perceived
+> individuality, then diversifying the garments themselves — silhouette *and*
+> texture — directly targets what viewers actually judge. That's exactly the
+> pair of levers this project modulates.
+
+---
+
+## Slide 5 — Background: diffusion texturing, and its catch      [~0:45]
+
+ON THE SLIDE
+- Left: texture diffusion in one image — either Paint3D's teaser (mesh in →
+  textured mesh out; credit "Zeng et al., CVPR 2024") or one of our own
+  members' before/after (untextured mesh render vs stage-2 turntable frame —
+  rights-safe and it's our substrate).
+- Right: mode collapse in one image — 4-5 near-identical outputs from one
+  prompt. Rights-safe option: crop 4 samey tan members from our plain-prompt
+  cell (contact sheet row 2).
+- Two lines:
+  - depth-conditioned Stable Diffusion paints a garment's UV map from text
+    (TEXTure → Text2Tex → Paint3D)
+  - the catch: guidance trades diversity for fidelity; newer models are
+    MEASURABLY less diverse (Pareto-front study)
+
+REFERENCES (slide 5)
+- Zeng, X., et al. *Paint3D: Paint Anything 3D with Lighting-less Texture
+  Diffusion Models.* CVPR 2024. arXiv:2312.13913.
+- Richardson, E., et al. *TEXTure: Text-Guided Texturing of 3D Shapes.*
+  SIGGRAPH 2023. / Chen, D.Z., et al. *Text2Tex.* ICCV 2023.
+- Ho, J., Salimans, T. *Classifier-Free Diffusion Guidance.* 2022.
+  arXiv:2207.12598.
+- Astolfi, P., et al. *Consistency-Diversity-Realism Pareto Fronts of
+  Conditional Image Generative Models.* 2024. arXiv:2406.10429.
+
+SAY (~110 words)
+> That texture lever is exactly what generative models have transformed.
+> Texture diffusion — TEXTure, Text2Tex, and in our case Paint3D — paints a
+> brand-new texture into a garment's UV map from a text prompt, conditioned
+> on depth so it respects the geometry. So instead of recolouring one shared
+> texture, every crowd member could get a genuinely unique outfit,
+> automatically.
+>
+> Except diffusion models have their own cloning problem: mode collapse.
+> Sample the same prompt ten times and you get near-duplicates. It's
+> structural — classifier-free guidance explicitly trades diversity for
+> fidelity, and a large Meta study showed newer models are measurably *less*
+> diverse than older ones. Solving that, for crowds, is this project.
+
+---
+
+## Slide 6 — Related work: generating the garments themselves    [~0:25]
+
+ON THE SLIDE
+- Two teaser images side by side, credited: WordRobe (project page:
+  https://wordrobe24.github.io/WordRobe_Page/) and GarmentDreamer
+  (arXiv 2405.12420).
+- One contrast line: per-asset optimisation, unposed / simulation-input
+  outputs — vs a games pipeline that wants fixed, rigged, UV-stable meshes.
+- Gap line, verbatim: *"No published work combines crowd-scale generation +
+  garment texturing + diffusion diversity control."*
+
+REFERENCES (slide 6)
+- Srivastava, A., Manu, P., Raj, A., Jampani, V., Sharma, A. *WordRobe:
+  Text-Guided Generation of Textured 3D Garments.* ECCV 2024. arXiv:2403.17541.
+- Li, B., Li, X., Jiang, Y., Xie, T., Gao, F., Wang, H., Yang, Y., Jiang, C.
+  *GarmentDreamer: 3DGS Guided Garment Synthesis with Diverse Geometry and
+  Texture Details.* arXiv:2405.12420, 2024.
+
+SAY (~75 words)
+> One related line to position against: generating the garment geometry
+> itself from text — WordRobe, GarmentDreamer. Impressive results, but these
+> are per-asset optimisation pipelines producing unposed meshes; a games
+> pipeline wants fixed, rigged, UV-stable assets. So we keep a fixed garment
+> library and make *texture* carry the variety. And the combination this
+> leaves open is exactly our gap: nobody has published crowd-scale generation
+> plus garment texturing plus diffusion diversity control together.
+
+---
+
+## Slide 7 — Design
+
+DIAGRAM SPEC — two diagrams, don't merge them (pipeline is linear, evolution
+is a cycle; mixing them wrecks both):
+
+Diagram 1 (main visual): left-to-right pipeline strip, three coloured factor
+boxes with options stacked inside, real example images under each stage:
+
+```
+ THEME               FACTOR 2 (prompt)          FACTOR 1 (mesh)           FACTOR 3 (noise)
+"medieval      ┌──────────────────────┐   ┌─────────────────────┐   ┌──────────────────────┐
+ villagers" ──►│ per-member prompt    │──►│ garment library     │──►│ Paint3D              │──► turntable ──► metrics
+               │  ○ plain theme       │ │ │ (143 meshes)        │   │ 2-stage texturing    │    render
+               │  ○ + colour word     │ │ │  ○ uniform random   │   │  ○ white noise       │
+               │  ● WANDER-evolved ═╗ │ │ │  ● CLIP-weighted ◄──┼───┼─ (evolved desc. is   │
+               └────────────────────╫─┘ │ └─────────────────────┘   │  the CLIP anchor)    │
+                                    ║   └── prompt text ───────────►│  ○ pink noise        │
+                                    ╚═► [expands into Diagram 2]    └──────────────────────┘
+ images: prompt snippet | garment-render strip + score bars | noise patches | turntable frame | chart thumb
+```
+Wiring that must be right: the WANDER-evolved description feeds BOTH the
+Paint3D prompt AND that member's CLIP mesh anchor (the novel coupling); in
+plain/colour variants the mesh anchor is the theme itself.
+
+Diagram 2 (second build on the slide, or backup slide): the evolution cycle:
+
+```
+        ┌───────────── POOL: n clothing descriptions ─────────────┐
+        │ "worn rustic brown wool patched clothing and apron" ... │◄─────────────┐
+        └──────────────┬───────────────────────────────────────── ┘              │
+                       │ pick random parent(s) + random clothing axis            │
+                       ▼                                                         │
+         ┌─────────────────────────┐  50/50  ┌──────────────────────┐            │
+         │ MUTATE (llama-3.1-8B):  │   or    │ CROSSOVER: child     │            │
+         │ "COMPLETELY CHANGE      │         │ inherits each field  │            │
+         │  the {axis} value"      │         │ from either parent   │            │
+         └────────────┬────────────┘         └──────────┬───────────┘            │
+                      └──────────────┬──────────────────┘                        │
+                                     ▼                                           │
+               ┌────────────────────────────────────────┐   child beats the      │
+               │ SCORE: CLIP text embed → novelty =     │   least-novel member?  │
+               │ mean cos dist to k=3 nearest in pool   │── yes: REPLACE it ─────┘
+               └────────────────────────────────────────┘── no: discard
+        repeat 3n generations → final pool = the n members' prompts
+        annotate a real logged mutation:  colour "brown" → "scarlet"  (accepted)
+```
 
 ON THE SLIDE
 - Main visual: left-to-right pipeline diagram (build this properly — it's the
@@ -109,7 +280,7 @@ SAY (~205 words)
 
 ---
 
-## Slide 5 — Implementation / Implementation Issues
+## Slide 8 — Implementation / Implementation Issues
 
 ON THE SLIDE
 - Compact stack strip (one line of logos/names): Paint3D (SD 1.5 + depth
@@ -145,7 +316,7 @@ SAY (~195 words)
 
 ---
 
-## Slide 6 — Demo of Artefact
+## Slide 9 — Demo of Artefact
 
 Live generation is impossible in-slot (~21 min/member). The demo is pre-rendered
 assets presented live. Have everything embedded AND a local fallback copy.
@@ -175,7 +346,7 @@ SAY (~125 words + ~15 s of letting a video loop)
 
 ---
 
-## Slide 7 — Evaluation                                    [1:45]
+## Slide 10 — Evaluation                                   [1:45]
 
 All 9 cells generated + evaluated (2026-07-10). Numbers final.
 
@@ -230,7 +401,7 @@ SAY (~230 words)
 
 ---
 
-## Slide 8 — Conclusions
+## Slide 11 — Conclusions
 
 ** Draft — trim once slide 7 is final; total talk must land ≤ 9:00, target 8:00-8:30. **
 
@@ -240,7 +411,10 @@ ON THE SLIDE
   - C2: foreground-masked, multi-metric evaluation harness
   - C3: diagnosed failure mode of text-space novelty search + principled fix
   - L1: one theme, N=10 per cell; L2: no human perceptual study
-  - F1: diversity-forced initialisation (Method 5c); F2: during-sampling methods (particle guidance / CADS)
+  - F1: diversity-forced initialisation (Method 5c); F2: during-sampling methods (particle guidance / CADS);
+    F3: a perceptual study measuring the effect of garment MESH (silhouette) variation
+    on clone detection — the missing experiment in the Clone Attack!/Eye-catching
+    Crowds line, and the one our silhouette-diversity claim would want
 
 SAY (~76 words)
 > To conclude: this project contributes a controlled factorial comparison of

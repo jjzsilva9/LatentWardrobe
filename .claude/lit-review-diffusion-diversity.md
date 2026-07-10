@@ -128,6 +128,20 @@ User asked whether there's a 3D-generation-native (rather than 2D-image-diffusio
 
 Rest of that research pass (3D-native metrics like COV/MMD/1-NNA/JSD from point-cloud literature, McDonnell's *Eye-catching Crowds* SIGGRAPH 2009) judged not worth folding in — either not applicable to a mesh-fixed/texture-only setting, or not adding enough beyond what's already covered.
 
+### 3.8 Generative garment meshes (verified 2026-07-10 for the presentation's related-work beat)
+
+Orthogonal line to our fixed-library + texture-diffusion design: generate the garment *geometry* itself from text. Checked via WebSearch against arXiv/ECCV pages:
+
+- **WordRobe: Text-Guided Generation of Textured 3D Garments** — Srivastava, Manu, Raj, Jampani & Sharma. ECCV 2024, arXiv:2403.17541. **[V]** Generates unposed, textured 3D garment meshes from text; aligns a garment latent space to CLIP for text-driven generation/editing.
+- **GarmentDreamer: 3DGS Guided Garment Synthesis with Diverse Geometry and Texture Details** — Li, Li, Jiang, Xie, Gao, Wang, Yang & Jiang. 2024, arXiv:2405.12420. **[V]** 3D Gaussian Splatting as guidance to synthesize simulation-ready garment meshes from text (per-asset optimization).
+- Adjacent, found but not yet verified beyond titles: ClotheDreamer (arXiv:2406.16815, text-guided garments with 3D Gaussians). GaussianDreamer (Yi et al., arXiv:2310.08529) is *general* text-to-3D via Gaussians, not garment-specific — cite the garment-specific pair above instead.
+
+Contrast for the dissertation/presentation: these are per-asset optimization pipelines producing unposed/simulation-input meshes; a game-crowd pipeline wants fixed, rigged, UV-stable meshes, which is why LatentWardrobe keeps a mesh library and puts diversity into texturing + mesh selection.
+
+Also verified same day (for the presentation's motivation beat): **Clone Attack! Perception of Crowd Variety** — McDonnell, Larkin, Dobbyn, Collins & O'Sullivan, SIGGRAPH 2008 / ACM TOG 27(3). Full text read 2026-07-10 (PDF at scss.tcd.ie/Rachel.McDonnell/papers/Siggraph08.pdf). Opening premise (direct quote): "When simulating large crowds, it is inevitable that the models and motions of many virtual characters will be cloned." Measured findings: appearance clones detected far faster than motion clones (baseline means 5.7 s vs 18 s; 28 s for motion clones in crowd scenes); colour modulation experimentally doubled clone detection time (5.7 s -> 12.3 s, F1,12=103, p<0.0001); clone false positives were "mainly due to clothing" (two suited models confused "even though their faces and bodies were very different"); conclusions suggest "the addition of accessories, texture variation, or decals would aid in disguising clones" — i.e. the paper itself names texture variation as the open next step beyond LUT recolouring.
+
+**Eye-catching Crowds: Saliency based Selective Variation** — McDonnell, Larkin, Hernández, Rudomin & O'Sullivan, SIGGRAPH 2009 / ACM TOG 28(3). **[S — abstract-level, via search summaries; fetch full text before dissertation citation]** Previously judged "not worth folding in" (see §3.7 note) — REVISED 2026-07-10: now load-bearing for the motivation argument. Key finding: "head accessories, top texture and face texture variation are all equally effective at creating variety, whereas facial geometry alterations are less so"; selective colour variation on salient parts is as effective as full colour variation. Together with Clone Attack!'s clothing-confusion finding, this grounds the claim that *what a character wears* dominates perceived individuality — the justification for diversifying garments in both silhouette and texture. NOTE: their geometry finding concerns facial geometry, not garment silhouette; the silhouette-diversity claim is an inference from the 2008 clothing-confusion result, not a measured silhouette experiment.
+
 ## 6. Reference list (with verification status)
 
 | # | Paper | Venue | arXiv | Status |
