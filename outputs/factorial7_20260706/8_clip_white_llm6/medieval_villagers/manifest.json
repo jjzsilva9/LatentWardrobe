@@ -349,7 +349,19 @@
         "clothing_desc": "worn ritualistic regalia scarlet wool embroidered vines clothing and a hat",
         "theme_relevance": 0.7002968788146973
       },
-      "category_phrase": "wearing a tunic and trousers"
+      "category_phrase": "wearing a tunic and trousers",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/factorial7_local/8_clip_white_llm6/medieval_villagers/member_01/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/factorial7_local/8_clip_white_llm6/medieval_villagers/member_01/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/factorial7_local/8_clip_white_llm6/medieval_villagers/member_01/stage2/tile_res_0/albedo.png"
+      }
     },
     {
       "member": "member_02",
@@ -373,7 +385,19 @@
         "clothing_desc": "worn practical work brown wool striped clothing and a cloak",
         "theme_relevance": 0.649270236492157
       },
-      "category_phrase": "wearing a crop top and trousers"
+      "category_phrase": "wearing a crop top and trousers",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/factorial7_local/8_clip_white_llm6/medieval_villagers/member_02/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/factorial7_local/8_clip_white_llm6/medieval_villagers/member_02/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/factorial7_local/8_clip_white_llm6/medieval_villagers/member_02/stage2/tile_res_0/albedo.png"
+      }
     },
     {
       "member": "member_03",
@@ -397,7 +421,19 @@
         "clothing_desc": "worn practical work bleached blue wool striped clothing",
         "theme_relevance": 0.6026293635368347
       },
-      "category_phrase": "wearing a tank top and trousers"
+      "category_phrase": "wearing a tank top and trousers",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/factorial7_local/8_clip_white_llm6/medieval_villagers/member_03/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/factorial7_local/8_clip_white_llm6/medieval_villagers/member_03/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/factorial7_local/8_clip_white_llm6/medieval_villagers/member_03/stage2/tile_res_0/albedo.png"
+      }
     },
     {
       "member": "member_04",
@@ -421,7 +457,19 @@
         "clothing_desc": "worn practical work bleached linen woollen patched clothing and a belt",
         "theme_relevance": 0.666759729385376
       },
-      "category_phrase": "wearing a halter top and skirt"
+      "category_phrase": "wearing a halter top and skirt",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/factorial7_local/8_clip_white_llm6/medieval_villagers/member_04/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/factorial7_local/8_clip_white_llm6/medieval_villagers/member_04/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/factorial7_local/8_clip_white_llm6/medieval_villagers/member_04/stage2/tile_res_0/albedo.png"
+      }
     },
     {
       "member": "member_05",
@@ -444,7 +492,19 @@
         "clothing_desc": "worn ritualistic regalia brown wool patched clothing and a large iron gauntlet",
         "theme_relevance": 0.7151550054550171
       },
-      "category_phrase": "wearing a gown"
+      "category_phrase": "wearing a gown",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/factorial7_local/8_clip_white_llm6/medieval_villagers/member_05/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/factorial7_local/8_clip_white_llm6/medieval_villagers/member_05/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/factorial7_local/8_clip_white_llm6/medieval_villagers/member_05/stage2/tile_res_0/albedo.png"
+      }
     },
     {
       "member": "member_06",
@@ -468,7 +528,19 @@
         "clothing_desc": "mended after recent repairs practical work bleached blue wool patched clothing",
         "theme_relevance": 0.6528175473213196
       },
-      "category_phrase": "wearing a jacket and skirt"
+      "category_phrase": "wearing a jacket and skirt",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/factorial7_local/8_clip_white_llm6/medieval_villagers/member_06/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/factorial7_local/8_clip_white_llm6/medieval_villagers/member_06/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/factorial7_local/8_clip_white_llm6/medieval_villagers/member_06/stage2/tile_res_0/albedo.png"
+      }
     },
     {
       "member": "member_07",
@@ -492,7 +564,19 @@
         "clothing_desc": "worn practical work brown leather patched clothing and a hat",
         "theme_relevance": 0.6537615656852722
       },
-      "category_phrase": "wearing a tank top and shorts"
+      "category_phrase": "wearing a tank top and shorts",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/factorial7_local/8_clip_white_llm6/medieval_villagers/member_07/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/factorial7_local/8_clip_white_llm6/medieval_villagers/member_07/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/factorial7_local/8_clip_white_llm6/medieval_villagers/member_07/stage2/tile_res_0/albedo.png"
+      }
     },
     {
       "member": "member_08",
@@ -516,7 +600,19 @@
         "clothing_desc": "worn regal forest green wool patched clothing and an apron",
         "theme_relevance": 0.6066763997077942
       },
-      "category_phrase": "wearing a blouse and skirt"
+      "category_phrase": "wearing a blouse and skirt",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/factorial7_local/8_clip_white_llm6/medieval_villagers/member_08/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/factorial7_local/8_clip_white_llm6/medieval_villagers/member_08/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/factorial7_local/8_clip_white_llm6/medieval_villagers/member_08/stage2/tile_res_0/albedo.png"
+      }
     },
     {
       "member": "member_09",
@@ -540,7 +636,19 @@
         "clothing_desc": "mended after recent repairs practical work brown wool striped clothing",
         "theme_relevance": 0.5991199612617493
       },
-      "category_phrase": "wearing a jacket and leggings"
+      "category_phrase": "wearing a jacket and leggings",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/factorial7_local/8_clip_white_llm6/medieval_villagers/member_09/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/factorial7_local/8_clip_white_llm6/medieval_villagers/member_09/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/factorial7_local/8_clip_white_llm6/medieval_villagers/member_09/stage2/tile_res_0/albedo.png"
+      }
     }
   ]
 }

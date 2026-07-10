@@ -37,3 +37,22 @@
 [supervisor] 2026-07-09 16:55:56 watchdog: attempt 1 exceeded 7200s -- force-restarting (a wedged drvfs/GPU call can hang unkillably; --resume makes the retry cheap)
 [supervisor] 2026-07-09 16:56:41 attempt 1 ended rc=143
 [supervisor] 2026-07-09 16:57:12 progress: 75/90 members complete (attempts so far: 1, stalled attempts: 0)
+[supervisor] 2026-07-09 18:57:19 watchdog: attempt 2 exceeded 7200s -- force-restarting (a wedged drvfs/GPU call can hang unkillably; --resume makes the retry cheap)
+[supervisor] 2026-07-09 18:58:04 attempt 2 ended rc=143
+[supervisor] 2026-07-09 18:58:35 progress: 80/90 members complete (attempts so far: 2, stalled attempts: 0)
+[supervisor] 2026-07-09 20:58:41 watchdog: attempt 3 exceeded 7200s -- force-restarting (a wedged drvfs/GPU call can hang unkillably; --resume makes the retry cheap)
+[supervisor] 2026-07-09 20:59:26 attempt 3 ended rc=143
+[supervisor] 2026-07-09 20:59:57 progress: 86/90 members complete (attempts so far: 3, stalled attempts: 0)
+[supervisor] 2026-07-09 22:29:03 attempt 4 ended rc=0
+[supervisor] 2026-07-09 22:29:33 progress: 90/90 members complete (attempts so far: 4, stalled attempts: 0)
+[supervisor] 2026-07-09 22:29:34 all 90 members complete -- running final verified sync to U:
+[supervisor] 2026-07-09 22:29:45 final sync 1_random_white_plain: ok
+[supervisor] 2026-07-09 22:29:55 final sync 2_clip_white_plain: ok
+[supervisor] 2026-07-09 22:30:06 final sync 3_clip_pink_plain: ok
+[supervisor] 2026-07-09 22:30:16 final sync 4_clip_white_color: ok
+[supervisor] 2026-07-09 22:30:25 final sync 5_clip_pink_color: ok
+[supervisor] 2026-07-09 22:30:34 final sync 6_clip_white_llm: ok
+[supervisor] 2026-07-09 22:30:44 final sync 7_clip_pink_llm: ok
+[supervisor] 2026-07-09 22:30:51 final sync 8_clip_white_llm6: ok
+[supervisor] 2026-07-09 22:31:02 final sync 9_clip_pink_llm6: ok
+[supervisor] 2026-07-09 22:31:02 DONE -- next step: scripts/run_factorial7_eval.sh
