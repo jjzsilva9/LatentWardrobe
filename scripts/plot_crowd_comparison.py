@@ -74,8 +74,8 @@ METHOD_LABELS = {
     "5_clip_pink_color": "5: CLIP mesh, pink noise, colour prompt",
     "6_clip_white_llm": "6: CLIP mesh, white noise, WANDER prompt",
     "7_clip_pink_llm": "7: CLIP mesh, pink noise, WANDER prompt",
-    "8_clip_white_llm6": "8: CLIP mesh, white noise, WANDER prompt (6-axis)",
-    "9_clip_pink_llm6": "9: CLIP mesh, pink noise, WANDER prompt (6-axis)",
+    "8_clip_white_llm6": "8: CLIP mesh, white noise, WANDER (6-axis)",
+    "9_clip_pink_llm6": "9: CLIP mesh, pink noise, WANDER (6-axis)",
 }
 
 METRICS = [
@@ -258,7 +258,7 @@ def plot_metric(metrics, prompts, methods, dotted_key, title, subtitle, out_path
                    ncol=len(handles), frameon=False, fontsize=8.5, handlelength=1.1,
                    handleheight=1.1, labelcolor=INK_SECONDARY)
 
-    fig.subplots_adjust(top=1 - header_h / fig_h, bottom=0.42 / fig_h, left=0.335, right=0.985)
+    fig.subplots_adjust(top=1 - header_h / fig_h, bottom=0.42 / fig_h, left=0.35, right=0.985)
     fig.savefig(out_path, dpi=200, facecolor=SURFACE)
     plt.close(fig)
 

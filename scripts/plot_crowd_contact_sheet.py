@@ -18,6 +18,7 @@ Usage (inside WSL, "eval" conda env):
 
 import argparse
 import json
+import random
 from pathlib import Path
 
 import matplotlib.pyplot as plt
@@ -26,7 +27,7 @@ import numpy as np
 import evaluate_crowd as ec
 from plot_crowd_comparison import METHOD_LABELS, SURFACE, INK, INK_MUTED
 
-TILE_IN = 1.12      # inches per member tile
+TILE_IN = 1.4       # inches per member tile
 LABEL_BAND_IN = 0.34  # vertical space above each row for its method label
 
 
@@ -39,6 +40,11 @@ def parse_args():
     p.add_argument("--frame", type=int, default=0, help="turntable frame index (same angle across members)")
     p.add_argument("--no-crop", action="store_true",
                    help="show full frames instead of foreground-bbox square crops")
+    p.add_argument("--sample", type=int, default=None,
+                   help="show only a random N members per row (seeded, reproducible; "
+                        "sampled independently per method, shown in member order)")
+    p.add_argument("--sample-seed", type=int, default=0,
+                   help="seed for --sample (per-row stream is keyed on method name too)")
     p.add_argument("--out", type=Path, default=None,
                    help="default: <batch-dir>/plots/contact_sheet_frame<frame>.png")
     return p.parse_args()
@@ -79,7 +85,11 @@ def main():
             print(f"[contact_sheet] {method}: no manifest yet, skipping row")
             continue
         manifest = json.loads(mpath.read_text())
-        rows.append((method, [m["member"] for m in manifest["members"]]))
+        members = [m["member"] for m in manifest["members"]]
+        if args.sample and args.sample < len(members):
+            rng = random.Random(f"{args.sample_seed}:{method}")
+            members = sorted(rng.sample(members, args.sample))
+        rows.append((method, members))
     if not rows:
         raise SystemExit("no methods with a manifest -- nothing to plot")
     n_cols = max(len(members) for _, members in rows)
@@ -105,7 +115,9 @@ def main():
                         fontsize=7, color=INK_MUTED, transform=ax.transAxes)
                 continue
             ax.imshow(tile)
-            if r == 0:
+            # member ids on every row (not just the top) once --sample is possible:
+            # sampled rows don't share columns, so each tile names its member.
+            if r == 0 or args.sample:
                 ax.set_title(members[c].replace("member_", ""), fontsize=7, color=INK_MUTED, pad=2)
         # method label above its row, aligned with the grid's left edge
         # 0.17in offset clears the member-number column headers (row 0 only,

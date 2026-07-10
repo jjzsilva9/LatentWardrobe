@@ -154,46 +154,79 @@ ON THE SLIDE (two builds)
 1. Full-bleed: `plots/contact_sheet_frame000.png` — the money shot, whole slide.
 2. Then 2-3 turntable videos, muted, looping:
    - `4_clip_white_color/medieval_villagers/member_03/stage2/tile_res_0/render_rgb.mp4` (blue paisley shirt)
-   - `1_random_white_plain/medieval_villagers/member_01/stage2/tile_res_0/render_rgb.mp4`
-   - one brown member from row 6/7 for contrast
-   (re-pick from cells 8/9 when they land, if better)
+   - `8_clip_white_llm6/medieval_villagers/member_00/stage2/tile_res_0/render_rgb.mp4` (plaid dress — Method 5b)
+   - one brown member from the failed WANDER cells for contrast, e.g.
+     `6_clip_white_llm/medieval_villagers/member_03/stage2/tile_res_0/render_rgb.mp4`
 
 SAY (~125 words + ~15 s of letting a video loop)
 > [contact sheet up] This is the artefact's output. Each row is one method, each
 > column one crowd member — all from the same theme prompt.
 >
-> Row one is the baseline. Now look at row four — the theme plus a single random
+> Row one is the baseline. Look at row four — the theme plus a single random
 > colour word: greens, blues, gold, orange, and it still reads as one coherent
-> medieval crowd. And rows six and seven — the LLM-evolved prompts. Every single
-> member is brown. The most sophisticated method produced the most uniform
-> wardrobe in the study. Hold that thought — the evaluation explains why, and
-> what fixing it looked like.
+> medieval crowd. And the bottom two rows — prompts evolved by an LLM with
+> novelty search over clothing attributes: plaids, stripes, pale blues, greens,
+> and the strongest overall diversity in the study. Getting that method to work
+> required diagnosing an instructive failure — hold that thought for the
+> evaluation.
 >
 > [turntables] And these are full 3D assets, not images — textured meshes you
 > can drop straight into an engine. [let one loop ~10s]
 
 ---
 
-## Slide 7 — Evaluation
+## Slide 7 — Evaluation                                    [1:45]
 
->>> DO NOT finalize until cells 8/9 (Method 5b: 6 clothing axes, "completely
->>> change" mutations, clothing-only novelty) are generated + evaluated.
->>> Then: re-run `scripts/run_factorial7_eval.sh`, regenerate plots + contact
->>> sheet, and fill the slots below.
+All 9 cells generated + evaluated (2026-07-10). Numbers final.
 
-Planned shape (fill numbers later):
-- Show TWO charts only: `plots/color_chi2_mean.png` + `plots/vendi_score_dinov2.png`.
-  The other six exist for questions.
+ON THE SLIDE
+- TWO charts only: `plots/color_chi2_mean.png` + `plots/vendi_score_dinov2.png`
+  (regenerated 2026-07-10 with all 9 methods). The other six exist for questions.
 - One line naming the battery: DINOv2 patchwise, DreamSim, LPIPS, pixel-L2,
   colour χ², Vendi, DPP + CLIPScore coherence.
-- Three findings:
-  1. Coherence flat (~0.19-0.21) across all methods -> diversity was "free".
-  2. Cheapest intervention won on colour: one random colour word, χ² ~0.53 -> ~0.86.
-  3. The failure story: WANDER cells scored BELOW baseline on colour (all brown);
-     diagnosis (novelty scored on text the renderer can't see; wearer axes soaked
-     up the mutation budget); fix = Method 5b.
-     [SLOT: cells 8/9 numbers — did 5b recover colour diversity?]
-     [SLOT: before/after strip — contact sheet row 6 vs row 8]
+- Before/after strip: `plots/wander_before_after.png` — the failed 12-axis
+  WANDER crowd (all brown) directly above the fixed 6-axis one (plaid, scarlet,
+  stripes, pale blue, green). Same theme, same pipeline, fixed search.
+  (Cells 6/7 are deliberately NOT in the main charts/contact sheet — they appear
+  only in this strip, as the "before".)
+- Three takeaway lines matching the three findings below.
+
+KEY NUMBERS (all n=10)
+| cell                          | Vendi | DreamSim | colour χ² | CLIP coherence |
+|-------------------------------|-------|----------|-----------|----------------|
+| 1 random mesh baseline        | 4.73  | 0.509    | 0.497     | 0.198          |
+| 2 CLIP mesh                   | 3.56  | 0.417    | 0.526     | 0.208          |
+| 4 + colour word               | 4.17  | 0.522    | 0.855     | 0.194          |
+| 6 WANDER (12-axis, full nov.) | 4.54  | 0.413    | 0.296     | 0.198          |
+| 8 WANDER 5b (6-axis, white)   | **5.01** | 0.525 | 0.715     | 0.196          |
+| 9 WANDER 5b (6-axis, pink)    | 4.67  | 0.525    | 0.711     | 0.197          |
+
+SAY (~230 words)
+> Crowds are scored with a battery of diversity metrics — perceptual, feature-
+> space, and colour — plus CLIP theme-coherence. Three findings.
+>
+> First, coherence is flat — 0.19 to 0.21 across every method. Nothing here
+> paid for diversity with theme drift.
+>
+> Second, the cheapest intervention was a big win on colour: adding one random
+> colour word raised colour diversity from about 0.50 to 0.86 — and you saw it
+> directly in the contact sheet.
+>
+> Third — the failure, and what fixing it bought. Our first WANDER adaptation
+> scored *below the plain baseline* on colour: every member brown. Diagnosis:
+> we scored novelty on the whole person-description, so the search happily
+> mutated age and posture — attributes a clothing texture can't even show —
+> and colour was never once challenged in thirty generations. The fix stayed
+> faithful to WANDER's own design: all ten of their emitters force substantive
+> *visual* change, so we restricted evolution to six clothing-only attributes,
+> forced large mutation steps, and scored novelty on exactly the text that
+> drives rendering.
+>
+> The corrected method more than doubled colour diversity — 0.30 to 0.72 —
+> and reached a Vendi score of 5.0 effective members, the highest in the
+> entire study, beating even the random-mesh baseline. Same pipeline, same
+> compute; the only change was making the search optimize what the renderer
+> can actually see. And coherence didn't move.
 
 ---
 
@@ -220,7 +253,7 @@ SAY (~76 words)
 
 ---
 
-## Q&A prep (pre-evaluation topics — extend once 8/9 land)
+## Q&A prep
 
 - **Why not fine-tune for diversity?** Training-free methods compose with any
   checkpoint, need no data collection, and can't damage texture quality;
@@ -241,3 +274,21 @@ SAY (~76 words)
 - **Is N=10 enough?** Each pairwise metric averages 45 pairs × 4 views; headline
   effects dwarf pairwise std, but formal significance over repeated crowds is
   future work — compute is the binding constraint (~3.5 h/cell).
+- **How did Method 5b beat even the random-mesh baseline on Vendi (5.01 vs
+  4.73)?** The baseline's diversity comes only from mesh variety + seed
+  stochasticity; 5b adds deliberate texture-content variation on top of
+  CLIP-selected meshes — so members differ in silhouette AND painted
+  appearance, and Vendi (effective distinct members in DINOv2 space) rewards
+  both. It didn't beat the colour-word cell on colour χ² though (0.72 vs
+  0.86) — random colour words explore hue space more aggressively than an 8B
+  LLM's "plausible villager" palette. Fair trade: 5b buys more overall
+  diversity and semantic richness (materials, patterns, condition), not just hue.
+- **Did pink noise matter in the end?** Within seed-matched pairs it nudged
+  perceptual metrics up in the plain and colour cells, was ~neutral for the
+  LLM cells, and slightly lowered Vendi in some pairs — honest summary:
+  modest, inconsistent, and much smaller than the prompt-side effects.
+- **Were both WANDER runs identical apart from the fix?** Same master seed,
+  same RNG stream (deliberately not keyed on the new options), so the initial
+  drafts and the mutate/crossover schedule are comparable; the LLM calls
+  themselves are not bit-reproducible, which is why every population and
+  mutation is logged.
