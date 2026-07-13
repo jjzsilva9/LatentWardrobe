@@ -5,6 +5,8 @@
   "mesh_sampling": "clip",
   "tau": 0.02,
   "color_prompt": false,
+  "color_sampling": null,
+  "color_tau": null,
   "pink_noise": false,
   "pink_alpha": null,
   "llm_emitters": true,
@@ -253,7 +255,19 @@
         "clothing_desc": "worn casual blue kryptonite-infused-velvet patched clothing and a hat",
         "theme_relevance": 0.6235074400901794
       },
-      "category_phrase": "wearing a blouse and skirt"
+      "category_phrase": "wearing a blouse and skirt",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/multitheme_local/8_clip_white_llm6/superheroes/member_02/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/multitheme_local/8_clip_white_llm6/superheroes/member_02/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/multitheme_local/8_clip_white_llm6/superheroes/member_02/stage2/tile_res_0/albedo.png"
+      }
     },
     {
       "member": "member_03",
@@ -277,7 +291,19 @@
         "clothing_desc": "customized armor high-fashion blue leather striped clothing and tool-belt",
         "theme_relevance": 0.5520529747009277
       },
-      "category_phrase": "wearing a tank top and trousers"
+      "category_phrase": "wearing a tank top and trousers",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/multitheme_local/8_clip_white_llm6/superheroes/member_03/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/multitheme_local/8_clip_white_llm6/superheroes/member_03/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/multitheme_local/8_clip_white_llm6/superheroes/member_03/stage2/tile_res_0/albedo.png"
+      }
     },
     {
       "member": "member_04",
@@ -301,7 +327,19 @@
         "clothing_desc": "weathered practical work red leather striped clothing",
         "theme_relevance": 0.5387409925460815
       },
-      "category_phrase": "wearing a crop top and shorts"
+      "category_phrase": "wearing a crop top and shorts",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/multitheme_local/8_clip_white_llm6/superheroes/member_04/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/multitheme_local/8_clip_white_llm6/superheroes/member_04/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/multitheme_local/8_clip_white_llm6/superheroes/member_04/stage2/tile_res_0/albedo.png"
+      }
     }
   ]
 }

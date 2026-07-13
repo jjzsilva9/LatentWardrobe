@@ -81,7 +81,19 @@ EMITTERS = {
         "material": ["wool", "linen", "leather", "cotton", "silk", "fur", "canvas"],
         "pattern": ["plain", "striped", "patterned", "embroidered", "patched"],
         "condition": ["pristine", "worn", "weathered", "dusty", "mended"],
-        "accessories": ["a belt", "an apron", "a cloak", "a hat", "jewelry", "a satchel", "a tool-belt", "none"],
+        # Trimmed 2026-07-13: the mesh library only provides top/bottom/
+        # fullbody garment meshes -- no separate hat, cloak, jewelry, or
+        # satchel geometry exists anywhere for Paint3D to texture, so those
+        # four were pure noise in the conditioning prompt (asking the
+        # texturer to paint an object that has no UV space to receive it).
+        # The remaining three are texture-only by nature -- a belt/tool-belt
+        # is just a band painted around the waist, an apron a flat overlay
+        # on the torso -- so they're renderable with clothing-mesh geometry
+        # alone. Affects Method 5b (--llm-emitters) and Method 6
+        # (--clip-axes), both of which draw from this list; crowds generated
+        # before this date (factorial7_20260706, multitheme_20260710 cells
+        # 8/9) used the old 8-value list.
+        "accessories": ["a belt", "an apron", "a tool-belt", "none"],
     },
 }
 

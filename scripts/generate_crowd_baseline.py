@@ -94,8 +94,41 @@ def parse_args():
                    help="softmax temperature for --mesh-sampling clip "
                         "(large tau -> uniform; small tau -> most theme-apt garments)")
     p.add_argument("--color-prompt", action="store_true",
-                   help="Method 3: give each member a random colour word, inserted into "
-                        "the garment description in the Paint3D prompt")
+                   help="Method 3: give each member a colour word, inserted into "
+                        "the garment description in the Paint3D prompt. Superseded by "
+                        "--clip-axes in cells 4/5 (2026-07-13) -- kept as a standalone option, "
+                        "not deleted, since it's still a valid single-axis technique on its own")
+    p.add_argument("--color-sampling", choices=("uniform", "clip"), default="uniform",
+                   help="colour word selection for --color-prompt: uniform (original Method 3 "
+                        "baseline, unweighted rng.choice over COLORS) or clip (theme-weighted "
+                        "via CLIP text-text similarity, same softmax(tau) knob as --mesh-sampling "
+                        "clip)")
+    p.add_argument("--color-tau", type=float, default=0.05,
+                   help="softmax temperature for --color-sampling clip (large tau -> uniform; "
+                        "small tau -> most theme-apt colours). See --axis-tau for why this isn't "
+                        "--tau's 0.02: colour is CLIP text-vs-text similarity, far more compressed "
+                        "than image-vs-text")
+    p.add_argument("--clip-axes", action="store_true",
+                   help="Method 6: CLIP-weighted independent sampling over each of Method 5b's six "
+                        "clothing emitter axes (color/formality/material/pattern/condition/"
+                        "accessories, see llm_prompt_mutation.EMITTERS['clothing']) -- no LLM call, "
+                        "no population/novelty search, just softmax(axis-tau) over each axis's "
+                        "fixed candidate list independently, then rendered through "
+                        "llm_prompt_mutation.candidate_to_description like Method 5b. Added "
+                        "2026-07-13 to isolate whether WANDER's LLM+novelty-search machinery (Method "
+                        "5b, --llm-emitters --llm-axes clothing) actually buys anything over just "
+                        "sampling every axis from CLIP relevance directly. Supersedes --color-prompt "
+                        "(colour is one of the six axes here) -- mutually exclusive with it and "
+                        "with --llm-emitters. Per-member outfit mesh selection (if --mesh-sampling "
+                        "clip) uses that member's own sampled clothing_desc as the CLIP anchor, "
+                        "same as Method 5b, not the crowd-wide theme.")
+    p.add_argument("--axis-tau", type=float, default=0.05,
+                   help="softmax temperature for --clip-axes, applied independently to each of the "
+                        "six axes (large tau -> uniform per axis; small tau -> near-argmax on the "
+                        "most theme-apt value per axis). 0.05 chosen the same way as --color-tau: "
+                        "previewed across three themes, deprioritizes poor fits per axis without "
+                        "collapsing diversity (e.g. business formalwear formality: casual 20% "
+                        "uniform -> 15%, formal -> 41%)")
     p.add_argument("--pink-noise", action="store_true",
                    help="Method 4: replace Paint3D's initial latent noise with pink noise "
                         "(FFT 1/(1+f)^alpha reweighting -- see scripts/pink_noise.py). "
@@ -202,9 +235,12 @@ def load_library(mesh_dir):
     return lib
 
 
-def sample_members(prompt, num, master_seed, lib, fullbody_prob, slot_weights=None, color_prompt=False):
+def sample_members(prompt, num, master_seed, lib, fullbody_prob, slot_weights=None, color_prompt=False,
+                   color_weights=None):
     """slot_weights: optional {slot: (paths, weights)} from mesh_sampling.theme_weights
-    (Method 1a); None -> uniform baseline sampling."""
+    (Method 1a); None -> uniform baseline sampling.
+    color_weights: optional array aligned with COLORS from mesh_sampling.color_weights
+    (--color-sampling clip); None -> uniform rng.choice (original Method 3 baseline)."""
     rng = random.Random(f"{master_seed}:{prompt}")
 
     def pick(slot):
@@ -212,6 +248,11 @@ def sample_members(prompt, num, master_seed, lib, fullbody_prob, slot_weights=No
             paths, w = slot_weights[slot]
             return str(rng.choices(paths, weights=list(w), k=1)[0])
         return str(rng.choice(lib[slot]))
+
+    def pick_color():
+        if color_weights is not None:
+            return rng.choices(COLORS, weights=list(color_weights), k=1)[0]
+        return rng.choice(COLORS)
 
     members = []
     for i in range(num):
@@ -224,7 +265,7 @@ def sample_members(prompt, num, master_seed, lib, fullbody_prob, slot_weights=No
             "outfit_type": "fullbody" if use_fb else "top_bottom",
             "garments": garments,
             "sd_seed": rng.randrange(1, 2**31 - 1),
-            "color": rng.choice(COLORS) if color_prompt else None,
+            "color": pick_color() if color_prompt else None,
         })
     return members
 
@@ -276,10 +317,69 @@ def sample_members_with_llm(prompt, num, master_seed, lib, fullbody_prob, mesh_s
     return members, history
 
 
+def sample_members_with_clip_axes(prompt, num, master_seed, lib, fullbody_prob, mesh_sampling_mode,
+                                  tau, axis_tau):
+    """Method 6: each of the six clothing emitter axes (llm_prompt_mutation.CLOTHING_KEYS)
+    is sampled independently per member from CLIP-weighted softmax(axis_tau) over its
+    fixed candidate list -- no LLM call, no population/novelty search. Rendered through
+    candidate_to_description (Method 5b's own renderer, reused unchanged) and, like
+    Method 5b, each member's own clothing_desc becomes its CLIP anchor for garment
+    selection (if --mesh-sampling clip) rather than the crowd-wide theme."""
+    import mesh_sampling
+    import llm_prompt_mutation as lpm
+
+    emitters = lpm.EMITTERS["clothing"]
+    axis_w = {axis: mesh_sampling.axis_weights(prompt, emitters[axis], mesh_sampling.AXIS_TEMPLATES[axis], axis_tau)
+              for axis in lpm.CLOTHING_KEYS}
+
+    rng = random.Random(f"{master_seed}:{prompt}:axes")
+    members = []
+    for i in range(num):
+        cand = {axis: rng.choices(emitters[axis], weights=list(axis_w[axis]), k=1)[0]
+                for axis in lpm.CLOTHING_KEYS}
+        full_desc, clothing_desc = lpm.candidate_to_description(cand)
+
+        if mesh_sampling_mode == "clip":
+            slot_weights = mesh_sampling.theme_weights(clothing_desc, tau)
+        else:
+            slot_weights = None
+
+        def pick(slot):
+            if slot_weights is not None and slot in slot_weights:
+                paths, w = slot_weights[slot]
+                return str(rng.choices(paths, weights=list(w), k=1)[0])
+            return str(rng.choice(lib[slot]))
+
+        can_tb = bool(lib["tops"] and lib["bottoms"])
+        can_fb = bool(lib["fullbody"])
+        use_fb = can_fb and (not can_tb or rng.random() < fullbody_prob)
+        garments = [pick("fullbody")] if use_fb else [pick("tops"), pick("bottoms")]
+
+        members.append({
+            "member": f"member_{i:02d}",
+            "outfit_type": "fullbody" if use_fb else "top_bottom",
+            "garments": garments,
+            "sd_seed": rng.randrange(1, 2**31 - 1),
+            "color": None,  # Method 6's colour axis supersedes --color-prompt
+            "clip_axes": {
+                "winner": cand,
+                "full_desc": full_desc,
+                "clothing_desc": clothing_desc,
+            },
+        })
+    return members
+
+
 def garment_key(path):
     """slot/stem key matching mesh_sampling's cache keys, e.g. 'tops/tube_top'."""
     p = Path(path)
     return f"{p.parent.name}/{p.stem}"
+
+
+def member_full_desc(m):
+    """The evolved/sampled description clause, if this member came from Method
+    5b (m['llm']) or Method 6 (m['clip_axes']); None for plain/colour-prompt members."""
+    return m.get("llm", m.get("clip_axes", {})).get("full_desc")
 
 
 def category_phrase(member, categories):
@@ -438,6 +538,12 @@ def main():
     if args.llm_emitters and args.color_prompt:
         sys.exit("--llm-emitters and --color-prompt are mutually exclusive: "
                   "colour is one of --llm-emitters' own emitter axes")
+    if args.clip_axes and args.color_prompt:
+        sys.exit("--clip-axes and --color-prompt are mutually exclusive: "
+                  "colour is one of --clip-axes' own emitter axes")
+    if args.clip_axes and args.llm_emitters:
+        sys.exit("--clip-axes and --llm-emitters are mutually exclusive: they're "
+                  "alternative ways of varying the same six clothing axes")
     preflight()
     if args.pink_noise:
         # Read by the opt-in hook in external/paint3d/pipeline_paint3d_stage{1,2}.py
@@ -454,7 +560,7 @@ def main():
 
     import mesh_sampling  # pulls in torch/open_clip; cheap if the garment cache already exists
     categories = mesh_sampling.garment_categories(device="cpu")
-    if args.llm_emitters:
+    if args.llm_emitters or args.clip_axes:
         import llm_prompt_mutation
 
     total_failures = 0
@@ -506,13 +612,22 @@ def main():
                 llm_members_path.write_text(json.dumps(
                     {"members": members, "llm_evolution_history": llm_history,
                      "llm_novelty": args.llm_novelty, "llm_axes": args.llm_axes}, indent=2))
+        elif args.clip_axes:
+            llm_history = None
+            members = sample_members_with_clip_axes(
+                prompt, args.num_members, args.seed, lib, args.fullbody_prob,
+                args.mesh_sampling, args.tau, args.axis_tau)
         else:
             llm_history = None
             slot_weights = None
             if args.mesh_sampling == "clip":
                 slot_weights = mesh_sampling.theme_weights(prompt, args.tau, device="cpu")
+            color_weights = None
+            if args.color_prompt and args.color_sampling == "clip":
+                color_weights = mesh_sampling.color_weights(prompt, COLORS, args.color_tau, device="cpu")
             members = sample_members(prompt, args.num_members, args.seed, lib, args.fullbody_prob,
-                                     slot_weights=slot_weights, color_prompt=args.color_prompt)
+                                     slot_weights=slot_weights, color_prompt=args.color_prompt,
+                                     color_weights=color_weights)
         for m in members:
             m["category_phrase"] = category_phrase(m, categories)
         manifest = {
@@ -522,6 +637,8 @@ def main():
             "mesh_sampling": args.mesh_sampling,
             "tau": args.tau if args.mesh_sampling == "clip" else None,
             "color_prompt": args.color_prompt,
+            "color_sampling": args.color_sampling if args.color_prompt else None,
+            "color_tau": args.color_tau if (args.color_prompt and args.color_sampling == "clip") else None,
             "pink_noise": args.pink_noise,
             "pink_alpha": args.pink_alpha if args.pink_noise else None,
             "llm_emitters": args.llm_emitters,
@@ -531,6 +648,8 @@ def main():
             "llm_axes": args.llm_axes if args.llm_emitters else None,
             "llm_model": llm_prompt_mutation.OLLAMA_MODEL if args.llm_emitters else None,
             "llm_evolution_history": llm_history,
+            "clip_axes": args.clip_axes,
+            "axis_tau": args.axis_tau if args.clip_axes else None,
             "stage1_prompt_template": "turn around, {prompt}, {full_desc}, {category_phrase}",
             "stage2_prompt_templates": {
                 "inpaint": "UV map, {prompt}, {full_desc}, {category_phrase}",
@@ -579,7 +698,7 @@ def main():
                 else:
                     cfg = mdir / "stage1_cfg.yaml"
                     build_stage1_cfg(prompt, m["category_phrase"], m["sd_seed"], cfg,
-                                      full_desc=m.get("llm", {}).get("full_desc"))
+                                      full_desc=member_full_desc(m))
                     rc, secs = run_stage("pipeline_paint3d_stage1.py", cfg, outfit_path, s1_out)
                     m["stage1"] = {"status": "ok" if rc == 0 else f"FAILED rc={rc}", "seconds": secs}
                     if rc != 0:
@@ -598,7 +717,7 @@ def main():
                 else:
                     cfg = mdir / "stage2_cfg.yaml"
                     build_stage2_cfg(prompt, m["category_phrase"], m["sd_seed"], cfg,
-                                      full_desc=m.get("llm", {}).get("full_desc"))
+                                      full_desc=member_full_desc(m))
                     rc, secs = run_stage("pipeline_paint3d_stage2.py", cfg, outfit_path, s2_out,
                                          texture_path=s1_final)
                     m["stage2"] = {"status": "ok" if rc == 0 else f"FAILED rc={rc}", "seconds": secs}

@@ -173,6 +173,69 @@ def garment_categories(device="cpu"):
     return dict(zip(keys, categories))
 
 
+# Method 3/4/5 colour word (--color-prompt), theme-weighted (2026-07-13): a
+# flat rng.choice over COLORS picked "pink" for "medieval villagers" as
+# readily as for anything else. Both sides are CLIP text here (no colour
+# renders exist to embed as images), the same text-text cosine already used
+# for Method 5's novelty score (llm_prompt_mutation._knn_novelty) -- not a
+# new technique, just applied to a fixed word list instead of an evolving
+# description pool.
+COLOR_TEMPLATE = "{value} clothing"
+
+# Method 6 (--clip-axes, 2026-07-13): generalizes the above to all six of
+# Method 5b's clothing emitter axes (llm_prompt_mutation.CLOTHING_KEYS),
+# replacing the LLM's free-form draft+evolve loop with direct CLIP-weighted
+# sampling per axis -- no Ollama call, no population/novelty search. Answers
+# a question Method 4/5 vs Method 8/9 can't isolate on their own: is the
+# LLM+novelty-search machinery worth its cost over just sampling each axis
+# from CLIP relevance? Candidate lists are llm_prompt_mutation.EMITTERS["clothing"].
+# accessories are noun phrases ("a belt", "none") that don't read as
+# "{value} clothing" -- everything else (colour/formality/material/pattern/
+# condition) does, so only accessories gets its own template.
+AXIS_TEMPLATES = {
+    "color": COLOR_TEMPLATE,
+    "formality": "{value} clothing",
+    "material": "{value} clothing",
+    "pattern": "{value} clothing",
+    "condition": "{value} clothing",
+    "accessories": "clothing with {value}",
+}
+
+# Deliberately NOT mesh sampling's THEME_TEMPLATE ("clothing worn by
+# {prompt}"): verified 2026-07-13 that its literal token "worn" spuriously
+# boosted the condition axis's "worn" candidate ("worn clothing" vs
+# "clothing worn by ...") regardless of theme -- worn scored top-1 for
+# every theme tested (31-37% vs 20% uniform) purely from shared surface
+# tokens, not real semantic fit. "an outfit for {prompt}" shares no tokens
+# with any AXIS_TEMPLATES candidate string above ("clothing", "worn").
+AXIS_THEME_TEMPLATE = "an outfit for {prompt}"
+
+
+def axis_weights(prompt, candidates, template, tau, device="cpu"):
+    """Softmax(tau) sampling weights over `candidates` for a theme prompt,
+    given a `template` with a single {value} slot -- same knob semantics as
+    theme_weights: tau -> infinity = uniform, tau small = near-argmax on the
+    best-fitting candidates. Returns a numpy array summing to 1, aligned
+    with `candidates`."""
+    model, tokenize, _ = _clip(device)
+    with torch.no_grad():
+        c_emb = model.encode_text(tokenize([template.format(value=c) for c in candidates]).to(device)).float()
+        c_emb /= c_emb.norm(dim=-1, keepdim=True)
+        t_emb = model.encode_text(tokenize([AXIS_THEME_TEMPLATE.format(prompt=prompt)]).to(device)).float()
+        t_emb /= t_emb.norm(dim=-1, keepdim=True)
+    sims = (c_emb @ t_emb.cpu().T).squeeze(1).numpy()
+    s = sims / tau
+    w = np.exp(s - s.max())
+    w /= w.sum()
+    return w
+
+
+def color_weights(prompt, colors, tau, device="cpu"):
+    """Method 3/4/5 colour-only entry point; thin wrapper over axis_weights
+    kept so existing call sites don't need to change."""
+    return axis_weights(prompt, colors, COLOR_TEMPLATE, tau, device)
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--prompt", required=False)

@@ -1,0 +1,323 @@
+{
+  "crowd_prompt": "superheroes",
+  "master_seed": 0,
+  "fullbody_prob": 0.25,
+  "mesh_sampling": "clip",
+  "tau": 0.02,
+  "color_prompt": false,
+  "color_sampling": null,
+  "color_tau": null,
+  "pink_noise": true,
+  "pink_alpha": 0.2,
+  "llm_emitters": true,
+  "llm_generations": 15,
+  "llm_k_neighbors": 3,
+  "llm_novelty": "clothing",
+  "llm_axes": "clothing",
+  "llm_model": "llama3.1:8b",
+  "llm_evolution_history": [
+    {
+      "type": "mutation",
+      "parent": 2,
+      "axis": "formality",
+      "accepted": true,
+      "child_novelty": 0.22352851927280426,
+      "replaced_novelty": 0.17650039494037628
+    },
+    {
+      "type": "mutation",
+      "parent": 3,
+      "axis": "condition",
+      "accepted": true,
+      "child_novelty": 0.20232391357421875,
+      "replaced_novelty": 0.16064099967479706
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        1,
+        2
+      ],
+      "accepted": false,
+      "child_novelty": 0.1571020483970642,
+      "replaced_novelty": 0.16048778593540192
+    },
+    {
+      "type": "mutation",
+      "parent": 3,
+      "axis": "condition",
+      "accepted": false,
+      "child_novelty": 0.17156821489334106,
+      "replaced_novelty": 0.1995552033185959
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        1,
+        3
+      ],
+      "accepted": false,
+      "child_novelty": 0.13664482533931732,
+      "replaced_novelty": 0.17321854829788208
+    },
+    {
+      "type": "mutation",
+      "parent": 0,
+      "axis": "material",
+      "accepted": true,
+      "child_novelty": 0.17362664639949799,
+      "replaced_novelty": 0.13399092853069305
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        0,
+        2
+      ],
+      "accepted": false,
+      "child_novelty": 0.12422249466180801,
+      "replaced_novelty": 0.12422249466180801
+    },
+    {
+      "type": "mutation",
+      "parent": 3,
+      "axis": "accessories",
+      "accepted": false,
+      "child_novelty": 0.16170966625213623,
+      "replaced_novelty": 0.1851554960012436
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        4,
+        3
+      ],
+      "accepted": false,
+      "child_novelty": 0.15686948597431183,
+      "replaced_novelty": 0.17979569733142853
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        4,
+        2
+      ],
+      "accepted": false,
+      "child_novelty": 0.1693018674850464,
+      "replaced_novelty": 0.17883162200450897
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        3,
+        2
+      ],
+      "accepted": true,
+      "child_novelty": 0.24261289834976196,
+      "replaced_novelty": 0.19740712642669678
+    },
+    {
+      "type": "mutation",
+      "parent": 0,
+      "axis": "color",
+      "accepted": true,
+      "child_novelty": 0.29398414492607117,
+      "replaced_novelty": 0.19727729260921478
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        2,
+        3
+      ],
+      "accepted": false,
+      "child_novelty": 0.21543675661087036,
+      "replaced_novelty": 0.21543675661087036
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        2,
+        4
+      ],
+      "accepted": true,
+      "child_novelty": 0.22159703075885773,
+      "replaced_novelty": 0.2148432731628418
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        0,
+        1
+      ],
+      "accepted": true,
+      "child_novelty": 0.27392423152923584,
+      "replaced_novelty": 0.24098092317581177
+    }
+  ],
+  "stage1_prompt_template": "turn around, {prompt}, {full_desc}, {category_phrase}",
+  "stage2_prompt_templates": {
+    "inpaint": "UV map, {prompt}, {full_desc}, {category_phrase}",
+    "img2img": "UV map, {prompt}, {full_desc}, {category_phrase}, high quality, best quality"
+  },
+  "members": [
+    {
+      "member": "member_00",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/Polo_t-shirt.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/pleated_skirtelv1.obj"
+      ],
+      "sd_seed": 1048769211,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "neon-green",
+          "formality": "high-fashion",
+          "material": "leather",
+          "pattern": "striped",
+          "condition": "worn",
+          "accessories": "a hat"
+        },
+        "full_desc": "worn high-fashion neon-green leather striped clothing and a hat",
+        "clothing_desc": "worn high-fashion neon-green leather striped clothing and a hat",
+        "theme_relevance": 0.47729066014289856
+      },
+      "category_phrase": "wearing a t-shirt and skirt",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/multitheme_local/9_clip_pink_llm6/superheroes/member_00/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/multitheme_local/9_clip_pink_llm6/superheroes/member_00/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/multitheme_local/9_clip_pink_llm6/superheroes/member_00/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_01",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/knitted_sweater_02.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/m_trousers_01.obj"
+      ],
+      "sd_seed": 744807961,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "red",
+          "formality": "practical work",
+          "material": "leather",
+          "pattern": "patched",
+          "condition": "weathered",
+          "accessories": "none"
+        },
+        "full_desc": "weathered practical work red leather patched clothing",
+        "clothing_desc": "weathered practical work red leather patched clothing",
+        "theme_relevance": 0.6263352036476135
+      },
+      "category_phrase": "wearing a blouse and trousers",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/multitheme_local/9_clip_pink_llm6/superheroes/member_01/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/multitheme_local/9_clip_pink_llm6/superheroes/member_01/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/multitheme_local/9_clip_pink_llm6/superheroes/member_01/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_02",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/knitted_sweater_01.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/pleated_miniskirt.obj"
+      ],
+      "sd_seed": 1729160604,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "blue",
+          "formality": "casual",
+          "material": "kryptonite-infused-velvet",
+          "pattern": "patched",
+          "condition": "worn",
+          "accessories": "a hat"
+        },
+        "full_desc": "worn casual blue kryptonite-infused-velvet patched clothing and a hat",
+        "clothing_desc": "worn casual blue kryptonite-infused-velvet patched clothing and a hat",
+        "theme_relevance": 0.6235074400901794
+      },
+      "category_phrase": "wearing a blouse and skirt",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/multitheme_local/9_clip_pink_llm6/superheroes/member_02/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 128.0,
+        "final_texture": "/root/multitheme_local/9_clip_pink_llm6/superheroes/member_02/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1141.0,
+        "final_texture": "/root/multitheme_local/9_clip_pink_llm6/superheroes/member_02/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_03",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/sleeveless.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/mens_trouser_f_elv1.obj"
+      ],
+      "sd_seed": 501395931,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "blue",
+          "formality": "high-fashion",
+          "material": "leather",
+          "pattern": "striped",
+          "condition": "customized armor",
+          "accessories": "tool-belt"
+        },
+        "full_desc": "customized armor high-fashion blue leather striped clothing and tool-belt",
+        "clothing_desc": "customized armor high-fashion blue leather striped clothing and tool-belt",
+        "theme_relevance": 0.5520529747009277
+      },
+      "category_phrase": "wearing a tank top and trousers"
+    },
+    {
+      "member": "member_04",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/short_tail_camo_tee.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/mens_trouser_short_elv1crf.obj"
+      ],
+      "sd_seed": 211700303,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "red",
+          "formality": "practical work",
+          "material": "leather",
+          "pattern": "striped",
+          "condition": "weathered",
+          "accessories": "none"
+        },
+        "full_desc": "weathered practical work red leather striped clothing",
+        "clothing_desc": "weathered practical work red leather striped clothing",
+        "theme_relevance": 0.5387409925460815
+      },
+      "category_phrase": "wearing a crop top and shorts"
+    }
+  ]
+}

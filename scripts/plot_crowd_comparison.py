@@ -40,8 +40,10 @@ METHOD_GROUPS = {
     "1_random_white_plain": "baseline",
     "2_clip_white_plain": "white",
     "3_clip_pink_plain": "pink",
-    "4_clip_white_color": "white",
-    "5_clip_pink_color": "pink",
+    "4_clip_white_color": "white",   # legacy (multitheme_20260710/factorial7_20260706): colour-only
+    "5_clip_pink_color": "pink",     # legacy
+    "4_clip_white_axes": "white",    # crowd_library_20260713: supersedes _color, all 6 axes
+    "5_clip_pink_axes": "pink",
     "6_clip_white_llm": "white",
     "7_clip_pink_llm": "pink",
     "8_clip_white_llm6": "white",
@@ -70,8 +72,10 @@ METHOD_LABELS = {
     "1_random_white_plain": "1: random mesh, white noise",
     "2_clip_white_plain": "2: CLIP mesh, white noise",
     "3_clip_pink_plain": "3: CLIP mesh, pink noise",
-    "4_clip_white_color": "4: CLIP mesh, white noise, colour prompt",
-    "5_clip_pink_color": "5: CLIP mesh, pink noise, colour prompt",
+    "4_clip_white_color": "4: CLIP mesh, white noise, colour prompt (legacy)",
+    "5_clip_pink_color": "5: CLIP mesh, pink noise, colour prompt (legacy)",
+    "4_clip_white_axes": "4: CLIP mesh, white noise, CLIP axis sampling",
+    "5_clip_pink_axes": "5: CLIP mesh, pink noise, CLIP axis sampling",
     "6_clip_white_llm": "6: CLIP mesh, white noise, WANDER prompt",
     "7_clip_pink_llm": "7: CLIP mesh, pink noise, WANDER prompt",
     "8_clip_white_llm6": "8: CLIP mesh, white noise, WANDER (6-axis)",

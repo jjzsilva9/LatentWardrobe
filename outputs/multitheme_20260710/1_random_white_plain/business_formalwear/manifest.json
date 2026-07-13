@@ -5,6 +5,8 @@
   "mesh_sampling": "uniform",
   "tau": null,
   "color_prompt": false,
+  "color_sampling": null,
+  "color_tau": null,
   "pink_noise": false,
   "pink_alpha": null,
   "llm_emitters": false,

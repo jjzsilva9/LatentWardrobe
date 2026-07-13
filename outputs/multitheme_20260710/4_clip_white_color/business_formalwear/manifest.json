@@ -5,6 +5,8 @@
   "mesh_sampling": "clip",
   "tau": 0.02,
   "color_prompt": true,
+  "color_sampling": "uniform",
+  "color_tau": null,
   "pink_noise": false,
   "pink_alpha": null,
   "llm_emitters": false,

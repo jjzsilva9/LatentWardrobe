@@ -1,0 +1,49 @@
+# Crowd Library prompt list (scripts/run_crowd_library.sh)
+#
+# One theme per line, lines starting with # or blank are ignored. This list
+# is read fresh on every run_crowd_library.sh launch, so it's safe to append
+# more themes and relaunch at any time -- already-generated (prompt, method)
+# combos are skipped via --resume, same as every other driver in this repo.
+#
+# Order matters: the driver processes themes top-to-bottom, and for each
+# theme runs all 7 methods before moving to the next theme. So if generation
+# gets interrupted partway through the list, everything above the cursor is a
+# complete, chart-ready dataset (every method present for that theme) and
+# only the themes below are missing -- never a theme with some methods done
+# and others not.
+
+# --- already generated elsewhere; consolidated here under the new
+#     CLIP-weighted axis sampling (Method 6, --clip-axes) for cells 4/5 --
+#     cells 1/2/3/8/9 are copied over unchanged from their original runs,
+#     not regenerated
+business formalwear
+superheroes
+medieval villagers
+
+# --- new themes
+cyberpunk street crowd
+steampunk inventors
+post-apocalyptic survivors
+pirates
+desert nomads
+arctic explorers
+safari park rangers
+astronauts on a space station
+wedding guests
+festival goers
+carnival performers
+gothic Victorian aristocrats
+tropical island fishermen
+mountain hikers
+subway commuters
+royal court nobles
+construction workers
+hospital medical staff
+university students
+farmers market vendors
+ski resort visitors
+beach vacationers
+graffiti artists
+street musicians
+video game esports players
+yoga retreat attendees
