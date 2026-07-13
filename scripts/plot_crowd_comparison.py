@@ -102,6 +102,10 @@ def parse_args():
     p.add_argument("--batch-dir", type=Path, required=True, help="e.g. outputs/weekend_20260703")
     p.add_argument("--methods", nargs="+", default=["baseline", "clip_tau002"])
     p.add_argument("--out-dir", type=Path, default=None, help="default: <batch-dir>/plots")
+    p.add_argument("--extra-batch-dir", type=Path, action="append", default=[],
+                   help="additional batch dir(s) sharing the same method subdir names, "
+                        "contributing prompts not already found under --batch-dir "
+                        "(e.g. a different run that scored the same methods on another theme)")
     return p.parse_args()
 
 
@@ -114,21 +118,28 @@ def get_path(d, dotted_key):
     return val
 
 
-def load_metrics(batch_dir, methods):
-    """metrics[method][prompt_slug] = metrics dict; prompts = ordered slug list."""
+def load_metrics(batch_dir, methods, extra_batch_dirs=None):
+    """metrics[method][prompt_slug] = metrics dict; prompts = ordered slug list.
+
+    --batch-dir prompts are loaded first; each --extra-batch-dir then contributes
+    any prompt slug not already seen (for a different run scoring the same method
+    subdir names on another theme), appended to `prompts` in the order encountered."""
     metrics, prompts = {}, []
     for method in methods:
-        method_dir = batch_dir / method
         metrics[method] = {}
-        if not method_dir.is_dir():
-            continue
-        for prompt_dir in sorted(method_dir.iterdir()):
-            mfile = prompt_dir / "metrics.json"
-            if not mfile.exists():
+        for bdir in [batch_dir] + list(extra_batch_dirs or []):
+            method_dir = bdir / method
+            if not method_dir.is_dir():
                 continue
-            metrics[method][prompt_dir.name] = json.loads(mfile.read_text())
-            if prompt_dir.name not in prompts:
-                prompts.append(prompt_dir.name)
+            for prompt_dir in sorted(method_dir.iterdir()):
+                if prompt_dir.name in metrics[method]:
+                    continue  # already loaded from an earlier (higher-priority) batch dir
+                mfile = prompt_dir / "metrics.json"
+                if not mfile.exists():
+                    continue
+                metrics[method][prompt_dir.name] = json.loads(mfile.read_text())
+                if prompt_dir.name not in prompts:
+                    prompts.append(prompt_dir.name)
     return metrics, prompts
 
 
@@ -268,7 +279,7 @@ def main():
     out_dir = args.out_dir or (args.batch_dir / "plots")
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    metrics, prompts = load_metrics(args.batch_dir, args.methods)
+    metrics, prompts = load_metrics(args.batch_dir, args.methods, args.extra_batch_dir)
     if not prompts:
         raise SystemExit(f"no metrics.json found under {args.batch_dir} for methods {args.methods}")
 

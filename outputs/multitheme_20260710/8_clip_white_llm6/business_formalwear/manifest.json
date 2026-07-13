@@ -1,0 +1,318 @@
+{
+  "crowd_prompt": "business formalwear",
+  "master_seed": 0,
+  "fullbody_prob": 0.25,
+  "mesh_sampling": "clip",
+  "tau": 0.02,
+  "color_prompt": false,
+  "pink_noise": false,
+  "pink_alpha": null,
+  "llm_emitters": true,
+  "llm_generations": 15,
+  "llm_k_neighbors": 3,
+  "llm_novelty": "clothing",
+  "llm_axes": "clothing",
+  "llm_model": "llama3.1:8b",
+  "llm_evolution_history": [
+    {
+      "type": "mutation",
+      "parent": 4,
+      "axis": "formality",
+      "accepted": true,
+      "child_novelty": 0.18025732040405273,
+      "replaced_novelty": 0.0327732153236866
+    },
+    {
+      "type": "mutation",
+      "parent": 3,
+      "axis": "color",
+      "accepted": true,
+      "child_novelty": 0.274502158164978,
+      "replaced_novelty": 0.08635121583938599
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        2,
+        3
+      ],
+      "accepted": true,
+      "child_novelty": 0.08635125309228897,
+      "replaced_novelty": 0.0863511934876442
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        4,
+        0
+      ],
+      "accepted": true,
+      "child_novelty": 0.09912238270044327,
+      "replaced_novelty": 0.08955255895853043
+    },
+    {
+      "type": "mutation",
+      "parent": 4,
+      "axis": "condition",
+      "accepted": true,
+      "child_novelty": 0.10033098608255386,
+      "replaced_novelty": 0.08638086169958115
+    },
+    {
+      "type": "mutation",
+      "parent": 4,
+      "axis": "formality",
+      "accepted": false,
+      "child_novelty": 0.11440513283014297,
+      "replaced_novelty": 0.11443439871072769
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        4,
+        1
+      ],
+      "accepted": false,
+      "child_novelty": 0.11496695131063461,
+      "replaced_novelty": 0.11496695131063461
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        1,
+        2
+      ],
+      "accepted": false,
+      "child_novelty": 0.11230844259262085,
+      "replaced_novelty": 0.11230844259262085
+    },
+    {
+      "type": "mutation",
+      "parent": 2,
+      "axis": "accessories",
+      "accepted": true,
+      "child_novelty": 0.2576127052307129,
+      "replaced_novelty": 0.16857455670833588
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        3,
+        2
+      ],
+      "accepted": false,
+      "child_novelty": 0.11017123609781265,
+      "replaced_novelty": 0.11017123609781265
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        2,
+        3
+      ],
+      "accepted": false,
+      "child_novelty": 0.11230844259262085,
+      "replaced_novelty": 0.11230844259262085
+    },
+    {
+      "type": "mutation",
+      "parent": 1,
+      "axis": "material",
+      "accepted": true,
+      "child_novelty": 0.1781635284423828,
+      "replaced_novelty": 0.14445172250270844
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        2,
+        4
+      ],
+      "accepted": false,
+      "child_novelty": 0.11017123609781265,
+      "replaced_novelty": 0.11017123609781265
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        2,
+        3
+      ],
+      "accepted": false,
+      "child_novelty": 0.13282768428325653,
+      "replaced_novelty": 0.13282768428325653
+    },
+    {
+      "type": "mutation",
+      "parent": 3,
+      "axis": "pattern",
+      "accepted": true,
+      "child_novelty": 0.19096623361110687,
+      "replaced_novelty": 0.16493690013885498
+    }
+  ],
+  "stage1_prompt_template": "turn around, {prompt}, {full_desc}, {category_phrase}",
+  "stage2_prompt_templates": {
+    "inpaint": "UV map, {prompt}, {full_desc}, {category_phrase}",
+    "img2img": "UV map, {prompt}, {full_desc}, {category_phrase}, high quality, best quality"
+  },
+  "members": [
+    {
+      "member": "member_00",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/sweater_fisherman.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/mens_trouser_f_elv_chr.obj"
+      ],
+      "sd_seed": 453639789,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "navy",
+          "formality": "streetwear",
+          "material": "wool",
+          "pattern": "striped",
+          "condition": "faded",
+          "accessories": "{'jewelry': ['watch', 'tie pin'], 'none': True}"
+        },
+        "full_desc": "faded streetwear navy wool striped clothing and {'jewelry': ['watch', 'tie pin'], 'none': True}",
+        "clothing_desc": "faded streetwear navy wool striped clothing and {'jewelry': ['watch', 'tie pin'], 'none': True}",
+        "theme_relevance": 0.7768800854682922
+      },
+      "category_phrase": "wearing a blouse and trousers",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/multitheme_local/8_clip_white_llm6/business_formalwear/member_00/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/multitheme_local/8_clip_white_llm6/business_formalwear/member_00/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/multitheme_local/8_clip_white_llm6/business_formalwear/member_00/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_01",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/vintagetop.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/skirt_mini.obj"
+      ],
+      "sd_seed": 1621654576,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "navy",
+          "formality": "formal",
+          "material": "satin",
+          "pattern": "plain",
+          "condition": "pristine",
+          "accessories": "a tie"
+        },
+        "full_desc": "pristine formal navy satin plain clothing and a tie",
+        "clothing_desc": "pristine formal navy satin plain clothing and a tie",
+        "theme_relevance": 0.7361769676208496
+      },
+      "category_phrase": "wearing a halter top and skirt",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/multitheme_local/8_clip_white_llm6/business_formalwear/member_01/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/multitheme_local/8_clip_white_llm6/business_formalwear/member_01/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/multitheme_local/8_clip_white_llm6/business_formalwear/member_01/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_02",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/elvs_goddess_dress6.obj"
+      ],
+      "sd_seed": 1691324034,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "burnt orange",
+          "formality": "formal",
+          "material": "wool",
+          "pattern": "striped",
+          "condition": "pristine",
+          "accessories": "a tie"
+        },
+        "full_desc": "pristine formal burnt orange wool striped clothing and a tie",
+        "clothing_desc": "pristine formal burnt orange wool striped clothing and a tie",
+        "theme_relevance": 0.5951725244522095
+      },
+      "category_phrase": "wearing a robe",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/multitheme_local/8_clip_white_llm6/business_formalwear/member_02/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 147.1,
+        "final_texture": "/root/multitheme_local/8_clip_white_llm6/business_formalwear/member_02/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "ok",
+        "seconds": 1188.2,
+        "final_texture": "/root/multitheme_local/8_clip_white_llm6/business_formalwear/member_02/stage2/tile_res_0/albedo.png"
+      }
+    },
+    {
+      "member": "member_03",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/rescueteam_jacket_female.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/mariaskirt.obj"
+      ],
+      "sd_seed": 1219553208,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "navy",
+          "formality": "formal",
+          "material": "wool",
+          "pattern": "plaid",
+          "condition": "pristine",
+          "accessories": "a tie"
+        },
+        "full_desc": "pristine formal navy wool plaid clothing and a tie",
+        "clothing_desc": "pristine formal navy wool plaid clothing and a tie",
+        "theme_relevance": 0.6528729200363159
+      },
+      "category_phrase": "wearing a jacket and skirt"
+    },
+    {
+      "member": "member_04",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/deathnote.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/skirt_full_long.obj"
+      ],
+      "sd_seed": 1799872506,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "burnt orange",
+          "formality": "formal",
+          "material": "wool",
+          "pattern": "striped",
+          "condition": "pristine",
+          "accessories": "a pocket watch"
+        },
+        "full_desc": "pristine formal burnt orange wool striped clothing and a pocket watch",
+        "clothing_desc": "pristine formal burnt orange wool striped clothing and a pocket watch",
+        "theme_relevance": 0.5928797721862793
+      },
+      "category_phrase": "wearing a t-shirt and skirt"
+    }
+  ]
+}

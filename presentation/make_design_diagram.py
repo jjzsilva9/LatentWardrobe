@@ -1,7 +1,8 @@
 """Draw the Design-slide pipeline figure with real intermediate images.
 
 Composes the LatentWardrobe system diagram (WordRobe-Fig-2 style): theme
-prompt -> per-member prompt (3 variants, WANDER highlighted) -> CLIP-weighted
+prompt -> per-member prompt (mini WANDER-Fig-2 loop: description pool ->
+LLM axis mutation -> CLIP-text novelty gate) -> CLIP-weighted
 garment sampling -> Paint3D 2-stage texturing (white/pink initial latent) ->
 textured member -> metrics. All embedded images come from the factorial7
 outputs (cell 8, medieval villagers), so every pixel in the figure is real
@@ -117,22 +118,51 @@ def main():
     ax.text(0.055, 0.59, '"medieval\nvillagers"', ha="center", va="center", fontsize=10,
             color=INK, style="italic")
 
-    # ---- factor 2: per-member prompt --------------------------------------
+    # ---- factor 2: per-member prompt (mini WANDER Fig-2 loop) --------------
     px, pw = 0.125, 0.185
     ax.text(px + pw / 2, 0.88, "FACTOR — per-member prompt", ha="center", fontsize=10,
             color=GREEN, weight="bold")
     box(ax, px, band_y, pw, band_h, GREEN)
-    ax.text(px + 0.012, 0.70, "○  plain theme", fontsize=9.5, color=INK2)
-    ax.text(px + 0.012, 0.63, "○  + random colour word", fontsize=9.5, color=INK2)
-    ax.text(px + 0.012, 0.56, "●  WANDER-style evolution", fontsize=9.5, color=INK, weight="bold")
-    ax.text(px + 0.026, 0.505, "6 clothing axes · LLM mutations\n· CLIP-text novelty search",
-            fontsize=8, color=INK2)
-    # evolved description sample
-    box(ax, px + 0.012, 0.30, pw - 0.024, 0.13, GREEN, lw=0.9)
-    ax.text(px + pw / 2, 0.365, f'"{desc}"', ha="center", va="center", fontsize=8.2,
+    ax.text(px + pw / 2, 0.795, "●  WANDER-style novelty search", ha="center",
+            fontsize=8.5, color=INK, weight="bold")
+    ax.text(px + pw / 2, 0.769, "baselines: ○ plain theme  ○ + random colour word",
+            ha="center", fontsize=6.5, color=MUTED)
+    # description pool: 4x2 grid of cells (green = admitted, pink = replaced)
+    cw, ch, gap = 0.019, 0.028, 0.003
+    gx0 = px + pw / 2 - (4 * cw + 3 * gap) / 2
+    cell_cols = ["#dcefdc", "#f7dcdc", "#dcefdc", "#dcefdc",
+                 "#f7dcdc", "#dcefdc", "#f7dcdc", "#dcefdc"]
+    for i, c in enumerate(cell_cols):
+        r, k = divmod(i, 4)
+        ax.add_patch(plt.Rectangle((gx0 + k * (cw + gap), 0.717 - r * (ch + gap)),
+                                   cw, ch, fc=c, ec=RULE, lw=0.7, zorder=3))
+    ax.text(px + pw / 2, 0.668, "description pool", ha="center", fontsize=7, color=MUTED)
+    # loop: sample down, mutate, admit back up by novelty
+    arrow(ax, px + 0.0925, 0.650, px + 0.0925, 0.567, color=GREEN, lw=1.3)
+    ax.text(px + 0.048, 0.605, "sample\nparent", ha="center", va="center",
+            fontsize=6.5, color=INK2)
+    box(ax, px + 0.0425, 0.475, 0.10, 0.085, GREEN, lw=0.9)
+    ax.text(px + 0.0925, 0.532, "LLM mutation", ha="center", fontsize=7.5,
+            color=INK, weight="bold")
+    ax.text(px + 0.0925, 0.497, "llama-3.1-8B", ha="center", fontsize=6.3, color=MUTED)
+    arrow(ax, px + 0.1435, 0.545, gx0 + 4 * cw + 3 * gap + 0.004, 0.686,
+          color=GREEN, lw=1.3, con="arc3,rad=-0.45")
+    ax.text(px + 0.180, 0.60, "admit if CLIP-text novelty > worst", ha="center",
+            va="center", fontsize=6, color=INK2, rotation=90)
+    # emitters feed the mutation (WANDER's "mutation directions")
+    box(ax, px + 0.012, 0.30, pw - 0.024, 0.115, GREEN, lw=0.9)
+    ax.text(px + pw / 2, 0.388, "emitter: re-roll 1 of 6 clothing axes", ha="center",
+            fontsize=6.8, color=GREEN, weight="bold")
+    ax.text(px + pw / 2, 0.338, "colour · material · pattern\nformality · condition · accessories",
+            ha="center", fontsize=6.8, color=INK2)
+    arrow(ax, px + 0.0925, 0.418, px + 0.0925, 0.472, color=GREEN, lw=1.3)
+    # evolved description sample = a pool member after R rounds
+    ax.text(px + pw / 2, 0.278, "pool after R rounds → member descriptions",
+            ha="center", fontsize=6.5, color=MUTED)
+    box(ax, px + 0.012, 0.175, pw - 0.024, 0.09, GREEN, lw=0.9)
+    ax.text(px + pw / 2, 0.22, f'"{desc}"', ha="center", va="center", fontsize=7.8,
             color=INK, style="italic", wrap=True,
             bbox=dict(boxstyle="square,pad=0", fc="none", ec="none"))
-    ax.text(px + pw / 2, 0.265, "evolved member description", ha="center", fontsize=7.5, color=MUTED)
 
     # ---- factor 1: mesh sampling ------------------------------------------
     mx, mw = 0.345, 0.20

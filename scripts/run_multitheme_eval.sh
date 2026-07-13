@@ -27,7 +27,7 @@ for cell in "${CELLS[@]}"; do
       echo "[run_multitheme_eval] cell=$cell slug=$slug has no crowd dir yet -- skipping" | tee -a "$OUT/eval.log"
       continue
     fi
-    python -u scripts/evaluate_crowd.py --crowd-dir "$crowd_dir" 2>&1 | tee -a "$OUT/eval.log"
+    python -u scripts/evaluate_crowd.py --crowd-dir "$crowd_dir" --device cpu 2>&1 | tee -a "$OUT/eval.log"
     rc=${PIPESTATUS[0]}
     echo "[run_multitheme_eval] cell=$cell slug=$slug evaluate_exit=$rc" | tee -a "$OUT/eval.log"
   done
