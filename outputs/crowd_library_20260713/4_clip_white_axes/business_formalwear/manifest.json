@@ -1,5 +1,6 @@
 {
   "crowd_prompt": "business formalwear",
+  "fixed_members_from": null,
   "master_seed": 0,
   "fullbody_prob": 0.25,
   "mesh_sampling": "clip",
@@ -51,13 +52,11 @@
         "path": "/root/crowd_library_local/4_clip_white_axes/business_formalwear/member_00/outfit.obj"
       },
       "stage1": {
-        "status": "ok",
-        "seconds": 131.1,
+        "status": "skipped (resume)",
         "final_texture": "/root/crowd_library_local/4_clip_white_axes/business_formalwear/member_00/stage1/res-0/albedo.png"
       },
       "stage2": {
-        "status": "ok",
-        "seconds": 1146.0,
+        "status": "skipped (resume)",
         "final_texture": "/root/crowd_library_local/4_clip_white_axes/business_formalwear/member_00/stage2/tile_res_0/albedo.png"
       }
     },
@@ -87,13 +86,11 @@
         "path": "/root/crowd_library_local/4_clip_white_axes/business_formalwear/member_01/outfit.obj"
       },
       "stage1": {
-        "status": "ok",
-        "seconds": 130.7,
+        "status": "skipped (resume)",
         "final_texture": "/root/crowd_library_local/4_clip_white_axes/business_formalwear/member_01/stage1/res-0/albedo.png"
       },
       "stage2": {
-        "status": "ok",
-        "seconds": 1077.6,
+        "status": "skipped (resume)",
         "final_texture": "/root/crowd_library_local/4_clip_white_axes/business_formalwear/member_01/stage2/tile_res_0/albedo.png"
       }
     },
@@ -124,13 +121,11 @@
         "path": "/root/crowd_library_local/4_clip_white_axes/business_formalwear/member_02/outfit.obj"
       },
       "stage1": {
-        "status": "ok",
-        "seconds": 136.5,
+        "status": "skipped (resume)",
         "final_texture": "/root/crowd_library_local/4_clip_white_axes/business_formalwear/member_02/stage1/res-0/albedo.png"
       },
       "stage2": {
-        "status": "ok",
-        "seconds": 1146.2,
+        "status": "skipped (resume)",
         "final_texture": "/root/crowd_library_local/4_clip_white_axes/business_formalwear/member_02/stage2/tile_res_0/albedo.png"
       }
     },
@@ -155,7 +150,19 @@
         "full_desc": "pristine formal silver fur patterned clothing and a belt",
         "clothing_desc": "pristine formal silver fur patterned clothing and a belt"
       },
-      "category_phrase": "wearing a halter top and trousers"
+      "category_phrase": "wearing a halter top and trousers",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_local/4_clip_white_axes/business_formalwear/member_03/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_local/4_clip_white_axes/business_formalwear/member_03/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_local/4_clip_white_axes/business_formalwear/member_03/stage2/tile_res_0/albedo.png"
+      }
     },
     {
       "member": "member_04",
@@ -178,7 +185,19 @@
         "full_desc": "pristine casual silver wool patched clothing",
         "clothing_desc": "pristine casual silver wool patched clothing"
       },
-      "category_phrase": "wearing a blouse and skirt"
+      "category_phrase": "wearing a blouse and skirt",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_local/4_clip_white_axes/business_formalwear/member_04/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_local/4_clip_white_axes/business_formalwear/member_04/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_local/4_clip_white_axes/business_formalwear/member_04/stage2/tile_res_0/albedo.png"
+      }
     }
   ]
 }

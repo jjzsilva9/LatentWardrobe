@@ -1,5 +1,6 @@
 {
   "crowd_prompt": "business formalwear",
+  "fixed_members_from": null,
   "master_seed": 0,
   "fullbody_prob": 0.25,
   "mesh_sampling": "clip",

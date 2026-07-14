@@ -44,8 +44,8 @@ if ! timeout 20 stat "$REPO" >/dev/null 2>&1; then
 fi
 cd "$REPO"
 
-REMOTE_OUT="$REPO/outputs/crowd_library_20260713"
-LOCAL_OUT=/root/crowd_library_local
+REMOTE_OUT="$REPO/outputs/${CROWD_LIBRARY_OUT:-crowd_library_20260713}"
+LOCAL_OUT="/root/${CROWD_LIBRARY_LOCAL:-crowd_library_local}"
 PROMPTS_FILE="scripts/crowd_library_prompts.txt"
 mkdir -p "$LOCAL_OUT" "$REMOTE_OUT"
 
@@ -61,10 +61,18 @@ N=5
 TAU=0.02
 AXIS_TAU=0.05
 
+# --skip-stage2 (2026-07-14): stage2's UV inpaint + tile refine is ~9x
+# stage1's cost (~1150s vs ~130s/member) for a marginal diversity-eval
+# improvement -- scoring runs on a stage1-only turntable instead (see
+# generate_crowd_baseline.py's STAGE1_RENDER_DIR / evaluate_crowd.py's
+# RENDER_REL_STAGE1 fallback). Trades away: final polished texture (magenta
+# UV gaps stay unfilled) and the color-diversity (chi-square) metric, which
+# has no stage1 equivalent. Drop this flag to regenerate a theme with full
+# stage2 texturing.
 run () {  # run <prompt> <cell-outdir> [extra driver args...]
   local prompt="$1"; local cell="$2"; shift 2
   python -u scripts/generate_crowd_baseline.py \
-    --prompt "$prompt" --num-members "$N" \
+    --prompt "$prompt" --num-members "$N" --skip-stage2 \
     --outdir "$LOCAL_OUT/$cell" --sync-to "$REMOTE_OUT/$cell" --resume "$@" \
     2>&1 | tee -a "$LOCAL_OUT/run.log"
   local rc=${PIPESTATUS[0]}

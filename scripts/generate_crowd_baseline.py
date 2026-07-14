@@ -60,6 +60,7 @@ RENDER_CONFIG = "paint3d/config/train_config_paint3d.py"  # relative to PAINT3D_
 
 STAGE1_FINAL = "res-0/albedo.png"
 STAGE2_FINAL = "tile_res_0/albedo.png"
+STAGE1_RENDER_DIR = "stage1_render"  # turntable of stage1's own texture, only produced under --skip-stage2
 
 # Method 3 (--color-prompt): one random colour word per member, folded into
 # the garment description alongside its zero-shot category.
@@ -166,6 +167,15 @@ def parse_args():
                         "magnitude -- every one of WANDER's own ten emitters forces a "
                         "substantive visual change, whereas the six wearer axes can't alter "
                         "the rendered garment texture at all (see llm_prompt_mutation.py)")
+    p.add_argument("--fixed-members-from", type=Path, default=None,
+                   help="dissertation eval Part 2 (texturing methods, matched meshes): a reference cell "
+                        "dir (e.g. outputs/crowd_library_20260713/2_clip_white_plain) whose <slugified "
+                        "prompt>/manifest.json's garments/outfit_type/sd_seed override this run's own "
+                        "sampling, per member index, AFTER this cell's own mesh-sampling/axis/LLM logic "
+                        "still runs (so its full_desc/category_phrase-relevant text is computed exactly "
+                        "as it would be otherwise) -- isolates the texturing method (prompt strategy + "
+                        "--pink-noise) from mesh selection by holding both the garment AND the diffusion "
+                        "seed fixed across every method being compared.")
     p.add_argument("--skip-stage2", action="store_true", help="run stage 1 only")
     p.add_argument("--dry-run", action="store_true",
                    help="sample outfits + write merged meshes + manifest, skip Paint3D")
@@ -422,6 +432,26 @@ def build_stage2_cfg(prompt, category_phrase, seed, dst, full_desc=None):
     OmegaConf.save(cfg, dst)
 
 
+def render_stage1_eval(mesh_path, texture_path, outdir):
+    """Turntable render of stage1's own (unrefined) texture, for scoring
+    --skip-stage2 crowds -- see pipeline_paint3d_stage1eval.py."""
+    cmd = [sys.executable, "pipeline_paint3d_stage1eval.py",
+           "--render_config", RENDER_CONFIG,
+           "--mesh_path", str(mesh_path),
+           "--texture_path", str(texture_path),
+           "--outdir", str(outdir)]
+    t0 = time.time()
+    proc = subprocess.run(cmd, cwd=PAINT3D_DIR)
+    secs = round(time.time() - t0, 1)
+    if proc.returncode < 0:
+        print(f"subprocess pipeline_paint3d_stage1eval.py terminated by signal {-proc.returncode} after {secs}s",
+              flush=True)
+    else:
+        print(f"subprocess pipeline_paint3d_stage1eval.py exited rc={proc.returncode} after {secs}s",
+              flush=True)
+    return proc.returncode, secs
+
+
 def run_stage(script, sd_config, mesh_path, outdir, texture_path=None):
     cmd = [sys.executable, script,
            "--sd_config", str(sd_config),
@@ -628,10 +658,23 @@ def main():
             members = sample_members(prompt, args.num_members, args.seed, lib, args.fullbody_prob,
                                      slot_weights=slot_weights, color_prompt=args.color_prompt,
                                      color_weights=color_weights)
+
+        if args.fixed_members_from is not None:
+            ref_path = args.fixed_members_from / slugify(prompt) / "manifest.json"
+            ref_members = json.loads(ref_path.read_text())["members"]
+            if len(ref_members) != len(members):
+                sys.exit(f"--fixed-members-from {ref_path} has {len(ref_members)} members but this run "
+                         f"has {len(members)} (--num-members mismatch) -- can't align by index")
+            for m, ref in zip(members, ref_members):
+                m["garments"] = ref["garments"]
+                m["outfit_type"] = ref["outfit_type"]
+                m["sd_seed"] = ref["sd_seed"]
+
         for m in members:
             m["category_phrase"] = category_phrase(m, categories)
         manifest = {
             "crowd_prompt": prompt,
+            "fixed_members_from": str(args.fixed_members_from) if args.fixed_members_from else None,
             "master_seed": args.seed,
             "fullbody_prob": args.fullbody_prob,
             "mesh_sampling": args.mesh_sampling,
@@ -710,10 +753,16 @@ def main():
                         continue
                 m["stage1"]["final_texture"] = str(s1_final)
 
-                if args.skip_stage2:
-                    m["stage2"] = {"status": "skipped (--skip-stage2)"}
-                elif args.resume and s2_final.exists():
+                if args.resume and s2_final.exists():
                     m["stage2"] = {"status": "skipped (resume)", "final_texture": str(s2_final)}
+                elif args.skip_stage2:
+                    m["stage2"] = {"status": "skipped (--skip-stage2)"}
+                    s1_render = mdir / STAGE1_RENDER_DIR
+                    if args.resume and (s1_render / "render_rgb.mp4").exists():
+                        m["stage1_render"] = {"status": "skipped (resume)"}
+                    else:
+                        rc, secs = render_stage1_eval(outfit_path, s1_final, s1_render)
+                        m["stage1_render"] = {"status": "ok" if rc == 0 else f"FAILED rc={rc}", "seconds": secs}
                 else:
                     cfg = mdir / "stage2_cfg.yaml"
                     build_stage2_cfg(prompt, m["category_phrase"], m["sd_seed"], cfg,

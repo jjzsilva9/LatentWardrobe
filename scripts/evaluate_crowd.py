@@ -23,7 +23,10 @@ detection), and std across the contributing member pairs.
 
 All appearance metrics (LPIPS, DreamSim, pixel-L2, DINOv2 CLS/Vendi/DPP) are
 computed on a fixed set of frames from each member's stage-2 turntable render
-(render_rgb.mp4), cropped to that frame's foreground bounding box (see
+(render_rgb.mp4) -- or, for a --skip-stage2 crowd, a turntable of stage1's own
+unrefined texture instead (RENDER_REL_STAGE1 fallback; color diversity is not
+scored for these members, see its comment) -- cropped to that frame's
+foreground bounding box (see
 "Background handling" below) -- NOT on raw UV maps (see plan doc: UV layouts
 are mostly padding and, more importantly, aren't spatially comparable across
 different garment meshes). Frames at the same index correspond to the same
@@ -99,6 +102,15 @@ RENDER_ALL_REL = "stage2/tile_res_0/render_all.mp4"  # rgb|depth|z_normals panel
 # a later re-render of tile_res_0 can't collide with stale coarse frames.
 RENDER_REL_COARSE = "stage2/render_rgb.mp4"
 RENDER_ALL_REL_COARSE = "stage2/render_all.mp4"
+# --skip-stage2 crowds (generate_crowd_baseline.py) have no stage2/ at all --
+# fall back further to a turntable of stage1's own (unrefined) texture. Real
+# per-metric caveat, not just "slightly pre-refinement" like the coarse
+# fallback above: stage1's albedo has unfilled (magic-pink) UV gaps stage2's
+# inpainting would normally fill, and uv_hue_histogram() below has no
+# equivalent fallback (stage1 never produces a painted-texel mask.png), so
+# color diversity is simply unscored for these members.
+RENDER_REL_STAGE1 = "stage1_render/render_rgb.mp4"
+RENDER_ALL_REL_STAGE1 = "stage1_render/render_all.mp4"
 UV_ALBEDO_REL = "stage2/albedo.png"  # coarse stage -- see module docstring, don't swap for tile_res_0's copy
 UV_MASK_REL = "stage2/mask.png"      # matches UV_ALBEDO_REL only; 0=painted, 255=unpainted (magic-pink) placeholder
 VIEWS_CACHE = "eval_views"
@@ -119,8 +131,13 @@ MODEL_CACHE_DIR = "./models"
 def parse_args():
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--crowd-dir", type=Path, required=True, help="one prompt dir with manifest.json")
-    p.add_argument("--frames", type=int, nargs="+", default=[0, 15, 30, 45],
-                   help="frame indices to sample from each turntable render (same angle across members)")
+    p.add_argument("--frames", type=int, nargs="+", default=[0, 50],
+                   help="frame indices to sample from each turntable render (same angle across members). "
+                        "Default is front (0) + back (50 of 100) only: for a --skip-stage2 crowd, stage1's "
+                        "few actual camera views land near front/back, so side angles fall in the gaps "
+                        "between them and show the worst unfilled (magenta/white-seam) UV -- see "
+                        "RENDER_REL_STAGE1's comment. Pass e.g. --frames 0 15 30 45 to restore the old "
+                        "4-angle sampling for a fully stage2-textured crowd.")
     p.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
     p.add_argument("--patch-coverage-tau", type=float, default=0.5,
                    help="min fraction of a DINOv2 patch that must be foreground (in both members) to count "
@@ -136,6 +153,8 @@ def extract_views(member_dir, frame_ids):
     video, cache_name = member_dir / RENDER_REL, VIEWS_CACHE
     if not video.exists():
         video, cache_name = member_dir / RENDER_REL_COARSE, VIEWS_CACHE + "_coarse"
+    if not video.exists():
+        video, cache_name = member_dir / RENDER_REL_STAGE1, VIEWS_CACHE + "_stage1"
     if not video.exists():
         return None
     cache = member_dir / cache_name
@@ -164,6 +183,8 @@ def extract_mask_views(member_dir, frame_ids):
     video, cache_name = member_dir / RENDER_ALL_REL, MASK_CACHE
     if not video.exists():
         video, cache_name = member_dir / RENDER_ALL_REL_COARSE, MASK_CACHE + "_coarse"
+    if not video.exists():
+        video, cache_name = member_dir / RENDER_ALL_REL_STAGE1, MASK_CACHE + "_stage1"
     if not video.exists():
         return None
     cache = member_dir / cache_name
