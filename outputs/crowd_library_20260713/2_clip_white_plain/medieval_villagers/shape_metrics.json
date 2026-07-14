@@ -1,0 +1,40 @@
+{
+  "crowd_prompt": "medieval villagers",
+  "num_members_evaluated": 5,
+  "skipped_members": [],
+  "frames": [
+    0,
+    15,
+    30,
+    45
+  ],
+  "patch_coverage_tau": 0.5,
+  "shape_diversity": {
+    "dinov2_patchwise_pairwise": {
+      "mean": 0.6094309762120247,
+      "min": 0.5307182371616364,
+      "max": 0.687446266412735,
+      "std": 0.06466234771297226
+    },
+    "dreamsim_pairwise": {
+      "mean": 0.3288988009095192,
+      "min": 0.22257304191589355,
+      "max": 0.42306293547153473,
+      "std": 0.05997607735386146
+    },
+    "lpips_pairwise": {
+      "mean": 0.4105441585183144,
+      "min": 0.30921752005815506,
+      "max": 0.4771089404821396,
+      "std": 0.0555604052272827
+    },
+    "pixel_l2_32_pairwise": {
+      "mean": 8.51439288854599,
+      "min": 6.448879957199097,
+      "max": 10.154790878295898,
+      "std": 1.1566325305471596
+    },
+    "vendi_score_dinov2": 2.2930972576141357,
+    "dpp_score_dinov2": 0.43864259123802185
+  }
+}

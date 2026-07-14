@@ -1,0 +1,40 @@
+{
+  "crowd_prompt": "business formalwear",
+  "num_members_evaluated": 5,
+  "skipped_members": [],
+  "frames": [
+    0,
+    15,
+    30,
+    45
+  ],
+  "patch_coverage_tau": 0.5,
+  "shape_diversity": {
+    "dinov2_patchwise_pairwise": {
+      "mean": 0.6375855065882206,
+      "min": 0.47914329171180725,
+      "max": 0.7384082227945328,
+      "std": 0.08663744693698901
+    },
+    "dreamsim_pairwise": {
+      "mean": 0.31685382276773455,
+      "min": 0.2545686513185501,
+      "max": 0.38548122346401215,
+      "std": 0.043190539823648386
+    },
+    "lpips_pairwise": {
+      "mean": 0.3915097665041685,
+      "min": 0.25046397000551224,
+      "max": 0.4771645590662956,
+      "std": 0.07394864054022836
+    },
+    "pixel_l2_32_pairwise": {
+      "mean": 7.670503294467926,
+      "min": 5.480216979980469,
+      "max": 9.228059530258179,
+      "std": 1.1790083893322107
+    },
+    "vendi_score_dinov2": 2.1262495517730713,
+    "dpp_score_dinov2": 0.41092273592948914
+  }
+}
