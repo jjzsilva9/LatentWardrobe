@@ -1,0 +1,40 @@
+{
+  "crowd_prompt": "superheroes",
+  "num_members_evaluated": 5,
+  "skipped_members": [],
+  "frames": [
+    0,
+    15,
+    30,
+    45
+  ],
+  "patch_coverage_tau": 0.5,
+  "shape_diversity": {
+    "dinov2_patchwise_pairwise": {
+      "mean": 0.6483375914394855,
+      "min": 0.5468895509839058,
+      "max": 0.8045523315668106,
+      "std": 0.08098760374562124
+    },
+    "dreamsim_pairwise": {
+      "mean": 0.3799994960427284,
+      "min": 0.2458757609128952,
+      "max": 0.5582842826843262,
+      "std": 0.09367538402541589
+    },
+    "lpips_pairwise": {
+      "mean": 0.40589213781058786,
+      "min": 0.2407088540494442,
+      "max": 0.47695380449295044,
+      "std": 0.0632295168800827
+    },
+    "pixel_l2_32_pairwise": {
+      "mean": 8.123081958293914,
+      "min": 6.322383284568787,
+      "max": 8.995675325393677,
+      "std": 0.8140067576589396
+    },
+    "vendi_score_dinov2": 2.5576703548431396,
+    "dpp_score_dinov2": 0.46933403611183167
+  }
+}
