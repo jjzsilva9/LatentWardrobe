@@ -22,6 +22,15 @@ if ! grep -q PINK_NOISE_ALPHA "$PAINT3D_DIR/pipeline_paint3d_stage1.py"; then
   git -C "$PAINT3D_DIR" apply "$REPO_ROOT/.claude/setup/patches/paint3d_pink_noise.patch"
 fi
 
+# 0b. Stage1-eval / shape-only pipeline scripts: same situation as the
+#     pink-noise hook above -- these are local-only additions on top of
+#     vanilla upstream Paint3D, not tracked by the submodule, so a fresh
+#     clone/checkout needs them reapplied. Idempotent -- skip if already
+#     present.
+if [ ! -f "$PAINT3D_DIR/pipeline_paint3d_stage1eval.py" ]; then
+  git -C "$PAINT3D_DIR" apply "$REPO_ROOT/.claude/setup/patches/paint3d_stage1eval_shapeonly.patch"
+fi
+
 SUDO=""
 if [ "$(id -u)" -ne 0 ]; then
   SUDO="sudo"

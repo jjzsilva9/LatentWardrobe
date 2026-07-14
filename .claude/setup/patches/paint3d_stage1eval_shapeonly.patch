@@ -1,0 +1,135 @@
+diff --git a/pipeline_paint3d_shapeonly.py b/pipeline_paint3d_shapeonly.py
+new file mode 100644
+index 0000000..dbc45ca
+--- /dev/null
++++ b/pipeline_paint3d_shapeonly.py
+@@ -0,0 +1,60 @@
++import argparse
++import time
++from pathlib import Path
++
++import torch
++
++from paint3d.dataset import init_dataloaders
++from paint3d.models.textured_mesh import TexturedMeshModel
++from paint3d.trainer import dr_eval
++from paint3d import utils
++
++
++def parse():
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument("--render_config", type=str, required=True,
++                        help="path to render config (same file used by pipeline_paint3d_stage1/2.py)")
++    parser.add_argument("--mesh_path", type=str, required=True, help="path of mesh (e.g. outfit.obj)")
++    parser.add_argument("--outdir", type=str, required=True, help="dir to write render_rgb.mp4/render_all.mp4 to")
++    return parser.parse_args()
++
++
++def main():
++    """Untextured turntable render for silhouette/mesh-selection evaluation.
++
++    Loads the mesh with NO texture (guide.initial_texture stays None, its
++    config default), so every texel is "uncolored" -- dr_eval's own
++    color_with_shade() path (see paint3d/trainer.py) then renders every view
++    as flat grey, normal-shaded geometry, using the exact same camera path
++    (dataloaders['val_large']) and frame indexing as the textured stage-2
++    turntable, so frames are directly comparable to
++    stage2/tile_res_0/render_rgb.mp4 for evaluate_crowd.py-style metrics.
++
++    Skips both ControlNet/Stable Diffusion pipelines entirely (no --sd_config,
++    no --prompt) -- this only exercises the differentiable renderer, so it's
++    orders of magnitude cheaper than the real stage1/stage2 pipelines and
++    doesn't contend with them for GPU memory.
++    """
++    opt = parse()
++    outdir = Path(opt.outdir)
++    outdir.mkdir(parents=True, exist_ok=True)
++
++    pathdir, filename = Path(opt.render_config).parent, Path(opt.render_config).stem
++    import sys
++    sys.path.append(str(pathdir))
++    render_cfg = __import__(filename).TrainConfig()
++    utils.seed_everything(render_cfg.optim.seed)
++    render_cfg.log.exp_path = str(outdir)
++    render_cfg.guide.shape_path = opt.mesh_path
++
++    device = torch.device("cuda")
++    dataloaders = init_dataloaders(render_cfg, device)
++    mesh_model = TexturedMeshModel(cfg=render_cfg, device=device).to(device)
++
++    t0 = time.time()
++    dr_eval(render_cfg, dataloaders, mesh_model, str(outdir), valset=True, verbose=False)
++    print(f"shape-only render time: {time.time() - t0:.1f}s")
++
++
++if __name__ == "__main__":
++    main()
+diff --git a/pipeline_paint3d_stage1eval.py b/pipeline_paint3d_stage1eval.py
+new file mode 100644
+index 0000000..ae0b47a
+--- /dev/null
++++ b/pipeline_paint3d_stage1eval.py
+@@ -0,0 +1,63 @@
++import argparse
++import time
++from pathlib import Path
++
++import torch
++
++from paint3d.dataset import init_dataloaders
++from paint3d.models.textured_mesh import TexturedMeshModel
++from paint3d.trainer import dr_eval
++from paint3d import utils
++
++
++def parse():
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument("--render_config", type=str, required=True,
++                        help="path to render config (same file used by pipeline_paint3d_stage1/2.py)")
++    parser.add_argument("--mesh_path", type=str, required=True, help="path of mesh (e.g. outfit.obj)")
++    parser.add_argument("--texture_path", type=str, required=True,
++                        help="existing albedo (e.g. stage1's res-0/albedo.png) to preload onto the mesh")
++    parser.add_argument("--outdir", type=str, required=True, help="dir to write render_rgb.mp4/render_all.mp4 to")
++    return parser.parse_args()
++
++
++def main():
++    """Turntable render of a mesh with an ALREADY-PAINTED texture (e.g. stage
++    1's coarse albedo.png), for scoring crowds generated with --skip-stage2.
++
++    Sibling of pipeline_paint3d_shapeonly.py (untextured, grey-shaded), but
++    sets guide.initial_texture so dr_eval renders the real painted colors
++    instead. Same camera path (dataloaders['val_large']) and frame indexing
++    as the stage-2 turntable, so frames are directly comparable / drop into
++    evaluate_crowd.py's existing extract_views()/extract_mask_views() once
++    those gain a stage1_render/ fallback tier.
++
++    Skips both ControlNet/Stable Diffusion pipelines (no --sd_config,
++    no --prompt) -- this only exercises the differentiable renderer, so it's
++    orders of magnitude cheaper than the real stage2 UV-inpaint/tile-refine
++    pipeline it stands in for.
++    """
++    opt = parse()
++    outdir = Path(opt.outdir)
++    outdir.mkdir(parents=True, exist_ok=True)
++
++    pathdir, filename = Path(opt.render_config).parent, Path(opt.render_config).stem
++    import sys
++    sys.path.append(str(pathdir))
++    render_cfg = __import__(filename).TrainConfig()
++    utils.seed_everything(render_cfg.optim.seed)
++    render_cfg.log.exp_path = str(outdir)
++    render_cfg.guide.shape_path = opt.mesh_path
++    render_cfg.guide.initial_texture = opt.texture_path
++
++    device = torch.device("cuda")
++    dataloaders = init_dataloaders(render_cfg, device)
++    mesh_model = TexturedMeshModel(cfg=render_cfg, device=device).to(device)
++
++    t0 = time.time()
++    dr_eval(render_cfg, dataloaders, mesh_model, str(outdir), valset=True, verbose=False)
++    print(f"stage1-eval render time: {time.time() - t0:.1f}s")
++
++
++if __name__ == "__main__":
++    main()
