@@ -1,0 +1,354 @@
+{
+  "crowd_prompt": "steampunk inventors",
+  "fixed_members_from": null,
+  "master_seed": 0,
+  "fullbody_prob": 0.25,
+  "mesh_sampling": "clip",
+  "tau": 0.02,
+  "color_prompt": false,
+  "color_sampling": null,
+  "color_tau": null,
+  "pink_noise": false,
+  "pink_alpha": null,
+  "llm_emitters": true,
+  "llm_generations": 15,
+  "llm_k_neighbors": 3,
+  "llm_novelty": "clothing",
+  "llm_axes": "clothing",
+  "llm_model": "llama3.1:8b",
+  "llm_evolution_history": [
+    {
+      "type": "crossover",
+      "parents": [
+        1,
+        4
+      ],
+      "accepted": false,
+      "child_novelty": 0.010425846092402935,
+      "replaced_novelty": 0.010425846092402935
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        1,
+        2
+      ],
+      "accepted": false,
+      "child_novelty": 0.010425846092402935,
+      "replaced_novelty": 0.010425846092402935
+    },
+    {
+      "type": "mutation",
+      "parent": 4,
+      "axis": "formality",
+      "accepted": true,
+      "child_novelty": 0.06596127897500992,
+      "replaced_novelty": 0.020412087440490723
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        3,
+        1
+      ],
+      "accepted": false,
+      "child_novelty": 0.020412027835845947,
+      "replaced_novelty": 0.02041204832494259
+    },
+    {
+      "type": "mutation",
+      "parent": 3,
+      "axis": "accessories",
+      "accepted": true,
+      "child_novelty": 0.12290004640817642,
+      "replaced_novelty": 0.02736067771911621
+    },
+    {
+      "type": "mutation",
+      "parent": 3,
+      "axis": "color",
+      "accepted": true,
+      "child_novelty": 0.06401193141937256,
+      "replaced_novelty": 0.03468473628163338
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        0,
+        4
+      ],
+      "accepted": false,
+      "child_novelty": 0.048698604106903076,
+      "replaced_novelty": 0.048698604106903076
+    },
+    {
+      "type": "mutation",
+      "parent": 1,
+      "axis": "formality",
+      "accepted": true,
+      "child_novelty": 0.09492617845535278,
+      "replaced_novelty": 0.060342054814100266
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        4,
+        0
+      ],
+      "accepted": false,
+      "child_novelty": 0.047033052891492844,
+      "replaced_novelty": 0.05901090428233147
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        3,
+        1
+      ],
+      "accepted": false,
+      "child_novelty": 0.04906972125172615,
+      "replaced_novelty": 0.049069762229919434
+    },
+    {
+      "type": "mutation",
+      "parent": 0,
+      "axis": "color",
+      "accepted": true,
+      "child_novelty": 0.10221550613641739,
+      "replaced_novelty": 0.07919597625732422
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        2,
+        0
+      ],
+      "accepted": false,
+      "child_novelty": 0.09694993495941162,
+      "replaced_novelty": 0.09694993495941162
+    },
+    {
+      "type": "mutation",
+      "parent": 3,
+      "axis": "color",
+      "accepted": true,
+      "child_novelty": 0.12725551426410675,
+      "replaced_novelty": 0.09741568565368652
+    },
+    {
+      "type": "mutation",
+      "parent": 3,
+      "axis": "formality",
+      "accepted": false,
+      "child_novelty": 0.08852547407150269,
+      "replaced_novelty": 0.0939527153968811
+    },
+    {
+      "type": "mutation",
+      "parent": 2,
+      "axis": "color",
+      "accepted": true,
+      "child_novelty": 0.13492821156978607,
+      "replaced_novelty": 0.10878610610961914
+    }
+  ],
+  "clip_axes": false,
+  "axis_tau": null,
+  "stage1_prompt_template": "turn around, {prompt}, {full_desc}, {category_phrase}",
+  "stage2_prompt_templates": {
+    "inpaint": "UV map, {prompt}, {full_desc}, {category_phrase}",
+    "img2img": "UV map, {prompt}, {full_desc}, {category_phrase}, high quality, best quality"
+  },
+  "members": [
+    {
+      "member": "member_00",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/ladiestank1elv.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/blackminiskirt.obj"
+      ],
+      "sd_seed": 1899552809,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "copper",
+          "formality": "practical work",
+          "material": "leather",
+          "pattern": "patched",
+          "condition": "worn",
+          "accessories": "a pocket watch on a chain"
+        },
+        "full_desc": "worn practical work copper leather patched clothing and a pocket watch on a chain",
+        "clothing_desc": "worn practical work copper leather patched clothing and a pocket watch on a chain",
+        "theme_relevance": 0.6888675093650818
+      },
+      "category_phrase": "wearing a halter top and skirt",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_stage1eval_local/8_clip_white_llm6/steampunk_inventors/member_00/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_stage1eval_local/8_clip_white_llm6/steampunk_inventors/member_00/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_01",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/mens_teeshirt1j.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/cargo_pants.obj"
+      ],
+      "sd_seed": 1165121534,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "burnt gold",
+          "formality": "elegant evening",
+          "material": "leather",
+          "pattern": "patched",
+          "condition": "worn",
+          "accessories": "tool-belt"
+        },
+        "full_desc": "worn elegant evening burnt gold leather patched clothing and tool-belt",
+        "clothing_desc": "worn elegant evening burnt gold leather patched clothing and tool-belt",
+        "theme_relevance": 0.6652076244354248
+      },
+      "category_phrase": "wearing a halter top and leggings",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_stage1eval_local/8_clip_white_llm6/steampunk_inventors/member_01/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_stage1eval_local/8_clip_white_llm6/steampunk_inventors/member_01/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_02",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/rescueteam_jacket_male.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/elvs_gored_elephantpant1.obj"
+      ],
+      "sd_seed": 1373681918,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "brown",
+          "formality": "practical work",
+          "material": "leather",
+          "pattern": "patched",
+          "condition": "worn",
+          "accessories": "a pocket watch on a chain"
+        },
+        "full_desc": "worn practical work brown leather patched clothing and a pocket watch on a chain",
+        "clothing_desc": "worn practical work brown leather patched clothing and a pocket watch on a chain",
+        "theme_relevance": 0.694682240486145
+      },
+      "category_phrase": "wearing a jacket and trousers",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_stage1eval_local/8_clip_white_llm6/steampunk_inventors/member_02/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_stage1eval_local/8_clip_white_llm6/steampunk_inventors/member_02/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_03",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/mens_shirt_untuck_elvbhp1f.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/male-classic-jeans.obj"
+      ],
+      "sd_seed": 583632708,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "ebony",
+          "formality": "practical work",
+          "material": "leather",
+          "pattern": "patched",
+          "condition": "worn",
+          "accessories": "a tool-belt"
+        },
+        "full_desc": "worn practical work ebony leather patched clothing and a tool-belt",
+        "clothing_desc": "worn practical work ebony leather patched clothing and a tool-belt",
+        "theme_relevance": 0.6410343050956726
+      },
+      "category_phrase": "wearing a blouse and trousers",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_stage1eval_local/8_clip_white_llm6/steampunk_inventors/member_03/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_stage1eval_local/8_clip_white_llm6/steampunk_inventors/member_03/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_04",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/camisole_top.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/skirt_mini.obj"
+      ],
+      "sd_seed": 574376550,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "brown",
+          "formality": "immaculate evening",
+          "material": "leather",
+          "pattern": "patched",
+          "condition": "weathered",
+          "accessories": "a tool-belt"
+        },
+        "full_desc": "weathered immaculate evening brown leather patched clothing and a tool-belt",
+        "clothing_desc": "weathered immaculate evening brown leather patched clothing and a tool-belt",
+        "theme_relevance": 0.6352798938751221
+      },
+      "category_phrase": "wearing a tank top and skirt",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_stage1eval_local/8_clip_white_llm6/steampunk_inventors/member_04/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_stage1eval_local/8_clip_white_llm6/steampunk_inventors/member_04/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    }
+  ]
+}

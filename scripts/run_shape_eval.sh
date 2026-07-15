@@ -14,7 +14,7 @@ source /root/miniconda3/etc/profile.d/conda.sh
 export LD_LIBRARY_PATH=/usr/lib/wsl/lib:$LD_LIBRARY_PATH
 cd "/mnt/u/My Documents/LatentWardrobe"
 
-OUT=outputs/crowd_library_20260713
+OUT="outputs/${CROWD_LIBRARY_OUT:-crowd_library_20260713}"
 
 conda activate paint3d
 python -u scripts/generate_shape_eval.py --library-dir "$OUT" --resume 2>&1 | tee -a "$OUT/shape_render.log"

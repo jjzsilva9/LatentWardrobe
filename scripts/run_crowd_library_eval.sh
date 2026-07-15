@@ -11,7 +11,7 @@ conda activate eval
 export LD_LIBRARY_PATH=/usr/lib/wsl/lib:$LD_LIBRARY_PATH
 cd "/mnt/u/My Documents/LatentWardrobe"
 
-OUT=outputs/crowd_library_20260713
+OUT="outputs/${CROWD_LIBRARY_OUT:-crowd_library_20260713}"
 CELLS=(1_random_white_plain 2_clip_white_plain 3_clip_pink_plain 4_clip_white_axes \
        5_clip_pink_axes 8_clip_white_llm6 9_clip_pink_llm6)
 

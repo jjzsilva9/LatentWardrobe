@@ -1,0 +1,164 @@
+{
+  "crowd_prompt": "business formalwear",
+  "fixed_members_from": null,
+  "master_seed": 0,
+  "fullbody_prob": 0.25,
+  "mesh_sampling": "uniform",
+  "tau": null,
+  "color_prompt": false,
+  "color_sampling": null,
+  "color_tau": null,
+  "pink_noise": false,
+  "pink_alpha": null,
+  "llm_emitters": false,
+  "llm_generations": null,
+  "llm_k_neighbors": null,
+  "llm_novelty": null,
+  "llm_axes": null,
+  "llm_model": null,
+  "llm_evolution_history": null,
+  "clip_axes": false,
+  "axis_tau": null,
+  "pair_coherent_sampling": false,
+  "pair_tau": null,
+  "stage1_prompt_template": "turn around, {prompt}, {full_desc}, {category_phrase}",
+  "stage2_prompt_templates": {
+    "inpaint": "UV map, {prompt}, {full_desc}, {category_phrase}",
+    "img2img": "UV map, {prompt}, {full_desc}, {category_phrase}, high quality, best quality"
+  },
+  "members": [
+    {
+      "member": "member_00",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/mens_shirt_untuck_elvbhp1f.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/jean_shorts.obj"
+      ],
+      "sd_seed": 2097930285,
+      "color": null,
+      "category_phrase": "wearing a blouse and mini skirt",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_20260715_stage1eval_local/1_random_white_plain/business_formalwear/member_00/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 119.9,
+        "final_texture": "/root/crowd_library_20260715_stage1eval_local/1_random_white_plain/business_formalwear/member_00/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "ok",
+        "seconds": 19.0
+      }
+    },
+    {
+      "member": "member_01",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/sweater_fisherman.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/mini_skirt_01.obj"
+      ],
+      "sd_seed": 2029041635,
+      "color": null,
+      "category_phrase": "wearing a blouse and mini skirt",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_20260715_stage1eval_local/1_random_white_plain/business_formalwear/member_01/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 106.4,
+        "final_texture": "/root/crowd_library_20260715_stage1eval_local/1_random_white_plain/business_formalwear/member_01/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "ok",
+        "seconds": 19.3
+      }
+    },
+    {
+      "member": "member_02",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/eveninggown.obj"
+      ],
+      "sd_seed": 988337926,
+      "color": null,
+      "category_phrase": "wearing a dress",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_20260715_stage1eval_local/1_random_white_plain/business_formalwear/member_02/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 104.6,
+        "final_texture": "/root/crowd_library_20260715_stage1eval_local/1_random_white_plain/business_formalwear/member_02/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "ok",
+        "seconds": 18.3
+      }
+    },
+    {
+      "member": "member_03",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/doublechiefhalterdress1.obj"
+      ],
+      "sd_seed": 2029161027,
+      "color": null,
+      "category_phrase": "wearing a dress",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_20260715_stage1eval_local/1_random_white_plain/business_formalwear/member_03/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 113.6,
+        "final_texture": "/root/crowd_library_20260715_stage1eval_local/1_random_white_plain/business_formalwear/member_03/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "ok",
+        "seconds": 22.6
+      }
+    },
+    {
+      "member": "member_04",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/spaghetti_top.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/skirt_full_long.obj"
+      ],
+      "sd_seed": 1222203133,
+      "color": null,
+      "category_phrase": "wearing a halter top and skirt",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_20260715_stage1eval_local/1_random_white_plain/business_formalwear/member_04/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 108.4,
+        "final_texture": "/root/crowd_library_20260715_stage1eval_local/1_random_white_plain/business_formalwear/member_04/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "ok",
+        "seconds": 19.6
+      }
+    }
+  ]
+}

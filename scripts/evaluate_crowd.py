@@ -24,8 +24,9 @@ detection), and std across the contributing member pairs.
 All appearance metrics (LPIPS, DreamSim, pixel-L2, DINOv2 CLS/Vendi/DPP) are
 computed on a fixed set of frames from each member's stage-2 turntable render
 (render_rgb.mp4) -- or, for a --skip-stage2 crowd, a turntable of stage1's own
-unrefined texture instead (RENDER_REL_STAGE1 fallback; color diversity is not
-scored for these members, see its comment) -- cropped to that frame's
+unrefined texture instead (RENDER_REL_STAGE1 fallback; color diversity comes
+from stage1's albedo via a derived placeholder mask, flagged
+color_source="stage1_derived_mask" -- see uv_hue_histogram) -- cropped to that frame's
 foreground bounding box (see
 "Background handling" below) -- NOT on raw UV maps (see plan doc: UV layouts
 are mostly padding and, more importantly, aren't spatially comparable across
@@ -103,14 +104,18 @@ RENDER_ALL_REL = "stage2/tile_res_0/render_all.mp4"  # rgb|depth|z_normals panel
 RENDER_REL_COARSE = "stage2/render_rgb.mp4"
 RENDER_ALL_REL_COARSE = "stage2/render_all.mp4"
 # --skip-stage2 crowds (generate_crowd_baseline.py) have no stage2/ at all --
-# fall back further to a turntable of stage1's own (unrefined) texture. Real
-# per-metric caveat, not just "slightly pre-refinement" like the coarse
-# fallback above: stage1's albedo has unfilled (magic-pink) UV gaps stage2's
-# inpainting would normally fill, and uv_hue_histogram() below has no
-# equivalent fallback (stage1 never produces a painted-texel mask.png), so
-# color diversity is simply unscored for these members.
+# fall back further to a turntable of stage1's own (unrefined) texture.
+# Color diversity falls back too: stage1 never writes a painted-texel
+# mask.png, but its placeholder texels hold exactly one value, so
+# uv_hue_histogram() derives an equivalent mask from the albedo itself and
+# the result is flagged color_source="stage1_derived_mask" in metrics.json
+# (verified 2026-07-15: zero pixels near-but-not-exactly the placeholder, and
+# the eval turntable frames contain no placeholder pixels at all -- so the
+# appearance metrics need no masking change).
 RENDER_REL_STAGE1 = "stage1_render/render_rgb.mp4"
 RENDER_ALL_REL_STAGE1 = "stage1_render/render_all.mp4"
+STAGE1_UV_ALBEDO_REL = "stage1/res-0/albedo.png"  # coarse texture, unpainted texels = placeholder below
+STAGE1_PLACEHOLDER_BGR = np.array([204, 25, 204], dtype=np.uint8)  # texture_default_color as uint8; see uv_hue_histogram
 UV_ALBEDO_REL = "stage2/albedo.png"  # coarse stage -- see module docstring, don't swap for tile_res_0's copy
 UV_MASK_REL = "stage2/mask.png"      # matches UV_ALBEDO_REL only; 0=painted, 255=unpainted (magic-pink) placeholder
 VIEWS_CACHE = "eval_views"
@@ -268,14 +273,37 @@ def hue_histogram(rgb, fg_mask):
 
 def uv_hue_histogram(member_dir):
     """Color diversity straight from the painted UV texture, masked by
-    Paint3D's own unpainted-texel mask (see module docstring)."""
+    Paint3D's own unpainted-texel mask (see module docstring). Returns
+    (histogram, source) where source records which mask was used --
+    "stage2_mask" (Paint3D's own mask.png) or "stage1_derived_mask" (the
+    --skip-stage2 fallback below) -- so stage1- and stage2-scored color
+    numbers can be kept apart / combined deliberately downstream."""
     albedo_path, mask_path = member_dir / UV_ALBEDO_REL, member_dir / UV_MASK_REL
-    if not albedo_path.exists() or not mask_path.exists():
-        return None
-    albedo = cv2.cvtColor(cv2.imread(str(albedo_path)), cv2.COLOR_BGR2RGB)
-    uv_mask = cv2.imread(str(mask_path), cv2.IMREAD_GRAYSCALE)
-    fg = uv_mask == 0  # 0 = painted texel, 255 = unpainted magic-pink placeholder
-    return hue_histogram(albedo, fg)
+    if albedo_path.exists() and mask_path.exists():
+        albedo = cv2.cvtColor(cv2.imread(str(albedo_path)), cv2.COLOR_BGR2RGB)
+        uv_mask = cv2.imread(str(mask_path), cv2.IMREAD_GRAYSCALE)
+        fg = uv_mask == 0  # 0 = painted texel, 255 = unpainted magic-pink placeholder
+        return hue_histogram(albedo, fg), "stage2_mask"
+    # --skip-stage2 fallback: stage1 writes no painted-texel mask.png, but its
+    # unpainted texels hold exactly one value -- texture_default_color
+    # [0.8, 0.1, 0.8] (external/paint3d/paint3d/config/train_config_paint3d.py)
+    # as uint8 (204, 25, 204). Verified empirically (2026-07-15, this batch):
+    # the placeholder occurs ONLY as that exact value (zero near-miss pixels
+    # within tol 60, no dilation/AA bleed), so exact matching reproduces the
+    # stage2 mask's painted-texel semantics rather than approximating them.
+    s1_albedo_path = member_dir / STAGE1_UV_ALBEDO_REL
+    if not s1_albedo_path.exists():
+        return None, None
+    bgr = cv2.imread(str(s1_albedo_path))
+    fg = (bgr != STAGE1_PLACEHOLDER_BGR).any(axis=-1)
+    if fg.mean() > 0.8:
+        # the placeholder covers UV padding at minimum (~30%+ of the map in
+        # practice); almost-no-placeholder means texture_default_color has
+        # changed and the derived mask can't be trusted -- leave unscored.
+        print(f"warning: <20% placeholder texels in {s1_albedo_path} -- "
+              f"texture_default_color convention changed? color unscored for this member")
+        return None, None
+    return hue_histogram(cv2.cvtColor(bgr, cv2.COLOR_BGR2RGB), fg), "stage1_derived_mask"
 
 
 def chi_square(h1, h2):
@@ -495,8 +523,15 @@ def main():
     member_cls = member_cls / member_cls.norm(dim=-1, keepdim=True)
     dinov2_sim = (member_cls @ member_cls.T).cpu().numpy()
 
-    # --- color diversity: UV albedo texture, masked by Paint3D's own unpainted-texel mask
-    hists = {m: uv_hue_histogram(args.crowd_dir / m) for m in members}
+    # --- color diversity: UV albedo texture, masked by Paint3D's own unpainted-texel
+    # mask (stage2) or the placeholder-derived equivalent (stage1) -- see uv_hue_histogram
+    hists, color_sources = {}, set()
+    for m in members:
+        hists[m], src = uv_hue_histogram(args.crowd_dir / m)
+        if src is not None:
+            color_sources.add(src)
+    if "stage1_derived_mask" in color_sources:
+        print("color diversity: stage1 placeholder-derived mask in use (no stage2/mask.png)")
     color_pairs = []
     for a, b in itertools.combinations(members, 2):
         if hists[a] is not None and hists[b] is not None:
@@ -522,6 +557,7 @@ def main():
             "lpips_pairwise": pairwise_stats(lpips_pairs),
             "pixel_l2_32_pairwise": pairwise_stats(lowres_pairs),
             "color_chi2_pairwise": pairwise_stats(color_pairs) if color_pairs else None,
+            "color_source": "+".join(sorted(color_sources)) if color_sources else None,
             "vendi_score_dinov2": vendi_score(dinov2_sim),
             "dpp_score_dinov2": dpp_score(dinov2_sim),
         },

@@ -100,6 +100,21 @@ METRICS = [
     ("coherence.clipscore_crowd_mean", "clipscore_crowd_mean", "Theme coherence (CLIPScore, crowd mean)", "higher = more on-theme", "coherence.clipscore_crowd_std", False),
 ]
 
+# Same figure grammar over shape_metrics.json (evaluate_shape.py) -- the
+# silhouette/mesh-selection-only eval. Slugs carry a shape_ prefix so the
+# PNGs coexist with the appearance charts in one plots/ dir. Selected via
+# --shape; remember shape eval only runs on the white-noise cells (1/2/4/8),
+# so pass that subset as --methods.
+SHAPE_METRICS = [
+    ("shape_diversity.dinov2_patchwise_pairwise.mean", "shape_dinov2_patchwise_mean", "DINOv2 patchwise distance (shape-only, mean)", "higher = more diverse", "shape_diversity.dinov2_patchwise_pairwise.std", False),
+    ("shape_diversity.dreamsim_pairwise.mean", "shape_dreamsim_mean", "DreamSim pairwise distance (shape-only, mean)", "higher = more diverse", "shape_diversity.dreamsim_pairwise.std", False),
+    ("shape_diversity.lpips_pairwise.mean", "shape_lpips_mean", "LPIPS pairwise (shape-only, mean)", "higher = more diverse", "shape_diversity.lpips_pairwise.std", False),
+    ("shape_diversity.pixel_l2_32_pairwise.mean", "shape_pixel_l2_32_mean", "Low-res (32x32) pixel L2 pairwise (shape-only, mean)", "higher = more diverse", "shape_diversity.pixel_l2_32_pairwise.std", False),
+    ("shape_diversity.silhouette_iou_dist_pairwise.mean", "shape_silhouette_iou_mean", "Silhouette 1−IoU pairwise (mean)", "higher = more diverse outlines; pure geometry, no pretrained model", "shape_diversity.silhouette_iou_dist_pairwise.std", False),
+    ("shape_diversity.vendi_score_dinov2", "shape_vendi_score_dinov2", "Vendi score (DINOv2, shape-only)", "higher = more effective members", None, False),
+    ("shape_diversity.dpp_score_dinov2", "shape_dpp_score_dinov2", "DPP score (DINOv2, shape-only)", "higher = more spread out; log scale", None, True),
+]
+
 
 def parse_args():
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -110,6 +125,9 @@ def parse_args():
                    help="additional batch dir(s) sharing the same method subdir names, "
                         "contributing prompts not already found under --batch-dir "
                         "(e.g. a different run that scored the same methods on another theme)")
+    p.add_argument("--shape", action="store_true",
+                   help="plot the shape-only eval instead: reads shape_metrics.json "
+                        "(evaluate_shape.py) and the SHAPE_METRICS chart list")
     return p.parse_args()
 
 
@@ -122,7 +140,7 @@ def get_path(d, dotted_key):
     return val
 
 
-def load_metrics(batch_dir, methods, extra_batch_dirs=None):
+def load_metrics(batch_dir, methods, extra_batch_dirs=None, metrics_file="metrics.json"):
     """metrics[method][prompt_slug] = metrics dict; prompts = ordered slug list.
 
     --batch-dir prompts are loaded first; each --extra-batch-dir then contributes
@@ -138,13 +156,32 @@ def load_metrics(batch_dir, methods, extra_batch_dirs=None):
             for prompt_dir in sorted(method_dir.iterdir()):
                 if prompt_dir.name in metrics[method]:
                     continue  # already loaded from an earlier (higher-priority) batch dir
-                mfile = prompt_dir / "metrics.json"
+                mfile = prompt_dir / metrics_file
                 if not mfile.exists():
                     continue
                 metrics[method][prompt_dir.name] = json.loads(mfile.read_text())
                 if prompt_dir.name not in prompts:
                     prompts.append(prompt_dir.name)
     return metrics, prompts
+
+
+def average_metrics(metrics, prompts, methods, dotted_key):
+    """Collapse per-theme values to one mean per method, for the *_avg charts.
+
+    Returns (avg_metrics, coverage): avg_metrics[method]["all"] holds
+    {"avg": {"mean": .., "std": ..}} where mean is the arithmetic mean of the
+    per-theme values and std is the spread ACROSS THEMES (between-theme
+    variation -- not the pooled within-theme pairwise std, which lives in the
+    per-theme charts). coverage[method] = number of themes contributing, so
+    callers can flag methods averaged over a partial theme set (mid-eval)."""
+    avg_metrics, coverage = {}, {}
+    for m in methods:
+        vals = [get_path(metrics.get(m, {}).get(p), dotted_key) for p in prompts]
+        vals = [v for v in vals if v is not None and np.isfinite(v)]
+        coverage[m] = len(vals)
+        avg_metrics[m] = {"all": {"avg": {"mean": float(np.mean(vals)),
+                                          "std": float(np.std(vals))}}} if vals else {}
+    return avg_metrics, coverage
 
 
 def method_color(method, i):
@@ -283,15 +320,36 @@ def main():
     out_dir = args.out_dir or (args.batch_dir / "plots")
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    metrics, prompts = load_metrics(args.batch_dir, args.methods, args.extra_batch_dir)
+    metrics_file = "shape_metrics.json" if args.shape else "metrics.json"
+    metric_list = SHAPE_METRICS if args.shape else METRICS
+    metrics, prompts = load_metrics(args.batch_dir, args.methods, args.extra_batch_dir,
+                                    metrics_file=metrics_file)
     if not prompts:
-        raise SystemExit(f"no metrics.json found under {args.batch_dir} for methods {args.methods}")
+        raise SystemExit(f"no {metrics_file} found under {args.batch_dir} for methods {args.methods}")
 
-    for dotted_key, slug, title, subtitle, std_key, log_scale in METRICS:
-        out_path = out_dir / f"{slug}.png"
+    # each metric gets two figures, split by folder: per_prompt/ (one panel
+    # per theme) and avg/ (one bar per method, averaged across themes)
+    per_prompt_dir, avg_dir = out_dir / "per_prompt", out_dir / "avg"
+    per_prompt_dir.mkdir(exist_ok=True)
+    avg_dir.mkdir(exist_ok=True)
+
+    for dotted_key, slug, title, subtitle, std_key, log_scale in metric_list:
+        out_path = per_prompt_dir / f"{slug}.png"
         plot_metric(metrics, prompts, args.methods, dotted_key, title, subtitle, out_path,
                    std_key=std_key, log_scale=log_scale)
         print(f"written: {out_path}")
+
+        avg_metrics, coverage = average_metrics(metrics, prompts, args.methods, dotted_key)
+        partial = {m: n for m, n in coverage.items() if 0 < n < len(prompts)}
+        if partial:
+            print(f"note: avg/{slug} averages over a partial theme set for "
+                  + ", ".join(f"{m} ({n}/{len(prompts)})" for m, n in partial.items()))
+        avg_path = avg_dir / f"{slug}.png"
+        plot_metric(avg_metrics, ["all"], args.methods, "avg.mean",
+                    f"{title} — theme mean",
+                    f"{subtitle}; averaged over {len(prompts)} themes, whiskers = std across themes",
+                    avg_path, std_key="avg.std", log_scale=log_scale)
+        print(f"written: {avg_path}")
 
 
 if __name__ == "__main__":

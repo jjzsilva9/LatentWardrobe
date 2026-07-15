@@ -130,6 +130,15 @@ def parse_args():
                         "previewed across three themes, deprioritizes poor fits per axis without "
                         "collapsing diversity (e.g. business formalwear formality: casual 20% "
                         "uniform -> 15%, formal -> 41%)")
+    p.add_argument("--pair-tau", type=float, default=0.05,
+                   help="softmax temperature for outfit-coherent top/bottom pairing (2026-07-15, "
+                        "all CLIP mesh-sampling cells): one slot is drawn first (random which), "
+                        "then the other slot's text weights are re-weighted by CLIP image-image "
+                        "similarity to the chosen garment -- see mesh_sampling.pair_weights. "
+                        "Independent per-slot draws can pair a top and bottom that each fit the "
+                        "theme but not each other. Large tau -> no pairing effect (old behaviour); "
+                        "small tau -> near-argmax on the closest visual match. Uniform (random-mesh) "
+                        "cells are unaffected: the baseline keeps truly independent draws.")
     p.add_argument("--pink-noise", action="store_true",
                    help="Method 4: replace Paint3D's initial latent noise with pink noise "
                         "(FFT 1/(1+f)^alpha reweighting -- see scripts/pink_noise.py). "
@@ -245,8 +254,29 @@ def load_library(mesh_dir):
     return lib
 
 
+def pick_top_bottom(rng, lib, slot_weights, pair_tau):
+    """Outfit-coherent top+bottom draw (2026-07-15): sample one slot first
+    (which one is random), then re-weight the other slot's text-derived
+    weights by CLIP image-image similarity to the chosen garment -- see
+    mesh_sampling.pair_weights for why independent per-slot draws pair
+    garments that fit the theme but not each other. Uniform cells
+    (slot_weights None) keep the plain independent draw so the random
+    baseline stays a true baseline. Returns [top, bottom] in slot order."""
+    if slot_weights is None or "tops" not in slot_weights or "bottoms" not in slot_weights:
+        return [str(rng.choice(lib["tops"])), str(rng.choice(lib["bottoms"]))]
+    import mesh_sampling
+    first, second = ("tops", "bottoms") if rng.random() < 0.5 else ("bottoms", "tops")
+    p1, w1 = slot_weights[first]
+    g1 = rng.choices(p1, weights=list(w1), k=1)[0]
+    p2, w2 = slot_weights[second]
+    w2 = mesh_sampling.pair_weights(p2, w2, g1, pair_tau)
+    g2 = rng.choices(p2, weights=list(w2), k=1)[0]
+    pair = {first: str(g1), second: str(g2)}
+    return [pair["tops"], pair["bottoms"]]
+
+
 def sample_members(prompt, num, master_seed, lib, fullbody_prob, slot_weights=None, color_prompt=False,
-                   color_weights=None):
+                   color_weights=None, pair_tau=0.05):
     """slot_weights: optional {slot: (paths, weights)} from mesh_sampling.theme_weights
     (Method 1a); None -> uniform baseline sampling.
     color_weights: optional array aligned with COLORS from mesh_sampling.color_weights
@@ -269,7 +299,7 @@ def sample_members(prompt, num, master_seed, lib, fullbody_prob, slot_weights=No
         can_tb = bool(lib["tops"] and lib["bottoms"])
         can_fb = bool(lib["fullbody"])
         use_fb = can_fb and (not can_tb or rng.random() < fullbody_prob)
-        garments = [pick("fullbody")] if use_fb else [pick("tops"), pick("bottoms")]
+        garments = [pick("fullbody")] if use_fb else pick_top_bottom(rng, lib, slot_weights, pair_tau)
         members.append({
             "member": f"member_{i:02d}",
             "outfit_type": "fullbody" if use_fb else "top_bottom",
@@ -281,7 +311,7 @@ def sample_members(prompt, num, master_seed, lib, fullbody_prob, slot_weights=No
 
 
 def sample_members_with_llm(prompt, num, master_seed, lib, fullbody_prob, mesh_sampling_mode, tau,
-                            generations, k_neighbors, novelty_on="full", axes="all"):
+                            generations, k_neighbors, novelty_on="full", axes="all", pair_tau=0.05):
     """Method 5: evolve the whole crowd's wearer+clothing descriptions as one
     WANDER-inspired population (see llm_prompt_mutation.evolve_crowd), then
     sample garments per member from its own evolved clothing_desc as the
@@ -309,7 +339,7 @@ def sample_members_with_llm(prompt, num, master_seed, lib, fullbody_prob, mesh_s
         can_tb = bool(lib["tops"] and lib["bottoms"])
         can_fb = bool(lib["fullbody"])
         use_fb = can_fb and (not can_tb or rng.random() < fullbody_prob)
-        garments = [pick("fullbody")] if use_fb else [pick("tops"), pick("bottoms")]
+        garments = [pick("fullbody")] if use_fb else pick_top_bottom(rng, lib, slot_weights, pair_tau)
 
         members.append({
             "member": f"member_{i:02d}",
@@ -328,7 +358,7 @@ def sample_members_with_llm(prompt, num, master_seed, lib, fullbody_prob, mesh_s
 
 
 def sample_members_with_clip_axes(prompt, num, master_seed, lib, fullbody_prob, mesh_sampling_mode,
-                                  tau, axis_tau):
+                                  tau, axis_tau, pair_tau=0.05):
     """Method 6: each of the six clothing emitter axes (llm_prompt_mutation.CLOTHING_KEYS)
     is sampled independently per member from CLIP-weighted softmax(axis_tau) over its
     fixed candidate list -- no LLM call, no population/novelty search. Rendered through
@@ -363,7 +393,7 @@ def sample_members_with_clip_axes(prompt, num, master_seed, lib, fullbody_prob, 
         can_tb = bool(lib["tops"] and lib["bottoms"])
         can_fb = bool(lib["fullbody"])
         use_fb = can_fb and (not can_tb or rng.random() < fullbody_prob)
-        garments = [pick("fullbody")] if use_fb else [pick("tops"), pick("bottoms")]
+        garments = [pick("fullbody")] if use_fb else pick_top_bottom(rng, lib, slot_weights, pair_tau)
 
         members.append({
             "member": f"member_{i:02d}",
@@ -638,7 +668,7 @@ def main():
                 members, llm_history = sample_members_with_llm(
                     prompt, args.num_members, args.seed, lib, args.fullbody_prob,
                     args.mesh_sampling, args.tau, generations, args.llm_k_neighbors,
-                    novelty_on=args.llm_novelty, axes=args.llm_axes)
+                    novelty_on=args.llm_novelty, axes=args.llm_axes, pair_tau=args.pair_tau)
                 llm_members_path.write_text(json.dumps(
                     {"members": members, "llm_evolution_history": llm_history,
                      "llm_novelty": args.llm_novelty, "llm_axes": args.llm_axes}, indent=2))
@@ -646,7 +676,7 @@ def main():
             llm_history = None
             members = sample_members_with_clip_axes(
                 prompt, args.num_members, args.seed, lib, args.fullbody_prob,
-                args.mesh_sampling, args.tau, args.axis_tau)
+                args.mesh_sampling, args.tau, args.axis_tau, pair_tau=args.pair_tau)
         else:
             llm_history = None
             slot_weights = None
@@ -657,7 +687,7 @@ def main():
                 color_weights = mesh_sampling.color_weights(prompt, COLORS, args.color_tau, device="cpu")
             members = sample_members(prompt, args.num_members, args.seed, lib, args.fullbody_prob,
                                      slot_weights=slot_weights, color_prompt=args.color_prompt,
-                                     color_weights=color_weights)
+                                     color_weights=color_weights, pair_tau=args.pair_tau)
 
         if args.fixed_members_from is not None:
             ref_path = args.fixed_members_from / slugify(prompt) / "manifest.json"
@@ -693,6 +723,8 @@ def main():
             "llm_evolution_history": llm_history,
             "clip_axes": args.clip_axes,
             "axis_tau": args.axis_tau if args.clip_axes else None,
+            "pair_coherent_sampling": args.mesh_sampling == "clip",
+            "pair_tau": args.pair_tau if args.mesh_sampling == "clip" else None,
             "stage1_prompt_template": "turn around, {prompt}, {full_desc}, {category_phrase}",
             "stage2_prompt_templates": {
                 "inpaint": "UV map, {prompt}, {full_desc}, {category_phrase}",

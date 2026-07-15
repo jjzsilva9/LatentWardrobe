@@ -1,5 +1,5 @@
 #!/bin/bash
-# Eval Part 2 (texturing methods only, matched meshes): every method that can
+# Eval Part 2 (texturing methods only, MESH-FIXED): every method that can
 # affect the TEXTURE in any way (cells 1, 2, 3, 4, 5, 8, 9 -- everything
 # except the legacy 6/7 slots) replayed against ONE shared set of garment
 # meshes + diffusion seeds, so cross-method differences can only come from
@@ -11,17 +11,19 @@
 # overwritten from the reference cell's manifest.json, per member index,
 # before Paint3D runs.
 #
-# Reference mesh set: 2_clip_white_plain from the original crowd_library run
-# (outputs/crowd_library_20260713) -- CLIP-weighted theme-relevant sampling,
-# uncomplicated by axis/LLM machinery, so it's a neutral pick. Cell 2 itself
-# needs no regeneration under this scheme (it'd just reproduce itself
-# bit-for-bit at the cost of a full Paint3D run) -- copied straight over
-# instead.
+# Reference mesh set: 2_clip_white_plain (CLIP-weighted theme-relevant
+# sampling, uncomplicated by axis/LLM machinery, so it's a neutral pick),
+# taken from ${CROWD_LIBRARY_REF_OUT:-crowd_library_20260713} -- override to
+# e.g. crowd_library_20260713_stage1eval to pin meshes/seeds to that batch's
+# cell 2 (which has all current themes; the old full run only has 3).
+# Cell 2 itself needs no regeneration under this scheme (it'd just reproduce
+# itself bit-for-bit at the cost of a full Paint3D run) -- copied straight
+# over instead.
 #
-# Compute cost: this is 6 cells' worth of FULL Paint3D generation (stage1 +
-# stage2, same cost per member as the original run), not a cheap eval pass --
-# don't launch this casually alongside scripts/run_crowd_library.sh without
-# checking GPU contention first.
+# Compute cost: this is 6 cells' worth of FULL Paint3D generation (same cost
+# per member as the original run), not a cheap eval pass -- don't launch
+# this casually alongside another generation/render pass without checking
+# GPU contention first.
 #
 # Same crash-hardened structure as run_crowd_library.sh (see its header) --
 # generate to LOCAL WSL disk, --sync-to mirrors every member to U: as it
@@ -32,19 +34,19 @@ export LD_LIBRARY_PATH=/usr/lib/wsl/lib:$LD_LIBRARY_PATH
 REPO="/mnt/u/My Documents/LatentWardrobe"
 
 if ! timeout 20 stat "$REPO" >/dev/null 2>&1; then
-  echo "[run_crowd_library_texture_fixed] FATAL: \"$REPO\" not responding within 20s -- U: mount is not healthy, aborting before launch" >&2
+  echo "[run_crowd_library_mesh_fixed] FATAL: \"$REPO\" not responding within 20s -- U: mount is not healthy, aborting before launch" >&2
   exit 1
 fi
 cd "$REPO"
 
-REFERENCE_CELL="$REPO/outputs/${CROWD_LIBRARY_OUT:-crowd_library_20260713}/2_clip_white_plain"
-REMOTE_OUT="$REPO/outputs/${CROWD_LIBRARY_TEXFIXED_OUT:-crowd_library_20260713_texturefixed}"
-LOCAL_OUT="/root/${CROWD_LIBRARY_TEXFIXED_LOCAL:-crowd_library_texturefixed_local}"
+REFERENCE_CELL="$REPO/outputs/${CROWD_LIBRARY_REF_OUT:-crowd_library_20260713}/2_clip_white_plain"
+REMOTE_OUT="$REPO/outputs/${CROWD_LIBRARY_MESHFIXED_OUT:-crowd_library_20260713_meshfixed}"
+LOCAL_OUT="/root/${CROWD_LIBRARY_MESHFIXED_LOCAL:-crowd_library_meshfixed_local}"
 PROMPTS_FILE="scripts/crowd_library_prompts.txt"
 mkdir -p "$LOCAL_OUT" "$REMOTE_OUT"
 
 if ! timeout 600 rsync -a "$REMOTE_OUT/" "$LOCAL_OUT/"; then
-  echo "[run_crowd_library_texture_fixed] FATAL: initial rsync from $REMOTE_OUT timed out/failed -- check the U: mount before relaunching" >&2
+  echo "[run_crowd_library_mesh_fixed] FATAL: initial rsync from $REMOTE_OUT timed out/failed -- check the U: mount before relaunching" >&2
   exit 1
 fi
 
@@ -58,7 +60,8 @@ AXIS_TAU=0.05
 # generate_crowd_baseline.py's build_stage1_cfg/build_stage2_cfg), so scoring
 # stage1's own turntable is a reasonable proxy at ~1/9th the per-member cost.
 # See run_crowd_library.sh's own --skip-stage2 comment for what this trades
-# away (final polish, color-diversity metric).
+# away (final polish, color-diversity metric -- though see evaluate_crowd.py's
+# stage1_derived_mask fallback for the latter).
 run () {  # run <prompt> <cell-outdir> [extra driver args...]
   local prompt="$1"; local cell="$2"; shift 2
   python -u scripts/generate_crowd_baseline.py \
@@ -67,9 +70,9 @@ run () {  # run <prompt> <cell-outdir> [extra driver args...]
     --fixed-members-from "$REFERENCE_CELL" "$@" \
     2>&1 | tee -a "$LOCAL_OUT/run.log"
   local rc=${PIPESTATUS[0]}
-  echo "[run_crowd_library_texture_fixed] prompt='$prompt' cell=$cell python_exit=$rc" | tee -a "$LOCAL_OUT/run.log"
+  echo "[run_crowd_library_mesh_fixed] prompt='$prompt' cell=$cell python_exit=$rc" | tee -a "$LOCAL_OUT/run.log"
   timeout 120 rsync -a "$LOCAL_OUT/$cell/" "$REMOTE_OUT/$cell/" \
-    || echo "[run_crowd_library_texture_fixed] prompt='$prompt' cell=$cell end-of-cell rsync timed out/failed (non-fatal)" | tee -a "$LOCAL_OUT/run.log"
+    || echo "[run_crowd_library_mesh_fixed] prompt='$prompt' cell=$cell end-of-cell rsync timed out/failed (non-fatal)" | tee -a "$LOCAL_OUT/run.log"
   cp "$LOCAL_OUT/run.log" "$REMOTE_OUT/run.log" 2>/dev/null || true
   return "$rc"
 }
@@ -79,18 +82,18 @@ while IFS= read -r prompt || [ -n "$prompt" ]; do
   prompt="$(echo -n "$prompt" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')"
   [ -z "$prompt" ] && continue
 
-  echo "[run_crowd_library_texture_fixed] === theme: $prompt ===" | tee -a "$LOCAL_OUT/run.log"
+  echo "[run_crowd_library_mesh_fixed] === theme: $prompt ===" | tee -a "$LOCAL_OUT/run.log"
 
   # cell 2 = the reference itself: copy, don't regenerate.
   slug="$(python -c "import sys; sys.path.insert(0, 'scripts'); from generate_crowd_baseline import slugify; print(slugify(sys.argv[1]))" "$prompt")"
   if [ -d "$REFERENCE_CELL/$slug" ] && [ ! -d "$LOCAL_OUT/2_clip_white_plain/$slug" ]; then
     mkdir -p "$LOCAL_OUT/2_clip_white_plain"
     cp -r "$REFERENCE_CELL/$slug" "$LOCAL_OUT/2_clip_white_plain/$slug"
-    echo "[run_crowd_library_texture_fixed] prompt='$prompt' cell=2_clip_white_plain copied from reference (no regeneration)" | tee -a "$LOCAL_OUT/run.log"
+    echo "[run_crowd_library_mesh_fixed] prompt='$prompt' cell=2_clip_white_plain copied from reference (no regeneration)" | tee -a "$LOCAL_OUT/run.log"
     timeout 120 rsync -a "$LOCAL_OUT/2_clip_white_plain/$slug/" "$REMOTE_OUT/2_clip_white_plain/$slug/" \
-      || echo "[run_crowd_library_texture_fixed] prompt='$prompt' cell=2_clip_white_plain copy-sync timed out/failed" | tee -a "$LOCAL_OUT/run.log"
+      || echo "[run_crowd_library_mesh_fixed] prompt='$prompt' cell=2_clip_white_plain copy-sync timed out/failed" | tee -a "$LOCAL_OUT/run.log"
   elif [ ! -d "$REFERENCE_CELL/$slug" ]; then
-    echo "[run_crowd_library_texture_fixed] FATAL: reference cell has no data for '$prompt' ($REFERENCE_CELL/$slug missing) -- run the original crowd_library batch for this theme first" >&2
+    echo "[run_crowd_library_mesh_fixed] FATAL: reference cell has no data for '$prompt' ($REFERENCE_CELL/$slug missing) -- run the original crowd_library batch for this theme first" >&2
     exit 1
   fi
 
@@ -105,8 +108,8 @@ while IFS= read -r prompt || [ -n "$prompt" ]; do
   run "$prompt" 9_clip_pink_llm6 --mesh-sampling clip --tau "$TAU" --pink-noise \
       --llm-emitters --llm-axes clothing --llm-novelty clothing || exit 1
 
-  echo "[run_crowd_library_texture_fixed] === theme complete: $prompt ===" | tee -a "$LOCAL_OUT/run.log"
+  echo "[run_crowd_library_mesh_fixed] === theme complete: $prompt ===" | tee -a "$LOCAL_OUT/run.log"
 done < "$PROMPTS_FILE"
 
-echo "TEXTURE-FIXED PASS COMPLETE" | tee -a "$LOCAL_OUT/run.log"
+echo "MESH-FIXED PASS COMPLETE" | tee -a "$LOCAL_OUT/run.log"
 cp "$LOCAL_OUT/run.log" "$REMOTE_OUT/run.log" 2>/dev/null || true

@@ -1,0 +1,153 @@
+{
+  "crowd_prompt": "cyberpunk street crowd",
+  "fixed_members_from": null,
+  "master_seed": 0,
+  "fullbody_prob": 0.25,
+  "mesh_sampling": "uniform",
+  "tau": null,
+  "color_prompt": false,
+  "color_sampling": null,
+  "color_tau": null,
+  "pink_noise": false,
+  "pink_alpha": null,
+  "llm_emitters": false,
+  "llm_generations": null,
+  "llm_k_neighbors": null,
+  "llm_novelty": null,
+  "llm_axes": null,
+  "llm_model": null,
+  "llm_evolution_history": null,
+  "clip_axes": false,
+  "axis_tau": null,
+  "stage1_prompt_template": "turn around, {prompt}, {full_desc}, {category_phrase}",
+  "stage2_prompt_templates": {
+    "inpaint": "UV map, {prompt}, {full_desc}, {category_phrase}",
+    "img2img": "UV map, {prompt}, {full_desc}, {category_phrase}, high quality, best quality"
+  },
+  "members": [
+    {
+      "member": "member_00",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/spaghetti_top.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/mini_skirt_02.obj"
+      ],
+      "sd_seed": 1192559850,
+      "color": null,
+      "category_phrase": "wearing a halter top and skirt",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_stage1eval_local/1_random_white_plain/cyberpunk_street_crowd/member_00/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_stage1eval_local/1_random_white_plain/cyberpunk_street_crowd/member_00/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_01",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/deathnote.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/elvs_disco_mini1.obj"
+      ],
+      "sd_seed": 332143197,
+      "color": null,
+      "category_phrase": "wearing a t-shirt and skirt",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_stage1eval_local/1_random_white_plain/cyberpunk_street_crowd/member_01/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_stage1eval_local/1_random_white_plain/cyberpunk_street_crowd/member_01/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_02",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/elvs_goddessdress7.obj"
+      ],
+      "sd_seed": 1560351505,
+      "color": null,
+      "category_phrase": "wearing a gown",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_stage1eval_local/1_random_white_plain/cyberpunk_street_crowd/member_02/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_stage1eval_local/1_random_white_plain/cyberpunk_street_crowd/member_02/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_03",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/sleeveless.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/mens_trouser_f_elv_chr.obj"
+      ],
+      "sd_seed": 1537153614,
+      "color": null,
+      "category_phrase": "wearing a tank top and trousers",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_stage1eval_local/1_random_white_plain/cyberpunk_street_crowd/member_03/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_stage1eval_local/1_random_white_plain/cyberpunk_street_crowd/member_03/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_04",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/elvs_discotop2.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/tier_skirt.obj"
+      ],
+      "sd_seed": 248727895,
+      "color": null,
+      "category_phrase": "wearing a blouse and skirt",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_stage1eval_local/1_random_white_plain/cyberpunk_street_crowd/member_04/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_stage1eval_local/1_random_white_plain/cyberpunk_street_crowd/member_04/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    }
+  ]
+}

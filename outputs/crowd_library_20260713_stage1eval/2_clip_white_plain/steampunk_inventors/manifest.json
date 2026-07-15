@@ -1,0 +1,153 @@
+{
+  "crowd_prompt": "steampunk inventors",
+  "fixed_members_from": null,
+  "master_seed": 0,
+  "fullbody_prob": 0.25,
+  "mesh_sampling": "clip",
+  "tau": 0.02,
+  "color_prompt": false,
+  "color_sampling": null,
+  "color_tau": null,
+  "pink_noise": false,
+  "pink_alpha": null,
+  "llm_emitters": false,
+  "llm_generations": null,
+  "llm_k_neighbors": null,
+  "llm_novelty": null,
+  "llm_axes": null,
+  "llm_model": null,
+  "llm_evolution_history": null,
+  "clip_axes": false,
+  "axis_tau": null,
+  "stage1_prompt_template": "turn around, {prompt}, {full_desc}, {category_phrase}",
+  "stage2_prompt_templates": {
+    "inpaint": "UV map, {prompt}, {full_desc}, {category_phrase}",
+    "img2img": "UV map, {prompt}, {full_desc}, {category_phrase}, high quality, best quality"
+  },
+  "members": [
+    {
+      "member": "member_00",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/elvs_butterflydiscotop1.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/male-classic-jeans.obj"
+      ],
+      "sd_seed": 627218352,
+      "color": null,
+      "category_phrase": "wearing a blouse and trousers",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_stage1eval_local/2_clip_white_plain/steampunk_inventors/member_00/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_stage1eval_local/2_clip_white_plain/steampunk_inventors/member_00/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_01",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/mens_shirt_untuck_elvbhp1f.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/harem_pants.obj"
+      ],
+      "sd_seed": 601863908,
+      "color": null,
+      "category_phrase": "wearing a blouse and trousers",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_stage1eval_local/2_clip_white_plain/steampunk_inventors/member_01/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_stage1eval_local/2_clip_white_plain/steampunk_inventors/member_01/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_02",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/f_dress_02.obj"
+      ],
+      "sd_seed": 1205172328,
+      "color": null,
+      "category_phrase": "wearing a dress",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_stage1eval_local/2_clip_white_plain/steampunk_inventors/member_02/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_stage1eval_local/2_clip_white_plain/steampunk_inventors/member_02/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_03",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/mens_boho_top1elv.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/mini_skirt_01.obj"
+      ],
+      "sd_seed": 1055369730,
+      "color": null,
+      "category_phrase": "wearing a hoodie and mini skirt",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_stage1eval_local/2_clip_white_plain/steampunk_inventors/member_03/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_stage1eval_local/2_clip_white_plain/steampunk_inventors/member_03/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_04",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/rescueteam_jacket_male.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/tier_skirt_mini.obj"
+      ],
+      "sd_seed": 1196712386,
+      "color": null,
+      "category_phrase": "wearing a jacket and skirt",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_stage1eval_local/2_clip_white_plain/steampunk_inventors/member_04/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_stage1eval_local/2_clip_white_plain/steampunk_inventors/member_04/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    }
+  ]
+}

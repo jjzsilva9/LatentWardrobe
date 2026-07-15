@@ -281,6 +281,27 @@ def main():
         ds = [float(np.linalg.norm(x - y)) for x, y in zip(lowres[a], lowres[b])]
         lowres_pairs.append(float(np.mean(ds)))
 
+    # --- silhouette IoU: pure-geometry pairwise diversity, no pretrained
+    # model in the loop. Masks are pixel-aligned across members (identical
+    # camera path at each frame index), so 1 - IoU per view, averaged over
+    # views, is a direct outline-overlap distance. Members without a real
+    # z-normals-derived mask are excluded: their all-ones fallback masks
+    # would score IoU 1.0 (distance 0) against anything, silently deflating
+    # the crowd's stats.
+    iou_members = [m for m in members if masks[m] is not None]
+    iou_pairs = []
+    for a, b in itertools.combinations(iou_members, 2):
+        ds = []
+        for ma, mb in zip(fg_masks[a], fg_masks[b]):
+            union = np.logical_or(ma, mb).sum()
+            if union:
+                ds.append(1.0 - np.logical_and(ma, mb).sum() / union)
+        if ds:
+            iou_pairs.append(float(np.mean(ds)))
+    if len(iou_members) < len(members):
+        print(f"note: silhouette IoU computed over {len(iou_members)}/{len(members)} "
+              f"members (rest lack a render_all.mp4 foreground mask)")
+
     results = {
         "crowd_prompt": prompt,
         "num_members_evaluated": len(members),
@@ -292,6 +313,8 @@ def main():
             "dreamsim_pairwise": pairwise_stats(dreamsim_pairs),
             "lpips_pairwise": pairwise_stats(lpips_pairs),
             "pixel_l2_32_pairwise": pairwise_stats(lowres_pairs),
+            "silhouette_iou_dist_pairwise": pairwise_stats(iou_pairs) if iou_pairs else None,
+            "silhouette_iou_members": len(iou_members),
             "vendi_score_dinov2": vendi_score(dinov2_sim),
             "dpp_score_dinov2": dpp_score(dinov2_sim),
         },
@@ -309,6 +332,9 @@ def main():
           f"min-NN {d['lpips_pairwise']['min']:.4f}  std {d['lpips_pairwise']['std']:.4f}")
     print(f"Pixel-L2(32) pairwise mean {d['pixel_l2_32_pairwise']['mean']:.4f}  "
           f"min-NN {d['pixel_l2_32_pairwise']['min']:.4f}  std {d['pixel_l2_32_pairwise']['std']:.4f}")
+    if d["silhouette_iou_dist_pairwise"]:
+        print(f"Silhouette 1-IoU    mean {d['silhouette_iou_dist_pairwise']['mean']:.4f}  "
+              f"min-NN {d['silhouette_iou_dist_pairwise']['min']:.4f}  std {d['silhouette_iou_dist_pairwise']['std']:.4f}")
     print(f"Vendi score (DINOv2) {d['vendi_score_dinov2']:.2f} effective members")
     print(f"DPP score (DINOv2)   {d['dpp_score_dinov2']:.4g}")
     print(f"\nwritten: {out}")

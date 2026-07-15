@@ -1,0 +1,63 @@
+{
+  "crowd_prompt": "superheroes",
+  "num_members_evaluated": 5,
+  "skipped_members": [],
+  "coarse_render_members": [
+    "member_00",
+    "member_01",
+    "member_02",
+    "member_03",
+    "member_04"
+  ],
+  "frames": [
+    0,
+    50
+  ],
+  "patch_coverage_tau": 0.5,
+  "diversity": {
+    "dinov2_patchwise_pairwise": {
+      "mean": 0.6866487085819244,
+      "min": 0.5918447375297546,
+      "max": 0.7942225635051727,
+      "std": 0.06243866274310569
+    },
+    "dreamsim_pairwise": {
+      "mean": 0.5107703685760498,
+      "min": 0.3700822591781616,
+      "max": 0.6444786489009857,
+      "std": 0.08780782270190451
+    },
+    "lpips_pairwise": {
+      "mean": 0.5450976297259331,
+      "min": 0.4414999634027481,
+      "max": 0.6108688414096832,
+      "std": 0.05340221019624213
+    },
+    "pixel_l2_32_pairwise": {
+      "mean": 17.100193548202515,
+      "min": 14.555059432983398,
+      "max": 19.194067001342773,
+      "std": 1.4629569449204314
+    },
+    "color_chi2_pairwise": {
+      "mean": 0.616573054715991,
+      "min": 0.056239742785692215,
+      "max": 0.9933586120605469,
+      "std": 0.35729071693580045
+    },
+    "color_source": "stage1_derived_mask",
+    "vendi_score_dinov2": 3.2461016178131104,
+    "dpp_score_dinov2": 0.6725388169288635
+  },
+  "coherence": {
+    "clipscore_per_member": {
+      "member_00": 0.19784635305404663,
+      "member_01": 0.22614169120788574,
+      "member_02": 0.19884471595287323,
+      "member_03": 0.1991097778081894,
+      "member_04": 0.24124526977539062
+    },
+    "clipscore_crowd_mean": 0.2126375615596771,
+    "clipscore_crowd_std": 0.01784816998534141
+  }
+}

@@ -1,0 +1,214 @@
+{
+  "crowd_prompt": "steampunk inventors",
+  "fixed_members_from": null,
+  "master_seed": 0,
+  "fullbody_prob": 0.25,
+  "mesh_sampling": "clip",
+  "tau": 0.02,
+  "color_prompt": false,
+  "color_sampling": null,
+  "color_tau": null,
+  "pink_noise": false,
+  "pink_alpha": null,
+  "llm_emitters": false,
+  "llm_generations": null,
+  "llm_k_neighbors": null,
+  "llm_novelty": null,
+  "llm_axes": null,
+  "llm_model": null,
+  "llm_evolution_history": null,
+  "clip_axes": true,
+  "axis_tau": 0.05,
+  "stage1_prompt_template": "turn around, {prompt}, {full_desc}, {category_phrase}",
+  "stage2_prompt_templates": {
+    "inpaint": "UV map, {prompt}, {full_desc}, {category_phrase}",
+    "img2img": "UV map, {prompt}, {full_desc}, {category_phrase}, high quality, best quality"
+  },
+  "members": [
+    {
+      "member": "member_00",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/spaghetti_top.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/polkadotskirt.obj"
+      ],
+      "sd_seed": 1257010283,
+      "color": null,
+      "clip_axes": {
+        "winner": {
+          "color": "blue",
+          "formality": "ragged",
+          "material": "leather",
+          "pattern": "patched",
+          "condition": "pristine",
+          "accessories": "an apron"
+        },
+        "full_desc": "pristine ragged blue leather patched clothing and an apron",
+        "clothing_desc": "pristine ragged blue leather patched clothing and an apron"
+      },
+      "category_phrase": "wearing a halter top and skirt",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_stage1eval_local/4_clip_white_axes/steampunk_inventors/member_00/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_stage1eval_local/4_clip_white_axes/steampunk_inventors/member_00/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_01",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/striped_shirt.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/elvs_disco_pant1.obj"
+      ],
+      "sd_seed": 1659873478,
+      "color": null,
+      "clip_axes": {
+        "winner": {
+          "color": "brown",
+          "formality": "formal",
+          "material": "canvas",
+          "pattern": "plain",
+          "condition": "worn",
+          "accessories": "a belt"
+        },
+        "full_desc": "worn formal brown canvas plain clothing and a belt",
+        "clothing_desc": "worn formal brown canvas plain clothing and a belt"
+      },
+      "category_phrase": "wearing a crop top and leggings",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_stage1eval_local/4_clip_white_axes/steampunk_inventors/member_01/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_stage1eval_local/4_clip_white_axes/steampunk_inventors/member_01/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_02",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/mens_tanks_elv1f.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/shortjeans.obj"
+      ],
+      "sd_seed": 2003747322,
+      "color": null,
+      "clip_axes": {
+        "winner": {
+          "color": "gold",
+          "formality": "ragged",
+          "material": "cotton",
+          "pattern": "patched",
+          "condition": "worn",
+          "accessories": "none"
+        },
+        "full_desc": "worn ragged gold cotton patched clothing",
+        "clothing_desc": "worn ragged gold cotton patched clothing"
+      },
+      "category_phrase": "wearing a tank top and shorts",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_stage1eval_local/4_clip_white_axes/steampunk_inventors/member_02/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_stage1eval_local/4_clip_white_axes/steampunk_inventors/member_02/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_03",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/mens_tanks_elv1f.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/retro_girlyshort1.obj"
+      ],
+      "sd_seed": 1892578642,
+      "color": null,
+      "clip_axes": {
+        "winner": {
+          "color": "silver",
+          "formality": "ceremonial",
+          "material": "leather",
+          "pattern": "embroidered",
+          "condition": "dusty",
+          "accessories": "none"
+        },
+        "full_desc": "dusty ceremonial silver leather embroidered clothing",
+        "clothing_desc": "dusty ceremonial silver leather embroidered clothing"
+      },
+      "category_phrase": "wearing a tank top and shorts",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_stage1eval_local/4_clip_white_axes/steampunk_inventors/member_03/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_stage1eval_local/4_clip_white_axes/steampunk_inventors/member_03/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_04",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/sweater_fisherman.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/rescueteam_pants_male.obj"
+      ],
+      "sd_seed": 1152620237,
+      "color": null,
+      "clip_axes": {
+        "winner": {
+          "color": "green",
+          "formality": "casual",
+          "material": "leather",
+          "pattern": "patterned",
+          "condition": "mended",
+          "accessories": "a belt"
+        },
+        "full_desc": "mended casual green leather patterned clothing and a belt",
+        "clothing_desc": "mended casual green leather patterned clothing and a belt"
+      },
+      "category_phrase": "wearing a blouse and trousers",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_stage1eval_local/4_clip_white_axes/steampunk_inventors/member_04/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_stage1eval_local/4_clip_white_axes/steampunk_inventors/member_04/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    }
+  ]
+}

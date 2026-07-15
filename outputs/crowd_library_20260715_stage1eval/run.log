@@ -1,0 +1,407 @@
+[run_crowd_library] === theme: business formalwear ===
+mesh library: 41 tops, 39 bottoms, 59 fullbody
+plan: 1 prompt(s) x 5 members
+
+=== [business formalwear] member_00: mens_shirt_untuck_elvbhp1f+jean_shorts seed=2097930285 ===
+Depth-based 3D Texturing
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+Loading pipeline components...:  43%|████▎     | 3/7 [00:04<00:05,  1.40s/it]Loading pipeline components...:  71%|███████▏  | 5/7 [00:06<00:02,  1.17s/it]Loading pipeline components...:  86%|████████▌ | 6/7 [00:16<00:03,  3.45s/it]Loading pipeline components...: 100%|██████████| 7/7 [00:17<00:00,  2.85s/it]Loading pipeline components...: 100%|██████████| 7/7 [00:17<00:00,  2.47s/it]
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+Loading pipeline components...:  43%|████▎     | 3/7 [00:03<00:05,  1.32s/it]Loading pipeline components...:  71%|███████▏  | 5/7 [00:05<00:02,  1.09s/it]Loading pipeline components...:  86%|████████▌ | 6/7 [00:16<00:03,  3.55s/it]Loading pipeline components...: 100%|██████████| 7/7 [00:17<00:00,  2.90s/it]Loading pipeline components...: 100%|██████████| 7/7 [00:17<00:00,  2.49s/it]
+Project init view [0, 23]...
+Generating init view...
+  0%|          | 0/20 [00:00<?, ?it/s]  5%|▌         | 1/20 [00:03<01:09,  3.67s/it] 10%|█         | 2/20 [00:04<00:30,  1.71s/it] 15%|█▌        | 3/20 [00:04<00:18,  1.09s/it] 20%|██        | 4/20 [00:04<00:12,  1.26it/s] 25%|██▌       | 5/20 [00:05<00:09,  1.58it/s] 30%|███       | 6/20 [00:05<00:07,  1.87it/s] 35%|███▌      | 7/20 [00:05<00:06,  2.12it/s] 40%|████      | 8/20 [00:06<00:05,  2.32it/s] 45%|████▌     | 9/20 [00:06<00:04,  2.47it/s] 50%|█████     | 10/20 [00:06<00:03,  2.57it/s] 55%|█████▌    | 11/20 [00:07<00:03,  2.66it/s] 60%|██████    | 12/20 [00:07<00:02,  2.73it/s] 65%|██████▌   | 13/20 [00:07<00:02,  2.78it/s] 70%|███████   | 14/20 [00:08<00:02,  2.81it/s] 75%|███████▌  | 15/20 [00:08<00:01,  2.84it/s] 80%|████████  | 16/20 [00:08<00:01,  2.86it/s] 85%|████████▌ | 17/20 [00:09<00:01,  2.87it/s] 90%|█████████ | 18/20 [00:09<00:00,  2.88it/s] 95%|█████████▌| 19/20 [00:09<00:00,  2.89it/s]100%|██████████| 20/20 [00:10<00:00,  2.90it/s]100%|██████████| 20/20 [00:10<00:00,  1.96it/s]
+init view generation time: 14.84968614578247
+0it [00:00, ?it/s]26it [00:00, 3263.27it/s]
+2026-07-15 14:17:16.810 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /root/crowd_library_20260715_stage1eval_local/1_random_white_plain/business_formalwear/member_00/stage1/res-0/mesh.obj with: vertices:(4970, 3) uv:(5465, 2) faces:(8556, 3)
+init DR time: 0.7500739097595215
+View inpainting ...
+Project inpaint view [(5, 6)]...
+0it [00:00, ?it/s]1it [00:01,  1.41s/it]1it [00:01,  1.41s/it]
+0it [00:00, ?it/s]
+  0%|          | 0/20 [00:00<?, ?it/s][A
+  5%|▌         | 1/20 [00:01<00:24,  1.31s/it][A
+ 10%|█         | 2/20 [00:01<00:14,  1.24it/s][A
+ 15%|█▌        | 3/20 [00:02<00:10,  1.56it/s][A
+ 20%|██        | 4/20 [00:02<00:09,  1.77it/s][A
+ 25%|██▌       | 5/20 [00:03<00:07,  1.92it/s][A
+ 30%|███       | 6/20 [00:03<00:06,  2.02it/s][A
+ 35%|███▌      | 7/20 [00:03<00:06,  2.09it/s][A
+ 40%|████      | 8/20 [00:04<00:05,  2.13it/s][A
+ 45%|████▌     | 9/20 [00:04<00:05,  2.17it/s][A
+ 50%|█████     | 10/20 [00:05<00:04,  2.19it/s][A
+ 55%|█████▌    | 11/20 [00:05<00:04,  2.21it/s][A
+ 60%|██████    | 12/20 [00:06<00:03,  2.22it/s][A
+ 65%|██████▌   | 13/20 [00:06<00:03,  2.22it/s][A
+ 70%|███████   | 14/20 [00:07<00:02,  2.23it/s][A
+ 75%|███████▌  | 15/20 [00:07<00:02,  2.23it/s][A
+ 80%|████████  | 16/20 [00:08<00:01,  2.22it/s][A
+ 85%|████████▌ | 17/20 [00:08<00:01,  2.22it/s][A
+ 90%|█████████ | 18/20 [00:08<00:00,  2.23it/s][A
+ 95%|█████████▌| 19/20 [00:09<00:00,  2.23it/s][A
+100%|██████████| 20/20 [00:09<00:00,  2.23it/s][A100%|██████████| 20/20 [00:09<00:00,  2.04it/s]
+1it [00:12, 12.15s/it]1it [00:12, 12.15s/it]
+inpaint view generation time: 13.564052104949951
+0it [00:00, ?it/s]26it [00:00, 3308.41it/s]
+2026-07-15 14:17:31.133 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /root/crowd_library_20260715_stage1eval_local/1_random_white_plain/business_formalwear/member_00/stage1/res-0/mesh.obj with: vertices:(4970, 3) uv:(5465, 2) faces:(8556, 3)
+inpaint DR time: 0.7559535503387451
+View inpainting ...
+Project inpaint view [(24, 25)]...
+0it [00:00, ?it/s]1it [00:01,  1.27s/it]1it [00:01,  1.27s/it]
+0it [00:00, ?it/s]
+  0%|          | 0/20 [00:00<?, ?it/s][A
+  5%|▌         | 1/20 [00:01<00:23,  1.24s/it][A
+ 10%|█         | 2/20 [00:01<00:13,  1.30it/s][A
+ 15%|█▌        | 3/20 [00:02<00:10,  1.60it/s][A
+ 20%|██        | 4/20 [00:02<00:08,  1.80it/s][A
+ 25%|██▌       | 5/20 [00:03<00:07,  1.94it/s][A
+ 30%|███       | 6/20 [00:03<00:06,  2.03it/s][A
+ 35%|███▌      | 7/20 [00:03<00:06,  2.09it/s][A
+ 40%|████      | 8/20 [00:04<00:05,  2.13it/s][A
+ 45%|████▌     | 9/20 [00:04<00:05,  2.16it/s][A
+ 50%|█████     | 10/20 [00:05<00:04,  2.18it/s][A
+ 55%|█████▌    | 11/20 [00:05<00:04,  2.19it/s][A
+ 60%|██████    | 12/20 [00:06<00:03,  2.19it/s][A
+ 65%|██████▌   | 13/20 [00:06<00:03,  2.20it/s][A
+ 70%|███████   | 14/20 [00:07<00:02,  2.21it/s][A
+ 75%|███████▌  | 15/20 [00:07<00:02,  2.21it/s][A
+ 80%|████████  | 16/20 [00:07<00:01,  2.22it/s][A
+ 85%|████████▌ | 17/20 [00:08<00:01,  2.22it/s][A
+ 90%|█████████ | 18/20 [00:08<00:00,  2.22it/s][A
+ 95%|█████████▌| 19/20 [00:09<00:00,  2.22it/s][A
+100%|██████████| 20/20 [00:09<00:00,  2.23it/s][A100%|██████████| 20/20 [00:09<00:00,  2.05it/s]
+1it [00:11, 11.99s/it]1it [00:11, 11.99s/it]
+inpaint view generation time: 13.264293909072876
+0it [00:00, ?it/s]26it [00:00, 4542.50it/s]
+2026-07-15 14:17:45.165 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /root/crowd_library_20260715_stage1eval_local/1_random_white_plain/business_formalwear/member_00/stage1/res-0/mesh.obj with: vertices:(4970, 3) uv:(5465, 2) faces:(8556, 3)
+inpaint DR time: 0.7682721614837646
+total processed time:43.95329570770264
+Evalating textured mesh~: 0it [00:00, ?it/s]Evalating textured mesh~: 2it [00:00, 15.20it/s]Evalating textured mesh~: 4it [00:00, 15.88it/s]Evalating textured mesh~: 6it [00:00, 16.08it/s]Evalating textured mesh~: 8it [00:00, 16.25it/s]Evalating textured mesh~: 10it [00:00, 16.38it/s]Evalating textured mesh~: 12it [00:00, 16.39it/s]Evalating textured mesh~: 14it [00:00, 16.01it/s]Evalating textured mesh~: 16it [00:00, 16.09it/s]Evalating textured mesh~: 18it [00:01, 16.19it/s]Evalating textured mesh~: 20it [00:01, 16.29it/s]Evalating textured mesh~: 22it [00:01, 16.28it/s]Evalating textured mesh~: 24it [00:01, 16.35it/s]Evalating textured mesh~: 26it [00:01, 16.35it/s]Evalating textured mesh~: 28it [00:01, 16.40it/s]Evalating textured mesh~: 30it [00:01, 16.40it/s]Evalating textured mesh~: 32it [00:01, 16.42it/s]Evalating textured mesh~: 34it [00:02, 16.44it/s]Evalating textured mesh~: 36it [00:02, 16.43it/s]Evalating textured mesh~: 38it [00:02, 16.42it/s]Evalating textured mesh~: 40it [00:02, 16.44it/s]Evalating textured mesh~: 42it [00:02, 16.24it/s]Evalating textured mesh~: 44it [00:02, 16.25it/s]Evalating textured mesh~: 46it [00:02, 16.02it/s]Evalating textured mesh~: 48it [00:02, 15.83it/s]Evalating textured mesh~: 50it [00:03, 15.63it/s]Evalating textured mesh~: 52it [00:03, 14.69it/s]Evalating textured mesh~: 54it [00:03, 14.04it/s]Evalating textured mesh~: 56it [00:03, 14.10it/s]Evalating textured mesh~: 58it [00:03, 14.24it/s]Evalating textured mesh~: 60it [00:03, 14.17it/s]Evalating textured mesh~: 62it [00:03, 14.21it/s]Evalating textured mesh~: 64it [00:04, 14.19it/s]Evalating textured mesh~: 66it [00:04, 14.28it/s]Evalating textured mesh~: 68it [00:04, 14.68it/s]Evalating textured mesh~: 70it [00:04, 14.78it/s]Evalating textured mesh~: 72it [00:04, 14.45it/s]Evalating textured mesh~: 74it [00:04, 14.43it/s]Evalating textured mesh~: 76it [00:04, 14.33it/s]Evalating textured mesh~: 78it [00:05, 14.42it/s]Evalating textured mesh~: 80it [00:05, 14.39it/s]Evalating textured mesh~: 82it [00:05, 14.34it/s]Evalating textured mesh~: 84it [00:05, 14.26it/s]Evalating textured mesh~: 86it [00:05, 14.32it/s]Evalating textured mesh~: 88it [00:05, 14.29it/s]Evalating textured mesh~: 90it [00:05, 13.05it/s]Evalating textured mesh~: 92it [00:06, 13.47it/s]Evalating textured mesh~: 94it [00:06, 13.59it/s]Evalating textured mesh~: 96it [00:06, 13.51it/s]Evalating textured mesh~: 98it [00:06, 12.78it/s]Evalating textured mesh~: 100it [00:06, 13.18it/s]Evalating textured mesh~: 100it [00:06, 14.92it/s]
+subprocess pipeline_paint3d_stage1.py exited rc=0 after 119.9s
+Evalating textured mesh~: 0it [00:00, ?it/s]Evalating textured mesh~: 1it [00:01,  1.03s/it]Evalating textured mesh~: 3it [00:01,  3.06it/s]Evalating textured mesh~: 5it [00:01,  5.06it/s]Evalating textured mesh~: 7it [00:01,  6.79it/s]Evalating textured mesh~: 9it [00:01,  8.24it/s]Evalating textured mesh~: 11it [00:01,  9.40it/s]Evalating textured mesh~: 13it [00:01, 10.33it/s]Evalating textured mesh~: 15it [00:02, 11.02it/s]Evalating textured mesh~: 17it [00:02, 11.71it/s]Evalating textured mesh~: 19it [00:02, 12.42it/s]Evalating textured mesh~: 21it [00:02, 12.86it/s]Evalating textured mesh~: 23it [00:02, 13.23it/s]Evalating textured mesh~: 25it [00:02, 12.42it/s]Evalating textured mesh~: 27it [00:03, 12.92it/s]Evalating textured mesh~: 29it [00:03, 13.36it/s]Evalating textured mesh~: 31it [00:03, 13.77it/s]Evalating textured mesh~: 33it [00:03, 13.80it/s]Evalating textured mesh~: 35it [00:03, 13.51it/s]Evalating textured mesh~: 37it [00:03, 13.47it/s]Evalating textured mesh~: 39it [00:03, 13.40it/s]Evalating textured mesh~: 41it [00:04, 13.25it/s]Evalating textured mesh~: 43it [00:04, 13.17it/s]Evalating textured mesh~: 45it [00:04, 13.16it/s]Evalating textured mesh~: 47it [00:04, 13.27it/s]Evalating textured mesh~: 49it [00:04, 13.23it/s]Evalating textured mesh~: 51it [00:04, 13.34it/s]Evalating textured mesh~: 53it [00:04, 13.42it/s]Evalating textured mesh~: 55it [00:05, 12.91it/s]Evalating textured mesh~: 57it [00:05, 12.94it/s]Evalating textured mesh~: 59it [00:05, 13.00it/s]Evalating textured mesh~: 61it [00:05, 13.11it/s]Evalating textured mesh~: 63it [00:05, 13.00it/s]Evalating textured mesh~: 65it [00:05, 13.26it/s]Evalating textured mesh~: 67it [00:06, 13.10it/s]Evalating textured mesh~: 69it [00:06, 13.52it/s]Evalating textured mesh~: 71it [00:06, 13.86it/s]Evalating textured mesh~: 73it [00:06, 14.11it/s]Evalating textured mesh~: 75it [00:06, 14.25it/s]Evalating textured mesh~: 77it [00:06, 14.34it/s]Evalating textured mesh~: 79it [00:06, 14.43it/s]Evalating textured mesh~: 81it [00:06, 14.48it/s]Evalating textured mesh~: 83it [00:07, 14.28it/s]Evalating textured mesh~: 85it [00:07, 14.30it/s]Evalating textured mesh~: 87it [00:07, 14.39it/s]Evalating textured mesh~: 89it [00:07, 14.01it/s]Evalating textured mesh~: 91it [00:07, 13.92it/s]Evalating textured mesh~: 93it [00:07, 14.11it/s]Evalating textured mesh~: 95it [00:07, 14.18it/s]Evalating textured mesh~: 97it [00:08, 14.20it/s]Evalating textured mesh~: 99it [00:08, 14.23it/s]Evalating textured mesh~: 100it [00:08, 12.00it/s]
+stage1-eval render time: 12.7s
+subprocess pipeline_paint3d_stage1eval.py exited rc=0 after 19.0s
+
+=== [business formalwear] member_01: sweater_fisherman+mini_skirt_01 seed=2029041635 ===
+Depth-based 3D Texturing
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  14%|█▍        | 1/7 [00:00<00:01,  5.67it/s]Loading pipeline components...:  29%|██▊       | 2/7 [00:01<00:04,  1.02it/s]`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+Loading pipeline components...:  43%|████▎     | 3/7 [00:05<00:09,  2.31s/it]Loading pipeline components...:  57%|█████▋    | 4/7 [00:15<00:15,  5.19s/it]Loading pipeline components...:  86%|████████▌ | 6/7 [00:15<00:02,  2.47s/it]Loading pipeline components...: 100%|██████████| 7/7 [00:15<00:00,  2.19s/it]
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  29%|██▊       | 2/7 [00:00<00:00, 10.31it/s]`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+Loading pipeline components...:  57%|█████▋    | 4/7 [00:05<00:04,  1.64s/it]Loading pipeline components...:  71%|███████▏  | 5/7 [00:06<00:02,  1.50s/it]Loading pipeline components...: 100%|██████████| 7/7 [00:06<00:00,  1.03it/s]
+Project init view [0, 23]...
+Generating init view...
+  0%|          | 0/20 [00:00<?, ?it/s]  5%|▌         | 1/20 [00:03<01:07,  3.57s/it] 10%|█         | 2/20 [00:03<00:30,  1.67s/it] 15%|█▌        | 3/20 [00:04<00:18,  1.07s/it] 20%|██        | 4/20 [00:04<00:12,  1.28it/s] 25%|██▌       | 5/20 [00:04<00:09,  1.60it/s] 30%|███       | 6/20 [00:05<00:07,  1.88it/s] 35%|███▌      | 7/20 [00:05<00:06,  2.13it/s] 40%|████      | 8/20 [00:05<00:05,  2.32it/s] 45%|████▌     | 9/20 [00:06<00:04,  2.47it/s] 50%|█████     | 10/20 [00:06<00:03,  2.59it/s] 55%|█████▌    | 11/20 [00:07<00:03,  2.67it/s] 60%|██████    | 12/20 [00:07<00:02,  2.73it/s] 65%|██████▌   | 13/20 [00:07<00:02,  2.78it/s] 70%|███████   | 14/20 [00:08<00:02,  2.81it/s] 75%|███████▌  | 15/20 [00:08<00:01,  2.83it/s] 80%|████████  | 16/20 [00:08<00:01,  2.85it/s] 85%|████████▌ | 17/20 [00:09<00:01,  2.86it/s] 90%|█████████ | 18/20 [00:09<00:00,  2.86it/s] 95%|█████████▌| 19/20 [00:09<00:00,  2.87it/s]100%|██████████| 20/20 [00:10<00:00,  2.88it/s]100%|██████████| 20/20 [00:10<00:00,  1.97it/s]
+init view generation time: 14.761478424072266
+0it [00:00, ?it/s]26it [00:00, 2923.72it/s]
+2026-07-15 14:19:23.669 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /root/crowd_library_20260715_stage1eval_local/1_random_white_plain/business_formalwear/member_01/stage1/res-0/mesh.obj with: vertices:(3031, 3) uv:(3717, 2) faces:(5884, 3)
+init DR time: 0.7045028209686279
+View inpainting ...
+Project inpaint view [(5, 6)]...
+0it [00:00, ?it/s]1it [00:01,  1.37s/it]1it [00:01,  1.37s/it]
+0it [00:00, ?it/s]
+  0%|          | 0/20 [00:00<?, ?it/s][A
+  5%|▌         | 1/20 [00:01<00:25,  1.33s/it][A
+ 10%|█         | 2/20 [00:01<00:14,  1.23it/s][A
+ 15%|█▌        | 3/20 [00:02<00:11,  1.54it/s][A
+ 20%|██        | 4/20 [00:02<00:09,  1.76it/s][A
+ 25%|██▌       | 5/20 [00:03<00:07,  1.90it/s][A
+ 30%|███       | 6/20 [00:03<00:06,  2.00it/s][A
+ 35%|███▌      | 7/20 [00:04<00:06,  2.07it/s][A
+ 40%|████      | 8/20 [00:04<00:05,  2.11it/s][A
+ 45%|████▌     | 9/20 [00:04<00:05,  2.14it/s][A
+ 50%|█████     | 10/20 [00:05<00:04,  2.17it/s][A
+ 55%|█████▌    | 11/20 [00:05<00:04,  2.18it/s][A
+ 60%|██████    | 12/20 [00:06<00:03,  2.19it/s][A
+ 65%|██████▌   | 13/20 [00:06<00:03,  2.20it/s][A
+ 70%|███████   | 14/20 [00:07<00:02,  2.21it/s][A
+ 75%|███████▌  | 15/20 [00:07<00:02,  2.21it/s][A
+ 80%|████████  | 16/20 [00:08<00:01,  2.21it/s][A
+ 85%|████████▌ | 17/20 [00:08<00:01,  2.21it/s][A
+ 90%|█████████ | 18/20 [00:08<00:00,  2.21it/s][A
+ 95%|█████████▌| 19/20 [00:09<00:00,  2.21it/s][A
+100%|██████████| 20/20 [00:09<00:00,  2.21it/s][A100%|██████████| 20/20 [00:09<00:00,  2.02it/s]
+1it [00:12, 12.17s/it]1it [00:12, 12.17s/it]
+inpaint view generation time: 13.54956865310669
+0it [00:00, ?it/s]26it [00:00, 5075.25it/s]
+2026-07-15 14:19:37.960 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /root/crowd_library_20260715_stage1eval_local/1_random_white_plain/business_formalwear/member_01/stage1/res-0/mesh.obj with: vertices:(3031, 3) uv:(3717, 2) faces:(5884, 3)
+inpaint DR time: 0.742429256439209
+View inpainting ...
+Project inpaint view [(24, 25)]...
+0it [00:00, ?it/s]1it [00:01,  1.19s/it]1it [00:01,  1.19s/it]
+0it [00:00, ?it/s]
+  0%|          | 0/20 [00:00<?, ?it/s][A
+  5%|▌         | 1/20 [00:01<00:23,  1.23s/it][A
+ 10%|█         | 2/20 [00:01<00:13,  1.29it/s][A
+ 15%|█▌        | 3/20 [00:02<00:10,  1.59it/s][A
+ 20%|██        | 4/20 [00:02<00:08,  1.79it/s][A
+ 25%|██▌       | 5/20 [00:03<00:07,  1.92it/s][A
+ 30%|███       | 6/20 [00:03<00:06,  2.00it/s][A
+ 35%|███▌      | 7/20 [00:03<00:06,  2.06it/s][A
+ 40%|████      | 8/20 [00:04<00:05,  2.11it/s][A
+ 45%|████▌     | 9/20 [00:04<00:05,  2.13it/s][A
+ 50%|█████     | 10/20 [00:05<00:04,  2.15it/s][A
+ 55%|█████▌    | 11/20 [00:05<00:04,  2.17it/s][A
+ 60%|██████    | 12/20 [00:06<00:03,  2.18it/s][A
+ 65%|██████▌   | 13/20 [00:06<00:03,  2.19it/s][A
+ 70%|███████   | 14/20 [00:07<00:02,  2.19it/s][A
+ 75%|███████▌  | 15/20 [00:07<00:02,  2.19it/s][A
+ 80%|████████  | 16/20 [00:08<00:01,  2.19it/s][A
+ 85%|████████▌ | 17/20 [00:08<00:01,  2.19it/s][A
+ 90%|█████████ | 18/20 [00:08<00:00,  2.19it/s][A
+ 95%|█████████▌| 19/20 [00:09<00:00,  2.19it/s][A
+100%|██████████| 20/20 [00:09<00:00,  2.19it/s][A100%|██████████| 20/20 [00:09<00:00,  2.03it/s]
+1it [00:12, 12.00s/it]1it [00:12, 12.00s/it]
+inpaint view generation time: 13.198370695114136
+0it [00:00, ?it/s]26it [00:00, 4326.25it/s]
+2026-07-15 14:19:51.911 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /root/crowd_library_20260715_stage1eval_local/1_random_white_plain/business_formalwear/member_01/stage1/res-0/mesh.obj with: vertices:(3031, 3) uv:(3717, 2) faces:(5884, 3)
+inpaint DR time: 0.7523787021636963
+total processed time:43.709885120391846
+Evalating textured mesh~: 0it [00:00, ?it/s]Evalating textured mesh~: 2it [00:00, 16.53it/s]Evalating textured mesh~: 4it [00:00, 17.31it/s]Evalating textured mesh~: 6it [00:00, 17.72it/s]Evalating textured mesh~: 8it [00:00, 17.78it/s]Evalating textured mesh~: 10it [00:00, 17.77it/s]Evalating textured mesh~: 12it [00:00, 17.73it/s]Evalating textured mesh~: 14it [00:00, 17.61it/s]Evalating textured mesh~: 16it [00:00, 17.51it/s]Evalating textured mesh~: 18it [00:01, 17.50it/s]Evalating textured mesh~: 20it [00:01, 17.30it/s]Evalating textured mesh~: 22it [00:01, 17.35it/s]Evalating textured mesh~: 24it [00:01, 17.43it/s]Evalating textured mesh~: 26it [00:01, 17.54it/s]Evalating textured mesh~: 28it [00:01, 17.56it/s]Evalating textured mesh~: 30it [00:01, 17.58it/s]Evalating textured mesh~: 32it [00:01, 17.71it/s]Evalating textured mesh~: 34it [00:01, 17.72it/s]Evalating textured mesh~: 36it [00:02, 17.68it/s]Evalating textured mesh~: 38it [00:02, 17.75it/s]Evalating textured mesh~: 40it [00:02, 17.75it/s]Evalating textured mesh~: 42it [00:02, 17.75it/s]Evalating textured mesh~: 44it [00:02, 17.83it/s]Evalating textured mesh~: 46it [00:02, 17.81it/s]Evalating textured mesh~: 48it [00:02, 17.78it/s]Evalating textured mesh~: 50it [00:02, 17.71it/s]Evalating textured mesh~: 52it [00:02, 17.70it/s]Evalating textured mesh~: 54it [00:03, 17.70it/s]Evalating textured mesh~: 56it [00:03, 17.28it/s]Evalating textured mesh~: 58it [00:03, 17.34it/s]Evalating textured mesh~: 60it [00:03, 17.28it/s]Evalating textured mesh~: 62it [00:03, 17.40it/s]Evalating textured mesh~: 64it [00:03, 17.28it/s]Evalating textured mesh~: 66it [00:03, 17.27it/s]Evalating textured mesh~: 68it [00:03, 17.09it/s]Evalating textured mesh~: 70it [00:04, 16.98it/s]Evalating textured mesh~: 72it [00:04, 17.02it/s]Evalating textured mesh~: 74it [00:04, 16.92it/s]Evalating textured mesh~: 76it [00:04, 16.54it/s]Evalating textured mesh~: 78it [00:04, 16.27it/s]Evalating textured mesh~: 80it [00:04, 15.32it/s]Evalating textured mesh~: 82it [00:04, 15.51it/s]Evalating textured mesh~: 84it [00:04, 15.08it/s]Evalating textured mesh~: 86it [00:05, 15.36it/s]Evalating textured mesh~: 88it [00:05, 15.46it/s]Evalating textured mesh~: 90it [00:05, 15.62it/s]Evalating textured mesh~: 92it [00:05, 15.56it/s]Evalating textured mesh~: 94it [00:05, 15.40it/s]Evalating textured mesh~: 96it [00:05, 15.83it/s]Evalating textured mesh~: 98it [00:05, 15.99it/s]Evalating textured mesh~: 100it [00:05, 15.96it/s]Evalating textured mesh~: 100it [00:05, 16.91it/s]
+subprocess pipeline_paint3d_stage1.py exited rc=0 after 106.4s
+Evalating textured mesh~: 0it [00:00, ?it/s]Evalating textured mesh~: 1it [00:01,  1.07s/it]Evalating textured mesh~: 3it [00:01,  3.02it/s]Evalating textured mesh~: 5it [00:01,  5.09it/s]Evalating textured mesh~: 7it [00:01,  7.12it/s]Evalating textured mesh~: 9it [00:01,  8.84it/s]Evalating textured mesh~: 11it [00:01,  9.98it/s]Evalating textured mesh~: 13it [00:01, 10.97it/s]Evalating textured mesh~: 15it [00:02, 11.65it/s]Evalating textured mesh~: 17it [00:02, 12.16it/s]Evalating textured mesh~: 19it [00:02, 12.61it/s]Evalating textured mesh~: 21it [00:02, 13.02it/s]Evalating textured mesh~: 23it [00:02, 13.28it/s]Evalating textured mesh~: 25it [00:02, 13.26it/s]Evalating textured mesh~: 27it [00:03, 11.30it/s]Evalating textured mesh~: 29it [00:03, 12.02it/s]Evalating textured mesh~: 31it [00:03, 12.49it/s]Evalating textured mesh~: 33it [00:03, 12.93it/s]Evalating textured mesh~: 35it [00:03, 13.25it/s]Evalating textured mesh~: 37it [00:03, 13.48it/s]Evalating textured mesh~: 39it [00:03, 13.78it/s]Evalating textured mesh~: 41it [00:04, 13.94it/s]Evalating textured mesh~: 43it [00:04, 14.24it/s]Evalating textured mesh~: 45it [00:04, 14.02it/s]Evalating textured mesh~: 47it [00:04, 13.89it/s]Evalating textured mesh~: 49it [00:04, 14.03it/s]Evalating textured mesh~: 51it [00:04, 14.08it/s]Evalating textured mesh~: 53it [00:04, 13.83it/s]Evalating textured mesh~: 55it [00:05, 11.97it/s]Evalating textured mesh~: 57it [00:05, 12.37it/s]Evalating textured mesh~: 59it [00:05, 12.64it/s]Evalating textured mesh~: 61it [00:05, 12.95it/s]Evalating textured mesh~: 63it [00:05, 12.96it/s]Evalating textured mesh~: 65it [00:05, 13.12it/s]Evalating textured mesh~: 67it [00:06, 12.95it/s]Evalating textured mesh~: 69it [00:06, 13.19it/s]Evalating textured mesh~: 71it [00:06, 13.58it/s]Evalating textured mesh~: 73it [00:06, 13.75it/s]Evalating textured mesh~: 75it [00:06, 13.90it/s]Evalating textured mesh~: 77it [00:06, 14.16it/s]Evalating textured mesh~: 79it [00:06, 14.25it/s]Evalating textured mesh~: 81it [00:06, 14.08it/s]Evalating textured mesh~: 83it [00:07, 12.77it/s]Evalating textured mesh~: 85it [00:07, 13.23it/s]Evalating textured mesh~: 87it [00:07, 13.53it/s]Evalating textured mesh~: 89it [00:07, 13.08it/s]Evalating textured mesh~: 91it [00:07, 13.07it/s]Evalating textured mesh~: 93it [00:07, 12.87it/s]Evalating textured mesh~: 95it [00:08, 12.66it/s]Evalating textured mesh~: 97it [00:08, 12.68it/s]Evalating textured mesh~: 99it [00:08, 12.84it/s]Evalating textured mesh~: 100it [00:08, 11.78it/s]
+stage1-eval render time: 12.5s
+subprocess pipeline_paint3d_stage1eval.py exited rc=0 after 19.3s
+
+=== [business formalwear] member_02: eveninggown seed=988337926 ===
+Depth-based 3D Texturing
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  14%|█▍        | 1/7 [00:00<00:01,  3.65it/s]`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+Loading pipeline components...:  29%|██▊       | 2/7 [00:04<00:12,  2.59s/it]Loading pipeline components...:  43%|████▎     | 3/7 [00:04<00:05,  1.46s/it]Loading pipeline components...:  71%|███████▏  | 5/7 [00:06<00:02,  1.08s/it]Loading pipeline components...:  86%|████████▌ | 6/7 [00:14<00:03,  3.29s/it]Loading pipeline components...: 100%|██████████| 7/7 [00:14<00:00,  2.14s/it]
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+Loading pipeline components...:  29%|██▊       | 2/7 [00:00<00:00,  6.05it/s]Loading pipeline components...:  71%|███████▏  | 5/7 [00:00<00:00, 10.69it/s]Loading pipeline components...: 100%|██████████| 7/7 [00:04<00:00,  1.22it/s]Loading pipeline components...: 100%|██████████| 7/7 [00:04<00:00,  1.60it/s]
+Project init view [0, 23]...
+Generating init view...
+  0%|          | 0/20 [00:00<?, ?it/s]  5%|▌         | 1/20 [00:03<01:07,  3.57s/it] 10%|█         | 2/20 [00:03<00:30,  1.67s/it] 15%|█▌        | 3/20 [00:04<00:18,  1.07s/it] 20%|██        | 4/20 [00:04<00:12,  1.28it/s] 25%|██▌       | 5/20 [00:04<00:09,  1.60it/s] 30%|███       | 6/20 [00:05<00:07,  1.88it/s] 35%|███▌      | 7/20 [00:05<00:06,  2.12it/s] 40%|████      | 8/20 [00:05<00:05,  2.32it/s] 45%|████▌     | 9/20 [00:06<00:04,  2.47it/s] 50%|█████     | 10/20 [00:06<00:03,  2.58it/s] 55%|█████▌    | 11/20 [00:07<00:03,  2.67it/s] 60%|██████    | 12/20 [00:07<00:02,  2.73it/s] 65%|██████▌   | 13/20 [00:07<00:02,  2.77it/s] 70%|███████   | 14/20 [00:08<00:02,  2.81it/s] 75%|███████▌  | 15/20 [00:08<00:01,  2.83it/s] 80%|████████  | 16/20 [00:08<00:01,  2.84it/s] 85%|████████▌ | 17/20 [00:09<00:01,  2.85it/s] 90%|█████████ | 18/20 [00:09<00:00,  2.86it/s] 95%|█████████▌| 19/20 [00:09<00:00,  2.86it/s]100%|██████████| 20/20 [00:10<00:00,  2.87it/s]100%|██████████| 20/20 [00:10<00:00,  1.97it/s]
+init view generation time: 14.64888334274292
+0it [00:00, ?it/s]26it [00:00, 4505.90it/s]
+2026-07-15 14:21:27.352 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /root/crowd_library_20260715_stage1eval_local/1_random_white_plain/business_formalwear/member_02/stage1/res-0/mesh.obj with: vertices:(2743, 3) uv:(3645, 2) faces:(5150, 3)
+init DR time: 0.6053142547607422
+View inpainting ...
+Project inpaint view [(5, 6)]...
+0it [00:00, ?it/s]1it [00:01,  1.11s/it]1it [00:01,  1.11s/it]
+0it [00:00, ?it/s]
+  0%|          | 0/20 [00:00<?, ?it/s][A
+  5%|▌         | 1/20 [00:01<00:25,  1.33s/it][A
+ 10%|█         | 2/20 [00:01<00:14,  1.23it/s][A
+ 15%|█▌        | 3/20 [00:02<00:10,  1.55it/s][A
+ 20%|██        | 4/20 [00:02<00:09,  1.76it/s][A
+ 25%|██▌       | 5/20 [00:03<00:07,  1.90it/s][A
+ 30%|███       | 6/20 [00:03<00:07,  2.00it/s][A
+ 35%|███▌      | 7/20 [00:04<00:06,  2.07it/s][A
+ 40%|████      | 8/20 [00:04<00:05,  2.11it/s][A
+ 45%|████▌     | 9/20 [00:04<00:05,  2.14it/s][A
+ 50%|█████     | 10/20 [00:05<00:04,  2.16it/s][A
+ 55%|█████▌    | 11/20 [00:05<00:04,  2.18it/s][A
+ 60%|██████    | 12/20 [00:06<00:03,  2.19it/s][A
+ 65%|██████▌   | 13/20 [00:06<00:03,  2.20it/s][A
+ 70%|███████   | 14/20 [00:07<00:02,  2.20it/s][A
+ 75%|███████▌  | 15/20 [00:07<00:02,  2.20it/s][A
+ 80%|████████  | 16/20 [00:08<00:01,  2.20it/s][A
+ 85%|████████▌ | 17/20 [00:08<00:01,  2.20it/s][A
+ 90%|█████████ | 18/20 [00:09<00:00,  2.20it/s][A
+ 95%|█████████▌| 19/20 [00:09<00:00,  2.20it/s][A
+100%|██████████| 20/20 [00:09<00:00,  2.20it/s][A100%|██████████| 20/20 [00:09<00:00,  2.02it/s]
+1it [00:12, 12.05s/it]1it [00:12, 12.05s/it]
+inpaint view generation time: 13.175732612609863
+0it [00:00, ?it/s]26it [00:00, 5164.91it/s]
+2026-07-15 14:21:41.159 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /root/crowd_library_20260715_stage1eval_local/1_random_white_plain/business_formalwear/member_02/stage1/res-0/mesh.obj with: vertices:(2743, 3) uv:(3645, 2) faces:(5150, 3)
+inpaint DR time: 0.6326367855072021
+View inpainting ...
+Project inpaint view [(24, 25)]...
+0it [00:00, ?it/s]1it [00:01,  1.05s/it]1it [00:01,  1.05s/it]
+0it [00:00, ?it/s]
+  0%|          | 0/20 [00:00<?, ?it/s][A
+  5%|▌         | 1/20 [00:01<00:23,  1.26s/it][A
+ 10%|█         | 2/20 [00:01<00:14,  1.27it/s][A
+ 15%|█▌        | 3/20 [00:02<00:10,  1.57it/s][A
+ 20%|██        | 4/20 [00:02<00:09,  1.77it/s][A
+ 25%|██▌       | 5/20 [00:03<00:07,  1.90it/s][A
+ 30%|███       | 6/20 [00:03<00:07,  1.99it/s][A
+ 35%|███▌      | 7/20 [00:04<00:06,  2.05it/s][A
+ 40%|████      | 8/20 [00:04<00:05,  2.09it/s][A
+ 45%|████▌     | 9/20 [00:04<00:05,  2.13it/s][A
+ 50%|█████     | 10/20 [00:05<00:04,  2.14it/s][A
+ 55%|█████▌    | 11/20 [00:05<00:04,  2.15it/s][A
+ 60%|██████    | 12/20 [00:06<00:03,  2.16it/s][A
+ 65%|██████▌   | 13/20 [00:06<00:03,  2.17it/s][A
+ 70%|███████   | 14/20 [00:07<00:02,  2.18it/s][A
+ 75%|███████▌  | 15/20 [00:07<00:02,  2.18it/s][A
+ 80%|████████  | 16/20 [00:08<00:01,  2.18it/s][A
+ 85%|████████▌ | 17/20 [00:08<00:01,  2.18it/s][A
+ 90%|█████████ | 18/20 [00:09<00:00,  2.18it/s][A
+ 95%|█████████▌| 19/20 [00:09<00:00,  2.18it/s][A
+100%|██████████| 20/20 [00:09<00:00,  2.19it/s][A100%|██████████| 20/20 [00:09<00:00,  2.01it/s]
+1it [00:12, 12.07s/it]1it [00:12, 12.07s/it]
+inpaint view generation time: 13.130467414855957
+0it [00:00, ?it/s]26it [00:00, 3949.44it/s]
+2026-07-15 14:21:54.921 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /root/crowd_library_20260715_stage1eval_local/1_random_white_plain/business_formalwear/member_02/stage1/res-0/mesh.obj with: vertices:(2743, 3) uv:(3645, 2) faces:(5150, 3)
+inpaint DR time: 0.6315963268280029
+total processed time:42.82496118545532
+Evalating textured mesh~: 0it [00:00, ?it/s]Evalating textured mesh~: 2it [00:00, 16.33it/s]Evalating textured mesh~: 4it [00:00, 17.49it/s]Evalating textured mesh~: 6it [00:00, 17.89it/s]Evalating textured mesh~: 8it [00:00, 18.05it/s]Evalating textured mesh~: 10it [00:00, 18.09it/s]Evalating textured mesh~: 12it [00:00, 18.20it/s]Evalating textured mesh~: 14it [00:00, 18.27it/s]Evalating textured mesh~: 16it [00:00, 18.25it/s]Evalating textured mesh~: 18it [00:00, 18.23it/s]Evalating textured mesh~: 20it [00:01, 18.02it/s]Evalating textured mesh~: 22it [00:01, 18.14it/s]Evalating textured mesh~: 24it [00:01, 18.17it/s]Evalating textured mesh~: 26it [00:01, 17.23it/s]Evalating textured mesh~: 28it [00:01, 17.44it/s]Evalating textured mesh~: 30it [00:01, 17.66it/s]Evalating textured mesh~: 32it [00:01, 17.67it/s]Evalating textured mesh~: 34it [00:01, 17.73it/s]Evalating textured mesh~: 36it [00:02, 17.72it/s]Evalating textured mesh~: 38it [00:02, 17.62it/s]Evalating textured mesh~: 40it [00:02, 17.62it/s]Evalating textured mesh~: 42it [00:02, 17.43it/s]Evalating textured mesh~: 44it [00:02, 17.31it/s]Evalating textured mesh~: 46it [00:02, 17.21it/s]Evalating textured mesh~: 48it [00:02, 16.96it/s]Evalating textured mesh~: 50it [00:02, 16.87it/s]Evalating textured mesh~: 52it [00:02, 16.80it/s]Evalating textured mesh~: 54it [00:03, 16.78it/s]Evalating textured mesh~: 56it [00:03, 16.61it/s]Evalating textured mesh~: 58it [00:03, 16.35it/s]Evalating textured mesh~: 60it [00:03, 16.17it/s]Evalating textured mesh~: 62it [00:03, 15.68it/s]Evalating textured mesh~: 64it [00:03, 15.51it/s]Evalating textured mesh~: 66it [00:03, 15.20it/s]Evalating textured mesh~: 68it [00:04, 14.78it/s]Evalating textured mesh~: 70it [00:04, 15.28it/s]Evalating textured mesh~: 72it [00:04, 15.68it/s]Evalating textured mesh~: 74it [00:04, 15.44it/s]Evalating textured mesh~: 76it [00:04, 15.53it/s]Evalating textured mesh~: 78it [00:04, 15.45it/s]Evalating textured mesh~: 80it [00:04, 15.55it/s]Evalating textured mesh~: 82it [00:04, 15.11it/s]Evalating textured mesh~: 84it [00:05, 14.39it/s]Evalating textured mesh~: 86it [00:05, 14.47it/s]Evalating textured mesh~: 88it [00:05, 14.52it/s]Evalating textured mesh~: 90it [00:05, 14.64it/s]Evalating textured mesh~: 92it [00:05, 13.63it/s]Evalating textured mesh~: 94it [00:05, 13.98it/s]Evalating textured mesh~: 96it [00:05, 13.90it/s]Evalating textured mesh~: 98it [00:06, 13.80it/s]Evalating textured mesh~: 100it [00:06, 14.03it/s]Evalating textured mesh~: 100it [00:06, 16.12it/s]
+subprocess pipeline_paint3d_stage1.py exited rc=0 after 104.6s
+Evalating textured mesh~: 0it [00:00, ?it/s]Evalating textured mesh~: 1it [00:01,  1.04s/it]Evalating textured mesh~: 3it [00:01,  3.12it/s]Evalating textured mesh~: 5it [00:01,  5.21it/s]Evalating textured mesh~: 7it [00:01,  7.01it/s]Evalating textured mesh~: 9it [00:01,  8.72it/s]Evalating textured mesh~: 11it [00:01, 10.07it/s]Evalating textured mesh~: 13it [00:01, 11.35it/s]Evalating textured mesh~: 15it [00:02, 12.25it/s]Evalating textured mesh~: 17it [00:02, 13.11it/s]Evalating textured mesh~: 19it [00:02, 13.57it/s]Evalating textured mesh~: 21it [00:02, 12.63it/s]Evalating textured mesh~: 23it [00:02, 12.74it/s]Evalating textured mesh~: 25it [00:02, 13.01it/s]Evalating textured mesh~: 27it [00:02, 13.41it/s]Evalating textured mesh~: 29it [00:03, 14.05it/s]Evalating textured mesh~: 31it [00:03, 14.24it/s]Evalating textured mesh~: 33it [00:03, 14.40it/s]Evalating textured mesh~: 35it [00:03, 14.56it/s]Evalating textured mesh~: 37it [00:03, 14.81it/s]Evalating textured mesh~: 39it [00:03, 15.06it/s]Evalating textured mesh~: 41it [00:03, 15.15it/s]Evalating textured mesh~: 43it [00:03, 15.48it/s]Evalating textured mesh~: 45it [00:04, 15.51it/s]Evalating textured mesh~: 47it [00:04, 15.56it/s]Evalating textured mesh~: 49it [00:04, 15.45it/s]Evalating textured mesh~: 51it [00:04, 15.60it/s]Evalating textured mesh~: 53it [00:04, 13.51it/s]Evalating textured mesh~: 55it [00:04, 14.07it/s]Evalating textured mesh~: 57it [00:04, 14.38it/s]Evalating textured mesh~: 59it [00:05, 14.57it/s]Evalating textured mesh~: 61it [00:05, 14.77it/s]Evalating textured mesh~: 63it [00:05, 14.88it/s]Evalating textured mesh~: 65it [00:05, 14.72it/s]Evalating textured mesh~: 67it [00:05, 14.84it/s]Evalating textured mesh~: 69it [00:05, 14.91it/s]Evalating textured mesh~: 71it [00:05, 14.87it/s]Evalating textured mesh~: 73it [00:05, 14.90it/s]Evalating textured mesh~: 75it [00:06, 14.85it/s]Evalating textured mesh~: 77it [00:06, 14.60it/s]Evalating textured mesh~: 79it [00:06, 14.54it/s]Evalating textured mesh~: 81it [00:06, 14.41it/s]Evalating textured mesh~: 83it [00:06, 14.65it/s]Evalating textured mesh~: 85it [00:06, 12.57it/s]Evalating textured mesh~: 87it [00:07, 12.76it/s]Evalating textured mesh~: 89it [00:07, 13.02it/s]Evalating textured mesh~: 91it [00:07, 13.15it/s]Evalating textured mesh~: 93it [00:07, 13.15it/s]Evalating textured mesh~: 95it [00:07, 13.16it/s]Evalating textured mesh~: 97it [00:07, 13.21it/s]Evalating textured mesh~: 99it [00:07, 13.46it/s]Evalating textured mesh~: 100it [00:07, 12.51it/s]
+stage1-eval render time: 11.8s
+subprocess pipeline_paint3d_stage1eval.py exited rc=0 after 18.3s
+
+=== [business formalwear] member_03: doublechiefhalterdress1 seed=2029161027 ===
+Depth-based 3D Texturing
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  14%|█▍        | 1/7 [00:01<00:09,  1.66s/it]Loading pipeline components...:  43%|████▎     | 3/7 [00:02<00:03,  1.12it/s]Loading pipeline components...:  71%|███████▏  | 5/7 [00:03<00:00,  2.16it/s]Loading pipeline components...:  86%|████████▌ | 6/7 [00:10<00:02,  2.29s/it]`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+Loading pipeline components...: 100%|██████████| 7/7 [00:13<00:00,  2.67s/it]Loading pipeline components...: 100%|██████████| 7/7 [00:13<00:00,  1.99s/it]
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  14%|█▍        | 1/7 [00:00<00:01,  5.07it/s]Loading pipeline components...:  43%|████▎     | 3/7 [00:00<00:00, 10.79it/s]Loading pipeline components...:  86%|████████▌ | 6/7 [00:05<00:01,  1.10s/it]`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+Loading pipeline components...: 100%|██████████| 7/7 [00:05<00:00,  1.04it/s]Loading pipeline components...: 100%|██████████| 7/7 [00:05<00:00,  1.17it/s]
+Project init view [0, 23]...
+Generating init view...
+  0%|          | 0/20 [00:00<?, ?it/s]  5%|▌         | 1/20 [00:04<01:26,  4.55s/it] 10%|█         | 2/20 [00:04<00:37,  2.08s/it] 15%|█▌        | 3/20 [00:05<00:21,  1.29s/it] 20%|██        | 4/20 [00:05<00:14,  1.09it/s] 25%|██▌       | 5/20 [00:05<00:10,  1.40it/s] 30%|███       | 6/20 [00:06<00:08,  1.70it/s] 35%|███▌      | 7/20 [00:06<00:06,  1.95it/s] 40%|████      | 8/20 [00:07<00:05,  2.17it/s] 45%|████▌     | 9/20 [00:07<00:04,  2.34it/s] 50%|█████     | 10/20 [00:07<00:04,  2.46it/s] 55%|█████▌    | 11/20 [00:08<00:03,  2.58it/s] 60%|██████    | 12/20 [00:08<00:03,  2.66it/s] 65%|██████▌   | 13/20 [00:08<00:02,  2.72it/s] 70%|███████   | 14/20 [00:09<00:02,  2.76it/s] 75%|███████▌  | 15/20 [00:09<00:01,  2.79it/s] 80%|████████  | 16/20 [00:09<00:01,  2.81it/s] 85%|████████▌ | 17/20 [00:10<00:01,  2.83it/s] 90%|█████████ | 18/20 [00:10<00:00,  2.84it/s] 95%|█████████▌| 19/20 [00:10<00:00,  2.85it/s]100%|██████████| 20/20 [00:11<00:00,  2.86it/s]100%|██████████| 20/20 [00:11<00:00,  1.79it/s]
+init view generation time: 16.340008020401
+0it [00:00, ?it/s]26it [00:00, 3989.61it/s]
+2026-07-15 14:23:33.829 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /root/crowd_library_20260715_stage1eval_local/1_random_white_plain/business_formalwear/member_03/stage1/res-0/mesh.obj with: vertices:(11218, 3) uv:(21648, 2) faces:(21954, 3)
+init DR time: 1.1147654056549072
+View inpainting ...
+Project inpaint view [(5, 6)]...
+0it [00:00, ?it/s]1it [00:01,  1.64s/it]1it [00:01,  1.64s/it]
+0it [00:00, ?it/s]
+  0%|          | 0/20 [00:00<?, ?it/s][A
+  5%|▌         | 1/20 [00:01<00:24,  1.31s/it][A
+ 10%|█         | 2/20 [00:01<00:14,  1.24it/s][A
+ 15%|█▌        | 3/20 [00:02<00:10,  1.55it/s][A
+ 20%|██        | 4/20 [00:02<00:09,  1.76it/s][A
+ 25%|██▌       | 5/20 [00:03<00:07,  1.90it/s][A
+ 30%|███       | 6/20 [00:03<00:07,  2.00it/s][A
+ 35%|███▌      | 7/20 [00:04<00:06,  2.06it/s][A
+ 40%|████      | 8/20 [00:04<00:05,  2.10it/s][A
+ 45%|████▌     | 9/20 [00:04<00:05,  2.13it/s][A
+ 50%|█████     | 10/20 [00:05<00:04,  2.16it/s][A
+ 55%|█████▌    | 11/20 [00:05<00:04,  2.17it/s][A
+ 60%|██████    | 12/20 [00:06<00:03,  2.19it/s][A
+ 65%|██████▌   | 13/20 [00:06<00:03,  2.18it/s][A
+ 70%|███████   | 14/20 [00:07<00:02,  2.17it/s][A
+ 75%|███████▌  | 15/20 [00:07<00:02,  2.18it/s][A
+ 80%|████████  | 16/20 [00:08<00:01,  2.19it/s][A
+ 85%|████████▌ | 17/20 [00:08<00:01,  2.19it/s][A
+ 90%|█████████ | 18/20 [00:09<00:00,  2.18it/s][A
+ 95%|█████████▌| 19/20 [00:09<00:00,  2.17it/s][A
+100%|██████████| 20/20 [00:09<00:00,  2.18it/s][A100%|██████████| 20/20 [00:09<00:00,  2.01it/s]
+1it [00:12, 12.32s/it]1it [00:12, 12.32s/it]
+inpaint view generation time: 13.957990884780884
+0it [00:00, ?it/s]26it [00:00, 6050.71it/s]
+2026-07-15 14:23:48.869 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /root/crowd_library_20260715_stage1eval_local/1_random_white_plain/business_formalwear/member_03/stage1/res-0/mesh.obj with: vertices:(11218, 3) uv:(21648, 2) faces:(21954, 3)
+inpaint DR time: 1.085888385772705
+View inpainting ...
+Project inpaint view [(24, 25)]...
+0it [00:00, ?it/s]1it [00:01,  1.50s/it]1it [00:01,  1.50s/it]
+0it [00:00, ?it/s]
+  0%|          | 0/20 [00:00<?, ?it/s][A
+  5%|▌         | 1/20 [00:01<00:24,  1.29s/it][A
+ 10%|█         | 2/20 [00:01<00:14,  1.26it/s][A
+ 15%|█▌        | 3/20 [00:02<00:10,  1.56it/s][A
+ 20%|██        | 4/20 [00:02<00:09,  1.76it/s][A
+ 25%|██▌       | 5/20 [00:03<00:07,  1.89it/s][A
+ 30%|███       | 6/20 [00:03<00:07,  1.99it/s][A
+ 35%|███▌      | 7/20 [00:04<00:06,  2.04it/s][A
+ 40%|████      | 8/20 [00:04<00:05,  2.09it/s][A
+ 45%|████▌     | 9/20 [00:04<00:05,  2.11it/s][A
+ 50%|█████     | 10/20 [00:05<00:04,  2.13it/s][A
+ 55%|█████▌    | 11/20 [00:05<00:04,  2.14it/s][A
+ 60%|██████    | 12/20 [00:06<00:03,  2.15it/s][A
+ 65%|██████▌   | 13/20 [00:06<00:03,  2.16it/s][A
+ 70%|███████   | 14/20 [00:07<00:02,  2.16it/s][A
+ 75%|███████▌  | 15/20 [00:07<00:02,  2.16it/s][A
+ 80%|████████  | 16/20 [00:08<00:01,  2.16it/s][A
+ 85%|████████▌ | 17/20 [00:08<00:01,  2.16it/s][A
+ 90%|█████████ | 18/20 [00:09<00:00,  2.16it/s][A
+ 95%|█████████▌| 19/20 [00:09<00:00,  2.16it/s][A
+100%|██████████| 20/20 [00:10<00:00,  2.17it/s][A100%|██████████| 20/20 [00:10<00:00,  2.00it/s]
+1it [00:12, 12.35s/it]1it [00:12, 12.35s/it]
+inpaint view generation time: 13.860627889633179
+0it [00:00, ?it/s]26it [00:00, 3909.23it/s]
+2026-07-15 14:24:03.856 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /root/crowd_library_20260715_stage1eval_local/1_random_white_plain/business_formalwear/member_03/stage1/res-0/mesh.obj with: vertices:(11218, 3) uv:(21648, 2) faces:(21954, 3)
+inpaint DR time: 1.1243236064910889
+total processed time:47.48405718803406
+Evalating textured mesh~: 0it [00:00, ?it/s]Evalating textured mesh~: 1it [00:00,  9.51it/s]Evalating textured mesh~: 3it [00:00,  9.99it/s]Evalating textured mesh~: 5it [00:00, 10.09it/s]Evalating textured mesh~: 7it [00:00, 10.19it/s]Evalating textured mesh~: 9it [00:00, 10.17it/s]Evalating textured mesh~: 11it [00:01, 10.01it/s]Evalating textured mesh~: 13it [00:01, 10.04it/s]Evalating textured mesh~: 15it [00:01, 10.04it/s]Evalating textured mesh~: 17it [00:01, 10.00it/s]Evalating textured mesh~: 19it [00:01, 10.00it/s]Evalating textured mesh~: 20it [00:01,  9.94it/s]Evalating textured mesh~: 22it [00:02,  9.93it/s]Evalating textured mesh~: 24it [00:02,  9.95it/s]Evalating textured mesh~: 26it [00:02,  9.98it/s]Evalating textured mesh~: 28it [00:02, 10.05it/s]Evalating textured mesh~: 30it [00:02, 10.11it/s]Evalating textured mesh~: 32it [00:03,  9.91it/s]Evalating textured mesh~: 34it [00:03,  9.99it/s]Evalating textured mesh~: 35it [00:03,  9.90it/s]Evalating textured mesh~: 36it [00:03,  9.88it/s]Evalating textured mesh~: 38it [00:03,  9.93it/s]Evalating textured mesh~: 39it [00:03,  9.85it/s]Evalating textured mesh~: 41it [00:04,  9.92it/s]Evalating textured mesh~: 42it [00:04,  9.87it/s]Evalating textured mesh~: 43it [00:04,  9.83it/s]Evalating textured mesh~: 44it [00:04,  9.80it/s]Evalating textured mesh~: 45it [00:04,  9.83it/s]Evalating textured mesh~: 46it [00:04,  9.87it/s]Evalating textured mesh~: 47it [00:04,  9.85it/s]Evalating textured mesh~: 49it [00:04,  9.76it/s]Evalating textured mesh~: 51it [00:05,  9.75it/s]Evalating textured mesh~: 52it [00:05,  9.75it/s]Evalating textured mesh~: 53it [00:05,  9.68it/s]Evalating textured mesh~: 54it [00:05,  9.72it/s]Evalating textured mesh~: 55it [00:05,  9.72it/s]Evalating textured mesh~: 56it [00:05,  9.69it/s]Evalating textured mesh~: 57it [00:05,  9.60it/s]Evalating textured mesh~: 58it [00:05,  9.52it/s]Evalating textured mesh~: 59it [00:05,  9.60it/s]Evalating textured mesh~: 60it [00:06,  9.41it/s]Evalating textured mesh~: 62it [00:06,  9.70it/s]Evalating textured mesh~: 64it [00:06,  9.81it/s]Evalating textured mesh~: 65it [00:06,  9.78it/s]Evalating textured mesh~: 67it [00:06,  9.80it/s]Evalating textured mesh~: 69it [00:06,  9.88it/s]Evalating textured mesh~: 70it [00:07,  9.82it/s]Evalating textured mesh~: 71it [00:07,  8.89it/s]Evalating textured mesh~: 73it [00:07,  9.35it/s]Evalating textured mesh~: 74it [00:07,  9.36it/s]Evalating textured mesh~: 75it [00:07,  9.33it/s]Evalating textured mesh~: 76it [00:07,  9.39it/s]Evalating textured mesh~: 77it [00:07,  9.39it/s]Evalating textured mesh~: 78it [00:07,  9.46it/s]Evalating textured mesh~: 79it [00:08,  9.41it/s]Evalating textured mesh~: 80it [00:08,  9.48it/s]Evalating textured mesh~: 81it [00:08,  9.53it/s]Evalating textured mesh~: 83it [00:08,  9.66it/s]Evalating textured mesh~: 84it [00:08,  9.61it/s]Evalating textured mesh~: 85it [00:08,  9.55it/s]Evalating textured mesh~: 86it [00:08,  9.60it/s]Evalating textured mesh~: 87it [00:08,  9.51it/s]Evalating textured mesh~: 88it [00:09,  8.70it/s]Evalating textured mesh~: 89it [00:09,  8.87it/s]Evalating textured mesh~: 90it [00:09,  8.70it/s]Evalating textured mesh~: 91it [00:09,  8.59it/s]Evalating textured mesh~: 92it [00:09,  8.86it/s]Evalating textured mesh~: 93it [00:09,  8.83it/s]Evalating textured mesh~: 94it [00:09,  8.99it/s]Evalating textured mesh~: 95it [00:09,  8.44it/s]Evalating textured mesh~: 96it [00:09,  8.71it/s]Evalating textured mesh~: 97it [00:10,  8.83it/s]Evalating textured mesh~: 98it [00:10,  8.85it/s]Evalating textured mesh~: 99it [00:10,  8.56it/s]Evalating textured mesh~: 100it [00:10,  8.72it/s]Evalating textured mesh~: 100it [00:10,  9.60it/s]
+subprocess pipeline_paint3d_stage1.py exited rc=0 after 113.6s
+Evalating textured mesh~: 0it [00:00, ?it/s]Evalating textured mesh~: 1it [00:01,  1.04s/it]Evalating textured mesh~: 2it [00:01,  2.03it/s]Evalating textured mesh~: 3it [00:01,  3.15it/s]Evalating textured mesh~: 4it [00:01,  4.28it/s]Evalating textured mesh~: 5it [00:01,  5.38it/s]Evalating textured mesh~: 6it [00:01,  6.36it/s]Evalating textured mesh~: 7it [00:01,  7.18it/s]Evalating textured mesh~: 8it [00:01,  7.85it/s]Evalating textured mesh~: 9it [00:01,  8.35it/s]Evalating textured mesh~: 10it [00:01,  8.56it/s]Evalating textured mesh~: 11it [00:02,  8.84it/s]Evalating textured mesh~: 12it [00:02,  9.09it/s]Evalating textured mesh~: 13it [00:02,  9.22it/s]Evalating textured mesh~: 14it [00:02,  9.35it/s]Evalating textured mesh~: 15it [00:02,  8.37it/s]Evalating textured mesh~: 16it [00:02,  8.67it/s]Evalating textured mesh~: 17it [00:02,  8.94it/s]Evalating textured mesh~: 18it [00:02,  9.10it/s]Evalating textured mesh~: 19it [00:02,  9.29it/s]Evalating textured mesh~: 21it [00:03,  9.51it/s]Evalating textured mesh~: 22it [00:03,  9.57it/s]Evalating textured mesh~: 23it [00:03,  9.53it/s]Evalating textured mesh~: 24it [00:03,  9.54it/s]Evalating textured mesh~: 26it [00:03,  9.86it/s]Evalating textured mesh~: 28it [00:03,  9.90it/s]Evalating textured mesh~: 30it [00:04,  9.97it/s]Evalating textured mesh~: 32it [00:04, 10.02it/s]Evalating textured mesh~: 33it [00:04, 10.00it/s]Evalating textured mesh~: 34it [00:04,  9.92it/s]Evalating textured mesh~: 35it [00:04,  9.46it/s]Evalating textured mesh~: 36it [00:04,  9.52it/s]Evalating textured mesh~: 38it [00:04,  9.76it/s]Evalating textured mesh~: 39it [00:05,  9.78it/s]Evalating textured mesh~: 41it [00:05,  9.89it/s]Evalating textured mesh~: 43it [00:05,  9.83it/s]Evalating textured mesh~: 44it [00:05,  9.77it/s]Evalating textured mesh~: 45it [00:05,  9.71it/s]Evalating textured mesh~: 46it [00:05,  9.69it/s]Evalating textured mesh~: 48it [00:05,  9.91it/s]Evalating textured mesh~: 50it [00:06,  9.94it/s]Evalating textured mesh~: 51it [00:06,  9.92it/s]Evalating textured mesh~: 53it [00:06,  9.91it/s]Evalating textured mesh~: 54it [00:06,  9.91it/s]Evalating textured mesh~: 55it [00:06,  9.93it/s]Evalating textured mesh~: 56it [00:06,  9.80it/s]Evalating textured mesh~: 57it [00:06,  9.83it/s]Evalating textured mesh~: 59it [00:07,  9.97it/s]Evalating textured mesh~: 60it [00:07,  9.97it/s]Evalating textured mesh~: 61it [00:07,  9.78it/s]Evalating textured mesh~: 62it [00:07,  9.71it/s]Evalating textured mesh~: 63it [00:07,  9.73it/s]Evalating textured mesh~: 64it [00:07,  9.62it/s]Evalating textured mesh~: 66it [00:07,  9.74it/s]Evalating textured mesh~: 67it [00:07,  9.73it/s]Evalating textured mesh~: 68it [00:07,  9.74it/s]Evalating textured mesh~: 69it [00:08,  9.78it/s]Evalating textured mesh~: 70it [00:08,  9.54it/s]Evalating textured mesh~: 71it [00:08,  9.66it/s]Evalating textured mesh~: 72it [00:08,  9.74it/s]Evalating textured mesh~: 73it [00:08,  9.77it/s]Evalating textured mesh~: 74it [00:08,  9.76it/s]Evalating textured mesh~: 76it [00:08,  9.69it/s]Evalating textured mesh~: 77it [00:08,  9.71it/s]Evalating textured mesh~: 78it [00:08,  9.76it/s]Evalating textured mesh~: 79it [00:09,  9.80it/s]Evalating textured mesh~: 80it [00:09,  9.68it/s]Evalating textured mesh~: 81it [00:09,  9.67it/s]Evalating textured mesh~: 82it [00:09,  9.52it/s]Evalating textured mesh~: 83it [00:09,  9.56it/s]Evalating textured mesh~: 84it [00:09,  9.48it/s]Evalating textured mesh~: 85it [00:09,  9.38it/s]Evalating textured mesh~: 87it [00:09,  9.73it/s]Evalating textured mesh~: 88it [00:10,  9.63it/s]Evalating textured mesh~: 90it [00:10,  9.68it/s]Evalating textured mesh~: 91it [00:10,  9.64it/s]Evalating textured mesh~: 92it [00:10,  9.62it/s]Evalating textured mesh~: 94it [00:10,  9.79it/s]Evalating textured mesh~: 95it [00:10,  9.83it/s]Evalating textured mesh~: 96it [00:10,  9.61it/s]Evalating textured mesh~: 98it [00:11,  9.76it/s]Evalating textured mesh~: 99it [00:11,  9.75it/s]Evalating textured mesh~: 100it [00:11,  9.67it/s]Evalating textured mesh~: 100it [00:11,  8.88it/s]
+stage1-eval render time: 15.8s
+subprocess pipeline_paint3d_stage1eval.py exited rc=0 after 22.6s
+
+=== [business formalwear] member_04: spaghetti_top+skirt_full_long seed=1222203133 ===
+Depth-based 3D Texturing
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  14%|█▍        | 1/7 [00:01<00:06,  1.13s/it]Loading pipeline components...:  29%|██▊       | 2/7 [00:02<00:07,  1.56s/it]Loading pipeline components...:  71%|███████▏  | 5/7 [00:13<00:05,  3.00s/it]`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+Loading pipeline components...:  86%|████████▌ | 6/7 [00:15<00:02,  2.62s/it]Loading pipeline components...: 100%|██████████| 7/7 [00:15<00:00,  2.18s/it]
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  14%|█▍        | 1/7 [00:00<00:00,  6.28it/s]Loading pipeline components...:  29%|██▊       | 2/7 [00:00<00:01,  4.92it/s]Loading pipeline components...:  71%|███████▏  | 5/7 [00:02<00:01,  1.81it/s]`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+Loading pipeline components...:  86%|████████▌ | 6/7 [00:04<00:00,  1.03it/s]Loading pipeline components...: 100%|██████████| 7/7 [00:04<00:00,  1.50it/s]
+Project init view [0, 23]...
+Generating init view...
+  0%|          | 0/20 [00:00<?, ?it/s]  5%|▌         | 1/20 [00:04<01:20,  4.23s/it] 10%|█         | 2/20 [00:04<00:35,  1.94s/it] 15%|█▌        | 3/20 [00:04<00:20,  1.21s/it] 20%|██        | 4/20 [00:05<00:13,  1.15it/s] 25%|██▌       | 5/20 [00:05<00:10,  1.46it/s] 30%|███       | 6/20 [00:05<00:07,  1.76it/s] 35%|███▌      | 7/20 [00:06<00:06,  2.01it/s] 40%|████      | 8/20 [00:06<00:05,  2.23it/s] 45%|████▌     | 9/20 [00:07<00:04,  2.40it/s] 50%|█████     | 10/20 [00:07<00:03,  2.52it/s] 55%|█████▌    | 11/20 [00:07<00:03,  2.62it/s] 60%|██████    | 12/20 [00:08<00:02,  2.70it/s] 65%|██████▌   | 13/20 [00:08<00:02,  2.74it/s] 70%|███████   | 14/20 [00:08<00:02,  2.78it/s] 75%|███████▌  | 15/20 [00:09<00:01,  2.81it/s] 80%|████████  | 16/20 [00:09<00:01,  2.82it/s] 85%|████████▌ | 17/20 [00:09<00:01,  2.84it/s] 90%|█████████ | 18/20 [00:10<00:00,  2.85it/s] 95%|█████████▌| 19/20 [00:10<00:00,  2.85it/s]100%|██████████| 20/20 [00:10<00:00,  2.85it/s]100%|██████████| 20/20 [00:10<00:00,  1.84it/s]
+init view generation time: 15.755230188369751
+0it [00:00, ?it/s]26it [00:00, 4508.70it/s]
+2026-07-15 14:25:49.816 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /root/crowd_library_20260715_stage1eval_local/1_random_white_plain/business_formalwear/member_04/stage1/res-0/mesh.obj with: vertices:(3989, 3) uv:(4262, 2) faces:(7676, 3)
+init DR time: 0.8060417175292969
+View inpainting ...
+Project inpaint view [(5, 6)]...
+0it [00:00, ?it/s]1it [00:01,  1.40s/it]1it [00:01,  1.40s/it]
+0it [00:00, ?it/s]
+  0%|          | 0/20 [00:00<?, ?it/s][A
+  5%|▌         | 1/20 [00:01<00:23,  1.26s/it][A
+ 10%|█         | 2/20 [00:01<00:14,  1.28it/s][A
+ 15%|█▌        | 3/20 [00:02<00:10,  1.58it/s][A
+ 20%|██        | 4/20 [00:02<00:08,  1.78it/s][A
+ 25%|██▌       | 5/20 [00:03<00:07,  1.91it/s][A
+ 30%|███       | 6/20 [00:03<00:06,  2.01it/s][A
+ 35%|███▌      | 7/20 [00:03<00:06,  2.07it/s][A
+ 40%|████      | 8/20 [00:04<00:05,  2.11it/s][A
+ 45%|████▌     | 9/20 [00:04<00:05,  2.14it/s][A
+ 50%|█████     | 10/20 [00:05<00:04,  2.16it/s][A
+ 55%|█████▌    | 11/20 [00:05<00:04,  2.17it/s][A
+ 60%|██████    | 12/20 [00:06<00:03,  2.17it/s][A
+ 65%|██████▌   | 13/20 [00:06<00:03,  2.18it/s][A
+ 70%|███████   | 14/20 [00:07<00:02,  2.19it/s][A
+ 75%|███████▌  | 15/20 [00:07<00:02,  2.19it/s][A
+ 80%|████████  | 16/20 [00:08<00:01,  2.19it/s][A
+ 85%|████████▌ | 17/20 [00:08<00:01,  2.19it/s][A
+ 90%|█████████ | 18/20 [00:08<00:00,  2.19it/s][A
+ 95%|█████████▌| 19/20 [00:09<00:00,  2.19it/s][A
+100%|██████████| 20/20 [00:09<00:00,  2.19it/s][A100%|██████████| 20/20 [00:09<00:00,  2.02it/s]
+1it [00:12, 12.11s/it]1it [00:12, 12.11s/it]
+inpaint view generation time: 13.513988971710205
+0it [00:00, ?it/s]26it [00:00, 4069.86it/s]
+2026-07-15 14:26:04.246 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /root/crowd_library_20260715_stage1eval_local/1_random_white_plain/business_formalwear/member_04/stage1/res-0/mesh.obj with: vertices:(3989, 3) uv:(4262, 2) faces:(7676, 3)
+inpaint DR time: 0.915257453918457
+View inpainting ...
+Project inpaint view [(24, 25)]...
+0it [00:00, ?it/s]1it [00:01,  1.35s/it]1it [00:01,  1.35s/it]
+0it [00:00, ?it/s]
+  0%|          | 0/20 [00:00<?, ?it/s][A
+  5%|▌         | 1/20 [00:01<00:25,  1.32s/it][A
+ 10%|█         | 2/20 [00:01<00:14,  1.23it/s][A
+ 15%|█▌        | 3/20 [00:02<00:11,  1.53it/s][A
+ 20%|██        | 4/20 [00:02<00:09,  1.74it/s][A
+ 25%|██▌       | 5/20 [00:03<00:07,  1.88it/s][A
+ 30%|███       | 6/20 [00:03<00:07,  1.97it/s][A
+ 35%|███▌      | 7/20 [00:04<00:06,  2.04it/s][A
+ 40%|████      | 8/20 [00:04<00:05,  2.08it/s][A
+ 45%|████▌     | 9/20 [00:04<00:05,  2.11it/s][A
+ 50%|█████     | 10/20 [00:05<00:04,  2.13it/s][A
+ 55%|█████▌    | 11/20 [00:05<00:04,  2.13it/s][A
+ 60%|██████    | 12/20 [00:06<00:03,  2.14it/s][A
+ 65%|██████▌   | 13/20 [00:06<00:03,  2.15it/s][A
+ 70%|███████   | 14/20 [00:07<00:02,  2.16it/s][A
+ 75%|███████▌  | 15/20 [00:07<00:02,  2.17it/s][A
+ 80%|████████  | 16/20 [00:08<00:01,  2.17it/s][A
+ 85%|████████▌ | 17/20 [00:08<00:01,  2.17it/s][A
+ 90%|█████████ | 18/20 [00:09<00:00,  2.17it/s][A
+ 95%|█████████▌| 19/20 [00:09<00:00,  2.17it/s][A
+100%|██████████| 20/20 [00:10<00:00,  2.18it/s][A100%|██████████| 20/20 [00:10<00:00,  1.99it/s]
+1it [00:12, 12.27s/it]1it [00:12, 12.27s/it]
+inpaint view generation time: 13.629987955093384
+0it [00:00, ?it/s]26it [00:00, 3424.35it/s]
+2026-07-15 14:26:18.798 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /root/crowd_library_20260715_stage1eval_local/1_random_white_plain/business_formalwear/member_04/stage1/res-0/mesh.obj with: vertices:(3989, 3) uv:(4262, 2) faces:(7676, 3)
+inpaint DR time: 0.9213824272155762
+total processed time:45.54235529899597
+Evalating textured mesh~: 0it [00:00, ?it/s]Evalating textured mesh~: 2it [00:00, 15.34it/s]Evalating textured mesh~: 4it [00:00, 15.81it/s]Evalating textured mesh~: 6it [00:00, 15.73it/s]Evalating textured mesh~: 8it [00:00, 15.60it/s]Evalating textured mesh~: 10it [00:00, 15.66it/s]Evalating textured mesh~: 12it [00:00, 15.68it/s]Evalating textured mesh~: 14it [00:00, 15.70it/s]Evalating textured mesh~: 16it [00:01, 15.78it/s]Evalating textured mesh~: 18it [00:01, 15.77it/s]Evalating textured mesh~: 20it [00:01, 15.82it/s]Evalating textured mesh~: 22it [00:01, 15.57it/s]Evalating textured mesh~: 24it [00:01, 15.68it/s]Evalating textured mesh~: 26it [00:01, 15.62it/s]Evalating textured mesh~: 28it [00:01, 15.74it/s]Evalating textured mesh~: 30it [00:01, 15.69it/s]Evalating textured mesh~: 32it [00:02, 15.75it/s]Evalating textured mesh~: 34it [00:02, 15.78it/s]Evalating textured mesh~: 36it [00:02, 15.77it/s]Evalating textured mesh~: 38it [00:02, 15.78it/s]Evalating textured mesh~: 40it [00:02, 15.76it/s]Evalating textured mesh~: 42it [00:02, 15.66it/s]Evalating textured mesh~: 44it [00:02, 15.56it/s]Evalating textured mesh~: 46it [00:02, 15.33it/s]Evalating textured mesh~: 48it [00:03, 15.16it/s]Evalating textured mesh~: 50it [00:03, 15.07it/s]Evalating textured mesh~: 52it [00:03, 15.00it/s]Evalating textured mesh~: 54it [00:03, 15.20it/s]Evalating textured mesh~: 56it [00:03, 15.33it/s]Evalating textured mesh~: 58it [00:03, 15.38it/s]Evalating textured mesh~: 60it [00:03, 15.38it/s]Evalating textured mesh~: 62it [00:03, 15.38it/s]Evalating textured mesh~: 64it [00:04, 15.34it/s]Evalating textured mesh~: 66it [00:04, 15.31it/s]Evalating textured mesh~: 68it [00:04, 15.25it/s]Evalating textured mesh~: 70it [00:04, 15.23it/s]Evalating textured mesh~: 72it [00:04, 14.79it/s]Evalating textured mesh~: 74it [00:04, 14.77it/s]Evalating textured mesh~: 76it [00:04, 14.07it/s]Evalating textured mesh~: 78it [00:05, 13.53it/s]Evalating textured mesh~: 80it [00:05, 13.24it/s]Evalating textured mesh~: 82it [00:05, 13.11it/s]Evalating textured mesh~: 84it [00:05, 13.22it/s]Evalating textured mesh~: 86it [00:05, 13.07it/s]Evalating textured mesh~: 88it [00:05, 12.99it/s]Evalating textured mesh~: 90it [00:06, 11.87it/s]Evalating textured mesh~: 92it [00:06, 12.19it/s]Evalating textured mesh~: 94it [00:06, 12.08it/s]Evalating textured mesh~: 96it [00:06, 12.17it/s]Evalating textured mesh~: 98it [00:06, 12.12it/s]Evalating textured mesh~: 100it [00:06, 11.43it/s]Evalating textured mesh~: 100it [00:06, 14.40it/s]
+subprocess pipeline_paint3d_stage1.py exited rc=0 after 108.4s
+Evalating textured mesh~: 0it [00:00, ?it/s]Evalating textured mesh~: 1it [00:01,  1.04s/it]Evalating textured mesh~: 3it [00:01,  3.05it/s]Evalating textured mesh~: 5it [00:01,  5.10it/s]Evalating textured mesh~: 7it [00:01,  6.93it/s]Evalating textured mesh~: 9it [00:01,  8.55it/s]Evalating textured mesh~: 11it [00:01,  9.91it/s]Evalating textured mesh~: 13it [00:01, 10.97it/s]Evalating textured mesh~: 15it [00:02, 11.81it/s]Evalating textured mesh~: 17it [00:02, 12.34it/s]Evalating textured mesh~: 19it [00:02, 12.19it/s]Evalating textured mesh~: 21it [00:02, 12.66it/s]Evalating textured mesh~: 23it [00:02, 12.78it/s]Evalating textured mesh~: 25it [00:02, 12.84it/s]Evalating textured mesh~: 27it [00:02, 13.18it/s]Evalating textured mesh~: 29it [00:03, 13.57it/s]Evalating textured mesh~: 31it [00:03, 13.81it/s]Evalating textured mesh~: 33it [00:03, 14.10it/s]Evalating textured mesh~: 35it [00:03, 14.25it/s]Evalating textured mesh~: 37it [00:03, 14.46it/s]Evalating textured mesh~: 39it [00:03, 14.58it/s]Evalating textured mesh~: 41it [00:03, 14.78it/s]Evalating textured mesh~: 43it [00:04, 14.81it/s]Evalating textured mesh~: 45it [00:04, 14.82it/s]Evalating textured mesh~: 47it [00:04, 14.74it/s]Evalating textured mesh~: 49it [00:04, 13.82it/s]Evalating textured mesh~: 51it [00:04, 13.64it/s]Evalating textured mesh~: 53it [00:04, 13.46it/s]Evalating textured mesh~: 55it [00:04, 13.32it/s]Evalating textured mesh~: 57it [00:05, 12.95it/s]Evalating textured mesh~: 59it [00:05, 12.95it/s]Evalating textured mesh~: 61it [00:05, 12.94it/s]Evalating textured mesh~: 63it [00:05, 13.05it/s]Evalating textured mesh~: 65it [00:05, 13.07it/s]Evalating textured mesh~: 67it [00:05, 12.93it/s]Evalating textured mesh~: 69it [00:06, 13.09it/s]Evalating textured mesh~: 71it [00:06, 13.45it/s]Evalating textured mesh~: 73it [00:06, 13.63it/s]Evalating textured mesh~: 75it [00:06, 13.87it/s]Evalating textured mesh~: 77it [00:06, 13.35it/s]Evalating textured mesh~: 79it [00:06, 13.63it/s]Evalating textured mesh~: 81it [00:06, 13.85it/s]Evalating textured mesh~: 83it [00:07, 13.97it/s]Evalating textured mesh~: 85it [00:07, 14.06it/s]Evalating textured mesh~: 87it [00:07, 14.06it/s]Evalating textured mesh~: 89it [00:07, 14.05it/s]Evalating textured mesh~: 91it [00:07, 13.84it/s]Evalating textured mesh~: 93it [00:07, 13.68it/s]Evalating textured mesh~: 95it [00:07, 13.24it/s]Evalating textured mesh~: 97it [00:08, 13.09it/s]Evalating textured mesh~: 99it [00:08, 13.30it/s]Evalating textured mesh~: 100it [00:08, 12.06it/s]
+stage1-eval render time: 12.8s
+subprocess pipeline_paint3d_stage1eval.py exited rc=0 after 19.6s
+[sync] final sync /root/crowd_library_20260715_stage1eval_local/1_random_white_plain/business_formalwear -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_stage1eval/1_random_white_plain/business_formalwear rc=0
+
+done. failures: 0
+[run_crowd_library] prompt='business formalwear' cell=1_random_white_plain python_exit=0

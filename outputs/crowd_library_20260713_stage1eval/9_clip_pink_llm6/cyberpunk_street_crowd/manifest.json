@@ -1,0 +1,352 @@
+{
+  "crowd_prompt": "cyberpunk street crowd",
+  "fixed_members_from": null,
+  "master_seed": 0,
+  "fullbody_prob": 0.25,
+  "mesh_sampling": "clip",
+  "tau": 0.02,
+  "color_prompt": false,
+  "color_sampling": null,
+  "color_tau": null,
+  "pink_noise": true,
+  "pink_alpha": 0.2,
+  "llm_emitters": true,
+  "llm_generations": 15,
+  "llm_k_neighbors": 3,
+  "llm_novelty": "clothing",
+  "llm_axes": "clothing",
+  "llm_model": "llama3.1:8b",
+  "llm_evolution_history": [
+    {
+      "type": "mutation",
+      "parent": 2,
+      "axis": "formality",
+      "accepted": true,
+      "child_novelty": 0.11743644624948502,
+      "replaced_novelty": 0.11293355375528336
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        3,
+        0
+      ],
+      "accepted": false,
+      "child_novelty": 0.07677777856588364,
+      "replaced_novelty": 0.07677777856588364
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        3,
+        2
+      ],
+      "accepted": true,
+      "child_novelty": 0.11559700965881348,
+      "replaced_novelty": 0.09149523824453354
+    },
+    {
+      "type": "mutation",
+      "parent": 0,
+      "axis": "color",
+      "accepted": true,
+      "child_novelty": 0.2170579582452774,
+      "replaced_novelty": 0.15399621427059174
+    },
+    {
+      "type": "mutation",
+      "parent": 1,
+      "axis": "condition",
+      "accepted": true,
+      "child_novelty": 0.18993164598941803,
+      "replaced_novelty": 0.17062801122665405
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        0,
+        3
+      ],
+      "accepted": false,
+      "child_novelty": 0.1561463624238968,
+      "replaced_novelty": 0.1561463624238968
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        3,
+        1
+      ],
+      "accepted": false,
+      "child_novelty": 0.10599303245544434,
+      "replaced_novelty": 0.10599303245544434
+    },
+    {
+      "type": "mutation",
+      "parent": 1,
+      "axis": "color",
+      "accepted": true,
+      "child_novelty": 0.22385241091251373,
+      "replaced_novelty": 0.17935144901275635
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        0,
+        2
+      ],
+      "accepted": false,
+      "child_novelty": 0.15355174243450165,
+      "replaced_novelty": 0.16978202760219574
+    },
+    {
+      "type": "mutation",
+      "parent": 0,
+      "axis": "accessories",
+      "accepted": false,
+      "child_novelty": 0.20404833555221558,
+      "replaced_novelty": 0.21343626081943512
+    },
+    {
+      "type": "mutation",
+      "parent": 4,
+      "axis": "material",
+      "accepted": false,
+      "child_novelty": 0.18504942953586578,
+      "replaced_novelty": 0.18538932502269745
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        0,
+        4
+      ],
+      "accepted": false,
+      "child_novelty": 0.16448675096035004,
+      "replaced_novelty": 0.1644868105649948
+    },
+    {
+      "type": "mutation",
+      "parent": 2,
+      "axis": "formality",
+      "accepted": false,
+      "child_novelty": 0.15623480081558228,
+      "replaced_novelty": 0.16987444460391998
+    },
+    {
+      "type": "mutation",
+      "parent": 1,
+      "axis": "material",
+      "accepted": true,
+      "child_novelty": 0.14267338812351227,
+      "replaced_novelty": 0.13731591403484344
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        1,
+        4
+      ],
+      "accepted": false,
+      "child_novelty": 0.13191024959087372,
+      "replaced_novelty": 0.16036294400691986
+    }
+  ],
+  "clip_axes": false,
+  "axis_tau": null,
+  "stage1_prompt_template": "turn around, {prompt}, {full_desc}, {category_phrase}",
+  "stage2_prompt_templates": {
+    "inpaint": "UV map, {prompt}, {full_desc}, {category_phrase}",
+    "img2img": "UV map, {prompt}, {full_desc}, {category_phrase}, high quality, best quality"
+  },
+  "members": [
+    {
+      "member": "member_00",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/turtleneck_halter.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/m_trousers_02.obj"
+      ],
+      "sd_seed": 677585538,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "neon green",
+          "formality": "ragged",
+          "material": "leather",
+          "pattern": "patched",
+          "condition": "worn",
+          "accessories": "none"
+        },
+        "full_desc": "worn ragged neon green leather patched clothing",
+        "clothing_desc": "worn ragged neon green leather patched clothing",
+        "theme_relevance": 0.5526317358016968
+      },
+      "category_phrase": "wearing a tank top and trousers",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_stage1eval_local/9_clip_pink_llm6/cyberpunk_street_crowd/member_00/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_stage1eval_local/9_clip_pink_llm6/cyberpunk_street_crowd/member_00/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_01",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/fem_suit.obj"
+      ],
+      "sd_seed": 225702325,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "blue",
+          "formality": "casual",
+          "material": "leather",
+          "pattern": "patched",
+          "condition": "custom-modified",
+          "accessories": "none"
+        },
+        "full_desc": "custom-modified casual blue leather patched clothing",
+        "clothing_desc": "custom-modified casual blue leather patched clothing",
+        "theme_relevance": 0.599252462387085
+      },
+      "category_phrase": "wearing a apron",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_stage1eval_local/9_clip_pink_llm6/cyberpunk_street_crowd/member_01/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_stage1eval_local/9_clip_pink_llm6/cyberpunk_street_crowd/member_01/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_02",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/medievaldress.obj"
+      ],
+      "sd_seed": 29757552,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "black",
+          "formality": "opulent",
+          "material": "leather",
+          "pattern": "patched",
+          "condition": "worn",
+          "accessories": "a belt"
+        },
+        "full_desc": "worn opulent black leather patched clothing and a belt",
+        "clothing_desc": "worn opulent black leather patched clothing and a belt",
+        "theme_relevance": 0.5862589478492737
+      },
+      "category_phrase": "wearing a robe",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_stage1eval_local/9_clip_pink_llm6/cyberpunk_street_crowd/member_02/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_stage1eval_local/9_clip_pink_llm6/cyberpunk_street_crowd/member_02/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_03",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/vintagetop.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/mens_trouser_short_nc_elvcrf.obj"
+      ],
+      "sd_seed": 688988257,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "muted-gold",
+          "formality": "casual",
+          "material": "canvas",
+          "pattern": "patched",
+          "condition": "custom-modified",
+          "accessories": "none"
+        },
+        "full_desc": "custom-modified casual muted-gold canvas patched clothing",
+        "clothing_desc": "custom-modified casual muted-gold canvas patched clothing",
+        "theme_relevance": 0.5761486887931824
+      },
+      "category_phrase": "wearing a halter top and shorts",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_stage1eval_local/9_clip_pink_llm6/cyberpunk_street_crowd/member_03/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_stage1eval_local/9_clip_pink_llm6/cyberpunk_street_crowd/member_03/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_04",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/asymmetric_tunic_and_sash.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/mens_elv_jeans2slf.obj"
+      ],
+      "sd_seed": 871803738,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "teal",
+          "formality": "casual",
+          "material": "leather",
+          "pattern": "patched",
+          "condition": "worn",
+          "accessories": "tool-belt"
+        },
+        "full_desc": "worn casual teal leather patched clothing and tool-belt",
+        "clothing_desc": "worn casual teal leather patched clothing and tool-belt",
+        "theme_relevance": 0.4972359240055084
+      },
+      "category_phrase": "wearing a tank top and trousers",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_stage1eval_local/9_clip_pink_llm6/cyberpunk_street_crowd/member_04/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_stage1eval_local/9_clip_pink_llm6/cyberpunk_street_crowd/member_04/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    }
+  ]
+}

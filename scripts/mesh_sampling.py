@@ -230,6 +230,31 @@ def axis_weights(prompt, candidates, template, tau, device="cpu"):
     return w
 
 
+def pair_weights(paths, base_weights, chosen_path, pair_tau, device="cpu"):
+    """Outfit-coherence re-weighting (2026-07-15): multiply a slot's
+    text-derived sampling weights by softmax(pair_tau) over CLIP image-image
+    similarity to an already-chosen garment from the other slot. Independent
+    per-slot text sampling can pair a top and bottom that each fit the theme
+    but not each other; conditioning the second draw on the first garment's
+    render embedding biases toward visually/stylistically matching pairs.
+    Same knob semantics as theme_weights: pair_tau -> infinity leaves the
+    text weights unchanged, pair_tau small = near-argmax on the best visual
+    match. Returns a numpy array summing to 1, aligned with `paths`."""
+    keys, emb, _categories = garment_embeddings(device)
+    key_to_idx = {k: i for i, k in enumerate(keys)}
+
+    def path_key(p):
+        p = Path(p)
+        return f"{p.parent.name}/{p.stem}"
+
+    chosen = emb[key_to_idx[path_key(chosen_path)]]
+    sims = (emb @ chosen).numpy()  # embeddings are unit-norm: cosine similarity
+    s = np.array([sims[key_to_idx[path_key(p)]] for p in paths]) / pair_tau
+    w = np.asarray(base_weights, dtype=np.float64) * np.exp(s - s.max())
+    w /= w.sum()
+    return w
+
+
 def color_weights(prompt, colors, tau, device="cpu"):
     """Method 3/4/5 colour-only entry point; thin wrapper over axis_weights
     kept so existing call sites don't need to change."""
