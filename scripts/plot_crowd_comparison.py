@@ -82,13 +82,14 @@ METHOD_LABELS = {
     "9_clip_pink_llm6": "9: CLIP mesh, pink noise, WANDER (6-axis)",
 }
 
+# Reported metric set (trimmed 2026-07-16, following Harrington et al.'s own
+# human studies: set-level diversity metrics align best with human preference,
+# with CLIPScore/HPSv2 as the coherence/quality axes; DreamSim kept as the
+# human-perception-aligned pairwise measure). DINOv2 patchwise, LPIPS and
+# pixel L2 are still COMPUTED into metrics.json by evaluate_crowd.py --
+# appendix material -- just not charted.
 METRICS = [
     # (dotted_key, slug, title, subtitle, std_key, log_scale)
-    ("diversity.dinov2_patchwise_pairwise.mean", "dinov2_patchwise_mean", "DINOv2 patchwise distance (mean)", "higher = more diverse", "diversity.dinov2_patchwise_pairwise.std", False),
-    ("diversity.dreamsim_pairwise.mean", "dreamsim_mean", "DreamSim pairwise distance (mean)", "higher = more diverse", "diversity.dreamsim_pairwise.std", False),
-    ("diversity.lpips_pairwise.mean", "lpips_mean", "LPIPS pairwise (mean)", "higher = more diverse", "diversity.lpips_pairwise.std", False),
-    ("diversity.pixel_l2_32_pairwise.mean", "pixel_l2_32_mean", "Low-res (32x32) pixel L2 pairwise (mean)", "higher = more diverse", "diversity.pixel_l2_32_pairwise.std", False),
-    ("diversity.color_chi2_pairwise.mean", "color_chi2_mean", "Color χ² pairwise (mean)", "higher = more diverse", "diversity.color_chi2_pairwise.std", False),
     ("diversity.vendi_score_dinov2", "vendi_score_dinov2", "Vendi score (DINOv2)", "higher = more effective members", None, False),
     # DPP score (a kernel determinant) spans many orders of magnitude across
     # themes/methods -- a linear axis makes every bar but the largest read as
@@ -97,22 +98,24 @@ METRICS = [
     # quantities; the printed value label on each bar keeps the exact number
     # readable regardless.
     ("diversity.dpp_score_dinov2", "dpp_score_dinov2", "DPP score (DINOv2)", "higher = more spread out; log scale", None, True),
+    ("diversity.dreamsim_pairwise.mean", "dreamsim_mean", "DreamSim pairwise distance (mean)", "higher = more diverse (human-perception-aligned)", "diversity.dreamsim_pairwise.std", False),
+    ("diversity.color_chi2_pairwise.mean", "color_chi2_mean", "Color χ² pairwise (mean)", "higher = more diverse", "diversity.color_chi2_pairwise.std", False),
     ("coherence.clipscore_crowd_mean", "clipscore_crowd_mean", "Theme coherence (CLIPScore, crowd mean)", "higher = more on-theme", "coherence.clipscore_crowd_std", False),
+    ("quality.hpsv2_crowd_mean", "hpsv2_crowd_mean", "Quality (HPSv2, crowd mean)", "higher = preferred by the human-preference model", "quality.hpsv2_crowd_std", False),
 ]
 
 # Same figure grammar over shape_metrics.json (evaluate_shape.py) -- the
 # silhouette/mesh-selection-only eval. Slugs carry a shape_ prefix so the
 # PNGs coexist with the appearance charts in one plots/ dir. Selected via
 # --shape; remember shape eval only runs on the white-noise cells (1/2/4/8),
-# so pass that subset as --methods.
+# so pass that subset as --methods. Trimmed 2026-07-16 to the same
+# set-level-first design as METRICS (pairwise battery still computed into
+# shape_metrics.json, just not charted); silhouette IoU stays as the
+# pure-geometry check.
 SHAPE_METRICS = [
-    ("shape_diversity.dinov2_patchwise_pairwise.mean", "shape_dinov2_patchwise_mean", "DINOv2 patchwise distance (shape-only, mean)", "higher = more diverse", "shape_diversity.dinov2_patchwise_pairwise.std", False),
-    ("shape_diversity.dreamsim_pairwise.mean", "shape_dreamsim_mean", "DreamSim pairwise distance (shape-only, mean)", "higher = more diverse", "shape_diversity.dreamsim_pairwise.std", False),
-    ("shape_diversity.lpips_pairwise.mean", "shape_lpips_mean", "LPIPS pairwise (shape-only, mean)", "higher = more diverse", "shape_diversity.lpips_pairwise.std", False),
-    ("shape_diversity.pixel_l2_32_pairwise.mean", "shape_pixel_l2_32_mean", "Low-res (32x32) pixel L2 pairwise (shape-only, mean)", "higher = more diverse", "shape_diversity.pixel_l2_32_pairwise.std", False),
-    ("shape_diversity.silhouette_iou_dist_pairwise.mean", "shape_silhouette_iou_mean", "Silhouette 1−IoU pairwise (mean)", "higher = more diverse outlines; pure geometry, no pretrained model", "shape_diversity.silhouette_iou_dist_pairwise.std", False),
     ("shape_diversity.vendi_score_dinov2", "shape_vendi_score_dinov2", "Vendi score (DINOv2, shape-only)", "higher = more effective members", None, False),
     ("shape_diversity.dpp_score_dinov2", "shape_dpp_score_dinov2", "DPP score (DINOv2, shape-only)", "higher = more spread out; log scale", None, True),
+    ("shape_diversity.silhouette_iou_dist_pairwise.mean", "shape_silhouette_iou_mean", "Silhouette 1−IoU pairwise (mean)", "higher = more diverse outlines; pure geometry, no pretrained model", "shape_diversity.silhouette_iou_dist_pairwise.std", False),
 ]
 
 
@@ -136,7 +139,11 @@ def get_path(d, dotted_key):
     for part in dotted_key.split("."):
         if val is None:
             return None
-        val = val[part]
+        try:
+            val = val[part]
+        except (KeyError, TypeError):
+            # metrics file predates this key (e.g. "quality" added 2026-07-16)
+            return None
     return val
 
 

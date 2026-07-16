@@ -46,6 +46,12 @@ CELLS="1_random_white_plain 2_clip_white_plain 3_clip_pink_plain 4_clip_white_ax
 POLL=120
 
 log() { echo "[pipeline] $(date '+%F %T') $*" | tee -a "$PLOG"; }
+# console-window death must not kill the chain (same rationale as the
+# supervisor's HUP trap). A WSL VM crash still kills everything inside it --
+# if this log goes silent with no marker files appearing, run `wsl --shutdown`
+# from Windows and relaunch this script; every phase re-detects completion
+# from disk, so relaunch is always safe.
+trap 'log "SIGHUP received (console window died?) -- continuing"' HUP
 halt() {
   { date; echo "$1"; } > "$E2E_DIR/PIPELINE_HALTED.txt" 2>/dev/null
   log "HALTED: $1"
@@ -84,55 +90,74 @@ done
 log "phase A complete: end-to-end generation done ($E2E)"
 sleep 30  # let the finished supervisor fully exit before pattern-matching for the next one
 
-# ---- phase B: mesh-fixed generation + end-to-end eval, in parallel --------
-log "phase B: launching mesh-fixed generation (GPU) + end-to-end eval (CPU)"
+# ---- phase B: mesh-fixed generation ONLY -----------------------------------
+# Serialized 2026-07-16: this phase used to overlap the end-to-end eval (CPU)
+# with generation (GPU), but the WSL VM died twice in one day under that
+# combined load -- the eval now carries a ViT-H HPSv2 model, and the sum
+# exceeded the VM's memory ceiling (see ~/.wslconfig). One memory-heavy
+# workload at a time from here on.
+log "phase B: launching mesh-fixed generation (GPU)"
 launch_mf_supervisor
-CROWD_LIBRARY_OUT="$E2E" setsid bash "$REPO/scripts/run_crowd_library_eval.sh" >/dev/null 2>&1 &
-
-e3_done() { grep -q "CROWD LIBRARY EVAL PASS COMPLETE" "$E2E_DIR/eval.log" 2>/dev/null; }
-relaunch_mf=0 relaunch_e3=0
-until gen_done "$MF_DIR" && e3_done; do
+relaunch_mf=0
+until gen_done "$MF_DIR"; do
   gen_halted "$MF_DIR" && halt "mesh-fixed supervisor halted (see $MF_DIR/ATTENTION_SUPERVISOR_HALTED.txt)"
-  if ! gen_done "$MF_DIR" && ! pgrep -f "[r]un_crowd_library_supervised.sh" >/dev/null; then
+  if ! pgrep -f "[r]un_crowd_library_supervised.sh" >/dev/null; then
     relaunch_mf=$((relaunch_mf+1))
     [ "$relaunch_mf" -gt 3 ] && halt "mesh-fixed supervisor vanished without completing ($relaunch_mf relaunch attempts)"
     log "phase B: mesh-fixed supervisor not running -- relaunching (#$relaunch_mf)"
     launch_mf_supervisor
   fi
-  if ! e3_done && ! pgrep -f "[r]un_crowd_library_eval.sh" >/dev/null; then
+  sleep "$POLL"
+done
+log "phase B complete: mesh-fixed generation done ($MF)"
+sleep 30
+
+# ---- phase C: the three evals, strictly sequential --------------------------
+e3_done() { grep -q "CROWD LIBRARY EVAL PASS COMPLETE" "$E2E_DIR/eval.log" 2>/dev/null; }
+e2_done() { grep -q "MESH-FIXED EVAL PASS COMPLETE" "$MF_DIR/eval.log" 2>/dev/null; }
+e1_done() { grep -q "SHAPE EVAL PASS COMPLETE" "$E2E_DIR/shape_eval.log" 2>/dev/null; }
+
+log "phase C1: end-to-end eval"
+CROWD_LIBRARY_OUT="$E2E" setsid bash "$REPO/scripts/run_crowd_library_eval.sh" >/dev/null 2>&1 &
+relaunch_e3=0
+until e3_done; do
+  if ! pgrep -f "[r]un_crowd_library_eval.sh" >/dev/null; then
     relaunch_e3=$((relaunch_e3+1))
     [ "$relaunch_e3" -gt 5 ] && halt "end-to-end eval keeps dying without its completion banner ($relaunch_e3 relaunches)"
-    log "phase B: end-to-end eval not running -- relaunching (#$relaunch_e3, idempotent)"
+    log "phase C1: end-to-end eval not running -- relaunching (#$relaunch_e3, idempotent)"
     CROWD_LIBRARY_OUT="$E2E" setsid bash "$REPO/scripts/run_crowd_library_eval.sh" >/dev/null 2>&1 &
   fi
   sleep "$POLL"
 done
-log "phase B complete: mesh-fixed generation done ($MF) + end-to-end eval scored"
+log "phase C1 complete: end-to-end eval scored"
 
-# ---- phase C: shape eval + mesh-fixed texture eval, in parallel -----------
-log "phase C: launching shape eval (GPU render then CPU) + mesh-fixed eval (CPU)"
-CROWD_LIBRARY_OUT="$E2E" setsid bash "$REPO/scripts/run_shape_eval.sh" >/dev/null 2>&1 &
+log "phase C2: mesh-fixed eval"
 CROWD_LIBRARY_MESHFIXED_OUT="$MF" setsid bash "$REPO/scripts/run_crowd_library_mesh_fixed_eval.sh" >/dev/null 2>&1 &
-
-e1_done() { grep -q "SHAPE EVAL PASS COMPLETE" "$E2E_DIR/shape_eval.log" 2>/dev/null; }
-e2_done() { grep -q "MESH-FIXED EVAL PASS COMPLETE" "$MF_DIR/eval.log" 2>/dev/null; }
-relaunch_e1=0 relaunch_e2=0
-until e1_done && e2_done; do
-  if ! e1_done && ! pgrep -f "[r]un_shape_eval.sh" >/dev/null; then
-    relaunch_e1=$((relaunch_e1+1))
-    [ "$relaunch_e1" -gt 5 ] && halt "shape eval keeps dying without its completion banner ($relaunch_e1 relaunches)"
-    log "phase C: shape eval not running -- relaunching (#$relaunch_e1, idempotent)"
-    CROWD_LIBRARY_OUT="$E2E" setsid bash "$REPO/scripts/run_shape_eval.sh" >/dev/null 2>&1 &
-  fi
-  if ! e2_done && ! pgrep -f "[r]un_crowd_library_mesh_fixed_eval.sh" >/dev/null; then
+relaunch_e2=0
+until e2_done; do
+  if ! pgrep -f "[r]un_crowd_library_mesh_fixed_eval.sh" >/dev/null; then
     relaunch_e2=$((relaunch_e2+1))
     [ "$relaunch_e2" -gt 5 ] && halt "mesh-fixed eval keeps dying without its completion banner ($relaunch_e2 relaunches)"
-    log "phase C: mesh-fixed eval not running -- relaunching (#$relaunch_e2, idempotent)"
+    log "phase C2: mesh-fixed eval not running -- relaunching (#$relaunch_e2, idempotent)"
     CROWD_LIBRARY_MESHFIXED_OUT="$MF" setsid bash "$REPO/scripts/run_crowd_library_mesh_fixed_eval.sh" >/dev/null 2>&1 &
   fi
   sleep "$POLL"
 done
-log "phase C complete: shape eval + mesh-fixed eval scored"
+log "phase C2 complete: mesh-fixed eval scored"
+
+log "phase C3: shape eval"
+CROWD_LIBRARY_OUT="$E2E" setsid bash "$REPO/scripts/run_shape_eval.sh" >/dev/null 2>&1 &
+relaunch_e1=0
+until e1_done; do
+  if ! pgrep -f "[r]un_shape_eval.sh" >/dev/null; then
+    relaunch_e1=$((relaunch_e1+1))
+    [ "$relaunch_e1" -gt 5 ] && halt "shape eval keeps dying without its completion banner ($relaunch_e1 relaunches)"
+    log "phase C3: shape eval not running -- relaunching (#$relaunch_e1, idempotent)"
+    CROWD_LIBRARY_OUT="$E2E" setsid bash "$REPO/scripts/run_shape_eval.sh" >/dev/null 2>&1 &
+  fi
+  sleep "$POLL"
+done
+log "phase C complete: all three evals scored"
 
 # ---- phase D: plots + contact sheets ---------------------------------------
 log "phase D: plots + contact sheets"

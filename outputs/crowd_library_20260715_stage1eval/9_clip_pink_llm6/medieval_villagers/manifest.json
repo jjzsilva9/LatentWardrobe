@@ -1,0 +1,359 @@
+{
+  "crowd_prompt": "medieval villagers",
+  "fixed_members_from": null,
+  "master_seed": 0,
+  "fullbody_prob": 0.25,
+  "mesh_sampling": "clip",
+  "tau": 0.02,
+  "color_prompt": false,
+  "color_sampling": null,
+  "color_tau": null,
+  "pink_noise": true,
+  "pink_alpha": 0.2,
+  "llm_emitters": true,
+  "llm_generations": 15,
+  "llm_k_neighbors": 3,
+  "llm_novelty": "clothing",
+  "llm_axes": "clothing",
+  "llm_model": "llama3.1:8b",
+  "llm_evolution_history": [
+    {
+      "type": "mutation",
+      "parent": 3,
+      "axis": "pattern",
+      "accepted": true,
+      "child_novelty": 0.12224996089935303,
+      "replaced_novelty": 0.03070487640798092
+    },
+    {
+      "type": "mutation",
+      "parent": 3,
+      "axis": "formality",
+      "accepted": true,
+      "child_novelty": 0.0955815315246582,
+      "replaced_novelty": 0.055310409516096115
+    },
+    {
+      "type": "mutation",
+      "parent": 4,
+      "axis": "color",
+      "accepted": true,
+      "child_novelty": 0.11590576171875,
+      "replaced_novelty": 0.08452737331390381
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        0,
+        4
+      ],
+      "accepted": false,
+      "child_novelty": 0.08668869733810425,
+      "replaced_novelty": 0.08668869733810425
+    },
+    {
+      "type": "mutation",
+      "parent": 0,
+      "axis": "condition",
+      "accepted": true,
+      "child_novelty": 0.10632210969924927,
+      "replaced_novelty": 0.08059096336364746
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        4,
+        2
+      ],
+      "accepted": false,
+      "child_novelty": 0.08576474338769913,
+      "replaced_novelty": 0.11287613958120346
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        0,
+        2
+      ],
+      "accepted": false,
+      "child_novelty": 0.09408066421747208,
+      "replaced_novelty": 0.09408066421747208
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        3,
+        0
+      ],
+      "accepted": false,
+      "child_novelty": 0.0955045223236084,
+      "replaced_novelty": 0.12206337600946426
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        0,
+        2
+      ],
+      "accepted": true,
+      "child_novelty": 0.1859147995710373,
+      "replaced_novelty": 0.1373976618051529
+    },
+    {
+      "type": "mutation",
+      "parent": 0,
+      "axis": "color",
+      "accepted": false,
+      "child_novelty": 0.13472796976566315,
+      "replaced_novelty": 0.14117050170898438
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        4,
+        0
+      ],
+      "accepted": false,
+      "child_novelty": 0.0955045223236084,
+      "replaced_novelty": 0.12924087047576904
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        3,
+        2
+      ],
+      "accepted": false,
+      "child_novelty": 0.09922945499420166,
+      "replaced_novelty": 0.09922945499420166
+    },
+    {
+      "type": "mutation",
+      "parent": 0,
+      "axis": "accessories",
+      "accepted": true,
+      "child_novelty": 0.20545373857021332,
+      "replaced_novelty": 0.1618736982345581
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        2,
+        3
+      ],
+      "accepted": false,
+      "child_novelty": 0.14909614622592926,
+      "replaced_novelty": 0.1624813824892044
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        1,
+        4
+      ],
+      "accepted": true,
+      "child_novelty": 0.15898944437503815,
+      "replaced_novelty": 0.15472842752933502
+    }
+  ],
+  "clip_axes": false,
+  "axis_tau": null,
+  "pair_coherent_sampling": true,
+  "pair_tau": 0.05,
+  "stage1_prompt_template": "turn around, {prompt}, {full_desc}, {category_phrase}",
+  "stage2_prompt_templates": {
+    "inpaint": "UV map, {prompt}, {full_desc}, {category_phrase}",
+    "img2img": "UV map, {prompt}, {full_desc}, {category_phrase}, high quality, best quality"
+  },
+  "members": [
+    {
+      "member": "member_00",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/lace_up_blouse.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/elvs_gored_midiskirt1.obj"
+      ],
+      "sd_seed": 1970385345,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "brown",
+          "formality": "practical work",
+          "material": "wool",
+          "pattern": "patched",
+          "condition": "mended",
+          "accessories": "none"
+        },
+        "full_desc": "mended practical work brown wool patched clothing",
+        "clothing_desc": "mended practical work brown wool patched clothing",
+        "theme_relevance": 0.6677611470222473
+      },
+      "category_phrase": "wearing a blouse and skirt",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_20260715_stage1eval_local/9_clip_pink_llm6/medieval_villagers/member_00/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_20260715_stage1eval_local/9_clip_pink_llm6/medieval_villagers/member_00/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_01",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/sweater_fisherman.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/jeansskirt.obj"
+      ],
+      "sd_seed": 1517701004,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "brown",
+          "formality": "practical work",
+          "material": "wool",
+          "pattern": "striped",
+          "condition": "worn",
+          "accessories": "none"
+        },
+        "full_desc": "worn practical work brown wool striped clothing",
+        "clothing_desc": "worn practical work brown wool striped clothing",
+        "theme_relevance": 0.5446417331695557
+      },
+      "category_phrase": "wearing a blouse and mini skirt",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_20260715_stage1eval_local/9_clip_pink_llm6/medieval_villagers/member_01/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_20260715_stage1eval_local/9_clip_pink_llm6/medieval_villagers/member_01/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_02",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/short_tail_camo_tee.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/pleated_skirtelv1.obj"
+      ],
+      "sd_seed": 236846352,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "brown",
+          "formality": "practical work",
+          "material": "wool",
+          "pattern": "striped",
+          "condition": "worn",
+          "accessories": "an apron"
+        },
+        "full_desc": "worn practical work brown wool striped clothing and an apron",
+        "clothing_desc": "worn practical work brown wool striped clothing and an apron",
+        "theme_relevance": 0.5696617364883423
+      },
+      "category_phrase": "wearing a crop top and skirt",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_20260715_stage1eval_local/9_clip_pink_llm6/medieval_villagers/member_02/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_20260715_stage1eval_local/9_clip_pink_llm6/medieval_villagers/member_02/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_03",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/asymmetric_tunic_and_sash.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/tier_skirt.obj"
+      ],
+      "sd_seed": 276542714,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "brown",
+          "formality": "practical work",
+          "material": "wool",
+          "pattern": "patched",
+          "condition": "mended",
+          "accessories": "leather belt with a small iron brooch"
+        },
+        "full_desc": "mended practical work brown wool patched clothing and leather belt with a small iron brooch",
+        "clothing_desc": "mended practical work brown wool patched clothing and leather belt with a small iron brooch",
+        "theme_relevance": 0.5794181823730469
+      },
+      "category_phrase": "wearing a tank top and skirt",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_20260715_stage1eval_local/9_clip_pink_llm6/medieval_villagers/member_03/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_20260715_stage1eval_local/9_clip_pink_llm6/medieval_villagers/member_03/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_04",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/elvs_goddess_dress6.obj"
+      ],
+      "sd_seed": 1123396169,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "bleached linen",
+          "formality": "practical work",
+          "material": "wool",
+          "pattern": "patched",
+          "condition": "worn",
+          "accessories": "none"
+        },
+        "full_desc": "worn practical work bleached linen wool patched clothing",
+        "clothing_desc": "worn practical work bleached linen wool patched clothing",
+        "theme_relevance": 0.6922632455825806
+      },
+      "category_phrase": "wearing a robe",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_20260715_stage1eval_local/9_clip_pink_llm6/medieval_villagers/member_04/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_20260715_stage1eval_local/9_clip_pink_llm6/medieval_villagers/member_04/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    }
+  ]
+}

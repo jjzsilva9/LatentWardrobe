@@ -1,0 +1,216 @@
+{
+  "crowd_prompt": "business formalwear",
+  "fixed_members_from": null,
+  "master_seed": 0,
+  "fullbody_prob": 0.25,
+  "mesh_sampling": "clip",
+  "tau": 0.02,
+  "color_prompt": false,
+  "color_sampling": null,
+  "color_tau": null,
+  "pink_noise": true,
+  "pink_alpha": 0.2,
+  "llm_emitters": false,
+  "llm_generations": null,
+  "llm_k_neighbors": null,
+  "llm_novelty": null,
+  "llm_axes": null,
+  "llm_model": null,
+  "llm_evolution_history": null,
+  "clip_axes": true,
+  "axis_tau": 0.05,
+  "pair_coherent_sampling": true,
+  "pair_tau": 0.05,
+  "stage1_prompt_template": "turn around, {prompt}, {full_desc}, {category_phrase}",
+  "stage2_prompt_templates": {
+    "inpaint": "UV map, {prompt}, {full_desc}, {category_phrase}",
+    "img2img": "UV map, {prompt}, {full_desc}, {category_phrase}, high quality, best quality"
+  },
+  "members": [
+    {
+      "member": "member_00",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/tank_top_01.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/male-classic-jeans.obj"
+      ],
+      "sd_seed": 25359719,
+      "color": null,
+      "clip_axes": {
+        "winner": {
+          "color": "blue",
+          "formality": "formal",
+          "material": "silk",
+          "pattern": "patterned",
+          "condition": "pristine",
+          "accessories": "none"
+        },
+        "full_desc": "pristine formal blue silk patterned clothing",
+        "clothing_desc": "pristine formal blue silk patterned clothing"
+      },
+      "category_phrase": "wearing a tank top and trousers",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_20260715_stage1eval_local/5_clip_pink_axes/business_formalwear/member_00/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_20260715_stage1eval_local/5_clip_pink_axes/business_formalwear/member_00/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_01",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/bodice_style_top.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/jeansskirt.obj"
+      ],
+      "sd_seed": 382691788,
+      "color": null,
+      "clip_axes": {
+        "winner": {
+          "color": "blue",
+          "formality": "formal",
+          "material": "canvas",
+          "pattern": "plain",
+          "condition": "pristine",
+          "accessories": "a belt"
+        },
+        "full_desc": "pristine formal blue canvas plain clothing and a belt",
+        "clothing_desc": "pristine formal blue canvas plain clothing and a belt"
+      },
+      "category_phrase": "wearing a tank top and mini skirt",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_20260715_stage1eval_local/5_clip_pink_axes/business_formalwear/member_01/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_20260715_stage1eval_local/5_clip_pink_axes/business_formalwear/member_01/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_02",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/elvs_discotop2.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/namfashionskirt.obj"
+      ],
+      "sd_seed": 369828106,
+      "color": null,
+      "clip_axes": {
+        "winner": {
+          "color": "silver",
+          "formality": "formal",
+          "material": "linen",
+          "pattern": "embroidered",
+          "condition": "pristine",
+          "accessories": "none"
+        },
+        "full_desc": "pristine formal silver linen embroidered clothing",
+        "clothing_desc": "pristine formal silver linen embroidered clothing"
+      },
+      "category_phrase": "wearing a blouse and skirt",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_20260715_stage1eval_local/5_clip_pink_axes/business_formalwear/member_02/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_20260715_stage1eval_local/5_clip_pink_axes/business_formalwear/member_02/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_03",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/knitted_sweater_01.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/retro_girlyshort1.obj"
+      ],
+      "sd_seed": 1911522533,
+      "color": null,
+      "clip_axes": {
+        "winner": {
+          "color": "purple",
+          "formality": "casual",
+          "material": "leather",
+          "pattern": "patterned",
+          "condition": "worn",
+          "accessories": "none"
+        },
+        "full_desc": "worn casual purple leather patterned clothing",
+        "clothing_desc": "worn casual purple leather patterned clothing"
+      },
+      "category_phrase": "wearing a blouse and shorts",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_20260715_stage1eval_local/5_clip_pink_axes/business_formalwear/member_03/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_20260715_stage1eval_local/5_clip_pink_axes/business_formalwear/member_03/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_04",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/sweater_fisherman.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/wool_pants.obj"
+      ],
+      "sd_seed": 1033591450,
+      "color": null,
+      "clip_axes": {
+        "winner": {
+          "color": "teal",
+          "formality": "formal",
+          "material": "linen",
+          "pattern": "plain",
+          "condition": "pristine",
+          "accessories": "a tool-belt"
+        },
+        "full_desc": "pristine formal teal linen plain clothing and a tool-belt",
+        "clothing_desc": "pristine formal teal linen plain clothing and a tool-belt"
+      },
+      "category_phrase": "wearing a blouse and trousers",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_20260715_stage1eval_local/5_clip_pink_axes/business_formalwear/member_04/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_20260715_stage1eval_local/5_clip_pink_axes/business_formalwear/member_04/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    }
+  ]
+}

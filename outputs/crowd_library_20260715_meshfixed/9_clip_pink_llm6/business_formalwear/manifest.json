@@ -1,0 +1,357 @@
+{
+  "crowd_prompt": "business formalwear",
+  "fixed_members_from": "/mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_stage1eval/2_clip_white_plain",
+  "master_seed": 0,
+  "fullbody_prob": 0.25,
+  "mesh_sampling": "clip",
+  "tau": 0.02,
+  "color_prompt": false,
+  "color_sampling": null,
+  "color_tau": null,
+  "pink_noise": true,
+  "pink_alpha": 0.2,
+  "llm_emitters": true,
+  "llm_generations": 15,
+  "llm_k_neighbors": 3,
+  "llm_novelty": "clothing",
+  "llm_axes": "clothing",
+  "llm_model": "llama3.1:8b",
+  "llm_evolution_history": [
+    {
+      "type": "mutation",
+      "parent": 4,
+      "axis": "formality",
+      "accepted": true,
+      "child_novelty": 0.12582747638225555,
+      "replaced_novelty": 0.0327732153236866
+    },
+    {
+      "type": "mutation",
+      "parent": 3,
+      "axis": "color",
+      "accepted": true,
+      "child_novelty": 0.23255902528762817,
+      "replaced_novelty": 0.07205808162689209
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        2,
+        3
+      ],
+      "accepted": true,
+      "child_novelty": 0.07205816358327866,
+      "replaced_novelty": 0.0720580592751503
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        4,
+        0
+      ],
+      "accepted": true,
+      "child_novelty": 0.06839466094970703,
+      "replaced_novelty": 0.06120818853378296
+    },
+    {
+      "type": "mutation",
+      "parent": 4,
+      "axis": "condition",
+      "accepted": true,
+      "child_novelty": 0.09960613399744034,
+      "replaced_novelty": 0.07012323290109634
+    },
+    {
+      "type": "mutation",
+      "parent": 4,
+      "axis": "formality",
+      "accepted": true,
+      "child_novelty": 0.11457455158233643,
+      "replaced_novelty": 0.10134502500295639
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        4,
+        1
+      ],
+      "accepted": false,
+      "child_novelty": 0.09559464454650879,
+      "replaced_novelty": 0.09559466689825058
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        1,
+        2
+      ],
+      "accepted": false,
+      "child_novelty": 0.07129254192113876,
+      "replaced_novelty": 0.07129254192113876
+    },
+    {
+      "type": "mutation",
+      "parent": 2,
+      "axis": "accessories",
+      "accepted": true,
+      "child_novelty": 0.24583031237125397,
+      "replaced_novelty": 0.13524319231510162
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        3,
+        2
+      ],
+      "accepted": false,
+      "child_novelty": 0.13786886632442474,
+      "replaced_novelty": 0.13786886632442474
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        2,
+        3
+      ],
+      "accepted": false,
+      "child_novelty": 0.1518883854150772,
+      "replaced_novelty": 0.1518883854150772
+    },
+    {
+      "type": "mutation",
+      "parent": 1,
+      "axis": "material",
+      "accepted": true,
+      "child_novelty": 0.18842653930187225,
+      "replaced_novelty": 0.17113055288791656
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        2,
+        4
+      ],
+      "accepted": false,
+      "child_novelty": 0.13815252482891083,
+      "replaced_novelty": 0.15271836519241333
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        2,
+        3
+      ],
+      "accepted": false,
+      "child_novelty": 0.13786886632442474,
+      "replaced_novelty": 0.13786886632442474
+    },
+    {
+      "type": "mutation",
+      "parent": 3,
+      "axis": "pattern",
+      "accepted": true,
+      "child_novelty": 0.2458542436361313,
+      "replaced_novelty": 0.183460995554924
+    }
+  ],
+  "clip_axes": false,
+  "axis_tau": null,
+  "pair_coherent_sampling": true,
+  "pair_tau": 0.05,
+  "stage1_prompt_template": "turn around, {prompt}, {full_desc}, {category_phrase}",
+  "stage2_prompt_templates": {
+    "inpaint": "UV map, {prompt}, {full_desc}, {category_phrase}",
+    "img2img": "UV map, {prompt}, {full_desc}, {category_phrase}, high quality, best quality"
+  },
+  "members": [
+    {
+      "member": "member_00",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/elvs_butterflydiscotop1.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/shortjeans.obj"
+      ],
+      "sd_seed": 1100484350,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "navy",
+          "formality": "casual",
+          "material": "wool",
+          "pattern": "striped",
+          "condition": "frayed",
+          "accessories": "none"
+        },
+        "full_desc": "frayed casual navy wool striped clothing",
+        "clothing_desc": "frayed casual navy wool striped clothing",
+        "theme_relevance": 0.6234732270240784
+      },
+      "category_phrase": "wearing a blouse and shorts",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_20260715_meshfixed_local/9_clip_pink_llm6/business_formalwear/member_00/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_20260715_meshfixed_local/9_clip_pink_llm6/business_formalwear/member_00/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_01",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/mens_boho_top1elv.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/pleated_miniskirt.obj"
+      ],
+      "sd_seed": 1473509389,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "navy",
+          "formality": "formal",
+          "material": "silk",
+          "pattern": "plain",
+          "condition": "pristine",
+          "accessories": "a tie"
+        },
+        "full_desc": "pristine formal navy silk plain clothing and a tie",
+        "clothing_desc": "pristine formal navy silk plain clothing and a tie",
+        "theme_relevance": 0.7466522455215454
+      },
+      "category_phrase": "wearing a hoodie and skirt",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_20260715_meshfixed_local/9_clip_pink_llm6/business_formalwear/member_01/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_20260715_meshfixed_local/9_clip_pink_llm6/business_formalwear/member_01/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_02",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/fem_suit_double_breasted.obj"
+      ],
+      "sd_seed": 1978060488,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "burgundy",
+          "formality": "formal",
+          "material": "wool",
+          "pattern": "striped",
+          "condition": "pristine",
+          "accessories": "a tie"
+        },
+        "full_desc": "pristine formal burgundy wool striped clothing and a tie",
+        "clothing_desc": "pristine formal burgundy wool striped clothing and a tie",
+        "theme_relevance": 0.55049067735672
+      },
+      "category_phrase": "wearing a jumpsuit",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_20260715_meshfixed_local/9_clip_pink_llm6/business_formalwear/member_02/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_20260715_meshfixed_local/9_clip_pink_llm6/business_formalwear/member_02/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_03",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/camisole_top.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/mens_trouser_short_nc_elvcrf.obj"
+      ],
+      "sd_seed": 885083903,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "burgundy",
+          "formality": "formal",
+          "material": "wool",
+          "pattern": "plaid",
+          "condition": "pristine",
+          "accessories": "a pocket watch"
+        },
+        "full_desc": "pristine formal burgundy wool plaid clothing and a pocket watch",
+        "clothing_desc": "pristine formal burgundy wool plaid clothing and a pocket watch",
+        "theme_relevance": 0.5329066514968872
+      },
+      "category_phrase": "wearing a tank top and shorts",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_20260715_meshfixed_local/9_clip_pink_llm6/business_formalwear/member_03/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_20260715_meshfixed_local/9_clip_pink_llm6/business_formalwear/member_03/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_04",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/turtleneck_halter.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/tightjeans.obj"
+      ],
+      "sd_seed": 1643794471,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "navy",
+          "formality": "black-tie",
+          "material": "wool",
+          "pattern": "striped",
+          "condition": "pristine",
+          "accessories": "none"
+        },
+        "full_desc": "pristine black-tie navy wool striped clothing",
+        "clothing_desc": "pristine black-tie navy wool striped clothing",
+        "theme_relevance": 0.6270990967750549
+      },
+      "category_phrase": "wearing a tank top and trousers",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_20260715_meshfixed_local/9_clip_pink_llm6/business_formalwear/member_04/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_20260715_meshfixed_local/9_clip_pink_llm6/business_formalwear/member_04/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    }
+  ]
+}

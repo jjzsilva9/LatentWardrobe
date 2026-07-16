@@ -1,0 +1,359 @@
+{
+  "crowd_prompt": "superheroes",
+  "fixed_members_from": null,
+  "master_seed": 0,
+  "fullbody_prob": 0.25,
+  "mesh_sampling": "clip",
+  "tau": 0.02,
+  "color_prompt": false,
+  "color_sampling": null,
+  "color_tau": null,
+  "pink_noise": true,
+  "pink_alpha": 0.2,
+  "llm_emitters": true,
+  "llm_generations": 15,
+  "llm_k_neighbors": 3,
+  "llm_novelty": "clothing",
+  "llm_axes": "clothing",
+  "llm_model": "llama3.1:8b",
+  "llm_evolution_history": [
+    {
+      "type": "mutation",
+      "parent": 2,
+      "axis": "formality",
+      "accepted": true,
+      "child_novelty": 0.14026783406734467,
+      "replaced_novelty": 0.12546062469482422
+    },
+    {
+      "type": "mutation",
+      "parent": 3,
+      "axis": "condition",
+      "accepted": true,
+      "child_novelty": 0.16329385340213776,
+      "replaced_novelty": 0.12442737817764282
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        1,
+        2
+      ],
+      "accepted": false,
+      "child_novelty": 0.1289604753255844,
+      "replaced_novelty": 0.1289604902267456
+    },
+    {
+      "type": "mutation",
+      "parent": 3,
+      "axis": "condition",
+      "accepted": true,
+      "child_novelty": 0.17647422850131989,
+      "replaced_novelty": 0.14672990143299103
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        1,
+        3
+      ],
+      "accepted": false,
+      "child_novelty": 0.11357235908508301,
+      "replaced_novelty": 0.14645437896251678
+    },
+    {
+      "type": "mutation",
+      "parent": 0,
+      "axis": "material",
+      "accepted": true,
+      "child_novelty": 0.2679244577884674,
+      "replaced_novelty": 0.17807543277740479
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        0,
+        2
+      ],
+      "accepted": true,
+      "child_novelty": 0.1322665959596634,
+      "replaced_novelty": 0.132266566157341
+    },
+    {
+      "type": "mutation",
+      "parent": 3,
+      "axis": "accessories",
+      "accepted": true,
+      "child_novelty": 0.2181059718132019,
+      "replaced_novelty": 0.2118556946516037
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        4,
+        3
+      ],
+      "accepted": true,
+      "child_novelty": 0.2530992329120636,
+      "replaced_novelty": 0.2111903429031372
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        4,
+        2
+      ],
+      "accepted": false,
+      "child_novelty": 0.1856319159269333,
+      "replaced_novelty": 0.20863686501979828
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        3,
+        2
+      ],
+      "accepted": false,
+      "child_novelty": 0.1869039535522461,
+      "replaced_novelty": 0.1958884596824646
+    },
+    {
+      "type": "mutation",
+      "parent": 0,
+      "axis": "color",
+      "accepted": true,
+      "child_novelty": 0.1702060103416443,
+      "replaced_novelty": 0.1697191596031189
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        2,
+        3
+      ],
+      "accepted": true,
+      "child_novelty": 0.21525098383426666,
+      "replaced_novelty": 0.18081755936145782
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        2,
+        4
+      ],
+      "accepted": true,
+      "child_novelty": 0.23945404589176178,
+      "replaced_novelty": 0.21014302968978882
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        0,
+        1
+      ],
+      "accepted": false,
+      "child_novelty": 0.17000238597393036,
+      "replaced_novelty": 0.19499312341213226
+    }
+  ],
+  "clip_axes": false,
+  "axis_tau": null,
+  "pair_coherent_sampling": true,
+  "pair_tau": 0.05,
+  "stage1_prompt_template": "turn around, {prompt}, {full_desc}, {category_phrase}",
+  "stage2_prompt_templates": {
+    "inpaint": "UV map, {prompt}, {full_desc}, {category_phrase}",
+    "img2img": "UV map, {prompt}, {full_desc}, {category_phrase}, high quality, best quality"
+  },
+  "members": [
+    {
+      "member": "member_00",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/offshoulder_top.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/male-classic-jeans.obj"
+      ],
+      "sd_seed": 1107598011,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "gold",
+          "formality": "practical work",
+          "material": "leather",
+          "pattern": "patched",
+          "condition": "worn",
+          "accessories": "a tool-belt"
+        },
+        "full_desc": "worn practical work gold leather patched clothing and a tool-belt",
+        "clothing_desc": "worn practical work gold leather patched clothing and a tool-belt",
+        "theme_relevance": 0.6627426147460938
+      },
+      "category_phrase": "wearing a tunic and trousers",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_20260715_stage1eval_local/9_clip_pink_llm6/superheroes/member_00/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_20260715_stage1eval_local/9_clip_pink_llm6/superheroes/member_00/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_01",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/lace_up_blouse.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/pleated_miniskirt.obj"
+      ],
+      "sd_seed": 324164347,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "blue",
+          "formality": "casual",
+          "material": "leather",
+          "pattern": "plain",
+          "condition": "worn",
+          "accessories": "a belt"
+        },
+        "full_desc": "worn casual blue leather plain clothing and a belt",
+        "clothing_desc": "worn casual blue leather plain clothing and a belt",
+        "theme_relevance": 0.6206111907958984
+      },
+      "category_phrase": "wearing a blouse and skirt",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_20260715_stage1eval_local/9_clip_pink_llm6/superheroes/member_01/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_20260715_stage1eval_local/9_clip_pink_llm6/superheroes/member_01/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_02",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/mens_tanks_elv1f.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/elvs_disco_pant1.obj"
+      ],
+      "sd_seed": 605698335,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "red",
+          "formality": "practical work",
+          "material": "chainmail",
+          "pattern": "striped",
+          "condition": "customized and armored",
+          "accessories": "a tool-belt"
+        },
+        "full_desc": "customized and armored practical work red chainmail striped clothing and a tool-belt",
+        "clothing_desc": "customized and armored practical work red chainmail striped clothing and a tool-belt",
+        "theme_relevance": 0.4873993396759033
+      },
+      "category_phrase": "wearing a tank top and leggings",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_20260715_stage1eval_local/9_clip_pink_llm6/superheroes/member_02/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_20260715_stage1eval_local/9_clip_pink_llm6/superheroes/member_02/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_03",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/elvs_race_suit_male1.obj"
+      ],
+      "sd_seed": 1510369980,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "red",
+          "formality": "practical work",
+          "material": "leather",
+          "pattern": "striped",
+          "condition": "customized and armored",
+          "accessories": "a golden circlet with a glowing gemstone"
+        },
+        "full_desc": "customized and armored practical work red leather striped clothing and a golden circlet with a glowing gemstone",
+        "clothing_desc": "customized and armored practical work red leather striped clothing and a golden circlet with a glowing gemstone",
+        "theme_relevance": 0.6384890675544739
+      },
+      "category_phrase": "wearing a jumpsuit",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_20260715_stage1eval_local/9_clip_pink_llm6/superheroes/member_03/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_20260715_stage1eval_local/9_clip_pink_llm6/superheroes/member_03/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_04",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/highneckcroptop.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/mens_trouser_short_nc_elvcrf.obj"
+      ],
+      "sd_seed": 815265566,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "blue",
+          "formality": "practical work",
+          "material": "leather",
+          "pattern": "striped",
+          "condition": "customized and armored",
+          "accessories": "none"
+        },
+        "full_desc": "customized and armored practical work blue leather striped clothing",
+        "clothing_desc": "customized and armored practical work blue leather striped clothing",
+        "theme_relevance": 0.5564590692520142
+      },
+      "category_phrase": "wearing a tank top and shorts",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_20260715_stage1eval_local/9_clip_pink_llm6/superheroes/member_04/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_20260715_stage1eval_local/9_clip_pink_llm6/superheroes/member_04/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    }
+  ]
+}

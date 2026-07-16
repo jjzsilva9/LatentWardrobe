@@ -12,6 +12,16 @@
 outputs/**
 !outputs/factorial7_20260706/**
 !outputs/crowd_library_20260713/**
+# plots (incl. the README hero contact sheet) for the current batch -- small
+# PNGs, needed for GitHub rendering; the batch's bulk data stays ignored.
+!outputs/crowd_library_20260715_stage1eval/plots/**
+# presentation material (2026-07-16): medieval_villagers' complete pipeline
+# stills for every method -- depth conditioning, SD init view, inpaint
+# views/masks, per-view texture projections, UV albedo, eval turntable
+# frames (~7MB/member, 35 members). One theme keeps the push manageable;
+# widen the pattern if another theme's renders are needed. Turntable mp4s
+# and .obj bulk stay ignored.
+!outputs/crowd_library_20260715_stage1eval/*/medieval_villagers/**/*.png
 !outputs/**/
 !outputs/**/manifest.json
 !outputs/**/metrics.json

@@ -38,6 +38,22 @@ pip install open_clip_torch
 # Perceptual distances.
 pip install lpips dreamsim
 
+# HPSv2 quality metric (restored 2026-07-16 -- Harrington et al.'s
+# coherence/quality axes are CLIPScore + HPSv2). Two gotchas, both handled:
+# the 1.2.0 wheel forgets to bundle its vendored open_clip's BPE vocab file
+# (copy it from the real open_clip install), and the ~2GB HPS_v2.1 checkpoint
+# downloads from HF Hub on first hpsv2.score() call.
+pip install 'hpsv2==1.2.0'
+python - <<'PYEOF'
+import pathlib, shutil
+import open_clip, hpsv2
+src = pathlib.Path(open_clip.__file__).parent / "bpe_simple_vocab_16e6.txt.gz"
+dst = pathlib.Path(hpsv2.__file__).parent / "src" / "open_clip" / src.name
+if not dst.exists():
+    shutil.copy(src, dst)
+print("hpsv2 BPE vocab:", "ok" if dst.exists() else "STILL MISSING")
+PYEOF
+
 # Frame extraction / color histograms / low-res pixel L2.
 pip install opencv-python-headless pillow numpy scipy
 

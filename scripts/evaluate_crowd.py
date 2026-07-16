@@ -470,6 +470,24 @@ def main():
             e /= e.norm(dim=-1, keepdim=True)
             clip_view_embs[m] = e
     coherence = {m: float((clip_view_embs[m] @ text_emb.T).mean()) for m in members}
+
+    # --- quality: HPSv2 (v2.1) human-preference score, restored 2026-07-16.
+    # Harrington et al. report set-level diversity (Vendi/DPP) alongside
+    # CLIPScore coherence and HPSv2 quality; we follow that axis design (the
+    # 2026-07-06 "not worth the dependency" call is reversed -- see
+    # install_eval_env.sh for the packaging fix the dependency needs).
+    # Scored on the same uncropped eval frames as CLIPScore, averaged per
+    # member. Guarded: an env without hpsv2 or its checkpoint still writes
+    # metrics.json, with quality nulled.
+    try:
+        import hpsv2
+        hps = {}
+        for m in members:
+            scores = hpsv2.score([str(p) for p in views[m]], prompt, hps_version="v2.1")
+            hps[m] = float(np.mean([float(s) for s in scores]))
+    except Exception as e:
+        print(f"warning: HPSv2 scoring unavailable ({e}) -- quality unscored")
+        hps = None
     del clip_model, clip_view_embs
     torch.cuda.empty_cache()
 
@@ -566,6 +584,11 @@ def main():
             "clipscore_crowd_mean": float(np.mean(list(coherence.values()))),
             "clipscore_crowd_std": float(np.std(list(coherence.values()))),
         },
+        "quality": {
+            "hpsv2_per_member": hps,
+            "hpsv2_crowd_mean": float(np.mean(list(hps.values()))) if hps else None,
+            "hpsv2_crowd_std": float(np.std(list(hps.values()))) if hps else None,
+        },
     }
     out = args.out or (args.crowd_dir / "metrics.json")
     out.write_text(json.dumps(results, indent=2))
@@ -585,6 +608,9 @@ def main():
     print(f"Vendi score (DINOv2) {d['vendi_score_dinov2']:.2f} effective members")
     print(f"DPP score (DINOv2)   {d['dpp_score_dinov2']:.4g}")
     print(f"Theme coherence     crowd mean {c['clipscore_crowd_mean']:.4f}  std {c['clipscore_crowd_std']:.4f}")
+    q = results["quality"]
+    if q["hpsv2_crowd_mean"] is not None:
+        print(f"Quality (HPSv2)     crowd mean {q['hpsv2_crowd_mean']:.4f}  std {q['hpsv2_crowd_std']:.4f}")
     print(f"\nwritten: {out}")
 
 

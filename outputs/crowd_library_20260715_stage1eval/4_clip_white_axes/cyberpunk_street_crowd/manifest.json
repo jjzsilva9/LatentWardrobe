@@ -1,0 +1,216 @@
+{
+  "crowd_prompt": "cyberpunk street crowd",
+  "fixed_members_from": null,
+  "master_seed": 0,
+  "fullbody_prob": 0.25,
+  "mesh_sampling": "clip",
+  "tau": 0.02,
+  "color_prompt": false,
+  "color_sampling": null,
+  "color_tau": null,
+  "pink_noise": false,
+  "pink_alpha": null,
+  "llm_emitters": false,
+  "llm_generations": null,
+  "llm_k_neighbors": null,
+  "llm_novelty": null,
+  "llm_axes": null,
+  "llm_model": null,
+  "llm_evolution_history": null,
+  "clip_axes": true,
+  "axis_tau": 0.05,
+  "pair_coherent_sampling": true,
+  "pair_tau": 0.05,
+  "stage1_prompt_template": "turn around, {prompt}, {full_desc}, {category_phrase}",
+  "stage2_prompt_templates": {
+    "inpaint": "UV map, {prompt}, {full_desc}, {category_phrase}",
+    "img2img": "UV map, {prompt}, {full_desc}, {category_phrase}, high quality, best quality"
+  },
+  "members": [
+    {
+      "member": "member_00",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/knitted_sweater_02.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/elvs_gored_elephantpant1.obj"
+      ],
+      "sd_seed": 534501563,
+      "color": null,
+      "clip_axes": {
+        "winner": {
+          "color": "purple",
+          "formality": "formal",
+          "material": "wool",
+          "pattern": "plain",
+          "condition": "weathered",
+          "accessories": "a tool-belt"
+        },
+        "full_desc": "weathered formal purple wool plain clothing and a tool-belt",
+        "clothing_desc": "weathered formal purple wool plain clothing and a tool-belt"
+      },
+      "category_phrase": "wearing a blouse and trousers",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_20260715_stage1eval_local/4_clip_white_axes/cyberpunk_street_crowd/member_00/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_20260715_stage1eval_local/4_clip_white_axes/cyberpunk_street_crowd/member_00/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_01",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/deathnote.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/m_trousers_02.obj"
+      ],
+      "sd_seed": 854872952,
+      "color": null,
+      "clip_axes": {
+        "winner": {
+          "color": "brown",
+          "formality": "practical work",
+          "material": "fur",
+          "pattern": "patterned",
+          "condition": "weathered",
+          "accessories": "a belt"
+        },
+        "full_desc": "weathered practical work brown fur patterned clothing and a belt",
+        "clothing_desc": "weathered practical work brown fur patterned clothing and a belt"
+      },
+      "category_phrase": "wearing a t-shirt and trousers",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_20260715_stage1eval_local/4_clip_white_axes/cyberpunk_street_crowd/member_01/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_20260715_stage1eval_local/4_clip_white_axes/cyberpunk_street_crowd/member_01/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_02",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/mens_shirt_tie_tuck_elv1f.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/wool_pants.obj"
+      ],
+      "sd_seed": 1240438472,
+      "color": null,
+      "clip_axes": {
+        "winner": {
+          "color": "purple",
+          "formality": "casual",
+          "material": "silk",
+          "pattern": "embroidered",
+          "condition": "worn",
+          "accessories": "a tool-belt"
+        },
+        "full_desc": "worn casual purple silk embroidered clothing and a tool-belt",
+        "clothing_desc": "worn casual purple silk embroidered clothing and a tool-belt"
+      },
+      "category_phrase": "wearing a jacket and trousers",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_20260715_stage1eval_local/4_clip_white_axes/cyberpunk_street_crowd/member_02/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_20260715_stage1eval_local/4_clip_white_axes/cyberpunk_street_crowd/member_02/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_03",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/mens_boho_top1elv.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/mens_elv_jeans2slf.obj"
+      ],
+      "sd_seed": 2053054924,
+      "color": null,
+      "clip_axes": {
+        "winner": {
+          "color": "teal",
+          "formality": "formal",
+          "material": "cotton",
+          "pattern": "plain",
+          "condition": "dusty",
+          "accessories": "a tool-belt"
+        },
+        "full_desc": "dusty formal teal cotton plain clothing and a tool-belt",
+        "clothing_desc": "dusty formal teal cotton plain clothing and a tool-belt"
+      },
+      "category_phrase": "wearing a hoodie and trousers",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_20260715_stage1eval_local/4_clip_white_axes/cyberpunk_street_crowd/member_03/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_20260715_stage1eval_local/4_clip_white_axes/cyberpunk_street_crowd/member_03/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_04",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/offshoulder_top.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/mini_skirt_02.obj"
+      ],
+      "sd_seed": 219585805,
+      "color": null,
+      "clip_axes": {
+        "winner": {
+          "color": "red",
+          "formality": "formal",
+          "material": "leather",
+          "pattern": "embroidered",
+          "condition": "pristine",
+          "accessories": "none"
+        },
+        "full_desc": "pristine formal red leather embroidered clothing",
+        "clothing_desc": "pristine formal red leather embroidered clothing"
+      },
+      "category_phrase": "wearing a tunic and skirt",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_20260715_stage1eval_local/4_clip_white_axes/cyberpunk_street_crowd/member_04/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_20260715_stage1eval_local/4_clip_white_axes/cyberpunk_street_crowd/member_04/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    }
+  ]
+}
