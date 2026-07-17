@@ -12,6 +12,10 @@
 outputs/**
 !outputs/factorial7_20260706/**
 !outputs/crowd_library_20260713/**
+# crowd_library_20260715 (meshfixed + stage1eval) kept in full too
+# (2026-07-17, user-requested): the batch of record for the report.
+!outputs/crowd_library_20260715_meshfixed/**
+!outputs/crowd_library_20260715_stage1eval/**
 # plots (incl. the README hero contact sheet) for the current batch -- small
 # PNGs, needed for GitHub rendering; the batch's bulk data stays ignored.
 !outputs/crowd_library_20260715_stage1eval/plots/**
