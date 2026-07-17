@@ -177,8 +177,8 @@
       "member": "member_04",
       "outfit_type": "top_bottom",
       "garments": [
-        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/tube_top.obj",
-        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/mariaskirt.obj"
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/f_lusekofta.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/polkadotskirt.obj"
       ],
       "sd_seed": 693972385,
       "color": null,
@@ -194,20 +194,22 @@
         "full_desc": "worn practical work white cotton patched clothing and a belt",
         "clothing_desc": "worn practical work white cotton patched clothing and a belt"
       },
-      "category_phrase": "wearing a crop top and skirt",
+      "category_phrase": "wearing a blouse and skirt",
       "outfit": {
         "status": "ok",
         "path": "/root/crowd_library_20260715_meshfixed_local/4_clip_white_axes/medieval_villagers/member_04/outfit.obj"
       },
       "stage1": {
-        "status": "skipped (resume)",
+        "status": "ok",
+        "seconds": 80.2,
         "final_texture": "/root/crowd_library_20260715_meshfixed_local/4_clip_white_axes/medieval_villagers/member_04/stage1/res-0/albedo.png"
       },
       "stage2": {
         "status": "skipped (--skip-stage2)"
       },
       "stage1_render": {
-        "status": "skipped (resume)"
+        "status": "ok",
+        "seconds": 17.4
       }
     }
   ]

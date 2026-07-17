@@ -1,6 +1,6 @@
 {
   "crowd_prompt": "superheroes",
-  "fixed_members_from": null,
+  "fixed_members_from": "/root/crowd_library_20260715_stage1eval_local/2_clip_white_plain",
   "master_seed": 0,
   "fullbody_prob": 0.25,
   "mesh_sampling": "clip",
@@ -61,20 +61,22 @@
       ],
       "sd_seed": 431343856,
       "color": null,
-      "category_phrase": "wearing a crop top and mini skirt",
+      "category_phrase": "wearing a blouse and shorts",
       "outfit": {
         "status": "ok",
         "path": "/root/crowd_library_20260715_stage1eval_local/2_clip_white_plain/superheroes/member_01/outfit.obj"
       },
       "stage1": {
-        "status": "skipped (resume)",
+        "status": "ok",
+        "seconds": 106.8,
         "final_texture": "/root/crowd_library_20260715_stage1eval_local/2_clip_white_plain/superheroes/member_01/stage1/res-0/albedo.png"
       },
       "stage2": {
         "status": "skipped (--skip-stage2)"
       },
       "stage1_render": {
-        "status": "skipped (resume)"
+        "status": "ok",
+        "seconds": 19.1
       }
     },
     {

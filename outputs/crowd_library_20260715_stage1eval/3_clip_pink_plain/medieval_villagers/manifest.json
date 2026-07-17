@@ -1,6 +1,6 @@
 {
   "crowd_prompt": "medieval villagers",
-  "fixed_members_from": null,
+  "fixed_members_from": "/root/crowd_library_20260715_stage1eval_local/3_clip_pink_plain",
   "master_seed": 0,
   "fullbody_prob": 0.25,
   "mesh_sampling": "clip",
@@ -134,20 +134,22 @@
       ],
       "sd_seed": 693972385,
       "color": null,
-      "category_phrase": "wearing a crop top and skirt",
+      "category_phrase": "wearing a blouse and skirt",
       "outfit": {
         "status": "ok",
         "path": "/root/crowd_library_20260715_stage1eval_local/3_clip_pink_plain/medieval_villagers/member_04/outfit.obj"
       },
       "stage1": {
-        "status": "skipped (resume)",
+        "status": "ok",
+        "seconds": 80.8,
         "final_texture": "/root/crowd_library_20260715_stage1eval_local/3_clip_pink_plain/medieval_villagers/member_04/stage1/res-0/albedo.png"
       },
       "stage2": {
         "status": "skipped (--skip-stage2)"
       },
       "stage1_render": {
-        "status": "skipped (resume)"
+        "status": "ok",
+        "seconds": 17.1
       }
     }
   ]

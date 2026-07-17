@@ -16039,3 +16039,745 @@ plan: 1 prompt(s) x 5 members
 
 done. failures: 0
 [run_crowd_library] prompt='business formalwear' cell=3_clip_pink_plain python_exit=0
+mesh library: 40 tops, 39 bottoms, 59 fullbody
+plan: 1 prompt(s) x 5 members
+
+=== [business formalwear] member_00: tank_top_01+male-classic-jeans seed=25359719 ===
+
+=== [business formalwear] member_01: bodice_style_top+jeansskirt seed=382691788 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [business formalwear] member_02: elvs_discotop2+namfashionskirt seed=369828106 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [business formalwear] member_03: knitted_sweater_01+retro_girlyshort1 seed=1911522533 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [business formalwear] member_04: sweater_fisherman+wool_pants seed=1033591450 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+[sync] final sync /root/crowd_library_20260715_stage1eval_local/4_clip_white_axes/business_formalwear -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_stage1eval/4_clip_white_axes/business_formalwear rc=0
+
+done. failures: 0
+[run_crowd_library] prompt='business formalwear' cell=4_clip_white_axes python_exit=0
+mesh library: 40 tops, 39 bottoms, 59 fullbody
+plan: 1 prompt(s) x 5 members
+
+=== [business formalwear] member_00: tank_top_01+male-classic-jeans seed=25359719 ===
+
+=== [business formalwear] member_01: bodice_style_top+jeansskirt seed=382691788 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [business formalwear] member_02: elvs_discotop2+namfashionskirt seed=369828106 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [business formalwear] member_03: knitted_sweater_01+retro_girlyshort1 seed=1911522533 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [business formalwear] member_04: sweater_fisherman+wool_pants seed=1033591450 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+[sync] final sync /root/crowd_library_20260715_stage1eval_local/5_clip_pink_axes/business_formalwear -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_stage1eval/5_clip_pink_axes/business_formalwear rc=0
+
+done. failures: 0
+[run_crowd_library] prompt='business formalwear' cell=5_clip_pink_axes python_exit=0
+mesh library: 40 tops, 39 bottoms, 59 fullbody
+plan: 1 prompt(s) x 5 members
+[llm] reusing 5 previously-evolved members from /root/crowd_library_20260715_stage1eval_local/8_clip_white_llm6/business_formalwear/llm_members.json (evolution is not reproducible; never re-run it mid-crowd)
+
+=== [business formalwear] member_00: f_lusekofta+mens_trouser_f_elv_chr seed=387728636 ===
+
+=== [business formalwear] member_01: sleeveless+pleated_skirtelv1 seed=1748319914 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [business formalwear] member_02: ruffle_sleeve_peasantblouse+harem_pants seed=1897353692 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [business formalwear] member_03: elvs_goddess_dress6 seed=1760770586 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [business formalwear] member_04: ruffle_sleeve_peasantblouse+polkadotskirt seed=1128848459 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+[sync] final sync /root/crowd_library_20260715_stage1eval_local/8_clip_white_llm6/business_formalwear -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_stage1eval/8_clip_white_llm6/business_formalwear rc=0
+
+done. failures: 0
+[run_crowd_library] prompt='business formalwear' cell=8_clip_white_llm6 python_exit=0
+mesh library: 40 tops, 39 bottoms, 59 fullbody
+plan: 1 prompt(s) x 5 members
+[llm] reusing 5 previously-evolved members from /root/crowd_library_20260715_stage1eval_local/9_clip_pink_llm6/business_formalwear/llm_members.json (evolution is not reproducible; never re-run it mid-crowd)
+
+=== [business formalwear] member_00: f_lusekofta+mens_trouser_f_elv_chr seed=387728636 ===
+
+=== [business formalwear] member_01: sleeveless+pleated_skirtelv1 seed=1748319914 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [business formalwear] member_02: ruffle_sleeve_peasantblouse+harem_pants seed=1897353692 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [business formalwear] member_03: elvs_goddess_dress6 seed=1760770586 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [business formalwear] member_04: ruffle_sleeve_peasantblouse+polkadotskirt seed=1128848459 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+[sync] final sync /root/crowd_library_20260715_stage1eval_local/9_clip_pink_llm6/business_formalwear -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_stage1eval/9_clip_pink_llm6/business_formalwear rc=0
+
+done. failures: 0
+[run_crowd_library] prompt='business formalwear' cell=9_clip_pink_llm6 python_exit=0
+[run_crowd_library] === theme complete: business formalwear ===
+[run_crowd_library] === theme: superheroes ===
+mesh library: 40 tops, 39 bottoms, 59 fullbody
+plan: 1 prompt(s) x 5 members
+
+=== [superheroes] member_00: offshoulder_top+pleated_skirtelv1 seed=1075529462 ===
+
+=== [superheroes] member_01: jacket_bowtie_pants seed=1222683423 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [superheroes] member_02: tubetop+mariaskirt seed=431343856 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [superheroes] member_03: sleevelesscroptop+jeansskirt seed=434625630 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [superheroes] member_04: elvs_mini_halterdress seed=1330236227 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+[sync] final sync /root/crowd_library_20260715_stage1eval_local/1_random_white_plain/superheroes -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_stage1eval/1_random_white_plain/superheroes rc=0
+
+done. failures: 0
+[run_crowd_library] prompt='superheroes' cell=1_random_white_plain python_exit=0
+mesh library: 40 tops, 39 bottoms, 59 fullbody
+plan: 1 prompt(s) x 5 members
+
+=== [superheroes] member_00: tank_top_01+mariaskirt seed=1038103734 ===
+
+=== [superheroes] member_01: sweater_fisherman+shortjeans seed=431343856 ===
+Depth-based 3D Texturing
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  14%|█▍        | 1/7 [00:01<00:07,  1.30s/it]`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+Loading pipeline components...:  43%|████▎     | 3/7 [00:06<00:08,  2.18s/it]Loading pipeline components...:  57%|█████▋    | 4/7 [00:17<00:15,  5.16s/it]Loading pipeline components...:  86%|████████▌ | 6/7 [00:17<00:02,  2.62s/it]Loading pipeline components...: 100%|██████████| 7/7 [00:18<00:00,  2.37s/it]Loading pipeline components...: 100%|██████████| 7/7 [00:18<00:00,  2.69s/it]
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+Loading pipeline components...:  43%|████▎     | 3/7 [00:00<00:00,  8.51it/s]Loading pipeline components...:  57%|█████▋    | 4/7 [00:01<00:00,  3.33it/s]Loading pipeline components...: 100%|██████████| 7/7 [00:01<00:00,  5.91it/s]Loading pipeline components...: 100%|██████████| 7/7 [00:01<00:00,  5.56it/s]
+Project init view [0, 23]...
+Generating init view...
+  0%|          | 0/20 [00:00<?, ?it/s]  5%|▌         | 1/20 [00:03<01:14,  3.94s/it] 10%|█         | 2/20 [00:04<00:32,  1.82s/it] 15%|█▌        | 3/20 [00:04<00:19,  1.15s/it] 20%|██        | 4/20 [00:04<00:13,  1.21it/s] 25%|██▌       | 5/20 [00:05<00:09,  1.53it/s] 30%|███       | 6/20 [00:05<00:07,  1.83it/s] 35%|███▌      | 7/20 [00:05<00:06,  2.08it/s] 40%|████      | 8/20 [00:06<00:05,  2.29it/s] 45%|████▌     | 9/20 [00:06<00:04,  2.45it/s] 50%|█████     | 10/20 [00:07<00:03,  2.58it/s] 55%|█████▌    | 11/20 [00:07<00:03,  2.67it/s] 60%|██████    | 12/20 [00:07<00:02,  2.74it/s] 65%|██████▌   | 13/20 [00:08<00:02,  2.78it/s] 70%|███████   | 14/20 [00:08<00:02,  2.82it/s] 75%|███████▌  | 15/20 [00:08<00:01,  2.85it/s] 80%|████████  | 16/20 [00:09<00:01,  2.86it/s] 85%|████████▌ | 17/20 [00:09<00:01,  2.88it/s] 90%|█████████ | 18/20 [00:09<00:00,  2.88it/s] 95%|█████████▌| 19/20 [00:10<00:00,  2.89it/s]100%|██████████| 20/20 [00:10<00:00,  2.90it/s]100%|██████████| 20/20 [00:10<00:00,  1.91it/s]
+init view generation time: 15.030739068984985
+0it [00:00, ?it/s]26it [00:00, 5512.68it/s]
+2026-07-17 15:45:14.977 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /root/crowd_library_20260715_stage1eval_local/2_clip_white_plain/superheroes/member_01/stage1/res-0/mesh.obj with: vertices:(3428, 3) uv:(3955, 2) faces:(6276, 3)
+init DR time: 0.6491575241088867
+View inpainting ...
+Project inpaint view [(5, 6)]...
+0it [00:00, ?it/s]1it [00:01,  1.51s/it]1it [00:01,  1.51s/it]
+0it [00:00, ?it/s]
+  0%|          | 0/20 [00:00<?, ?it/s][A
+  5%|▌         | 1/20 [00:01<00:24,  1.27s/it][A
+ 10%|█         | 2/20 [00:01<00:14,  1.28it/s][A
+ 15%|█▌        | 3/20 [00:02<00:10,  1.59it/s][A
+ 20%|██        | 4/20 [00:02<00:08,  1.80it/s][A
+ 25%|██▌       | 5/20 [00:03<00:07,  1.94it/s][A
+ 30%|███       | 6/20 [00:03<00:06,  2.04it/s][A
+ 35%|███▌      | 7/20 [00:03<00:06,  2.10it/s][A
+ 40%|████      | 8/20 [00:04<00:05,  2.15it/s][A
+ 45%|████▌     | 9/20 [00:04<00:05,  2.18it/s][A
+ 50%|█████     | 10/20 [00:05<00:04,  2.20it/s][A
+ 55%|█████▌    | 11/20 [00:05<00:04,  2.22it/s][A
+ 60%|██████    | 12/20 [00:06<00:03,  2.23it/s][A
+ 65%|██████▌   | 13/20 [00:06<00:03,  2.23it/s][A
+ 70%|███████   | 14/20 [00:07<00:02,  2.24it/s][A
+ 75%|███████▌  | 15/20 [00:07<00:02,  2.24it/s][A
+ 80%|████████  | 16/20 [00:07<00:01,  2.25it/s][A
+ 85%|████████▌ | 17/20 [00:08<00:01,  2.25it/s][A
+ 90%|█████████ | 18/20 [00:08<00:00,  2.24it/s][A
+ 95%|█████████▌| 19/20 [00:09<00:00,  2.25it/s][A
+100%|██████████| 20/20 [00:09<00:00,  2.24it/s][A100%|██████████| 20/20 [00:09<00:00,  2.06it/s]
+1it [00:12, 12.54s/it]1it [00:12, 12.54s/it]
+inpaint view generation time: 14.055244207382202
+0it [00:00, ?it/s]26it [00:00, 4512.43it/s]
+2026-07-17 15:45:29.734 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /root/crowd_library_20260715_stage1eval_local/2_clip_white_plain/superheroes/member_01/stage1/res-0/mesh.obj with: vertices:(3428, 3) uv:(3955, 2) faces:(6276, 3)
+inpaint DR time: 0.6986112594604492
+View inpainting ...
+Project inpaint view [(24, 25)]...
+0it [00:00, ?it/s]1it [00:01,  1.35s/it]1it [00:01,  1.35s/it]
+0it [00:00, ?it/s]
+  0%|          | 0/20 [00:00<?, ?it/s][A
+  5%|▌         | 1/20 [00:01<00:24,  1.29s/it][A
+ 10%|█         | 2/20 [00:01<00:14,  1.26it/s][A
+ 15%|█▌        | 3/20 [00:02<00:10,  1.57it/s][A
+ 20%|██        | 4/20 [00:02<00:08,  1.78it/s][A
+ 25%|██▌       | 5/20 [00:03<00:07,  1.93it/s][A
+ 30%|███       | 6/20 [00:03<00:06,  2.02it/s][A
+ 35%|███▌      | 7/20 [00:03<00:06,  2.09it/s][A
+ 40%|████      | 8/20 [00:04<00:05,  2.13it/s][A
+ 45%|████▌     | 9/20 [00:04<00:05,  2.16it/s][A
+ 50%|█████     | 10/20 [00:05<00:04,  2.18it/s][A
+ 55%|█████▌    | 11/20 [00:05<00:04,  2.20it/s][A
+ 60%|██████    | 12/20 [00:06<00:03,  2.21it/s][A
+ 65%|██████▌   | 13/20 [00:06<00:03,  2.22it/s][A
+ 70%|███████   | 14/20 [00:07<00:02,  2.22it/s][A
+ 75%|███████▌  | 15/20 [00:07<00:02,  2.23it/s][A
+ 80%|████████  | 16/20 [00:07<00:01,  2.23it/s][A
+ 85%|████████▌ | 17/20 [00:08<00:01,  2.23it/s][A
+ 90%|█████████ | 18/20 [00:08<00:00,  2.23it/s][A
+ 95%|█████████▌| 19/20 [00:09<00:00,  2.23it/s][A
+100%|██████████| 20/20 [00:09<00:00,  2.24it/s][A100%|██████████| 20/20 [00:09<00:00,  2.04it/s]
+1it [00:12, 12.64s/it]1it [00:12, 12.64s/it]
+inpaint view generation time: 14.00368857383728
+0it [00:00, ?it/s]26it [00:00, 5358.82it/s]
+2026-07-17 15:45:44.503 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /root/crowd_library_20260715_stage1eval_local/2_clip_white_plain/superheroes/member_01/stage1/res-0/mesh.obj with: vertices:(3428, 3) uv:(3955, 2) faces:(6276, 3)
+inpaint DR time: 0.7661831378936768
+total processed time:45.20426082611084
+Evalating textured mesh~: 0it [00:00, ?it/s]Evalating textured mesh~: 2it [00:00, 13.66it/s]Evalating textured mesh~: 4it [00:00, 14.98it/s]Evalating textured mesh~: 6it [00:00, 15.51it/s]Evalating textured mesh~: 8it [00:00, 15.68it/s]Evalating textured mesh~: 10it [00:00, 15.77it/s]Evalating textured mesh~: 12it [00:00, 15.78it/s]Evalating textured mesh~: 14it [00:00, 16.41it/s]Evalating textured mesh~: 16it [00:00, 16.81it/s]Evalating textured mesh~: 18it [00:01, 17.18it/s]Evalating textured mesh~: 20it [00:01, 17.36it/s]Evalating textured mesh~: 22it [00:01, 16.73it/s]Evalating textured mesh~: 24it [00:01, 17.04it/s]Evalating textured mesh~: 26it [00:01, 17.27it/s]Evalating textured mesh~: 28it [00:01, 15.57it/s]Evalating textured mesh~: 30it [00:01, 16.12it/s]Evalating textured mesh~: 32it [00:01, 16.57it/s]Evalating textured mesh~: 34it [00:02, 16.85it/s]Evalating textured mesh~: 36it [00:02, 17.06it/s]Evalating textured mesh~: 38it [00:02, 16.95it/s]Evalating textured mesh~: 40it [00:02, 17.28it/s]Evalating textured mesh~: 42it [00:02, 17.41it/s]Evalating textured mesh~: 44it [00:02, 17.59it/s]Evalating textured mesh~: 46it [00:02, 17.55it/s]Evalating textured mesh~: 48it [00:02, 17.67it/s]Evalating textured mesh~: 50it [00:02, 17.72it/s]Evalating textured mesh~: 52it [00:03, 17.64it/s]Evalating textured mesh~: 54it [00:03, 17.65it/s]Evalating textured mesh~: 56it [00:03, 17.23it/s]Evalating textured mesh~: 58it [00:03, 16.64it/s]Evalating textured mesh~: 60it [00:03, 16.50it/s]Evalating textured mesh~: 62it [00:03, 15.04it/s]Evalating textured mesh~: 64it [00:03, 15.12it/s]Evalating textured mesh~: 66it [00:03, 15.39it/s]Evalating textured mesh~: 68it [00:04, 15.41it/s]Evalating textured mesh~: 70it [00:04, 15.53it/s]Evalating textured mesh~: 72it [00:04, 15.15it/s]Evalating textured mesh~: 74it [00:04, 15.34it/s]Evalating textured mesh~: 76it [00:04, 14.05it/s]Evalating textured mesh~: 78it [00:04, 12.77it/s]Evalating textured mesh~: 80it [00:05, 12.90it/s]Evalating textured mesh~: 82it [00:05, 13.57it/s]Evalating textured mesh~: 84it [00:05, 13.86it/s]Evalating textured mesh~: 86it [00:05, 13.64it/s]Evalating textured mesh~: 88it [00:05, 13.85it/s]Evalating textured mesh~: 90it [00:05, 14.19it/s]Evalating textured mesh~: 92it [00:05, 13.17it/s]Evalating textured mesh~: 94it [00:06, 13.67it/s]Evalating textured mesh~: 96it [00:06, 13.98it/s]Evalating textured mesh~: 98it [00:06, 14.11it/s]Evalating textured mesh~: 100it [00:06, 14.30it/s]Evalating textured mesh~: 100it [00:06, 15.52it/s]
+subprocess pipeline_paint3d_stage1.py exited rc=0 after 106.8s
+Evalating textured mesh~: 0it [00:00, ?it/s]Evalating textured mesh~: 1it [00:00,  1.03it/s]Evalating textured mesh~: 3it [00:01,  3.29it/s]Evalating textured mesh~: 5it [00:01,  5.47it/s]Evalating textured mesh~: 7it [00:01,  7.40it/s]Evalating textured mesh~: 9it [00:01,  8.93it/s]Evalating textured mesh~: 11it [00:01, 10.25it/s]Evalating textured mesh~: 13it [00:01, 11.30it/s]Evalating textured mesh~: 15it [00:01, 12.05it/s]Evalating textured mesh~: 17it [00:02, 10.82it/s]Evalating textured mesh~: 19it [00:02, 11.49it/s]Evalating textured mesh~: 21it [00:02, 12.08it/s]Evalating textured mesh~: 23it [00:02, 12.63it/s]Evalating textured mesh~: 25it [00:02, 12.94it/s]Evalating textured mesh~: 27it [00:02, 13.20it/s]Evalating textured mesh~: 29it [00:03, 13.48it/s]Evalating textured mesh~: 31it [00:03, 13.83it/s]Evalating textured mesh~: 33it [00:03, 13.87it/s]Evalating textured mesh~: 35it [00:03, 13.76it/s]Evalating textured mesh~: 37it [00:03, 13.85it/s]Evalating textured mesh~: 39it [00:03, 13.92it/s]Evalating textured mesh~: 41it [00:03, 13.81it/s]Evalating textured mesh~: 43it [00:04, 13.79it/s]Evalating textured mesh~: 45it [00:04, 12.20it/s]Evalating textured mesh~: 47it [00:04, 12.74it/s]Evalating textured mesh~: 49it [00:04, 12.99it/s]Evalating textured mesh~: 51it [00:04, 13.16it/s]Evalating textured mesh~: 53it [00:04, 13.45it/s]Evalating textured mesh~: 55it [00:04, 13.60it/s]Evalating textured mesh~: 57it [00:05, 13.73it/s]Evalating textured mesh~: 59it [00:05, 13.87it/s]Evalating textured mesh~: 61it [00:05, 13.92it/s]Evalating textured mesh~: 63it [00:05, 14.11it/s]Evalating textured mesh~: 65it [00:05, 14.13it/s]Evalating textured mesh~: 67it [00:05, 14.06it/s]Evalating textured mesh~: 69it [00:05, 14.01it/s]Evalating textured mesh~: 71it [00:06, 14.12it/s]Evalating textured mesh~: 73it [00:06, 14.45it/s]Evalating textured mesh~: 75it [00:06, 14.53it/s]Evalating textured mesh~: 77it [00:06, 14.64it/s]Evalating textured mesh~: 79it [00:06, 14.88it/s]Evalating textured mesh~: 81it [00:06, 14.59it/s]Evalating textured mesh~: 83it [00:06, 14.42it/s]Evalating textured mesh~: 85it [00:07, 14.36it/s]Evalating textured mesh~: 87it [00:07, 14.46it/s]Evalating textured mesh~: 89it [00:07, 14.31it/s]Evalating textured mesh~: 91it [00:07, 14.14it/s]Evalating textured mesh~: 93it [00:07, 14.28it/s]Evalating textured mesh~: 95it [00:07, 14.23it/s]Evalating textured mesh~: 97it [00:07, 14.10it/s]Evalating textured mesh~: 99it [00:08, 14.08it/s]Evalating textured mesh~: 100it [00:08, 12.28it/s]
+stage1-eval render time: 12.8s
+subprocess pipeline_paint3d_stage1eval.py exited rc=0 after 19.1s
+
+=== [superheroes] member_02: elvs_butterflydiscotop1+male-classic-jeans seed=1330236227 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [superheroes] member_03: elv_simple_fashiondressd seed=1947990867 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [superheroes] member_04: highneckcroptop+polkadotskirt seed=2056069063 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+[sync] final sync /root/crowd_library_20260715_stage1eval_local/2_clip_white_plain/superheroes -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_stage1eval/2_clip_white_plain/superheroes rc=0
+
+done. failures: 0
+[run_crowd_library] prompt='superheroes' cell=2_clip_white_plain python_exit=0
+mesh library: 40 tops, 39 bottoms, 59 fullbody
+plan: 1 prompt(s) x 5 members
+
+=== [superheroes] member_00: tank_top_01+mariaskirt seed=1038103734 ===
+
+=== [superheroes] member_01: sweater_fisherman+shortjeans seed=431343856 ===
+[pink_noise] installed pink-noise initial-latent patch (alpha=0.2)
+Depth-based 3D Texturing
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  14%|█▍        | 1/7 [00:00<00:01,  5.47it/s]`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+Loading pipeline components...:  43%|████▎     | 3/7 [00:00<00:00,  6.28it/s]Loading pipeline components...:  71%|███████▏  | 5/7 [00:01<00:00,  3.80it/s]Loading pipeline components...: 100%|██████████| 7/7 [00:01<00:00,  5.48it/s]
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  14%|█▍        | 1/7 [00:00<00:00,  6.08it/s]`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+Loading pipeline components...:  43%|████▎     | 3/7 [00:00<00:00,  7.31it/s]Loading pipeline components...:  71%|███████▏  | 5/7 [00:00<00:00,  4.65it/s]Loading pipeline components...: 100%|██████████| 7/7 [00:01<00:00,  6.52it/s]
+Project init view [0, 23]...
+Generating init view...
+  0%|          | 0/20 [00:00<?, ?it/s]  5%|▌         | 1/20 [00:02<00:56,  2.95s/it] 10%|█         | 2/20 [00:03<00:25,  1.42s/it] 15%|█▌        | 3/20 [00:03<00:15,  1.08it/s] 20%|██        | 4/20 [00:03<00:11,  1.43it/s] 25%|██▌       | 5/20 [00:04<00:08,  1.75it/s] 30%|███       | 6/20 [00:04<00:06,  2.03it/s] 35%|███▌      | 7/20 [00:05<00:05,  2.25it/s] 40%|████      | 8/20 [00:05<00:04,  2.42it/s] 45%|████▌     | 9/20 [00:05<00:04,  2.56it/s] 50%|█████     | 10/20 [00:06<00:03,  2.65it/s] 55%|█████▌    | 11/20 [00:06<00:03,  2.73it/s] 60%|██████    | 12/20 [00:06<00:02,  2.78it/s] 65%|██████▌   | 13/20 [00:07<00:02,  2.82it/s] 70%|███████   | 14/20 [00:07<00:02,  2.84it/s] 75%|███████▌  | 15/20 [00:07<00:01,  2.86it/s] 80%|████████  | 16/20 [00:08<00:01,  2.87it/s] 85%|████████▌ | 17/20 [00:08<00:01,  2.88it/s] 90%|█████████ | 18/20 [00:08<00:00,  2.89it/s] 95%|█████████▌| 19/20 [00:09<00:00,  2.89it/s]100%|██████████| 20/20 [00:09<00:00,  2.89it/s]100%|██████████| 20/20 [00:09<00:00,  2.11it/s]
+init view generation time: 13.66905951499939
+0it [00:00, ?it/s]26it [00:00, 3500.08it/s]
+2026-07-17 15:48:53.232 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /root/crowd_library_20260715_stage1eval_local/3_clip_pink_plain/superheroes/member_01/stage1/res-0/mesh.obj with: vertices:(3428, 3) uv:(3955, 2) faces:(6276, 3)
+init DR time: 0.6179063320159912
+View inpainting ...
+Project inpaint view [(5, 6)]...
+0it [00:00, ?it/s]1it [00:01,  1.50s/it]1it [00:01,  1.50s/it]
+0it [00:00, ?it/s]
+  0%|          | 0/20 [00:00<?, ?it/s][A
+  5%|▌         | 1/20 [00:01<00:25,  1.37s/it][A
+ 10%|█         | 2/20 [00:01<00:14,  1.21it/s][A
+ 15%|█▌        | 3/20 [00:02<00:11,  1.53it/s][A
+ 20%|██        | 4/20 [00:02<00:09,  1.75it/s][A
+ 25%|██▌       | 5/20 [00:03<00:07,  1.90it/s][A
+ 30%|███       | 6/20 [00:03<00:06,  2.00it/s][A
+ 35%|███▌      | 7/20 [00:04<00:06,  2.07it/s][A
+ 40%|████      | 8/20 [00:04<00:05,  2.12it/s][A
+ 45%|████▌     | 9/20 [00:04<00:05,  2.16it/s][A
+ 50%|█████     | 10/20 [00:05<00:04,  2.18it/s][A
+ 55%|█████▌    | 11/20 [00:05<00:04,  2.20it/s][A
+ 60%|██████    | 12/20 [00:06<00:03,  2.21it/s][A
+ 65%|██████▌   | 13/20 [00:06<00:03,  2.22it/s][A
+ 70%|███████   | 14/20 [00:07<00:02,  2.22it/s][A
+ 75%|███████▌  | 15/20 [00:07<00:02,  2.22it/s][A
+ 80%|████████  | 16/20 [00:08<00:01,  2.23it/s][A
+ 85%|████████▌ | 17/20 [00:08<00:01,  2.23it/s][A
+ 90%|█████████ | 18/20 [00:08<00:00,  2.23it/s][A
+ 95%|█████████▌| 19/20 [00:09<00:00,  2.23it/s][A
+100%|██████████| 20/20 [00:09<00:00,  2.24it/s][A100%|██████████| 20/20 [00:09<00:00,  2.03it/s]
+1it [00:12, 12.44s/it]1it [00:12, 12.44s/it]
+inpaint view generation time: 13.948479890823364
+0it [00:00, ?it/s]26it [00:00, 3522.80it/s]
+2026-07-17 15:49:07.878 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /root/crowd_library_20260715_stage1eval_local/3_clip_pink_plain/superheroes/member_01/stage1/res-0/mesh.obj with: vertices:(3428, 3) uv:(3955, 2) faces:(6276, 3)
+inpaint DR time: 0.6971113681793213
+View inpainting ...
+Project inpaint view [(24, 25)]...
+0it [00:00, ?it/s]1it [00:01,  1.31s/it]1it [00:01,  1.31s/it]
+0it [00:00, ?it/s]
+  0%|          | 0/20 [00:00<?, ?it/s][A
+  5%|▌         | 1/20 [00:01<00:24,  1.31s/it][A
+ 10%|█         | 2/20 [00:01<00:14,  1.25it/s][A
+ 15%|█▌        | 3/20 [00:02<00:10,  1.56it/s][A
+ 20%|██        | 4/20 [00:02<00:09,  1.77it/s][A
+ 25%|██▌       | 5/20 [00:03<00:07,  1.91it/s][A
+ 30%|███       | 6/20 [00:03<00:06,  2.01it/s][A
+ 35%|███▌      | 7/20 [00:04<00:06,  2.07it/s][A
+ 40%|████      | 8/20 [00:04<00:05,  2.12it/s][A
+ 45%|████▌     | 9/20 [00:04<00:05,  2.14it/s][A
+ 50%|█████     | 10/20 [00:05<00:04,  2.16it/s][A
+ 55%|█████▌    | 11/20 [00:05<00:04,  2.18it/s][A
+ 60%|██████    | 12/20 [00:06<00:03,  2.19it/s][A
+ 65%|██████▌   | 13/20 [00:06<00:03,  2.20it/s][A
+ 70%|███████   | 14/20 [00:07<00:02,  2.20it/s][A
+ 75%|███████▌  | 15/20 [00:07<00:02,  2.20it/s][A
+ 80%|████████  | 16/20 [00:08<00:01,  2.21it/s][A
+ 85%|████████▌ | 17/20 [00:08<00:01,  2.21it/s][A
+ 90%|█████████ | 18/20 [00:08<00:00,  2.21it/s][A
+ 95%|█████████▌| 19/20 [00:09<00:00,  2.21it/s][A
+100%|██████████| 20/20 [00:09<00:00,  2.21it/s][A100%|██████████| 20/20 [00:09<00:00,  2.02it/s]
+1it [00:12, 12.53s/it]1it [00:12, 12.53s/it]
+inpaint view generation time: 13.853411674499512
+0it [00:00, ?it/s]26it [00:00, 5034.48it/s]
+2026-07-17 15:49:22.496 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /root/crowd_library_20260715_stage1eval_local/3_clip_pink_plain/superheroes/member_01/stage1/res-0/mesh.obj with: vertices:(3428, 3) uv:(3955, 2) faces:(6276, 3)
+inpaint DR time: 0.7666535377502441
+total processed time:43.553168296813965
+Evalating textured mesh~: 0it [00:00, ?it/s]Evalating textured mesh~: 2it [00:00, 15.98it/s]Evalating textured mesh~: 4it [00:00, 17.15it/s]Evalating textured mesh~: 6it [00:00, 17.43it/s]Evalating textured mesh~: 8it [00:00, 17.23it/s]Evalating textured mesh~: 10it [00:00, 17.11it/s]Evalating textured mesh~: 12it [00:00, 17.17it/s]Evalating textured mesh~: 14it [00:00, 17.15it/s]Evalating textured mesh~: 16it [00:00, 17.09it/s]Evalating textured mesh~: 18it [00:01, 17.07it/s]Evalating textured mesh~: 20it [00:01, 17.07it/s]Evalating textured mesh~: 22it [00:01, 17.10it/s]Evalating textured mesh~: 24it [00:01, 17.02it/s]Evalating textured mesh~: 26it [00:01, 17.03it/s]Evalating textured mesh~: 28it [00:01, 16.23it/s]Evalating textured mesh~: 30it [00:01, 16.40it/s]Evalating textured mesh~: 32it [00:01, 16.45it/s]Evalating textured mesh~: 34it [00:02, 16.58it/s]Evalating textured mesh~: 36it [00:02, 16.80it/s]Evalating textured mesh~: 38it [00:02, 16.91it/s]Evalating textured mesh~: 40it [00:02, 16.96it/s]Evalating textured mesh~: 42it [00:02, 17.02it/s]Evalating textured mesh~: 44it [00:02, 17.02it/s]Evalating textured mesh~: 46it [00:02, 17.08it/s]Evalating textured mesh~: 48it [00:02, 17.08it/s]Evalating textured mesh~: 50it [00:02, 17.04it/s]Evalating textured mesh~: 52it [00:03, 16.86it/s]Evalating textured mesh~: 54it [00:03, 16.78it/s]Evalating textured mesh~: 56it [00:03, 16.72it/s]Evalating textured mesh~: 58it [00:03, 16.42it/s]Evalating textured mesh~: 60it [00:03, 16.37it/s]Evalating textured mesh~: 62it [00:03, 15.78it/s]Evalating textured mesh~: 64it [00:03, 15.92it/s]Evalating textured mesh~: 66it [00:03, 15.62it/s]Evalating textured mesh~: 68it [00:04, 15.87it/s]Evalating textured mesh~: 70it [00:04, 16.13it/s]Evalating textured mesh~: 72it [00:04, 16.20it/s]Evalating textured mesh~: 74it [00:04, 16.17it/s]Evalating textured mesh~: 76it [00:04, 16.37it/s]Evalating textured mesh~: 78it [00:04, 16.34it/s]Evalating textured mesh~: 80it [00:04, 16.36it/s]Evalating textured mesh~: 82it [00:04, 15.96it/s]Evalating textured mesh~: 84it [00:05, 16.19it/s]Evalating textured mesh~: 86it [00:05, 16.22it/s]Evalating textured mesh~: 88it [00:05, 16.32it/s]Evalating textured mesh~: 90it [00:05, 16.33it/s]Evalating textured mesh~: 92it [00:05, 16.36it/s]Evalating textured mesh~: 94it [00:05, 16.41it/s]Evalating textured mesh~: 96it [00:05, 16.18it/s]Evalating textured mesh~: 98it [00:05, 16.15it/s]Evalating textured mesh~: 100it [00:06, 16.31it/s]Evalating textured mesh~: 100it [00:06, 16.55it/s]
+subprocess pipeline_paint3d_stage1.py exited rc=0 after 78.1s
+Evalating textured mesh~: 0it [00:00, ?it/s]Evalating textured mesh~: 1it [00:00,  1.09it/s]Evalating textured mesh~: 3it [00:01,  3.44it/s]Evalating textured mesh~: 5it [00:01,  5.68it/s]Evalating textured mesh~: 7it [00:01,  7.69it/s]Evalating textured mesh~: 9it [00:01,  9.35it/s]Evalating textured mesh~: 11it [00:01, 10.71it/s]Evalating textured mesh~: 13it [00:01, 11.74it/s]Evalating textured mesh~: 15it [00:01, 12.55it/s]Evalating textured mesh~: 17it [00:02, 13.05it/s]Evalating textured mesh~: 19it [00:02, 13.31it/s]Evalating textured mesh~: 21it [00:02, 13.71it/s]Evalating textured mesh~: 23it [00:02, 13.75it/s]Evalating textured mesh~: 25it [00:02, 13.69it/s]Evalating textured mesh~: 27it [00:02, 13.92it/s]Evalating textured mesh~: 29it [00:02, 14.05it/s]Evalating textured mesh~: 31it [00:03, 14.12it/s]Evalating textured mesh~: 33it [00:03, 14.24it/s]Evalating textured mesh~: 35it [00:03, 14.17it/s]Evalating textured mesh~: 37it [00:03, 14.16it/s]Evalating textured mesh~: 39it [00:03, 14.18it/s]Evalating textured mesh~: 41it [00:03, 14.20it/s]Evalating textured mesh~: 43it [00:03, 14.23it/s]Evalating textured mesh~: 45it [00:03, 14.14it/s]Evalating textured mesh~: 47it [00:04, 14.10it/s]Evalating textured mesh~: 49it [00:04, 14.18it/s]Evalating textured mesh~: 51it [00:04, 14.13it/s]Evalating textured mesh~: 53it [00:04, 14.07it/s]Evalating textured mesh~: 55it [00:04, 12.27it/s]Evalating textured mesh~: 57it [00:04, 12.78it/s]Evalating textured mesh~: 59it [00:05, 13.15it/s]Evalating textured mesh~: 61it [00:05, 13.52it/s]Evalating textured mesh~: 63it [00:05, 13.61it/s]Evalating textured mesh~: 65it [00:05, 13.71it/s]Evalating textured mesh~: 67it [00:05, 13.73it/s]Evalating textured mesh~: 69it [00:05, 13.83it/s]Evalating textured mesh~: 71it [00:05, 13.83it/s]Evalating textured mesh~: 73it [00:06, 13.80it/s]Evalating textured mesh~: 75it [00:06, 13.88it/s]Evalating textured mesh~: 77it [00:06, 14.04it/s]Evalating textured mesh~: 79it [00:06, 14.12it/s]Evalating textured mesh~: 81it [00:06, 14.36it/s]Evalating textured mesh~: 83it [00:06, 14.64it/s]Evalating textured mesh~: 85it [00:06, 13.24it/s]Evalating textured mesh~: 87it [00:07, 13.58it/s]Evalating textured mesh~: 89it [00:07, 13.81it/s]Evalating textured mesh~: 91it [00:07, 13.91it/s]Evalating textured mesh~: 93it [00:07, 14.05it/s]Evalating textured mesh~: 95it [00:07, 14.21it/s]Evalating textured mesh~: 97it [00:07, 14.45it/s]Evalating textured mesh~: 99it [00:07, 14.56it/s]Evalating textured mesh~: 100it [00:07, 12.56it/s]
+stage1-eval render time: 11.9s
+subprocess pipeline_paint3d_stage1eval.py exited rc=0 after 16.4s
+
+=== [superheroes] member_02: elvs_butterflydiscotop1+male-classic-jeans seed=1330236227 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [superheroes] member_03: elv_simple_fashiondressd seed=1947990867 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [superheroes] member_04: highneckcroptop+polkadotskirt seed=2056069063 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+[sync] final sync /root/crowd_library_20260715_stage1eval_local/3_clip_pink_plain/superheroes -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_stage1eval/3_clip_pink_plain/superheroes rc=0
+
+done. failures: 0
+[run_crowd_library] prompt='superheroes' cell=3_clip_pink_plain python_exit=0
+mesh library: 40 tops, 39 bottoms, 59 fullbody
+plan: 1 prompt(s) x 5 members
+
+=== [superheroes] member_00: elvs_goddess_dress6 seed=317567905 ===
+
+=== [superheroes] member_01: turtleneck_halter+pleated_miniskirt seed=2029063730 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [superheroes] member_02: camisole_top+skirt_mini seed=2137334988 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [superheroes] member_03: mens_tanks_elv1f+m_trousers_02 seed=1280264563 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [superheroes] member_04: offshoulder_top+elvs_gored_elephantpant1 seed=1043733314 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+[sync] final sync /root/crowd_library_20260715_stage1eval_local/4_clip_white_axes/superheroes -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_stage1eval/4_clip_white_axes/superheroes rc=0
+
+done. failures: 0
+[run_crowd_library] prompt='superheroes' cell=4_clip_white_axes python_exit=0
+mesh library: 40 tops, 39 bottoms, 59 fullbody
+plan: 1 prompt(s) x 5 members
+
+=== [superheroes] member_00: elvs_goddess_dress6 seed=317567905 ===
+
+=== [superheroes] member_01: turtleneck_halter+pleated_miniskirt seed=2029063730 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [superheroes] member_02: camisole_top+skirt_mini seed=2137334988 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [superheroes] member_03: mens_tanks_elv1f+m_trousers_02 seed=1280264563 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [superheroes] member_04: offshoulder_top+elvs_gored_elephantpant1 seed=1043733314 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+[sync] final sync /root/crowd_library_20260715_stage1eval_local/5_clip_pink_axes/superheroes -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_stage1eval/5_clip_pink_axes/superheroes rc=0
+
+done. failures: 0
+[run_crowd_library] prompt='superheroes' cell=5_clip_pink_axes python_exit=0
+mesh library: 40 tops, 39 bottoms, 59 fullbody
+plan: 1 prompt(s) x 5 members
+[llm] reusing 5 previously-evolved members from /root/crowd_library_20260715_stage1eval_local/8_clip_white_llm6/superheroes/llm_members.json (evolution is not reproducible; never re-run it mid-crowd)
+
+=== [superheroes] member_00: offshoulder_top+male-classic-jeans seed=1107598011 ===
+
+=== [superheroes] member_01: lace_up_blouse+pleated_miniskirt seed=324164347 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [superheroes] member_02: mens_tanks_elv1f+elvs_disco_pant1 seed=605698335 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [superheroes] member_03: elvs_race_suit_male1 seed=1510369980 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [superheroes] member_04: highneckcroptop+mens_trouser_short_nc_elvcrf seed=815265566 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+[sync] final sync /root/crowd_library_20260715_stage1eval_local/8_clip_white_llm6/superheroes -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_stage1eval/8_clip_white_llm6/superheroes rc=0
+
+done. failures: 0
+[run_crowd_library] prompt='superheroes' cell=8_clip_white_llm6 python_exit=0
+mesh library: 40 tops, 39 bottoms, 59 fullbody
+plan: 1 prompt(s) x 5 members
+[llm] reusing 5 previously-evolved members from /root/crowd_library_20260715_stage1eval_local/9_clip_pink_llm6/superheroes/llm_members.json (evolution is not reproducible; never re-run it mid-crowd)
+
+=== [superheroes] member_00: offshoulder_top+male-classic-jeans seed=1107598011 ===
+
+=== [superheroes] member_01: lace_up_blouse+pleated_miniskirt seed=324164347 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [superheroes] member_02: mens_tanks_elv1f+elvs_disco_pant1 seed=605698335 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [superheroes] member_03: elvs_race_suit_male1 seed=1510369980 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [superheroes] member_04: highneckcroptop+mens_trouser_short_nc_elvcrf seed=815265566 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+[sync] final sync /root/crowd_library_20260715_stage1eval_local/9_clip_pink_llm6/superheroes -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_stage1eval/9_clip_pink_llm6/superheroes rc=0
+
+done. failures: 0
+[run_crowd_library] prompt='superheroes' cell=9_clip_pink_llm6 python_exit=0
+[run_crowd_library] === theme complete: superheroes ===
+[run_crowd_library] === theme: medieval villagers ===
+mesh library: 40 tops, 39 bottoms, 59 fullbody
+plan: 1 prompt(s) x 5 members
+
+=== [medieval villagers] member_00: mens_shirt_untuck_elvbhp1f+elvs_disco_pant1 seed=1343260028 ===
+
+=== [medieval villagers] member_01: deathnote+low_mini_skirt seed=681064887 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_02: deathnote+elvs_gored_elephantpant1 seed=944131111 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_03: striped_shirt+skirt_full_lace_ruffle seed=286986189 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_04: figure_skating_dress seed=1731852346 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+[sync] final sync /root/crowd_library_20260715_stage1eval_local/1_random_white_plain/medieval_villagers -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_stage1eval/1_random_white_plain/medieval_villagers rc=0
+
+done. failures: 0
+[run_crowd_library] prompt='medieval villagers' cell=1_random_white_plain python_exit=0
+mesh library: 40 tops, 39 bottoms, 59 fullbody
+plan: 1 prompt(s) x 5 members
+
+=== [medieval villagers] member_00: mens_shirt_untuck_elvbhp1f+harem_pants seed=1743251610 ===
+
+=== [medieval villagers] member_01: elvs_hippydress1 seed=1880898387 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_02: f_dress_05 seed=796693119 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_03: bodice_style_top+mariaskirt seed=1396088507 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_04: f_lusekofta+polkadotskirt seed=693972385 ===
+Depth-based 3D Texturing
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  14%|█▍        | 1/7 [00:00<00:00,  7.05it/s]Loading pipeline components...:  57%|█████▋    | 4/7 [00:00<00:00, 14.42it/s]`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+Loading pipeline components...:  86%|████████▌ | 6/7 [00:06<00:01,  1.39s/it]Loading pipeline components...: 100%|██████████| 7/7 [00:07<00:00,  1.20s/it]Loading pipeline components...: 100%|██████████| 7/7 [00:07<00:00,  1.01s/it]
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  57%|█████▋    | 4/7 [00:00<00:00, 21.16it/s]`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+Loading pipeline components...: 100%|██████████| 7/7 [00:00<00:00,  6.35it/s]Loading pipeline components...: 100%|██████████| 7/7 [00:00<00:00,  7.21it/s]
+Project init view [0, 23]...
+Generating init view...
+  0%|          | 0/20 [00:00<?, ?it/s]  5%|▌         | 1/20 [00:02<00:51,  2.69s/it] 10%|█         | 2/20 [00:03<00:23,  1.31s/it] 15%|█▌        | 3/20 [00:03<00:14,  1.15it/s] 20%|██        | 4/20 [00:03<00:10,  1.51it/s] 25%|██▌       | 5/20 [00:04<00:08,  1.83it/s] 30%|███       | 6/20 [00:04<00:06,  2.09it/s] 35%|███▌      | 7/20 [00:04<00:05,  2.30it/s] 40%|████      | 8/20 [00:05<00:04,  2.46it/s] 45%|████▌     | 9/20 [00:05<00:04,  2.59it/s] 50%|█████     | 10/20 [00:05<00:03,  2.68it/s] 55%|█████▌    | 11/20 [00:06<00:03,  2.74it/s] 60%|██████    | 12/20 [00:06<00:02,  2.79it/s] 65%|██████▌   | 13/20 [00:06<00:02,  2.82it/s] 70%|███████   | 14/20 [00:07<00:02,  2.84it/s] 75%|███████▌  | 15/20 [00:07<00:01,  2.86it/s] 80%|████████  | 16/20 [00:07<00:01,  2.87it/s] 85%|████████▌ | 17/20 [00:08<00:01,  2.89it/s] 90%|█████████ | 18/20 [00:08<00:00,  2.89it/s] 95%|█████████▌| 19/20 [00:08<00:00,  2.90it/s]100%|██████████| 20/20 [00:09<00:00,  2.91it/s]100%|██████████| 20/20 [00:09<00:00,  2.17it/s]
+init view generation time: 12.610755920410156
+0it [00:00, ?it/s]26it [00:00, 4209.69it/s]
+2026-07-17 16:00:00.510 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /root/crowd_library_20260715_stage1eval_local/2_clip_white_plain/medieval_villagers/member_04/stage1/res-0/mesh.obj with: vertices:(2394, 3) uv:(2772, 2) faces:(4456, 3)
+init DR time: 0.66455078125
+View inpainting ...
+Project inpaint view [(5, 6)]...
+0it [00:00, ?it/s]1it [00:01,  1.29s/it]1it [00:01,  1.29s/it]
+0it [00:00, ?it/s]
+  0%|          | 0/20 [00:00<?, ?it/s][A
+  5%|▌         | 1/20 [00:01<00:25,  1.37s/it][A
+ 10%|█         | 2/20 [00:01<00:14,  1.21it/s][A
+ 15%|█▌        | 3/20 [00:02<00:11,  1.54it/s][A
+ 20%|██        | 4/20 [00:02<00:09,  1.76it/s][A
+ 25%|██▌       | 5/20 [00:03<00:07,  1.91it/s][A
+ 30%|███       | 6/20 [00:03<00:06,  2.01it/s][A
+ 35%|███▌      | 7/20 [00:04<00:06,  2.08it/s][A
+ 40%|████      | 8/20 [00:04<00:05,  2.13it/s][A
+ 45%|████▌     | 9/20 [00:04<00:05,  2.17it/s][A
+ 50%|█████     | 10/20 [00:05<00:04,  2.19it/s][A
+ 55%|█████▌    | 11/20 [00:05<00:04,  2.21it/s][A
+ 60%|██████    | 12/20 [00:06<00:03,  2.22it/s][A
+ 65%|██████▌   | 13/20 [00:06<00:03,  2.23it/s][A
+ 70%|███████   | 14/20 [00:07<00:02,  2.23it/s][A
+ 75%|███████▌  | 15/20 [00:07<00:02,  2.23it/s][A
+ 80%|████████  | 16/20 [00:08<00:01,  2.24it/s][A
+ 85%|████████▌ | 17/20 [00:08<00:01,  2.23it/s][A
+ 90%|█████████ | 18/20 [00:08<00:00,  2.23it/s][A
+ 95%|█████████▌| 19/20 [00:09<00:00,  2.24it/s][A
+100%|██████████| 20/20 [00:09<00:00,  2.24it/s][A100%|██████████| 20/20 [00:09<00:00,  2.03it/s]
+1it [00:12, 12.38s/it]1it [00:12, 12.38s/it]
+inpaint view generation time: 13.67694354057312
+0it [00:00, ?it/s]26it [00:00, 3532.39it/s]
+2026-07-17 16:00:14.986 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /root/crowd_library_20260715_stage1eval_local/2_clip_white_plain/medieval_villagers/member_04/stage1/res-0/mesh.obj with: vertices:(2394, 3) uv:(2772, 2) faces:(4456, 3)
+inpaint DR time: 0.8005797863006592
+View inpainting ...
+Project inpaint view [(24, 25)]...
+0it [00:00, ?it/s]1it [00:01,  1.25s/it]1it [00:01,  1.25s/it]
+0it [00:00, ?it/s]
+  0%|          | 0/20 [00:00<?, ?it/s][A
+  5%|▌         | 1/20 [00:01<00:25,  1.33s/it][A
+ 10%|█         | 2/20 [00:01<00:14,  1.23it/s][A
+ 15%|█▌        | 3/20 [00:02<00:10,  1.55it/s][A
+ 20%|██        | 4/20 [00:02<00:09,  1.76it/s][A
+ 25%|██▌       | 5/20 [00:03<00:07,  1.91it/s][A
+ 30%|███       | 6/20 [00:03<00:06,  2.01it/s][A
+ 35%|███▌      | 7/20 [00:04<00:06,  2.07it/s][A
+ 40%|████      | 8/20 [00:04<00:05,  2.12it/s][A
+ 45%|████▌     | 9/20 [00:04<00:05,  2.15it/s][A
+ 50%|█████     | 10/20 [00:05<00:04,  2.17it/s][A
+ 55%|█████▌    | 11/20 [00:05<00:04,  2.19it/s][A
+ 60%|██████    | 12/20 [00:06<00:03,  2.20it/s][A
+ 65%|██████▌   | 13/20 [00:06<00:03,  2.21it/s][A
+ 70%|███████   | 14/20 [00:07<00:02,  2.21it/s][A
+ 75%|███████▌  | 15/20 [00:07<00:02,  2.21it/s][A
+ 80%|████████  | 16/20 [00:08<00:01,  2.22it/s][A
+ 85%|████████▌ | 17/20 [00:08<00:01,  2.22it/s][A
+ 90%|█████████ | 18/20 [00:08<00:00,  2.22it/s][A
+ 95%|█████████▌| 19/20 [00:09<00:00,  2.22it/s][A
+100%|██████████| 20/20 [00:09<00:00,  2.22it/s][A100%|██████████| 20/20 [00:09<00:00,  2.03it/s]
+1it [00:12, 12.88s/it]1it [00:12, 12.88s/it]
+inpaint view generation time: 14.139174461364746
+0it [00:00, ?it/s]26it [00:00, 4494.95it/s]
+2026-07-17 16:00:29.948 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /root/crowd_library_20260715_stage1eval_local/2_clip_white_plain/medieval_villagers/member_04/stage1/res-0/mesh.obj with: vertices:(2394, 3) uv:(2772, 2) faces:(4456, 3)
+inpaint DR time: 0.8214128017425537
+total processed time:42.71379590034485
+Evalating textured mesh~: 0it [00:00, ?it/s]Evalating textured mesh~: 2it [00:00, 14.98it/s]Evalating textured mesh~: 4it [00:00, 16.26it/s]Evalating textured mesh~: 6it [00:00, 16.36it/s]Evalating textured mesh~: 8it [00:00, 16.54it/s]Evalating textured mesh~: 10it [00:00, 16.23it/s]Evalating textured mesh~: 12it [00:00, 16.18it/s]Evalating textured mesh~: 14it [00:00, 16.06it/s]Evalating textured mesh~: 16it [00:00, 15.84it/s]Evalating textured mesh~: 18it [00:01, 15.11it/s]Evalating textured mesh~: 20it [00:01, 15.58it/s]Evalating textured mesh~: 22it [00:01, 15.96it/s]Evalating textured mesh~: 24it [00:01, 16.21it/s]Evalating textured mesh~: 26it [00:01, 16.37it/s]Evalating textured mesh~: 28it [00:01, 16.64it/s]Evalating textured mesh~: 30it [00:01, 16.88it/s]Evalating textured mesh~: 32it [00:01, 16.92it/s]Evalating textured mesh~: 34it [00:02, 17.08it/s]Evalating textured mesh~: 36it [00:02, 17.17it/s]Evalating textured mesh~: 38it [00:02, 17.18it/s]Evalating textured mesh~: 40it [00:02, 17.24it/s]Evalating textured mesh~: 42it [00:02, 17.16it/s]Evalating textured mesh~: 44it [00:02, 17.00it/s]Evalating textured mesh~: 46it [00:02, 16.26it/s]Evalating textured mesh~: 48it [00:02, 16.31it/s]Evalating textured mesh~: 50it [00:03, 16.33it/s]Evalating textured mesh~: 52it [00:03, 16.03it/s]Evalating textured mesh~: 54it [00:03, 15.66it/s]Evalating textured mesh~: 56it [00:03, 15.87it/s]Evalating textured mesh~: 58it [00:03, 16.11it/s]Evalating textured mesh~: 60it [00:03, 16.06it/s]Evalating textured mesh~: 62it [00:03, 15.68it/s]Evalating textured mesh~: 64it [00:03, 15.87it/s]Evalating textured mesh~: 66it [00:04, 16.04it/s]Evalating textured mesh~: 68it [00:04, 16.05it/s]Evalating textured mesh~: 70it [00:04, 16.28it/s]Evalating textured mesh~: 72it [00:04, 16.14it/s]Evalating textured mesh~: 74it [00:04, 15.96it/s]Evalating textured mesh~: 76it [00:04, 16.02it/s]Evalating textured mesh~: 78it [00:04, 15.54it/s]Evalating textured mesh~: 80it [00:04, 15.78it/s]Evalating textured mesh~: 82it [00:05, 15.85it/s]Evalating textured mesh~: 84it [00:05, 16.08it/s]Evalating textured mesh~: 86it [00:05, 15.29it/s]Evalating textured mesh~: 88it [00:05, 15.65it/s]Evalating textured mesh~: 90it [00:05, 15.67it/s]Evalating textured mesh~: 92it [00:05, 15.52it/s]Evalating textured mesh~: 94it [00:05, 15.50it/s]Evalating textured mesh~: 96it [00:05, 15.66it/s]Evalating textured mesh~: 98it [00:06, 15.59it/s]Evalating textured mesh~: 100it [00:06, 15.49it/s]Evalating textured mesh~: 100it [00:06, 16.07it/s]
+subprocess pipeline_paint3d_stage1.py exited rc=0 after 78.4s
+Evalating textured mesh~: 0it [00:00, ?it/s]Evalating textured mesh~: 1it [00:00,  1.05it/s]Evalating textured mesh~: 3it [00:01,  3.39it/s]Evalating textured mesh~: 5it [00:01,  5.69it/s]Evalating textured mesh~: 7it [00:01,  6.82it/s]Evalating textured mesh~: 9it [00:01,  8.72it/s]Evalating textured mesh~: 11it [00:01, 10.42it/s]Evalating textured mesh~: 13it [00:01, 11.70it/s]Evalating textured mesh~: 15it [00:01, 12.69it/s]Evalating textured mesh~: 17it [00:02, 13.54it/s]Evalating textured mesh~: 19it [00:02, 13.96it/s]Evalating textured mesh~: 21it [00:02, 14.37it/s]Evalating textured mesh~: 23it [00:02, 14.75it/s]Evalating textured mesh~: 25it [00:02, 14.86it/s]Evalating textured mesh~: 27it [00:02, 14.87it/s]Evalating textured mesh~: 29it [00:02, 15.00it/s]Evalating textured mesh~: 31it [00:02, 14.97it/s]Evalating textured mesh~: 33it [00:03, 15.08it/s]Evalating textured mesh~: 35it [00:03, 15.32it/s]Evalating textured mesh~: 37it [00:03, 15.32it/s]Evalating textured mesh~: 39it [00:03, 12.83it/s]Evalating textured mesh~: 41it [00:03, 13.42it/s]Evalating textured mesh~: 43it [00:03, 13.98it/s]Evalating textured mesh~: 45it [00:03, 14.37it/s]Evalating textured mesh~: 47it [00:04, 14.78it/s]Evalating textured mesh~: 49it [00:04, 14.90it/s]Evalating textured mesh~: 51it [00:04, 15.17it/s]Evalating textured mesh~: 53it [00:04, 15.46it/s]Evalating textured mesh~: 55it [00:04, 15.50it/s]Evalating textured mesh~: 57it [00:04, 15.45it/s]Evalating textured mesh~: 59it [00:04, 15.40it/s]Evalating textured mesh~: 61it [00:04, 15.38it/s]Evalating textured mesh~: 63it [00:05, 15.54it/s]Evalating textured mesh~: 65it [00:05, 15.55it/s]Evalating textured mesh~: 67it [00:05, 15.71it/s]Evalating textured mesh~: 69it [00:05, 16.19it/s]Evalating textured mesh~: 71it [00:05, 16.48it/s]Evalating textured mesh~: 73it [00:05, 14.44it/s]Evalating textured mesh~: 75it [00:05, 15.15it/s]Evalating textured mesh~: 77it [00:06, 15.60it/s]Evalating textured mesh~: 79it [00:06, 15.87it/s]Evalating textured mesh~: 81it [00:06, 15.61it/s]Evalating textured mesh~: 83it [00:06, 15.68it/s]Evalating textured mesh~: 85it [00:06, 15.54it/s]Evalating textured mesh~: 87it [00:06, 15.58it/s]Evalating textured mesh~: 89it [00:06, 15.53it/s]Evalating textured mesh~: 91it [00:06, 15.44it/s]Evalating textured mesh~: 93it [00:07, 15.30it/s]Evalating textured mesh~: 95it [00:07, 15.23it/s]Evalating textured mesh~: 97it [00:07, 15.25it/s]Evalating textured mesh~: 99it [00:07, 15.32it/s]Evalating textured mesh~: 100it [00:07, 13.32it/s]
+stage1-eval render time: 11.3s
+subprocess pipeline_paint3d_stage1eval.py exited rc=0 after 16.4s
+[sync] final sync /root/crowd_library_20260715_stage1eval_local/2_clip_white_plain/medieval_villagers -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_stage1eval/2_clip_white_plain/medieval_villagers rc=0
+
+done. failures: 0
+[run_crowd_library] prompt='medieval villagers' cell=2_clip_white_plain python_exit=0
+mesh library: 40 tops, 39 bottoms, 59 fullbody
+plan: 1 prompt(s) x 5 members
+
+=== [medieval villagers] member_00: mens_shirt_untuck_elvbhp1f+harem_pants seed=1743251610 ===
+
+=== [medieval villagers] member_01: elvs_hippydress1 seed=1880898387 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_02: f_dress_05 seed=796693119 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_03: bodice_style_top+mariaskirt seed=1396088507 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_04: f_lusekofta+polkadotskirt seed=693972385 ===
+[pink_noise] installed pink-noise initial-latent patch (alpha=0.2)
+Depth-based 3D Texturing
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  14%|█▍        | 1/7 [00:03<00:21,  3.62s/it]Loading pipeline components...:  57%|█████▋    | 4/7 [00:03<00:02,  1.36it/s]Loading pipeline components...:  86%|████████▌ | 6/7 [00:04<00:00,  2.11it/s]`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+Loading pipeline components...: 100%|██████████| 7/7 [00:08<00:00,  1.33s/it]Loading pipeline components...: 100%|██████████| 7/7 [00:08<00:00,  1.17s/it]
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  14%|█▍        | 1/7 [00:00<00:02,  2.03it/s]Loading pipeline components...:  71%|███████▏  | 5/7 [00:00<00:00, 10.23it/s]`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+Loading pipeline components...: 100%|██████████| 7/7 [00:01<00:00,  6.58it/s]
+Project init view [0, 23]...
+Generating init view...
+  0%|          | 0/20 [00:00<?, ?it/s]  5%|▌         | 1/20 [00:02<00:56,  2.97s/it] 10%|█         | 2/20 [00:03<00:25,  1.42s/it] 15%|█▌        | 3/20 [00:03<00:15,  1.07it/s] 20%|██        | 4/20 [00:04<00:11,  1.43it/s] 25%|██▌       | 5/20 [00:04<00:08,  1.75it/s] 30%|███       | 6/20 [00:04<00:06,  2.02it/s] 35%|███▌      | 7/20 [00:05<00:05,  2.25it/s] 40%|████      | 8/20 [00:05<00:04,  2.42it/s] 45%|████▌     | 9/20 [00:05<00:04,  2.55it/s] 50%|█████     | 10/20 [00:06<00:03,  2.65it/s] 55%|█████▌    | 11/20 [00:06<00:03,  2.73it/s] 60%|██████    | 12/20 [00:06<00:02,  2.78it/s] 65%|██████▌   | 13/20 [00:07<00:02,  2.82it/s] 70%|███████   | 14/20 [00:07<00:02,  2.84it/s] 75%|███████▌  | 15/20 [00:07<00:01,  2.86it/s] 80%|████████  | 16/20 [00:08<00:01,  2.88it/s] 85%|████████▌ | 17/20 [00:08<00:01,  2.88it/s] 90%|█████████ | 18/20 [00:08<00:00,  2.89it/s] 95%|█████████▌| 19/20 [00:09<00:00,  2.89it/s]100%|██████████| 20/20 [00:09<00:00,  2.89it/s]100%|██████████| 20/20 [00:09<00:00,  2.10it/s]
+init view generation time: 13.641192436218262
+0it [00:00, ?it/s]26it [00:00, 4656.56it/s]
+2026-07-17 16:03:31.658 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /root/crowd_library_20260715_stage1eval_local/3_clip_pink_plain/medieval_villagers/member_04/stage1/res-0/mesh.obj with: vertices:(2394, 3) uv:(2772, 2) faces:(4456, 3)
+init DR time: 0.7137167453765869
+View inpainting ...
+Project inpaint view [(5, 6)]...
+0it [00:00, ?it/s]1it [00:01,  1.30s/it]1it [00:01,  1.30s/it]
+0it [00:00, ?it/s]
+  0%|          | 0/20 [00:00<?, ?it/s][A
+  5%|▌         | 1/20 [00:01<00:24,  1.29s/it][A
+ 10%|█         | 2/20 [00:01<00:14,  1.26it/s][A
+ 15%|█▌        | 3/20 [00:02<00:10,  1.57it/s][A
+ 20%|██        | 4/20 [00:02<00:08,  1.78it/s][A
+ 25%|██▌       | 5/20 [00:03<00:07,  1.92it/s][A
+ 30%|███       | 6/20 [00:03<00:06,  2.02it/s][A
+ 35%|███▌      | 7/20 [00:03<00:06,  2.09it/s][A
+ 40%|████      | 8/20 [00:04<00:05,  2.13it/s][A
+ 45%|████▌     | 9/20 [00:04<00:05,  2.16it/s][A
+ 50%|█████     | 10/20 [00:05<00:04,  2.18it/s][A
+ 55%|█████▌    | 11/20 [00:05<00:04,  2.20it/s][A
+ 60%|██████    | 12/20 [00:06<00:03,  2.21it/s][A
+ 65%|██████▌   | 13/20 [00:06<00:03,  2.22it/s][A
+ 70%|███████   | 14/20 [00:07<00:02,  2.22it/s][A
+ 75%|███████▌  | 15/20 [00:07<00:02,  2.23it/s][A
+ 80%|████████  | 16/20 [00:07<00:01,  2.23it/s][A
+ 85%|████████▌ | 17/20 [00:08<00:01,  2.23it/s][A
+ 90%|█████████ | 18/20 [00:08<00:00,  2.23it/s][A
+ 95%|█████████▌| 19/20 [00:09<00:00,  2.23it/s][A
+100%|██████████| 20/20 [00:09<00:00,  2.23it/s][A100%|██████████| 20/20 [00:09<00:00,  2.04it/s]
+1it [00:12, 12.36s/it]1it [00:12, 12.36s/it]
+inpaint view generation time: 13.669328927993774
+0it [00:00, ?it/s]26it [00:00, 6365.76it/s]
+2026-07-17 16:03:46.174 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /root/crowd_library_20260715_stage1eval_local/3_clip_pink_plain/medieval_villagers/member_04/stage1/res-0/mesh.obj with: vertices:(2394, 3) uv:(2772, 2) faces:(4456, 3)
+inpaint DR time: 0.8472371101379395
+View inpainting ...
+Project inpaint view [(24, 25)]...
+0it [00:00, ?it/s]1it [00:01,  1.26s/it]1it [00:01,  1.26s/it]
+0it [00:00, ?it/s]
+  0%|          | 0/20 [00:00<?, ?it/s][A
+  5%|▌         | 1/20 [00:01<00:24,  1.30s/it][A
+ 10%|█         | 2/20 [00:01<00:14,  1.25it/s][A
+ 15%|█▌        | 3/20 [00:02<00:10,  1.56it/s][A
+ 20%|██        | 4/20 [00:02<00:09,  1.77it/s][A
+ 25%|██▌       | 5/20 [00:03<00:07,  1.91it/s][A
+ 30%|███       | 6/20 [00:03<00:06,  2.00it/s][A
+ 35%|███▌      | 7/20 [00:03<00:06,  2.08it/s][A
+ 40%|████      | 8/20 [00:04<00:05,  2.12it/s][A
+ 45%|████▌     | 9/20 [00:04<00:05,  2.15it/s][A
+ 50%|█████     | 10/20 [00:05<00:04,  2.17it/s][A
+ 55%|█████▌    | 11/20 [00:05<00:04,  2.18it/s][A
+ 60%|██████    | 12/20 [00:06<00:03,  2.19it/s][A
+ 65%|██████▌   | 13/20 [00:06<00:03,  2.20it/s][A
+ 70%|███████   | 14/20 [00:07<00:02,  2.20it/s][A
+ 75%|███████▌  | 15/20 [00:07<00:02,  2.21it/s][A
+ 80%|████████  | 16/20 [00:08<00:01,  2.21it/s][A
+ 85%|████████▌ | 17/20 [00:08<00:01,  2.21it/s][A
+ 90%|█████████ | 18/20 [00:08<00:00,  2.21it/s][A
+ 95%|█████████▌| 19/20 [00:09<00:00,  2.21it/s][A
+100%|██████████| 20/20 [00:09<00:00,  2.21it/s][A100%|██████████| 20/20 [00:09<00:00,  2.03it/s]
+1it [00:12, 12.61s/it]1it [00:12, 12.61s/it]
+inpaint view generation time: 13.88619589805603
+0it [00:00, ?it/s]26it [00:00, 4893.51it/s]
+2026-07-17 16:04:00.938 | INFO     | paint3d.models.textured_mesh:export_mesh:135 - writing obj mesh to /root/crowd_library_20260715_stage1eval_local/3_clip_pink_plain/medieval_villagers/member_04/stage1/res-0/mesh.obj with: vertices:(2394, 3) uv:(2772, 2) faces:(4456, 3)
+inpaint DR time: 0.8824462890625
+total processed time:43.64046812057495
+Evalating textured mesh~: 0it [00:00, ?it/s]Evalating textured mesh~: 2it [00:00, 14.06it/s]Evalating textured mesh~: 4it [00:00, 14.28it/s]Evalating textured mesh~: 6it [00:00, 15.08it/s]Evalating textured mesh~: 8it [00:00, 15.41it/s]Evalating textured mesh~: 10it [00:00, 15.96it/s]Evalating textured mesh~: 12it [00:00, 16.42it/s]Evalating textured mesh~: 14it [00:00, 16.67it/s]Evalating textured mesh~: 16it [00:00, 16.98it/s]Evalating textured mesh~: 18it [00:01, 17.08it/s]Evalating textured mesh~: 20it [00:01, 17.21it/s]Evalating textured mesh~: 22it [00:01, 17.25it/s]Evalating textured mesh~: 24it [00:01, 17.24it/s]Evalating textured mesh~: 26it [00:01, 17.26it/s]Evalating textured mesh~: 28it [00:01, 17.27it/s]Evalating textured mesh~: 30it [00:01, 16.96it/s]Evalating textured mesh~: 32it [00:01, 15.98it/s]Evalating textured mesh~: 34it [00:02, 16.28it/s]Evalating textured mesh~: 36it [00:02, 16.31it/s]Evalating textured mesh~: 38it [00:02, 16.09it/s]Evalating textured mesh~: 40it [00:02, 16.34it/s]Evalating textured mesh~: 42it [00:02, 16.53it/s]Evalating textured mesh~: 44it [00:02, 16.69it/s]Evalating textured mesh~: 46it [00:02, 16.86it/s]Evalating textured mesh~: 48it [00:02, 16.85it/s]Evalating textured mesh~: 50it [00:03, 16.98it/s]Evalating textured mesh~: 52it [00:03, 17.04it/s]Evalating textured mesh~: 54it [00:03, 16.96it/s]Evalating textured mesh~: 56it [00:03, 17.10it/s]Evalating textured mesh~: 58it [00:03, 17.09it/s]Evalating textured mesh~: 60it [00:03, 16.96it/s]Evalating textured mesh~: 62it [00:03, 16.74it/s]Evalating textured mesh~: 64it [00:03, 16.60it/s]Evalating textured mesh~: 66it [00:03, 16.58it/s]Evalating textured mesh~: 68it [00:04, 16.44it/s]Evalating textured mesh~: 70it [00:04, 15.88it/s]Evalating textured mesh~: 72it [00:04, 15.21it/s]Evalating textured mesh~: 74it [00:04, 15.41it/s]Evalating textured mesh~: 76it [00:04, 15.46it/s]Evalating textured mesh~: 78it [00:04, 15.43it/s]Evalating textured mesh~: 80it [00:04, 15.32it/s]Evalating textured mesh~: 82it [00:05, 15.34it/s]Evalating textured mesh~: 84it [00:05, 15.38it/s]Evalating textured mesh~: 86it [00:05, 15.27it/s]Evalating textured mesh~: 88it [00:05, 15.33it/s]Evalating textured mesh~: 90it [00:05, 15.33it/s]Evalating textured mesh~: 92it [00:05, 15.26it/s]Evalating textured mesh~: 94it [00:05, 15.24it/s]Evalating textured mesh~: 96it [00:05, 15.15it/s]Evalating textured mesh~: 98it [00:06, 15.16it/s]Evalating textured mesh~: 100it [00:06, 15.11it/s]Evalating textured mesh~: 100it [00:06, 16.10it/s]
+subprocess pipeline_paint3d_stage1.py exited rc=0 after 80.8s
+Evalating textured mesh~: 0it [00:00, ?it/s]Evalating textured mesh~: 1it [00:01,  1.11s/it]Evalating textured mesh~: 3it [00:01,  2.97it/s]Evalating textured mesh~: 5it [00:01,  5.06it/s]Evalating textured mesh~: 7it [00:01,  7.03it/s]Evalating textured mesh~: 9it [00:01,  8.85it/s]Evalating textured mesh~: 11it [00:01, 10.35it/s]Evalating textured mesh~: 13it [00:01, 11.62it/s]Evalating textured mesh~: 15it [00:02, 12.80it/s]Evalating textured mesh~: 17it [00:02, 13.79it/s]Evalating textured mesh~: 19it [00:02, 14.51it/s]Evalating textured mesh~: 21it [00:02, 14.95it/s]Evalating textured mesh~: 23it [00:02, 15.15it/s]Evalating textured mesh~: 25it [00:02, 15.16it/s]Evalating textured mesh~: 27it [00:02, 15.41it/s]Evalating textured mesh~: 29it [00:02, 13.30it/s]Evalating textured mesh~: 31it [00:03, 14.03it/s]Evalating textured mesh~: 33it [00:03, 14.66it/s]Evalating textured mesh~: 35it [00:03, 15.04it/s]Evalating textured mesh~: 37it [00:03, 15.35it/s]Evalating textured mesh~: 39it [00:03, 15.58it/s]Evalating textured mesh~: 41it [00:03, 15.86it/s]Evalating textured mesh~: 43it [00:03, 16.04it/s]Evalating textured mesh~: 45it [00:03, 15.76it/s]Evalating textured mesh~: 47it [00:04, 15.59it/s]Evalating textured mesh~: 49it [00:04, 15.64it/s]Evalating textured mesh~: 51it [00:04, 15.40it/s]Evalating textured mesh~: 53it [00:04, 15.27it/s]Evalating textured mesh~: 55it [00:04, 15.47it/s]Evalating textured mesh~: 57it [00:04, 15.49it/s]Evalating textured mesh~: 59it [00:04, 15.48it/s]Evalating textured mesh~: 61it [00:05, 15.20it/s]Evalating textured mesh~: 63it [00:05, 13.60it/s]Evalating textured mesh~: 65it [00:05, 13.96it/s]Evalating textured mesh~: 67it [00:05, 14.22it/s]Evalating textured mesh~: 69it [00:05, 14.35it/s]Evalating textured mesh~: 71it [00:05, 14.54it/s]Evalating textured mesh~: 73it [00:05, 14.70it/s]Evalating textured mesh~: 75it [00:06, 14.76it/s]Evalating textured mesh~: 77it [00:06, 14.91it/s]Evalating textured mesh~: 79it [00:06, 15.00it/s]Evalating textured mesh~: 81it [00:06, 14.91it/s]Evalating textured mesh~: 83it [00:06, 14.85it/s]Evalating textured mesh~: 85it [00:06, 15.00it/s]Evalating textured mesh~: 87it [00:06, 14.97it/s]Evalating textured mesh~: 89it [00:06, 14.98it/s]Evalating textured mesh~: 91it [00:07, 15.25it/s]Evalating textured mesh~: 93it [00:07, 13.58it/s]Evalating textured mesh~: 95it [00:07, 14.18it/s]Evalating textured mesh~: 97it [00:07, 14.69it/s]Evalating textured mesh~: 99it [00:07, 14.97it/s]Evalating textured mesh~: 100it [00:07, 13.01it/s]
+stage1-eval render time: 11.4s
+subprocess pipeline_paint3d_stage1eval.py exited rc=0 after 17.1s
+[sync] final sync /root/crowd_library_20260715_stage1eval_local/3_clip_pink_plain/medieval_villagers -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_stage1eval/3_clip_pink_plain/medieval_villagers rc=0
+
+done. failures: 0
+[run_crowd_library] prompt='medieval villagers' cell=3_clip_pink_plain python_exit=0
+mesh library: 40 tops, 39 bottoms, 59 fullbody
+plan: 1 prompt(s) x 5 members
+
+=== [medieval villagers] member_00: f_lusekofta+namfashionskirt seed=117127512 ===
+
+=== [medieval villagers] member_01: fem_suit seed=1901874575 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_02: elvs_butterflydiscotop1+pleated_skirtelv1 seed=448853254 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_03: knitted_sweater_02+mini_skirt_02 seed=813826678 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_04: sweater_fisherman+elvs_gored_midiskirt1 seed=1477203377 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+[sync] final sync /root/crowd_library_20260715_stage1eval_local/4_clip_white_axes/medieval_villagers -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_stage1eval/4_clip_white_axes/medieval_villagers rc=0
+
+done. failures: 0
+[run_crowd_library] prompt='medieval villagers' cell=4_clip_white_axes python_exit=0
+mesh library: 40 tops, 39 bottoms, 59 fullbody
+plan: 1 prompt(s) x 5 members
+
+=== [medieval villagers] member_00: f_lusekofta+namfashionskirt seed=117127512 ===
+
+=== [medieval villagers] member_01: fem_suit seed=1901874575 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_02: elvs_butterflydiscotop1+pleated_skirtelv1 seed=448853254 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_03: knitted_sweater_02+mini_skirt_02 seed=813826678 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_04: sweater_fisherman+elvs_gored_midiskirt1 seed=1477203377 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+[sync] final sync /root/crowd_library_20260715_stage1eval_local/5_clip_pink_axes/medieval_villagers -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_stage1eval/5_clip_pink_axes/medieval_villagers rc=0
+
+done. failures: 0
+[run_crowd_library] prompt='medieval villagers' cell=5_clip_pink_axes python_exit=0
+mesh library: 40 tops, 39 bottoms, 59 fullbody
+plan: 1 prompt(s) x 5 members
+[llm] reusing 5 previously-evolved members from /root/crowd_library_20260715_stage1eval_local/8_clip_white_llm6/medieval_villagers/llm_members.json (evolution is not reproducible; never re-run it mid-crowd)
+
+=== [medieval villagers] member_00: lace_up_blouse+elvs_gored_midiskirt1 seed=1970385345 ===
+
+=== [medieval villagers] member_01: sweater_fisherman+jeansskirt seed=1517701004 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_02: short_tail_camo_tee+pleated_skirtelv1 seed=236846352 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_03: asymmetric_tunic_and_sash+tier_skirt seed=276542714 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_04: elvs_goddess_dress6 seed=1123396169 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+[sync] final sync /root/crowd_library_20260715_stage1eval_local/8_clip_white_llm6/medieval_villagers -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_stage1eval/8_clip_white_llm6/medieval_villagers rc=0
+
+done. failures: 0
+[run_crowd_library] prompt='medieval villagers' cell=8_clip_white_llm6 python_exit=0
+mesh library: 40 tops, 39 bottoms, 59 fullbody
+plan: 1 prompt(s) x 5 members
+[llm] reusing 5 previously-evolved members from /root/crowd_library_20260715_stage1eval_local/9_clip_pink_llm6/medieval_villagers/llm_members.json (evolution is not reproducible; never re-run it mid-crowd)
+
+=== [medieval villagers] member_00: lace_up_blouse+elvs_gored_midiskirt1 seed=1970385345 ===
+
+=== [medieval villagers] member_01: sweater_fisherman+jeansskirt seed=1517701004 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_02: short_tail_camo_tee+pleated_skirtelv1 seed=236846352 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_03: asymmetric_tunic_and_sash+tier_skirt seed=276542714 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [medieval villagers] member_04: elvs_goddess_dress6 seed=1123396169 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+[sync] final sync /root/crowd_library_20260715_stage1eval_local/9_clip_pink_llm6/medieval_villagers -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_stage1eval/9_clip_pink_llm6/medieval_villagers rc=0
+
+done. failures: 0
+[run_crowd_library] prompt='medieval villagers' cell=9_clip_pink_llm6 python_exit=0
+[run_crowd_library] === theme complete: medieval villagers ===
+[run_crowd_library] === theme: cyberpunk street crowd ===
+mesh library: 40 tops, 39 bottoms, 59 fullbody
+plan: 1 prompt(s) x 5 members
+
+=== [cyberpunk street crowd] member_00: sweater_fisherman+mini_skirt_02 seed=1192559850 ===
+
+=== [cyberpunk street crowd] member_01: deathnote+elvs_disco_mini1 seed=332143197 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [cyberpunk street crowd] member_02: elvs_goddessdress7 seed=1560351505 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [cyberpunk street crowd] member_03: spaghetti_top+mens_trouser_f_elv_chr seed=1537153614 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [cyberpunk street crowd] member_04: elvs_discotop2+tightjeans seed=248727895 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+[sync] final sync /root/crowd_library_20260715_stage1eval_local/1_random_white_plain/cyberpunk_street_crowd -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_stage1eval/1_random_white_plain/cyberpunk_street_crowd rc=0
+
+done. failures: 0
+[run_crowd_library] prompt='cyberpunk street crowd' cell=1_random_white_plain python_exit=0
+mesh library: 40 tops, 39 bottoms, 59 fullbody
+plan: 1 prompt(s) x 5 members
+
+=== [cyberpunk street crowd] member_00: short_tail_camo_tee+shortjeans seed=426492595 ===
+
+=== [cyberpunk street crowd] member_01: crude_male_shirt+elvs_gored_elephantpant1 seed=883038678 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [cyberpunk street crowd] member_02: sarong_coverup1 seed=1509648108 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [cyberpunk street crowd] member_03: camisole_top+m_trousers_01 seed=1247566540 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [cyberpunk street crowd] member_04: f_dress_01 seed=272669931 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+[sync] final sync /root/crowd_library_20260715_stage1eval_local/2_clip_white_plain/cyberpunk_street_crowd -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_stage1eval/2_clip_white_plain/cyberpunk_street_crowd rc=0
+
+done. failures: 0
+[run_crowd_library] prompt='cyberpunk street crowd' cell=2_clip_white_plain python_exit=0
+mesh library: 40 tops, 39 bottoms, 59 fullbody
+plan: 1 prompt(s) x 5 members
+
+=== [cyberpunk street crowd] member_00: short_tail_camo_tee+shortjeans seed=426492595 ===
+
+=== [cyberpunk street crowd] member_01: crude_male_shirt+elvs_gored_elephantpant1 seed=883038678 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [cyberpunk street crowd] member_02: sarong_coverup1 seed=1509648108 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [cyberpunk street crowd] member_03: camisole_top+m_trousers_01 seed=1247566540 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [cyberpunk street crowd] member_04: f_dress_01 seed=272669931 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+[sync] final sync /root/crowd_library_20260715_stage1eval_local/3_clip_pink_plain/cyberpunk_street_crowd -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_stage1eval/3_clip_pink_plain/cyberpunk_street_crowd rc=0
+
+done. failures: 0
+[run_crowd_library] prompt='cyberpunk street crowd' cell=3_clip_pink_plain python_exit=0

@@ -97,7 +97,9 @@ while IFS= read -r prompt || [ -n "$prompt" ]; do
     exit 1
   fi
 
-  run "$prompt" 1_random_white_plain || exit 1
+  # cell 1 deliberately absent (2026-07-17): with meshes+seeds pinned it is a
+  # nondeterminism replicate of cell 2 (plain prompt, white noise) and the
+  # texture-stage charts collapse the two -- generating it was pure cost.
   run "$prompt" 3_clip_pink_plain --mesh-sampling clip --tau "$TAU" --pink-noise || exit 1
   run "$prompt" 4_clip_white_axes --mesh-sampling clip --tau "$TAU" \
       --clip-axes --axis-tau "$AXIS_TAU" || exit 1

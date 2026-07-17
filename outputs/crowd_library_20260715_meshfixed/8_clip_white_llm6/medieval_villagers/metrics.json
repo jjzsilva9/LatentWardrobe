@@ -1,0 +1,55 @@
+{
+  "crowd_prompt": "medieval villagers",
+  "num_members_evaluated": 5,
+  "skipped_members": [],
+  "coarse_render_members": [
+    "member_00",
+    "member_01",
+    "member_02",
+    "member_03",
+    "member_04"
+  ],
+  "frames": [
+    0,
+    50
+  ],
+  "diversity": {
+    "dreamsim_pairwise": {
+      "mean": 0.45364644229412077,
+      "min": 0.31372272968292236,
+      "max": 0.5367881655693054,
+      "std": 0.06367240381240066
+    },
+    "color_chi2_pairwise": {
+      "mean": 0.5648270383477211,
+      "min": 0.08770842850208282,
+      "max": 0.9724670648574829,
+      "std": 0.25744811494056297
+    },
+    "color_source": "stage1_derived_mask",
+    "vendi_score_dinov2": 3.608856439590454,
+    "dpp_score_dinov2": 0.7326595783233643
+  },
+  "coherence": {
+    "clipscore_per_member": {
+      "member_00": 0.22036820650100708,
+      "member_01": 0.2097170203924179,
+      "member_02": 0.21805128455162048,
+      "member_03": 0.19002395868301392,
+      "member_04": 0.19464117288589478
+    },
+    "clipscore_crowd_mean": 0.20656032860279083,
+    "clipscore_crowd_std": 0.012232596346254626
+  },
+  "quality": {
+    "hpsv2_per_member": {
+      "member_00": 0.12982177734375,
+      "member_01": 0.1351318359375,
+      "member_02": 0.119140625,
+      "member_03": 0.1331787109375,
+      "member_04": 0.13031005859375
+    },
+    "hpsv2_crowd_mean": 0.1295166015625,
+    "hpsv2_crowd_std": 0.005537607752524468
+  }
+}

@@ -12,7 +12,9 @@ export LD_LIBRARY_PATH=/usr/lib/wsl/lib:$LD_LIBRARY_PATH
 cd "/mnt/u/My Documents/LatentWardrobe"
 
 OUT="outputs/${CROWD_LIBRARY_MESHFIXED_OUT:-crowd_library_20260713_meshfixed}"
-CELLS=(1_random_white_plain 2_clip_white_plain 3_clip_pink_plain 4_clip_white_axes \
+# cell 1 absent: a pinned-mesh replicate of cell 2, not generated/charted for
+# this batch (see run_crowd_library_mesh_fixed.sh)
+CELLS=(2_clip_white_plain 3_clip_pink_plain 4_clip_white_axes \
        5_clip_pink_axes 8_clip_white_llm6 9_clip_pink_llm6)
 
 for cell in "${CELLS[@]}"; do

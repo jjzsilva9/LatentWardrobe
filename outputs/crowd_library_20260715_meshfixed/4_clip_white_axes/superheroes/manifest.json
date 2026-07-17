@@ -68,8 +68,8 @@
       "member": "member_01",
       "outfit_type": "top_bottom",
       "garments": [
-        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/tube_top.obj",
-        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/mini_skirt_01.obj"
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/sweater_fisherman.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/shortjeans.obj"
       ],
       "sd_seed": 431343856,
       "color": null,
@@ -85,20 +85,22 @@
         "full_desc": "worn formal blue canvas patched clothing",
         "clothing_desc": "worn formal blue canvas patched clothing"
       },
-      "category_phrase": "wearing a crop top and mini skirt",
+      "category_phrase": "wearing a blouse and shorts",
       "outfit": {
         "status": "ok",
         "path": "/root/crowd_library_20260715_meshfixed_local/4_clip_white_axes/superheroes/member_01/outfit.obj"
       },
       "stage1": {
-        "status": "skipped (resume)",
+        "status": "ok",
+        "seconds": 83.0,
         "final_texture": "/root/crowd_library_20260715_meshfixed_local/4_clip_white_axes/superheroes/member_01/stage1/res-0/albedo.png"
       },
       "stage2": {
         "status": "skipped (--skip-stage2)"
       },
       "stage1_render": {
-        "status": "skipped (resume)"
+        "status": "ok",
+        "seconds": 18.0
       }
     },
     {

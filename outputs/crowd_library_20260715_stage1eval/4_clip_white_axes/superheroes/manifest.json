@@ -1,6 +1,6 @@
 {
   "crowd_prompt": "superheroes",
-  "fixed_members_from": null,
+  "fixed_members_from": "/root/crowd_library_20260715_stage1eval_local/4_clip_white_axes",
   "master_seed": 0,
   "fullbody_prob": 0.25,
   "mesh_sampling": "clip",

@@ -1,6 +1,6 @@
 {
   "crowd_prompt": "medieval villagers",
-  "fixed_members_from": null,
+  "fixed_members_from": "/root/crowd_library_20260715_stage1eval_local/9_clip_pink_llm6",
   "master_seed": 0,
   "fullbody_prob": 0.25,
   "mesh_sampling": "clip",

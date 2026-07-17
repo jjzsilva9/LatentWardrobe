@@ -1,0 +1,55 @@
+{
+  "crowd_prompt": "superheroes",
+  "num_members_evaluated": 5,
+  "skipped_members": [],
+  "coarse_render_members": [
+    "member_00",
+    "member_01",
+    "member_02",
+    "member_03",
+    "member_04"
+  ],
+  "frames": [
+    0,
+    50
+  ],
+  "diversity": {
+    "dreamsim_pairwise": {
+      "mean": 0.5655064672231674,
+      "min": 0.3083459734916687,
+      "max": 0.6797922551631927,
+      "std": 0.10119266769657638
+    },
+    "color_chi2_pairwise": {
+      "mean": 0.7045066893100739,
+      "min": 0.24489036202430725,
+      "max": 0.9552175998687744,
+      "std": 0.2487644703976793
+    },
+    "color_source": "stage1_derived_mask",
+    "vendi_score_dinov2": 3.632138967514038,
+    "dpp_score_dinov2": 0.7298825979232788
+  },
+  "coherence": {
+    "clipscore_per_member": {
+      "member_00": 0.1593431681394577,
+      "member_01": 0.18040043115615845,
+      "member_02": 0.16862651705741882,
+      "member_03": 0.19280505180358887,
+      "member_04": 0.1646316945552826
+    },
+    "clipscore_crowd_mean": 0.1731613725423813,
+    "clipscore_crowd_std": 0.012021157999834832
+  },
+  "quality": {
+    "hpsv2_per_member": {
+      "member_00": 0.102508544921875,
+      "member_01": 0.1326904296875,
+      "member_02": 0.128692626953125,
+      "member_03": 0.120330810546875,
+      "member_04": 0.104766845703125
+    },
+    "hpsv2_crowd_mean": 0.1177978515625,
+    "hpsv2_crowd_std": 0.01225129304600986
+  }
+}

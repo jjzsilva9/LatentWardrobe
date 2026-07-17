@@ -7,11 +7,11 @@ diverse — no two members should read as clones.
 
 MSc dissertation project, Trinity College Dublin, supervised by Rachel McDonnell.
 
-![Crowds by method](outputs/crowd_library_20260715_stage1eval/plots/end_to_end/contact_sheets/medieval_villagers.png)
-*One row per method (seven methods), five members per row, all generated from
-the same theme prompt. White/pink noise pairs (rows 2–3, 4–5, 6–7) share
-meshes and diffusion seeds, so texture-level differences read straight down a
-column.*
+![Texturing methods on identical meshes](outputs/crowd_library_20260715_stage1eval/plots/texture/contact_sheets/medieval_villagers.png)
+*The mesh-fixed comparison: every column is the same garment mesh and
+diffusion seed; rows differ only in texturing method (prompt strategy ×
+initial noise). Reading down a column shows exactly — and only — what each
+method changes.*
 
 ## Motivation
 
@@ -91,23 +91,39 @@ the per-member cost of full two-stage texturing); colour diversity on these
 uses a painted-texel mask derived from Paint3D's exact placeholder colour,
 flagged `color_source: "stage1_derived_mask"` in `metrics.json`.
 
-![Vendi score by method](outputs/factorial7_20260706/plots/vendi_score_dinov2.png)
+![Vendi score, texture stage](outputs/crowd_library_20260715_stage1eval/plots/texture/avg/vendi_score_dinov2.png)
 
-Headline results from the earlier `medieval villagers` factorial pilot
-(N = 10 per cell, pre pool-fix, full two-stage texturing): theme coherence is
-flat across all methods (0.19–0.21), so diversity gains were not paid for
-with theme drift; a single random colour word triples colour diversity
-(χ² 0.53 → 0.86); and the corrected 6-axis LLM search achieves the pilot's
-highest effective-member count (Vendi 5.01 vs 4.73 for the random-mesh
-baseline) while more than doubling the colour diversity of its 12-axis
-predecessor. Cross-theme replication for that pilot is in
-`outputs/multitheme_20260710/`.
+Headline results on the five-theme crowd library (N = 5 per crowd, theme
+means; batch `crowd_library_20260715`):
 
-The consolidated crowd-library study (5 themes × 7 methods, reduced mesh
-pool, pair-coherent sampling) regenerates these comparisons across all three
-evaluation stages; its charts land in
-`outputs/crowd_library_20260715_stage1eval/plots/{mesh,texture,end_to_end}/`
-and this section's numbers will be replaced from them.
+- **Texture stage (mesh-fixed):** with meshes and seeds pinned, CLIP-axis
+  description sampling is the strongest texturing diversifier — Vendi
+  3.46/3.45 (white/pink) vs 3.22 for the plain prompt, colour χ²
+  0.745/0.758 vs 0.596, DreamSim agreeing (0.52 vs 0.47). WANDER (6-axis)
+  trades diversity for perceived quality: best HPSv2 (0.135) and the
+  stage's best CLIPScore coherence (0.210).
+- **End-to-end:** set-level diversity compresses (Vendi 3.08–3.22) as mesh
+  selection partially masks texturing gains, but the method signatures
+  persist — axes lead colour (0.729/0.707), WANDER leads quality (HPSv2
+  0.142/0.141) and coherence (CLIPScore 0.216/0.213). Coherence is
+  otherwise flat (0.206–0.211): no method pays for diversity with theme
+  drift.
+- **Mesh stage:** CLIP-anchored selection *costs* silhouette diversity
+  relative to random selection (shape Vendi 2.35–2.58 vs 2.80; silhouette
+  1−IoU 0.54–0.58 vs 0.60) — the expected coherence↔diversity trade-off
+  made measurable — while CLIPScore on untextured renders (0.190–0.193) is
+  too weak an instrument to resolve the coherence side; mesh-level theme
+  fit reads qualitatively in the contact sheets instead.
+- **Pink noise** nudges colour diversity on plain prompts (χ² 0.630 vs
+  0.596) and washes out under description-driven prompting, at no
+  set-level cost.
+
+Charts for all three stages (per-theme and theme-averaged) and per-theme
+contact sheets live under
+`outputs/crowd_library_20260715_stage1eval/plots/{mesh,texture,end_to_end}/`.
+An earlier single-theme pilot (full two-stage texturing, N = 10, pre
+pool-fix) is preserved in `outputs/factorial7_20260706/`, with cross-theme
+replication in `outputs/multitheme_20260710/`.
 
 ## Repository layout
 
