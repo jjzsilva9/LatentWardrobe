@@ -1,0 +1,78 @@
+
+[sync] 2026-07-16 13:28:58 starting: /root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/business_formalwear -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_meshfixed/5_clip_pink_axes/business_formalwear
+
+[sync] 2026-07-16 13:31:35 starting: /root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/business_formalwear -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_meshfixed/5_clip_pink_axes/business_formalwear
+rsync: [receiver] stat "/mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_meshfixed/5_clip_pink_axes/business_formalwear/member_01/stage1_render/.render_all.mp4.rGvJ8i" failed: Transport endpoint is not connected (107)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1356) [sender=3.4.1]
+
+[sync] 2026-07-16 13:34:23 starting: /root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/business_formalwear -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_meshfixed/5_clip_pink_axes/business_formalwear
+
+[sync] 2026-07-16 13:37:07 starting: /root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/business_formalwear -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_meshfixed/5_clip_pink_axes/business_formalwear
+
+[sync] 2026-07-16 13:39:51 starting: /root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/business_formalwear -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_meshfixed/5_clip_pink_axes/business_formalwear
+
+[sync] 2026-07-16 14:32:38 starting: /root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/business_formalwear -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_meshfixed/5_clip_pink_axes/business_formalwear
+
+[sync] 2026-07-16 15:22:57 starting: /root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/business_formalwear -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_meshfixed/5_clip_pink_axes/business_formalwear
+
+[sync] 2026-07-16 15:42:35 starting: /root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/superheroes -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_meshfixed/5_clip_pink_axes/superheroes
+
+[sync] 2026-07-16 15:44:13 starting: /root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/superheroes -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_meshfixed/5_clip_pink_axes/superheroes
+
+[sync] 2026-07-16 15:45:49 starting: /root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/superheroes -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_meshfixed/5_clip_pink_axes/superheroes
+
+[sync] 2026-07-16 15:47:20 starting: /root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/superheroes -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_meshfixed/5_clip_pink_axes/superheroes
+
+[sync] 2026-07-16 15:48:54 starting: /root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/superheroes -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_meshfixed/5_clip_pink_axes/superheroes
+
+[sync] 2026-07-16 16:48:08 starting: /root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/medieval_villagers -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_meshfixed/5_clip_pink_axes/medieval_villagers
+
+[sync] 2026-07-16 16:49:51 starting: /root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/medieval_villagers -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_meshfixed/5_clip_pink_axes/medieval_villagers
+
+[sync] 2026-07-16 16:51:35 starting: /root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/medieval_villagers -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_meshfixed/5_clip_pink_axes/medieval_villagers
+
+[sync] 2026-07-16 16:53:11 starting: /root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/medieval_villagers -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_meshfixed/5_clip_pink_axes/medieval_villagers
+
+[sync] 2026-07-16 16:54:48 starting: /root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/medieval_villagers -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_meshfixed/5_clip_pink_axes/medieval_villagers
+
+[sync] 2026-07-16 17:25:00 starting: /root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/business_formalwear -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_meshfixed/5_clip_pink_axes/business_formalwear
+
+[sync] 2026-07-16 17:31:36 starting: /root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/superheroes -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_meshfixed/5_clip_pink_axes/superheroes
+
+[sync] 2026-07-16 17:37:59 starting: /root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/medieval_villagers -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_meshfixed/5_clip_pink_axes/medieval_villagers
+
+[sync] 2026-07-16 18:12:06 starting: /root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/cyberpunk_street_crowd -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_meshfixed/5_clip_pink_axes/cyberpunk_street_crowd
+
+[sync] 2026-07-16 18:13:53 starting: /root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/cyberpunk_street_crowd -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_meshfixed/5_clip_pink_axes/cyberpunk_street_crowd
+
+[sync] 2026-07-16 18:15:33 starting: /root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/cyberpunk_street_crowd -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_meshfixed/5_clip_pink_axes/cyberpunk_street_crowd
+
+[sync] 2026-07-16 18:17:15 starting: /root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/cyberpunk_street_crowd -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_meshfixed/5_clip_pink_axes/cyberpunk_street_crowd
+
+[sync] 2026-07-16 18:18:54 starting: /root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/cyberpunk_street_crowd -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_meshfixed/5_clip_pink_axes/cyberpunk_street_crowd
+
+[sync] 2026-07-16 19:27:50 starting: /root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/business_formalwear -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_meshfixed/5_clip_pink_axes/business_formalwear
+
+[sync] 2026-07-16 19:35:42 starting: /root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/superheroes -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_meshfixed/5_clip_pink_axes/superheroes
+
+[sync] 2026-07-16 19:44:00 starting: /root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/medieval_villagers -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_meshfixed/5_clip_pink_axes/medieval_villagers
+
+[sync] 2026-07-16 19:52:16 starting: /root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/cyberpunk_street_crowd -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_meshfixed/5_clip_pink_axes/cyberpunk_street_crowd
+
+[sync] 2026-07-16 20:01:12 starting: /root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/steampunk_inventors -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_meshfixed/5_clip_pink_axes/steampunk_inventors
+
+[sync] 2026-07-16 20:02:55 starting: /root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/steampunk_inventors -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_meshfixed/5_clip_pink_axes/steampunk_inventors
+
+[sync] 2026-07-16 20:04:40 starting: /root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/steampunk_inventors -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_meshfixed/5_clip_pink_axes/steampunk_inventors
+
+[sync] 2026-07-16 20:06:18 starting: /root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/steampunk_inventors -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_meshfixed/5_clip_pink_axes/steampunk_inventors
+
+[sync] 2026-07-17 16:51:40 starting: /root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/business_formalwear -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_meshfixed/5_clip_pink_axes/business_formalwear
+
+[sync] 2026-07-17 17:06:42 starting: /root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/superheroes -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_meshfixed/5_clip_pink_axes/superheroes
+
+[sync] 2026-07-17 17:08:22 starting: /root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/superheroes -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_meshfixed/5_clip_pink_axes/superheroes
+
+[sync] 2026-07-17 17:26:25 starting: /root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/medieval_villagers -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_meshfixed/5_clip_pink_axes/medieval_villagers
+
+[sync] 2026-07-17 17:28:07 starting: /root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/medieval_villagers -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_meshfixed/5_clip_pink_axes/medieval_villagers
