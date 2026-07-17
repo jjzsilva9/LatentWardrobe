@@ -1,0 +1,50 @@
+{
+  "crowd_prompt": "cyberpunk street crowd",
+  "num_members_evaluated": 5,
+  "skipped_members": [],
+  "frames": [
+    0,
+    15,
+    30,
+    45
+  ],
+  "shape_diversity": {
+    "dreamsim_pairwise": {
+      "mean": 0.37957522124052046,
+      "min": 0.23711524903774261,
+      "max": 0.487016037106514,
+      "std": 0.0709905285672485
+    },
+    "silhouette_iou_dist_pairwise": {
+      "mean": 0.5824780237324617,
+      "min": 0.4327615478406045,
+      "max": 0.7457465345795926,
+      "std": 0.08841454609417979
+    },
+    "silhouette_iou_members": 5,
+    "vendi_score_dinov2": 2.5897042751312256,
+    "dpp_score_dinov2": 0.4985334873199463
+  },
+  "coherence": {
+    "clipscore_per_member": {
+      "member_00": 0.17137891054153442,
+      "member_01": 0.18428374826908112,
+      "member_02": 0.17236265540122986,
+      "member_03": 0.17783866822719574,
+      "member_04": 0.17771893739700317
+    },
+    "clipscore_crowd_mean": 0.17671658396720885,
+    "clipscore_crowd_std": 0.004625434306377286
+  },
+  "quality": {
+    "hpsv2_per_member": {
+      "member_00": 0.0702056884765625,
+      "member_01": 0.080322265625,
+      "member_02": 0.0851593017578125,
+      "member_03": 0.06595611572265625,
+      "member_04": 0.077667236328125
+    },
+    "hpsv2_crowd_mean": 0.07586212158203125,
+    "hpsv2_crowd_std": 0.006924060527091734
+  }
+}
