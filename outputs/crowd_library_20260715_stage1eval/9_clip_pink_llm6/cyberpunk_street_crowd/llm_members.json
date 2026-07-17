@@ -1,0 +1,256 @@
+{
+  "members": [
+    {
+      "member": "member_00",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/highneckcroptop.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/m_trousers_01.obj"
+      ],
+      "sd_seed": 947807701,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "neon green",
+          "formality": "ragged",
+          "material": "leather",
+          "pattern": "patched",
+          "condition": "worn",
+          "accessories": "none"
+        },
+        "full_desc": "worn ragged neon green leather patched clothing",
+        "clothing_desc": "worn ragged neon green leather patched clothing",
+        "theme_relevance": 0.5526317358016968
+      }
+    },
+    {
+      "member": "member_01",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/ruffle_sleeve_peasantblouse.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/elvs_disco_pant1.obj"
+      ],
+      "sd_seed": 1465901666,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "blue",
+          "formality": "casual",
+          "material": "leather",
+          "pattern": "patched",
+          "condition": "custom-modified",
+          "accessories": "none"
+        },
+        "full_desc": "custom-modified casual blue leather patched clothing",
+        "clothing_desc": "custom-modified casual blue leather patched clothing",
+        "theme_relevance": 0.599252462387085
+      }
+    },
+    {
+      "member": "member_02",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/coat.obj"
+      ],
+      "sd_seed": 1317833768,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "black",
+          "formality": "opulent",
+          "material": "leather",
+          "pattern": "patched",
+          "condition": "worn",
+          "accessories": "a belt"
+        },
+        "full_desc": "worn opulent black leather patched clothing and a belt",
+        "clothing_desc": "worn opulent black leather patched clothing and a belt",
+        "theme_relevance": 0.5862589478492737
+      }
+    },
+    {
+      "member": "member_03",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/asymmetric_tunic_and_sash.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/elvs_disco_pencilskirt1.obj"
+      ],
+      "sd_seed": 1414966109,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "muted-gold",
+          "formality": "casual",
+          "material": "canvas",
+          "pattern": "patched",
+          "condition": "custom-modified",
+          "accessories": "none"
+        },
+        "full_desc": "custom-modified casual muted-gold canvas patched clothing",
+        "clothing_desc": "custom-modified casual muted-gold canvas patched clothing",
+        "theme_relevance": 0.5761486887931824
+      }
+    },
+    {
+      "member": "member_04",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/knitted_sweater_01.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/m_trousers_02.obj"
+      ],
+      "sd_seed": 1348366432,
+      "color": null,
+      "llm": {
+        "winner": {
+          "color": "teal",
+          "formality": "casual",
+          "material": "leather",
+          "pattern": "patched",
+          "condition": "worn",
+          "accessories": "tool-belt"
+        },
+        "full_desc": "worn casual teal leather patched clothing and tool-belt",
+        "clothing_desc": "worn casual teal leather patched clothing and tool-belt",
+        "theme_relevance": 0.4972359240055084
+      }
+    }
+  ],
+  "llm_evolution_history": [
+    {
+      "type": "mutation",
+      "parent": 2,
+      "axis": "formality",
+      "accepted": true,
+      "child_novelty": 0.11743644624948502,
+      "replaced_novelty": 0.11293355375528336
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        3,
+        0
+      ],
+      "accepted": false,
+      "child_novelty": 0.07677777856588364,
+      "replaced_novelty": 0.07677777856588364
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        3,
+        2
+      ],
+      "accepted": true,
+      "child_novelty": 0.11559700965881348,
+      "replaced_novelty": 0.09149523824453354
+    },
+    {
+      "type": "mutation",
+      "parent": 0,
+      "axis": "color",
+      "accepted": true,
+      "child_novelty": 0.2170579582452774,
+      "replaced_novelty": 0.15399621427059174
+    },
+    {
+      "type": "mutation",
+      "parent": 1,
+      "axis": "condition",
+      "accepted": true,
+      "child_novelty": 0.18993164598941803,
+      "replaced_novelty": 0.17062801122665405
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        0,
+        3
+      ],
+      "accepted": false,
+      "child_novelty": 0.1561463624238968,
+      "replaced_novelty": 0.1561463624238968
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        3,
+        1
+      ],
+      "accepted": false,
+      "child_novelty": 0.10599303245544434,
+      "replaced_novelty": 0.10599303245544434
+    },
+    {
+      "type": "mutation",
+      "parent": 1,
+      "axis": "color",
+      "accepted": true,
+      "child_novelty": 0.22385241091251373,
+      "replaced_novelty": 0.17935144901275635
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        0,
+        2
+      ],
+      "accepted": false,
+      "child_novelty": 0.15355174243450165,
+      "replaced_novelty": 0.16978202760219574
+    },
+    {
+      "type": "mutation",
+      "parent": 0,
+      "axis": "accessories",
+      "accepted": false,
+      "child_novelty": 0.20404833555221558,
+      "replaced_novelty": 0.21343626081943512
+    },
+    {
+      "type": "mutation",
+      "parent": 4,
+      "axis": "material",
+      "accepted": false,
+      "child_novelty": 0.18504942953586578,
+      "replaced_novelty": 0.18538932502269745
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        0,
+        4
+      ],
+      "accepted": false,
+      "child_novelty": 0.16448675096035004,
+      "replaced_novelty": 0.1644868105649948
+    },
+    {
+      "type": "mutation",
+      "parent": 2,
+      "axis": "formality",
+      "accepted": false,
+      "child_novelty": 0.15623480081558228,
+      "replaced_novelty": 0.16987444460391998
+    },
+    {
+      "type": "mutation",
+      "parent": 1,
+      "axis": "material",
+      "accepted": true,
+      "child_novelty": 0.14267338812351227,
+      "replaced_novelty": 0.13731591403484344
+    },
+    {
+      "type": "crossover",
+      "parents": [
+        1,
+        4
+      ],
+      "accepted": false,
+      "child_novelty": 0.13191024959087372,
+      "replaced_novelty": 0.16036294400691986
+    }
+  ],
+  "llm_novelty": "clothing",
+  "llm_axes": "clothing"
+}
