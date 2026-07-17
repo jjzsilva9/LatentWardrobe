@@ -1,0 +1,55 @@
+{
+  "crowd_prompt": "steampunk inventors",
+  "num_members_evaluated": 5,
+  "skipped_members": [],
+  "coarse_render_members": [
+    "member_00",
+    "member_01",
+    "member_02",
+    "member_03",
+    "member_04"
+  ],
+  "frames": [
+    0,
+    50
+  ],
+  "diversity": {
+    "dreamsim_pairwise": {
+      "mean": 0.41817899942398074,
+      "min": 0.31108763813972473,
+      "max": 0.5262565612792969,
+      "std": 0.06827591625165413
+    },
+    "color_chi2_pairwise": {
+      "mean": 0.40754160434007647,
+      "min": 0.10087373852729797,
+      "max": 0.7584596872329712,
+      "std": 0.24251337226477143
+    },
+    "color_source": "stage1_derived_mask",
+    "vendi_score_dinov2": 3.0856456756591797,
+    "dpp_score_dinov2": 0.6205859780311584
+  },
+  "coherence": {
+    "clipscore_per_member": {
+      "member_00": 0.22467540204524994,
+      "member_01": 0.20175422728061676,
+      "member_02": 0.2140897661447525,
+      "member_03": 0.23000791668891907,
+      "member_04": 0.19263646006584167
+    },
+    "clipscore_crowd_mean": 0.21263275444507598,
+    "clipscore_crowd_std": 0.013908548806282521
+  },
+  "quality": {
+    "hpsv2_per_member": {
+      "member_00": 0.1302490234375,
+      "member_01": 0.122222900390625,
+      "member_02": 0.13397216796875,
+      "member_03": 0.1407470703125,
+      "member_04": 0.1124267578125
+    },
+    "hpsv2_crowd_mean": 0.127923583984375,
+    "hpsv2_crowd_std": 0.009788608208638827
+  }
+}

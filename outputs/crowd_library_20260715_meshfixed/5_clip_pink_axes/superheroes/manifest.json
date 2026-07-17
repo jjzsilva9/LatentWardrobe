@@ -54,16 +54,14 @@
         "path": "/root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/superheroes/member_00/outfit.obj"
       },
       "stage1": {
-        "status": "ok",
-        "seconds": 72.7,
+        "status": "skipped (resume)",
         "final_texture": "/root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/superheroes/member_00/stage1/res-0/albedo.png"
       },
       "stage2": {
         "status": "skipped (--skip-stage2)"
       },
       "stage1_render": {
-        "status": "ok",
-        "seconds": 16.6
+        "status": "skipped (resume)"
       }
     },
     {
@@ -93,16 +91,14 @@
         "path": "/root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/superheroes/member_01/outfit.obj"
       },
       "stage1": {
-        "status": "ok",
-        "seconds": 80.8,
+        "status": "skipped (resume)",
         "final_texture": "/root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/superheroes/member_01/stage1/res-0/albedo.png"
       },
       "stage2": {
         "status": "skipped (--skip-stage2)"
       },
       "stage1_render": {
-        "status": "ok",
-        "seconds": 16.8
+        "status": "skipped (resume)"
       }
     },
     {
@@ -132,16 +128,14 @@
         "path": "/root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/superheroes/member_02/outfit.obj"
       },
       "stage1": {
-        "status": "ok",
-        "seconds": 78.6,
+        "status": "skipped (resume)",
         "final_texture": "/root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/superheroes/member_02/stage1/res-0/albedo.png"
       },
       "stage2": {
         "status": "skipped (--skip-stage2)"
       },
       "stage1_render": {
-        "status": "ok",
-        "seconds": 16.8
+        "status": "skipped (resume)"
       }
     },
     {
@@ -170,16 +164,14 @@
         "path": "/root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/superheroes/member_03/outfit.obj"
       },
       "stage1": {
-        "status": "ok",
-        "seconds": 75.0,
+        "status": "skipped (resume)",
         "final_texture": "/root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/superheroes/member_03/stage1/res-0/albedo.png"
       },
       "stage2": {
         "status": "skipped (--skip-stage2)"
       },
       "stage1_render": {
-        "status": "ok",
-        "seconds": 15.9
+        "status": "skipped (resume)"
       }
     },
     {
@@ -209,16 +201,14 @@
         "path": "/root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/superheroes/member_04/outfit.obj"
       },
       "stage1": {
-        "status": "ok",
-        "seconds": 76.7,
+        "status": "skipped (resume)",
         "final_texture": "/root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/superheroes/member_04/stage1/res-0/albedo.png"
       },
       "stage2": {
         "status": "skipped (--skip-stage2)"
       },
       "stage1_render": {
-        "status": "ok",
-        "seconds": 16.4
+        "status": "skipped (resume)"
       }
     }
   ]

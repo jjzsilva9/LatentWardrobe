@@ -1,0 +1,55 @@
+{
+  "crowd_prompt": "business formalwear",
+  "num_members_evaluated": 5,
+  "skipped_members": [],
+  "coarse_render_members": [
+    "member_00",
+    "member_01",
+    "member_02",
+    "member_03",
+    "member_04"
+  ],
+  "frames": [
+    0,
+    50
+  ],
+  "diversity": {
+    "dreamsim_pairwise": {
+      "mean": 0.48857087194919585,
+      "min": 0.3508553206920624,
+      "max": 0.6341953873634338,
+      "std": 0.0835323161312944
+    },
+    "color_chi2_pairwise": {
+      "mean": 0.8815066456794739,
+      "min": 0.65007084608078,
+      "max": 0.990199625492096,
+      "std": 0.12270155623586494
+    },
+    "color_source": "stage1_derived_mask",
+    "vendi_score_dinov2": 3.3207530975341797,
+    "dpp_score_dinov2": 0.6771849989891052
+  },
+  "coherence": {
+    "clipscore_per_member": {
+      "member_00": 0.24348416924476624,
+      "member_01": 0.23382151126861572,
+      "member_02": 0.24210649728775024,
+      "member_03": 0.24544671177864075,
+      "member_04": 0.2568078339099884
+    },
+    "clipscore_crowd_mean": 0.24433334469795226,
+    "clipscore_crowd_std": 0.0073896015825252875
+  },
+  "quality": {
+    "hpsv2_per_member": {
+      "member_00": 0.14422607421875,
+      "member_01": 0.1422119140625,
+      "member_02": 0.133270263671875,
+      "member_03": 0.16009521484375,
+      "member_04": 0.15179443359375
+    },
+    "hpsv2_crowd_mean": 0.146319580078125,
+    "hpsv2_crowd_std": 0.009069536699997756
+  }
+}

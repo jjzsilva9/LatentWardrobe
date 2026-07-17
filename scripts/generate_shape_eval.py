@@ -45,6 +45,8 @@ def parse_args():
     p.add_argument("--library-dir", type=Path, required=True, help="e.g. outputs/crowd_library_20260713")
     p.add_argument("--cells", nargs="+", default=SHAPE_CELLS,
                    help="which cells to render (default: the 4 mesh-selection-distinct methods)")
+    p.add_argument("--prompts", nargs="+", default=None,
+                   help="prompt slugs to render (default: every prompt dir found per cell)")
     p.add_argument("--resume", action="store_true", help="skip members whose shape render already exists")
     return p.parse_args()
 
@@ -70,6 +72,8 @@ def main():
             continue
         for prompt_dir in sorted(cell_dir.iterdir()):
             if not prompt_dir.is_dir():
+                continue
+            if args.prompts and prompt_dir.name not in args.prompts:
                 continue
             for member_dir in sorted(prompt_dir.glob("member_*")):
                 outfit = member_dir / "outfit.obj"

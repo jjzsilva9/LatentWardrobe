@@ -82,6 +82,31 @@ METHOD_LABELS = {
     "9_clip_pink_llm6": "9: CLIP mesh, pink noise, WANDER (6-axis)",
 }
 
+# Texture-stage (mesh-fixed batch) row labels: meshes+seeds are pinned to the
+# reference cell there, so the "random/CLIP mesh" half of the normal labels
+# is meaningless and cells 1/2 are replicates of one condition (plain prompt,
+# white noise). Charts for that stage drop cell 1 and label rows by what
+# actually varies -- prompt strategy and noise. Selected via --texture-labels.
+TEXTURE_METHOD_LABELS = {
+    "2_clip_white_plain": "plain prompt, white noise",
+    "3_clip_pink_plain": "plain prompt, pink noise",
+    "4_clip_white_axes": "CLIP-axis description, white noise",
+    "5_clip_pink_axes": "CLIP-axis description, pink noise",
+    "8_clip_white_llm6": "WANDER (6-axis) description, white noise",
+    "9_clip_pink_llm6": "WANDER (6-axis) description, pink noise",
+}
+
+# Mesh-stage (shape eval) row labels: only mesh SELECTION varies there --
+# noise is irrelevant pre-texturing (and all four shape cells are white-noise
+# anyway), so rows are labelled by the selection anchor alone. Auto-selected
+# by --shape.
+MESH_METHOD_LABELS = {
+    "1_random_white_plain": "random selection",
+    "2_clip_white_plain": "CLIP, theme anchor",
+    "4_clip_white_axes": "CLIP, axis-description anchor",
+    "8_clip_white_llm6": "CLIP, WANDER-description anchor",
+}
+
 # Reported metric set (trimmed 2026-07-16, following Harrington et al.'s own
 # human studies: set-level diversity metrics align best with human preference,
 # with CLIPScore/HPSv2 as the coherence/quality axes; DreamSim kept as the
@@ -116,6 +141,8 @@ SHAPE_METRICS = [
     ("shape_diversity.vendi_score_dinov2", "shape_vendi_score_dinov2", "Vendi score (DINOv2, shape-only)", "higher = more effective members", None, False),
     ("shape_diversity.dpp_score_dinov2", "shape_dpp_score_dinov2", "DPP score (DINOv2, shape-only)", "higher = more spread out; log scale", None, True),
     ("shape_diversity.silhouette_iou_dist_pairwise.mean", "shape_silhouette_iou_mean", "Silhouette 1−IoU pairwise (mean)", "higher = more diverse outlines; pure geometry, no pretrained model", "shape_diversity.silhouette_iou_dist_pairwise.std", False),
+    ("coherence.clipscore_crowd_mean", "shape_clipscore_crowd_mean", "Theme coherence (CLIPScore, mesh stage)", "higher = more on-theme; untextured renders, weak signal", "coherence.clipscore_crowd_std", False),
+    ("quality.hpsv2_crowd_mean", "shape_hpsv2_crowd_mean", "Quality (HPSv2, mesh stage)", "higher = preferred; untextured renders", "quality.hpsv2_crowd_std", False),
 ]
 
 
@@ -131,6 +158,9 @@ def parse_args():
     p.add_argument("--shape", action="store_true",
                    help="plot the shape-only eval instead: reads shape_metrics.json "
                         "(evaluate_shape.py) and the SHAPE_METRICS chart list")
+    p.add_argument("--texture-labels", action="store_true",
+                   help="label rows by prompt strategy + noise only (TEXTURE_METHOD_LABELS) -- "
+                        "for the mesh-fixed batch, where mesh selection is pinned")
     return p.parse_args()
 
 
@@ -249,7 +279,8 @@ def style_axes(ax):
     ax.tick_params(axis="both", which="both", length=0, labelsize=8, labelcolor=INK_MUTED)
 
 
-def plot_metric(metrics, prompts, methods, dotted_key, title, subtitle, out_path, std_key=None, log_scale=False):
+def plot_metric(metrics, prompts, methods, dotted_key, title, subtitle, out_path, std_key=None, log_scale=False,
+                labels=METHOD_LABELS):
     n = len(methods)
     row_h = 0.34                                   # inches per bar row: thin marks, generous air
     facet_h = row_h * n + (0.34 if len(prompts) > 1 else 0.12)
@@ -281,7 +312,7 @@ def plot_metric(metrics, prompts, methods, dotted_key, title, subtitle, out_path
             ax.set_xlim(0, scale_max * 1.22)  # headroom for whisker + end label
         ax.set_ylim(-0.6, n - 0.4)
         ax.set_yticks(ys)
-        ax.set_yticklabels([METHOD_LABELS.get(m, m) for m in methods], fontsize=9, color=INK_SECONDARY)
+        ax.set_yticklabels([labels.get(m, m) for m in methods], fontsize=9, color=INK_SECONDARY)
         if not log_scale:
             ax.axvline(0, color=AXIS, linewidth=1, zorder=4)
         if len(prompts) > 1:
@@ -294,6 +325,12 @@ def plot_metric(metrics, prompts, methods, dotted_key, title, subtitle, out_path
             color = method_color(m, i)
             if log_scale:
                 ax.barh(y, v, height=0.45, color=color, zorder=3)
+                if s:
+                    # lower whisker clamped above zero -- a std that crosses 0
+                    # cannot render on a log axis
+                    lo = min(s, v * 0.999)
+                    ax.errorbar(v, y, xerr=[[lo], [s]], fmt="none", ecolor=INK_SECONDARY,
+                                elinewidth=1, capsize=2, capthick=1, zorder=4)
             else:
                 rounded_barh(ax, y, v, 0.45, color)
                 if s:
@@ -340,10 +377,13 @@ def main():
     per_prompt_dir.mkdir(exist_ok=True)
     avg_dir.mkdir(exist_ok=True)
 
+    labels = (MESH_METHOD_LABELS if args.shape
+              else TEXTURE_METHOD_LABELS if args.texture_labels
+              else METHOD_LABELS)
     for dotted_key, slug, title, subtitle, std_key, log_scale in metric_list:
         out_path = per_prompt_dir / f"{slug}.png"
         plot_metric(metrics, prompts, args.methods, dotted_key, title, subtitle, out_path,
-                   std_key=std_key, log_scale=log_scale)
+                   std_key=std_key, log_scale=log_scale, labels=labels)
         print(f"written: {out_path}")
 
         avg_metrics, coverage = average_metrics(metrics, prompts, args.methods, dotted_key)
@@ -355,7 +395,7 @@ def main():
         plot_metric(avg_metrics, ["all"], args.methods, "avg.mean",
                     f"{title} — theme mean",
                     f"{subtitle}; averaged over {len(prompts)} themes, whiskers = std across themes",
-                    avg_path, std_key="avg.std", log_scale=log_scale)
+                    avg_path, std_key="avg.std", log_scale=log_scale, labels=labels)
         print(f"written: {avg_path}")
 
 

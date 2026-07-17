@@ -35,9 +35,13 @@ python -u scripts/plot_crowd_comparison.py --batch-dir "$OUT" --methods "${SHAPE
 rc=${PIPESTATUS[0]}
 echo "[run_crowd_library_plot] mesh_plot_exit=$rc" | tee -a "$OUT/plot.log"
 
+# cell 1 is dropped for the texture stage: with meshes+seeds pinned it is a
+# replicate of cell 2 (plain prompt, white noise) -- see TEXTURE_METHOD_LABELS
+TEXTURE_CELLS=(2_clip_white_plain 3_clip_pink_plain 4_clip_white_axes \
+               5_clip_pink_axes 8_clip_white_llm6 9_clip_pink_llm6)
 if [ -d "$MESHFIXED_OUT" ]; then
-  python -u scripts/plot_crowd_comparison.py --batch-dir "$MESHFIXED_OUT" --methods "${CELLS[@]}" \
-    --out-dir "$OUT/plots/texture" 2>&1 | tee -a "$OUT/plot.log"
+  python -u scripts/plot_crowd_comparison.py --batch-dir "$MESHFIXED_OUT" --methods "${TEXTURE_CELLS[@]}" \
+    --texture-labels --out-dir "$OUT/plots/texture" 2>&1 | tee -a "$OUT/plot.log"
   rc=${PIPESTATUS[0]}
   echo "[run_crowd_library_plot] texture_plot_exit=$rc" | tee -a "$OUT/plot.log"
 else

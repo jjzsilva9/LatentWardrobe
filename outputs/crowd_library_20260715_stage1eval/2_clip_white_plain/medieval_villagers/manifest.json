@@ -129,8 +129,8 @@
       "member": "member_04",
       "outfit_type": "top_bottom",
       "garments": [
-        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/tube_top.obj",
-        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/mariaskirt.obj"
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/f_lusekofta.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/polkadotskirt.obj"
       ],
       "sd_seed": 693972385,
       "color": null,

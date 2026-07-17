@@ -1,0 +1,222 @@
+{
+  "crowd_prompt": "steampunk inventors",
+  "fixed_members_from": "/mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_stage1eval/2_clip_white_plain",
+  "master_seed": 0,
+  "fullbody_prob": 0.25,
+  "mesh_sampling": "clip",
+  "tau": 0.02,
+  "color_prompt": false,
+  "color_sampling": null,
+  "color_tau": null,
+  "pink_noise": true,
+  "pink_alpha": 0.2,
+  "llm_emitters": false,
+  "llm_generations": null,
+  "llm_k_neighbors": null,
+  "llm_novelty": null,
+  "llm_axes": null,
+  "llm_model": null,
+  "llm_evolution_history": null,
+  "clip_axes": true,
+  "axis_tau": 0.05,
+  "pair_coherent_sampling": true,
+  "pair_tau": 0.05,
+  "stage1_prompt_template": "turn around, {prompt}, {full_desc}, {category_phrase}",
+  "stage2_prompt_templates": {
+    "inpaint": "UV map, {prompt}, {full_desc}, {category_phrase}",
+    "img2img": "UV map, {prompt}, {full_desc}, {category_phrase}, high quality, best quality"
+  },
+  "members": [
+    {
+      "member": "member_00",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/knitted_sweater_01.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/m_trousers_01.obj"
+      ],
+      "sd_seed": 1451816686,
+      "color": null,
+      "clip_axes": {
+        "winner": {
+          "color": "blue",
+          "formality": "ragged",
+          "material": "leather",
+          "pattern": "patched",
+          "condition": "pristine",
+          "accessories": "an apron"
+        },
+        "full_desc": "pristine ragged blue leather patched clothing and an apron",
+        "clothing_desc": "pristine ragged blue leather patched clothing and an apron"
+      },
+      "category_phrase": "wearing a blouse and trousers",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/steampunk_inventors/member_00/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/steampunk_inventors/member_00/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_01",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/f_lusekofta.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/mini_skirt_02.obj"
+      ],
+      "sd_seed": 392975955,
+      "color": null,
+      "clip_axes": {
+        "winner": {
+          "color": "pink",
+          "formality": "ragged",
+          "material": "wool",
+          "pattern": "plain",
+          "condition": "pristine",
+          "accessories": "a tool-belt"
+        },
+        "full_desc": "pristine ragged pink wool plain clothing and a tool-belt",
+        "clothing_desc": "pristine ragged pink wool plain clothing and a tool-belt"
+      },
+      "category_phrase": "wearing a blouse and skirt",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/steampunk_inventors/member_01/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/steampunk_inventors/member_01/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_02",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/lace_up_blouse.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/mariaskirt.obj"
+      ],
+      "sd_seed": 1527946179,
+      "color": null,
+      "clip_axes": {
+        "winner": {
+          "color": "white",
+          "formality": "practical work",
+          "material": "leather",
+          "pattern": "patched",
+          "condition": "mended",
+          "accessories": "a tool-belt"
+        },
+        "full_desc": "mended practical work white leather patched clothing and a tool-belt",
+        "clothing_desc": "mended practical work white leather patched clothing and a tool-belt"
+      },
+      "category_phrase": "wearing a blouse and skirt",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/steampunk_inventors/member_02/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 84.2,
+        "final_texture": "/root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/steampunk_inventors/member_02/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "ok",
+        "seconds": 18.7
+      }
+    },
+    {
+      "member": "member_03",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/ruffle_sleeve_peasantblouse.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/polkadotskirt.obj"
+      ],
+      "sd_seed": 908044922,
+      "color": null,
+      "clip_axes": {
+        "winner": {
+          "color": "navy",
+          "formality": "practical work",
+          "material": "silk",
+          "pattern": "striped",
+          "condition": "weathered",
+          "accessories": "none"
+        },
+        "full_desc": "weathered practical work navy silk striped clothing",
+        "clothing_desc": "weathered practical work navy silk striped clothing"
+      },
+      "category_phrase": "wearing a tunic and skirt",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/steampunk_inventors/member_03/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 85.6,
+        "final_texture": "/root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/steampunk_inventors/member_03/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "ok",
+        "seconds": 18.9
+      }
+    },
+    {
+      "member": "member_04",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/spaghetti_top.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/cargo_pants.obj"
+      ],
+      "sd_seed": 1493654946,
+      "color": null,
+      "clip_axes": {
+        "winner": {
+          "color": "silver",
+          "formality": "casual",
+          "material": "canvas",
+          "pattern": "patched",
+          "condition": "dusty",
+          "accessories": "a tool-belt"
+        },
+        "full_desc": "dusty casual silver canvas patched clothing and a tool-belt",
+        "clothing_desc": "dusty casual silver canvas patched clothing and a tool-belt"
+      },
+      "category_phrase": "wearing a halter top and leggings",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/steampunk_inventors/member_04/outfit.obj"
+      },
+      "stage1": {
+        "status": "ok",
+        "seconds": 80.5,
+        "final_texture": "/root/crowd_library_20260715_meshfixed_local/5_clip_pink_axes/steampunk_inventors/member_04/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "ok",
+        "seconds": 16.8
+      }
+    }
+  ]
+}

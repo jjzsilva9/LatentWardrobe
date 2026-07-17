@@ -15978,3 +15978,64 @@ done. failures: 0
 [run_crowd_library] prompt='steampunk inventors' cell=9_clip_pink_llm6 python_exit=0
 [run_crowd_library] === theme complete: steampunk inventors ===
 CROWD LIBRARY PASS COMPLETE (all prompts in scripts/crowd_library_prompts.txt done) -- append more to the file and relaunch any time
+[run_crowd_library] === theme: business formalwear ===
+mesh library: 40 tops, 39 bottoms, 59 fullbody
+plan: 1 prompt(s) x 5 members
+
+=== [business formalwear] member_00: mens_shirt_untuck_elvbhp1f+jean_shorts seed=2097930285 ===
+
+=== [business formalwear] member_01: sweater_fisherman+mini_skirt_01 seed=2029041635 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [business formalwear] member_02: eveninggown seed=988337926 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [business formalwear] member_03: doublechiefhalterdress1 seed=2029161027 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [business formalwear] member_04: spaghetti_top+skirt_full_long seed=1222203133 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+[sync] final sync /root/crowd_library_20260715_stage1eval_local/1_random_white_plain/business_formalwear -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_stage1eval/1_random_white_plain/business_formalwear rc=0
+
+done. failures: 0
+[run_crowd_library] prompt='business formalwear' cell=1_random_white_plain python_exit=0
+mesh library: 40 tops, 39 bottoms, 59 fullbody
+plan: 1 prompt(s) x 5 members
+
+=== [business formalwear] member_00: elvs_butterflydiscotop1+shortjeans seed=1100484350 ===
+
+=== [business formalwear] member_01: mens_boho_top1elv+pleated_miniskirt seed=1473509389 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [business formalwear] member_02: fem_suit_double_breasted seed=1978060488 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [business formalwear] member_03: camisole_top+mens_trouser_short_nc_elvcrf seed=885083903 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [business formalwear] member_04: turtleneck_halter+tightjeans seed=1643794471 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+[sync] final sync /root/crowd_library_20260715_stage1eval_local/2_clip_white_plain/business_formalwear -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_stage1eval/2_clip_white_plain/business_formalwear rc=0
+
+done. failures: 0
+[run_crowd_library] prompt='business formalwear' cell=2_clip_white_plain python_exit=0
+mesh library: 40 tops, 39 bottoms, 59 fullbody
+plan: 1 prompt(s) x 5 members
+
+=== [business formalwear] member_00: elvs_butterflydiscotop1+shortjeans seed=1100484350 ===
+
+=== [business formalwear] member_01: mens_boho_top1elv+pleated_miniskirt seed=1473509389 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [business formalwear] member_02: fem_suit_double_breasted seed=1978060488 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [business formalwear] member_03: camisole_top+mens_trouser_short_nc_elvcrf seed=885083903 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+
+=== [business formalwear] member_04: turtleneck_halter+tightjeans seed=1643794471 ===
+[sync] previous sync still running, skipping this round (will catch up next member)
+[sync] final sync /root/crowd_library_20260715_stage1eval_local/3_clip_pink_plain/business_formalwear -> /mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_stage1eval/3_clip_pink_plain/business_formalwear rc=0
+
+done. failures: 0
+[run_crowd_library] prompt='business formalwear' cell=3_clip_pink_plain python_exit=0

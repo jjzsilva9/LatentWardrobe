@@ -3,9 +3,10 @@
 Companion to evaluate_crowd.py, scoped to what mesh SELECTION alone can
 change -- run against the untextured turntables from generate_shape_eval.py
 (member_XX/shape_eval/render_rgb.mp4 + render_all.mp4), not the final
-textured renders. Same diversity batteries as evaluate_crowd.py (DINOv2
-patchwise, DreamSim, LPIPS, pixel-L2, Vendi/DPP over a DINOv2 CLS kernel),
-same background-masking approach (z-normals panel of render_all.mp4).
+textured renders. Same reported battery as evaluate_crowd.py (Vendi/DPP over
+a DINOv2 CLS kernel, DreamSim; trimmed 2026-07-17 -- see its docstring) plus
+pairwise silhouette 1-IoU (pure geometry, no pretrained model), same
+background-masking approach (z-normals panel of render_all.mp4).
 
 Deliberately DROPS two things evaluate_crowd.py reports, because they aren't
 meaningful on a flat, untextured, grey-shaded mesh:
@@ -34,7 +35,6 @@ import torch
 RENDER_REL = "shape_eval/render_rgb.mp4"
 RENDER_ALL_REL = "shape_eval/render_all.mp4"
 DINOV2_INPUT_SIZE = 224
-PATCH_GRID = 16
 BG_GRAY_THRESH = 250
 BBOX_MARGIN_FRAC = 0.02
 MODEL_CACHE_DIR = "./models"
@@ -45,7 +45,6 @@ def parse_args():
     p.add_argument("--crowd-dir", type=Path, required=True, help="one prompt dir with manifest.json")
     p.add_argument("--frames", type=int, nargs="+", default=[0, 15, 30, 45])
     p.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
-    p.add_argument("--patch-coverage-tau", type=float, default=0.5)
     p.add_argument("--out", type=Path, default=None, help="default: <crowd-dir>/shape_metrics.json")
     return p.parse_args()
 
@@ -127,17 +126,6 @@ def crop_pad_square(rgb, bbox):
     return square
 
 
-def patch_coverage_grid(mask, grid=PATCH_GRID, size=DINOV2_INPUT_SIZE):
-    resized = cv2.resize(mask.astype(np.float32), (size, size), interpolation=cv2.INTER_AREA)
-    patch = size // grid
-    return resized.reshape(grid, patch, grid, patch).mean(axis=(1, 3))
-
-
-def low_res_l2(rgb):
-    small = cv2.resize(rgb, (32, 32), interpolation=cv2.INTER_AREA).astype(np.float32) / 255.0
-    return small.flatten()
-
-
 def pairwise_stats(vals):
     vals = np.asarray(vals, dtype=np.float64)
     return {"mean": float(vals.mean()), "min": float(vals.min()), "max": float(vals.max()),
@@ -202,25 +190,9 @@ def main():
     bboxes = {m: [bbox_from_mask(fg) for fg in fg_masks[m]] for m in members}
     cropped_rgbs = {m: [crop_pad_square(rgb, bbox) for rgb, bbox in zip(rgbs[m], bboxes[m])]
                     for m in members}
-    patch_cov = {m: [patch_coverage_grid(fg) for fg in fg_masks[m]] for m in members}
 
-    import lpips as lpips_lib
-    lpips_net = lpips_lib.LPIPS(net="alex", verbose=False).to(device)
-
-    def to_lpips_tensor(rgb):
-        img = rgb.astype(np.float32) / 127.5 - 1.0
-        t = torch.from_numpy(img).permute(2, 0, 1).unsqueeze(0)
-        return torch.nn.functional.interpolate(t, size=(256, 256), mode="bilinear").to(device)
-
-    lpips_imgs = {m: [to_lpips_tensor(r) for r in cropped_rgbs[m]] for m in members}
-    lpips_pairs = []
-    with torch.no_grad():
-        for a, b in itertools.combinations(members, 2):
-            d = np.mean([float(lpips_net(x, y)) for x, y in zip(lpips_imgs[a], lpips_imgs[b])])
-            lpips_pairs.append(d)
-    del lpips_imgs, lpips_net
-    torch.cuda.empty_cache()
-
+    # (LPIPS, pixel-L2 and DINOv2-patchwise cut 2026-07-17, same reasoning as
+    # evaluate_crowd.py: unreported metrics were pure compute waste.)
     from dreamsim import dreamsim
     dreamsim_model, dreamsim_preprocess = dreamsim(pretrained=True, device=str(device), cache_dir=MODEL_CACHE_DIR)
     from PIL import Image
@@ -234,16 +206,45 @@ def main():
     del dreamsim_imgs, dreamsim_model
     torch.cuda.empty_cache()
 
+    # --- theme coherence (CLIPScore) + quality (HPSv2) on the UNTEXTURED
+    # renders (added 2026-07-17: the mesh stage previously had no coherence
+    # axis at all). Caveats, to be repeated wherever these numbers are read:
+    # CLIP's signal on grey shading-only renders is weak (its texture/colour
+    # cues are absent), and although mesh sampling also uses CLIP, sampling
+    # anchors on textured garment PREVIEW renders while this scores the grey
+    # merged-outfit render -- indirect circularity, not none. A supporting
+    # axis, not standalone validation.
+    import open_clip
+    clip_model, _, clip_preprocess = open_clip.create_model_and_transforms("ViT-B-32", pretrained="openai")
+    clip_model = clip_model.to(device).eval()
+    clip_tokenize = open_clip.get_tokenizer("ViT-B-32")
+    with torch.no_grad():
+        text_emb = clip_model.encode_text(clip_tokenize([prompt]).to(device)).float()
+        text_emb /= text_emb.norm(dim=-1, keepdim=True)
+        clip_view_embs = {}
+        for m in members:
+            batch = torch.stack([clip_preprocess(Image.fromarray(r)) for r in rgbs[m]]).to(device)
+            e = clip_model.encode_image(batch).float()
+            e /= e.norm(dim=-1, keepdim=True)
+            clip_view_embs[m] = e
+    coherence = {m: float((clip_view_embs[m] @ text_emb.T).mean()) for m in members}
+    del clip_model, clip_view_embs
+    torch.cuda.empty_cache()
+
+    try:
+        import hpsv2
+        hps = {}
+        for m in members:
+            scores = hpsv2.score([str(p) for p in views[m]], prompt, hps_version="v2.1")
+            hps[m] = float(np.mean([float(s) for s in scores]))
+    except Exception as e:
+        print(f"warning: HPSv2 scoring unavailable ({e}) -- quality unscored")
+        hps = None
+
     dinov2_model = load_dinov2(device)
-    dinov2_patch, dinov2_cls_cropped = {}, {}
+    dinov2_cls_cropped = {}
     with torch.no_grad():
         for m in members:
-            batch_full = torch.stack([dinov2_transform(r) for r in rgbs[m]]).to(device)
-            feats_full = dinov2_model.forward_features(batch_full)
-            patches = feats_full["x_norm_patchtokens"]
-            patches = patches / patches.norm(dim=-1, keepdim=True)
-            dinov2_patch[m] = patches
-
             batch_crop = torch.stack([dinov2_transform(r) for r in cropped_rgbs[m]]).to(device)
             feats_crop = dinov2_model.forward_features(batch_crop)
             cls = feats_crop["x_norm_clstoken"]
@@ -252,34 +253,9 @@ def main():
     del dinov2_model
     torch.cuda.empty_cache()
 
-    tau = args.patch_coverage_tau
-    patchwise_pairs = []
-    view_fallbacks = 0
-    for a, b in itertools.combinations(members, 2):
-        per_view = []
-        for v, (pa, pb) in enumerate(zip(dinov2_patch[a], dinov2_patch[b])):
-            d_all = 1.0 - (pa * pb).sum(dim=-1)
-            valid = ((patch_cov[a][v] >= tau) & (patch_cov[b][v] >= tau)).reshape(-1)
-            valid_t = torch.from_numpy(valid).to(d_all.device)
-            if valid_t.any():
-                per_view.append(float(d_all[valid_t].mean()))
-            else:
-                view_fallbacks += 1
-                per_view.append(float(d_all.mean()))
-        patchwise_pairs.append(float(np.mean(per_view)))
-    if view_fallbacks:
-        print(f"note: {view_fallbacks} member-pair views had zero patches clearing "
-              f"--patch-coverage-tau={tau} in both members — used all patches for those views")
-
     member_cls = torch.stack([dinov2_cls_cropped[m].mean(dim=0) for m in members])
     member_cls = member_cls / member_cls.norm(dim=-1, keepdim=True)
     dinov2_sim = (member_cls @ member_cls.T).cpu().numpy()
-
-    lowres = {m: [low_res_l2(r) for r in cropped_rgbs[m]] for m in members}
-    lowres_pairs = []
-    for a, b in itertools.combinations(members, 2):
-        ds = [float(np.linalg.norm(x - y)) for x, y in zip(lowres[a], lowres[b])]
-        lowres_pairs.append(float(np.mean(ds)))
 
     # --- silhouette IoU: pure-geometry pairwise diversity, no pretrained
     # model in the loop. Masks are pixel-aligned across members (identical
@@ -307,16 +283,22 @@ def main():
         "num_members_evaluated": len(members),
         "skipped_members": skipped,
         "frames": args.frames,
-        "patch_coverage_tau": tau,
         "shape_diversity": {
-            "dinov2_patchwise_pairwise": pairwise_stats(patchwise_pairs),
             "dreamsim_pairwise": pairwise_stats(dreamsim_pairs),
-            "lpips_pairwise": pairwise_stats(lpips_pairs),
-            "pixel_l2_32_pairwise": pairwise_stats(lowres_pairs),
             "silhouette_iou_dist_pairwise": pairwise_stats(iou_pairs) if iou_pairs else None,
             "silhouette_iou_members": len(iou_members),
             "vendi_score_dinov2": vendi_score(dinov2_sim),
             "dpp_score_dinov2": dpp_score(dinov2_sim),
+        },
+        "coherence": {
+            "clipscore_per_member": coherence,
+            "clipscore_crowd_mean": float(np.mean(list(coherence.values()))),
+            "clipscore_crowd_std": float(np.std(list(coherence.values()))),
+        },
+        "quality": {
+            "hpsv2_per_member": hps,
+            "hpsv2_crowd_mean": float(np.mean(list(hps.values()))) if hps else None,
+            "hpsv2_crowd_std": float(np.std(list(hps.values()))) if hps else None,
         },
     }
     out = args.out or (args.crowd_dir / "shape_metrics.json")
@@ -324,19 +306,17 @@ def main():
 
     d = results["shape_diversity"]
     print(f"\n=== {prompt} shape-only (n={len(members)}) ===")
-    print(f"DINOv2 patchwise    mean {d['dinov2_patchwise_pairwise']['mean']:.4f}  "
-          f"min-NN {d['dinov2_patchwise_pairwise']['min']:.4f}  std {d['dinov2_patchwise_pairwise']['std']:.4f}")
     print(f"DreamSim pairwise   mean {d['dreamsim_pairwise']['mean']:.4f}  "
           f"min-NN {d['dreamsim_pairwise']['min']:.4f}  std {d['dreamsim_pairwise']['std']:.4f}")
-    print(f"LPIPS pairwise      mean {d['lpips_pairwise']['mean']:.4f}  "
-          f"min-NN {d['lpips_pairwise']['min']:.4f}  std {d['lpips_pairwise']['std']:.4f}")
-    print(f"Pixel-L2(32) pairwise mean {d['pixel_l2_32_pairwise']['mean']:.4f}  "
-          f"min-NN {d['pixel_l2_32_pairwise']['min']:.4f}  std {d['pixel_l2_32_pairwise']['std']:.4f}")
     if d["silhouette_iou_dist_pairwise"]:
         print(f"Silhouette 1-IoU    mean {d['silhouette_iou_dist_pairwise']['mean']:.4f}  "
               f"min-NN {d['silhouette_iou_dist_pairwise']['min']:.4f}  std {d['silhouette_iou_dist_pairwise']['std']:.4f}")
     print(f"Vendi score (DINOv2) {d['vendi_score_dinov2']:.2f} effective members")
     print(f"DPP score (DINOv2)   {d['dpp_score_dinov2']:.4g}")
+    c, q = results["coherence"], results["quality"]
+    print(f"Theme coherence     crowd mean {c['clipscore_crowd_mean']:.4f}  std {c['clipscore_crowd_std']:.4f}  (untextured renders)")
+    if q["hpsv2_crowd_mean"] is not None:
+        print(f"Quality (HPSv2)     crowd mean {q['hpsv2_crowd_mean']:.4f}  std {q['hpsv2_crowd_std']:.4f}  (untextured renders)")
     print(f"\nwritten: {out}")
 
 

@@ -69,11 +69,22 @@ AXIS_TAU=0.05
 # UV gaps stay unfilled) and the color-diversity (chi-square) metric, which
 # has no stage1 equivalent. Drop this flag to regenerate a theme with full
 # stage2 texturing.
+# CROWD_LIBRARY_FIXED_FROM=self (2026-07-17): pin every member's
+# garments/outfit_type/sd_seed to the cell's OWN existing manifest via
+# --fixed-members-from, so a resume after a mesh-pool change regenerates
+# only deleted members instead of silently re-sampling everyone (the driver
+# rewrites manifest.json + outfit.obj every run -- the pool is part of a
+# batch's identity). Required for any resume of a batch generated before a
+# pool change; harmless otherwise.
 run () {  # run <prompt> <cell-outdir> [extra driver args...]
   local prompt="$1"; local cell="$2"; shift 2
+  local pin=()
+  if [ "${CROWD_LIBRARY_FIXED_FROM:-}" = "self" ]; then
+    pin=(--fixed-members-from "$LOCAL_OUT/$cell")
+  fi
   python -u scripts/generate_crowd_baseline.py \
     --prompt "$prompt" --num-members "$N" --skip-stage2 \
-    --outdir "$LOCAL_OUT/$cell" --sync-to "$REMOTE_OUT/$cell" --resume "$@" \
+    --outdir "$LOCAL_OUT/$cell" --sync-to "$REMOTE_OUT/$cell" --resume "${pin[@]}" "$@" \
     2>&1 | tee -a "$LOCAL_OUT/run.log"
   local rc=${PIPESTATUS[0]}
   echo "[run_crowd_library] prompt='$prompt' cell=$cell python_exit=$rc" | tee -a "$LOCAL_OUT/run.log"

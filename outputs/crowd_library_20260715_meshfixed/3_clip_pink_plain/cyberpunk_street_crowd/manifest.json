@@ -1,0 +1,154 @@
+{
+  "crowd_prompt": "cyberpunk street crowd",
+  "fixed_members_from": "/mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_stage1eval/2_clip_white_plain",
+  "master_seed": 0,
+  "fullbody_prob": 0.25,
+  "mesh_sampling": "clip",
+  "tau": 0.02,
+  "color_prompt": false,
+  "color_sampling": null,
+  "color_tau": null,
+  "pink_noise": true,
+  "pink_alpha": 0.2,
+  "llm_emitters": false,
+  "llm_generations": null,
+  "llm_k_neighbors": null,
+  "llm_novelty": null,
+  "llm_axes": null,
+  "llm_model": null,
+  "llm_evolution_history": null,
+  "clip_axes": false,
+  "axis_tau": null,
+  "pair_coherent_sampling": true,
+  "pair_tau": 0.05,
+  "stage1_prompt_template": "turn around, {prompt}, {full_desc}, {category_phrase}",
+  "stage2_prompt_templates": {
+    "inpaint": "UV map, {prompt}, {full_desc}, {category_phrase}",
+    "img2img": "UV map, {prompt}, {full_desc}, {category_phrase}, high quality, best quality"
+  },
+  "members": [
+    {
+      "member": "member_00",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/short_tail_camo_tee.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/shortjeans.obj"
+      ],
+      "sd_seed": 426492595,
+      "color": null,
+      "category_phrase": "wearing a crop top and shorts",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_20260715_meshfixed_local/3_clip_pink_plain/cyberpunk_street_crowd/member_00/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_20260715_meshfixed_local/3_clip_pink_plain/cyberpunk_street_crowd/member_00/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_01",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/crude_male_shirt.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/elvs_gored_elephantpant1.obj"
+      ],
+      "sd_seed": 883038678,
+      "color": null,
+      "category_phrase": "wearing a t-shirt and trousers",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_20260715_meshfixed_local/3_clip_pink_plain/cyberpunk_street_crowd/member_01/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_20260715_meshfixed_local/3_clip_pink_plain/cyberpunk_street_crowd/member_01/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_02",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/sarong_coverup1.obj"
+      ],
+      "sd_seed": 1509648108,
+      "color": null,
+      "category_phrase": "wearing a gown",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_20260715_meshfixed_local/3_clip_pink_plain/cyberpunk_street_crowd/member_02/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_20260715_meshfixed_local/3_clip_pink_plain/cyberpunk_street_crowd/member_02/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_03",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/camisole_top.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/m_trousers_01.obj"
+      ],
+      "sd_seed": 1247566540,
+      "color": null,
+      "category_phrase": "wearing a tank top and trousers",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_20260715_meshfixed_local/3_clip_pink_plain/cyberpunk_street_crowd/member_03/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_20260715_meshfixed_local/3_clip_pink_plain/cyberpunk_street_crowd/member_03/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_04",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/f_dress_01.obj"
+      ],
+      "sd_seed": 272669931,
+      "color": null,
+      "category_phrase": "wearing a dress",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_20260715_meshfixed_local/3_clip_pink_plain/cyberpunk_street_crowd/member_04/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_20260715_meshfixed_local/3_clip_pink_plain/cyberpunk_street_crowd/member_04/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    }
+  ]
+}

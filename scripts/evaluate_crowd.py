@@ -1,22 +1,21 @@
 """Crowd evaluation harness.
 
 Computes the dissertation's metrics for one generated crowd (one prompt dir
-produced by generate_crowd_baseline.py). Metric set follows "It's Never Too
-Late: Noise Optimization for Collapse Recovery in Trained Diffusion Models"
-(minus HPSv2, which we chose not to report):
+produced by generate_crowd_baseline.py). Axis design follows "It's Never Too
+Late: Noise Optimization for Collapse Recovery in Trained Diffusion Models",
+whose human studies favor SET-LEVEL diversity metrics -- trimmed 2026-07-17
+to only what is reported (the pairwise LPIPS / pixel-L2 / DINOv2-patchwise
+battery was cut outright; computing unreported metrics was pure cost):
 
-  Diversity   - patchwise DINOv2 distance (Eq. 3 of that paper: mean cosine
-                distance per patch, averaged over P patches, over all pairs)
-              - DreamSim pairwise distance
-              - pairwise LPIPS
-              - pairwise low-res (32x32) pixel L2
-              - pairwise hue-histogram chi-square distance (color diversity)
-              - Vendi score over a DINOv2 [CLS] cosine-similarity kernel
+  Diversity   - Vendi score over a DINOv2 [CLS] cosine-similarity kernel
                 (effective number of distinct members)
               - DPP score: n-th-rooted determinant (geometric mean of
                 eigenvalues) of that same DINOv2 [CLS] kernel
+              - DreamSim pairwise distance (human-perception-aligned)
+              - pairwise hue-histogram chi-square distance (color diversity)
   Coherence   - CLIPScore-style cosine similarity between the crowd prompt and
                 each member's rendered views (per member + crowd mean)
+  Quality     - HPSv2 (v2.1) human-preference score per member + crowd mean
 
 Every pairwise statistic reports mean, min (nearest-neighbour / clone
 detection), and std across the contributing member pairs.
@@ -31,11 +30,7 @@ foreground bounding box (see
 "Background handling" below) -- NOT on raw UV maps (see plan doc: UV layouts
 are mostly padding and, more importantly, aren't spatially comparable across
 different garment meshes). Frames at the same index correspond to the same
-camera angle across members, which is also what makes DINOv2 patch-level
-correspondence (Eq. 3) meaningful: patch p is the same grid cell, and roughly
-the same garment region, across members -- so patchwise distance is computed
-on the *uncropped* frame and instead filtered to only patches both members
-actually have garment coverage in (see below).
+camera angle across members.
 
 Background handling (added 2026-07-07, replacing an HSV "near-white" pixel
 heuristic that risked misclassifying light/cream garments as background):
@@ -53,11 +48,6 @@ for every frame already on disk, no re-rendering required:
     (long dress vs. cropped top) changed how much of the frame was shared
     identical-white background, diluting/distorting these whole-image
     metrics independent of actual appearance diversity.
-  - DINOv2 patchwise (Eq. 3): NOT cropped (would break the fixed-camera
-    patch correspondence the metric depends on). Instead the 1024x1024 mask
-    is pooled down to the 16x16 patch grid as a per-patch coverage fraction,
-    and a pair's per-view patch distance is averaged only over patches where
-    both members clear PATCH_COVERAGE_TAU coverage.
   - Color diversity: switched from a per-frame render-based hue histogram to
     the member's stage-2 UV albedo texture (stage2/albedo.png), masked by
     stage2/mask.png -- the *exact* boolean "which texels got painted" mask
@@ -121,7 +111,6 @@ UV_MASK_REL = "stage2/mask.png"      # matches UV_ALBEDO_REL only; 0=painted, 25
 VIEWS_CACHE = "eval_views"
 MASK_CACHE = "eval_masks"
 DINOV2_INPUT_SIZE = 224  # 16x16 = 256 patches at patch size 14
-PATCH_GRID = 16
 BG_GRAY_THRESH = 250     # z-normals panel: background is forced to exactly 255 pre-compression; small margin for mp4 lossiness
 BBOX_MARGIN_FRAC = 0.02  # extra margin around the tight foreground bbox, as a fraction of bbox size, before the square pad
 
@@ -144,9 +133,6 @@ def parse_args():
                         "RENDER_REL_STAGE1's comment. Pass e.g. --frames 0 15 30 45 to restore the old "
                         "4-angle sampling for a fully stage2-textured crowd.")
     p.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
-    p.add_argument("--patch-coverage-tau", type=float, default=0.5,
-                   help="min fraction of a DINOv2 patch that must be foreground (in both members) to count "
-                        "toward the patchwise diversity distance")
     p.add_argument("--out", type=Path, default=None, help="default: <crowd-dir>/metrics.json")
     return p.parse_args()
 
@@ -254,12 +240,6 @@ def crop_pad_square(rgb, bbox):
     return square
 
 
-def patch_coverage_grid(mask, grid=PATCH_GRID, size=DINOV2_INPUT_SIZE):
-    """Downsample a full-resolution boolean mask to a (grid, grid) foreground
-    coverage fraction per DINOv2 patch, matching dinov2_transform's resize."""
-    resized = cv2.resize(mask.astype(np.float32), (size, size), interpolation=cv2.INTER_AREA)
-    patch = size // grid
-    return resized.reshape(grid, patch, grid, patch).mean(axis=(1, 3))
 
 
 def hue_histogram(rgb, fg_mask):
@@ -310,12 +290,6 @@ def chi_square(h1, h2):
     return float(0.5 * np.sum((h1 - h2) ** 2 / (h1 + h2 + 1e-8)))
 
 
-def low_res_l2(rgb):
-    """32x32 pixel-space feature, following [58] (as cited in the collapse-
-    recovery paper): a cheap global-layout diversity proxy independent of any
-    learned feature extractor."""
-    small = cv2.resize(rgb, (32, 32), interpolation=cv2.INTER_AREA).astype(np.float32) / 255.0
-    return small.flatten()
 
 
 def pairwise_stats(vals):
@@ -419,25 +393,9 @@ def main():
     bboxes = {m: [bbox_from_mask(fg) for fg in fg_masks[m]] for m in members}
     cropped_rgbs = {m: [crop_pad_square(rgb, bbox) for rgb, bbox in zip(rgbs[m], bboxes[m])]
                     for m in members}
-    patch_cov = {m: [patch_coverage_grid(fg) for fg in fg_masks[m]] for m in members}
-
-    # --- LPIPS (view-matched pairwise, averaged over views) -- bbox-cropped
-    import lpips as lpips_lib
-    lpips_net = lpips_lib.LPIPS(net="alex", verbose=False).to(device)
-
-    def to_lpips_tensor(rgb):
-        img = rgb.astype(np.float32) / 127.5 - 1.0
-        t = torch.from_numpy(img).permute(2, 0, 1).unsqueeze(0)
-        return torch.nn.functional.interpolate(t, size=(256, 256), mode="bilinear").to(device)
-
-    lpips_imgs = {m: [to_lpips_tensor(r) for r in cropped_rgbs[m]] for m in members}
-    lpips_pairs = []
-    with torch.no_grad():
-        for a, b in itertools.combinations(members, 2):
-            d = np.mean([float(lpips_net(x, y)) for x, y in zip(lpips_imgs[a], lpips_imgs[b])])
-            lpips_pairs.append(d)
-    del lpips_imgs, lpips_net
-    torch.cuda.empty_cache()
+    # (LPIPS, pixel-L2 and DINOv2-patchwise were cut 2026-07-17 -- reported
+    # metrics are the set-level pair (Vendi/DPP), DreamSim, color chi2,
+    # CLIPScore and HPSv2; computing the rest was pure waste.)
 
     # --- DreamSim (view-matched pairwise, averaged over views) -- bbox-cropped
     from dreamsim import dreamsim
@@ -491,20 +449,13 @@ def main():
     del clip_model, clip_view_embs
     torch.cuda.empty_cache()
 
-    # --- DINOv2: patchwise diversity (Eq. 3) on UNCROPPED frames (needs the
-    # fixed-camera patch correspondence), Vendi + DPP over a [CLS] kernel
-    # built from the bbox-CROPPED frames (see module docstring).
+    # --- DINOv2: Vendi + DPP over a [CLS] kernel built from the bbox-CROPPED
+    # frames (see module docstring). The uncropped patch-token pass that fed
+    # the patchwise metric is gone with it -- halves the DINOv2 cost.
     dinov2_model = load_dinov2(device)
-    dinov2_patch = {}       # member -> (num_views, P, D) patch-token embeddings, uncropped
     dinov2_cls_cropped = {}  # member -> (num_views, D) CLS embeddings, bbox-cropped
     with torch.no_grad():
         for m in members:
-            batch_full = torch.stack([dinov2_transform(r) for r in rgbs[m]]).to(device)
-            feats_full = dinov2_model.forward_features(batch_full)
-            patches = feats_full["x_norm_patchtokens"]
-            patches = patches / patches.norm(dim=-1, keepdim=True)
-            dinov2_patch[m] = patches
-
             batch_crop = torch.stack([dinov2_transform(r) for r in cropped_rgbs[m]]).to(device)
             feats_crop = dinov2_model.forward_features(batch_crop)
             cls = feats_crop["x_norm_clstoken"]
@@ -512,28 +463,6 @@ def main():
             dinov2_cls_cropped[m] = cls
     del dinov2_model
     torch.cuda.empty_cache()
-
-    # patchwise distance (Eq. 3): per pair, per view, mean cosine distance over
-    # the P corresponding patches where BOTH members clear --patch-coverage-tau
-    # foreground coverage (falls back to all patches if none qualify).
-    tau = args.patch_coverage_tau
-    patchwise_pairs = []
-    view_fallbacks = 0
-    for a, b in itertools.combinations(members, 2):
-        per_view = []
-        for v, (pa, pb) in enumerate(zip(dinov2_patch[a], dinov2_patch[b])):  # each (P, D)
-            d_all = 1.0 - (pa * pb).sum(dim=-1)  # (P,) cosine distance per patch
-            valid = ((patch_cov[a][v] >= tau) & (patch_cov[b][v] >= tau)).reshape(-1)
-            valid_t = torch.from_numpy(valid).to(d_all.device)
-            if valid_t.any():
-                per_view.append(float(d_all[valid_t].mean()))
-            else:
-                view_fallbacks += 1
-                per_view.append(float(d_all.mean()))
-        patchwise_pairs.append(float(np.mean(per_view)))
-    if view_fallbacks:
-        print(f"note: {view_fallbacks} member-pair views had zero patches clearing "
-              f"--patch-coverage-tau={tau} in both members — used all patches for those views")
 
     # member-level [CLS] embedding (mean over cropped views, re-normalized) for
     # the Vendi / DPP kernel.
@@ -555,25 +484,14 @@ def main():
         if hists[a] is not None and hists[b] is not None:
             color_pairs.append(chi_square(hists[a], hists[b]))
 
-    # --- low-res (32x32) pixel L2 (view-matched pairwise, averaged over views) -- bbox-cropped
-    lowres = {m: [low_res_l2(r) for r in cropped_rgbs[m]] for m in members}
-    lowres_pairs = []
-    for a, b in itertools.combinations(members, 2):
-        ds = [float(np.linalg.norm(x - y)) for x, y in zip(lowres[a], lowres[b])]
-        lowres_pairs.append(float(np.mean(ds)))
-
     results = {
         "crowd_prompt": prompt,
         "num_members_evaluated": len(members),
         "skipped_members": skipped,
         "coarse_render_members": coarse_members,
         "frames": args.frames,
-        "patch_coverage_tau": tau,
         "diversity": {
-            "dinov2_patchwise_pairwise": pairwise_stats(patchwise_pairs),
             "dreamsim_pairwise": pairwise_stats(dreamsim_pairs),
-            "lpips_pairwise": pairwise_stats(lpips_pairs),
-            "pixel_l2_32_pairwise": pairwise_stats(lowres_pairs),
             "color_chi2_pairwise": pairwise_stats(color_pairs) if color_pairs else None,
             "color_source": "+".join(sorted(color_sources)) if color_sources else None,
             "vendi_score_dinov2": vendi_score(dinov2_sim),
@@ -595,14 +513,8 @@ def main():
 
     d, c = results["diversity"], results["coherence"]
     print(f"\n=== {prompt} (n={len(members)}) ===")
-    print(f"DINOv2 patchwise    mean {d['dinov2_patchwise_pairwise']['mean']:.4f}  "
-          f"min-NN {d['dinov2_patchwise_pairwise']['min']:.4f}  std {d['dinov2_patchwise_pairwise']['std']:.4f}")
     print(f"DreamSim pairwise   mean {d['dreamsim_pairwise']['mean']:.4f}  "
           f"min-NN {d['dreamsim_pairwise']['min']:.4f}  std {d['dreamsim_pairwise']['std']:.4f}")
-    print(f"LPIPS pairwise      mean {d['lpips_pairwise']['mean']:.4f}  "
-          f"min-NN {d['lpips_pairwise']['min']:.4f}  std {d['lpips_pairwise']['std']:.4f}")
-    print(f"Pixel-L2(32) pairwise mean {d['pixel_l2_32_pairwise']['mean']:.4f}  "
-          f"min-NN {d['pixel_l2_32_pairwise']['min']:.4f}  std {d['pixel_l2_32_pairwise']['std']:.4f}")
     if d["color_chi2_pairwise"]:
         print(f"Color chi2 pairwise mean {d['color_chi2_pairwise']['mean']:.4f}  std {d['color_chi2_pairwise']['std']:.4f}")
     print(f"Vendi score (DINOv2) {d['vendi_score_dinov2']:.2f} effective members")

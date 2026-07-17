@@ -1,0 +1,155 @@
+{
+  "crowd_prompt": "business formalwear",
+  "fixed_members_from": null,
+  "master_seed": 0,
+  "fullbody_prob": 0.25,
+  "mesh_sampling": "clip",
+  "tau": 0.02,
+  "color_prompt": false,
+  "color_sampling": null,
+  "color_tau": null,
+  "pink_noise": false,
+  "pink_alpha": null,
+  "llm_emitters": false,
+  "llm_generations": null,
+  "llm_k_neighbors": null,
+  "llm_novelty": null,
+  "llm_axes": null,
+  "llm_model": null,
+  "llm_evolution_history": null,
+  "clip_axes": false,
+  "axis_tau": null,
+  "pair_coherent_sampling": true,
+  "pair_tau": 0.05,
+  "stage1_prompt_template": "turn around, {prompt}, {full_desc}, {category_phrase}",
+  "stage2_prompt_templates": {
+    "inpaint": "UV map, {prompt}, {full_desc}, {category_phrase}",
+    "img2img": "UV map, {prompt}, {full_desc}, {category_phrase}, high quality, best quality"
+  },
+  "members": [
+    {
+      "member": "member_00",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/elvs_butterflydiscotop1.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/shortjeans.obj"
+      ],
+      "sd_seed": 1100484350,
+      "color": null,
+      "category_phrase": "wearing a blouse and shorts",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_20260715_stage1eval_local/2_clip_white_plain/business_formalwear/member_00/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_20260715_stage1eval_local/2_clip_white_plain/business_formalwear/member_00/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_01",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/mens_boho_top1elv.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/pleated_miniskirt.obj"
+      ],
+      "sd_seed": 1473509389,
+      "color": null,
+      "category_phrase": "wearing a hoodie and skirt",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_20260715_stage1eval_local/2_clip_white_plain/business_formalwear/member_01/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_20260715_stage1eval_local/2_clip_white_plain/business_formalwear/member_01/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_02",
+      "outfit_type": "fullbody",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/fullbody/fem_suit_double_breasted.obj"
+      ],
+      "sd_seed": 1978060488,
+      "color": null,
+      "category_phrase": "wearing a jumpsuit",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_20260715_stage1eval_local/2_clip_white_plain/business_formalwear/member_02/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_20260715_stage1eval_local/2_clip_white_plain/business_formalwear/member_02/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_03",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/camisole_top.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/mens_trouser_short_nc_elvcrf.obj"
+      ],
+      "sd_seed": 885083903,
+      "color": null,
+      "category_phrase": "wearing a tank top and shorts",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_20260715_stage1eval_local/2_clip_white_plain/business_formalwear/member_03/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_20260715_stage1eval_local/2_clip_white_plain/business_formalwear/member_03/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    },
+    {
+      "member": "member_04",
+      "outfit_type": "top_bottom",
+      "garments": [
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/tops/turtleneck_halter.obj",
+        "/mnt/u/My Documents/LatentWardrobe/assets/meshes/bottoms/tightjeans.obj"
+      ],
+      "sd_seed": 1643794471,
+      "color": null,
+      "category_phrase": "wearing a tank top and trousers",
+      "outfit": {
+        "status": "ok",
+        "path": "/root/crowd_library_20260715_stage1eval_local/2_clip_white_plain/business_formalwear/member_04/outfit.obj"
+      },
+      "stage1": {
+        "status": "skipped (resume)",
+        "final_texture": "/root/crowd_library_20260715_stage1eval_local/2_clip_white_plain/business_formalwear/member_04/stage1/res-0/albedo.png"
+      },
+      "stage2": {
+        "status": "skipped (--skip-stage2)"
+      },
+      "stage1_render": {
+        "status": "skipped (resume)"
+      }
+    }
+  ]
+}

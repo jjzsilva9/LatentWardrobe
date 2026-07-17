@@ -25,7 +25,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 import evaluate_crowd as ec
-from plot_crowd_comparison import METHOD_LABELS, SURFACE, INK, INK_MUTED
+from plot_crowd_comparison import (METHOD_LABELS, TEXTURE_METHOD_LABELS, MESH_METHOD_LABELS,
+                                   SURFACE, INK, INK_MUTED)
+
+LABEL_SETS = {"default": METHOD_LABELS, "texture": TEXTURE_METHOD_LABELS, "mesh": MESH_METHOD_LABELS}
 
 TILE_IN = 1.4       # inches per member tile
 LABEL_BAND_IN = 0.34  # vertical space above each row for its method label
@@ -47,6 +50,13 @@ def parse_args():
                    help="seed for --sample (per-row stream is keyed on method name too)")
     p.add_argument("--out", type=Path, default=None,
                    help="default: <batch-dir>/plots/contact_sheet_frame<frame>.png")
+    p.add_argument("--source", choices=["stage1", "shape"], default="stage1",
+                   help="stage1 (default): textured turntable frames via evaluate_crowd's "
+                        "extractors; shape: untextured mesh renders from shape_eval_views/ "
+                        "(run generate_shape_eval + evaluate_shape first)")
+    p.add_argument("--label-set", choices=sorted(LABEL_SETS), default="default",
+                   help="row-label map: default (full method names), texture (prompt+noise "
+                        "only, for the mesh-fixed batch), mesh (selection anchor only)")
     return p.parse_args()
 
 
@@ -58,8 +68,18 @@ def find_prompt_slug(batch_dir, methods):
     raise SystemExit(f"no prompt dir with manifest.json under {batch_dir} for {methods}")
 
 
-def member_tile(member_dir, frame, crop=True):
+def member_tile(member_dir, frame, crop=True, source="stage1"):
     """RGB array for one member at the given frame, or None if no render."""
+    if source == "shape":
+        # untextured mesh renders: evaluate_shape's frame/mask cache
+        fpath = member_dir / "shape_eval_views" / f"frame_{frame:03d}.png"
+        if not fpath.exists():
+            return None
+        rgb = ec.load_rgb(fpath)
+        mpath = member_dir / "shape_eval_views" / f"mask_{frame:03d}.png"
+        if crop and mpath.exists():
+            rgb = ec.crop_pad_square(rgb, ec.bbox_from_mask(ec.load_mask(mpath)))
+        return rgb
     views = ec.extract_views(member_dir, [frame])
     if views is None:
         return None
@@ -109,7 +129,7 @@ def main():
             if c >= len(members):
                 continue
             tile = member_tile(args.batch_dir / method / slug / members[c], args.frame,
-                               crop=not args.no_crop)
+                               crop=not args.no_crop, source=args.source)
             if tile is None:
                 ax.text(0.5, 0.5, "no\nrender", ha="center", va="center",
                         fontsize=7, color=INK_MUTED, transform=ax.transAxes)
@@ -123,7 +143,7 @@ def main():
         # 0.17in offset clears the member-number column headers (row 0 only,
         # ~0.12in tall at pad=2) that sit between the label and the tiles.
         pos = axes[r][0].get_position()
-        fig.text(pos.x0, pos.y1 + 0.17 / fig_h, METHOD_LABELS.get(method, method),
+        fig.text(pos.x0, pos.y1 + 0.17 / fig_h, LABEL_SETS[args.label_set].get(method, method),
                  fontsize=9, color=INK, va="bottom")
 
     fig.savefig(out, dpi=200, facecolor=SURFACE)
