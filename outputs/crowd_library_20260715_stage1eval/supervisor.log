@@ -1,0 +1,39 @@
+[supervisor] 2026-07-15 14:15:44 === supervisor start: target 175 members over 7 cells x 5 prompts, 7200s watchdog, out=/mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_stage1eval ===
+[supervisor] 2026-07-15 14:15:44 progress: 0/175 members complete (attempts so far: 0, stalled attempts: 0)
+[supervisor] 2026-07-15 14:15:50 launching batch attempt 1
+[supervisor] 2026-07-15 16:15:54 watchdog: attempt 1 exceeded 7200s -- force-restarting (a wedged drvfs/GPU call can hang unkillably; --resume makes the retry cheap)
+[supervisor] 2026-07-15 16:16:39 attempt 1 ended rc=143
+[supervisor] 2026-07-15 16:17:09 progress: 46/175 members complete (attempts so far: 1, stalled attempts: 0)
+[supervisor] 2026-07-15 18:17:16 watchdog: attempt 2 exceeded 7200s -- force-restarting (a wedged drvfs/GPU call can hang unkillably; --resume makes the retry cheap)
+[supervisor] 2026-07-15 18:18:01 attempt 2 ended rc=143
+[supervisor] 2026-07-15 18:18:32 progress: 89/175 members complete (attempts so far: 2, stalled attempts: 0)
+[supervisor] 2026-07-15 20:18:39 watchdog: attempt 3 exceeded 7200s -- force-restarting (a wedged drvfs/GPU call can hang unkillably; --resume makes the retry cheap)
+[supervisor] 2026-07-15 20:19:24 attempt 3 ended rc=143
+[supervisor] 2026-07-15 20:19:54 progress: 124/175 members complete (attempts so far: 3, stalled attempts: 0)
+[supervisor] 2026-07-15 22:20:02 watchdog: attempt 4 exceeded 7200s -- force-restarting (a wedged drvfs/GPU call can hang unkillably; --resume makes the retry cheap)
+[supervisor] 2026-07-15 22:20:47 attempt 4 ended rc=143
+[supervisor] 2026-07-15 22:21:17 progress: 157/175 members complete (attempts so far: 4, stalled attempts: 0)
+[supervisor] 2026-07-15 23:53:24 attempt 5 ended rc=0
+[supervisor] 2026-07-15 23:53:54 progress: 175/175 members complete (attempts so far: 5, stalled attempts: 0)
+[supervisor] 2026-07-15 23:53:54 all 175 members complete -- running final verified sync to U:
+[supervisor] 2026-07-15 23:54:12 final sync 1_random_white_plain: ok
+[supervisor] 2026-07-15 23:54:30 final sync 2_clip_white_plain: ok
+[supervisor] 2026-07-15 23:54:48 final sync 3_clip_pink_plain: ok
+[supervisor] 2026-07-15 23:55:07 final sync 4_clip_white_axes: ok
+[supervisor] 2026-07-15 23:55:28 final sync 5_clip_pink_axes: ok
+[supervisor] 2026-07-15 23:55:49 final sync 8_clip_white_llm6: ok
+[supervisor] 2026-07-15 23:56:09 final sync 9_clip_pink_llm6: ok
+[supervisor] 2026-07-15 23:56:09 DONE -- next step: scripts/run_shape_eval.sh / scripts/run_crowd_library_eval.sh
+[supervisor] 2026-07-17 15:18:48 === supervisor start: target 175 members over 7 cells x 5 prompts, 7200s watchdog, out=/mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_stage1eval ===
+[supervisor] 2026-07-17 15:18:48 progress: 175/175 members complete (attempts so far: 0, stalled attempts: 0)
+[supervisor] 2026-07-17 15:18:48 all 175 members complete -- running final verified sync to U:
+[supervisor] 2026-07-17 15:19:07 final sync 1_random_white_plain: ok
+[supervisor] 2026-07-17 15:19:35 final sync 2_clip_white_plain: ok
+[supervisor] 2026-07-17 15:20:02 final sync 3_clip_pink_plain: ok
+[supervisor] 2026-07-17 15:20:24 final sync 4_clip_white_axes: ok
+[supervisor] 2026-07-17 15:20:48 final sync 5_clip_pink_axes: ok
+[supervisor] 2026-07-17 15:21:11 final sync 8_clip_white_llm6: ok
+[supervisor] 2026-07-17 15:21:35 final sync 9_clip_pink_llm6: ok
+[supervisor] 2026-07-17 15:21:35 DONE -- next step: scripts/run_shape_eval.sh / scripts/run_crowd_library_eval.sh
+[supervisor] 2026-07-17 15:24:41 === supervisor start: target 175 members over 7 cells x 5 prompts, 7200s watchdog, out=/mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_stage1eval ===
+[supervisor] 2026-07-17 15:24:41 progress: 171/175 members complete (attempts so far: 0, stalled attempts: 0)

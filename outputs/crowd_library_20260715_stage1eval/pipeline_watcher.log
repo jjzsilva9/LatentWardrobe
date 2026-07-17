@@ -1,0 +1,68 @@
+[pipeline] 2026-07-15 14:32:17 === pipeline watcher start: e2e=crowd_library_20260715_stage1eval meshfixed=crowd_library_20260715_meshfixed ===
+[pipeline] 2026-07-16 12:36:15 === pipeline watcher start: e2e=crowd_library_20260715_stage1eval meshfixed=crowd_library_20260715_meshfixed ===
+[pipeline] 2026-07-16 12:36:15 phase A complete: end-to-end generation done (crowd_library_20260715_stage1eval)
+[pipeline] 2026-07-16 12:36:45 phase B: launching mesh-fixed generation (GPU) + end-to-end eval (CPU)
+[pipeline] 2026-07-16 13:40:49 phase B: end-to-end eval not running -- relaunching (#1, idempotent)
+[pipeline] 2026-07-16 14:26:34 === pipeline watcher start: e2e=crowd_library_20260715_stage1eval meshfixed=crowd_library_20260715_meshfixed ===
+[pipeline] 2026-07-16 14:26:34 phase A complete: end-to-end generation done (crowd_library_20260715_stage1eval)
+[pipeline] 2026-07-16 14:27:04 phase B: launching mesh-fixed generation (GPU) + end-to-end eval (CPU)
+[pipeline] 2026-07-16 14:37:04 phase B: end-to-end eval not running -- relaunching (#1, idempotent)
+[pipeline] 2026-07-16 15:16:58 === pipeline watcher start: e2e=crowd_library_20260715_stage1eval meshfixed=crowd_library_20260715_meshfixed ===
+[pipeline] 2026-07-16 15:16:58 phase A complete: end-to-end generation done (crowd_library_20260715_stage1eval)
+[pipeline] 2026-07-16 15:17:29 phase B: launching mesh-fixed generation (GPU)
+[pipeline] 2026-07-17 11:06:39 === pipeline watcher start: e2e=crowd_library_20260715_stage1eval meshfixed=crowd_library_20260715_meshfixed ===
+[pipeline] 2026-07-17 11:06:39 phase A complete: end-to-end generation done (crowd_library_20260715_stage1eval)
+[pipeline] 2026-07-17 11:07:10 phase B: launching mesh-fixed generation (GPU)
+[pipeline] 2026-07-17 11:07:10 phase B complete: mesh-fixed generation done (crowd_library_20260715_meshfixed)
+[pipeline] 2026-07-17 11:07:40 phase C1: end-to-end eval
+[pipeline] 2026-07-17 12:07:41 phase C1 complete: end-to-end eval scored
+[pipeline] 2026-07-17 12:07:41 phase C2: mesh-fixed eval
+[pipeline] 2026-07-17 13:09:42 phase C2 complete: mesh-fixed eval scored
+[pipeline] 2026-07-17 13:09:42 phase C3: shape eval
+[pipeline] 2026-07-17 14:09:43 phase C complete: all three evals scored
+[pipeline] 2026-07-17 14:09:43 phase D: plots + contact sheets
+written: outputs/crowd_library_20260715_stage1eval/plots/end_to_end/per_prompt/vendi_score_dinov2.png
+written: outputs/crowd_library_20260715_stage1eval/plots/end_to_end/avg/vendi_score_dinov2.png
+written: outputs/crowd_library_20260715_stage1eval/plots/end_to_end/per_prompt/dpp_score_dinov2.png
+written: outputs/crowd_library_20260715_stage1eval/plots/end_to_end/avg/dpp_score_dinov2.png
+written: outputs/crowd_library_20260715_stage1eval/plots/end_to_end/per_prompt/dreamsim_mean.png
+written: outputs/crowd_library_20260715_stage1eval/plots/end_to_end/avg/dreamsim_mean.png
+written: outputs/crowd_library_20260715_stage1eval/plots/end_to_end/per_prompt/color_chi2_mean.png
+written: outputs/crowd_library_20260715_stage1eval/plots/end_to_end/avg/color_chi2_mean.png
+written: outputs/crowd_library_20260715_stage1eval/plots/end_to_end/per_prompt/clipscore_crowd_mean.png
+written: outputs/crowd_library_20260715_stage1eval/plots/end_to_end/avg/clipscore_crowd_mean.png
+written: outputs/crowd_library_20260715_stage1eval/plots/end_to_end/per_prompt/hpsv2_crowd_mean.png
+written: outputs/crowd_library_20260715_stage1eval/plots/end_to_end/avg/hpsv2_crowd_mean.png
+[run_crowd_library_plot] end_to_end_plot_exit=0
+written: outputs/crowd_library_20260715_stage1eval/plots/mesh/per_prompt/shape_vendi_score_dinov2.png
+written: outputs/crowd_library_20260715_stage1eval/plots/mesh/avg/shape_vendi_score_dinov2.png
+written: outputs/crowd_library_20260715_stage1eval/plots/mesh/per_prompt/shape_dpp_score_dinov2.png
+written: outputs/crowd_library_20260715_stage1eval/plots/mesh/avg/shape_dpp_score_dinov2.png
+written: outputs/crowd_library_20260715_stage1eval/plots/mesh/per_prompt/shape_silhouette_iou_mean.png
+written: outputs/crowd_library_20260715_stage1eval/plots/mesh/avg/shape_silhouette_iou_mean.png
+[run_crowd_library_plot] mesh_plot_exit=0
+written: outputs/crowd_library_20260715_stage1eval/plots/texture/per_prompt/vendi_score_dinov2.png
+written: outputs/crowd_library_20260715_stage1eval/plots/texture/avg/vendi_score_dinov2.png
+written: outputs/crowd_library_20260715_stage1eval/plots/texture/per_prompt/dpp_score_dinov2.png
+written: outputs/crowd_library_20260715_stage1eval/plots/texture/avg/dpp_score_dinov2.png
+written: outputs/crowd_library_20260715_stage1eval/plots/texture/per_prompt/dreamsim_mean.png
+written: outputs/crowd_library_20260715_stage1eval/plots/texture/avg/dreamsim_mean.png
+written: outputs/crowd_library_20260715_stage1eval/plots/texture/per_prompt/color_chi2_mean.png
+written: outputs/crowd_library_20260715_stage1eval/plots/texture/avg/color_chi2_mean.png
+written: outputs/crowd_library_20260715_stage1eval/plots/texture/per_prompt/clipscore_crowd_mean.png
+written: outputs/crowd_library_20260715_stage1eval/plots/texture/avg/clipscore_crowd_mean.png
+written: outputs/crowd_library_20260715_stage1eval/plots/texture/per_prompt/hpsv2_crowd_mean.png
+note: avg/hpsv2_crowd_mean averages over a partial theme set for 2_clip_white_plain (4/5)
+written: outputs/crowd_library_20260715_stage1eval/plots/texture/avg/hpsv2_crowd_mean.png
+[run_crowd_library_plot] texture_plot_exit=0
+written: outputs/crowd_library_20260715_stage1eval/plots/end_to_end/contact_sheets/business_formalwear.png
+written: outputs/crowd_library_20260715_stage1eval/plots/end_to_end/contact_sheets/cyberpunk_street_crowd.png
+written: outputs/crowd_library_20260715_stage1eval/plots/end_to_end/contact_sheets/medieval_villagers.png
+written: outputs/crowd_library_20260715_stage1eval/plots/end_to_end/contact_sheets/steampunk_inventors.png
+written: outputs/crowd_library_20260715_stage1eval/plots/end_to_end/contact_sheets/superheroes.png
+written: outputs/crowd_library_20260715_stage1eval/plots/texture/contact_sheets/business_formalwear.png
+written: outputs/crowd_library_20260715_stage1eval/plots/texture/contact_sheets/cyberpunk_street_crowd.png
+written: outputs/crowd_library_20260715_stage1eval/plots/texture/contact_sheets/medieval_villagers.png
+written: outputs/crowd_library_20260715_stage1eval/plots/texture/contact_sheets/steampunk_inventors.png
+written: outputs/crowd_library_20260715_stage1eval/plots/texture/contact_sheets/superheroes.png
+[pipeline] 2026-07-17 14:12:46 === PIPELINE COMPLETE: plots in outputs/crowd_library_20260715_stage1eval/plots/{mesh,texture,end_to_end} ===

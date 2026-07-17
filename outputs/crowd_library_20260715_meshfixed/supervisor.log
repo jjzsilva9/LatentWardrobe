@@ -1,0 +1,42 @@
+[supervisor] 2026-07-16 12:36:45 === supervisor start: target 175 members over 7 cells x 5 prompts, 7200s watchdog, out=/mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_meshfixed ===
+[supervisor] 2026-07-16 12:36:45 progress: 0/175 members complete (attempts so far: 0, stalled attempts: 0)
+[supervisor] 2026-07-16 12:36:52 launching batch attempt 1
+[supervisor] 2026-07-16 14:18:49 INT/TERM received -- killing batch group and exiting
+[supervisor] 2026-07-16 14:27:04 === supervisor start: target 175 members over 7 cells x 5 prompts, 7200s watchdog, out=/mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_meshfixed ===
+[supervisor] 2026-07-16 14:27:04 progress: 44/175 members complete (attempts so far: 0, stalled attempts: 0)
+[supervisor] 2026-07-16 14:43:25 INT/TERM received -- killing batch group and exiting
+[supervisor] 2026-07-16 15:17:29 === supervisor start: target 175 members over 7 cells x 5 prompts, 7200s watchdog, out=/mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_meshfixed ===
+[supervisor] 2026-07-16 15:17:29 progress: 47/175 members complete (attempts so far: 0, stalled attempts: 0)
+[supervisor] 2026-07-16 17:17:36 watchdog: attempt 1 exceeded 7200s -- force-restarting (a wedged drvfs/GPU call can hang unkillably; --resume makes the retry cheap)
+[supervisor] 2026-07-16 17:18:21 attempt 1 ended rc=143
+[supervisor] 2026-07-16 17:18:51 progress: 105/175 members complete (attempts so far: 1, stalled attempts: 0)
+[supervisor] 2026-07-16 19:18:56 watchdog: attempt 2 exceeded 7200s -- force-restarting (a wedged drvfs/GPU call can hang unkillably; --resume makes the retry cheap)
+[supervisor] 2026-07-16 19:19:41 attempt 2 ended rc=143
+[supervisor] 2026-07-16 19:20:11 progress: 162/175 members complete (attempts so far: 2, stalled attempts: 0)
+[supervisor] 2026-07-16 20:30:15 attempt 3 ended rc=0
+[supervisor] 2026-07-16 20:30:45 progress: 175/175 members complete (attempts so far: 3, stalled attempts: 0)
+[supervisor] 2026-07-16 20:30:46 all 175 members complete -- running final verified sync to U:
+[supervisor] 2026-07-16 20:31:02 final sync 1_random_white_plain: ok
+[supervisor] 2026-07-16 20:33:09 final sync 2_clip_white_plain: ok
+[supervisor] 2026-07-16 20:33:25 final sync 3_clip_pink_plain: ok
+[supervisor] 2026-07-16 20:33:40 final sync 4_clip_white_axes: ok
+[supervisor] 2026-07-16 20:33:58 final sync 5_clip_pink_axes: ok
+[supervisor] 2026-07-16 20:34:17 final sync 8_clip_white_llm6: ok
+[supervisor] 2026-07-16 20:34:36 final sync 9_clip_pink_llm6: ok
+[supervisor] 2026-07-16 20:34:36 DONE -- next step: scripts/run_shape_eval.sh / scripts/run_crowd_library_eval.sh
+[supervisor] 2026-07-17 11:07:10 === supervisor start: target 175 members over 7 cells x 5 prompts, 7200s watchdog, out=/mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_meshfixed ===
+[supervisor] 2026-07-17 11:07:10 progress: 175/175 members complete (attempts so far: 0, stalled attempts: 0)
+[supervisor] 2026-07-17 11:07:10 all 175 members complete -- running final verified sync to U:
+[supervisor] 2026-07-17 11:07:28 final sync 1_random_white_plain: ok
+[supervisor] 2026-07-17 11:08:18 final sync 2_clip_white_plain: ok
+[supervisor] 2026-07-17 11:08:45 final sync 3_clip_pink_plain: ok
+[supervisor] 2026-07-17 11:09:04 final sync 4_clip_white_axes: ok
+[supervisor] 2026-07-17 11:09:24 final sync 5_clip_pink_axes: ok
+[supervisor] 2026-07-17 11:09:44 final sync 8_clip_white_llm6: ok
+[supervisor] 2026-07-17 11:10:07 final sync 9_clip_pink_llm6: ok
+[supervisor] 2026-07-17 11:10:07 DONE -- next step: scripts/run_shape_eval.sh / scripts/run_crowd_library_eval.sh
+[supervisor] 2026-07-17 16:27:52 === supervisor start: target 175 members over 7 cells x 5 prompts, 7200s watchdog, out=/mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_meshfixed ===
+[supervisor] 2026-07-17 16:27:52 progress: 153/175 members complete (attempts so far: 0, stalled attempts: 0)
+[supervisor] 2026-07-17 16:27:58 launching batch attempt 1
+[supervisor] 2026-07-17 16:42:55 === supervisor start: target 175 members over 7 cells x 5 prompts, 7200s watchdog, out=/mnt/u/My Documents/LatentWardrobe/outputs/crowd_library_20260715_meshfixed ===
+[supervisor] 2026-07-17 16:42:55 progress: 153/175 members complete (attempts so far: 0, stalled attempts: 0)
